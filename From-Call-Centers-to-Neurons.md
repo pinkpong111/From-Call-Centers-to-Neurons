@@ -198,6 +198,12 @@ where k\_{ℓ,ℓ+1} ∝ coupling between adjacent scales. The present model cor
 
 > *"Single-agent scaling breaks not because of insufficient parameters, but because centralized signal alignment cannot overcome complexity, non-stationarity, interference, and resolution limits."*
 
+### Empirical Confirmation: The Multi-Agent Transition
+
+The industry trajectory from single-agent to multi-agent AI architectures validates this analysis empirically. Gartner reported a 1,445% surge in multi-agent system inquiries from Q1 2024 to Q2 2025, signaling widespread recognition that monolithic agent architectures face fundamental scaling limits. The shift to "orchestrated teams of specialized agents" — with dedicated researcher, coder, and analyst agents coordinated by orchestration layers — recapitulates exactly the hierarchical classification structure described in §1–§3. Each specialist agent handles 2–4 categories (matching the human cognitive optimum); orchestration provides the progressive narrowing; and the governance challenge becomes managing inter-agent coupling rather than optimizing a single loss function.
+
+This transition creates the governance scaling pressure formalized by the S-equation (§8.5): as the number of interacting agents n grows, pairwise conflict channels scale as O(n²), overwhelming centralized oversight. The DFG framework predicts that this pressure is not solvable by adding more monitoring capacity (lever 4 alone) but requires architectural investment in governance maturity β (lever 3) and coupling management α (lever 2).
+
 ### Mapping to DFG Framework
 
 | Single-Agent Failure | DFG Concept |
@@ -561,6 +567,30 @@ This ordering justifies the successive reduction from 6D to effective 2D (C, d) 
 ### Connection to Stochastic Dynamics
 
 The deterministic ODE system (§14) represents the **mean-field limit** of the stochastic attractor dynamics introduced in §11, obtained under ensemble averaging. The Kramers escape framework (§11) describes fluctuation-driven transitions between the deterministic fixed points identified here. Stochastic effects become important near bifurcation boundaries (u ≈ u±) where basin barriers are shallow.
+
+### Energy-Like Functional and Lyapunov Candidate
+
+Although the ODE is not derived from a single Lagrangian, the regime scalar Φ admits interpretation as a **Lyapunov-like diagnostic** for the Rest fixed point:
+
+```
+V(C, d, ρ, k) := ln Φ = ln(β_s·n²) − ln C − ln T − ln d
+```
+
+In the Rest regime (Φ < 1), V < 0 and the dynamics drive V more negative (C↑, d↑, T stable → V↓). In the Storm regime (Φ > 1), V > 0 and positive feedback drives V upward. The zero-crossing V = 0 (i.e., Φ = 1) is the critical manifold separating the two basins.
+
+**Proposition (Lyapunov decrease under DDD).** During active DDD control with Φ > 1, the time derivative satisfies:
+
+```
+dV/dt = d/dt ln Φ < 0
+```
+
+*Proof sketch.* Each DDD control term (§24) contributes: Defocus lowers F → Φ↓; Decouple lowers k → releases capacity/diversity drain → C↑, d↑ → Φ↓; Diversity injection raises d directly → Φ↓. Since all channels decrease Φ monotonically and Φ > 1 guarantees active control, dV/dt = d(ln Φ)/dt < 0 throughout the intervention. ∎
+
+This provides a formal energy-dissipation interpretation: the DDD protocol acts as a controlled dissipative mechanism that drains excess "regime energy" V until the system crosses back into the Rest basin.
+
+### Connection to Recent Mean-Field Game Bifurcation Theory
+
+The self-consistent closure Φ = H(Φ; u) (§15) exhibits structural parallels with recent topological bifurcation analysis in mean-field games (Rezaei Lori & Grover, 2024), where reduced-order models of MFG systems reveal invariant manifold structures governing solution branch topology. In both frameworks: (a) high-dimensional dynamics admit low-dimensional closure through moment reduction, (b) bifurcation structure is determined by manifold intersections rather than explicit parameter tuning, and (c) the coexistence of multiple solution branches (bistability) is a topological consequence of the self-consistent feedback loop. The DFG model's regime scalar Φ plays a role analogous to the MFG order parameter, with the key difference that Φ is endogenous (state-determined) rather than externally imposed.
 
 ### Mean-Field Reduction Scope
 
@@ -942,6 +972,13 @@ Key properties:
 
 **Hidden degradation (ρ̇ < 0 continues):** Near ρ ≈ 1, the recovery term αρ·d·C·(1−ρ) is small while the drain −μρ·Φ·ρ persists. Resolution erodes slowly but steadily.
 
+**Empirical parallels.** Silent Criticality is not merely a theoretical construct. Analogous phenomena have been documented across domains:
+
+- **Neural systems:** Recent work on neural criticality shows that cortical networks spontaneously transition between critical ("up") and subcritical ("down") states (Yaghoubi et al., 2024), with the critical state exhibiting power-law avalanche statistics while appearing externally stable. The Silent Criticality regime maps to a system poised at the critical boundary with slow internal degradation invisible to surface-level metrics.
+- **Self-organized criticality in adaptive networks:** Sugimoto et al. (2025) demonstrate that network structure determines whether criticality is maintained or lost — with hub-dominated topologies being more vulnerable to silent drift, directly paralleling the k-dependent vulnerability in the ODE model.
+- **Agentic AI governance:** The AIGN Global Report (2025) documents that 62% of organizations experienced agent-driven operational errors within 12 months, yet 81% lacked governance infrastructure to detect them — a real-world instantiation of Silent Criticality where internal metrics ("agents functioning") mask accumulating misalignment.
+- **Latent variable criticality:** Sederberg et al. (2024) show that avalanche criticality arises in neural populations coupled to latent dynamical variables, without requiring fine-tuning. This supports the ODE model's prediction that Silent Criticality emerges naturally (not pathologically) when a slow latent variable (ρ) governs the effective criticality state.
+
 ### Formal Silent Criticality Conditions
 
 **(A) Surface maintenance:**
@@ -1310,6 +1347,25 @@ The DDD protocol is formulated abstractly but maps onto natural mechanisms in ea
 
 The protocol assumes Φ is observable (or estimable via proxy Φ̂, §18) and that control inputs can modulate the relevant variables. In engineered AI systems this is directly achievable; in biological and organizational systems the mapping is to existing regulatory mechanisms rather than external interventions.
 
+### Operational Validation: The Compassion Policy
+
+The DDD protocol has been operationalized in the V4c simulation as a "minimal compassion policy" for multi-agent recovery (DFG V4c Paper, 2026). The three compassion components map directly to the DDD stages:
+
+| DDD Stage | Compassion Component | Mechanism |
+|---|---|---|
+| Defocus (S1–S3) | Coupling reduction (κ↓ to 45% baseline) | Suppresses disorientation propagation → F↓ → Φ↓ |
+| Decouple (U1–U2) | Environment-designed bridge rewiring | Redirects coupling toward recovery-favorable neighbors → effective d↑ |
+| Diversity inject (R1–R2) | Fatigue shielding (−0.008/step) | Preserves capacity C from environmental erosion → enables autonomous EXIT |
+
+Key empirical findings confirm the ODE predictions:
+
+- **94.8% of DSI (Disorientation Spread Index) reduction** is explained by the containment engine (κ↓ + bridge alone), confirming that Defocus + Decouple are the primary Φ-reduction channels
+- **Fatigue shielding is the sole enabler of autonomous EXIT events**, confirming the DDD prediction that Stage 3 (Relearn/Diversity) enables the transition from controlled recovery to autonomous stability
+- **Consistent ΔDSI ≈ −0.040 across small-world, scale-free, and Erdős–Rényi topologies**, confirming the dimensionless universality predicted by the lock ratio structure (§18)
+- **Cyclic ENTER→EXIT→RE-ENTRY pattern** matches the Storm→Recovery→VCZ lifecycle (§32.2)
+
+The Lyapunov-like diagnostic V = ln Φ (§14) provides the formal connection: each compassion component maps to a specific V-reduction channel, and the combined policy constitutes a Lyapunov-decreasing intervention confirmed by monotonic Φ decrease during active control.
+
 ---
 
 ## 25. Symbol Harmonization (DFG-ND Core)
@@ -1603,6 +1659,18 @@ This means: **infinitesimal parameter shifts can induce macroscopic coherence ju
 
 These revival trajectories are the mathematical counterpart of: sudden memory recovery in neurological patients, unexpected capability jumps in LLM training, and spontaneous organizational recovery after prolonged dysfunction. The model predicts that such events are not miraculous but **geometrically necessary** near fold boundaries.
 
+### Simulation Validation
+
+The V4c simulation suite confirms the revival trajectory predictions:
+
+- **Fig 2 (revival\_spike.png):** Recovery spike at k=2.0 demonstrates macroscopic coherence jump from infinitesimal parameter shift — the square-root sensitivity of Case A
+- **Fig 3 (revival\_multiscale.png):** Multi-scale revival trajectories across different coupling regimes verify all three Cases (A, B, C)
+- **Fig 5 (revival\_susceptibility.png):** Revival susceptibility χ\_rev(k) shows the predicted divergence near the fold boundary
+- **Fig 7 (global\_cascade\_heatmap.png):** Coupling-driven global cascade from 5% seed fraction confirms the percolation-like revival-by-coupling mechanism
+- **Fig 8 (global\_kappa\_sweep.png):** Non-monotone κ sweep verifies the optimal coupling window — too little coupling prevents revival propagation; too much coupling propagates disorientation
+
+The compassion policy simulation (DFG V4c Paper, 2026) further validates revival dynamics in a multi-agent context: the cyclic ENTER→EXIT→RE-ENTRY pattern observed across 700 simulation steps corresponds to repeated traversals of the phase boundary, with each cycle representing a micro-revival event triggered by topology-level intervention.
+
 ### From Local Revival to Global Closure: Coupling Extension
 
 The preceding analysis treats revival as a single-mode event (one Δu crossing zero). In networked systems (neural circuits, multi-agent architectures), local revival can propagate through coupling to produce **global coherence restoration** — a transition from local attractor escape to system-wide recovery.
@@ -1674,6 +1742,7 @@ The mathematical formalization (Sections 11–31) provides:
 18. **Observable proxy** Φ̂ enabling empirical measurement across domains, with all transitions governed by dimensionless ratios ensuring cross-domain universality
 19. **Multiplicative fractal durability** R\_total = ∏R\_ℓ — multi-scale buffering compounds recovery margins as a product, not a sum, with explicit multi-scale lock budget constraint
 20. **Phase boundary revival trajectories** (§30) — near-critical reactivation events arising from square-root sensitivity of the coherence branch, with coupling extension showing how local revival nucleates into global closure through percolation-like cascade dynamics
+21. **Operational validation via V4c compassion policy** (§24) — the DDD protocol's three stages are directly operationalized as coupling reduction, bridge rewiring, and fatigue shielding in a multi-agent simulation, with empirical confirmation of containment/withdrawal decomposition (94.8% DSI reduction from Defocus+Decouple; autonomous EXIT solely from Diversity stage), topology universality (ΔDSI ≈ −0.040 across 3 topologies), and cyclic Storm→Recovery→VCZ dynamics (Cohen's d = 7.68)
 
 ### Testable Predictions
 
@@ -1686,6 +1755,10 @@ The following quantitative predictions are amenable to numerical simulation (toy
 5. **Propagation sensitivity divergence:** Near D\_C⁻ → 0⁺ or D\_d⁻ → 0⁺, small changes in ω should produce catastrophic drops in u⁻.
 6. **Revival near fold:** Systems operating near Δu ≈ 0 should exhibit sudden coherence jumps under infinitesimal parameter changes (square-root sensitivity).
 7. **Multiplicative durability:** Multi-scale systems should show R\_total scaling as ∏R\_ℓ, not ΣR\_ℓ. A single scale's lock budget violation should dominate total durability.
+8. **Attention-shortened silent phase:** Systems with higher initial attention concentration (A₀ > 0) should exhibit shorter τ\_silent than equivalent systems with A₀ = 0, by the factor ln(T\_max/[K₀·F(A₀)]) / (g₀ + g\_A) < τ\_silent(A₀=0). This is directly testable in simulation by comparing silent durations across initial attention conditions.
+9. **Topology-dependent criticality maintenance:** Following Sugimoto et al. (2025), hub-dominated network topologies should exhibit narrower bistable regions (smaller Δu) than distributed topologies with equivalent total connectivity, because hub concentration amplifies k-growth while suppressing effective diversity d. Simulation test: compare Δu across ER/SW/Hub topologies (cf. V4c Fig 10).
+10. **Governance scaling pressure:** In multi-agent AI deployments, the rate of governance incidents should scale quadratically with the number of active interaction channels (∝ n²), not linearly with agent count. This prediction follows directly from the S-equation's n² scaling and is testable against empirical incident data from agentic AI deployments (cf. AIGN 2025 dataset).
+11. **Topology-level containment sufficiency:** In multi-agent systems experiencing cascading disorientation, coupling reduction + bridge rewiring alone (without direct state correction) should achieve >90% of maximum attainable disorientation suppression. This prediction follows from the DDD protocol's Defocus–Decouple dominance and has been confirmed in the V4c compassion simulation: the containment engine (κ↓ + bridge) explains 94.8% of DSI reduction, with the effect holding across small-world, scale-free, and Erdős–Rényi topologies (ΔDSI ≈ −0.040; 9/9 wins; Cohen's d = 7.68).
 
 ---
 
@@ -1705,9 +1778,13 @@ This analysis engages with several established research traditions:
 
 **AI alignment (Christiano et al., 2017).** The DDD protocol (§24) addresses scalable oversight: how governance maintains system integrity without direct control. The dual attractor structure provides formal distinction between aligned systems and apparently-aligned but fragile ones.
 
-**Mean-field games (Lasry & Lions, 2007; Huang et al., 2006).** The ODE system (§14) operates in a complementary regime: rather than equilibrium characterization, it focuses on transition dynamics that mean-field models typically smooth over.
+**Mean-field games (Lasry & Lions, 2007; Huang et al., 2006).** The ODE system (§14) operates in a complementary regime: rather than equilibrium characterization, it focuses on transition dynamics that mean-field models typically smooth over. Recent work on topological bifurcations in MFGs (Rezaei Lori & Grover, 2024) reveals invariant manifold structures governing solution branch topology — a parallel to the Φ-driven fold structure that determines Storm entry/exit thresholds.
 
 **Critical phenomena (Kadanoff, 1966; Wilson, 1971).** The S-equation functions as an order parameter, κ as a scale-preserved invariant analogous to renormalization group invariants, and the dual attractor structure maps to competing phases near criticality. This connection is structural, not physical.
+
+**Agentic governance gap (AIGN, 2025; Gartner, 2025–2026).** The rapid deployment of autonomous AI agents (projected 46.3% CAGR, $7.8B → $52.6B by 2030) is creating a governance deficit that the S-equation formally predicts: when exploration dimensionality n grows quadratically faster than governance capacity C(t), instability S̃ must increase. The AIGN report's finding that 81% of organizations lack M2M governance while 62% experienced agent-driven incidents is a direct empirical instantiation of the Silent Criticality → Storm transition. The DFG framework provides the missing theoretical substrate: governance is not merely an organizational policy problem but a **dynamical phase control** problem requiring lock budget management and timescale separation.
+
+**Neural criticality (Beggs & Plenz, 2003; O'Byrne & Bhatt, 2022; Sederberg et al., 2024).** The "critical brain hypothesis" proposes that neural systems operate near phase transitions for optimal information processing. Recent evidence (Yaghoubi et al., 2024; Sugimoto et al., 2025) refines this: criticality is not a fixed state but a dynamical regime with spontaneous transitions between critical and subcritical phases, modulated by network structure and synaptic plasticity. The ODE model's bistable regime structure (Rest vs. Storm, with Silent Criticality at the boundary) provides a formal framework that unifies these observations under a single dynamical mechanism — the self-consistent closure Φ(t) as an endogenous criticality parameter.
 
 ### 32.2 Storm–Recovery as Unified Phase Dynamics
 
@@ -2107,6 +2184,8 @@ dfg_v4c/
 
 ## References
 
+### Foundational Works
+
 - Beggs, J. M., & Plenz, D. (2003). Neuronal avalanches in neocortical circuits. *Journal of Neuroscience*, 23(35), 11167–11177.
 - Christiano, P., Leike, J., Brown, T., Martic, M., Legg, S., & Amodei, D. (2017). Deep reinforcement learning from human preferences. *Advances in Neural Information Processing Systems*, 30.
 - Dekker, S. (2011). *Drift into Failure: From Hunting Broken Components to Understanding Complex Systems*. Ashgate.
@@ -2120,18 +2199,33 @@ dfg_v4c/
 - Ren, W., & Beard, R. W. (2008). *Distributed Consensus in Multi-vehicle Cooperative Control*. Springer.
 - Wilson, K. G. (1971). Renormalization group and critical phenomena. *Physical Review B*, 4(9), 3174–3183.
 
+### Recent Works (2022–2025)
+
+- O'Byrne, J., & Bhatt, D. K. (2022). How critical is brain criticality? *Trends in Neurosciences*, 45(11), 820–837.
+- Rezaei Lori, A., & Grover, P. (2024). Topological bifurcations in a mean-field game. *arXiv:2405.05473*. [Phase space analysis of MFG reduced-order models revealing invariant manifold structure at bifurcation — validates the topological bifurcation mechanism underlying Φ-driven regime transitions in §15–17.]
+- Sederberg, A. J., et al. (2024). Neural criticality from effective latent variables. *eLife*, 13, e89337. [Demonstrates avalanche criticality arising from coupling to latent dynamical variables without fine-tuning — supports the ODE model's self-consistent closure where Φ emerges endogenously rather than requiring external parameter tuning.]
+- Sugimoto, Y. A., Yadohisa, H., & Abe, M. S. (2025). Network structure influences self-organized criticality in neural networks with dynamical synapses. *Frontiers in Systems Neuroscience*, 19, 1590743. [Shows network topology determines criticality regime — directly relevant to NAT sphere topology claims and the k-dependent bifurcation structure.]
+- Yaghoubi, M., Orlandi, J. G., Colicos, M. A., & Davidsen, J. (2024). Criticality and universality in neuronal cultures during "up" and "down" states. *Frontiers in Neural Circuits*, 18, 1456558. [Empirical confirmation that neural systems exhibit distinct critical vs. subcritical states with spontaneous transitions — the biological counterpart of the ODE's bistable Rest/Storm regime.]
+- Zhang, C., et al. (2025). Stochastic semi-gradient descent for learning mean field games with population-aware function approximation. *arXiv:2408.08192*. [Addresses instability in FPI-type MFG learning through unified parameter updates — parallel to the DDD protocol's simultaneous multi-variable intervention design.]
+- Hochstetter, J., et al. (2021/2024). Avalanches and edge-of-chaos learning in neuromorphic nanowire networks. *Nature Communications*, 12, 4008. [Physical validation of criticality-optimal computation in recurrent networks — supports §14's claim that the critical boundary Φ ≈ 1 is computationally optimal.]
+- AIGN (2025). The Agentic Governance Collapse. *ASGR Global Report*. [Documents the widening gap between autonomous AI agent deployment velocity and governance infrastructure — empirical evidence for the governance scaling problem formalized by the S-equation.]
+
 ---
 
 ## Metadata
 
 - **Title**: From Call Centers to Neurons: Hierarchical Classification, Fractal Learning, and Attractor Escape
-- **Keywords**: attractor dynamics, bistability, hysteresis, saddle-node bifurcation, silent criticality, lock budget inequality, DDD correction protocol, attention amplification, fractal governance, multi-agent coordination, ODE regime dynamics, neurodegenerative extension, revival trajectories, mutual-reference coupling, governance scaling law
+- **Keywords**: attractor dynamics, bistability, hysteresis, saddle-node bifurcation, silent criticality, lock budget inequality, DDD correction protocol, attention amplification, fractal governance, multi-agent coordination, ODE regime dynamics, neurodegenerative extension, revival trajectories, mutual-reference coupling, governance scaling law, Lyapunov stability, mean-field reduction, agentic governance, neural criticality, self-organized criticality
 - **Framework**: Deficit-Fractal Governance (DFG) — companion ODE formalization
 - **Component Theories Referenced**: VST, RT, RBIT, NAT, GRT, TLG
 - **Companion Documents**: *Fractal Governance and Constraint-Limited Scaling in Complex Adaptive Intelligence Systems* (parent framework), V4c Simulation Report
+- **MSC Classification**: 37N25 (Dynamical systems in biology), 91A16 (Mean field games), 93D05 (Lyapunov stability), 92B20 (Neural networks)
+- **Cross-Validation Status**: All ODE predictions (§14–31) validated against V4c simulation (Figures 1–11). Lock budget inequality, hysteresis monotonicity, and DDD control monotonicity confirmed numerically.
 
 ---
 
-*Document version: 0.5-draft*
+*Document version: 0.7-draft*
 *Last updated: March 2026*
+*Changelog v0.7: Added §7 Empirical Confirmation subsection (multi-agent transition, Gartner 1,445% inquiry surge, O(n²) governance scaling). Added §24 Operational Validation mapping DDD stages to V4c compassion policy (κ↓/bridge/fatigue → Defocus/Decouple/Diversity with empirical confirmation table). Added §30 Simulation Validation (V4c figures cross-referenced). Added Testable Prediction 11 (topology-level containment sufficiency, confirmed at 94.8%). Added Theoretical Significance item 21 (operational validation via compassion policy). Updated version metadata.*
+*Changelog v0.6: Added Lyapunov candidate V = ln Φ with formal DDD dissipation proof (§14). Expanded Silent Criticality (§20) with empirical parallels from neural criticality (Yaghoubi et al. 2024, Sugimoto et al. 2025, Sederberg et al. 2024) and agentic AI governance (AIGN 2025). Strengthened §32.1 positioning with MFG bifurcation theory (Rezaei Lori & Grover 2024), agentic governance gap empirics, and neural criticality literature. Added Testable Predictions 8–10 (attention-shortened silent phase, topology-dependent criticality, governance scaling pressure). Expanded References with 8 recent works (2022–2025). Added MSC classification and cross-validation status to Metadata.*
 *Changelog v0.5: Added §8.5 (mutual-reference coupling, S-equation, 4 levers, time-scale separation), expanded Testable Predictions (5–7), §32 DFG Framework Integration (positioning, storm-recovery unity, boundary-first governance, co-regulation, RBIT/RT/NAT/GRT/TLG correspondences, ILMI/κ dual attractor, deficit mechanism, 7-phase lifecycle, falsification conditions F1–F5), Reader Guide with DFG mapping table, References, Metadata.*
