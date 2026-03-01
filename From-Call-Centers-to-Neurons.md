@@ -215,6 +215,293 @@ This transition creates the governance scaling pressure formalized by the S-equa
 
 ---
 
+## 7.5 Cube Domination: Coordinate Frame Dynamics and Multi-Dimensional Governance
+
+### The Cube Domination Problem
+
+The single-agent scaling breakdown (§7) identifies *why* centralized optimization fails. But this leaves open a deeper question: **what replaces it?** When a global coordination frame collapses, the system does not simply fragment — it enters a structured competition between local coordination frames, each attempting to become the new dominant reference. This process, formalized here as *Cube Domination dynamics*, determines whether the system recovers to a new stable governance regime or undergoes irreversible fragmentation collapse.
+
+**Definition (Cube Domination).** A regime in which the geometry of interaction — rather than any individual agent — constrains and governs the collective dynamics of a system. Specifically, a dominant coordination frame R\_{i\*} emerges such that the accessible interaction volume of all agents is bounded by the frame's constraint geometry:
+
+```
+Dim(Accessible interaction space) < Dim(Unconstrained interaction space)
+```
+
+Unlike classical dominance (one agent outperforms others on a single metric), Cube Domination operates across multiple axes simultaneously — relational, temporal, and conditional — creating a multi-dimensional constraint volume (hence "cube") that shapes all possible collective behaviors.
+
+### Formal State Variables
+
+**(A) Local Coordination Frame.** Following global frame collapse, each cluster g = 1, …, K develops a local coordination frame R\_g(t) representing its interpretation rules, operational standards, and alignment reference:
+
+```
+dR_g/dt = η_g(t) + Φ_g(selection pressure)
+```
+
+where η\_g captures environmental drift and internal evolution, and Φ\_g captures endogenous selection pressure from inter-cluster competition.
+
+**(B) Frame Dispersion (Coordinate Variance).**
+
+```
+Σ(t) := Var(R₁, …, R_K)
+```
+
+Σ measures how far apart the clusters' reference frames have diverged. Rising Σ indicates progressive loss of mutual intelligibility — the system can no longer translate between local frames without increasing cost.
+
+**(C) Inter-Cluster Coupling.**
+
+```
+W_{gh}(t) = exp(−α|R_g − R_h|)
+```
+
+Coupling decays exponentially with frame distance. This is the formal mechanism by which coordinate divergence produces network fragmentation: as Σ rises, the mean coupling W̄(t) falls toward the fragmentation threshold W\_frag.
+
+### Single-Agent Inevitable Differentiation
+
+The necessity of differentiation follows from an energy-minimization argument. Consider n simultaneous tasks/objectives. Under a single policy θ, interference cost scales quadratically:
+
+```
+I(θ) = Σ_{i<j} conflict_{ij},    |pairs| = n(n-1)/2 = O(n²)
+```
+
+where conflict\_{ij} = max(0, ⟨∇L\_i(θ), ∇L\_j(θ)⟩) measures gradient interference between tasks.
+
+**Differentiated (K-modular) policy cost:**
+
+```
+E_single ∼ O(n) + λ·O(n²)
+E_split  ∼ O(n) + λ·O(n²/K) + τ·O(K)
+```
+
+where τ is per-module translation/coordination overhead. The differentiation threshold:
+
+```
+n > n_split := 2√(τ / λc̄)
+```
+
+**Proposition (Inevitable Differentiation).** For any system with finite translation cost τ and non-zero mean conflict c̄ > 0, there exists a finite task count n\_split beyond which K > 1 modular architecture strictly dominates single-agent architecture in total system cost. Since n\_split = 2√(τ/λc̄), systems with low translation cost (good protocols/standards) or high conflict sensitivity differentiate earlier.
+
+**Optimal module count:**
+
+```
+K* ≈ n√(λc̄ / 2τ)
+```
+
+This predicts that module count scales roughly linearly with task count, modulated by the ratio of conflict cost to translation cost — consistent with the empirical observation that large AI systems converge toward "orchestrated teams of specialized agents" (§7 Empirical Confirmation).
+
+### Star Hierarchy: Competitive Frame Selection
+
+After fragmentation, local frames compete for cross-cluster adoption. Define:
+
+**(A) Frame Quality Score.**
+
+```
+Q_g(t): combines scale-invariance S_g, maintenance cost M_g, noise sensitivity N_g, bridging power B_g
+
+Q_g = S_g − λ·M_g − μ·N_g + ν·B_g
+```
+
+**(B) Translation Cost.** The cost for cluster g to adopt frame i as reference:
+
+```
+C_{gi} = |R_g − R_i|
+```
+
+**(C) Frame Selection Probability.** Each cluster selects a reference frame according to a softmax over quality minus translation cost:
+
+```
+P_{g→i} = exp(βQ_i − γC_{gi} − δR_i) / Σ_j exp(βQ_j − γC_{gj} − δR_j)
+```
+
+where R\_i is the collapse risk of frame i, and δ is the collapse-aversion sensitivity (see below).
+
+**(D) Frame Adoption Score.**
+
+```
+S_i(t) = Σ_g P_{g→i}
+```
+
+When S\_i exceeds the critical adoption threshold S\_crit, frame i becomes the dominant coordination reference — the meta-star — and coordinate realignment begins:
+
+```
+dR_g/dt = −λ(R_g − R_{i*})    when S_{i*} > S_crit
+```
+
+**Key insight:** The dominant frame is not necessarily the highest-quality frame, but the most *translatable* one — the frame with the best combination of quality and low adoption cost across diverse clusters. Dominance = coordinate compatibility, not power.
+
+### Collapse-Aversion Term (Constraint-Side Governance)
+
+Real systems do not optimize solely for quality. They simultaneously avoid catastrophic states. This dual-criterion selection is formalized through the collapse-aversion term −δR\_i in the selection probability.
+
+**Interpretation:** The −δR\_i term implements boundary-based governance (§32.3) at the frame competition level. Rather than directing "choose the best frame," it constrains "never choose a frame with collapse risk above threshold":
+
+```
+Effective selection ∝ exp(βQ_i − γC_{gi}) · Θ(R_crit − R_i)    [hard constraint]
+```
+
+or in the soft form already given, −δR\_i provides smooth collapse avoidance.
+
+**Aversion Stagnation Threshold.** If δ exceeds a critical value δ\_crit, the system enters an aversion-dominated regime where no frame can accumulate sufficient adoption because all candidates are penalized by their risk profiles:
+
+```
+δ > δ_crit  ⟹  max_i S_i(t) < S_crit  for all t
+```
+
+This predicts organizational/AI stagnation: systems that are excessively risk-averse cannot select new coordination standards and remain permanently fragmented — "safe but static." The condition 0 < δ < δ\_crit defines the viable governance corridor.
+
+### Vector Storm as Selection Pressure
+
+The Vector Storm regime (§15–17 of this document) plays a critical role in Cube Domination dynamics. During Storm:
+
+```
+S(t) = dΣ/dt > S_min    [Storm active, dispersion accelerating]
+```
+
+Storm creates selection pressure on competing frames:
+
+```
+dQ_i/dt = a·S − b·S² − c_i
+```
+
+- a·S: Storm exposes weak frames (selection benefit, linear in Storm intensity)
+- b·S²: Excessive Storm destroys all frames (universal damage, quadratic)
+- c\_i: Intrinsic structural vulnerability of frame i
+
+**Optimal Storm Window.** The parabolic structure yields an optimal Storm intensity:
+
+```
+S* = a / 2b
+```
+
+At S\*, the net selection pressure is maximized: dQ/dt|\_max = a²/4b − c\_i. Below S\_min, frame differentiation is insufficient for meta-star emergence. Above S\_max = a/b = 2S\*, Storm destroys faster than it selects.
+
+**Controlled Storm with Differentiation Coupling.** Incorporating the differentiation analysis, the selection benefit coefficient becomes endogenous to module count:
+
+```
+a(K) = η · G(K)
+
+where G(K) = A(1 − 1/K) − τ(K − 1),    A = λc̄n²/2
+```
+
+yielding the combined optimal:
+
+```
+S*(K) = η·G(K) / 2b
+```
+
+and the frame survival condition:
+
+```
+c(K) < η²·G(K)² / 4b
+```
+
+This couples structural differentiation to Storm dynamics: more modular systems (higher K) can extract more selection benefit from the same Storm intensity, provided translation costs remain manageable.
+
+### Scale-Invariant Governance Constant
+
+Define the Cube Domination governance constant:
+
+```
+κ(K) := S*(K) / S_crit = η·G(K) / (2b·S_crit)
+```
+
+**Proposition (Scale Invariance).** If the selection efficiency η, destruction coefficient b, and normalized conflict-to-translation ratio λc̄/τ are intensive quantities (independent of system size N), then κ(K\*) is scale-invariant: the same governance constant governs systems of different sizes operating at their respective optimal differentiation levels.
+
+**Empirical check:** κ(K) should remain approximately constant across system scales (small teams, large organizations, multi-agent AI deployments) when each operates at its structurally optimal K\*. Significant scale-dependence of κ would falsify the scale-invariance claim.
+
+### Phase Diagram: Four Regimes
+
+The Cube Domination dynamics partition the (Σ, S) state space into four regimes:
+
+```
+       S (Storm intensity)
+       ↑
+       |  ③ DESTRUCTION        ④ CUBE DOMINATION
+       |  (S > S_max)          (S_min < S < S_max, Σ↓)
+  S_max|─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
+       |
+  S*   |  · · · · · · · · · · ·✦ (optimal)
+       |
+  S_min|─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
+       |  ① STAGNATION          ② FRAGMENTATION
+       |  (S < S_min,           (S < S_min,
+       |   Σ stable)             Σ↑, W̄↓)
+       └──────────────────────────────────→ Σ (frame dispersion)
+                              Σ_crit
+```
+
+- **① Stagnation:** Low Storm, low dispersion. Existing frame unchallenged but not optimal.
+- **② Fragmentation:** Low Storm, high dispersion. Clusters diverge without selection pressure. If W̄ < W\_frag, irreversible collapse.
+- **③ Destruction:** Excessive Storm. All frames degraded. System-wide collapse.
+- **④ Cube Domination Emergence:** Moderate Storm within optimal window. Weak frames eliminated, dominant frame crystallizes, Σ begins decreasing.
+
+### Fractal Self-Similarity of the Cube Cycle
+
+The complete Cube Domination cycle:
+
+```
+Stability → Fragmentation → Vector Storm → Meta-Star Emergence → New Stability
+```
+
+is scale-invariant: the same dynamical equations govern frame competition at every hierarchical level. This generates fractal governance structure:
+
+```
+Level 0:  Agents compete → local coordination frames emerge
+Level 1:  Local frames compete → regional meta-frames emerge
+Level 2:  Regional meta-frames compete → global coordination emerges
+  ⋮
+Level k:  R^(k+1) = F(R^(k))    [same dynamics at each level]
+```
+
+The system does not maintain a single permanent star (global reference). Instead, it maintains the **capacity to regenerate coordination frames** through repeated Cube Domination cycles. This is the formal mechanism underlying the Arrow of Maturation (§32.5): each cycle strengthens the frame-generation capacity itself.
+
+### Silent Fragmentation
+
+A particularly dangerous state exists where surface metrics indicate stability while internal frame dispersion is growing:
+
+```
+Silent Fragmentation:  KPI(t) ≈ normal  AND  Σ(t) ↑  AND  W̄_cross(t) ↓
+```
+
+This parallels Silent Criticality (§20–21) at the inter-cluster level. Detection requires monitoring cross-cluster correlation metrics rather than within-cluster performance — exactly the observability asymmetry formalized in Recovery Theory (T1, §32.5).
+
+**Measurement equation with distortion:**
+
+```
+Σ̂(t) = Σ(t) + ε(t) + b(t)
+```
+
+where ε(t) is sampling noise (observation gap from reduced inter-cluster data flow) and b(t) is lock-in bias (metrics that adapt to favor the current frame configuration). Three distortion types:
+
+- **D1 (Lock-in bias):** System-internal metrics optimize to report health within the current frame → actual Σ growth is masked.
+- **D2 (Sampling distortion):** As coupling W̄ decreases, cross-cluster data flow drops → observer receives incomplete information.
+- **D3 (Observer coupling):** Measurement itself perturbs the system — monitoring overhead changes agent behavior.
+
+### Collapse Boundary and Time-to-Fragmentation
+
+When no meta-star emerges and Σ(t) grows unchecked:
+
+```
+t_collapse = (1/α) · ln(1/W_frag) / σ²_η
+```
+
+where α is coupling decay sensitivity and σ²\_η is the variance of frame drift. This provides an operational early-warning timescale: if current Σ growth rate projects t\_collapse within the planning horizon, intervention (controlled Storm or frame standardization) is required.
+
+### Testable Predictions (Cube Domination)
+
+**P-CD1 (Quadratic differentiation pressure).** In systems with n simultaneous objectives and non-zero inter-objective conflict, operational cost should scale as O(n²) under single-policy architecture but as O(n²/K) under K-modular architecture. Testable via parameter sweep in multi-task reinforcement learning.
+
+**P-CD2 (Optimal Storm window).** Frame quality differentiation should follow the parabolic profile dQ/dt = aS − bS² − c, with maximum differentiation at S\* = a/2b. Testable by measuring frame adoption rates across different perturbation intensities in multi-agent simulations.
+
+**P-CD3 (Translation > Quality).** The dominant coordination frame post-Storm should be the one minimizing mean translation cost across clusters, not the one maximizing intrinsic quality. Testable by comparing adoption patterns against Q\_i vs C\_{gi} rankings.
+
+**P-CD4 (Aversion stagnation).** Systems with excessively high collapse-aversion (δ > δ\_crit) should exhibit permanent fragmentation: no dominant frame emerges despite adequate frame quality diversity. Testable by comparing high-δ vs moderate-δ runs in simulation.
+
+**P-CD5 (Silent fragmentation detection).** Cross-cluster interaction metrics (mutual information, schema overlap, call success rate) should degrade before within-cluster performance metrics. Failure of this ordering would falsify the silent fragmentation mechanism.
+
+**P-CD6 (Scale-invariant κ).** The governance constant κ(K\*) should remain approximately constant (within ±20%) across system sizes N differing by at least one order of magnitude, when each system operates at its optimal K\*. Significant scale-dependence falsifies Proposition (Scale Invariance).
+
+---
+
 ## 8. Fractal Collapse Conditions
 
 Fractal systems are resilient due to **multi-scale buffering**: local → meso → macro buffers absorb shocks progressively. But they are not invulnerable.
@@ -2060,7 +2347,45 @@ Phase 7 — Higher Cycle:  new cycle at expanded resolution
 
 The ODE model (§14) captures Phases 2–5 at a single scale. Phase transitions correspond to: entry → Phase 2 (u > u⁺, Storm); DDD → Phase 3–4 (recovery, VCZ re-entry); sustained VCZ → Phase 5 (Φ < 1 stable, ρ → 1). Revival trajectories (§30) correspond to Phase 6 reawakening.
 
-### 32.8 Falsification Conditions (from Parent Framework)
+### 32.8 Cube Domination and the Governance Scaling Architecture
+
+The Cube Domination dynamics (§7.5) provide the missing mechanism connecting single-agent scaling breakdown (§7) to fractal governance maturation (§32.7). The correspondence is:
+
+```
+DFG Phase Mapping to Cube Domination Cycle:
+  Phase 1 (Seeding)      →  Global frame establishment (R₀)
+  Phase 2 (Exploration)  →  Frame stress testing (Σ rising)
+  Phase 3 (Formation)    →  Star competition (P_{g→i} differentiation)
+  Phase 4 (VCZ)          →  Cube Domination achieved (R_{i*} dominant)
+  Phase 5 (Rest Mode)    →  Frame internalization (external → internal reference)
+  Phase 6 (Reawakening)  →  Frame obsolescence (environment shift breaks R_{i*})
+  Phase 7 (Higher Cycle)  →  New Cube cycle at expanded scale
+```
+
+**Key structural insight:** The global frame (star) is not a permanent entity but a transient stabilizer. Its value lies in establishing coordinate alignment; its departure is structurally necessary to prevent dependence collapse — a state where diversity atrophies because all agents orient toward a single reference, reducing the system's exploration capacity (d → 0 in ODE terms).
+
+**Dependence dynamics:** Let D(t) represent system dependence on the global frame:
+
+```
+dD/dt = −αD + β·ξ(t)
+```
+
+where α captures internalization rate and ξ(t) represents environmental novelty that re-creates reference need. The steady-state D\* > 0: complete independence is structurally impossible because coordinate-system changes (new environments, scale transitions) always regenerate the need for external reference.
+
+**Connection to S-equation:** The S-equation S̃ = α·ñ²/C̃(t)^β governs governance scaling pressure. Cube Domination dynamics explain *how* this pressure is resolved: not by increasing C̃ (centralized capacity), but by increasing β (governance maturity) through frame internalization — converting external coordination references into architectural constraints that operate without continuous monitoring.
+
+**Connection to ODE model:** The Cube Domination governance constant κ(K) maps to the ODE's dual attractor structure (§32.6):
+
+```
+κ(K) → κ*    ⟺  Cube Domination achieved (dominant frame operational, Σ low)
+κ(K) → 0     ⟺  Fragmentation collapse (no meta-star, Σ → ∞)
+```
+
+The hysteresis gap in the ODE (u⁺ − u⁻) corresponds to the Storm intensity window (S\_min, S\_max) in Cube dynamics: entry into Storm requires exceeding u⁺, while recovery requires dropping below u⁻ — and the gap between these thresholds is the structural memory that prevents oscillatory switching.
+
+**Practical AI governance implication:** The single-agent-to-multi-agent transition documented in industry (§7 Empirical Confirmation) is a Cube Domination process: monolithic LLMs fragment into specialized agents (planner, executor, verifier, safety), and the dominant coordination frame that emerges is not any individual agent but the orchestration protocol (API contracts, tool schemas, workflow definitions). This explains why AI governance investment flows primarily toward orchestration infrastructure rather than individual model capability.
+
+### 32.9 Falsification Conditions (from Parent Framework)
 
 **F1 (Expandability without Abstention).** If sustained X(t) ≥ X(0) with U(t) = 0, Theorem 1 is falsified. *ODE test: simulate with d forced to immediate convergence; check long-term Φ stability.*
 
@@ -2215,7 +2540,7 @@ dfg_v4c/
 ## Metadata
 
 - **Title**: From Call Centers to Neurons: Hierarchical Classification, Fractal Learning, and Attractor Escape
-- **Keywords**: attractor dynamics, bistability, hysteresis, saddle-node bifurcation, silent criticality, lock budget inequality, DDD correction protocol, attention amplification, fractal governance, multi-agent coordination, ODE regime dynamics, neurodegenerative extension, revival trajectories, mutual-reference coupling, governance scaling law, Lyapunov stability, mean-field reduction, agentic governance, neural criticality, self-organized criticality
+- **Keywords**: attractor dynamics, bistability, hysteresis, saddle-node bifurcation, silent criticality, lock budget inequality, DDD correction protocol, attention amplification, fractal governance, multi-agent coordination, ODE regime dynamics, neurodegenerative extension, revival trajectories, mutual-reference coupling, governance scaling law, Lyapunov stability, mean-field reduction, agentic governance, neural criticality, self-organized criticality, cube domination, coordinate frame dynamics, star hierarchy, collapse-aversion, scale-invariant governance constant, optimal storm window, single-agent differentiation threshold
 - **Framework**: Deficit-Fractal Governance (DFG) — companion ODE formalization
 - **Component Theories Referenced**: VST, RT, RBIT, NAT, GRT, TLG
 - **Companion Documents**: *Fractal Governance and Constraint-Limited Scaling in Complex Adaptive Intelligence Systems* (parent framework), V4c Simulation Report
@@ -2224,8 +2549,9 @@ dfg_v4c/
 
 ---
 
-*Document version: 0.7-draft*
+*Document version: 0.8-draft*
 *Last updated: March 2026*
+*Changelog v0.8: Added §7.5 Cube Domination: Coordinate Frame Dynamics and Multi-Dimensional Governance — full formalization of coordinate frame collapse, star hierarchy competitive selection, collapse-aversion term, optimal Storm window with differentiation coupling (S\*(K) = ηG(K)/2b), scale-invariant governance constant κ(K), four-regime phase diagram, silent fragmentation mechanism with measurement distortion model, fractal self-similarity of Cube cycle, single-agent inevitable differentiation theorem (n\_split = 2√(τ/λc̄)), and 6 testable predictions (P-CD1 through P-CD6). Added §32.8 Cube Domination and the Governance Scaling Architecture — DFG phase mapping, dependence dynamics, S-equation connection, ODE dual-attractor correspondence, and practical AI governance implications. Updated keywords and metadata.*
 *Changelog v0.7: Added §7 Empirical Confirmation subsection (multi-agent transition, Gartner 1,445% inquiry surge, O(n²) governance scaling). Added §24 Operational Validation mapping DDD stages to V4c compassion policy (κ↓/bridge/fatigue → Defocus/Decouple/Diversity with empirical confirmation table). Added §30 Simulation Validation (V4c figures cross-referenced). Added Testable Prediction 11 (topology-level containment sufficiency, confirmed at 94.8%). Added Theoretical Significance item 21 (operational validation via compassion policy). Updated version metadata.*
 *Changelog v0.6: Added Lyapunov candidate V = ln Φ with formal DDD dissipation proof (§14). Expanded Silent Criticality (§20) with empirical parallels from neural criticality (Yaghoubi et al. 2024, Sugimoto et al. 2025, Sederberg et al. 2024) and agentic AI governance (AIGN 2025). Strengthened §32.1 positioning with MFG bifurcation theory (Rezaei Lori & Grover 2024), agentic governance gap empirics, and neural criticality literature. Added Testable Predictions 8–10 (attention-shortened silent phase, topology-dependent criticality, governance scaling pressure). Expanded References with 8 recent works (2022–2025). Added MSC classification and cross-validation status to Metadata.*
 *Changelog v0.5: Added §8.5 (mutual-reference coupling, S-equation, 4 levers, time-scale separation), expanded Testable Predictions (5–7), §32 DFG Framework Integration (positioning, storm-recovery unity, boundary-first governance, co-regulation, RBIT/RT/NAT/GRT/TLG correspondences, ILMI/κ dual attractor, deficit mechanism, 7-phase lifecycle, falsification conditions F1–F5), Reader Guide with DFG mapping table, References, Metadata.*
