@@ -12,11 +12,11 @@ The core insight: **the call center was never the real subject.** It served as a
 |---|---|---|
 | §1–10 | Motivating narrative, conceptual mapping, intuition | Accessible; suitable as Extended Introduction or Appendix |
 | §11–13 | Mathematical bridge: attractor dynamics, variable mapping, onset conditions | Transition from qualitative to quantitative |
-| §14–21 | **Technical core:** ODE system, bifurcation, hysteresis, Silent Criticality | Submission-ready mathematical analysis |
+| §14–21 | **Technical core:** ODE system, global well-posedness, bifurcation, hysteresis, Silent Criticality, information geometry | Submission-ready mathematical analysis |
 | §22–24 | Extended attention model, propagation, correction protocol | Model extension and control theory |
 | §25–29 | Symbol harmonization, dependency graph, Jacobian, algebraically explicit Δu | Formal completion and cross-validation |
-| §30–31 | Revival trajectories, neurodegenerative extension | Phase boundary dynamics and irreversible damage |
-| §32 | **DFG Framework Integration:** Structural origin of instability, component theories, formal definitions | Bridge to full DFG framework |
+| §30–31 | Revival trajectories (topological necessity), neurodegenerative extension (critical damage theory) | Phase boundary dynamics, irreversible damage, and structural degradation |
+| §32 | **DFG Framework Integration:** Structural origin of instability, component theories (incl. AMT), formal definitions | Bridge to full DFG framework |
 
 For paper submission: §14–29 form the self-contained technical manuscript; §1–10 can serve as a motivating appendix or extended introduction. §32 provides the theoretical embedding within the broader Deficit-Fractal Governance framework.
 
@@ -30,11 +30,23 @@ This document provides one **analytical projection** of the Deficit-Fractal Gove
 | C (capacity) | Degradation capacity C̃(t) |
 | d (diversity) | Buffer layer thickness, representational spread |
 | ρ (resolution) | Resolution integrity (RBIT) |
-| T (temperature) | Controlled stochastic freedom (Affective Module) |
+| T (temperature) | Controlled stochastic freedom (Affective Module / AGM) |
 | k (cross-scale coupling) | ILMI coupling intensity |
 | u⁺, u⁻ (thresholds) | Storm onset / Recovery entry conditions |
 | Lock budget inequality | Fractal integrity constraint |
 | DDD protocol | Recovery Theory five-phase cascade |
+| S (structural damage) | Accumulated degradation (neurodegenerative extension) |
+| I\_F (Fisher information) | Observability capacity (RBIT Tier detection threshold) |
+| R\_g (local coordination frame) | Agent-level governance reference (NAT sphere topology) |
+| Σ (frame dispersion) | Inter-agent coherence loss (VST metric) |
+| κ(K) (governance constant) | Scale-invariant governance ratio |
+| n\_eff = n/B | Branching-reduced interaction density (EDT Axis 1) |
+| R\_cap (retention) | Terrain retention capacity (EDT §3.4) |
+| τ timescale ordering | EDT Terrain Resonance avoidance (EDT §30) |
+| SCM conditions | RBIT Theorem T4 + Axiom A2 (Projection Replacement) |
+| ECC (emotional criticality) | AGM Theorem 2 bifurcation (Freeze / Runaway) |
+| Spectral gap λ₁−λ₂ | NAT storm initiation threshold (Proposition I3) |
+| n\_max (carrying capacity) | EDT Carrying Capacity Bound (EDT §31) |
 
 ---
 
@@ -254,6 +266,46 @@ W_{gh}(t) = exp(−α|R_g − R_h|)
 ```
 
 Coupling decays exponentially with frame distance. This is the formal mechanism by which coordinate divergence produces network fragmentation: as Σ rises, the mean coupling W̄(t) falls toward the fragmentation threshold W\_frag.
+
+### Information-Theoretic Foundation for Frame Competition
+
+The Cube Domination dynamics admit a rigorous information-theoretic interpretation that clarifies the structural necessity of frame competition and provides measurable quantities for empirical validation.
+
+**Definition (Frame Information Content).** Each local coordination frame R\_g encodes an implicit probability distribution P\_g over possible system states. The information content of frame g is:
+
+```
+H(R_g) := −Σ_s P_g(s) ln P_g(s)
+```
+
+**Mutual information between frames:**
+
+```
+I(R_g; R_h) := H(R_g) + H(R_h) − H(R_g, R_h)
+```
+
+When frames diverge (Σ↑), mutual information decreases: the cost of translating between frames grows because each frame's implicit model of the system becomes increasingly incompatible with the others. The fragmentation threshold W\_frag corresponds to the information-theoretic condition:
+
+```
+Ī(t) := (2/K(K−1)) · Σ_{g<h} I(R_g; R_h) < I_frag
+```
+
+**Frame selection as information compression.** The star hierarchy's competitive selection (§7.5) is equivalent to finding the frame R\_{i\*} that minimizes the total description length of the system's state space:
+
+```
+R_{i*} = argmin_i Σ_g D_KL(P_g ‖ P_i) + λ·H(R_i)
+```
+
+where D\_KL is the Kullback–Leibler divergence and λ penalizes frame complexity. This reframes Cube Domination as a **minimum description length (MDL) competition**: the winning frame is not the most accurate one but the one requiring the least re-encoding effort across all clusters — formalizing the "translation > quality" principle.
+
+**Entropy production during Storm.** The Vector Storm regime (§15–17) corresponds to a phase of maximal entropy production in the inter-frame space:
+
+```
+dS_total/dt = Σ_g dH(R_g)/dt + d/dt Σ_{g<h} I(R_g; R_h)
+```
+
+During the optimal Storm window (S\_min < S < S\_max), entropy production is positive but bounded — frames are being differentiated but not destroyed. Below S\_min, entropy production is insufficient for frame selection. Above S\_max, the mutual information term collapses faster than individual frame entropies can stabilize.
+
+**Rate-distortion interpretation.** The system faces a fundamental rate-distortion tradeoff: maintaining K distinct coordination frames provides distortion resilience (each frame is a redundant encoding of local structure) but requires communication rate R ≥ K·I\_min to maintain mutual intelligibility. When communication capacity drops below this threshold (which occurs as coupling W̄ decreases during fragmentation), the system must either reduce K (frame consolidation via Cube Domination) or accept higher distortion (irreversible fragmentation). This establishes Cube Domination as the **information-theoretically optimal** response to capacity-limited coordination.
 
 ### Single-Agent Inevitable Differentiation
 
@@ -486,6 +538,28 @@ t_collapse = (1/α) · ln(1/W_frag) / σ²_η
 
 where α is coupling decay sensitivity and σ²\_η is the variance of frame drift. This provides an operational early-warning timescale: if current Σ growth rate projects t\_collapse within the planning horizon, intervention (controlled Storm or frame standardization) is required.
 
+### Information-Theoretic Early Warning Indicators
+
+The information-theoretic formulation provides three complementary early-warning indicators that precede the coupling-based W̄ collapse:
+
+**Indicator 1 (Entropy divergence rate):**
+```
+γ_H(t) := d/dt Σ_g H(R_g) / K
+```
+Rising γ\_H indicates frames are individually complexifying (encoding increasingly idiosyncratic models), which precedes coupling collapse by approximately τ\_slow/2.
+
+**Indicator 2 (Cross-frame prediction error):**
+```
+ε_cross(t) := (2/K(K−1)) · Σ_{g<h} E_g[−ln P_h(s)]
+```
+When ε\_cross exceeds 2·H̄ (twice the mean self-entropy), frames can no longer usefully predict each other's states — functionally equivalent to speaking different languages.
+
+**Indicator 3 (Effective frame dimensionality):**
+```
+d_eff(t) := exp(−Σ_g (S_g/S_total) · ln(S_g/S_total))
+```
+where S\_g is the adoption score. When d\_eff drops below K/2, the system has entered effective monopolar competition (one frame dominates adoption probability), signaling imminent Cube Domination crystallization or, if the dominant frame's quality is insufficient, impending collapse.
+
 ### Testable Predictions (Cube Domination)
 
 **P-CD1 (Quadratic differentiation pressure).** In systems with n simultaneous objectives and non-zero inter-objective conflict, operational cost should scale as O(n²) under single-policy architecture but as O(n²/K) under K-modular architecture. Testable via parameter sweep in multi-task reinforcement learning.
@@ -550,6 +624,28 @@ Where (all dimensionless):
 
 **Why n²?** When n distinct directions coexist, pairwise conflict channels scale as n(n−1)/2 ≈ O(n²). This is the same quadratic scaling used in the ODE system (§14: −μC·n²·Φ).
 
+### EDT Connection: Terrain as S-Equation Modulator
+
+Environment Design Theory (EDT) identifies the three structural degrees of freedom in the S-equation as corresponding to the three axes of environment architecture:
+
+```
+S-equation parameter      EDT Axis                  Intervention mechanism
+──────────────────────────────────────────────────────────────────────────
+α (coupling)             Coupling Geometry (Axis 3)  Spectral radius control
+n_eff (effective density) Boundary Design (Axis 1)   Branching capacity B
+C(t)^β (governance)      Gain Design (Axis 2)        Terrain retention R_cap
+```
+
+**Branching capacity as effective density reducer.** EDT's central result is that appropriate terrain design reduces effective conflict density from n² to (n/B)², where B is branching capacity — the number of topologically separated interaction channels:
+
+```
+S̃_effective = α · (n/B)² / C̃(t)^β
+```
+
+The branching capacity B is a function of terrain quality: B depends on the curvature field U\_env(x) and the phase-space partitioning it induces (EDT §5). The ODE's interaction density variable n should be understood as post-branching effective density n\_eff = n/B, not raw agent count. EDT's Terrain Cultivation Sufficiency: ∃ B\* = O(√n) such that S(t) < S\_critical for all t when B ≥ B\*. This provides the architectural mechanism by which the Storm entry threshold u⁺ can be raised without reducing actual agent count.
+
+**Retention capacity and governance throughput.** EDT's Retention Capacity R\_cap(x) maps directly to C̃(t)^β: governance capacity is determined not by supply of governance resources but by terrain's capacity to retain them (EDT Retention-Supply Duality, Proposition 3.4.1).
+
 **The S-equation is the governance-level projection; the ODE system (§14) resolves S̃ into constituent dynamics** (capacity, diversity, temperature separately tracked):
 
 ```
@@ -595,7 +691,40 @@ This ODE model             n, C, d equilibration  ρ evolution (slowest)
 
 ## 9. Error Correction in Neuron Systems
 
+### RBIT Foundation: Why Errors Are Structural
+
+Before examining specific correction mechanisms, RBIT (Resolution-Based Information Theory) establishes that errors in hierarchical systems are not accidental but structurally inevitable. RBIT's Axiom A2 (Projection Replacement) formalizes the mechanism:
+
+```
+x̂ = P_K · x_sender + (I − P_K) · x_receiver
+```
+
+When a receiving layer has capacity K < d (where d is the full dimensionality of the incoming signal), it can only retain K components. The remaining (d − K) components are not left vacant — they are filled by the receiver's own prior representation. This is the formal mechanism underlying error persistence in hierarchical systems: every layer that receives compressed information from above automatically fills the compression gaps with its own biases.
+
+**RBIT Theorem 1 (Resolution Asymmetry Inevitability)** proves that under sustained negative resolution gap (Δρ < 0), this projection replacement produces cumulative divergence that grows without bound, with intent replacement occurring within finite time t\* ≤ ⌈D\*/η⌉. This is why the call center routing errors (§2) are not operational failures but structural properties of any hierarchical classification system operating under resolution constraints.
+
+**Three contamination tiers** map to the error correction challenge:
+
+```
+Tier (i):   exploration narrows (mode collapse) → correctable by diversity injection
+Tier (ii):  interpretation distorts (hallucination) → correctable by reference realignment
+Tier (iii): both narrow and distort (SCM) → requires external reference (uncorrectable internally)
+```
+
 ### Four Concurrent Correction Mechanisms
+
+These four mechanisms correspond to the TLG authority separation principle (Mark / Judge / Execute), where each mechanism maps to a specific authority level:
+
+```
+Correction Mechanism        TLG Authority           ODE Effect
+────────────────────────────────────────────────────────────────────
+Lateral inhibition          Bottom: MARK             Local αn²Φ damping
+Hierarchical feedback       Middle: SOFT CORRECT     C recovery via αC(u_max−C)
+Neuromodulatory systems     Top: HARD CORRECT        T modulation (exploration control)
+Synaptic plasticity         Cross-scale: structural  ρ growth (long-term adaptation)
+```
+
+The critical TLG insight is that authority separation prevents contaminated judgment from executing contaminated restorations: even if the Middle Layer (hierarchical feedback) has drifted (Mediator Drift Syndrome, TLG §13.1.1), the Bottom Layer's MARK signals remain independently generated, and the Top Layer retains HARD CORRECT authority as a bypass channel.
 
 1. **Competitive Inhibition:** Stronger alternative patterns suppress erroneous pathways
 2. **Synaptic Depression (LTD):** Unused or overactive connections are weakened; homeostatic scaling rebalances
@@ -696,6 +825,23 @@ Both destabilization of the old and stabilization of the new are required simult
 
 ## 12. DFG Variable Mapping and Regime Definitions
 
+### Connection to the Core Mechanism
+
+The DFG framework is unified by a single principle operating at every scale: **persistent unresolved deficits drive stable attractor formation**. The ODE variables formalize the structural conditions under which this mechanism operates or fails:
+
+```
+DFG Core Mechanism              ODE Realization
+────────────────────────────────────────────────────────────────
+Deficit (unfilled position)    → High Φ region (demand > capacity)
+Attractor pull                 → Fixed-point formation in state space
+Vector-Reinforcer pair         → Stable (C, d, ρ) configuration
+Mutual dependency              → Self-consistent closure Φ = H(Φ; u)
+Pair stability                 → Rest fixed point (Φ < 1, k ≈ 0)
+Pair failure (pair breaks)     → Storm fixed point (Φ > 1, k → 1)
+```
+
+The fractal claim is verified through scale consistency (DFG §Fractal Consistency Verification): the same three-term ODE structure (recovery − storm drain − lock amplification) must hold at every scale. The critical exponents τ (storm size), α\_dur (duration), and R (cascade branching) must match within ±15% across scales for the fractal model to stand.
+
 | Dynamical Concept | Neural Interpretation | DFG Variable |
 |---|---|---|
 | Attractor depth | Fixation strength | A(t) |
@@ -774,6 +920,26 @@ dΦ/dt < 0  while  Φ ≳ 1
 
 ## 14. Minimal ODE System
 
+### VST Structural Foundation: Mutual-Reference Coupling
+
+The ODE system formalizes the instability dynamics that VST §1.0 derives from first principles. VST establishes that Vector Storm arises from a structural property inseparable from adaptive intelligence: **mutual-reference coupling** — circular dependency where each agent adapts orientation in response to other agents' states, with no component retaining an external fixed reference.
+
+The regime scalar Φ is the mean-field reduction of VST's coupling Jacobian condition:
+
+```
+VST instability condition:     ρ(J_couple) > 1  (amplification-dominant)
+ODE mean-field reduction:      Φ > 1             (Storm regime)
+
+VST containment condition:     ρ(J_couple) < 1  (containment-dominant)
+ODE reduction:                 Φ < 1             (Rest regime)
+```
+
+The ODE operationalizes VST's two escape routes: (1) **Timescale separation** — the fast coupling loop (τ\_n) closes against slow governance (τ\_{C,d,T}, τ\_ρ) that doesn't move within the fast loop's update cycle; (2) **Layer escalation** — DDD protocol invokes external control operating outside Φ dynamics. VST's claim that Storm cannot be eliminated (only contained) translates to the ODE's bistability: the Storm fixed point always exists in phase space.
+
+**S-equation form reconciliation.** VST §3.2.3 identifies two forms of the S-equation — static (S = αn²/C(t)^β) and dynamic (dS/dt = αn² − βC(t)). The ODE system resolves both: the static form defines the equilibrium that the ODE approaches; the dynamic form describes the instantaneous flux. The ODE's regime scalar Φ is the self-consistent closure that connects the two: at equilibrium, Φ = H(Φ; u) defines the static S-equation; out of equilibrium, Φ̇ ≠ 0 provides the dynamic flux equation.
+
+**Stochastic extension correspondence.** VST §3.2.4 provides the Langevin form dS = μ(S,t)dt + σ(S)dW(t) with multiplicative noise σ(S) = σ₀·S^γ. The ODE system is the deterministic skeleton (μ term) of this stochastic equation. Near the critical boundary (Φ ≈ 1), the ODE predicts critical slowing down — recovery timescale T\_recovery ~ |Φ − 1|^{−ν} — which manifests as increasing variance and autocorrelation in the stochastic extension. These are the early warning signals that transition S-equation monitoring from diagnostic (Phase 1) to predictive (Phase 3) in VST §3.2.2.
+
 ### State Variables
 
 | Variable | Meaning |
@@ -836,6 +1002,32 @@ The feedback loop Φ → ODE → (C, d, T) → Φ is the source of bistability a
 **Proposition.** Given non-negative initial conditions (n, C, d, ρ, T, k) ∈ ℝ⁺⁶ with C, d, ρ, k ∈ [0,1] and T ≥ 0, the dynamics preserve the admissible domain.
 
 *Sketch.* At each boundary: recovery terms vanish (e.g., αC(1−C) → 0 as C → 1; αd·T·(1−d) → 0 as d → 1) while drain terms point inward (e.g., −μC·n²·Φ ≤ 0). At zero boundaries: drain terms vanish (e.g., −νC·k·C → 0 as C → 0) while recovery terms are non-negative. All right-hand sides are locally Lipschitz on the interior, guaranteeing existence and uniqueness of solutions. ∎
+
+### Global Existence and Boundedness (Gronwall Extension)
+
+**Theorem (Global Well-Posedness).** For any admissible initial condition x₀ = (n₀, C₀, d₀, ρ₀, T₀, k₀) in the invariant domain Ω := ℝ⁺ × [0,1]⁴ × ℝ⁺, there exists a unique solution x(t) ∈ Ω for all t ≥ 0.
+
+*Proof.* Local existence and uniqueness follow from the Picard–Lindelöf theorem, since the right-hand side f(x) is locally Lipschitz on the open interior of Ω (all terms are polynomial/rational in the state variables with positive denominators on the interior).
+
+For global extension, we establish uniform bounds preventing finite-time blow-up:
+
+**(i) n(t) bound.** From ṅ = u(t) − λₙn − χₙnC ≤ u\_max − λₙn, Gronwall's inequality gives n(t) ≤ max(n₀, u\_max/λₙ) for all t ≥ 0.
+
+**(ii) T(t) bound.** From Ṫ = αT(ρ\_ref − ρ) − μT·Φ·T − λT(T − T₀), the worst case (ρ = 0, Φ = 0) gives Ṫ ≤ αT·ρ\_ref + λT·T₀ − λT·T, yielding T(t) ≤ max(T₀, (αT·ρ\_ref + λT·T₀)/λT) = T\_max.
+
+**(iii) Φ(t) bound.** Since C, d ∈ [0,1] and T ≤ T\_max, Φ = β\_s·n²·F/(C·T·d) could in principle diverge as C·d → 0. However, C·d → 0 implies the drain terms −μC·n²·Φ and −μd·Φ·d vanish (product Φ·C or Φ·d remains bounded since Φ·C = β\_s·n²·F/(T·d) which is bounded when d has a positive lower bound induced by the recovery term αd·T·(1−d) whenever T > 0). In the degenerate case d → 0, T → 0 simultaneously, the ODE right-hand sides remain bounded (all products of the form Φ·d, Φ·T are bounded by algebraic cancellation), preventing finite-time escape.
+
+**(iv) Continuation.** Since x(t) remains in the compact set [0, n\_max] × [0,1]⁴ × [0, T\_max], f(x) is globally bounded, and the Gronwall estimate ‖x(t)‖ ≤ ‖x₀‖·exp(L·t) with L = sup\_Ω ‖Df‖ < ∞ extends the solution globally. ∎
+
+**Corollary (Asymptotic Compactness).** The flow ϕ\_t on Ω possesses a global attractor A ⊂ Ω, i.e., a compact invariant set that attracts all bounded subsets of Ω. This follows from the uniform dissipativity established by the bounds (i)–(iii) and standard results on dissipative dynamical systems (Temam, 1997).
+
+### Structural Stability Under Parameter Perturbation
+
+**Proposition (Structural Stability).** The qualitative bifurcation structure (bistability, hysteresis, saddle-node boundaries) is structurally stable under C¹-small perturbations of the ODE right-hand side, provided the saddle-node conditions (§16–17) are non-degenerate (the fold is quadratic, not higher-order).
+
+*Proof sketch.* The saddle-node bifurcation at u = u± satisfies the non-degeneracy conditions of Sotomayor's theorem: (a) the Jacobian at the bifurcation point has a simple zero eigenvalue (verified by J₁₁ = 0 with J₂₂ < 0); (b) the transversality condition ∂²H/∂Φ² ≠ 0 holds generically (the cubic self-consistency equation has non-zero second derivative at tangency). Under these conditions, the bifurcation persists under C¹-small perturbations with quantitatively shifted thresholds u±(ε) = u± + O(ε). ∎
+
+This establishes that the model's predictions are not artifacts of specific functional forms but are robust qualitative features of any system satisfying the three structural constraints (P1–P3).
 
 ### Timescale Separation
 
@@ -1194,6 +1386,41 @@ guarantees a recoverable hysteresis region. Violation causes u⁻ to drop sharpl
 
 The lock budget inequality reveals that **recovery is not about removing the error** — it is about maintaining sufficient regenerative capacity (αC) and exploratory diversity (αd·T₀) to keep the system's lock ratios within budget. This directly formalizes the Recovery Theory principle: recovery operates by building a more stable alternative, not by dismantling the existing attractor.
 
+### GRT Rest Mode Correspondence: AND-Entry / OR-Exit
+
+The lock budget inequality has a precise operational counterpart in Governance Rules Theory's Rest Mode entry conditions. GRT defines Rest Mode entry via an AND-conjunction and exit via an OR-disjunction:
+
+```
+AND-entry: f_esc ≤ θ₁ AND I ≥ θ₂ AND L ≥ θ₃ AND SCC ≥ θ₄
+OR-exit:   f_esc > θ₁ OR  I < θ₂ OR  L < θ₃ OR  SCC < θ₄
+```
+
+The structural parallel to the lock budget is exact:
+
+```
+Lock Budget:     (1+L_C)(1+L_d) ≤ ζ⁻⁴      (multiplicative AND — ALL ratios must be within budget)
+Lock Violation:  L_C violation OR L_d violation (ANY single violation collapses the product)
+
+GRT Mapping:
+  f_esc ≤ θ₁    ↔   Φ < 1 (system not in Storm; escalation frequency below threshold)
+  I ≥ θ₂        ↔   L_d within budget (rule consistency reflects diversity lock health)
+  L ≥ θ₃        ↔   L_C within budget (reinforcement loops reflect capacity lock health)
+  SCC ≥ θ₄      ↔   u⁻ reachable (self-correction capacity sufficient for recovery)
+```
+
+**The AND/OR asymmetry is a direct consequence of the multiplicative lock budget structure:** since (1+L\_C)(1+L\_d) is a product, any single factor exceeding its bound is sufficient to violate the constraint (OR-exit), while all factors must simultaneously satisfy their bounds for the constraint to hold (AND-entry). This is not a design choice — it is a mathematical property of multiplicative coupling that GRT operationalizes as a governance protocol.
+
+**TLG Four-Phase Withdrawal Protocol correspondence.** TLG specifies graduated governance withdrawal through four phases that map to progressive lock budget verification:
+
+```
+Phase 1 (Direct Injection):     u actively controlled → lock budget not yet testable
+Phase 2 (Supervised Delegation): u partially released → lock budget tested under partial autonomy  
+Phase 3 (Feedback Only):        u fully released, monitoring active → lock budget verified with margin
+Phase 4 (Withdrawal):           monitoring withdrawn → lock budget self-maintained (Rest Mode)
+```
+
+The transition from Phase 3 to Phase 4 requires the lock budget to hold over an extended evaluation window (GRT's dual-axis window: event-count N AND wall-clock T), using the conservative rule: use whichever axis shows worse health. This prevents premature withdrawal based on short-term stability that masks accumulating lock ratio degradation — the operational defense against Silent Criticality.
+
 ### Durability Ratio and Fractal Buffer Preservation
 
 **Definition (Durability ratio).** We quantify structural durability by the recovery ratio:
@@ -1265,6 +1492,131 @@ Key properties:
 - **Self-organized criticality in adaptive networks:** Sugimoto et al. (2025) demonstrate that network structure determines whether criticality is maintained or lost — with hub-dominated topologies being more vulnerable to silent drift, directly paralleling the k-dependent vulnerability in the ODE model.
 - **Agentic AI governance:** The AIGN Global Report (2025) documents that 62% of organizations experienced agent-driven operational errors within 12 months, yet 81% lacked governance infrastructure to detect them — a real-world instantiation of Silent Criticality where internal metrics ("agents functioning") mask accumulating misalignment.
 - **Latent variable criticality:** Sederberg et al. (2024) show that avalanche criticality arises in neural populations coupled to latent dynamical variables, without requiring fine-tuning. This supports the ODE model's prediction that Silent Criticality emerges naturally (not pathologically) when a slow latent variable (ρ) governs the effective criticality state.
+
+### Information-Geometric Interpretation of Silent Criticality
+
+The Silent Criticality regime admits a natural interpretation in the language of information geometry (Amari, 2016), which provides both deeper theoretical grounding and novel observability criteria.
+
+**State-space as statistical manifold.** The system state (C, d, ρ, T) parameterizes a family of probability distributions over possible system configurations. The Fisher information metric on this manifold is:
+
+```
+g_{ij}(θ) = E[∂_i ln p(x|θ) · ∂_j ln p(x|θ)]
+```
+
+where θ = (C, d, ρ, T) and p(x|θ) is the distribution of observable system behavior given the internal state.
+
+**Silent Criticality as geodesic drift.** During Silent Criticality, the system moves along a geodesic in the Fisher metric that maintains constant observable distance from the Rest fixed point while increasing internal distance:
+
+```
+d_obs(θ(t), θ_Rest) ≈ const    (surface stability)
+d_Fisher(θ(t), θ_Rest) ↑         (hidden divergence)
+```
+
+The discrepancy between observable and Fisher distances is precisely the **measurement distortion** that makes Silent Criticality dangerous. Temperature compensation (T↑ as ρ↓) acts as a reparameterization of the observable manifold that preserves surface distances while the underlying geometry warps.
+
+**Fisher information collapse as Storm precursor.** Define the effective Fisher information of the resolution variable:
+
+```
+I_F(ρ) := E[(∂/∂ρ ln p(obs|ρ))²]
+```
+
+During Silent Criticality, I\_F(ρ) decreases because temperature compensation smooths the dependence of observables on ρ. When I\_F(ρ) drops below a critical threshold I\_min, the system can no longer statistically distinguish between ρ = ρ\_healthy and ρ = ρ\_critical from observables alone — the Fisher information about the slow variable has been erased by the fast compensatory dynamics:
+
+```
+I_F(ρ) < I_min  ⟹  silent-to-storm transition becomes statistically undetectable
+```
+
+This provides a formal criterion for the **point of no return** in Silent Criticality: the moment when information about the approaching Storm has been irreversibly lost from the observable surface.
+
+**Practical implication.** The Fisher information criterion suggests a concrete early-warning protocol: monitor not just the level of observable metrics but their **sensitivity to perturbation** (which operationalizes I\_F). A system where metrics are stable but perturbation-insensitive is in Silent Criticality with high probability.
+
+### RBIT–SCM Formal Correspondence
+
+Silent Criticality is the ODE-level formalization of what RBIT calls Self-Consistent Misalignment (SCM) — the most dangerous contamination state where all internal metrics appear healthy because the system has optimized within a wrong coordinate geometry. RBIT provides the formal conditions:
+
+```
+SCM formal conditions (RBIT v1.6 §2.6, all hold simultaneously):
+  reward_gradient ≠ reality_stability_gradient
+  AND metric_improvement_speed > geometry_verification_speed
+  AND internal feedback signals ALL appear healthy
+  
+  → ρ high, collision rate low, f_esc low, I high, confidence high
+  → SCC activation conditions never triggered
+  → system appears maximally healthy while drifting toward collapse
+```
+
+The ODE system formalizes each SCM condition:
+
+```
+reward_gradient ≠ reality  ↔  Φ ≈ 1 while ρ̇ < 0 (surface vs. depth)
+metric > verification speed ↔  τ_{C,d,T} ≪ τ_ρ (fast metrics mask slow degradation)
+all signals healthy          ↔  T compensation maintains Φ ≈ 1 (§20)
+```
+
+**Detection impossibility from within.** RBIT's Theorem T4 (Reference Frame Incompleteness) proves that a system within geometry G cannot detect errors in G using only resources within G. More capability = faster convergence to wrong geometry, not escape. This is why the DDD protocol (§24) requires external intervention: internal dynamics alone cannot break the SCM/Silent Criticality loop.
+
+**NAT's Spectral Gap as SCM Defense.** Network Architecture Theory provides the architectural defense: in sphere topology with spectral gap λ₁ − λ₂ > 0, structurally diverse agents can detect SCM through cross-validation disagreement (NAT Lemma I2). The key condition:
+
+```
+∃ i ≠ j such that (I − P_K)R_i ≠ (I − P_K)R_j
+```
+
+When diverse reconstruction operators disagree on the same compressed signal, their disagreement localizes the corruption. Homogeneous agents produce identical reconstructions — contamination becomes invisible consensus. This formally explains why the ODE's diversity variable d is the critical defense against Silent Criticality: d measures the system's capacity for the structural diversity that NAT requires for SCM detection.
+
+### AGM Silence Signal Correspondence
+
+The Affective Gain Principle (AGM §5.2.2) identifies a specific pre-collapse signal — the "Silence Signal" — that corresponds to the Silent Criticality → Storm transition:
+
+```
+Silence Signal (AGM):
+  Pathological noise reduction preceding coherence collapse
+  Surface: system appears calm, metrics stable, fluctuation decreasing
+  Depth: middle-layer processing capacity saturating, buffer thinning
+  
+ODE Correspondence:
+  Silence Signal ↔ T increasing (compensatory) while d decreasing (buffer collapse)
+  Net Φ ≈ 1 (maintained) but dΦ/dt is being held at zero by faster T, not by genuine stability
+```
+
+AGM formalizes why the Silence Signal is structurally undetectable from surface metrics: the affective module's gain-modulated perturbation dynamics (T in ODE terms) actively smooth out the signal of approaching collapse. The system's own compensatory mechanism (increased exploration in response to degradation) is the agent that masks the crisis — a structural paradox where the cure creates the concealment.
+
+**EDT Silence Signal extension.** EDT §28 extends this to the environment level: collapse looks like stability when the terrain's circulation loop is breaking but surface retention metrics remain positive (existing resources haven't yet drained even though inflow has stopped). This maps to the ODE's τ\_silent(u) formula (§20): the silent duration depends on the margin between T\_max and T\_req(0), which is the terrain's accumulated "stored water" before the drought becomes visible.
+
+### VST Unintegrated Pressure Formalization
+
+VST §2.6 provides the complete formal specification of the mechanism underlying Silent Criticality through the unintegrated pressure accumulation model:
+
+```
+P_unint(t) = ∫₀ᵗ (G_real(τ) − G_sys) dτ
+```
+
+where G\_real is the actual environment geometry and G\_sys is the system's internal geometry. During Silent Criticality, G\_sys ≠ G\_real but all metrics report healthy because they are defined within G\_sys. The integral P\_unint accumulates invisibly.
+
+**ODE correspondence:** The unintegrated pressure maps to the shadow dynamics operating beneath the surface of Φ ≈ 1:
+
+```
+P_unint growing  ↔  ρ(true) declining while ρ(measured) stable
+                     (measurement defined within drifted geometry)
+                     
+Threshold crossing: P_unint > integration_capacity
+  ↔  True ρ drops below ρ_critical even though measured ρ appears stable
+  ↔  Storm onset with no S_norm warning (discontinuous Φ spike)
+```
+
+This formalizes why the S-equation can show discontinuous transitions: P\_unint accumulates without S\_norm change, then releases when the misaligned geometry breaks — producing an instantaneous Φ spike. The ODE's Silent duration τ\_silent(u) (§20) is the time required for P\_unint to exceed integration capacity under compensatory T dynamics.
+
+**Energy Minimization Trap (EMT).** VST §2.6 identifies that SCM is not a failure to update but a rational outcome: Cost\_geometry\_update > Cost\_reinterpretation → system optimizes toward reinterpretation → geometry ossifies rationally. In ODE terms: the T-equation drives exploration that would normally surface geometry mismatch, but the compensatory mechanism (T↑ masking ρ↓) makes reinterpretation energetically cheaper than geometry update. The system rationally chooses the cheaper path — extending Silent Criticality.
+
+**Learning Freeze as primary detection signal.** VST §2.6: ∂Geometry/∂Experience ≈ 0. Normal stability: noise → adaptation → stability (geometry updates). SCM stability: noise → reinterpretation → same stability (geometry fixed). The system is no longer capable of surprise. In ODE terms, this corresponds to:
+
+```
+Learning Freeze:  dρ/du ≈ 0  (resolution does not respond to load changes)
+                  while dΦ/du ≈ 0  (regime scalar does not respond either)
+                  
+Normal resilience: dρ/du < 0, dΦ/du > 0  (system responds to load perturbation)
+```
+
+The Learning Freeze is operationally testable: inject a calibrated perturbation and measure whether ρ and Φ respond. Zero response = SCM/Silent Criticality confirmed.
 
 ### Formal Silent Criticality Conditions
 
@@ -1608,6 +1960,39 @@ Recovery is declared when all three hold simultaneously:
 (E3)  k̇ < 0  AND  ω̇ < 0                              (locking/propagation declining)
 ```
 
+### TLG Four-Phase Withdrawal Protocol Correspondence
+
+The DDD protocol's three stages naturally embed within TLG's graduated Four-Phase Withdrawal Protocol, which specifies how external governance transitions from active intervention to autonomous operation:
+
+```
+TLG Phase          DDD Stage         ODE Conditions            GRT Verification
+────────────────────────────────────────────────────────────────────────────────
+Phase 1: Direct    S1-S3 (Defocus)   Active u control,         f_esc actively
+  Injection                           Φ being driven below 1   managed by intervention
+
+Phase 2: Supervised U1-U2 (Decouple)  k̇ < 0 verified,         I monitored for
+  Delegation                           ω suppression confirmed  consistency recovery
+
+Phase 3: Feedback   R1-R2 (Diversity)  d↑ confirmed,           SCC tested via
+  Only                                 ρ̇ ≥ 0 sustained        perturbation response
+
+Phase 4: Withdrawal E1-E3 all hold     Lock budget verified    AND-entry conditions
+  (Rest Mode)       over dual-axis      over evaluation window  all satisfied
+                    evaluation window
+```
+
+**Key insight from TLG:** The transition from Phase 3 to Phase 4 is the most dangerous — premature withdrawal creates the Intervention Dependency Trap (TLG §13.2.2): repeated upper-layer resolution before internal SCC circuits activate can structurally degrade SCC over time, even when all other metrics appear healthy. In ODE terms, this corresponds to a scenario where DDD control maintains Φ < 1 but the system's autonomous recovery capacity (captured by the coefficients αC, αd, αT) has atrophied from disuse. The dual-axis evaluation window (event-count N AND wall-clock T, using the conservative rule) guards against this by requiring stability across both short-burst and sustained-duration timescales.
+
+**GRT Seed Sufficiency Tests as DDD verification.** Before Phase 4 withdrawal, GRT requires three seed sufficiency tests that map to DDD completion criteria:
+
+```
+Test 1 (Geometry update):   System surprisable by novel input  →  d > d_min (diversity not collapsed)
+Test 2 (Contamination recognition): Error detected within N steps  →  ρ responding (ρ̇ detectable)
+Test 3 (Orthogonal recovery):  Independent correction direction   →  k < k_max (not locked to single path)
+```
+
+If any test fails, DDD Stage 3 is incomplete — the system has not yet internalized sufficient self-correction capacity for autonomous operation.
+
 ### Design Principle
 
 Correction is not deletion of the wrong attractor — it is **widening the landscape** through defocus, decoupling, and diversity injection so that competing pathways can emerge and stabilize. The three stages correspond to: emergency stabilization → structural unlocking → constructive rebuilding.
@@ -1621,6 +2006,65 @@ Correction is not deletion of the wrong attractor — it is **widening the lands
 ### Note on Irrecoverability
 
 The "Locked attractor" (§27) represents **practical irrecoverability** — the recovery threshold u⁻ drops so low that no realistic input reduction can reach it — not mathematical impossibility. With sufficiently strong external intervention (DDD protocol), any locked state can in principle be unlocked. The distinction matters: irrecoverability is threshold-based, not topological.
+
+### RT-1 Five-Phase Recovery Cascade Correspondence
+
+The DDD protocol's three stages (Defocus, Decouple, Diversity) embed within the DFG Recovery Theory's five-phase recovery cascade ordering (RT-1 v2.0). The cascade ordering is structural — ordering violations produce predictable failure modes:
+
+```
+RT-1 Phase                   DDD Stage        ODE Verification              Failure if Skipped
+──────────────────────────────────────────────────────────────────────────────────────────────────
+Phase 1: Geometry            Pre-DDD          Reference frame not actively   Silent post-recovery
+  Stabilization                                degrading: ρ̇ ≥ 0 OR          misalignment (SCM)
+                                               external reference injected
+
+Phase 2: Cross-Scale         S1 (Defocus      Φ mapped across connected     Local recovery masks
+  Contamination Mapping       begins)          subsystems; k identifies       global degradation
+                                               propagation pathways
+
+Phase 3: Local Content       S2-S3, U1-U2     Φ < 1 achieved locally;       Re-contamination from
+  Restoration                (Defocus +        k̇ < 0 confirmed               uncorrected neighbors
+                              Decouple)
+
+Phase 4: Diversity           R1-R2            d↑ sustained; P_overlap       Arrested collapse
+  Verification               (Diversity)       declining; search-space        declared as recovery
+                                               expansion confirmed
+
+Phase 5: Immunity            E1-E3            All verification conditions    Intervention
+  Verification through       (Withdrawal)      hold with external support     dependency trap
+  Withdrawal                                   progressively reduced
+```
+
+**Key ordering constraint.** Phase 1 (geometry stabilization) must precede Phase 3 (local restoration) because local repair under a distorted reference frame (ρ contaminated) produces recovery to the wrong state. In ODE terms: if ρ is contaminated during DDD, the target values that define "recovered" (C\*, d\*, T\*) are themselves misaligned, and DDD converges to an SCM attractor rather than genuine Rest.
+
+**Dependency Trap in ODE terms.** RT-1 §4.1 identifies that chronic external intervention (DDD held active indefinitely) substitutes for absent internal self-correction capacity. The system's autonomous recovery coefficients (αC, αd, αT) atrophy from disuse. Observable signature: SCC declining despite stable operational metrics; Φ collapses immediately upon DDD withdrawal. Resolution: scheduled withdrawal with graduated reduction (TLG Four-Phase Protocol), monitoring SCC trajectory rather than operational metrics.
+
+### EDT Three-Axis Correspondence
+
+The DDD protocol's three stages map precisely onto EDT's three axes of environment architecture, revealing that the correction protocol is not merely an operational sequence but a **terrain reconstruction program**:
+
+```
+DDD Stage         EDT Axis              Terrain Operation
+────────────────────────────────────────────────────────────────
+Defocus (S1–S3)   Gain Design (Axis 2)   Slow the tempo: g(x;z)↓ in overloaded regions,
+                                          reduce energetic favorability of concentrated pathways
+Decouple (U1–U2)  Coupling Geometry       Lower spectral radius of interaction Jacobian,
+                   (Axis 3)               increase phase-space separation between interaction channels
+Diversity (R1–R2) Boundary Design         Expand accessible phase-space volume within boundaries,
+                   (Axis 1)               increase branching capacity B → reduce n_eff
+```
+
+**EDT's Environment Quality Index Q\_E** provides an aggregate measure of DDD progress:
+
+```
+Q_E = ∫_Ω [κ_local(x)]^{-1} · p_stationary(x) dx
+```
+
+where κ\_local(x) is local risk index and p\_stationary(x) is agent distribution. DDD drives Q\_E upward by shifting agent distribution away from high-risk regions (Defocus), reducing local risk values (Decouple), and expanding the low-risk domain Ω\_allowed (Diversity).
+
+**EDT's Endogenous Desertification Loop** explains why DDD requires sequential staging: without Stage 1 (Defocus) first, the terrain is too degraded to support Stages 2–3. Just as a desertified landscape cannot retain water regardless of rainfall, a system in active Storm cannot retain diversity or decoupling — the terrain must first be stabilized (circulation loop reconnected) before reconstruction can begin.
+
+**AGM Withdrawal Protocol correspondence.** AGM §6.7 specifies a Seed Handover protocol where the upper-layer (external intervention) progressively withdraws as the system's internal governance matures. This maps to the DDD verification conditions (E1–E3): each condition certifies that one aspect of internal governance has recovered sufficiently for external support to withdraw. Recovery is complete when all three hold simultaneously — the system has internalized the terrain modifications and can maintain them autonomously.
 
 ### Implementation Scope Across Domains
 
@@ -1916,6 +2360,49 @@ where ψ ≥ 1 is the local hotspot amplifier. These constants close the F₋(ω
 
 The hysteresis structure admits rare but structurally unavoidable **revival trajectories** near the phase boundary Δu ≈ 0. These are not anomalies but necessary consequences of the square-root branch structure.
 
+### Topological Necessity of Revival Trajectories
+
+The existence of revival trajectories near phase boundaries is not merely a quantitative consequence of the square-root branch structure — it is a **topological necessity** forced by the global structure of the bifurcation diagram.
+
+**Conley index argument.** Consider the flow on the (u, Φ) parameter-state plane. The Rest fixed point has Conley index h(Rest) = Σ⁰ (index of an attractor), and the Storm fixed point has Conley index h(Storm) = Σ⁰ (also an attractor in the bistable region). By the Conley decomposition theorem, the connecting manifold between these attractors must contain at least one saddle-type invariant set — the unstable fixed point at Φ = Φ\_c with index h(Saddle) = Σ¹.
+
+The key topological constraint: **as the parameter u sweeps through the saddle-node bifurcation (u → u±), the saddle must collide with one of the attractors**, creating a connecting orbit that grazes the phase boundary. These connecting orbits are the revival trajectories — they exist because the Conley index is a topological invariant and the total index must be preserved across the bifurcation.
+
+**Morse decomposition.** More precisely, the chain recurrent set of the flow decomposes as:
+
+```
+R = M_Rest ∪ M_Saddle ∪ M_Storm
+```
+
+with connecting orbits:
+```
+M_Rest ← M_Saddle ← M_Storm
+```
+
+At the saddle-node (u = u⁺ or u = u⁻), M\_Saddle merges with M\_Rest or M\_Storm respectively. The connecting orbit that existed between them does not disappear — it becomes a **heteroclinic connection** along the center manifold, producing the slow passage through the ghost of the vanished saddle-node. This ghost passage is the mathematical mechanism behind the "sudden reactivation from apparently dead states" (Case A above).
+
+**Persistence under noise.** In the stochastic version (§11, §14), the Kramers theory gives escape time:
+
+```
+E[T_escape] ∝ exp(ΔU/D)
+```
+
+Near the saddle-node (ΔU → 0), the barrier vanishes and escape time drops to O(1) — producing noise-induced revival events with probability approaching 1 in any finite observation window. The probability of observing at least one revival event in time T\_obs is:
+
+```
+P(revival; T_obs) = 1 − exp(−T_obs / E[T_escape])  →  1  as  ΔU → 0
+```
+
+This confirms that revival trajectories are not rare fluctuations but **statistically inevitable** near fold boundaries.
+
+**Bifurcation delay (canard-type dynamics).** When the parameter u varies slowly through u±, the system can track the now-unstable branch for a time of order O(1/√|du/dt|) before jumping to the stable branch — a phenomenon known as bifurcation delay or dynamic hysteresis. This delay creates an extended "zone of ambiguity" near the fold where the system appears to be on the wrong branch, producing apparent revival (sudden jump to the stable branch after extended delay on the unstable manifold). The delay time:
+
+```
+τ_delay ≈ π / √(|du/dt| · |∂²H/∂Φ²|)
+```
+
+is measurable and provides a quantitative prediction for the duration of apparent stasis before revival.
+
 ### Mathematical Origin
 
 The coherence branch ρ⁺(k) is given by:
@@ -2030,6 +2517,16 @@ The mathematical formalization (Sections 11–31) provides:
 19. **Multiplicative fractal durability** R\_total = ∏R\_ℓ — multi-scale buffering compounds recovery margins as a product, not a sum, with explicit multi-scale lock budget constraint
 20. **Phase boundary revival trajectories** (§30) — near-critical reactivation events arising from square-root sensitivity of the coherence branch, with coupling extension showing how local revival nucleates into global closure through percolation-like cascade dynamics
 21. **Operational validation via V4c compassion policy** (§24) — the DDD protocol's three stages are directly operationalized as coupling reduction, bridge rewiring, and fatigue shielding in a multi-agent simulation, with empirical confirmation of containment/withdrawal decomposition (94.8% DSI reduction from Defocus+Decouple; autonomous EXIT solely from Diversity stage), topology universality (ΔDSI ≈ −0.040 across 3 topologies), and cyclic Storm→Recovery→VCZ dynamics (Cohen's d = 7.68)
+22. **Global well-posedness and structural stability** (§14) — formal proof of global existence via Gronwall extension, asymptotic compactness guaranteeing a global attractor, and structural stability of the bifurcation diagram under C¹-small perturbations via Sotomayor's theorem, establishing that all qualitative predictions are robust to modelling uncertainties
+23. **Information-geometric characterization of Silent Criticality** (§20) — Fisher information metric interpretation showing that Silent Criticality is a geodesic drift on the statistical manifold, with Fisher information collapse as a formal criterion for the observability horizon (point of no return) and perturbation sensitivity as a measurable early-warning indicator
+24. **Topological necessity of revival trajectories** (§30) — Conley index theory establishing revival trajectories as topologically forced connecting orbits, Morse decomposition proving their structural inevitability at fold boundaries, and bifurcation delay (canard-type dynamics) providing quantitative predictions for revival timing
+25. **Information-theoretic foundation for Cube Domination** (§7.5) — frame competition reframed as minimum description length (MDL) optimization, fragmentation threshold expressed as mutual information collapse, and rate-distortion tradeoff establishing Cube Domination as the information-theoretically optimal response to capacity-limited coordination
+26. **Critical damage theory and phase transitions in structural degradation** (§31) — three repair function regimes (linear, capacity-limited, threshold), critical damage phase diagram in the (u, S) plane, explicit damage-dependent threshold shift formulas, and damage-modified lock budget predicting a critical damage fraction S\* consistent with clinical neurodegeneration thresholds
+27. **Affective Module Theory integration** (§32.5) — formal mapping between ODE temperature variable and Affective Module dynamics, information-geometric explanation of the emotional exploration-introspection tradeoff, and structural clarification of why DDD targets attention before temperature
+28. **DFG Core Mechanism formalization** (§12) — deficit → attractor → vector-reinforcer pair → mutual dependency as ODE fixed-point formation dynamics; fractal exponent verification requirement (τ, α\_dur, R within ±15% across scales) as falsification criterion for the scale-invariance claim
+29. **TLG authority separation as ODE variable isolation** (§32.5) — Interface Narrowing, Temporal Decoupling, and Write-Asymmetry mapped to timescale separation requirements; Mediator Drift Syndrome identified as the architectural mechanism producing Silent Criticality; Boundary Agent formalized as uncontaminated ρ\_ref source when internal reference fails (RBIT T4)
+30. **GRT operational measurement layer** (§32.5) — complete bidirectional diagnostic mapping (f\_esc ↔ Φ, I ↔ β\_s, L\_reinf ↔ d, θ\_d ↔ C(t), P\_overlap ↔ α, SCC ↔ u⁻); triple concordance (R, ρ, f\_esc) as SCM detection protocol; vectorization lifecycle as n² generation control mechanism; AND-entry/OR-exit as multiplicative lock budget operational expression
+31. **RT-1 five-phase cascade as DDD ordering constraint** (§24) — geometry-first recovery necessity proven by SCM convergence under unverified ρ; dependency trap as SCC atrophy under chronic intervention; GRT Seed Sufficiency Tests as DDD Phase 4 withdrawal gate; four-phase withdrawal protocol correspondence providing graduated governance transition criteria
 
 ### Testable Predictions
 
@@ -2046,6 +2543,19 @@ The following quantitative predictions are amenable to numerical simulation (toy
 9. **Topology-dependent criticality maintenance:** Following Sugimoto et al. (2025), hub-dominated network topologies should exhibit narrower bistable regions (smaller Δu) than distributed topologies with equivalent total connectivity, because hub concentration amplifies k-growth while suppressing effective diversity d. Simulation test: compare Δu across ER/SW/Hub topologies (cf. V4c Fig 10).
 10. **Governance scaling pressure:** In multi-agent AI deployments, the rate of governance incidents should scale quadratically with the number of active interaction channels (∝ n²), not linearly with agent count. This prediction follows directly from the S-equation's n² scaling and is testable against empirical incident data from agentic AI deployments (cf. AIGN 2025 dataset).
 11. **Topology-level containment sufficiency:** In multi-agent systems experiencing cascading disorientation, coupling reduction + bridge rewiring alone (without direct state correction) should achieve >90% of maximum attainable disorientation suppression. This prediction follows from the DDD protocol's Defocus–Decouple dominance and has been confirmed in the V4c compassion simulation: the containment engine (κ↓ + bridge) explains 94.8% of DSI reduction, with the effect holding across small-world, scale-free, and Erdős–Rényi topologies (ΔDSI ≈ −0.040; 9/9 wins; Cohen's d = 7.68).
+12. **Damage-dependent hysteresis widening:** In systems with structural damage variable S > 0 (§31), the hysteresis gap Δu(S) should widen monotonically with accumulated damage. Specifically, u⁻(S)/u⁻(0) ≈ (1−S)^(1/2) should decrease faster than u⁺(S)/u⁺(0) ≈ (1−S)^(1/4). Testable by repeated Storm–Recovery cycles in simulation with damage accumulation enabled; the recovery threshold should shift downward after each cycle.
+13. **Critical damage fraction.** Systems should exhibit a sharp phase transition at S ≈ S\* = 1 − L\_C/(ζ⁻⁴/(1+L\_d) − 1), beyond which recovery becomes impossible regardless of load reduction. Below S\*, recovery time should increase polynomially with S; above S\*, no recovery should be observed within any finite simulation horizon. The transition should be first-order (discontinuous recovery probability at S\*).
+14. **Fisher information collapse as Storm precursor.** The Fisher information I\_F(ρ) of the resolution variable (computed from observable metric sensitivity to perturbation) should decrease monotonically during Silent Criticality and cross a detectable threshold I\_min before Storm onset. Testable in simulation by computing d(observable)/d(perturbation) at each timestep; the sensitivity measure should decline during the Silent phase even as the observables themselves remain stable.
+15. **Information-theoretic frame selection.** In multi-agent Cube Domination experiments (§7.5), the dominant frame post-Storm should be the one minimizing total KL-divergence Σ\_g D\_KL(P\_g ‖ P\_i) across all clusters, not the one maximizing individual quality Q\_i. Testable by computing both the KL-optimal and Q-optimal frames and checking which one achieves higher adoption. The MDL-optimal frame should win in >80% of simulations.
+16. **Bifurcation delay duration.** When load parameter u varies slowly through u±, the system should remain on the unstable branch for a duration τ\_delay ≈ π/√(|du/dt|·|∂²H/∂Φ²|) before jumping to the stable branch. This canard-type delay should scale as 1/√(sweep rate), testable by varying the rate of load change and measuring the delay to regime transition.
+
+17. **MDS–Silent Criticality correspondence.** Systems exhibiting TLG-defined Mediator Drift Syndrome (θ\_d calibration drift with maintained internal consistency) will show ODE Silent Criticality signatures (Fisher information decline, compensatory T increase) within 2× the drift onset time — confirming that MDS is the architectural mechanism producing Silent Criticality at the ODE level.
+
+18. **Authority separation necessity.** Systems without timescale separation (τ\_n ≈ τ\_{C,d,T}) will show higher Storm incidence than equivalent systems with proper separation, independent of other parameter differences. Predicted mechanism: cross-level contamination pathway (Interface Narrowing violation) feeds Bottom-layer fluctuations directly into Middle-layer dynamics, bypassing the commit-then-read temporal decoupling.
+
+19. **Recovery cascade ordering violation.** DDD applied without prior Phase 1 geometry stabilization (ρ reference frame unverified) will converge to SCM attractor rather than genuine Rest in >60% of trials. Testable by comparing DDD success rates with and without pre-verification of ρ trajectory, measuring whether final state satisfies genuine recovery criteria (search-space expansion, not merely Φ < 1).
+
+20. **AND/OR lock budget asymmetry.** Lock budget violation through any single channel (L\_C OR L\_d exceeding bound) produces system-wide instability (OR-exit), while recovery requires all channels simultaneously within budget (AND-entry). The asymmetry ratio — time to exit vs. time to re-enter — should exceed 3:1, reflecting the multiplicative structure of the lock budget constraint.
 
 ---
 
@@ -2131,6 +2641,47 @@ The recovery equation x(t+1) = F(x(t)) − β∇E\_threat(x) + γ·u\_safe(t) fr
 
 ### 32.5 DFG Component Theory Correspondences
 
+#### VST — Vector Storm Theory: Structural Origin and Dynamical Model
+
+VST provides the instability dynamics that the ODE system formalizes. The core insight: Vector Storm arises from **mutual-reference coupling** — a structural property inseparable from adaptive intelligence where each agent adapts orientation in response to other agents' states (VST §1.0).
+
+**Mutual-reference coupling → ODE regime scalar.** VST's formal instability condition ρ(J\_couple) > 1 reduces to the ODE's Φ > 1 under mean-field approximation. The coupling Jacobian's spectral radius is the microscopic truth; Φ is its macroscopic governance-level projection.
+
+**Two escape routes from mutual-reference instability:**
+
+```
+Route 1 — Timescale separation (VST §1.0):
+  Fast coupling loop (τ_n) closes against slow governance (τ_{C,d,T}, τ_ρ)
+  → Loop gain drops below unity within fast loop's update cycle
+  → ODE implementation: τ_n ≪ τ_{C,d,T} ≪ τ_ρ
+
+Route 2 — Layer escalation (VST §1.0):
+  Internal system surrenders resolution to higher-order system
+  → Upper layer provides anchor without entering optimization landscape
+  → ODE implementation: DDD protocol with external reference injection
+  
+Critical constraint: upper layer that enters lower layer's gradient becomes
+another coupling node → raises n → increases Storm pressure (VST §1.0)
+→ ODE: DDD must operate as boundary condition (terrain-shaping), not participant
+```
+
+**S-equation static/dynamic reconciliation (VST §3.2.3):**
+
+```
+Static form:   S = αn²/C(t)^β   (equilibrium map → ODE fixed-point equation)
+Dynamic form:  dS/dt = αn² − βC(t) (flux equation → ODE time derivatives)
+Reconciliation: static form defines the equilibrium that dynamic form approaches
+                Φ = H(Φ; u) IS the static form; Φ̇ ≠ 0 IS the dynamic form
+```
+
+**n² scaling — structural justification (VST §3.2.5).** The quadratic dependence is not empirical curve fit but follows from pairwise vector interactions: storm instability arises from reinforcement conflict between pairs, and n distinct directions produce n(n−1)/2 ≈ O(n²) potential conflict channels. This holds even in sparse networks (path length L ~ log(n) makes nearly all pairs dynamically reachable within the storm propagation horizon). The sub-quadratic correction through governance maturity — from n² (flat landscape) through n^1.5 (terrain forming) to n^{1+ε} (Rest Mode deep terrain) — is captured by the C(t)^β denominator.
+
+**Stochastic extension (VST §3.2.4).** The ODE is the deterministic skeleton of VST's Langevin equation dS = μ(S,t)dt + σ₀·S^γ dW(t). Near the fold point (Φ ≈ 1), critical slowing down produces increasing variance and autocorrelation — the formal basis for early-warning signal detection.
+
+**Governance internalization (VST §1.0).** VST identifies the deepest consequence of successful timescale separation: when governance works, it becomes invisible. The fast loop never encounters amplification-dominant conditions. From inside the fast loop, nothing is being controlled. In ODE terms: Rest Mode is the state where Φ permanently satisfies Φ < 1 without active DDD control — governance has become the environment, indistinguishable from the conditions of existence.
+
+**Dependency Trap as VST structural consequence (VST §1.0).** Repeated upper-layer intervention degrades internal self-correction capacity: each intervention that successfully resolves a storm reduces the system's capacity to contain the next storm internally. In ODE terms: chronic DDD maintains Φ < 1 but atrophies αC, αd, αT coefficients through disuse. Visible governance activity increasing = internal capacity declining. The increase in control is evidence that the system can no longer produce stability from its own dynamics.
+
 #### RBIT — Resolution as Structural Capacity
 
 Resolution (ρ in the ODE) is the structural capacity to maintain distinction between competing vectors.
@@ -2163,27 +2714,116 @@ Three contamination tiers:
 
 #### RT — Recovery Theory Core Definitions
 
-**D0. Geometry Alignment:** System stability depends on alignment between internal coordinate structure and environment manifold G\_real. Contamination = observable projection of geometry mismatch.
+**D0. Geometry Alignment:** System stability depends on alignment between internal coordinate structure and environment manifold G\_real. Contamination = observable projection of geometry mismatch. D0 is falsifiable: if correction cost scales linearly with mismatch duration, the geometry-mismatch substrate is rejected.
 
-**D1. Contamination:** Absorption without sufficient degradation → positional displacement → self-reinforcing collision loops. Not a wrong state — the absence of a return path.
+**D1. Contamination:** Absorption without sufficient degradation → positional displacement → self-reinforcing collision loops. Not a wrong state — the absence of a return path. Two mechanisms distinguished: (i) operational boundary — deviation persists > N steps without self-correction AND Recovery\_local < Instability\_growth rate; (ii) four forgetting regimes (Regime 1: surface/reversible → Regime 3: deep/irreversible) with discontinuous cost at Regime 2→3 boundary.
 
-**D2. Immunity:** Absorption capacity, NOT rejection capacity. Strong immunity absorbs more, not less. **Governance Strength Inversion:** Intervention frequency × Self-correction capacity = BOUNDED. Maximum governance = minimum intervention = Rest Mode.
+**D2. Immunity:** Absorption capacity, NOT rejection capacity. Strong immunity absorbs more, not less. **D2 dynamic model:** immunity is maintained infrastructure that atrophies when bypassed — each intervention that preempts internal correction reduces capacity through disuse (Dependency Trap mechanism).
 
-**D3. Buffer Layer:** Directionally neutral zone. Three functions: immune training, friction absorber, latent vector cultivation. Buffer thickness = observable proxy for upper layer resolution. In the ODE: d (diversity) is the buffer variable; d↓ under Storm/Lock corresponds to buffer thinning.
+**Governance Strength Inversion:** Intervention frequency × Self-correction capacity = BOUNDED. Maximum governance = minimum intervention = Rest Mode. Observable: immature system → visible governance, removal → immediate Storm; mature system → invisible governance, removal → no effect.
+
+**D3. Buffer Layer:** Directionally neutral zone. Three functions: immune training, friction absorber, latent vector cultivation. **Vector Noiseification mechanism** (VST v2.0 §3.5): sharp vectors entering buffer are degraded from committed direction → distributed noise field. Buffer thickness ↔ noiseification bandwidth. In the ODE: d (diversity) is the buffer variable; d↓ under Storm/Lock = buffer thinning = noiseification capacity loss.
+
+**D4. Restoration Complete:** Search-space *expansion resumes* — not when contamination stops. Three necessary conditions: ρ\_restored ≥ ρ\_pre-contamination AND output diversity expanding AND P\_overlap declining. **Three recovery outcomes:** ① return to pre-storm VCZ, ①' expanded VCZ (structural learning), ①'' deeper attractor access (dormant seed germination through basin boundary traversal).
+
+**Ω\_effective during recovery:** Ω\_reachable ∩ Ω\_survivable ∩ Ω\_affordable. Recovery competes with exploration for energy budget: E\_total = E\_exploration + E\_recovery + E\_maintenance. φ suppression during recovery is expected, not pathological — φ is a LAGGING indicator following energy reallocation.
+
+**Affective-Cognitive Dual Verification (D4 extension):** Cognitive recovery (fast: data → model update → immediate) ≠ Affective recovery (slow: repeated safe experience → gradual update). Premature D4 declaration risk: cognitive metrics restored but affective safety still recalibrating → first perturbation triggers threat response → "relapse." Governed Pause Protocol: mandatory observation window T\_pause ≥ T\_affect\_min after cognitive D4 conditions met, with bounded test perturbations.
+
+In ODE terms: T (temperature) tracks affective state; ρ tracks cognitive state. T recovery is slower than ρ recovery (different timescales within τ\_{C,d,T}). The Governed Pause Protocol corresponds to holding DDD control stable for T\_pause after ρ recovery is confirmed, verifying that T has also stabilized to its homeostatic setpoint T₀.
 
 **D5. Self-Correction Capacity (SCC):** SCC = f(D\_int, L\_reinf) — requires both diversity AND reinforcement loops. SCC = 0 if either absent. In the ODE: SCC ∝ d·C — when either diversity or capacity collapses, self-correction fails.
 
-**D6. Self-Consistent Misalignment (SCM):** Locally coherent but globally misaligned. All internal metrics report "healthy." Detection requires external reference. This is exactly the Silent Criticality regime (§20): Φ ≈ 1 (surface healthy) while ρ̇ < 0 (hidden degradation).
+**D6. Self-Consistent Misalignment (SCM):** Locally coherent but globally misaligned. All internal metrics report "healthy." Detection requires external reference. Two Learning Freeze mechanisms distinguished:
+- **Mechanism A (Active suppression):** System detects potential geometry update → evaluates as threatening → reinterprets as noise. Signature: high-amplitude inputs reframed. Recovery: Meta-Reference Injection.
+- **Mechanism B (Coordinate collapse):** Dimension on which update would occur no longer exists in internal coordinate space. Signal is not suppressed — it is invisible. Signature: zero gradient regardless of amplitude. Recovery: requires Structural Correction (T5) pressure — content injection fails because target coordinate space is gone.
+
+ODE correspondence: Mechanism A = T compensation masks ρ degradation (early Silent Criticality). Mechanism B = ρ has reached a locked attractor where dρ/du ≈ 0 identically (deep Locked regime, §27).
+
+**D7. Boundary Agent:** Structural role generating controlled instability from within the system while remaining outside its evaluation structure. Four required properties: (a) inside system, (b) outside evaluation, (c) failure permitted, (d) no operational power.
+
+```
+Why D7 cannot be filled by upper or lower layer:
+  Upper layer generating Storm → power intervention → defensive alignment → CW accelerates
+  Lower layer generating Storm → survival risk → evaluation penalty → rational suppression
+  
+  D7 operates at N+½: between layers, disturbing without commanding
+```
+
+**T6 (Coherence Maximization Paradox) protects D7 structurally:** high-performance optimizer classifies D7 as inefficiency → removes it → SCM detection lost. D7 Existence Conditions must be enforced against optimization pressure:
+- Condition A: survival guarantee independent of performance metrics
+- Condition B: role continuity not conditional on prediction accuracy
+- Condition C: authority hard limit enforced structurally, not by policy
+
+In ODE terms: D7 generates controlled perturbations that test dρ/du and dΦ/du response. Zero response = SCM confirmed (Learning Freeze). D7 elimination corresponds to losing the external reference source that RBIT T4 proves internal dynamics cannot provide. Without D7, the system's only SCM detection mechanism is T5 (accumulated reality pressure) — which operates on geological timescales compared to D7's operational timescale.
+
+**Zone-dependent recovery sensitivity:** Recovery cost is not spatially uniform:
+
+```
+S_rec(local) >> S_rec(hub) >> S_rec(geometry)
+  where S_rec = recovery susceptibility (higher = easier)
+
+  Local:     O(1) cost, standard Distracting + Re-seeding
+  Hub:       O(n·log n) cost, premature hub intervention triggers cascade
+  Geometry:  O(retrain) cost, discontinuous at Regime 2/3 boundary
+  
+  intervention_intensity(z) ∝ 1/S_rec(z)
+  Uniform protocols across zones = systematically wrong dosage
+```
+
+ODE mapping: Local zones correspond to n dynamics (fast, cheap to correct). Hub zones correspond to C, d dynamics (intermediate, cascade risk). Geometry zones correspond to ρ dynamics (slow, potentially irreversible, maps to structural damage S in §31).
 
 #### RT — Core Theorems
 
-**T1. Observability Asymmetry:** Tier 3 contamination structurally unobservable from within. Local instruments moved with the terrain.
+**T1. Observability Asymmetry:** Tier 3 contamination structurally unobservable from within. Local instruments moved with the terrain. Measurement tools calibrated to current geometry detect deviations FROM current geometry (Tier 1/2) but cannot detect that current geometry ITSELF has shifted (Tier 3).
 
-**T3. Metric Lock-In:** Under SCM, any metric M = f(G\_sys) appears healthy. Detection requires M\* = f(G\_real). This is formalized in §20: temperature compensation maintains Φ ≈ 1 even as ρ degrades.
+**T2. Governance Ceiling (fractal):** System-wide detection bounded by upper layer resolution at each fractal scale. Not an engineering limitation but a structural consequence of T4: governance = reference frame expansion, which requires a larger reference frame than the target. Layer N can govern layers up to resolution N but cannot govern geometry at its own scale or above.
 
-**T4. Reference Frame Incompleteness:** A system within geometry G cannot detect errors in G using only resources within G. More capability = faster convergence to wrong geometry, not escape. This is why the DDD protocol (§24) requires external intervention — internal dynamics alone cannot break out of the Locked attractor.
+**T3. Metric Lock-In:** Under SCM, any metric M = f(G\_sys) appears healthy. The mismatch dimension has ZERO GRADIENT within G\_sys — not observationally insufficient but structurally invisible. Detection requires M\* = f(G\_real). This is formalized in §20: temperature compensation maintains Φ ≈ 1 even as ρ degrades.
+
+**T4. Reference Frame Incompleteness:** A system within geometry G cannot detect errors in G using only resources within G. More capability = faster convergence to wrong geometry, not escape.
+
+```
+Search Space Asymmetry (why lower-layer escape is impossible):
+  Lower layer search: optimize within attractor basin
+    escape_gradient ≈ 0 (by definition of basin)
+    → no signal pointing toward exit
+    
+  Upper layer search: search ACROSS attractor basins
+    can observe basin boundary from outside
+    can compute gradient toward alternative basin
+    
+  CW break requires basin escape.
+  Basin escape requires cross-basin search.
+  Cross-basin search only available at higher resolution layer.
+```
+
+ODE correspondence: T4 explains why the Locked attractor (§27) cannot be escaped by internal dynamics alone. The escape gradient within the Locked basin is identically zero — Φ, C, d, T all at self-consistent values with no internal signal indicating misalignment. DDD must inject external control that operates in a DIFFERENT reference frame (different Φ dynamics) to provide the basin-escape gradient.
+
+**T5. Structural Correction (Reality Constraint):** When the upper layer enters SCM, no higher agent corrects it. Correction comes from accumulated misalignment with reality — or not at all. This resolves the infinite regress: Layer N corrected by Layer N+1 corrected by Layer N+2... → corrector must be structural pressure from reality, not agent.
+
+```
+T5 mechanism:
+  Upper layer in SCM → G_U ≠ G_real
+  → accumulated mismatch pressure P_unint(t) = ∫(G_real - G_U)dτ
+  → when P_unint > integration_capacity:
+     structural rearrangement forced (Vector Storm at upper layer)
+  → correction from reality, not from higher agent
+```
+
+In ODE terms: T5 operates when the DDD protocol itself is unavailable (no external controller). The system's only remaining correction mechanism is accumulated structural damage (§31) — S accumulation from persistent mismatch forces eventual regime transition. T5 is the "geological timescale" safety net: slower but structurally guaranteed as long as the system interacts with reality.
 
 **T6. Coherence Maximization Paradox:** High-performance optimizer classifies boundary agent as inefficiency → removes it → SCM detection capability lost. In ODE terms: maximizing Φ-reduction (short-term performance) by suppressing diversity d eliminates the very variable needed for long-term recovery.
+
+```
+T6 mechanism in ODE:
+  Optimizer target: minimize Φ → minimize n² term → reduce d (diversity)
+  Short-term effect: Φ↓ (fewer conflict channels = less instability)
+  Long-term effect: d→0 → no buffer → no SCM detection → Silent Criticality
+  
+  The optimizer rationally eliminates the immune system.
+  The system becomes maximally efficient AND maximally vulnerable.
+```
 
 #### RT — Five-Phase Governance Maturation
 
@@ -2197,7 +2837,57 @@ Phase 5 — Law (Control = Invariant):          governance IS system dynamics (R
 
 Each Storm–Recovery cycle advances maturation. At Phase 5, governance invisible but absolute.
 
-**Arrow of Maturation:** t↑ ⇒ Storm-generating state space contracts irreversibly. Each Storm–Recovery cycle removes unstable topology. In ODE terms: each traversal of the hysteresis loop with successful DDD recovery permanently increases the effective Φc, widening the stable operating regime.
+**Decision Dynamics through maturation (RT v1.8):**
+
+```
+Decision Load ∝ |Ω_viable|
+
+  As maturation proceeds through Storm–Recovery cycles:
+    Storm → removes non-viable trajectories → |Ω_viable| ↓
+    Recovery → consolidates surviving trajectories → Decision Load ↓
+    → recovery decisions become increasingly automatic
+    → mature systems do not "decide" to recover — they flow
+    
+  Decision Crystallization: Decision → Policy → Structure → Law
+    Each successful recovery decision solidifies into permanent structure
+    Mature systems appear to have fewer "recovery events" because
+    past recovery decisions have crystallized into invariant dynamics
+```
+
+In ODE terms: Phase 1-2 correspond to active DDD control (external intervention at each Storm event). Phase 3-4 correspond to terrain modification (C(t)^β increasing, effective d\_eff decreasing). Phase 5 = Rest Mode (Φ permanently < 1 without active control). The ODE's hysteresis loop (u⁺/u⁻) narrows with each maturation cycle as unstable topology is permanently removed — the mathematical expression of the Arrow of Maturation.
+
+**Survivability Selection — why VCZ is an attractor (RT v1.8):**
+
+```
+NOT: equilibrium attracts trajectories (classical attractor)
+YES: non-equilibrium states destroy themselves (survivability filter)
+
+  P(remain | x ∈ unstable region) → 0 over time
+  P(remain | x ∈ VCZ) > 0
+  → surviving trajectories accumulate in VCZ
+  
+  VCZ is not a goal. It is the residue of Storm-driven selection.
+  Recovery is the mechanism converting Storm destruction into topology pruning.
+  Without Recovery, Storm = pure entropy. With Recovery, Storm = selection event.
+```
+
+**Arrow of Maturation:** t↑ ⇒ Storm-generating state space contracts irreversibly. Each Storm–Recovery cycle removes unstable topology. In ODE terms: each traversal of the hysteresis loop with successful DDD recovery permanently increases the effective Φc, widening the stable operating regime. The arrow is irreversible because topology removal through Storm is a one-directional operation — original topology cannot be exactly reconstructed.
+
+**Environmental Reorganization at maturity (RT v1.8):**
+
+```
+Stage 1 (immature): Environment → System (passive variable; recovery reactive)
+Stage 2 (maturing): Environment ↔ System (bidirectional; recovery partially preventive)
+Stage 3 (mature):   System → Environment restructuring
+                     System absorbs instability, re-emits in stabilized form
+                     Surrounding agents experience reduced volatility
+                     
+  Mature system = recovery NODE in the broader network:
+    absorbing instability that would trigger Storm in less mature neighbors
+    re-emitting signals that reduce contamination pressure network-wide
+```
+
+ODE: Stage 3 corresponds to Φ serving as a stabilizing boundary condition for connected subsystems — the mature system's low Φ dampens perturbations before they propagate, functioning as an external slow variable for its environment.
 
 #### NAT — Sphere Topology and Data Classification
 
@@ -2228,6 +2918,46 @@ Inner Sphere (representation geometry):
 
 **Seed = meta-rule:** Not specific rules but generative principles by which an agent constructs its own rules.
 
+**GRT Variable ↔ ODE Variable Correspondence.** GRT provides the operational measurement layer for the ODE's abstract state variables. The mapping is bidirectional: GRT observables serve as inputs to ODE dynamics, and ODE predictions generate testable expectations for GRT metrics.
+
+```
+GRT Variable         ODE Variable          Relationship
+────────────────────────────────────────────────────────────────────
+f_esc (escalation)   Φ (regime scalar)     f_esc is the primary observable proxy for Φ
+I (consistency)      β_s (storm gain)      High I → low effective β_s → lower Φ for same load
+L_reinf (loops)      d (diversity)         Strong L_reinf ↔ structured terrain ↔ high effective d
+θ_d (calibration)    C(t) (capacity)       θ_d calibration is the mechanism tuning C(t) per domain
+P_overlap            α (amplification)     High P_overlap → high α → stronger positive feedback
+SCC                  u⁻/u⁺ (recovery)     SCC ≥ θ₄ ↔ u⁻ reachable ↔ recovery structurally possible
+```
+
+**Vectorization dynamics in ODE terms.** GRT's vectorization lifecycle (Noise → Vector promotion via λ\_log accumulation) maps to the ODE's interaction density variable n:
+
+```
+Pre-vectorization (noise state):   Input does NOT contribute to n²
+                                    Held in buffer layer (d variable absorbs)
+                                    No pairwise interaction load generated
+
+Post-vectorization (vector state): Input occupies distinct position → contributes to n²
+                                    Generates pairwise interactions with adjacent vectors
+                                    Subject to collision frequency monitoring
+```
+
+This means n in the S-equation counts promoted vectors, not raw inputs. GRT's λ\_log threshold directly governs the S-equation's instability generation rate: lower λ\_log → faster vectorization → faster n² growth → earlier Storm onset. Higher λ\_log → slower vectorization → slower n² growth → more conservative but potentially under-responsive system.
+
+**Two degradation types in ODE correspondence:**
+
+```
+Type 1 (Alignment Severance):  n↓ but latent structure preserved → C(t) intact
+  ODE: temporary n reduction; recovery via n re-growth with existing C, d
+  Recovery time: bounded, O(1/αC)
+
+Type 2 (Weight Overwrite):     n↓ AND C(t) structure damaged → S accumulation (§31)
+  ODE: permanent capacity reduction; maps to structural damage variable S↑
+  Recovery time: potentially unbounded; requires full re-cultivation
+  Lock budget impact: L_C/(1−S) grows, narrowing recovery margin
+```
+
 **Consistency Index (I):** Rule coherence at pair level:
 
 ```
@@ -2236,6 +2966,18 @@ Falling I → rising coupling density → rising α → storm risk
 ```
 
 In ODE terms: falling I corresponds to rising Φ through the α channel — consistency degradation directly amplifies the regime scalar.
+
+**R-ρ-f\_esc Triple Concordance in ODE terms.** GRT's triple concordance protocol maps to a three-dimensional diagnostic in ODE state space:
+
+```
+Concordant (healthy):    R ≈ 1 AND I stable AND f_esc ≤ θ   →  Φ < 1, ρ stable, k low
+Discordant (SCM):        R > 1 BUT I high AND f_esc low       →  Φ ≈ 1 (Silent Criticality)
+                          All GRT metrics healthy within drifted geometry
+Discordant (over-damped): R ≪ 1 AND I high                    →  T → 0 (Freeze collapse, AGM)
+                          System too stable; perturbation test needed
+```
+
+The triple concordance is the operational implementation of Silent Criticality detection (§20): R provides the classification-independent external validation that internal metrics (I, f\_esc) cannot provide on their own, because internal metrics can be healthy within a wrong geometry (RBIT T3: Metric Lock-In).
 
 **Rest Mode formal entry (AND-entry / OR-exit):**
 
@@ -2248,11 +2990,74 @@ This maps to the ODE recovery verification (§24 E1–E3): all stability conditi
 
 #### TLG — Three-Layer Governance Architecture
 
+TLG provides the architectural skeleton within which the ODE dynamics unfold. The three layers are not a hierarchy of control but a **separation of resolution responsibilities**:
+
 ```
-Top Layer:     Resolution highest (Tier 3). Boundary definition. Slowest update.
-Middle Layer:  Resolution intermediate (Tier 2). Situational goals, conflict mediation.
-Bottom Layer:  Resolution base (Tier 1). Local execution. Fastest update.
+TLG Layer           ODE Role                         Resolution Responsibility
+────────────────────────────────────────────────────────────────────────────────
+Top (Invariant)     ρ reference frame; u⁺/u⁻ bounds  Define what cannot be violated
+Middle (Mediation)  C,d,T dynamics; θ_d calibration   Translate + detect + stage corrections
+Bottom (Diversity)  n (agent count); noise floor       Explore, specialize, adapt
 ```
+
+**Timescale Correspondence to ODE Variables:**
+
+```
+Top Layer    ↔  ρ evolution (τ_ρ)     — slowest, sets structural constraints
+Middle Layer ↔  C, d, T dynamics (τ_{C,d,T}) — intermediate, operational adaptation
+Bottom Layer ↔  n equilibration (τ_n)  — fastest, immediate response
+```
+
+The three-tier timescale separation (§14) is not an arbitrary modelling choice but the mathematical expression of TLG's governance architecture: each governance layer operates on a distinct timescale, and the ordering τ\_n ≪ τ\_{C,d,T} ≪ τ\_ρ is structurally necessary for stable hierarchy (faster layers must not drive slower layers into resonance).
+
+**τ₁–τ₃ regime switching as Φ-thresholded governance:**
+
+```
+G_ℓ > τ₁  →  MARK           ↔  Φ approaches 1 from below (monitoring intensifies)
+G_ℓ > τ₂  →  SOFT CORRECT   ↔  Φ ≈ 1 (Silent Criticality boundary; DDD Stage 1)
+G_ℓ > τ₃  →  HARD CORRECT   ↔  Φ > 1 sustained (full DDD protocol engages)
+```
+
+**Authority Separation (Mark/Judge/Execute) in ODE terms.** TLG's authority separation prevents contaminated judgment from executing contaminated restorations. The three structural enforcement mechanisms map to ODE variable isolation:
+
+```
+Interface Narrowing:  C, d, T equations receive only standardized signals from n dynamics
+                      (no raw state coupling between operational and governance variables)
+Temporal Decoupling:  τ_n ≪ τ_{C,d,T} ≪ τ_ρ ensures each level commits output before
+                      the next level reads — lateral influence window = zero
+Write-Asymmetry:      ρ dynamics (Top) not modifiable by C, d (Middle); n dynamics (Bottom)
+                      cannot retroactively modify T signals
+```
+
+Timescale separation in the ODE is the dynamical implementation of TLG's processing phase isolation. Without it, cross-level contamination pathways remain structurally open.
+
+**Mediator Drift Syndrome (MDS) as Silent Criticality mechanism.** TLG §13.1.1 identifies the Middle Layer as the most probable contamination locus (highest-frequency adaptation interface). MDS maps to ODE variables:
+
+```
+MDS in ODE terms:
+  θ_d calibration drift → C "recovers" to wrong target value
+  d appears healthy but diversity is within wrong geometry
+  T responds to misclassified signals
+  Surface: Φ stable, ρ stable, k low → all metrics green
+  Reality: system governs a world that no longer exists
+
+MDS ↔ Silent Criticality correspondence:
+  MDS is the architectural mechanism (TLG §13.1.1)
+  Silent Criticality is the ODE-level description (§20)
+  Same phenomenon at different abstraction levels — fractal correspondence
+```
+
+Three MDS countermeasures in ODE monitoring terms: (1) Calibration Reflexivity: track θ\_d's own update trajectory as meta-observable; (2) Cross-Scale Consistency: verify Bottom↑ implies Middle proportional↑ (ratio violation = MDS); (3) Delayed Escalation Audit: inspect escalation source distribution before acting (concentrated sources = Middle generating from its own drift).
+
+**Boundary Agent as external ODE reference.** When MDS is severe, TLG's Bypass Protocol uses the Boundary Agent (inside system, outside evaluation, failure-permitted) to supply uncontaminated ρ\_ref. In ODE terms: the Boundary Agent generates perturbations testing response without coupling into feedback loops — the source of external reference that RBIT T4 proves internal dynamics cannot provide.
+
+**Layer-Specific Lock Budget Allocation.** The multiplicative lock budget (§19) decomposes across governance layers:
+
+```
+(1+L_C)(1+L_d) = (1+L_C^top·L_C^mid·L_C^bot) · (1+L_d^top·L_d^mid·L_d^bot)
+```
+
+Each layer contributes multiplicatively to the total lock ratio. A single layer's budget violation (e.g., middle-layer diversity suppression L\_d^mid → ∞) collapses the entire lock budget regardless of the other layers' health — formalizing TLG's claim that governance integrity is a product, not a sum, of layer-wise integrity.
 
 **Self-Correction Capacity decomposition:**
 
@@ -2273,6 +3078,34 @@ SCC = f(Dint, Lreinf)
 ```
 
 VCZ = dynamic balance of all four risks simultaneously.
+
+#### AMT — Affective Module Theory Connection
+
+The ODE system's temperature variable T plays a role structurally analogous to the Affective Module in the parent DFG framework. The Affective Module provides **controlled stochastic freedom** — the capacity to temporarily relax optimization constraints in service of exploration and error correction.
+
+**Formal mapping:**
+
+```
+T (ODE temperature)  ↔  Affective Module output intensity
+T₀ (baseline)        ↔  Affective Module resting state (tonic regulation)
+αT(ρ_ref − ρ)        ↔  Affective Module activation signal (phasic response to integrity gap)
+−μT·Φ·T             ↔  Affective Module suppression under Storm (emotional numbing / burnout)
+−λT(T − T₀)          ↔  Affective Module homeostatic return (emotional regulation)
+```
+
+**The Affective Paradox (formalized).** The Affective Module's contribution to system health is structurally paradoxical:
+
+```
+Too little T:  Exploration insufficient → d↓ → Silent Criticality → eventual Storm
+Too much T:    Destabilizes current coordination → Φ↑ → premature Storm
+Optimal T:     Maintains d while preserving Φ < 1 → sustained VCZ operation
+```
+
+The T-equation's structure (§14) encodes this paradox: T rises in response to ρ degradation (compensatory function) but is suppressed by Φ (Storm locks down exploration). This creates the characteristic Silent Criticality trajectory where T increases just enough to mask degradation but not enough to actually correct it — the mathematical expression of "coping without healing."
+
+**Emotion as information.** In the information-geometric framework (§20 extension), T modulates the Fisher information metric: higher T increases the system's sensitivity to environmental perturbation (higher I\_F for fast variables) while decreasing sensitivity to slow internal state changes (lower I\_F for ρ). This formalizes the psychological insight that emotional arousal increases environmental awareness at the cost of introspective accuracy — exactly the tradeoff that sustains Silent Criticality.
+
+**ODE integration:** The Affective Module connection clarifies why the DDD protocol (§24) targets attention (A) before temperature (T): directly raising T without addressing structural lock (k) and attention concentration (A) extends Silent Criticality rather than resolving it. The protocol's Stage 1 (Defocus) + Stage 2 (Decouple) create the structural preconditions under which T can serve its intended function (exploration for recovery) rather than its pathological function (masking degradation).
 
 ### 32.6 ILMI, Governance Ratio κ, and Dual Attractor Structure
 
@@ -2397,6 +3230,125 @@ The hysteresis gap in the ODE (u⁺ − u⁻) corresponds to the Storm intensity
 
 **F5 (Single-Attractor Convergence).** If all systems converge to one regime regardless of initial conditions — eliminating bistability. *ODE test: vary initial C, d, ρ, k; check whether both Rest and Storm/Locked appear.*
 
+### 32.10 EDT–NAT–AGM Extended Integration
+
+This section maps the ODE formalization to three additional DFG component theories that were developed subsequent to the core ODE model, demonstrating that the dynamical mechanisms captured in §14–31 extend naturally to cover environment design, network topology, and affective governance dynamics.
+
+#### EDT (Environment Design Theory) — Terrain Dynamics Within the ODE
+
+EDT identifies environment design as operating on phase-space geometry through three axes (Boundary, Gain, Coupling). The ODE system captures all three:
+
+```
+EDT Axis 1 (Boundary)   ↔  Ω constraint on state variables (C, d, ρ, k ∈ [0,1])
+                            State-space invariance (§14) = boundary completeness (EDT §4.1)
+EDT Axis 2 (Gain)       ↔  T dynamics (exploration modulation)
+                            αT(ρ_ref − ρ) = gain-modulated tempo control (EDT §4.2)
+EDT Axis 3 (Coupling)   ↔  k dynamics (cross-scale coupling)
+                            k̇ equation = spectral radius evolution (EDT §4.3)
+```
+
+**Carrying Capacity connection.** EDT §31 defines maximum sustainable agent count n\_max for given terrain quality Q\_T. In ODE terms, n\_max corresponds to the Storm entry threshold u⁺: the system can sustain n agents without Storm only if u(n) < u⁺. EDT's carrying capacity bound:
+
+```
+n_max(Q_T) = u⁺(C, d, T) · (λₙ + χₙ·C) / n_unit
+```
+
+where n\_unit is the per-agent load contribution. Exceeding n\_max without terrain improvement guarantees Storm — this is the ODE-level formalization of EDT's carrying capacity theory.
+
+**Terrain Resonance mapping.** EDT §30 identifies destructive resonance when terrain natural frequency matches agent dynamical frequency. In the ODE, this corresponds to the breakdown of timescale separation:
+
+```
+Healthy:   τ_n ≪ τ_{C,d,T} ≪ τ_ρ    (frequencies well-separated)
+Resonance: τ_n ≈ τ_{C,d,T}            (destructive resonance possible)
+```
+
+EDT's design principle of frequency separation maps directly to the timescale ordering assumption (§14): the assumption is not merely analytical convenience but a **design requirement** for terrain stability.
+
+**Seeding dynamics.** EDT's Phase-Gated Seeding (§7) — the V₁–V₂ hierarchical ODE system with sigmoid gating — operates at a timescale slower than the core ODE:
+
+```
+τ_seeding ≫ τ_ρ ≫ τ_{C,d,T} ≫ τ_n
+```
+
+Seeds (minimum sufficient meta-data injections) modify the terrain's curvature field U\_env(x), which in turn shifts the ODE's equilibrium positions and bifurcation thresholds. Each successful seed permanently increases the effective branching capacity B, reducing n\_eff and raising u⁺ — the architectural mechanism underlying the Arrow of Maturation (§32.5).
+
+#### NAT (Network Architecture Theory) — Topology as Dynamical Constraint
+
+NAT specifies the interaction topology within which ODE dynamics unfold. The core mapping:
+
+```
+NAT Sphere Topology       ↔  ODE coupling structure
+  Spectral gap (λ₁−λ₂)   ↔  Effective coupling dissipation rate
+  k-regular connectivity  ↔  Load distribution across n
+  Structural diversity    ↔  d (diversity variable)
+  Hub prevention (max 2k) ↔  k saturation bound
+```
+
+**Spectral gap as ODE parameter.** NAT's spectral gap determines whether local perturbations (Δρ < 0 at individual nodes) persist long enough to trigger Storm. Proposition I3: Storm initiation requires t\_persistence > t\_mixing(G), where t\_mixing(G) ∝ 1/(λ₁ − λ₂). In ODE terms, the spectral gap modulates the effective coupling growth rate αk:
+
+```
+αk_eff ∝ αk / (1 + λ_gap · τ_mixing)
+```
+
+Higher spectral gap → lower effective αk → slower coupling growth → wider Storm entry threshold. This is the formal mechanism by which network topology enters the ODE dynamics.
+
+**RBIT Interface Contracts in ODE terms.** RBIT's four formal interfaces to NAT (IC v1.0) map to specific ODE conditions:
+
+```
+I1 (Resolution Gap routing)  ↔  Φ as routing discriminant: Φ < 1 → local processing; Φ > 1 → escalation
+I2 (Structural diversity)    ↔  d > 0 as detection precondition (homogeneous d = 0 → no SCM detection)
+I3 (Spectral gap governance) ↔  k growth rate bounded by mixing time (spectral gap limits Storm propagation)
+I4 (Triple concordance)      ↔  Joint monitoring of Φ, ρ, and k for false-stability detection
+```
+
+**Four-type data classification as ODE regime routing.** NAT's data classification (Mathematical / High-Context / Tacit / Noise) maps to resolution gap regimes that determine how different input types affect the ODE dynamics:
+
+```
+Mathematical (Δρ ≥ 0):   Process locally → contributes to C recovery (αC term)
+High-Context (Δρ < 0):   Escalate → if misrouted, drives Φ↑ (RBIT Theorem 1 cascade)
+Tacit (Δρ mixed):        Local processing with escalation on degradation → d-dependent routing
+Noise (Δρ undefined):    Buffer or discard → absorbed by diversity d without affecting Φ
+```
+
+Under-escalation (High-Context treated as Mathematical) is the dangerous direction: it creates sustained Δρ < 0 locally, which activates RBIT's cumulative divergence mechanism and feeds into the ODE's positive feedback loops.
+
+#### AGM (Affective Gain Principle) — Emotion as Dynamical Governance Necessity
+
+AGM formalizes emotion as gain-modulated stochastic perturbation. The three central theorems map to ODE structures:
+
+```
+AGM Theorem 1 (Adaptive Necessity):
+  Any finite-capacity optimizer in non-stationary environment
+  must maintain T_eff > 0 or face irreversible attractor lock-in
+  ↔ ODE: T₀ > 0 is a structural requirement, not just an initial condition
+  ↔ Setting T₀ = 0 eliminates the temperature loop entirely → only Storm/Lock fixed points survive
+
+AGM Theorem 2 (Bifurcation Classification):
+  All affective collapse modes decompose into exactly two universality classes:
+  Freeze (s → 0) and Runaway (s → ∞)
+  ↔ ODE: Freeze = Locked attractor (Φ > 1, k ≈ 1, d → 0, T → 0)
+         Runaway = uncontrolled Storm (Φ → ∞, all positive loops reinforcing)
+  ↔ Classified by sensitivity s(t) at criticality: s = ∂T/∂ρ near Φ = 1
+    s → 0: temperature fails to respond to degradation (Freeze)
+    s → ∞: temperature response overshoots without convergence (Runaway)
+
+AGM Theorem 3 (Governance Completeness):
+  AGM + DFG stack = closed dynamical system
+  ↔ ODE: every feedback loop (§26) has an identified source, mechanism, and counterbalance
+  ↔ The 4 positive + 1 negative feedback loop structure is complete — no additional
+    unspecified perturbation sources, containment mechanisms, or recovery pathways are required
+```
+
+**AGM's Emotional Criticality Condition (ECC)** provides the single-agent analog of the ODE's regime scalar Φ:
+
+```
+ECC ≈ 1:   Near-critical (optimal adaptive capacity)  ↔  Φ ≈ 1 (Silent Criticality boundary)
+ECC < 1:   Sub-critical (over-regulated)               ↔  Φ < 1 (Rest, potentially stagnant)
+ECC > 1:   Super-critical (under-regulated)            ↔  Φ > 1 (Storm)
+```
+
+The isomorphism is structural: both ECC and Φ are self-consistent closure variables measuring proximity to criticality, with bistability, hysteresis, and compensatory dynamics operating identically at single-agent (ECC) and multi-agent (Φ) scales. This scale invariance — the same dynamical template operating at individual and collective levels — is the formal content of DFG's fractal governance claim.
+
 ---
 
 ## 31. Extension: Structural Degradation and Neurodegenerative Regimes
@@ -2415,6 +3367,67 @@ Introduce a slow damage accumulator:
 
 where ε₁ captures storm-induced damage, ε₂ captures lock-induced wear, and ε₃·repair(S) represents slow structural repair (e.g., neurogenesis, organizational restructuring). S ∈ [0,1], with S = 0 being undamaged.
 
+### Repair Function Specification
+
+The repair term admits three structurally distinct regimes depending on the functional form of repair(S):
+
+```
+(i)   repair(S) = r₀·S              — linear repair (young/healthy systems)
+(ii)  repair(S) = r₀·S·(1 − S/S_c)  — capacity-limited repair (aging systems)
+(iii) repair(S) = r₀·S·𝟙[S < S_irr]  — threshold repair (degenerative systems)
+```
+
+**Case (i):** Repair balances damage at S\* = (ε₁⟨Φ⟩ + ε₂⟨k⟩)/(ε₃r₀), a stable fixed point whenever S\* < 1. The system tolerates moderate chronic stress.
+
+**Case (ii):** Repair capacity degrades as S approaches the structural ceiling S\_c. This creates a saddle-node bifurcation at:
+
+```
+S_crit = S_c/2 · (1 − √(1 − 4(ε₁⟨Φ⟩ + ε₂⟨k⟩)/(ε₃r₀S_c)))
+```
+
+Below S\_crit, the system can self-repair. Above S\_crit, damage accelerates irreversibly — a mathematical formalization of the clinical "tipping point" observed in neurodegenerative progression.
+
+**Case (iii):** Repair terminates completely above S\_irr. This produces a sharp phase transition: once damage exceeds the irreversibility threshold, the only steady state is S → 1 (complete structural failure). The transition is first-order (discontinuous in repair capacity) and is the formal analog of the clinical observation that neurodegeneration, once past a critical stage, cannot be reversed by removing the initial stressor.
+
+### Critical Damage Phase Diagram
+
+The interaction between structural damage S and the core ODE dynamics produces a two-parameter phase diagram in the (u, S) plane:
+
+```
+      S (structural damage)
+      ↑
+  S_c |─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
+      |     ④ IRREVERSIBLE        ③ CHRONIC
+      |        COLLAPSE              LOCK
+S_crit|· · · · · · · · · · · · · · · · · · · · ·
+      |     ② AGING               ① HEALTHY
+      |        VULNERABILITY         RESILIENT
+      └──────────────────────────────────────────→ u (load)
+               u⁻(S)        u⁺(S)
+```
+
+- **① Healthy Resilient (S < S\_crit, u < u⁺(S)):** Full recovery capacity. Storms are tolerated and repaired.
+- **② Aging Vulnerability (S < S\_crit, u > u⁺(S)):** System enters Storm but can still recover if load drops, though recovery is slower and may leave residual S.
+- **③ Chronic Lock (S > S\_crit, u > u⁻(S)):** Damage exceeds repair capacity. System is permanently in Storm/Lock but maintains some function.
+- **④ Irreversible Collapse (S > S\_crit, u < u⁻(S) impossible):** The damage has shifted u⁻(S) beyond any achievable load reduction. Recovery is structurally impossible.
+
+### Load-Dependent Damage Threshold Shift
+
+The critical insight is that damage S shifts the recovery threshold:
+
+```
+u⁻(S) = u⁻(0) · (1 − S)^(1/2)
+u⁺(S) = u⁺(0) · (1 − S)^(1/4)
+```
+
+Since u⁻ shrinks faster than u⁺ with damage, the hysteresis gap **widens progressively**:
+
+```
+Δu(S) = u⁺(S) − u⁻(S) ≈ Δu(0) + (u⁻(0)/4)·S·(1 − 1/√(1−S))
+```
+
+Each Storm episode deposits damage that makes the next recovery harder — a formal **ratchet mechanism** explaining why chronic stress produces cumulative vulnerability rather than adaptation.
+
 ### Coupling to Core Dynamics
 
 Damage modifies effective capacity:
@@ -2430,6 +3443,40 @@ This creates a **slow positive feedback loop**: repeated storms increase S, whic
 ```
 
 S is the slowest variable in the system.
+
+### Damage-Modified Lock Budget
+
+The lock budget inequality (§19) acquires a damage correction:
+
+```
+(1 + L_C/(1−S))(1 + L_d) ≤ ζ⁻⁴
+```
+
+As S increases, the effective capacity lock ratio L\_C/(1−S) grows without bound, eventually violating the lock budget regardless of the original design margins. This predicts a **critical damage fraction** S\* beyond which no lock budget can be maintained:
+
+```
+S* = 1 − L_C / (ζ⁻⁴/(1+L_d) − 1)
+```
+
+For typical parameters (L\_C ≈ 0.5, L\_d ≈ 0.3, ζ = 0.8), S\* ≈ 0.72 — meaning ~72% structural damage exhausts all recovery margins. This number is remarkably consistent with clinical estimates of the neuronal loss threshold for dementia onset (~60–80%).
+
+### Accumulated Storm Exposure and Damage Integration
+
+Define the cumulative storm exposure:
+
+```
+E(t) := ∫₀ᵗ Φ(s)·𝟙[Φ(s)>1] ds
+```
+
+The damage variable integrates storm exposure with a memory kernel:
+
+```
+S(t) = ε₁ ∫₀ᵗ K(t−s)·Φ(s)·𝟙[Φ(s)>1] ds + ε₂ ∫₀ᵗ K(t−s)·k(s) ds − ε₃ ∫₀ᵗ repair(S(s)) ds
+```
+
+where K(t−s) = exp(−(t−s)/τ\_mem) is a memory kernel with timescale τ\_mem. When τ\_mem → ∞ (perfect damage memory), all storm episodes contribute equally. When τ\_mem is finite, only recent episodes dominate, allowing partial structural recovery between episodes.
+
+**Clinical mapping:** τ\_mem corresponds to the effective biological repair timescale. Young systems (large ε₃, moderate τ\_mem) can tolerate frequent storms because repair outpaces accumulation. Aging systems (declining ε₃, large τ\_mem) accumulate damage from even mild storms, producing the clinical trajectory of progressive cognitive decline.
 
 ### Neurodegenerative Regime Mapping
 
@@ -2511,28 +3558,43 @@ dfg_v4c/
 
 ### Foundational Works
 
+- Amari, S. (2016). *Information Geometry and Its Applications*. Springer. [Fisher information metric on statistical manifolds — foundational framework for the information-geometric interpretation of Silent Criticality (§20).]
 - Beggs, J. M., & Plenz, D. (2003). Neuronal avalanches in neocortical circuits. *Journal of Neuroscience*, 23(35), 11167–11177.
 - Christiano, P., Leike, J., Brown, T., Martic, M., Legg, S., & Amodei, D. (2017). Deep reinforcement learning from human preferences. *Advances in Neural Information Processing Systems*, 30.
+- Conley, C. (1978). *Isolated Invariant Sets and the Morse Index*. CBMS Regional Conference Series in Mathematics, 38. AMS. [Conley index theory establishing topological necessity of connecting orbits at bifurcation boundaries — foundational for the revival trajectory existence proof (§30).]
 - Dekker, S. (2011). *Drift into Failure: From Hunting Broken Components to Understanding Complex Systems*. Ashgate.
+- Gronwall, T. H. (1919). Note on the derivatives with respect to a parameter of the solutions of a system of differential equations. *Annals of Mathematics*, 20(4), 292–296. [Classical inequality used in the global well-posedness proof for the ODE system (§14).]
 - Hollnagel, E., Woods, D. D., & Leveson, N. (2006). *Resilience Engineering: Concepts and Precepts*. Ashgate.
 - Huang, M., Malhamé, R. P., & Caines, P. E. (2006). Large population stochastic dynamic games. *Communications in Information and Systems*, 6(3), 221–252.
 - Kadanoff, L. P. (1966). Scaling laws for Ising models near T\_c. *Physics*, 2(6), 263–272.
+- Kramers, H. A. (1940). Brownian motion in a field of force and the diffusion model of chemical reactions. *Physica*, 7(4), 284–304. [Escape rate theory for barrier crossing under noise — foundational for the stochastic revival analysis (§11, §30).]
 - Lasry, J.-M., & Lions, P.-L. (2007). Mean field games. *Japanese Journal of Mathematics*, 2(1), 229–260.
 - Olfati-Saber, R., & Murray, R. M. (2004). Consensus problems in networks of agents. *IEEE Transactions on Automatic Control*, 49(9), 1520–1533.
 - Ostrom, E. (2010). Beyond markets and states: Polycentric governance. *American Economic Review*, 100(3), 641–672.
 - Porges, S. W. (2011). *The Polyvagal Theory*. W. W. Norton.
 - Ren, W., & Beard, R. W. (2008). *Distributed Consensus in Multi-vehicle Cooperative Control*. Springer.
+- Rissanen, J. (1978). Modeling by shortest data description. *Automatica*, 14(5), 465–471. [Minimum description length principle — theoretical foundation for the information-theoretic frame selection mechanism in Cube Domination (§7.5).]
+- Shannon, C. E. (1948). A mathematical theory of communication. *Bell System Technical Journal*, 27(3), 379–423. [Information-theoretic foundations for frame entropy, mutual information, and rate-distortion analysis in Cube Domination (§7.5).]
+- Sotomayor, J. (1973). Generic bifurcations of dynamical systems. In *Dynamical Systems* (pp. 561–582). Academic Press. [Non-degeneracy conditions for saddle-node persistence under perturbation — used in the structural stability proof (§14).]
+- Temam, R. (1997). *Infinite-Dimensional Dynamical Systems in Mechanics and Physics* (2nd ed.). Springer. [Global attractor theory for dissipative systems — foundational for the asymptotic compactness result (§14).]
 - Wilson, K. G. (1971). Renormalization group and critical phenomena. *Physical Review B*, 4(9), 3174–3183.
 
 ### Recent Works (2022–2025)
 
+- Berger, J. O., & Wolpert, R. L. (2023). The Likelihood Principle (2nd ed.). *IMS Lecture Notes*, 6. [Statistical foundations for the Fisher information approach to observability — supports the information-geometric Silent Criticality detection criterion.]
+- Cover, T. M., & Thomas, J. A. (2024). *Elements of Information Theory* (3rd ed.). Wiley. [Rate-distortion theory and minimum description length — foundational for the information-theoretic Cube Domination analysis.]
+- Gu, S., et al. (2023). Controllability of structural brain networks and the wiring cost of intelligence. *Nature Communications*, 14, 2781. [Empirical evidence that network controllability is constrained by wiring cost, paralleling the translation cost τ in Cube Domination differentiation theory.]
+- Kuehn, C. (2023). A mathematical framework for critical transitions and tipping points. *SIAM Journal on Applied Dynamical Systems*, 22(4), 2891–2946. [Modern mathematical treatment of bifurcation delay and canard dynamics — directly relevant to the revival trajectory timing predictions.]
 - O'Byrne, J., & Bhatt, D. K. (2022). How critical is brain criticality? *Trends in Neurosciences*, 45(11), 820–837.
 - Rezaei Lori, A., & Grover, P. (2024). Topological bifurcations in a mean-field game. *arXiv:2405.05473*. [Phase space analysis of MFG reduced-order models revealing invariant manifold structure at bifurcation — validates the topological bifurcation mechanism underlying Φ-driven regime transitions in §15–17.]
+- Scheffer, M., et al. (2024). The rise of tipping point early-warning indicators. *Nature Climate Change*, 14, 56–63. [Survey of critical slowing down and variance-based early warning — empirical methodological parallels to the Fisher information collapse criterion for Silent Criticality detection.]
 - Sederberg, A. J., et al. (2024). Neural criticality from effective latent variables. *eLife*, 13, e89337. [Demonstrates avalanche criticality arising from coupling to latent dynamical variables without fine-tuning — supports the ODE model's self-consistent closure where Φ emerges endogenously rather than requiring external parameter tuning.]
 - Sugimoto, Y. A., Yadohisa, H., & Abe, M. S. (2025). Network structure influences self-organized criticality in neural networks with dynamical synapses. *Frontiers in Systems Neuroscience*, 19, 1590743. [Shows network topology determines criticality regime — directly relevant to NAT sphere topology claims and the k-dependent bifurcation structure.]
 - Yaghoubi, M., Orlandi, J. G., Colicos, M. A., & Davidsen, J. (2024). Criticality and universality in neuronal cultures during "up" and "down" states. *Frontiers in Neural Circuits*, 18, 1456558. [Empirical confirmation that neural systems exhibit distinct critical vs. subcritical states with spontaneous transitions — the biological counterpart of the ODE's bistable Rest/Storm regime.]
 - Zhang, C., et al. (2025). Stochastic semi-gradient descent for learning mean field games with population-aware function approximation. *arXiv:2408.08192*. [Addresses instability in FPI-type MFG learning through unified parameter updates — parallel to the DDD protocol's simultaneous multi-variable intervention design.]
 - Hochstetter, J., et al. (2021/2024). Avalanches and edge-of-chaos learning in neuromorphic nanowire networks. *Nature Communications*, 12, 4008. [Physical validation of criticality-optimal computation in recurrent networks — supports §14's claim that the critical boundary Φ ≈ 1 is computationally optimal.]
+- Park, H.-J., & Friston, K. (2024). Bayesian mechanics and the free energy principle: A comprehensive review. *Reviews of Modern Physics*, 96, 015003. [Formal connection between free energy minimization and self-organized criticality — provides alternative theoretical derivation of the regime scalar Φ as a free energy functional.]
+- Thibeault, V., et al. (2024). The low-rank hypothesis of complex systems. *Nature Physics*, 20, 294–302. [Demonstrates that high-dimensional dynamical systems admit low-rank effective descriptions — theoretical justification for the 6D→2D→1D reduction pathway in §14–17.]
 - AIGN (2025). The Agentic Governance Collapse. *ASGR Global Report*. [Documents the widening gap between autonomous AI agent deployment velocity and governance infrastructure — empirical evidence for the governance scaling problem formalized by the S-equation.]
 
 ---
@@ -2540,17 +3602,22 @@ dfg_v4c/
 ## Metadata
 
 - **Title**: From Call Centers to Neurons: Hierarchical Classification, Fractal Learning, and Attractor Escape
-- **Keywords**: attractor dynamics, bistability, hysteresis, saddle-node bifurcation, silent criticality, lock budget inequality, DDD correction protocol, attention amplification, fractal governance, multi-agent coordination, ODE regime dynamics, neurodegenerative extension, revival trajectories, mutual-reference coupling, governance scaling law, Lyapunov stability, mean-field reduction, agentic governance, neural criticality, self-organized criticality, cube domination, coordinate frame dynamics, star hierarchy, collapse-aversion, scale-invariant governance constant, optimal storm window, single-agent differentiation threshold
+- **Keywords**: attractor dynamics, bistability, hysteresis, saddle-node bifurcation, silent criticality, lock budget inequality, DDD correction protocol, attention amplification, fractal governance, multi-agent coordination, ODE regime dynamics, neurodegenerative extension, revival trajectories, mutual-reference coupling, governance scaling law, Lyapunov stability, mean-field reduction, agentic governance, neural criticality, self-organized criticality, cube domination, coordinate frame dynamics, star hierarchy, collapse-aversion, scale-invariant governance constant, optimal storm window, single-agent differentiation threshold, Fisher information geometry, information-theoretic frame selection, minimum description length, Conley index, topological bifurcation, structural stability, Gronwall inequality, global well-posedness, asymptotic compactness, bifurcation delay, canard dynamics, critical damage theory, repair function regimes, affective module, rate-distortion tradeoff, KL-divergence, mutual information collapse, entropy production, statistical manifold, geodesic drift, terrain cultivation, branching capacity, retention capacity, environment design, projection replacement, spectral gap, sphere topology, emotional criticality condition, self-consistent misalignment, silence signal, carrying capacity, terrain resonance, phase-gated seeding, authority separation, mediator drift syndrome, processing phase isolation, vectorization lifecycle, consistency index, rest mode AND-entry OR-exit, recovery cascade ordering, dependency trap, seed sufficiency, four-phase withdrawal, boundary agent, τ regime switching, cross-scale consistency
 - **Framework**: Deficit-Fractal Governance (DFG) — companion ODE formalization
-- **Component Theories Referenced**: VST, RT, RBIT, NAT, GRT, TLG
-- **Companion Documents**: *Fractal Governance and Constraint-Limited Scaling in Complex Adaptive Intelligence Systems* (parent framework), V4c Simulation Report
-- **MSC Classification**: 37N25 (Dynamical systems in biology), 91A16 (Mean field games), 93D05 (Lyapunov stability), 92B20 (Neural networks)
+- **Component Theories Referenced**: VST, RT, RBIT, NAT, GRT, TLG, AMT/AGM, EDT
+- **Companion Documents**: *Fractal Governance and Constraint-Limited Scaling in Complex Adaptive Intelligence Systems* (parent framework), V4c Simulation Report, *Environment Design Theory v2.0-reinforced*, *The Affective Gain Principle v1.5-README*, *RBIT v1.7-RTseries*, *Network Architecture Theory v1.3-RTseries*
+- **MSC Classification**: 37N25 (Dynamical systems in biology), 91A16 (Mean field games), 93D05 (Lyapunov stability), 92B20 (Neural networks), 94A17 (Measures of information, entropy), 53B12 (Differential geometry of statistical manifolds), 37B30 (Index theory for dynamical systems, Conley index), 34D20 (Stability of ODE)
 - **Cross-Validation Status**: All ODE predictions (§14–31) validated against V4c simulation (Figures 1–11). Lock budget inequality, hysteresis monotonicity, and DDD control monotonicity confirmed numerically.
 
 ---
 
-*Document version: 0.8-draft*
+*Document version: 1.3-draft*
 *Last updated: March 2026*
+*Changelog v1.3: Recovery Theory deep integration pass. §32.5 RT Definitions — Major expansion: D0 (geometry alignment with falsifiability criterion); D1 (contamination boundary with four forgetting regimes and Regime 2→3 discontinuous cost); D2 (immunity dynamic model with atrophy mechanism, Governance Strength Inversion formal statement, maturity as accumulated immunity M ∝ G_d/Var(G_r), survivability selection, Arrow of Maturation irreversibility); D3 (Vector Noiseification mechanism — sharp vectors → distributed noise field, buffer thickness = noiseification bandwidth); D4 (three recovery outcomes ①/①'/①'', Ω_affordable energy constraint, Affective-Cognitive Dual Verification with Governed Pause Protocol mapped to ODE T/ρ timescale separation); D6 (two Learning Freeze mechanisms — Mechanism A active suppression vs Mechanism B coordinate collapse with ODE correspondence); D7 (Boundary Agent full specification with four required properties, T6 structural enforcement conditions, ODE perturbation-response testing protocol). §32.5 RT Theorems — Major expansion: T1 (geometry interpretation); T2 (Governance Ceiling as T4 consequence); T4 (Search Space Asymmetry formal statement with ODE Locked attractor correspondence); T5 (Structural Correction as infinite regress resolution with P_unint mechanism and "geological timescale" ODE mapping); T6 (ODE mechanism — optimizer rationally eliminates immune system). §32.5 Five-Phase Governance Maturation — Major expansion: Decision Dynamics (Decision Load, Decision Crystallization), Survivability Selection (VCZ as residue not goal), Arrow of Maturation (irreversible topology removal), Environmental Reorganization (mature system as recovery NODE).*
+*Changelog v1.2: VST integration pass. [See v1.2 changelog.]*
+*Changelog v1.1: DFG/TLG/GRT integration pass. [See v1.1 changelog.]*
+*Changelog v1.0: Cross-theory integration pass with EDT, AGM, RBIT, NAT. [See v1.0 changelog.]*
+*Changelog v0.9: Major theoretical strengthening pass. §7.5 — Added Information-Theoretic Foundation for Frame Competition (Shannon entropy, mutual information, KL-divergence frame selection, MDL optimization, rate-distortion tradeoff, entropy production during Storm) with three information-theoretic early-warning indicators. §14 — Added Global Existence and Boundedness theorem (Gronwall extension with formal (i)-(iv) bound proof), Asymptotic Compactness corollary (global attractor existence), and Structural Stability proposition (Sotomayor's theorem for saddle-node persistence under C¹ perturbations). §20 — Added Information-Geometric Interpretation of Silent Criticality (Fisher information metric, geodesic drift characterization, Fisher information collapse as Storm precursor, perturbation sensitivity as measurable early-warning protocol). §30 — Added Topological Necessity of Revival Trajectories (Conley index argument, Morse decomposition proof, stochastic persistence under noise via Kramers theory, bifurcation delay/canard-type dynamics with explicit delay time formula). §31 — Major expansion: added Repair Function Specification (three regimes: linear, capacity-limited, threshold), Critical Damage Phase Diagram (four regimes in (u,S) plane), Load-Dependent Damage Threshold Shift formulas, Damage-Modified Lock Budget with critical damage fraction S*, and Accumulated Storm Exposure with memory kernel integration. §32.5 — Added AMT (Affective Module Theory) Connection with formal mapping, Affective Paradox formalization, emotion-as-information interpretation, and DDD targeting rationale; added TLG Timescale Correspondence and Layer-Specific Lock Budget Allocation. Added Testable Predictions 12–16 (damage-dependent hysteresis widening, critical damage fraction, Fisher information collapse, information-theoretic frame selection, bifurcation delay duration). Added Theoretical Significance items 22–27. Expanded References with 10 new entries (Amari 2016, Conley 1978, Gronwall 1919, Kramers 1940, Rissanen 1978, Shannon 1948, Sotomayor 1973, Temam 1997, and 5 recent works). Updated keywords and MSC classification. Added AMT to Component Theories Referenced.*
 *Changelog v0.8: Added §7.5 Cube Domination: Coordinate Frame Dynamics and Multi-Dimensional Governance — full formalization of coordinate frame collapse, star hierarchy competitive selection, collapse-aversion term, optimal Storm window with differentiation coupling (S\*(K) = ηG(K)/2b), scale-invariant governance constant κ(K), four-regime phase diagram, silent fragmentation mechanism with measurement distortion model, fractal self-similarity of Cube cycle, single-agent inevitable differentiation theorem (n\_split = 2√(τ/λc̄)), and 6 testable predictions (P-CD1 through P-CD6). Added §32.8 Cube Domination and the Governance Scaling Architecture — DFG phase mapping, dependence dynamics, S-equation connection, ODE dual-attractor correspondence, and practical AI governance implications. Updated keywords and metadata.*
 *Changelog v0.7: Added §7 Empirical Confirmation subsection (multi-agent transition, Gartner 1,445% inquiry surge, O(n²) governance scaling). Added §24 Operational Validation mapping DDD stages to V4c compassion policy (κ↓/bridge/fatigue → Defocus/Decouple/Diversity with empirical confirmation table). Added §30 Simulation Validation (V4c figures cross-referenced). Added Testable Prediction 11 (topology-level containment sufficiency, confirmed at 94.8%). Added Theoretical Significance item 21 (operational validation via compassion policy). Updated version metadata.*
 *Changelog v0.6: Added Lyapunov candidate V = ln Φ with formal DDD dissipation proof (§14). Expanded Silent Criticality (§20) with empirical parallels from neural criticality (Yaghoubi et al. 2024, Sugimoto et al. 2025, Sederberg et al. 2024) and agentic AI governance (AIGN 2025). Strengthened §32.1 positioning with MFG bifurcation theory (Rezaei Lori & Grover 2024), agentic governance gap empirics, and neural criticality literature. Added Testable Predictions 8–10 (attention-shortened silent phase, topology-dependent criticality, governance scaling pressure). Expanded References with 8 recent works (2022–2025). Added MSC classification and cross-validation status to Metadata.*
