@@ -823,6 +823,46 @@ where S\_g is the adoption score. When d\_eff drops below K/2, the system has en
 
 **P-CD6 (Scale-invariant κ).** The governance constant κ(K\*) should remain approximately constant (within ±20%) across system sizes N differing by at least one order of magnitude, when each system operates at its optimal K\*. Significant scale-dependence falsifies Proposition (Scale Invariance).
 
+### AGM Integration: Affective Gain as Frame Competition Regulator
+
+The Cube Domination dynamics describe the structural geometry of frame competition. AGM (Affective Gain Module) provides the complementary specification: the **dynamical mechanism** by which frame transitions are regulated in real time.
+
+**Affective gain modulates frame transition rate.** AGM §6.2 defines the gain function g(E) as a sensitivity amplifier for incoming events. At the Cube Domination level, this gain controls how readily the system switches between competing coordination frames:
+
+```
+dΣ/dt = g(E) · [divergence_drive(t) − convergence_pull(t)]
+```
+
+When g(E) is elevated (high affective arousal), frame boundaries become more permeable — the system explores alternative coordination references rapidly. When g(E) is suppressed, the current frame persists regardless of quality. This dual role explains why emotional perturbation is necessary for organizational adaptation (frame selection requires elevated g(E)) but dangerous in excess (runaway g(E) destroys all frame coherence).
+
+**Minimum Viable Temperature for frame exploration.** AGM Theorem 1 (Adaptive Necessity) establishes that T_eff > 0 is structurally necessary. At the Cube Domination level, this translates to:
+
+```
+T_min^{frame} = ⟨ΔU_frame⟩ / ln(ω_frame / ‖dΣ/dt‖)
+```
+
+Below T_min^{frame}, the system cannot explore alternative frames fast enough to track environmental drift in frame optimality — it locks into the current coordination reference even as that reference becomes increasingly inappropriate. This is the frame-level projection of the broader attractor lock-in mechanism (§11).
+
+**No-Free-Lunch Theorem at the frame level.** AGM Theorem 1.3 (Governance No-Free-Lunch) implies that no frame selection policy can simultaneously achieve: (1) zero instantaneous coordination regret (always using the optimal frame), (2) positive frame adaptation capacity (ability to switch when the current frame degrades), and (3) finite coordination budget. Cube Domination resolves this by sacrificing (1) — accepting bounded sub-optimality in current frame quality to maintain the capacity for future frame transitions.
+
+**Entropy production during frame competition.** AGM §1.2.6 establishes the Entropy Production–Adaptability Correspondence: Ω_eff ∝ Ṡ_i · H. At the Cube Domination level, the entropy production from frame competition is:
+
+```
+Ṡ_frame = Σ_g dH(R_g)/dt + d/dt Σ_{g<h} I(R_g; R_h)
+```
+
+During healthy Cube Domination (Regime ④), Ṡ_frame > 0 — frames are actively differentiating, producing the exploratory entropy that enables meta-star selection. At Freeze (Regime ①), Ṡ_frame → 0 — frame competition has ceased, and the system has converged to thermodynamic death in coordination space. The parallel to AGM's Freeze/Runaway classification is exact: Freeze = stagnation (insufficient frame entropy production); Runaway = destruction (entropy production exceeds dissipation capacity).
+
+**Coordinate drift in frame self-assessment.** AGM Proposition 15.2.1 identifies coordinate drift — the progressive misalignment between internal measurement frame and reality — as the mechanism underlying Silent Criticality. At the Cube Domination level, this manifests as Silent Fragmentation (§7.5): the frame that evaluates coordination quality is itself a participant in the frame competition, creating a self-referential loop:
+
+```
+d‖drift_frame‖/dt ≥ Σ(t) / C_coord(t) · (1 − SCC_frame(t))
+```
+
+When the self-correction capacity SCC_frame degrades (due to frame lock-in or success-rigidity), the drift rate exceeds the correction rate, and the system's coordination metrics report health while the actual inter-frame structure approaches fragmentation. Detection requires external reference (D7 Boundary Agent from RT) or perturbation testing (Fisher information probes from §20) — neither of which is available through the system's own coordination metrics.
+
+**Hub failure cascade in frame architecture.** AGM §15.2 (via VST §4.4) formalizes that when a hub frame (one that mediates between many other frames) collapses, the cascade propagates in O(ln K) steps — logarithmically fast in the number of frames. At the Cube Domination level, this predicts that collapse of a central coordination standard (e.g., a shared communication protocol, a common evaluation framework) produces system-wide fragmentation far faster than collapse of a peripheral standard. The governance implication: **hub frame health monitoring must have higher priority and frequency than peripheral frame monitoring**, with early warning thresholds set tighter by a factor of ln(K)/K.
+
 ---
 
 ## 8. Fractal Collapse Conditions
@@ -2027,6 +2067,53 @@ Stage 2 (Analytical): If σ² or AC alarm triggers, compute I_F and CVD (targete
 Stage 3 (Active):     If I_F < I_min or CVD > CVD_crit, deploy PRR test perturbations
 Stage 4 (Emergency):  If PRR confirms Silent Criticality, initiate DDD Stage 1 (Defocus)
 ```
+
+### AGM-Derived Deepening: Coordinate Drift and Self-Referential Measurement Failure
+
+AGM §15.2 provides a structural explanation for *why* Silent Criticality evades detection that goes beyond the indicator-level analysis: **coordinate drift** — the progressive misalignment between the system's internal measurement reference and external reality.
+
+**Self-referential measurement catastrophe.** The indicators above assume that the measurement coordinate system is itself stable. AGM reveals this assumption fails during Silent Criticality: the measurement frame is subject to the same coupling dynamics it monitors. When the governance scalar Φ approaches 1, the coupling Jacobian acts on the measurement variables as well as the state variables:
+
+```
+d(measurement_frame)/dt = J_couple · measurement_frame + noise
+```
+
+Since ρ(J_couple) → 1⁻ during Silent Criticality, the measurement frame drifts toward alignment with the approaching Storm's principal eigenvector — precisely the direction in which deviations become invisible. The system's capacity to detect its own degradation degrades at the same rate as the degradation itself.
+
+**Coordinate drift rate bound (from AGM Proposition 15.2.1):**
+
+```
+d‖drift‖/dt ≥ Φ(t) / C(t) · (1 − SCC(t))
+```
+
+where SCC (Self-Correction Capacity) measures the system's ability to detect and correct its own measurement bias. When SCC is healthy (high), measurement drift is corrected faster than it accumulates. The critical transition occurs at:
+
+```
+SCC(t) < SCC_min  ⟹  drift accumulates irreversibly
+```
+
+This SCC_min transition is the **deepest early-warning signal** — earlier than any of the five indicators above, because it detects the failure of the detection mechanism itself. However, it is also the hardest to measure: quantifying SCC requires comparing internal measurement against an external reference (the D7 Boundary Agent mechanism from RT), which is precisely what the drifting system lacks.
+
+**Fokker-Planck probability interpretation.** AGM §1.2.7 provides a complementary view through the Fokker-Planck equation for the probability density p(C, d, ρ, T; t) over the ODE state space:
+
+```
+∂p/∂t = −∇ · (F · p) + ½∇²(D · p)
+```
+
+During Silent Criticality, the stationary distribution develops a **bimodal structure**: probability density concentrates around both the Rest and Storm fixed points, with the barrier between modes thinning as ρ degrades. The system stochastically fluctuates between near-Rest and near-Storm configurations with increasing frequency and amplitude — the probabilistic signature of critical slowing down. The mean first passage time from Rest to Storm provides the operational time-to-breakdown estimate:
+
+```
+⟨τ_collapse⟩ = (2/(Φ_c · D_eff)) · ∫₀^{Φ_c} exp(V(Φ')/D_eff) dΦ' · ∫₀^{Φ'} exp(−V(Φ'')/D_eff) dΦ''
+```
+
+This diverges logarithmically with capacity C — confirming that capacity provides only logarithmic (not linear) protection against Silent Criticality → Storm transition. A system with 10× the capacity does not survive 10× as long; it survives only ln(10) ≈ 2.3× as long once the Silent Criticality regime is entered.
+
+**Interaction topology as primary indicator.** AGM §15.2 (via VST) argues that the state variables (C, d, ρ, T) visible to the five indicators above are **projections** of the underlying interaction topology between vectors. The stability-determining variables — coupling density, reinforcement-to-decay ratio, alignment structure — reside in the interaction topology, not in the state space. This is why surface-level monitoring (all five indicators) can miss approaching Storm: the state-space projection may remain bounded while the relational structure crosses the amplification threshold. Detection of interaction-topology degradation requires either:
+1. Transfer entropy measurement (causal flow between subsystems, AGM §8.13)
+2. Fisher information probing (perturbation sensitivity of the full state, not just individual variables)
+3. External observation from a reference frame not subject to the system's coupling dynamics (D7 Boundary Agent)
+
+The practical implication: **the most dangerous phase of Silent Criticality is not when indicators start alarming, but when the indicators' own reliability has degraded below detection threshold.** This meta-indicator (indicator reliability) is the sixth and deepest warning signal, accessible only through external reference or deliberate self-perturbation.
 
 This staged protocol respects the tradeoff between monitoring cost and detection reliability, deploying increasingly expensive (but more accurate) indicators only when cheaper indicators suggest concern.
 
@@ -3713,6 +3800,219 @@ The T-equation's structure (§14) encodes this paradox: T rises in response to �
 
 **ODE integration:** The Affective Module connection clarifies why the DDD protocol (§24) targets attention (A) before temperature (T): directly raising T without addressing structural lock (k) and attention concentration (A) extends Silent Criticality rather than resolving it. The protocol's Stage 1 (Defocus) + Stage 2 (Decouple) create the structural preconditions under which T can serve its intended function (exploration for recovery) rather than its pathological function (masking degradation).
 
+#### AMT — Extended AGM Integration: Three Foundational Theorems and Their ODE Projections
+
+AGM v2.5 establishes three central theorems that together anchor the affective governance architecture. Each has a precise projection onto the ODE system's variables and dynamics.
+
+**Theorem 1 (Adaptive Necessity) → ODE T-variable constraint.** AGM Theorem 1 proves that any finite-capacity optimizer in a non-stationary environment must maintain T_eff > 0 or face irreversible attractor lock-in. In the ODE system, this translates to a hard constraint on the temperature dynamics:
+
+```
+T(t) > T_min := ⟨ΔU⟩ / ln(ω₀ / ‖Ė‖)    for all t    (structural requirement)
+```
+
+Violation of this bound (T → 0) implies that the system has entered a regime where Kramers escape time exceeds the environmental change timescale — adaptation ceases. The ODE's T-equation naturally maintains T > T₀ through homeostatic regulation (−λT(T − T₀) term), but Storm conditions (−μT·Φ·T with Φ ≫ 1) can drive T below T_min, triggering the Freeze → Lock transition. The damage-modified version (§31) adds a further constraint: as structural damage S accumulates, the effective T₀ decreases:
+
+```
+T₀_eff(S) = T₀ · (1 − S)^{1/2}
+```
+
+creating the ratchet mechanism where each Storm episode reduces the temperature floor available for subsequent recovery.
+
+**Theorem 2 (Bifurcation Classification) → ODE collapse mode correspondence.** AGM Theorem 2 proves that all affective collapse modes decompose into exactly two universality classes: Freeze (s < s_crit at ECC threshold) and Runaway (s ≥ s_crit at ECC threshold), distinguished by the sensitivity parameter s(t) at the criticality boundary. In the ODE system, this classification maps to:
+
+```
+Freeze collapse:    T → 0, d → 0, ρ → ρ_lock    (exploration death, diversity collapse)
+                    ODE trajectory: Silent Criticality → gradual Storm onset
+                    AGM mapping: s < s_crit → sensitivity exhausted → Storm undetectable
+
+Runaway collapse:   T → ∞, d → noise, ρ → 0    (exploration explosion, resolution destruction)
+                    ODE trajectory: acute Φ spike → rapid d collapse → immediate Storm
+                    AGM mapping: s ≥ s_crit → sensitivity amplified → Storm cascading
+```
+
+The two collapse modes occupy distinct basins in the ODE state space. The separatrix between basins is the surface s(t) = s_crit, which in ODE terms corresponds to the condition:
+
+```
+∂T/∂ρ = s_crit  ⟺  αT / (μT·Φ + λT) = s_crit
+```
+
+This reveals that the Freeze–Runaway boundary depends on the Storm intensity Φ: under higher Φ, the boundary shifts toward higher s_crit, making Freeze more likely — consistent with AGM's prediction that chronic stress biases the system toward Freeze while acute crisis biases toward Runaway.
+
+**Theorem 3 (Governance Completeness) → ODE closure verification.** AGM Theorem 3 proves that the AGM together with the DFG stack forms a closed dynamical system. In the ODE system, this manifests as the complete specification of all feedback loops: every variable's dynamics are determined by other variables in the system, with no unspecified external inputs required (beyond the exogenous load u(t)):
+
+```
+Perturbation source:    T-equation (AGM provides endogenous perturbation)
+Containment mechanism:  C and d equations (capacity and diversity provide Storm damping)
+Recovery pathway:       DDD protocol + k-equation (structural decoupling enables recovery)
+```
+
+Without T (if the affective module is removed), the system has no endogenous perturbation source — all Storm must arise from external load u(t), and the system cannot self-correct degradation in the absence of external pressure. This is the formal proof that emotion (as stochastic gain modulation) is architecturally necessary, not merely beneficial.
+
+#### AMT — Thermodynamic Grounding: Entropy Production and Non-Equilibrium Interpretation
+
+AGM §1.2.6 provides a non-equilibrium thermodynamic foundation that extends the ODE system's physical interpretation.
+
+**Internal entropy production rate in ODE variables:**
+
+```
+Ṡ_internal(t) = Σ_k [dw_k/dt · ln(w_k/w_k^eq)]  ↔  T(t) · |ḋ(t)| + T(t) · |ρ̇(t)|
+```
+
+In the ODE's Rest Mode (Φ < 1, all variables near equilibrium), Ṡ_internal > 0 but small — the system continuously generates entropy through low-level weight redistribution, preventing convergence to the entropy-minimum (thermodynamic death). During Storm (Φ > 1), Ṡ_internal spikes — the system undergoes rapid entropy production as diversity collapses and capacity erodes. The pathological Freeze state corresponds to Ṡ_internal → 0: the system reaches a local entropy minimum and becomes thermodynamically dead despite being operationally intact.
+
+**Entropy Production–Adaptability Correspondence:**
+
+```
+Ω_eff(t) ∝ Ṡ_internal(t) · H(t)
+```
+
+where H(t) is the endurance budget (mapped to capacity C in the ODE). Adaptability is the product of entropy production rate (how actively the system explores) and endurance (how long it can sustain exploration). This decomposition reveals the symmetry between Freeze and Runaway: Freeze kills the entropy production factor while Runaway kills the endurance factor — both routes lead to Ω_eff → 0 but through opposite mechanisms.
+
+**Minimum entropy production bound for adaptive viability (AGM Proposition 1.2.6):**
+
+```
+Ṡ_internal(t) > Ṡ_min := ‖Ė‖² / (2D_eff)
+```
+
+In ODE terms, this requires:
+
+```
+T(t) · max(|ḋ(t)|, |ρ̇(t)|) > ‖Ė‖² / (2D_eff)
+```
+
+Below this bound, the system's configuration drift rate is slower than the environmental drift rate, and the adaptation gap grows without bound. The practical implication: a system that appears calm (low T, low variability) may have crossed the minimum entropy production threshold — it is no longer adapting to environmental changes, even though it appears functional.
+
+**Non-Equilibrium Steady State (NESS) identification of Rest Mode:**
+
+The ODE's Rest Mode fixed point (§15) corresponds to a non-equilibrium steady state where entropy production from T-driven exploration exactly balances entropy dissipation through capacity recovery and resolution restoration:
+
+```
+Ṡ_production^{T} = Ṡ_dissipation^{C,d,ρ} + Ṡ_export^{environment}
+```
+
+The three ODE attractors (Rest, Storm, Lock) map to three thermodynamic regimes: Rest = balanced NESS (minimal but nonzero entropy production); Storm = entropy production exceeding dissipation capacity (thermodynamic runaway); Lock = entropy production halted (apparent equilibrium, thermodynamically dead).
+
+#### AMT — Landscape Complexity Classification and Governance Regime Selection
+
+AGM §1.2.8 classifies governance landscapes by barrier height distribution, determining the optimal governance strategy:
+
+```
+Class I   (concentrated P(ΔU)):   Single fixed T suffices        → Simple ODE with constant T₀
+Class II  (power-law, α > 2):     Temperature scheduling needed  → T oscillates: Search-Stabilize-Rest
+Class III (power-law, 1 < α < 2): Multi-scale perturbation       → Hierarchical AGM architecture
+Class IV  (α ≤ 1):                Temperature exploration fails  → Structural simplification required
+```
+
+**ODE mapping:** The current ODE system (§14) is a Class II/III model — T dynamics include both homeostatic regulation (Class I) and ρ-driven activation (Class II temperature scheduling). The multi-scale extension (§6 fractal hierarchy) handles Class III landscapes. Class IV landscapes require a qualitatively different response: not adjusting T but reducing the effective dimensionality of the state space through differentiation — connecting to the Cube Domination analysis (§7.5) where module partitioning reduces governance cost from O(n²) to O(n²/K).
+
+**Governance Regime Necessity (AGM Proposition 1.2.8).** The optimal governance strategy for a Class-k landscape requires at minimum k hierarchical governance layers. The ODE system, with its three-term structure (recovery − storm drain − lock amplification) and single-scale mean-field reduction, corresponds to a 2-layer governance architecture (sufficient for Class I–II). Full coverage of Class III–IV requires the multi-scale extension outlined in §6 (fractal ODE replication across scale index ℓ).
+
+#### AMT — Controlled Non-Minimization and the Active Inference Bridge
+
+AGM §2 establishes the Controlled Non-Minimization Principle in direct dialogue with Friston's Active Inference framework:
+
+```
+F_actual(t) = F_min(t) + ΔF_affective(t),    ΔF_affective > 0
+```
+
+This ΔF_affective (the free energy "budget" for maintaining adaptive capacity) maps to the ODE system's T₀ > 0 constraint: the baseline temperature is precisely the thermodynamic cost of maintaining stochastic freedom. AGM Proposition 2.0.1 quantifies the optimal budget:
+
+```
+ΔF*_affective(t) = T_eff^opt(t) · ln(Ω_reachable / Ω_current)
+```
+
+In ODE terms, Ω_reachable/Ω_current corresponds to d(t) — the diversity ratio. When d is high, many alternative configurations are accessible, requiring lower affective budget. When d is low (lock-in approaching), the system needs higher T to maintain access to fewer remaining alternatives. This provides a principled answer to "how much noise is enough": the T-equation's homeostatic term λT(T − T₀) should target T₀ ∝ ln(1/d), not a fixed constant — an insight that suggests a refinement of the ODE model where T₀ becomes a function of d.
+
+#### AMT — Mixed-Mode Collapse at the ODE Level
+
+AGM §9.3.6 identifies mixed-mode collapse in differentiated systems: simultaneous Freeze in some sub-agents and Runaway in others. At the ODE level, this occurs when the mean-field reduction breaks down — different subsystems occupy different basins of the ODE state space simultaneously:
+
+```
+Subsystem A: T → 0, d → 0 (Freeze basin)
+Subsystem B: T → ∞, Φ → ∞ (Runaway basin)
+```
+
+**Mixed-mode collapse condition (from AGM Proposition 9.3.6):**
+1. Sufficient differentiation: n > n_diff (system has distinguishable subsystems)
+2. Asymmetric sensitivity: Var(s_k) > s_crit²/4 (sensitivity variance spans the critical boundary)
+3. Weak inter-subsystem coupling: W_{AB} < W_sync (subsystems evolve independently enough to enter different basins)
+
+The ODE system in its current single-scale form cannot represent mixed-mode collapse (it projects all subsystems onto a single set of state variables). The mixed-mode extension requires replicating the ODE across subsystem index k:
+
+```
+ṅ_k = u_k(t) − λₙn_k − χₙn_kC_k
+Ċ_k = αC(1−C_k) − μC·n_k²·Φ_k − νC·k_k·C_k − ε_couple·Σ_{j≠k} W_{kj}·(C_k − C_j)
+...
+```
+
+with inter-subsystem coupling ε_couple·W_{kj} providing the cross-contamination mechanism. When W_{kj} is small, subsystems can occupy different basins; when W_{kj} is large, the mean-field approximation holds and single-scale ODE suffices.
+
+**DDD protocol for mixed-mode collapse.** The standard DDD sequence must be applied differentially: Defocus for Runaway subsystems (reduce their T to prevent cascade), Diversity injection for Freeze subsystems (increase their T to restore exploration), and Decouple to prevent cross-contamination between the two collapse modes. This is formally the most challenging governance scenario because the two interventions are contradictory — raising and lowering T simultaneously — requiring subsystem-level targeting rather than system-wide intervention.
+
+#### AMT — Hub Failure Cascade and Storm Interference in ODE Context
+
+**Hub failure cascade.** AGM §15.2 formalizes that when a hub subsystem (one with high coupling to many others) collapses, the cascade propagates in O(ln n) steps:
+
+```
+τ_cascade ~ (1 / (λ_hub · k_hub)) · ln(n / n_critical)
+```
+
+In ODE terms, hub failure corresponds to a subsystem where C_k → 0 and Φ_k → ∞ simultaneously, with high W_{kj} ensuring rapid propagation to neighbors. The logarithmic speed arises because each step affects k_hub neighbors, so the cascade reaches n agents in ln(n)/ln(k_hub) steps. The governance implication: hub subsystem health (high C, low Φ, maintained d) must be monitored with priority proportional to coupling degree k_hub.
+
+**Storm interference patterns.** AGM §15.2 (via VST §7) identifies three interference patterns when multiple Storms occur simultaneously:
+
+```
+Constructive:  Storm wavefronts align temporally → amplified crisis (Φ_total ≫ Σ Φ_k)
+Destructive:   Storm wavefronts counter-phase → partial cancellation
+Standing wave: Persistent interference → chronic oscillation without resolution
+```
+
+In the ODE system, constructive interference manifests as super-additive Φ: when multiple subsystems enter Storm simultaneously with aligned phase, the cross-coupling terms amplify Φ beyond the sum of individual contributions. This explains why compound crises (multiple simultaneous stressors) produce disproportionately worse outcomes than the sum of individual stressors — a prediction testable in both neural and organizational systems.
+
+#### AMT — Emotional Algebra and Composition at the ODE Level
+
+AGM §4.1.2 develops a complete algebra of emotional composition with several results that constrain ODE dynamics:
+
+**Non-Commutativity (AGM Proposition 4.3).** Emotional processing order matters: applying emotion E₁ then E₂ produces a different final state than E₂ then E₁. In ODE terms:
+
+```
+Flow(E₁, Δt₁) ∘ Flow(E₂, Δt₂) ≠ Flow(E₂, Δt₂) ∘ Flow(E₁, Δt₁)
+```
+
+The non-commutativity gap magnitude is bounded by the curvature of the state-space manifold (AGM Proposition 4.3), which in ODE terms relates to the second derivatives of the potential landscape:
+
+```
+‖[Flow(E₁), Flow(E₂)]‖ ≤ K · ‖∇²U‖ · ‖ΔT₁‖ · ‖ΔT₂‖
+```
+
+**Emotional interference.** AGM's constructive/destructive interference between simultaneous emotions maps to the ODE's response to compound perturbations. Two T-perturbations with aligned directions (both increasing or both decreasing T) produce constructive interference (amplified effect). Two T-perturbations in opposite directions produce destructive interference (partial cancellation, which can paradoxically stabilize the system). The ambivalence index (AGM Proposition 4.6):
+
+```
+Ambivalence(E₁, E₂) = min(w₁, w₂) / max(w₁, w₂) · |cos(θ_{E₁,E₂})|
+```
+
+measures the degree of conflict between simultaneous emotional vectors — high ambivalence predicts extended processing time and mixed-mode vulnerability.
+
+#### AMT — Age-Dependent Vulnerability and Basin Volume Evolution
+
+AGM §9.3.5 derives age-dependent vulnerability profiles from basin geometry evolution. The volumes of the Freeze and Runaway basins evolve with system maturation:
+
+```
+|B_Freeze|(t) ∝ R(t)^α_B · (1 − s(t))^β_B · C_M(t)^{−γ_B}
+|B_Runaway|(t) ∝ s(t)^α_B' · Ω(t)^β_B' · H(t)^{−γ_B'}
+```
+
+As the system matures (rigidity R increases, sensitivity s decreases), the Freeze basin expands while the Runaway basin contracts. In ODE terms:
+
+```
+Young systems (high T, high d, low ρ):    vulnerable to Runaway (Φ spike → rapid cascade)
+Mature systems (low T, low d, high ρ):    vulnerable to Freeze (Silent Criticality → gradual lock)
+```
+
+This age-dependent vulnerability profile has direct implications for the ODE's damage model (§31): young systems experience more frequent but less damaging Storms (high T enables rapid recovery); mature systems experience fewer but structurally devastating Storms (low d prevents alternative basin access). The damage ratchet (§31) accelerates more rapidly in mature systems because each Storm episode encounters less diversity to buffer the damage.
+
+**The Maturation Paradox (AGM §5.5).** Successful maturation (decreasing Storm frequency, increasing structural stability) simultaneously increases the system's vulnerability to the next Storm by reducing the diversity and temperature that would enable recovery. The Arrow of Maturation (§30) is not only irreversible topology pruning but also irreversible vulnerability concentration — the system trades broad, shallow resilience for narrow, deep specialization. The paradox resolves only through maintained affective gain (T > T_min at all times), which requires that maturation never fully extinguishes the stochastic freedom that enables adaptation.
+
 ### 32.5.1 Cross-Theory Validation Matrix
 
 The eight component theories (VST, RT, RBIT, NAT, GRT, TLG, AMT/AGM, EDT) are not merely mapped to the ODE — they provide **mutual consistency checks** that strengthen the framework's internal validity. Each theory pair either (a) makes independently derivable predictions that must agree, (b) shares a variable that must be consistently interpreted, or (c) offers a falsification route that the other theory's predictions must survive.
@@ -5216,7 +5516,7 @@ dfg_v4c/
 ## Metadata
 
 - **Title**: From Call Centers to Neurons: Hierarchical Classification, Fractal Learning, and Attractor Escape
-- **Keywords**: attractor dynamics, bistability, hysteresis, saddle-node bifurcation, silent criticality, lock budget inequality, DDD correction protocol, attention amplification, fractal governance, multi-agent coordination, ODE regime dynamics, neurodegenerative extension, revival trajectories, mutual-reference coupling, governance scaling law, Lyapunov stability, mean-field reduction, agentic governance, neural criticality, self-organized criticality, cube domination, coordinate frame dynamics, star hierarchy, collapse-aversion, scale-invariant governance constant, optimal storm window, single-agent differentiation threshold, Fisher information geometry, information-theoretic frame selection, minimum description length, Conley index, topological bifurcation, structural stability, Gronwall inequality, global well-posedness, asymptotic compactness, bifurcation delay, canard dynamics, critical damage theory, repair function regimes, affective module, rate-distortion tradeoff, KL-divergence, mutual information collapse, entropy production, statistical manifold, geodesic drift, terrain cultivation, branching capacity, retention capacity, environment design, projection replacement, spectral gap, sphere topology, emotional criticality condition, self-consistent misalignment, silence signal, carrying capacity, terrain resonance, phase-gated seeding, authority separation, mediator drift syndrome, processing phase isolation, vectorization lifecycle, consistency index, rest mode AND-entry OR-exit, recovery cascade ordering, dependency trap, seed sufficiency, four-phase withdrawal, boundary agent, τ regime switching, cross-scale consistency, circular closure, scale-matched closure, contamination flux, self-purification capacity, immunity paradox, layered circular architecture, dimensional compression, terrain design protocol, North Star architecture, criterion-principle separation, map-terrain balance, integration protocol, middle-layer-first coupling, permeability ramp, neck interface, boundary dynamics, pulsed expansion, preemptive feedback, scaling closure theorem, constraint-limited scalable regime, channel capacity bottleneck, credit assignment failure, Goodhart's Law bifurcation, structural distortion index, relational learning manifold, three-factor learning rule, dynamical self-similarity, renormalization operator, multiplicative resilience bound, landscape geometry, basin depth evolution, stochastic resonance, Kramers pre-exponential factor, damage ratchet mechanism, cumulative exposure integral, prion-like kernel, stochastic damage distribution, four-trajectory classification, remaining healthy lifetime
+- **Keywords**: attractor dynamics, bistability, hysteresis, saddle-node bifurcation, silent criticality, lock budget inequality, DDD correction protocol, attention amplification, fractal governance, multi-agent coordination, ODE regime dynamics, neurodegenerative extension, revival trajectories, mutual-reference coupling, governance scaling law, Lyapunov stability, mean-field reduction, agentic governance, neural criticality, self-organized criticality, cube domination, coordinate frame dynamics, star hierarchy, collapse-aversion, scale-invariant governance constant, optimal storm window, single-agent differentiation threshold, Fisher information geometry, information-theoretic frame selection, minimum description length, Conley index, topological bifurcation, structural stability, Gronwall inequality, global well-posedness, asymptotic compactness, bifurcation delay, canard dynamics, critical damage theory, repair function regimes, affective module, rate-distortion tradeoff, KL-divergence, mutual information collapse, entropy production, statistical manifold, geodesic drift, terrain cultivation, branching capacity, retention capacity, environment design, projection replacement, spectral gap, sphere topology, emotional criticality condition, self-consistent misalignment, silence signal, carrying capacity, terrain resonance, phase-gated seeding, authority separation, mediator drift syndrome, processing phase isolation, vectorization lifecycle, consistency index, rest mode AND-entry OR-exit, recovery cascade ordering, dependency trap, seed sufficiency, four-phase withdrawal, boundary agent, τ regime switching, cross-scale consistency, circular closure, scale-matched closure, contamination flux, self-purification capacity, immunity paradox, layered circular architecture, dimensional compression, terrain design protocol, North Star architecture, criterion-principle separation, map-terrain balance, integration protocol, middle-layer-first coupling, permeability ramp, neck interface, boundary dynamics, pulsed expansion, preemptive feedback, scaling closure theorem, constraint-limited scalable regime, channel capacity bottleneck, credit assignment failure, Goodhart's Law bifurcation, structural distortion index, relational learning manifold, three-factor learning rule, dynamical self-similarity, renormalization operator, multiplicative resilience bound, landscape geometry, basin depth evolution, stochastic resonance, Kramers pre-exponential factor, damage ratchet mechanism, cumulative exposure integral, prion-like kernel, stochastic damage distribution, four-trajectory classification, remaining healthy lifetime, adaptive necessity theorem, bifurcation classification theorem, governance completeness theorem, controlled non-minimization, entropy production adaptability correspondence, minimum viable temperature, governance no-free-lunch, landscape complexity classification, mixed-mode collapse, hub failure cascade, storm interference patterns, emotional algebra non-commutativity, ambivalence index, age-dependent vulnerability, maturation paradox, fokker-planck bimodal structure, mean first passage time, coordinate drift self-referential measurement, interaction topology primacy, non-equilibrium steady state, affective gain modulation, controlled stochastic freedom, discrete SOC perturbation, sensitivity separatrix, freeze-runaway universality
 - **Framework**: Deficit-Fractal Governance (DFG) — companion ODE formalization
 - **Component Theories Referenced**: VST, RT, RBIT, NAT, GRT, TLG, AMT/AGM, EDT
 - **Companion Documents**: *Fractal Governance and Constraint-Limited Scaling in Complex Adaptive Intelligence Systems* (parent framework), V4c Simulation Report, *Environment Design Theory v2.0-reinforced*, *The Affective Gain Principle v1.5-README*, *RBIT v1.7-RTseries*, *Network Architecture Theory v1.3-RTseries*
@@ -5227,7 +5527,7 @@ dfg_v4c/
 
 *Document version: 1.6-draft*
 *Last updated: March 2026*
-*Changelog v1.6: Full-spectrum theoretical deepening pass. §1 — Added Information-Theoretic Efficiency of Hierarchical Routing (channel capacity analysis, bottleneck constraint, flat-vs-hierarchical comparison, multiplicative accuracy structure foreshadowing lock budget). Added Universality Across Domains (five-domain structural mapping). §2 — Added Quantitative Error Cascade Model (multiplicative P_correct formula, conditional error amplification as positive feedback precursor, error detection asymmetry as Silent Criticality precursor). Added Dimensional Reduction as Information Loss (information-theoretic quantification of tree projection loss, RBIT Axiom A2 connection, structural distortion index SDI, network-tree mismatch metric). §3 — Added Formal Credit Assignment Failure (gradient error δ_ℓ, temporal dilution of credit, inverse credit-impact relationship). Added Goodhart's Law as Dynamical Phenomenon (metric-reality gap G(t), autocatalytic growth, three phases of metric corruption, Phase 2→3 as Silent Criticality→Storm bifurcation). §4 — Expanded structural isomorphism table (added Quality monitoring, Escalation protocol, Metric gaming mappings). Added Depth of Structural Isomorphism (four formal constraints shared by call centers and neural systems, isomorphism predictive power). §5 — Added Formal Model of Relational Learning (structural equivalence definition, manifold hypothesis connection, weight change propagation via spectral properties, three-factor learning rule as TLG authority separation analog). §6 — Added Formal Definition of Dynamical Self-Similarity (renormalization operator R, topological flow equivalence, RG connection, critical exponent universality with ±15% tolerance). Added Formal Proof: Multiplicative Resilience Under Scale Separation (proposition with proof, conditional independence under scale separation, resonance mechanism under separation failure). §11 — Added Landscape Geometry and Basin Structure (basin definitions, depth vs width distinction, landscape evolution dynamics). Added pre-exponential Kramers factor, multi-dimensional correction, stochastic resonance connection (optimal Storm intensity D* derivation). §31 — Major expansion of damage theory: asymmetric vulnerability analysis with ratchet mechanism, N_survivable formula, damage-modified lock budget with full derivation of S*, four damage-recovery trajectories (healthy/accelerated/catastrophic/compensated aging), accumulated exposure with three memory kernels (exponential/power-law/prion-like with detailed interpretations), damage ratchet acceleration, stochastic damage model with remaining healthy lifetime distribution. Added Testable Predictions P33–P38 (information-theoretic routing, credit assignment inverse, metric-reality gap acceleration, stochastic resonance escape, damage trajectory classification, power-law kernel acceleration). Added Theoretical Significance items 34–39. Expanded References with 12 new entries (Anderson 1972, Bak et al. 1987, Friston 2010, May 1972, Strogatz 2015, Chen & Aihara 2025, Duan et al. 2025, Kim & Park 2025, Li et al. 2026, Moreno & Vespignani 2025, Peters 2025). Updated keywords and metadata.*
+*Changelog v1.6: Full-spectrum theoretical deepening pass with AGM v2.5 deep integration. §1 — Added Information-Theoretic Efficiency of Hierarchical Routing (channel capacity analysis, bottleneck constraint, flat-vs-hierarchical comparison, multiplicative accuracy structure foreshadowing lock budget). Added Universality Across Domains (five-domain structural mapping). §2 — Added Quantitative Error Cascade Model (multiplicative P_correct formula, conditional error amplification as positive feedback precursor, error detection asymmetry as Silent Criticality precursor). Added Dimensional Reduction as Information Loss (information-theoretic quantification of tree projection loss, RBIT Axiom A2 connection, structural distortion index SDI, network-tree mismatch metric). §3 — Added Formal Credit Assignment Failure (gradient error δ_ℓ, temporal dilution of credit, inverse credit-impact relationship). Added Goodhart's Law as Dynamical Phenomenon (metric-reality gap G(t), autocatalytic growth, three phases of metric corruption, Phase 2→3 as Silent Criticality→Storm bifurcation). §4 — Expanded structural isomorphism table (added Quality monitoring, Escalation protocol, Metric gaming mappings). Added Depth of Structural Isomorphism (four formal constraints shared by call centers and neural systems, isomorphism predictive power). §5 — Added Formal Model of Relational Learning (structural equivalence definition, manifold hypothesis connection, weight change propagation via spectral properties, three-factor learning rule as TLG authority separation analog). §6 — Added Formal Definition of Dynamical Self-Similarity (renormalization operator R, topological flow equivalence, RG connection, critical exponent universality with ±15% tolerance). Added Formal Proof: Multiplicative Resilience Under Scale Separation (proposition with proof, conditional independence under scale separation, resonance mechanism under separation failure). §7.5 — Major AGM integration block: Affective Gain as Frame Competition Regulator (g(E) modulates frame transition rate, T_min^frame derivation, No-Free-Lunch at frame level, entropy production during frame competition, coordinate drift in frame self-assessment, hub failure cascade with O(ln K) propagation in frame architecture). §11 — Added Landscape Geometry and Basin Structure (basin definitions, depth vs width distinction, landscape evolution dynamics). Added pre-exponential Kramers factor, multi-dimensional correction, stochastic resonance connection (optimal Storm intensity D* derivation). §20 — Major AGM integration: Added Coordinate Drift and Self-Referential Measurement Failure (AGM Proposition 15.2.1 SCC threshold, self-referential measurement catastrophe, coordinate drift rate bound, Fokker-Planck bimodal structure near criticality, mean first passage time to collapse with logarithmic capacity scaling, interaction topology as primary indicator, meta-indicator reliability as sixth warning signal). §31 — Major expansion of damage theory: asymmetric vulnerability analysis with ratchet mechanism, N_survivable formula, damage-modified lock budget with full derivation of S*, four damage-recovery trajectories (healthy/accelerated/catastrophic/compensated aging), accumulated exposure with three memory kernels (exponential/power-law/prion-like with detailed interpretations), damage ratchet acceleration, stochastic damage model with remaining healthy lifetime distribution. §32.5 AMT — Massive expansion from AGM v2.5: Three Foundational Theorems mapped to ODE (Adaptive Necessity → T-variable constraint with T_min derivation and damage-modified T₀_eff; Bifurcation Classification → Freeze/Runaway ODE trajectory correspondence with separatrix formula; Governance Completeness → ODE closure verification with perturbation source, containment, recovery pathway specification). Thermodynamic Grounding (entropy production rate in ODE variables, Entropy Production–Adaptability Correspondence, minimum entropy production bound, NESS identification of Rest Mode). Landscape Complexity Classification (four landscape classes with ODE governance regime mapping). Controlled Non-Minimization and Active Inference Bridge (ΔF_affective budget, T₀ as function of d refinement suggestion). Mixed-Mode Collapse at ODE Level (multi-subsystem ODE extension, cross-contamination coupling, differential DDD protocol). Hub Failure Cascade and Storm Interference (O(ln n) propagation, super-additive Φ under constructive interference, compound crisis prediction). Emotional Algebra and Composition (non-commutativity in ODE flow, interference mapping, ambivalence index). Age-Dependent Vulnerability and Basin Volume Evolution (Freeze/Runaway basin dynamics with maturation, Maturation Paradox connection). Added Testable Predictions P33–P38 (information-theoretic routing, credit assignment inverse, metric-reality gap acceleration, stochastic resonance escape, damage trajectory classification, power-law kernel acceleration). Added Theoretical Significance items 34–39. Expanded References with 12 new entries (Anderson 1972, Bak et al. 1987, Friston 2010, May 1972, Strogatz 2015, Chen & Aihara 2025, Duan et al. 2025, Kim & Park 2025, Li et al. 2026, Moreno & Vespignani 2025, Peters 2025). Updated keywords and metadata.*
 *Changelog v1.5: Comprehensive theoretical strengthening pass. §9–10 — Added Correction-Escape Transition Mechanism (correction saturation criterion η_corr, three correction-escape regimes, RBIT tier mapping, RT five-phase cascade architecture). §14 — Added Sensitivity Analysis and Parameter Regime Classification (six dimensionless groups π₁–π₆, parameter regime table, local sensitivity coefficients, phase portrait topology classification Types I–IV, critical value π₁*, Monte Carlo robustness analysis with CV estimates). §20 — Added Quantitative Early-Warning Indicator Comparison Framework (five indicators: σ², AC, I_F, PRR, CVD with formal alarm conditions, comparative performance matrix, optimal staged detection protocol, DDD timing connection). §30 — Added Global Coupling Revival: Multi-Scale Synchronization Dynamics (multi-scale revival ODE, revival propagation condition, revival cascade ordering, Fisher-KPP traveling wave analysis, revival dilemma, revival completion criterion, connection to Scaling Resolution). §31 — Added Memory Kernel Formalization for Non-Markovian Damage (three kernel forms: exponential/power-law/prion-like, fractional dynamics D^α, accumulated exposure integral E(t), critical dose E_crit, damage ratchet with acceleration). §32.5.1 — Added Cross-Theory Validation Matrix (pairwise consistency matrix across 8 theories, six key cross-validation results CV1–CV6, three emergent constraints EC1–EC3). §32.8.1 — Added Formal Convergence Proofs and Rate Estimates (dimensional compression convergence theorem, governance scaling rate corollary, self-purification convergence rate estimate, map-terrain convergence proposition). Added Testable Predictions P27–P32 (revival cascade ordering, correction saturation threshold, memory kernel damage acceleration, cross-theory emergent constraint tightening, sensitivity asymmetry, early-warning indicator staging). Added Theoretical Significance items 28–33. Expanded References with 11 new entries (2024–2025 literature on neural criticality, MFG bifurcation, cumulative damage, governance scaling). Updated keywords and metadata.*
 *Changelog v1.4: Scaling Resolution Theory major expansion. §32.8.1 — Added complete Scaling Resolution architecture: Circular Closure Theory (circle as fundamental scalable governance unit, formal definition, expansion→circulation conversion, bounded coordination distance proof); Scale-Matched Circles (scale-specific dynamical requirements, timescale collision failure mode, Proposition: Scale-Matched Closure); Layered Circular Architecture (cone structure derivation from S-equation, effective dimensionality collapse formula, subquadratic governance scaling proof, recursive dimensional compression condition lim n_eff < ∞); Contamination Theory (formal Definition of contamination as cross-scale instability leakage, contamination variables S_i/R_i/P_i, contamination flux formula Φ_contam = P·max(0,S−R), cascaded contamination condition, three contamination modes: coupling/frame drift/timescale leakage, bottom-up origination proof); Self-Purification Capacity R_i (four multiplicative components D·F·V·T with ODE correspondence, immunity paradox with formal R_i decay dynamics under zero contamination, dR/dt learning equation, connection to DDD perturbation testing); Terrain Design Protocol (circle formation conditions, valley/pass/gradient geometry, four-phase isolation→exposure→coupling→operation protocol with EDT/RT mapping, contamination-aware design); North Star Architecture (global/local North Star definition, continuous correction dynamics, criterion vs. principle separation with formal test, "eyes and feet" principle with contamination policy, scanning requirement); Integration Protocol (integration necessity from K² inter-circle scaling, maturity precondition R > Coupling_Cost, middle-layer-first principle with structural rationale, Neck architecture with three mandatory layers, permeability ramp formula, three connection types A→B→C, integration completion signal as dynamical synchronization, ODE fixed-point correspondence); Map-Terrain Balance (unified scaling principle, friction diagnostic — productive vs. non-productive, friction origination cascade bottom→middle→upper, preemptive feedback as collapse prevention, formal scaling closure theorem with 7 conditions, constraint-limited scalable regime derivation); Boundary Dynamics (immunity-paradox-driven expansion necessity, resource constraint on boundary distance, pulsed expansion lifecycle, experience accumulation from failed explorations, ODE perturbation correspondence); Complete Architecture diagram with scaling lifecycle phases 0–6 and DFG component mapping table. Updated Reader Guide, DFG mapping table, Testable Predictions 21–26, Falsification Conditions F6–F9, keywords, and metadata.*
 *Changelog v1.3: Recovery Theory deep integration pass. [See v1.3 changelog.]*
