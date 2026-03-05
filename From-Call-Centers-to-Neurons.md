@@ -1,73 +1,387 @@
 # From Call Centers to Neurons: Hierarchical Classification, Fractal Learning, and Attractor Escape
 
+> **Document Role:** This is the **core document** covering conceptual foundations (§1–13) and technical ODE formalization (§14–29), plus structural extensions (§30–31). Terrain dynamics, heritage theory, and full DFG framework integration are treated in the companion document: *DFG Terrain-Heritage-Integration* (§32 series). Cross-references to the companion document are marked **[→ *DFG Terrain-Heritage-Integration*]**.
+
+---
+
+## Projection Hierarchy Declaration
+
+> **Structural Note (read before §1).** This document spans three distinct abstraction levels. Conflating them is the most common source of misreading. The three levels are:
+
+```
+Level A — Environment Geometry  (terrain, heritage, North Star, EDT grammar)
+    ↓         [slow variables; companion document §32]
+Level B — System Dynamics       (ODE variables: C, d, ρ, T, k, Φ)
+    ↓         [this document, §14–29, self-contained]
+Level C — Emergent Phenomena    (Vector Storm, Silent Criticality, Cube collapse)
+              [this document, §1–10 and §30–31, phenomenological layer]
+```
+
+**Section alignment:**
+- §1–10 operate at **Level C** (observed phenomena; call-center narrative, fractal collapse signatures)
+- §11–29 operate at **Level B** (mechanistic ODE; bifurcation, hysteresis, lock budget, SOC proof)
+- §30–31 partially bridge Level B→A (revival trajectories, neurodegenerative damage, heritage as slow modifier)
+- §32 series (companion) operates at **Level A** (terrain geometry, heritage loading, EDT grammar)
+
+**Why this matters.** When §§1–10 and §14–29 are read on the same plane, it appears that Cube Domination, ODE dynamics, and terrain theory are peer-level claims competing for the same explanatory role. They are not. They are projections of the same underlying scaling law onto different observation planes:
+
+```
+Underlying law:   interaction ∼ n²  vs.  governance ∼ n  →  criticality at n* ≈ √(C_M)
+Level C projection:  "vector storm", "cube fragmentation", "silent criticality"
+Level B projection:  dC/dt, dρ/dt, Φ-bifurcation, lock budget
+Level A projection:  terrain curvature, heritage loading, branching capacity B
+```
+
+This is the DFG version of the geometry → dynamics → phenomena structure standard in modern theoretical physics. **Multiple projections agreeing on the same phenomenon is not mutual validation; it is self-consistency of a shared underlying scaling law.** The empirical challenge — and the source of the document's testable predictions (§Falsifiability) — is to find observations that would distinguish the projections.
+
+### Self-Validation Loop Warning
+
+> **Critical structural caveat (read before interpreting cross-theory consistency).** A recurring structural risk in large integrated frameworks is the Self-Validation Loop: multiple sub-theories appearing to confirm each other, while in fact sharing a common derivational origin. This document is not immune.
+
+The pattern takes the following form in the DFG context:
+
+```
+Shared assumption: interaction ∼ n²,  governance ∼ n
+         ↓
+Derived theories:  ODE dynamics  →  predicts Φ-criticality
+                   Cube Domination  →  predicts frame collapse
+                   EDT terrain theory  →  predicts terrain instability
+                   RBIT  →  predicts resolution collapse
+         ↓
+Apparent result:  "all theories explain the same collapse phenomenon"
+         ↓
+Risk:  treated as independent mutual validation
+         ↓
+Actual structure:  same-origin consistency, not independent confirmation
+```
+
+**The correct statement** is: "Multiple projections of the same underlying scaling law (interaction ∼ n², governance ∼ n) are self-consistent." This is strong — it means the framework is internally coherent. But it is not the same as empirical independence. String theory and DSGE macroeconomics are canonical examples of frameworks that appeared mutually validating while sharing underlying assumptions.
+
+**Genuine empirical challenge:** The testable claim is not that ODE, Cube, EDT, and RBIT agree (they must, by construction), but that their shared prediction — criticality at n* ≈ √(C_M), power-law avalanche distributions, SOC-like EW signatures — holds in real systems (call centers, AI agent networks, neural circuits) against null models that do not embed the n²-vs-n asymmetry. Finding observations that would *distinguish* the projections from each other, or that would falsify the shared n²-law, is the open empirical frontier.
+
+**Practical implication for reading this document:** Cross-theory validation matrices and "emergent constraint" language should be read as internal consistency checks, not as independent empirical support. The primary source of evidential weight is the falsifiability section (§Falsifiability), the toy experiment simulations, and the testable scaling predictions.
+
+---
+
+### Deep n² Structure: Why Interaction Growth Forces Governance Asymmetry
+
+> **Mathematical foundation note.** The n² interaction law is not a modeling choice — it is a combinatorial inevitability that drives every result in this document. This subsection makes the mechanism explicit.
+
+**Pairwise interaction counting.** For a system with n components capable of mutual interaction, the number of possible interaction channels is:
+
+```
+E = n(n−1)/2  ≈  n²/2    for large n
+```
+
+This is the **fundamental source** of the n²-asymmetry. Governance capacity, by contrast, typically grows linearly with resources:
+
+```
+Governance capacity  ∼  n    (processing units, management bandwidth, rule throughput)
+Problem complexity   ∼  n²   (interaction channels, coordination demands, conflict potential)
+```
+
+The ratio:
+
+```
+Ω(t) = [interaction load] / [governance capacity]  ∼  n²/n  =  n
+```
+
+grows linearly with system size. **This is why scaling breaks governance.** It is not a failure mode — it is a mathematical necessity for any pairwise-interacting system.
+
+**Critical size.** If governance capacity is C_M, the critical size beyond which interaction channels exceed governance capacity is:
+
+```
+n(n−1)/2  ≈  C_M    →    n*  ≈  √(2·C_M)
+```
+
+**Why fragmentation is inevitable above n*.** When Ω > 1, the least-cost response is modular decomposition. Partitioning n agents into k groups of size m = n/k reduces internal interaction to:
+
+```
+interaction_new  =  k · m²  =  k · (n/k)²  =  n²/k
+```
+
+The reduction factor is k. Total cost (interaction + coordination overhead αk) is minimized at:
+
+```
+k*  =  n / √α
+```
+
+This is the mathematical origin of **Cube Domination, buffer layers, and hierarchical governance**: they are the cost-minimizing response to n² interaction overload. They are not organizational choices — they are structural attractors.
+
+**Fractal recurrence.** Each new modular layer faces the same problem: k sub-units now interact among themselves at O(k²) cost, requiring a further layer. The result is a self-similar governance hierarchy — the **fractal governance structure** — where the same (Φ, L, q) dynamics govern at every scale, and the same collapse conditions apply at every level.
+
+**The quadratic collapse equation.** Across all sub-theories in this document, the core dynamics reduce to a single canonical form:
+
+```
+dx/dt  =  α·x²  −  β·x  −  γ
+```
+
+where x represents system load/complexity, α·x² is the superlinear interaction growth, β·x is the governance/damping term, and γ is terrain/environment loss. This equation has a critical equilibrium at:
+
+```
+x_c  =  [β + √(β² + 4αγ)] / (2α)
+```
+
+The conditions §19 Lock Budget, §27 Locked Attractor, §31 Damage Condition, Cube Domination survival, SOC cutoff, and Silent Criticality threshold are all projections of the same instability — the regime where x → x_c from below.
+
+**Why this forces SOC.** In the quadratic equation, when x < x_c, growth dominates (dx/dt > 0). When x > x_c, collapse dominates (dx/dt < 0). Under external drive D that continuously replenishes x, the system oscillates around x_c. This is the mathematical mechanism of self-organized criticality: the n² interaction growth pulls x up, the governance/release term drives x down, and the system settles near the balance point — the critical surface.
+
+---
+
+## Master Condition Declarations
+
+> **Reference block.** All collapse, lock, and irreversibility conditions in §§14–31 reduce to the following master conditions. Derivations and original forms are in the respective sections; this block is the canonical lookup. Every occurrence of a collapse condition anywhere in this document maps to exactly one entry here.
+
+### M1 — Operational Criticality (fast dynamics, §14–19)
+
+**Canonical form:**
+```
+κ(t) := Φ(t) / [L(t) · q(t)]  ≥  κ_c
+
+  equivalently (critical manifold form):
+  Φ(t) > Φ_c(L, q) := κ_c · L(t) · q(t)
+```
+
+**Interpretation.** M1 is the condition where the system's stress-to-recovery ratio crosses the critical surface. The critical manifold Φ_c(L, q) is not a fixed threshold: it moves as lock (L) and terrain (q) evolve on their slower timescales. A system can breach M1 by three distinct paths:
+- Path 1: Φ increases (direct stress overload)
+- Path 2: L increases (lock reduces recovery capacity, raising effective Φ)
+- Path 3: q decreases (terrain erosion lowers the critical manifold toward the system's current Φ)
+
+Silent Criticality (§21) is Path 2+3 without visible Φ increase.
+
+**Rigidity trap mechanism.** When governance succeeds, calm periods accumulate lock (L↑). This narrows the safety margin to the critical manifold even without any increase in stress:
+```
+Rigidity trap:  Φ stable, L↑  →  Φ_c ↓  →  κ(t) = Φ/[L·q] ↑  →  M1 approach
+```
+This is why successful systems can be closer to collapse than failing ones.
+
+### M2 — Lock Budget Violation (structural lock, §19)
+
+**Canonical form:**
+```
+L(t) := (1 + L_C)(1 + L_d)  >  ζ⁻⁴
+
+  where:
+    L_C := νC / αC           (capacity lock ratio)
+    L_d := νd / (αd · T₀)   (diversity lock ratio)
+    ζ    = guaranteed recovery fraction
+
+  damage-modified form (§31):
+    L_eff(S) = (1 + νC / [αC(1−S)]) · (1 + L_d)
+```
+
+**Critical structural feature: lock costs multiply, not add.** The product structure (1+L_C)(1+L_d) is not cosmetic. It means even modest lock accumulation in both dimensions compounds super-additively:
+
+```
+Example:  L_C = 0.5, L_d = 0.5
+  Additive model:  total cost  ≈ 1 + 0.5 + 0.5 = 2.0
+  Product model:   L = (1.5)(1.5) = 2.25   (12.5% worse, and growing)
+```
+
+As the system scales and both L_C and L_d approach 1, the product approaches (2)(2) = 4 = ζ⁻⁴ (for ζ = 1/√2). This means **simultaneous capacity lock and diversity lock are catastrophically compounding** — a key insight for multi-dimensional governance design.
+
+**Scale-invariance of lock ratios.** L_C = νC/αC and L_d = νd/(αd·T₀) are dimensionless ratios. They are the governance-layer analogs of the Reynolds number in fluid dynamics: they determine qualitative regime (stable/locked/collapsed) independent of the system's absolute size. A call center and a neural network with the same L_C, L_d, κ will exhibit qualitatively identical collapse dynamics.
+
+### M3 — Terrain Irreversibility (slow dynamics, §30–31)
+
+**Canonical form:**
+```
+q(t) ≤ q_min   →   recovery pathway collapse (Type II irreversibility)
+```
+
+**Mechanistic pathway.** Terrain quality q degrades when sustained M1 stress exceeds the natural recovery rate:
+```
+dq/dt = εq · [λ(q₀ − q) − κ·Φ·q]
+
+  q erodes when:  κ·Φ·q > λ(q₀ − q)
+                  Φ > λ(q₀ − q) / (κ·q)  =:  Φ_erosion(q)
+```
+
+Once q → q_min, the recovery term λ(q₀ − q) provides insufficient force to overcome even small Φ. The system enters a state where it can no longer self-recover even after stressor removal — Type II irreversibility.
+
+**Key distinction from M1/M2.** M1 and M2 are operational conditions: resolving them (DDD protocol, governance intervention) can restore function. M3 is a structural condition: the recovery *mechanism itself* is damaged. Treating M3 as M1 is the most common clinical error in system governance.
+
+### M4 — Heritage Structural Irreversibility (glacial dynamics, companion §32.8.2)
+
+**Canonical form:**
+```
+h(t) ≥ h_c   →   recoverability collapse (Type II, heritage-mediated)
+```
+
+**Heritage dynamics (full form):**
+```
+dh/dt = εh · [κh · σ(Φ) − ρh · c · q · h]
+
+  h accumulates at each critical event (σ(Φ) fires)
+  h recovers only when both governance (c) and terrain (q) are healthy
+  εh ≪ εq ≪ εL ≪ 1   (heritage is the slowest axis)
+```
+
+When h ≥ h_c, the recovery term ρh·c·q·h cannot overcome accumulation regardless of governance investment. The system's recoverability infrastructure has been structurally compromised. This is the "glacier-level" irreversibility — timescales of organizational rebuilding, not operational recovery.
+
+**M4 ⟹ M3 pathway.** Heritage accumulation degrades terrain:
+```
+h↑  →  q erodes faster (κh·h term in q-dynamics)
+      →  q → q_min  (M3 triggered)
+      →  M1 breached easily  (Φ_c collapses)
+```
+Heritage damage is thus the ultimate slow driver that eventually forces all other conditions.
+
+### Unified Collapse and Trap Condition
+
+```
+Collapse / Trap  ⟺  (M1 holds repeatedly/persistently) ∧ (M2 or M3 holds)
+                   ∨  M4 holds independently
+```
+
+**Single-formula version:**
+```
+Trap  ⟺  (Φ > Φ_c(L, q)) ∨ (q ≤ q_min) ∨ (h ≥ h_c)
+```
+
+where Φ_c(L, q) = κ_c · L · q absorbs M2 implicitly (L↑ → Φ_c shifts).
+
+### Containment Relations and Section Mapping
+
+```
+CONTAINMENT HIERARCHY:
+  M4  ⟹  M3  ⟹  M1     (structural implies terrain implies operational)
+  M1  ⟹̸  M3             (operational criticality does not cause terrain collapse alone)
+  M3  ⟹̸  M4             (terrain collapse does not require heritage breach)
+
+SECTION MAPPINGS (canonical):
+  §19 lock budget          ≡  M2   (definitional)
+  §27 locked attractor     ≡  M1   (Φ > Φ_c(L,q) form)
+  §31 damage condition     ⊂  M2   (L_eff(S) special case)
+  §27 OR rule (S∨H∨heritage) =  M1 ∨ M3 ∨ M4  (decompose — do not merge)
+  §32 terrain regime           modifies Φ_c  (shifts critical manifold, not new collapse type)
+  §32.8.2 heritage             ≡  M4   (definitional)
+  §30 revival threshold        ≡  M3 onset boundary
+  §19.5 κ(t) = Φ/(L·q) ≥ κ_c  ≡  M1 ratio form
+
+TYPE CLASSIFICATION:
+  Type I  (reversible):   M1 or M2 breach with q > q_min, h < h_c  →  DDD recoverable
+  Type II (irreversible): M3 or M4 breach                          →  terrain/heritage intervention required
+```
+
+### The Scale-Invariant Governance Constant κ
+
+The most compact statement of this document's collapse theory is the single dimensionless number:
+
+```
+κ(t)  :=  Φ(t) / [L(t) · q(t)]
+
+  κ < κ_c  :  stable operation
+  κ ≈ κ_c  :  critical surface (SOC region)
+  κ > κ_c  :  collapse / trap
+```
+
+κ is scale-invariant: multiplying all system variables by a constant leaves κ unchanged. This is why the same collapse dynamics appear at the team level, organizational level, and inter-organizational level — the same κ governs at every scale. This is the mathematical foundation of fractal governance.
+
+### Final Master Mapping Table (Canonical Reference)
+
+> **Usage rule.** When writing or reading any condition in §§14–32, locate its row here. Use only the Master map column for cross-references. All original-form conditions are preserved in their source sections but subordinated here.
+
+| Source | Original condition (summary) | Operational meaning | **Master map** | Classification | Relation |
+|---|---|---|---|---|---|
+| §19 Lock Budget | (1+L_C)(1+L_d) > ζ⁻⁴ | governance lock saturation | **M2** | Master (definition) | — |
+| §19 Heritage-lock | L_eff(S) variant | damage amplifies lock | **M2** with L_eff(S) | M2 special case | ⊂ M2 |
+| §27 Locked Attractor | αρ·d*·C*(1−ρ*) < (μρ·Φ*+νρ·k*)ρ* | collapse rate > recovery rate | **M1**: Φ > Φ_c(L,q) | Equivalent to M1 | ≡ M1 |
+| §27 OR rule | S>S* ∨ heritage ∨ H>H_max | mixed operational/structural | **M1 ∨ M3 ∨ M4** | Decompose required | mixed |
+| §31 Damage | (1+νC/[αC(1−S)])(1+L_d) > ζ⁻⁴ | damage raises lock | **M2** via L_eff(S) | M2 subset | ⊂ M2 |
+| §30 Revival threshold | topological exploration necessity | recovery path requires exploration | **M3** onset (q→q_min) | M3 boundary | ≈ M3 |
+| §32.7 Stage-0 | Φ germination failure / pre-conditioning | terrain must be prepared | **Δq > 0 or Δh < 0** (protocol) | M3/M4 intervention | modifies M3/M4 |
+| §32.8.2 Heritage | H accumulation → correction failure | structural non-reversibility | **M4**: h ≥ h_c | M4 (glacial) | — |
+| §32.10 EDT Tier | Tier 0–5 alarm system | EW coverage by layer | **EW Tier 1/2/3** | Monitoring design | not a collapse condition |
+| §19.5 κ(t) | κ = Φ/(L·q) ≥ κ_c | unified dimensionless control | **M1** ratio form | Master (ratio) | ≡ M1 |
+| §19.5 Critical Manifold | Φ = Φ_c(L,q) = κ_c·L·q | moving threshold surface | **M1** boundary | Master (geometric) | boundary of M1 |
+| §21 Silent Criticality | Φ↑ invisible, q↓ or L↑ | hidden M1 approach | **M1** via M2+M3 path | M1 (silent pathway) | ⊂ M1 |
+
+### EW Tier Alignment
+
+```
+Tier 1 (fast dynamics):    σ², AC, PRR, recovery time     →  monitors M1 approach (Φ, κ)
+Tier 2 (information):      I_F, CVD, cross-entropy        →  monitors M2 accumulation (L)
+Tier 3 (terrain/heritage): q↓ trend, h↑ trend, Φ_c shift →  monitors M3/M4 onset (q, h)
+```
+
+The three tiers are not redundant — they observe the same system on different timescales. Tier 1 gives operational warning (hours to days). Tier 2 gives structural warning (weeks to months). Tier 3 gives existential warning (months to years). A complete governance system requires all three; using only Tier 1 creates systematic blindness to the slow M3/M4 pathway (the Silent Criticality problem).
+
+---
+
 ## Overview
 
 This document traces a conceptual journey that begins with a deceptively simple question — *"How do you build a customer service call center?"* — and progressively reveals deep structural parallels between hierarchical routing systems, neuron networks, and fractal governance architectures.
 
 The core insight: **the call center was never the real subject.** It served as an accessible metaphor for exploring how hierarchical decision-tree systems learn, fail, and recover — principles that apply equally to neural circuits, multi-agent AI systems, and organizational governance.
 
+**Structural note on cross-theory consistency.** The recurrence of similar collapse conditions across §§8, 19, 27, 31, and the companion §32 is not independent confirmation of distinct claims. All derive from a single underlying scaling law (interaction ∼ n², governance ∼ n) and its ratio structure. Their convergence reflects shared mathematical origin, not mutual empirical validation. The document presents them as *different projections of one law*, each resolving a different observational axis. See Projection Hierarchy Declaration above.
+
 ### Reader Guide
 
-| Sections | Content | Character |
-|---|---|---|
-| §1–10 | Motivating narrative, conceptual mapping, intuition | Accessible; suitable as Extended Introduction or Appendix |
-| §11–13 | Mathematical bridge: attractor dynamics, variable mapping, onset conditions | Transition from qualitative to quantitative |
-| §14–21 | **Technical core:** ODE system, global well-posedness, bifurcation, hysteresis, Silent Criticality, information geometry | Submission-ready mathematical analysis |
-| §22–24 | Extended attention model, propagation, correction protocol | Model extension and control theory |
-| §25–29 | Symbol harmonization, dependency graph, Jacobian, algebraically explicit Δu | Formal completion and cross-validation |
-| §30–31 | Revival trajectories (topological necessity), neurodegenerative extension (critical damage theory) | Phase boundary dynamics, irreversible damage, and structural degradation |
-| §32 | **DFG Framework Integration:** Structural origin of instability, component theories (incl. AMT), formal definitions | Bridge to full DFG framework |
-| §32.5.2 | **Extended Cross-Validation (EDT v5.0):** GCET duality, terrain grammar × phase portrait, heritage × damage, collective memory × ECC; EC4–EC6 | 36-pair validation matrix; 6 emergent constraints |
-| §32.7 | **Heritage-Corrected Lifecycle:** Heritage accumulation across 7 phases, deficit-heritage modulation, heritage-corrected governance protocol | Heritage as woven-in lifecycle variable, not external add-on |
-| §32.8.1 | **Scaling Resolution:** Circular closure, contamination theory, self-purification dynamics, terrain design, North Star architecture, integration protocol, map-terrain balance | Constructive scaling solution — closes the "how" gap |
-| §32.8.2 | **Terrain Heritage Theory:** Heritage as fourth scaling failure axis, Heritage Ratchet, TCE governance primitive, Condition 8 of Scaling Closure Theorem | Heritage failure independent of state-variable metrics |
+| Sections | Projection Level | Content | Character |
+|---|---|---|---|
+| §1–10 | **Level C** (Phenomena) | Motivating narrative, conceptual mapping, fractal collapse signatures | Accessible; suitable as Extended Introduction or Appendix |
+| §11–13 | B→C bridge | Mathematical bridge: attractor dynamics, variable mapping, onset conditions | Transition from qualitative to quantitative |
+| §14–21 | **Level B** (Dynamics) | **Technical core:** ODE system, global well-posedness, bifurcation, hysteresis, Silent Criticality, information geometry | Submission-ready mathematical analysis |
+| §19.5 | **Level B** (Dynamics) | **Scale-invariant coupling κ, Critical Manifold geometry, Theorem 1 (SOC attractor), Propositions 1–3 (fold collapse, EW unification, survival function)** | Unified control parameter; collapse forecasting chain |
+| §22–24 | **Level B** (Dynamics) | Extended attention model, propagation, correction protocol | Model extension and control theory |
+| §25–29 | **Level B** (Dynamics) | Symbol harmonization, dependency graph, Jacobian, algebraically explicit Δu | Formal completion and cross-validation |
+| §30–31 | B→A bridge | Revival trajectories (topological necessity), neurodegenerative extension (critical damage theory) | Phase boundary dynamics, irreversible damage, and structural degradation |
+| §32 series | **Level A** (Environment) | **DFG Framework Integration (Companion Document)** | See *DFG Terrain-Heritage-Integration* |
 
-For paper submission: §14–29 form the self-contained technical manuscript; §1–10 can serve as a motivating appendix or extended introduction. §32 provides the theoretical embedding within the broader Deficit-Fractal Governance framework.
+For paper submission: §14–29 form the self-contained technical manuscript at Level B; §1–10 serve as a motivating introduction at Level C. Full Level A treatment (terrain dynamics, EDT, heritage theory) is in the companion document *DFG Terrain-Heritage-Integration* **[→ *DFG Terrain-Heritage-Integration*]**.
 
 ### Relation to the DFG Framework
 
-This document provides one **analytical projection** of the Deficit-Fractal Governance (DFG) framework — specifically, the mean-field ODE formalization of regime dynamics at a single representative scale. The parent framework (documented in the companion *Fractal Governance and Constraint-Limited Scaling* working paper) defines the full phase space from which this projection is derived.
+This document provides one **analytical projection** of the Deficit-Fractal Governance (DFG) framework — specifically, the mean-field ODE formalization of regime dynamics (Level B) at a single representative scale. The parent framework defines the full phase space from which this projection is derived; the companion document covers Level A.
 
-| This Document | DFG Framework |
-|---|---|
-| Φ (regime scalar) | S̃ (S-equation order parameter) |
-| C (capacity) | Degradation capacity C̃(t) |
-| d (diversity) | Buffer layer thickness, representational spread |
-| ρ (resolution) | Resolution integrity (RBIT) |
-| T (temperature) | Controlled stochastic freedom (Affective Module / AGM) |
-| k (cross-scale coupling) | ILMI coupling intensity |
-| u⁺, u⁻ (thresholds) | Storm onset / Recovery entry conditions |
-| Lock budget inequality | Fractal integrity constraint |
-| DDD protocol | Recovery Theory five-phase cascade |
-| S (structural damage) | Accumulated degradation (neurodegenerative extension) |
-| I\_F (Fisher information) | Observability capacity (RBIT Tier detection threshold) |
-| R\_g (local coordination frame) | Agent-level governance reference (NAT sphere topology) |
-| Σ (frame dispersion) | Inter-agent coherence loss (VST metric) |
-| κ(K) (governance constant) | Scale-invariant governance ratio |
-| n\_eff = n/B | Branching-reduced interaction density (EDT Axis 1) |
-| R\_cap (retention) | Terrain retention capacity (EDT §3.4) |
-| τ timescale ordering | EDT Terrain Resonance avoidance (EDT §30) |
-| SCM conditions | RBIT Theorem T4 + Axiom A2 (Projection Replacement) |
-| ECC (emotional criticality) | AGM Theorem 2 bifurcation (Freeze / Runaway) |
-| Spectral gap λ₁−λ₂ | NAT storm initiation threshold (Proposition I3) |
-| n\_max (carrying capacity) | EDT Carrying Capacity Bound (EDT §31) |
-| Circle (원) | Circular closure unit — independent feedback loop at single scale |
-| R\_i (self-purification) | C·d·(1/Φ) product — contamination absorption capacity |
-| Φ\_contam (contamination flux) | P·max(0, S−R) — cross-scale instability leakage |
-| North Star (global/local) | ρ\_ref (global) / ρ\_local projection (local) — direction maintenance |
-| Map-Terrain balance | |Map − Terrain| = ε — fundamental scaling diagnostic |
-| Neck (integration interface) | Purifier + Buffer + Translator — controlled inter-circle coupling |
-| Boundary expansion | Revival trajectory (§30) — mature system exploration dynamics |
-| Heritage loading H(x,t) | Accumulated negative terrain curvature from past collective events — §32.8.2 |
-| Heritage-adjusted λ_eff | Germination threshold elevated by past failure events — §32.8.2 |
-| Therapeutic Collective Event (TCE) | Positive curvature injection to counteract heritage loading — new governance primitive §32.8.2 |
-| GCET (Gain-Curvature Equivalence) | T ↔ ΔU duality — terrain and affective interventions are isomorphic — §32.5.2, §32.10 EDT |
-| m_max (buffer carrying capacity) | C^(1/2)·log(C)/K_buffer — maximum sustainable buffer count — §32.10 EDT |
-| Terrain universality class | Mean-field / Ising-like / Percolation — governs transition sharpness and EW lead time — §32.10 EDT |
-| NF1 Resonance Capture | Terrain limit cycle at ω_agent — novel failure mode invisible to scalar Φ — §32.5.2 |
-| NF2 Grammar Incompleteness | Cross-layer transfer failure with within-layer health — terrain-level Silent Fragmentation — §32.5.2 |
-| μ_network (collective memory coeff.) | n_cascade · μ_agent — collective event terrain amplification — §32.10 AGM |
-| r_positive,min (therapeutic rate) | Minimum rate of positive collective experiences for heritage recovery — §32.8.2 |
+The relation between levels:
+```
+Level A (companion):  terrain geometry Q_E, heritage H, EDT grammar
+    ↓   slow-variable coupling (ε_Q, ε_H ≪ 1)
+Level B (this document):  C, d, ρ, T, k, Φ, κ, L_C, L_d
+    ↓   phenomenological reading
+Level C (§1–10, §30–31):  Storm, Silent Criticality, Cube fragmentation, Revival
+```
+
+Φ is endogenous throughout: interventions act on q or h (Level A), which shift Φ_c (the critical manifold), which changes observable regime behavior (Level C). There is no external Φ injection anywhere in the model.
+
+| Level | This Document | DFG Framework | Master Condition |
+|---|---|---|---|
+| **B** | Φ (regime scalar) | S̃ (S-equation order parameter) | M1 |
+| **B** | C (capacity) | Degradation capacity C̃(t) | M1, M2 |
+| **B** | d (diversity) | Buffer layer thickness, representational spread | M2 |
+| **B** | ρ (resolution) | Resolution integrity (RBIT) | M1 |
+| **B** | T (temperature) | Controlled stochastic freedom (Affective Module / AGM) | M1 |
+| **B** | k (cross-scale coupling) | ILMI coupling intensity | M1, M2 |
+| **B** | u⁺, u⁻ (thresholds) | Storm onset / Recovery entry conditions | M1 (Φ_c boundary) |
+| **B** | Lock budget inequality | Fractal integrity constraint | M2 (definition) |
+| **B** | L_C := νC/αC | Capacity lock ratio | M2 |
+| **B** | L_d := νd/(αd·T₀) | Diversity lock ratio | M2 |
+| **B** | κ(t) = Φ/(L·q) | Unified control parameter (§19.5) | M1 (ratio form) |
+| **B** | m(t) = κ_c − κ(t) | Critical margin — EW unification (§19.5) | M1 (distance to manifold) |
+| **B** | DDD protocol | Recovery Theory five-phase cascade | M1 (operational) |
+| **B** | S (structural damage) | Accumulated degradation (§31) | M2-modified (L_eff(S)) |
+| **B** | I\_F (Fisher information) | RBIT Tier detection threshold | EW Tier 2 |
+| **B** | R\_g (local coordination frame) | NAT sphere topology | M1 (frame coherence) |
+| **B** | Σ (frame dispersion) | VST inter-agent coherence loss | M1 (storm signature) |
+| **B** | SCM conditions | RBIT Theorem T4 + Axiom A2 | M1 (η_corr < 1) |
+| **B** | ECC (emotional criticality) | AGM Theorem 2 bifurcation | M1 (bifurcation projection) |
+| **B** | Spectral gap λ₁−λ₂ | NAT storm initiation threshold (Proposition I3) | M1 (onset) |
+| **B** | Circle (원) | Circular closure unit | M1 (modular n² reduction) |
+| **B** | R\_i (self-purification) | C·d·(1/Φ) contamination absorption | M1 (capacity buffer) |
+| **B** | Φ\_contam (contamination flux) | P·max(0, S−R) cross-scale leakage | M1→M2 transition |
+| **B** | North Star | ρ\_ref global/local direction | M1 (ρ recovery target) |
+| **A→B** | n\_eff = n/B | EDT Axis 1: branching-reduced density | modifies Φ in M1 |
+| **A→B** | R\_cap (retention) | EDT §3.4 terrain retention | modifies q in M1 |
+| **A→B** | τ timescale ordering | EDT Terrain Resonance avoidance | M1 stability condition |
+| **A→B** | n\_max (carrying capacity) | EDT Carrying Capacity Bound | M3 (terrain collapse) |
+| **A→B** | Map-Terrain balance | \|Map − Terrain\| = ε diagnostic | EW Tier 3 |
+| **A→B** | Neck (integration interface) | Purifier + Buffer + Translator | M2 (inter-circle lock) |
+| **A→B** | Boundary expansion | Revival trajectory (§30) | M3 threshold dynamics |
+| **A** | κ(K) (governance constant) | Scale-invariant governance ratio | M1 universality |
+| **A** | Terrain, Heritage, EDT geometry | [→ *DFG Terrain-Heritage-Integration* §32] | M3, M4 |
 
 ---
 
@@ -262,7 +576,7 @@ Phase 2 (Drift):        G > 0, slowly growing          — subtle divergence acc
 Phase 3 (Lock-in):      G ≫ 0, self-reinforcing        — metric optimization actively harms J_true
 ```
 
-The Phase 2 → Phase 3 transition is catastrophic and discontinuous (a bifurcation in the optimization dynamics), corresponding precisely to the Silent Criticality → Storm transition in the ODE model (§20). The system appears increasingly healthy by its own standards while becoming increasingly dysfunctional by external standards — a precise operational analog of the dual attractor structure (§32.6).
+The Phase 2 → Phase 3 transition is catastrophic and discontinuous (a bifurcation in the optimization dynamics), corresponding precisely to the Silent Criticality → Storm transition in the ODE model (§20). The system appears increasingly healthy by its own standards while becoming increasingly dysfunctional by external standards — a precise operational analog of the dual attractor structure [→ *DFG Terrain-Heritage-Integration* §32.6].
 
 ---
 
@@ -336,7 +650,7 @@ Two experiences e₁, e₂ are **structurally equivalent** if there exists a per
 Δw_ij → Δr_j (firing rate change at j) → Δw_jk (downstream weight update) → ...
 ```
 
-The effective range of propagation depends on the network's spectral properties. In networks with spectral gap λ₁ − λ₂ > 0 (the condition required by NAT, §32.5), perturbations mix across the network in O(1/(λ₁ − λ₂)) time steps, ensuring that local learning reaches global scales within a bounded timescale.
+The effective range of propagation depends on the network's spectral properties. In networks with spectral gap λ₁ − λ₂ > 0 (NAT spectral gap condition — [→ *DFG Terrain-Heritage-Integration* §32.5]), perturbations mix across the network in O(1/(λ₁ − λ₂)) time steps, ensuring that local learning reaches global scales within a bounded timescale.
 
 **Three-factor learning rule.** The selective reinforcement mechanism combines three factors:
 
@@ -388,7 +702,7 @@ where ≅ denotes topological equivalence of the flow.
 |R_ℓ − R_{ℓ'}| / R_ℓ < 0.15
 ```
 
-where τ is the storm size exponent, α_dur is the duration exponent, and R is the cascade branching ratio. Violation of this ±15% tolerance would falsify the fractal governance claim (§32.9 Falsification Conditions).
+where τ is the storm size exponent, α_dur is the duration exponent, and R is the cascade branching ratio. Violation of this ±15% tolerance would falsify the fractal governance claim ([→ *DFG Terrain-Heritage-Integration* §32.9] Falsification Conditions).
 
 ### Fractal Resilience: The Two Faces
 
@@ -431,6 +745,61 @@ where k\_{ℓ,ℓ+1} ∝ coupling between adjacent scales. The present model cor
 
 ---
 
+## 6.5 Renormalization Group Interpretation
+
+> *The fractal self-similarity of §6 has a precise mathematical counterpart in Wilson's Renormalization Group (RG). This section states the RG interpretation of DFG governance without developing new theory — it reframes the existing scaling structure in RG language, which sharpens the universality claims and connects DFG to a well-developed mathematical tradition.*
+
+### RG–Governance Dictionary
+
+The renormalization group describes how a physical system's effective parameters change when observed at different length or time scales. In the DFG governance context:
+
+| RG concept | Governance analog |
+|---|---|
+| Coarse-graining | Hierarchical aggregation: individual agents → teams → divisions → organization |
+| RG flow | How governance parameters (κ, L, q) evolve across scales |
+| Fixed point R(G*) = G* | Scale-invariant governance regime (same dynamics at every scale) |
+| Relevant operator | Variable that grows under coarse-graining — dominates large-scale behavior |
+| Irrelevant operator | Variable that vanishes under coarse-graining — matters only at small scales |
+| Marginal operator | Variable that changes logarithmically — borderline universality |
+| β-function | Rate of change of coupling constant under scale transformation |
+| Critical point | Fixed point at the boundary between stable and collapsed governance |
+
+### The DFG β-Function
+
+The key coupling constant is κ = Φ/(L·q) — the universal control parameter (§131). Under hierarchical coarse-graining (increasing scale index ℓ → ℓ+1), κ evolves according to:
+
+```
+dκ / d log n  =  β(κ)
+```
+
+where n is the agent count (or equivalently, the scale parameter). The form of β(κ) determines the scaling behavior:
+
+```
+β(κ) < 0   for κ < κ*:   κ flows toward κ* from below (stable governance scales)
+β(κ) > 0   for κ > κ*:   κ flows away from κ* (collapse scales)
+β(κ*) = 0:               κ* is the critical fixed point (scale-invariant regime)
+```
+
+The **critical point** β(κ*) = 0 corresponds to the SOC governance regime identified in §21 (SOC Residence Argument): systems at the critical edge have κ ≈ κ*, making their dynamics scale-invariant and their power-law signatures universal.
+
+### Relevant and Irrelevant Operators
+
+Under coarse-graining in the DFG framework:
+
+```
+Relevant (grows at large scale):    n² interaction term — dominates organizational behavior
+Irrelevant (vanishes at large scale): local noise terms — matter only at individual scale
+Marginal:                            lock budget L — logarithmic scale dependence
+```
+
+The fact that the n² term is **relevant** in the RG sense means that interaction overload is not a local effect — it is the *most important* feature at every scale above the individual agent. This provides model-independent justification for why fractal governance (which controls the n²/n ratio at every scale) is necessary rather than merely useful.
+
+### Universality
+
+A key consequence of the RG picture: systems near the critical fixed point κ* display **universal behavior** — their critical exponents (τ, α_dur, R) are determined by the universality class, not by microscopic details. This is why the ±15% tolerance condition on critical exponents (§6, Fractal Consistency Verification) is the correct falsification criterion: systems with the same underlying scaling law belong to the same universality class and must share critical exponents regardless of whether they are call centers, neural circuits, or AI governance systems.
+
+---
+
 ## 7. Single-Agent Scaling Breakdown
 
 ### Why Centralized Optimization Eventually Fails
@@ -464,416 +833,17 @@ This transition creates the governance scaling pressure formalized by the S-equa
 
 ---
 
-## 7.5 Cube Domination: Coordinate Frame Dynamics and Multi-Dimensional Governance
+## 7.5 Cube Domination (→ Separate Document)
 
-### The Cube Domination Problem
+When a global coordination frame collapses, the system enters structured competition between local coordination frames. This process — *Cube Domination dynamics* — determines whether recovery reaches a new stable governance regime or undergoes irreversible fragmentation.
 
-The single-agent scaling breakdown (§7) identifies *why* centralized optimization fails. But this leaves open a deeper question: **what replaces it?** When a global coordination frame collapses, the system does not simply fragment — it enters a structured competition between local coordination frames, each attempting to become the new dominant reference. This process, formalized here as *Cube Domination dynamics*, determines whether the system recovers to a new stable governance regime or undergoes irreversible fragmentation collapse.
+Cube Domination operates at the **environment design layer**, not the dynamical layer of the ODE system. It addresses the question "how should the system be expanded and governed?" rather than "why does the system collapse?" — making it structurally distinct from the regime dynamics of §8–29.
 
-**Definition (Cube Domination).** A regime in which the geometry of interaction — rather than any individual agent — constrains and governs the collective dynamics of a system. Specifically, a dominant coordination frame R\_{i\*} emerges such that the accessible interaction volume of all agents is bounded by the frame's constraint geometry:
+Full treatment is provided in the companion document *Cube Domination Dynamics: Coordinate Frame Competition and Multi-Dimensional Governance* (separate work, EDT series). Key concepts used elsewhere in this document:
 
-```
-Dim(Accessible interaction space) < Dim(Unconstrained interaction space)
-```
-
-Unlike classical dominance (one agent outperforms others on a single metric), Cube Domination operates across multiple axes simultaneously — relational, temporal, and conditional — creating a multi-dimensional constraint volume (hence "cube") that shapes all possible collective behaviors.
-
-### Formal State Variables
-
-**(A) Local Coordination Frame.** Following global frame collapse, each cluster g = 1, …, K develops a local coordination frame R\_g(t) representing its interpretation rules, operational standards, and alignment reference:
-
-```
-dR_g/dt = η_g(t) + Φ_g(selection pressure)
-```
-
-where η\_g captures environmental drift and internal evolution, and Φ\_g captures endogenous selection pressure from inter-cluster competition.
-
-**(B) Frame Dispersion (Coordinate Variance).**
-
-```
-Σ(t) := Var(R₁, …, R_K)
-```
-
-Σ measures how far apart the clusters' reference frames have diverged. Rising Σ indicates progressive loss of mutual intelligibility — the system can no longer translate between local frames without increasing cost.
-
-**(C) Inter-Cluster Coupling.**
-
-```
-W_{gh}(t) = exp(−α|R_g − R_h|)
-```
-
-Coupling decays exponentially with frame distance. This is the formal mechanism by which coordinate divergence produces network fragmentation: as Σ rises, the mean coupling W̄(t) falls toward the fragmentation threshold W\_frag.
-
-### Information-Theoretic Foundation for Frame Competition
-
-The Cube Domination dynamics admit a rigorous information-theoretic interpretation that clarifies the structural necessity of frame competition and provides measurable quantities for empirical validation.
-
-**Definition (Frame Information Content).** Each local coordination frame R\_g encodes an implicit probability distribution P\_g over possible system states. The information content of frame g is:
-
-```
-H(R_g) := −Σ_s P_g(s) ln P_g(s)
-```
-
-**Mutual information between frames:**
-
-```
-I(R_g; R_h) := H(R_g) + H(R_h) − H(R_g, R_h)
-```
-
-When frames diverge (Σ↑), mutual information decreases: the cost of translating between frames grows because each frame's implicit model of the system becomes increasingly incompatible with the others. The fragmentation threshold W\_frag corresponds to the information-theoretic condition:
-
-```
-Ī(t) := (2/K(K−1)) · Σ_{g<h} I(R_g; R_h) < I_frag
-```
-
-**Frame selection as information compression.** The star hierarchy's competitive selection (§7.5) is equivalent to finding the frame R\_{i\*} that minimizes the total description length of the system's state space:
-
-```
-R_{i*} = argmin_i Σ_g D_KL(P_g ‖ P_i) + λ·H(R_i)
-```
-
-where D\_KL is the Kullback–Leibler divergence and λ penalizes frame complexity. This reframes Cube Domination as a **minimum description length (MDL) competition**: the winning frame is not the most accurate one but the one requiring the least re-encoding effort across all clusters — formalizing the "translation > quality" principle.
-
-**Entropy production during Storm.** The Vector Storm regime (§15–17) corresponds to a phase of maximal entropy production in the inter-frame space:
-
-```
-dS_total/dt = Σ_g dH(R_g)/dt + d/dt Σ_{g<h} I(R_g; R_h)
-```
-
-During the optimal Storm window (S\_min < S < S\_max), entropy production is positive but bounded — frames are being differentiated but not destroyed. Below S\_min, entropy production is insufficient for frame selection. Above S\_max, the mutual information term collapses faster than individual frame entropies can stabilize.
-
-**Rate-distortion interpretation.** The system faces a fundamental rate-distortion tradeoff: maintaining K distinct coordination frames provides distortion resilience (each frame is a redundant encoding of local structure) but requires communication rate R ≥ K·I\_min to maintain mutual intelligibility. When communication capacity drops below this threshold (which occurs as coupling W̄ decreases during fragmentation), the system must either reduce K (frame consolidation via Cube Domination) or accept higher distortion (irreversible fragmentation). This establishes Cube Domination as the **information-theoretically optimal** response to capacity-limited coordination.
-
-### Single-Agent Inevitable Differentiation
-
-The necessity of differentiation follows from an energy-minimization argument. Consider n simultaneous tasks/objectives. Under a single policy θ, interference cost scales quadratically:
-
-```
-I(θ) = Σ_{i<j} conflict_{ij},    |pairs| = n(n-1)/2 = O(n²)
-```
-
-where conflict\_{ij} = max(0, ⟨∇L\_i(θ), ∇L\_j(θ)⟩) measures gradient interference between tasks.
-
-**Differentiated (K-modular) policy cost:**
-
-```
-E_single ∼ O(n) + λ·O(n²)
-E_split  ∼ O(n) + λ·O(n²/K) + τ·O(K)
-```
-
-where τ is per-module translation/coordination overhead. The differentiation threshold:
-
-```
-n > n_split := 2√(τ / λc̄)
-```
-
-**Proposition (Inevitable Differentiation).** For any system with finite translation cost τ and non-zero mean conflict c̄ > 0, there exists a finite task count n\_split beyond which K > 1 modular architecture strictly dominates single-agent architecture in total system cost. Since n\_split = 2√(τ/λc̄), systems with low translation cost (good protocols/standards) or high conflict sensitivity differentiate earlier.
-
-**Optimal module count:**
-
-```
-K* ≈ n√(λc̄ / 2τ)
-```
-
-This predicts that module count scales roughly linearly with task count, modulated by the ratio of conflict cost to translation cost — consistent with the empirical observation that large AI systems converge toward "orchestrated teams of specialized agents" (§7 Empirical Confirmation).
-
-### Star Hierarchy: Competitive Frame Selection
-
-After fragmentation, local frames compete for cross-cluster adoption. Define:
-
-**(A) Frame Quality Score.**
-
-```
-Q_g(t): combines scale-invariance S_g, maintenance cost M_g, noise sensitivity N_g, bridging power B_g
-
-Q_g = S_g − λ·M_g − μ·N_g + ν·B_g
-```
-
-**(B) Translation Cost.** The cost for cluster g to adopt frame i as reference:
-
-```
-C_{gi} = |R_g − R_i|
-```
-
-**(C) Frame Selection Probability.** Each cluster selects a reference frame according to a softmax over quality minus translation cost:
-
-```
-P_{g→i} = exp(βQ_i − γC_{gi} − δR_i) / Σ_j exp(βQ_j − γC_{gj} − δR_j)
-```
-
-where R\_i is the collapse risk of frame i, and δ is the collapse-aversion sensitivity (see below).
-
-**(D) Frame Adoption Score.**
-
-```
-S_i(t) = Σ_g P_{g→i}
-```
-
-When S\_i exceeds the critical adoption threshold S\_crit, frame i becomes the dominant coordination reference — the meta-star — and coordinate realignment begins:
-
-```
-dR_g/dt = −λ(R_g − R_{i*})    when S_{i*} > S_crit
-```
-
-**Key insight:** The dominant frame is not necessarily the highest-quality frame, but the most *translatable* one — the frame with the best combination of quality and low adoption cost across diverse clusters. Dominance = coordinate compatibility, not power.
-
-### Collapse-Aversion Term (Constraint-Side Governance)
-
-Real systems do not optimize solely for quality. They simultaneously avoid catastrophic states. This dual-criterion selection is formalized through the collapse-aversion term −δR\_i in the selection probability.
-
-**Interpretation:** The −δR\_i term implements boundary-based governance (§32.3) at the frame competition level. Rather than directing "choose the best frame," it constrains "never choose a frame with collapse risk above threshold":
-
-```
-Effective selection ∝ exp(βQ_i − γC_{gi}) · Θ(R_crit − R_i)    [hard constraint]
-```
-
-or in the soft form already given, −δR\_i provides smooth collapse avoidance.
-
-**Aversion Stagnation Threshold.** If δ exceeds a critical value δ\_crit, the system enters an aversion-dominated regime where no frame can accumulate sufficient adoption because all candidates are penalized by their risk profiles:
-
-```
-δ > δ_crit  ⟹  max_i S_i(t) < S_crit  for all t
-```
-
-This predicts organizational/AI stagnation: systems that are excessively risk-averse cannot select new coordination standards and remain permanently fragmented — "safe but static." The condition 0 < δ < δ\_crit defines the viable governance corridor.
-
-### Vector Storm as Selection Pressure
-
-The Vector Storm regime (§15–17 of this document) plays a critical role in Cube Domination dynamics. During Storm:
-
-```
-S(t) = dΣ/dt > S_min    [Storm active, dispersion accelerating]
-```
-
-Storm creates selection pressure on competing frames:
-
-```
-dQ_i/dt = a·S − b·S² − c_i
-```
-
-- a·S: Storm exposes weak frames (selection benefit, linear in Storm intensity)
-- b·S²: Excessive Storm destroys all frames (universal damage, quadratic)
-- c\_i: Intrinsic structural vulnerability of frame i
-
-**Optimal Storm Window.** The parabolic structure yields an optimal Storm intensity:
-
-```
-S* = a / 2b
-```
-
-At S\*, the net selection pressure is maximized: dQ/dt|\_max = a²/4b − c\_i. Below S\_min, frame differentiation is insufficient for meta-star emergence. Above S\_max = a/b = 2S\*, Storm destroys faster than it selects.
-
-**Controlled Storm with Differentiation Coupling.** Incorporating the differentiation analysis, the selection benefit coefficient becomes endogenous to module count:
-
-```
-a(K) = η · G(K)
-
-where G(K) = A(1 − 1/K) − τ(K − 1),    A = λc̄n²/2
-```
-
-yielding the combined optimal:
-
-```
-S*(K) = η·G(K) / 2b
-```
-
-and the frame survival condition:
-
-```
-c(K) < η²·G(K)² / 4b
-```
-
-This couples structural differentiation to Storm dynamics: more modular systems (higher K) can extract more selection benefit from the same Storm intensity, provided translation costs remain manageable.
-
-### Scale-Invariant Governance Constant
-
-Define the Cube Domination governance constant:
-
-```
-κ(K) := S*(K) / S_crit = η·G(K) / (2b·S_crit)
-```
-
-**Proposition (Scale Invariance).** If the selection efficiency η, destruction coefficient b, and normalized conflict-to-translation ratio λc̄/τ are intensive quantities (independent of system size N), then κ(K\*) is scale-invariant: the same governance constant governs systems of different sizes operating at their respective optimal differentiation levels.
-
-**Empirical check:** κ(K) should remain approximately constant across system scales (small teams, large organizations, multi-agent AI deployments) when each operates at its structurally optimal K\*. Significant scale-dependence of κ would falsify the scale-invariance claim.
-
-### Phase Diagram: Four Regimes
-
-The Cube Domination dynamics partition the (Σ, S) state space into four regimes:
-
-```
-       S (Storm intensity)
-       ↑
-       |  ③ DESTRUCTION        ④ CUBE DOMINATION
-       |  (S > S_max)          (S_min < S < S_max, Σ↓)
-  S_max|─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
-       |
-  S*   |  · · · · · · · · · · ·✦ (optimal)
-       |
-  S_min|─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
-       |  ① STAGNATION          ② FRAGMENTATION
-       |  (S < S_min,           (S < S_min,
-       |   Σ stable)             Σ↑, W̄↓)
-       └──────────────────────────────────→ Σ (frame dispersion)
-                              Σ_crit
-```
-
-- **① Stagnation:** Low Storm, low dispersion. Existing frame unchallenged but not optimal.
-- **② Fragmentation:** Low Storm, high dispersion. Clusters diverge without selection pressure. If W̄ < W\_frag, irreversible collapse.
-- **③ Destruction:** Excessive Storm. All frames degraded. System-wide collapse.
-- **④ Cube Domination Emergence:** Moderate Storm within optimal window. Weak frames eliminated, dominant frame crystallizes, Σ begins decreasing.
-
-### Fractal Self-Similarity of the Cube Cycle
-
-The complete Cube Domination cycle:
-
-```
-Stability → Fragmentation → Vector Storm → Meta-Star Emergence → New Stability
-```
-
-is scale-invariant: the same dynamical equations govern frame competition at every hierarchical level. This generates fractal governance structure:
-
-```
-Level 0:  Agents compete → local coordination frames emerge
-Level 1:  Local frames compete → regional meta-frames emerge
-Level 2:  Regional meta-frames compete → global coordination emerges
-  ⋮
-Level k:  R^(k+1) = F(R^(k))    [same dynamics at each level]
-```
-
-The system does not maintain a single permanent star (global reference). Instead, it maintains the **capacity to regenerate coordination frames** through repeated Cube Domination cycles. This is the formal mechanism underlying the Arrow of Maturation (§32.5): each cycle strengthens the frame-generation capacity itself.
-
-### Silent Fragmentation
-
-A particularly dangerous state exists where surface metrics indicate stability while internal frame dispersion is growing:
-
-```
-Silent Fragmentation:  KPI(t) ≈ normal  AND  Σ(t) ↑  AND  W̄_cross(t) ↓
-```
-
-This parallels Silent Criticality (§20–21) at the inter-cluster level. Detection requires monitoring cross-cluster correlation metrics rather than within-cluster performance — exactly the observability asymmetry formalized in Recovery Theory (T1, §32.5).
-
-**Measurement equation with distortion:**
-
-```
-Σ̂(t) = Σ(t) + ε(t) + b(t)
-```
-
-where ε(t) is sampling noise (observation gap from reduced inter-cluster data flow) and b(t) is lock-in bias (metrics that adapt to favor the current frame configuration). Three distortion types:
-
-- **D1 (Lock-in bias):** System-internal metrics optimize to report health within the current frame → actual Σ growth is masked.
-- **D2 (Sampling distortion):** As coupling W̄ decreases, cross-cluster data flow drops → observer receives incomplete information.
-- **D3 (Observer coupling):** Measurement itself perturbs the system — monitoring overhead changes agent behavior.
-
-### Collapse Boundary and Time-to-Fragmentation
-
-When no meta-star emerges and Σ(t) grows unchecked:
-
-```
-t_collapse = (1/α) · ln(1/W_frag) / σ²_η
-```
-
-where α is coupling decay sensitivity and σ²\_η is the variance of frame drift. This provides an operational early-warning timescale: if current Σ growth rate projects t\_collapse within the planning horizon, intervention (controlled Storm or frame standardization) is required.
-
-### Information-Theoretic Early Warning Indicators
-
-The information-theoretic formulation provides three complementary early-warning indicators that precede the coupling-based W̄ collapse:
-
-**Indicator 1 (Entropy divergence rate):**
-```
-γ_H(t) := d/dt Σ_g H(R_g) / K
-```
-Rising γ\_H indicates frames are individually complexifying (encoding increasingly idiosyncratic models), which precedes coupling collapse by approximately τ\_slow/2.
-
-**Indicator 2 (Cross-frame prediction error):**
-```
-ε_cross(t) := (2/K(K−1)) · Σ_{g<h} E_g[−ln P_h(s)]
-```
-When ε\_cross exceeds 2·H̄ (twice the mean self-entropy), frames can no longer usefully predict each other's states — functionally equivalent to speaking different languages.
-
-**Indicator 3 (Effective frame dimensionality):**
-```
-d_eff(t) := exp(−Σ_g (S_g/S_total) · ln(S_g/S_total))
-```
-where S\_g is the adoption score. When d\_eff drops below K/2, the system has entered effective monopolar competition (one frame dominates adoption probability), signaling imminent Cube Domination crystallization or, if the dominant frame's quality is insufficient, impending collapse.
-
-**28. Formal sensitivity analysis and parameter regime classification** (§14). The six dimensionless groups (π₁–π₆) provide a complete classification of qualitative system behavior, enabling parameter identification from observable regime transitions without requiring microscopic measurement of individual rate constants.
-
-**29. Quantitative early-warning comparison framework** (§20). Five formally characterized early-warning indicators with known detection lead times, false positive rates, and actionability scores enable principled monitoring protocol design — moving Silent Criticality detection from post-hoc diagnosis to prospective surveillance.
-
-**30. Non-Markovian damage theory with memory kernels** (§31). The generalization from instantaneous to history-dependent damage dynamics (exponential, power-law, and prion-like kernels) provides a formal bridge between the ODE framework and clinical neurodegenerative progression models, explaining phenomena (sudden decline, dose-dependent vulnerability) that the Markovian model cannot capture.
-
-**31. Cross-theory validation matrix and emergent constraints** (§32.5.1). The systematic pairwise consistency verification across eight component theories produces three emergent constraints (EC1–EC3) that are not derivable from any individual theory — demonstrating that the multi-theory framework provides strictly stronger predictions than its components, a key criterion for theoretical unification rather than mere aggregation.
-
-**32. Global revival dynamics with multi-scale synchronization** (§30). The coupled multi-subsystem revival model with Fisher-KPP traveling wave propagation provides the first formal treatment of how recovery propagates across scale hierarchies, explaining the bottom-up recovery principle as a consequence of coupling constraints rather than an ad hoc design choice.
-
-**33. Formal convergence proofs for scaling resolution** (§32.8.1). Rigorous rate estimates for dimensional compression, self-purification convergence, and map-terrain balance convergence establish that the Scaling Resolution Theory's claims are not merely qualitative assertions but mathematically provable consequences of the framework's axioms.
-
-**34. Information-theoretic characterization of hierarchical routing** (§1). The channel capacity analysis establishes that hierarchical classification systems are bottleneck-limited (min_ℓ C_ℓ determines throughput), providing the formal basis for understanding why single-point failures at early routing levels have disproportionate system-wide impact — the routing-level precursor to the lock budget inequality.
-
-**35. Formal credit assignment analysis in multi-layer systems** (§3). The inverse credit-impact relationship (most consequential decisions receive weakest learning signals) is derived as a mathematical consequence of temporal distance in hierarchical architectures, establishing that the metric illusion and Goodhart's Law dynamics are not behavioral pathologies but structural inevitabilities of any depth-L system with delayed feedback.
-
-**36. Goodhart's Law as dynamical bifurcation** (§3). The three-phase progression (alignment → drift → lock-in) is formalized as a bifurcation in the joint (J_obs, J_true) dynamics, establishing that metric corruption undergoes a phase transition — not a gradual decline — with the transition point corresponding precisely to the Silent Criticality → Storm boundary in the ODE model.
-
-**37. Stochastic resonance optimal Storm intensity** (§11). The Kramers escape analysis establishes a mathematical optimum for perturbation intensity at D* = ΔU/ln(T_window·ω_saddle), providing independent derivation of the Cube Domination optimal Storm window from attractor dynamics rather than from frame competition — confirming that the two analyses converge on the same structural prediction.
-
-**38. Four-trajectory damage classification** (§31). The coupled ODE-damage system produces exactly four qualitatively distinct aging trajectories (healthy, accelerated, catastrophic, compensated), each with distinct clinical signatures — providing a formal taxonomy for neurodegenerative progression that maps individual variation to structural parameter differences rather than stochastic variation.
-
-**39. Stochastic damage lifetime distribution** (§31). The multiplicative noise damage model produces a remaining healthy lifetime distribution with heavy tail at short times and sharp cutoff at long times, matching the epidemiological pattern of neurodegenerative diseases — the first formal derivation of this distribution shape from dynamical first principles rather than empirical curve fitting.
-
-### Testable Predictions (Cube Domination)
-
-**P-CD1 (Quadratic differentiation pressure).** In systems with n simultaneous objectives and non-zero inter-objective conflict, operational cost should scale as O(n²) under single-policy architecture but as O(n²/K) under K-modular architecture. Testable via parameter sweep in multi-task reinforcement learning.
-
-**P-CD2 (Optimal Storm window).** Frame quality differentiation should follow the parabolic profile dQ/dt = aS − bS² − c, with maximum differentiation at S\* = a/2b. Testable by measuring frame adoption rates across different perturbation intensities in multi-agent simulations.
-
-**P-CD3 (Translation > Quality).** The dominant coordination frame post-Storm should be the one minimizing mean translation cost across clusters, not the one maximizing intrinsic quality. Testable by comparing adoption patterns against Q\_i vs C\_{gi} rankings.
-
-**P-CD4 (Aversion stagnation).** Systems with excessively high collapse-aversion (δ > δ\_crit) should exhibit permanent fragmentation: no dominant frame emerges despite adequate frame quality diversity. Testable by comparing high-δ vs moderate-δ runs in simulation.
-
-**P-CD5 (Silent fragmentation detection).** Cross-cluster interaction metrics (mutual information, schema overlap, call success rate) should degrade before within-cluster performance metrics. Failure of this ordering would falsify the silent fragmentation mechanism.
-
-**P-CD6 (Scale-invariant κ).** The governance constant κ(K\*) should remain approximately constant (within ±20%) across system sizes N differing by at least one order of magnitude, when each system operates at its optimal K\*. Significant scale-dependence falsifies Proposition (Scale Invariance).
-
-### AGM Integration: Affective Gain as Frame Competition Regulator
-
-The Cube Domination dynamics describe the structural geometry of frame competition. AGM (Affective Gain Module) provides the complementary specification: the **dynamical mechanism** by which frame transitions are regulated in real time.
-
-**Affective gain modulates frame transition rate.** AGM §6.2 defines the gain function g(E) as a sensitivity amplifier for incoming events. At the Cube Domination level, this gain controls how readily the system switches between competing coordination frames:
-
-```
-dΣ/dt = g(E) · [divergence_drive(t) − convergence_pull(t)]
-```
-
-When g(E) is elevated (high affective arousal), frame boundaries become more permeable — the system explores alternative coordination references rapidly. When g(E) is suppressed, the current frame persists regardless of quality. This dual role explains why emotional perturbation is necessary for organizational adaptation (frame selection requires elevated g(E)) but dangerous in excess (runaway g(E) destroys all frame coherence).
-
-**Minimum Viable Temperature for frame exploration.** AGM Theorem 1 (Adaptive Necessity) establishes that T_eff > 0 is structurally necessary. At the Cube Domination level, this translates to:
-
-```
-T_min^{frame} = ⟨ΔU_frame⟩ / ln(ω_frame / ‖dΣ/dt‖)
-```
-
-Below T_min^{frame}, the system cannot explore alternative frames fast enough to track environmental drift in frame optimality — it locks into the current coordination reference even as that reference becomes increasingly inappropriate. This is the frame-level projection of the broader attractor lock-in mechanism (§11).
-
-**No-Free-Lunch Theorem at the frame level.** AGM Theorem 1.3 (Governance No-Free-Lunch) implies that no frame selection policy can simultaneously achieve: (1) zero instantaneous coordination regret (always using the optimal frame), (2) positive frame adaptation capacity (ability to switch when the current frame degrades), and (3) finite coordination budget. Cube Domination resolves this by sacrificing (1) — accepting bounded sub-optimality in current frame quality to maintain the capacity for future frame transitions.
-
-**Entropy production during frame competition.** AGM §1.2.6 establishes the Entropy Production–Adaptability Correspondence: Ω_eff ∝ Ṡ_i · H. At the Cube Domination level, the entropy production from frame competition is:
-
-```
-Ṡ_frame = Σ_g dH(R_g)/dt + d/dt Σ_{g<h} I(R_g; R_h)
-```
-
-During healthy Cube Domination (Regime ④), Ṡ_frame > 0 — frames are actively differentiating, producing the exploratory entropy that enables meta-star selection. At Freeze (Regime ①), Ṡ_frame → 0 — frame competition has ceased, and the system has converged to thermodynamic death in coordination space. The parallel to AGM's Freeze/Runaway classification is exact: Freeze = stagnation (insufficient frame entropy production); Runaway = destruction (entropy production exceeds dissipation capacity).
-
-**Coordinate drift in frame self-assessment.** AGM Proposition 15.2.1 identifies coordinate drift — the progressive misalignment between internal measurement frame and reality — as the mechanism underlying Silent Criticality. At the Cube Domination level, this manifests as Silent Fragmentation (§7.5): the frame that evaluates coordination quality is itself a participant in the frame competition, creating a self-referential loop:
-
-```
-d‖drift_frame‖/dt ≥ Σ(t) / C_coord(t) · (1 − SCC_frame(t))
-```
-
-When the self-correction capacity SCC_frame degrades (due to frame lock-in or success-rigidity), the drift rate exceeds the correction rate, and the system's coordination metrics report health while the actual inter-frame structure approaches fragmentation. Detection requires external reference (D7 Boundary Agent from RT) or perturbation testing (Fisher information probes from §20) — neither of which is available through the system's own coordination metrics.
-
-**Hub failure cascade in frame architecture.** AGM §15.2 (via VST §4.4) formalizes that when a hub frame (one that mediates between many other frames) collapses, the cascade propagates in O(ln K) steps — logarithmically fast in the number of frames. At the Cube Domination level, this predicts that collapse of a central coordination standard (e.g., a shared communication protocol, a common evaluation framework) produces system-wide fragmentation far faster than collapse of a peripheral standard. The governance implication: **hub frame health monitoring must have higher priority and frequency than peripheral frame monitoring**, with early warning thresholds set tighter by a factor of ln(K)/K.
+- **Silent Fragmentation**: surface KPIs stable while inter-cluster frame dispersion Σ(t) grows — the inter-cluster analog of Silent Criticality (§20)
+- **Cube Domination Emergence**: moderate Vector Storm acts as selection pressure eliminating weak frames, crystallizing a dominant coordination reference
+- **Scale-invariant governance constant κ(K\*)**: the ratio of selection pressure to collapse-aversion that governs optimal frame count, invariant across system sizes
 
 ---
 
@@ -909,6 +879,8 @@ Mutual-reference system (generic in adaptive multi-agent):
 **Storm cannot be eliminated — only contained.** Eliminating mutual-reference coupling would require eliminating the adaptive response capacity that defines intelligent behavior.
 
 ### The S-Equation: Governance Scaling Law
+
+> *The heuristic form introduced here provides intuition for the governance scaling law. Its formal derivation from the ODE regime scalar Φ is given in §14 ("S-equation form reconciliation"), where the relationship between the static and dynamic forms is resolved.*
 
 The relationship between exploration dimensionality and instability is captured by:
 
@@ -1146,9 +1118,207 @@ The remaining RT phases (Phase 4: Integration, Phase 5: Maturation) are addresse
 
 ---
 
+## 9. Two Critical Phenomena and the Three Dimensionless Constants
+
+> *This section identifies the two distinct critical phenomena operating simultaneously in the DFG framework, introduces the three fundamental dimensionless constants that parameterize all governance transitions, and establishes the Sudden Collapse Mechanism as their unified consequence.*
+
+### §9.1 Two Coexisting Critical Phenomena
+
+Many complex systems exhibit either self-organized criticality (SOC) or catastrophic bifurcation — but not both simultaneously. The DFG framework is unusual in that both phenomena are structurally present and interact.
+
+**Phenomenon 1 — Self-Organized Criticality (SOC).**
+
+The drive-release dynamics (stress accumulates → SOC gate fires → partial release) place the system near Φ ≈ 1 as a dynamical attractor. The system self-organizes to the critical edge without external tuning (§21, SOC Residence Argument). This produces:
+
+```
+Power-law avalanche distribution:   P(s) ∼ s^{−τ}
+Continuous critical fluctuations
+Many small release events; occasional large cascades
+```
+
+**Phenomenon 2 — Saddle-Node (Fold) Catastrophe.**
+
+The core Φ-equation takes the form:
+
+```
+dΦ/dt = α·Φ² − β·Φ − γ
+```
+
+This equation has two equilibria (stable and unstable) when the discriminant β² + 4αγ > 0:
+
+```
+Φ* = [β ± √(β² + 4αγ)] / (2α)
+```
+
+As the governance parameters drift (L↑, q↓), the two fixed points approach each other. When they collide and annihilate — the saddle-node bifurcation — the stable attractor ceases to exist:
+
+```
+Δx = |Φ*_stable − Φ*_unstable| → 0   (approach)
+Δx = 0                                (collision: fold catastrophe)
+```
+
+This produces:
+```
+Discontinuous, sudden regime shift
+Hysteresis: collapse threshold ≠ recovery threshold
+Silent approach: Δx → 0 without visible Φ change
+```
+
+**How they interact.** SOC fluctuations continuously probe the basin boundary while the saddle-node mechanism slowly eliminates that boundary. The full dynamics are:
+
+```
+SOC fluctuations
+        ↓
+critical manifold approach  (L↑, q↓ → Δx shrinking)
+        ↓
+fold bifurcation            (Δx → 0 → saddle-node annihilation)
+        ↓
+system collapse
+```
+
+The Cusp Catastrophe (§14.5 Formulation IV) unifies both: the cusp surface is parameterized by (L, q) with SOC dynamics operating on the folded surface. Near the cusp point, both phenomena are simultaneously active — the system exhibits power-law fluctuations while asymptotically approaching the fold.
+
+**Comparison:**
+
+| Property | SOC | Saddle-Node Catastrophe |
+|---|---|---|
+| Nature | Continuous critical fluctuations | Sudden regime collapse |
+| Signature | Power-law distributions | Hysteresis, tipping point |
+| Self-organized? | Yes | No — parameter-driven |
+| Warning signals | Variance ↑, autocorrelation ↑ | Critical slowing down, variance ↑ |
+| DFG manifestation | Vector Storm avalanches | Silent Criticality → collapse |
+
+---
+
+### §9.2 The Three Fundamental Dimensionless Constants
+
+All governance transitions in the DFG framework are governed by three dimensionless ratios. These are not independent model parameters but emergent combinations of the system's state variables.
+
+**Constant 1 — Collapse Control Parameter κ.**
+
+```
+κ(t)  :=  Φ(t) / [L(t) · q(t)]
+```
+
+This is the universal collapse control parameter (§131 Master Conditions). Its physical interpretation:
+
+```
+κ  =  interaction pressure / governance resilience
+   =  (stress) / (lock budget × terrain quality)
+```
+
+All collapse conditions reduce to κ ≥ κ_c:
+
+| Phenomenon | Standard condition | κ expression |
+|---|---|---|
+| Storm entry | Φ increases | κ increases |
+| Lock budget | L accumulates | κ increases |
+| Terrain collapse | q degrades | κ increases |
+| Silent Criticality | L↑ and q↓ while Φ stable | κ → κ_c invisibly |
+| Collapse | Φ > Φ_c(L, q) | κ ≥ κ_c |
+
+κ is **scale-invariant**: it takes the same critical value κ_c at every hierarchical level, which is the mathematical basis of fractal governance universality.
+
+**Constant 2 — Scale Pressure χ.**
+
+```
+χ  :=  n / √C
+```
+
+This measures the interaction scaling pressure relative to governance capacity. The critical size n* ≈ √C (where interaction load equals governance capacity) defines χ = 1 as the centralization instability threshold:
+
+```
+χ < 1:   stable centralized governance
+χ ≈ 1:   critical regime (Vector Storm, SOC)
+χ > 1:   centralized coordination unstable → modularization required
+```
+
+**Constant 3 — Fragmentation Stability ψ.**
+
+```
+ψ  :=  n² / γ
+```
+
+where γ is the inter-module coupling cost. This governs whether fragmentation stabilizes or destabilizes the system:
+
+```
+ψ < ψ_c (≡ 2):   fragmentation worsens coordination → collapse path
+ψ > ψ_c (≡ 2):   fragmentation reduces total load → stable hierarchy emerges
+```
+
+**Dimensional reduction.** The three constants are not fully independent. Defining the normalized coupling constant:
+
+```
+γ̃  :=  γ / C     (inter-module coupling per unit governance capacity)
+```
+
+and using n = χ√C, we obtain:
+
+```
+ψ  =  n² / γ  =  χ²·C / γ  =  χ² / γ̃
+```
+
+Therefore ψ = ψ(χ; γ̃), and the effective phase space collapses from (κ, χ, ψ) to **(κ, χ)** with γ̃ as a fixed structural design constant. The three instability boundaries become:
+
+```
+Collapse boundary:           κ = κ_c
+Scale transition:            χ = 1
+Fragmentation success:       χ² > 2γ̃
+```
+
+---
+
+### §9.3 The Sudden Collapse Mechanism: Metastable Stability
+
+**The Paradox of Apparent Stability.** Many adaptive systems exhibit a characteristic pre-collapse pattern: performance indicators remain stable or improve while the system approaches catastrophic transition. This is not measurement error — it is a structural consequence of the Silent Criticality mechanism.
+
+Formally, observable stress remains approximately constant:
+
+```
+Φ(t) ≈ const
+```
+
+Yet the hidden control parameter drifts toward the critical manifold:
+
+```
+dκ/dt > 0   while   dΦ/dt ≈ 0
+```
+
+This is possible because κ = Φ/(L·q) increases through L↑ and q↓ even when Φ is unchanged. The system appears stable while structurally approaching the fold.
+
+**Metastable Attractor Geometry.** On the potential landscape U(x), the stable attractor A is separated from the saddle S by barrier ΔU(t). As κ → κ_c:
+
+```
+ΔU(t) = U(S) − U(A) → 0
+```
+
+The system is in a **metastable attractor**: it appears stable (local minimum exists) but the basin is shrinking toward zero. The distance to collapse m(t) = κ_c − κ(t) decreases monotonically. During Silent Criticality, monitoring Φ alone misses this drift entirely.
+
+**Counterintuitive early-warning inversion.** Standard critical transitions exhibit variance ↑ before collapse. Silent Criticality inverts this:
+
+```
+Standard criticality:   Var(Φ) ↑  as transition approaches
+Silent Criticality:     Var(Φ) ↓  while κ ↑
+```
+
+The system becomes *smoother* as it becomes *more dangerous*. This is the formal basis for Tier 2 and Tier 3 monitoring (§19.5): κ monitoring detects what Φ monitoring cannot.
+
+**Collapse event.** Once ΔU → 0, a saddle-node bifurcation occurs: the stable and unstable equilibria collide and annihilate. The original attractor ceases to exist. The system rapidly transitions to the collapsed regime with no stable intermediate state. This produces the empirical pattern:
+
+| Phase | Observable behavior | Hidden state |
+|---|---|---|
+| Normal operation | Stable performance metrics | κ well below κ_c |
+| Silent Criticality | Stable or improving metrics | κ drifting toward κ_c |
+| Tipping point | Sudden regime shift | ΔU → 0 (fold crossing) |
+| Post-collapse | Rapid degradation | No stable attractor in original basin |
+
+**One-sentence formulation:** *The most dangerous state for a complex governance system is not visible instability but excessive apparent stability — when adaptation mechanisms suppress fluctuations while κ drifts toward the fold.*
+
+---
+
 ## 10. Attractor Escape
 
-### Three Escape Mechanisms
+### Three Escape Mechanisms (Conceptual Overview)
 
 1. **Strong Perturbation:** External shock injects enough energy to exit the basin (fast but destabilizing)
 2. **Stochastic Escape:** Increased noise expands exploration radius — the system drifts to shallower basin boundaries over time (dreams, creative thought, sleep replay)
@@ -1172,78 +1342,197 @@ Both components are necessary. Neither alone suffices.
 
 This is, fundamentally, a **Recovery Theory** problem.
 
-### Heritage-Constrained Escape: The Fourth Mechanism Failure Mode
+---
 
-The three standard escape mechanisms (perturbation, stochastic, landscape) all share an implicit assumption: **the terrain outside the current basin is neutral**. If the terrain outside is also negatively curved — due to heritage loading from previous failed escape attempts at those locations — then all three mechanisms can fail simultaneously.
+### §10.1 Basin Geometry: Potential Landscape Formalization
 
-**Heritage-constrained escape failure:**
-
-```
-Mechanism 1 failure: External perturbation reaches alternative basin, but
-                     heritage loading raises ΔU_alternative, making the
-                     alternative basin shallower than expected → system returns
-                     
-Mechanism 2 failure: Increased noise reaches basin boundary, but heritage
-                     channels direct noise toward previously-failed escape
-                     directions → stochastic escape attempts cluster in
-                     heritage-loaded regions where ΔU is maximized
-                     
-Mechanism 3 failure: New experience attempts to create alternative basin, but
-                     heritage loading raises λ_eff,heritage beyond seeding
-                     capacity → basin cannot be established
-```
-
-All three failures share a common diagnostic: **escape attempts cluster at a predictable rate without success**, declining in frequency as each failed attempt adds more negative heritage at the attempted location. This produces a characteristic signature: decreasing escape attempt rate over time (not constant, as standard stochastic models predict), followed by apparent acceptance of the locked state.
-
-**Fourth escape mechanism (EDT v5.0 TCE-enabled):** Therapeutic Collective Events (TCE) provide a route that bypasses heritage constraints by **injecting positive curvature at target locations before escape is attempted**:
+The attractor structure is formalized through a potential landscape U(**x**) over collective state space. Let the system state **x**(t) ∈ ℝᵈ obey stochastic gradient flow:
 
 ```
-Stage T0:  Identify target alternative basin location x_target
-Stage T1:  Administer TCE focused on x_target (positive curvature injection)
-Stage T2:  Allow λ_eff,heritage(x_target) to decline below seeding threshold
-Stage T3:  Execute standard escape attempt (mechanism 1, 2, or 3)
-           → Success rate now equivalent to heritage-neutral terrain
+d𝐱ₜ = −∇U(𝐱ₜ) dt + √(2D) dWₜ
 ```
 
-The TCE mechanism does not change the barrier height ΔU between current basin and x_target. It changes the **terrain quality at x_target** so that the alternative basin can be established once the system reaches it. Without this preparation, escape succeeds in crossing the barrier but fails to establish a stable alternative — the system returns to the original attractor.
+where U(**x**) is the governance landscape, D is the exploration/noise intensity, and dWₜ is a Wiener process.
 
-**ODE correspondence:** Heritage-constrained escape corresponds to the scenario where DDD successfully achieves Φ < 1 (correct escape from Storm) but the subsequent Rest Mode is unstable (ρ̇ < 0 due to terrain degradation at the Rest fixed point location). The system transits through Φ < 1 without settling — it crosses the barrier but finds no stable basin on the other side. TCE pre-stages the target basin by raising Q_E at the Rest fixed point location before DDD execution.
-
-### Landscape Asymmetry Under Repeated Escape Attempts
-
-Each failed escape attempt modifies the landscape asymmetrically:
+The canonical single-escape geometry consists of three critical points:
 
 ```
-Effect on current basin:         ΔU_current ↑ (current basin deepens)
-                                 — repeated failed escape reinforces the current attractor
-                                 
-Effect on attempted target:       ΔU_alternative ↑ (alternative becomes harder to reach)
-                                 — heritage loading at target raises effective barrier
-                                 
-Net effect on escape probability: P_escape(t) → 0 superexponentially
+A   — stable attractor (current regime: deep local minimum of U)
+S   — saddle point    (basin boundary; unstable fixed point)
+B   — alternative attractor (target regime: second local minimum)
 ```
 
-This **double reinforcement mechanism** explains why systems that have failed to escape multiple times eventually stop attempting escape entirely — a state that appears indistinguishable from voluntary acceptance but is structurally a heritage trap.
-
-**Therapeutic prescription:** Interrupt the double reinforcement loop before N_critical failed attempts:
+The **escape barrier** is defined as:
 
 ```
-N_critical ≈ ΔU_max / (η_negative · A_typical) 
+ΔU = U(S) − U(A)     (energy barrier to escape)
 ```
 
-where η_negative · A_typical is the heritage loading per failed attempt. After N_critical attempts, heritage loading at the target location exceeds the maximum achievable positive curvature injection from TCE — escape becomes permanently blocked without structural terrain reconstruction.
+**Basin depth vs. basin width:** Two geometrically distinct properties determine attractor persistence:
 
-### Connection to the ODE's Stochastic Extension
+| Geometric property | Formula | Governance interpretation |
+|---|---|---|
+| Barrier depth | ΔU = U(S) − U(A) | Rigidity of current regime |
+| Basin width | σ_basin = √(det(∇²U(A))⁻¹) | Range of perturbations absorbed without escape |
+| Alternative basin depth | ΔU_B = U(S) − U(B) | Stability of recovery regime |
 
-The escape analysis connects directly to VST §3.2.4's Langevin form $dS = \mu(S,t)dt + \sigma_0 S^\gamma dW(t)$. Heritage loading modifies the drift term $\mu(S,t)$ by adding a history-dependent correction:
+A governance system with deep basin (large ΔU) and wide basin (large σ) is highly rigid: it absorbs small perturbations efficiently but requires proportionally larger shocks to escape. The DDD protocol (§24) is designed to simultaneously reduce ΔU (via Defocus/Decouple stages) while increasing ΔU_B (via Diversity stage).
+
+---
+
+### §10.2 Kramers Escape Rate: Stochastic Foundation
+
+For a system governed by the above stochastic dynamics, the escape probability from basin A follows the classical **Kramers rate formula**:
 
 ```
-μ_heritage(S, t) = μ(S, t) + H(t) · ∂H/∂S
+P_escape  ~  exp(−ΔU / D)
 ```
 
-The heritage gradient $\partial H/\partial S$ acts as an additional drift force pushing the system away from heavily loaded regions of state space. In the bistable ODE, this manifests as an effective shift of the saddle point location — the barrier appears to move toward the current attractor position, making escape geometrically harder even without any change in the nominal landscape parameters.
+More precisely, the mean first-passage time from A to S is:
+
+```
+⟨T_escape⟩  =  (2π / √|λ_S · λ_A|) · exp(ΔU / D)
+```
+
+where λ_A = eigenvalue of −∇²U at A (basin curvature, positive), and λ_S = eigenvalue of −∇²U at S along the escape direction (negative, magnitude measures saddle sharpness).
+
+**Parametric interpretation:**
+
+| Parameter | Effect on escape | Governance analog |
+|---|---|---|
+| Large ΔU | P_escape → 0 | High rigidity → trapped |
+| Large D | P_escape → 1 | High exploration/noise → easy escape |
+| Sharp saddle (large |λ_S|) | Faster escape once barrier crossed | Governance transition once triggered is rapid |
+| Flat basin (small λ_A) | Slower return to attractor | Wide basin → robustness against transient perturbations |
+
+**Escape condition (dimensionless form):**
+
+```
+D / ΔU  >  η_c     (critical exploration ratio)
+```
+
+where η_c = (1/2π)√|λ_S/λ_A| · log(T_observation/⟨T_return⟩) sets the observationally relevant threshold. The governance implication: recovery interventions that increase D (diversity injection, exploratory mandates) or decrease ΔU (constraint relaxation, authority redistribution) both lower ⟨T_escape⟩ exponentially.
+
+---
+
+### §10.3 Heritage-Constrained Escape
+
+Heritage loading h(t) — accumulated structural damage from past critical events (§14, M4 condition) — modifies the effective escape barrier. The mechanism is not merely additive resistance but a multiplicative deepening of the basin geometry:
+
+```
+ΔU_eff  =  ΔU · (1 + λ_h · h)
+```
+
+where λ_h > 0 is the heritage coupling constant (units: inverse heritage units). The modified escape probability becomes:
+
+```
+P_escape  ~  exp( −ΔU · (1 + λ_h · h) / D )
+```
+
+**Consequences:**
+
+1. **Exponential rigidity amplification.** A modest heritage accumulation h = 1/λ_h doubles the effective barrier, reducing escape probability to P² (where P is the heritage-free probability). Heritage does not linearly impede recovery — it squares the difficulty.
+
+2. **Heritage ratchet dynamics.** Because failed escape attempts under high h generate additional stress (Φ↑ → h increases via §14 heritage dynamics), the barrier rises after each failed recovery attempt. This is the formal mechanism of the Heritage Ratchet pattern.
+
+3. **Threshold structure.** There exists a critical heritage level h_c such that:
+```
+h < h_c:   ΔU_eff finite → standard DDD recovery possible
+h = h_c:   ΔU_eff → ΔU_TCE (threshold requiring terrain intervention)
+h > h_c:   ΔU_eff → ∞ relative to available D → state-variable interventions fail
+```
+
+This three-regime structure corresponds exactly to the M4 condition classification: below h_c (Type I irrecoverability), at h_c (transition requiring TCE), above h_c (Type II irrecoverability). The heritage-constrained Kramers formula thus provides the **dynamical mechanism** behind the M4 Master Condition.
+
+---
+
+### §10.4 Terrain-Catalyzed Escape (TCE)
+
+While heritage deepens the basin, environmental terrain redesign provides the converse operation: **lowering the barrier without requiring the system to generate sufficient noise internally.**
+
+Let terrain quality change by Δq > 0 (terrain improvement intervention). The effective barrier modification is:
+
+```
+ΔU_eff  =  ΔU · (1 − γ · Δq)
+```
+
+where γ > 0 is the terrain-escape coupling constant. Modified escape probability:
+
+```
+P_escape  ~  exp( −ΔU · (1 − γ · Δq) / D )
+```
+
+**Combined heritage and terrain:**
+
+```
+ΔU_eff  =  ΔU · (1 + λ_h · h) · (1 − γ · Δq)
+```
+
+This compound formula encodes the governance design principle: **TCE interventions (Δq↑) must overcome heritage loading (h) to achieve net barrier reduction.** The minimum terrain improvement required to restore escape probability to baseline:
+
+```
+Δq_min  =  λ_h · h / [γ · (1 + λ_h · h)]
+```
+
+For large h: Δq_min → 1/γ (maximum terrain improvement required regardless of h magnitude) — this is the formal saturation of TCE efficacy under extreme heritage, motivating the §32.8.2 argument that TCE must precede seeding in heritage-loaded terrain.
+
+**Interpretation of TCE as governance primitive:**
+
+| TCE action | Landscape effect | ODE variable |
+|---|---|---|
+| Governance restructuring | ΔU↓ via constraint removal | L↓ (lock budget release) |
+| New coordination protocols | σ_basin↑ via alternative route | d↑ (diversity injection) |
+| Environmental redesign | Δq↑ via terrain quality | q↑ (terrain improvement) |
+| Heritage clearing | λ_h · h↓ via structural repair | h↓ (heritage reduction) |
+
+---
+
+### §10.5 Complete Escape Taxonomy
+
+The full DFG escape mechanism taxonomy, incorporating the stochastic framework:
+
+| Mechanism | Type | Mathematical effect | DFG variable |
+|---|---|---|---|
+| **Strong Perturbation** | Shock | Temporary D spike → one-time crossing | External forcing |
+| **Stochastic Escape** | Exploration | Sustained D↑ → gradual crossing | T(t) temperature |
+| **Landscape Reshaping** | Alternative basin | U_B deepens → natural migration | d(t) diversity |
+| **Terrain-Catalyzed Escape (TCE)** | Barrier reduction | ΔU↓ via Δq → crossing without D increase | q(t) terrain |
+
+General escape condition unifying all four mechanisms:
+
+```
+D / ΔU_eff  >  η_c
+
+where   ΔU_eff = ΔU · (1 + λ_h · h) · (1 − γ · Δq)
+```
+
+Each mechanism increases the left-hand side ratio: mechanisms 1–2 increase D; mechanism 3 decreases ΔU by constructing U_B < U_A; mechanism 4 decreases ΔU_eff via terrain modification. Heritage-constrained systems (h > 0) require TCE (Δq > 0) to compensate, establishing TCE as the only mechanism capable of restoring escape capability under high heritage loading.
+
+> *"Attractor escape is not deletion — it is the construction of a more stable alternative, on terrain that can support it."*
 
 ## 11. Mathematical Formalization: Attractor Dynamics
+
+### Regime Scalar Preview: Φ(t)
+
+Before the full ODE derivation (§14), the key scalar governing all regime transitions is introduced here to orient the reader:
+
+```
+Φ(t)  :=  β_s · n(t)² · F(A)
+          ─────────────────────
+              C(t) · T(t) · d(t)
+```
+
+| Numerator | Denominator | Interpretation |
+|---|---|---|
+| β_s · n² | — | Interaction load (quadratic in agent count) |
+| — | C · T · d | Governance capacity (linear in capacity, temperature, diversity) |
+| Φ < 1 | — | Stable: capacity exceeds load |
+| Φ ≈ 1 | — | Critical edge (SOC regime) |
+| Φ > 1 | — | Storm: load exceeds capacity |
+
+This single dimensionless ratio unifies all collapse conditions (§12–13), bifurcation thresholds (§15–17), Silent Criticality onset (§20–21), and Master Conditions M1–M4 (§131). The scaling law Φ ∝ n²/n = n (interaction ∼ n², governance ∼ n) explains why collapse is size-inevitable without fractal buffering. All subsequent mathematical structure in §11–31 is the formal analysis of this ratio's dynamics.
+
+---
 
 ### State Dynamics
 
@@ -1345,7 +1634,7 @@ P_escape(D) = P₀ · exp(−ΔU/D) · [1 − exp(−T_window/τ_D)]
 
 The first factor increases with D (more energy to escape), while the second factor represents the probability that the system remains coherent enough to reach the alternative basin during the escape window. Maximum escape probability occurs at D* ≈ ΔU/ln(T_window·ω_saddle) — the optimal Storm intensity.
 
-This provides the mathematical foundation for the Cube Domination optimal Storm window (§7.5, S* = a/2b): too little perturbation fails to destabilize pathological attractors; too much perturbation destroys the alternative basins that recovery requires.
+This provides the mathematical foundation for the optimal Storm window — too little perturbation fails to destabilize pathological attractors; too much destroys alternative basins. The Cube Domination dynamics that follow from this window are treated in the separate *Cube Domination Dynamics* document.
 
 ---
 
@@ -1462,7 +1751,7 @@ ODE reduction:                 Φ < 1             (Rest regime)
 
 The ODE operationalizes VST's two escape routes: (1) **Timescale separation** — the fast coupling loop (τ\_n) closes against slow governance (τ\_{C,d,T}, τ\_ρ) that doesn't move within the fast loop's update cycle; (2) **Layer escalation** — DDD protocol invokes external control operating outside Φ dynamics. VST's claim that Storm cannot be eliminated (only contained) translates to the ODE's bistability: the Storm fixed point always exists in phase space.
 
-**S-equation form reconciliation.** VST §3.2.3 identifies two forms of the S-equation — static (S = αn²/C(t)^β) and dynamic (dS/dt = αn² − βC(t)). The ODE system resolves both: the static form defines the equilibrium that the ODE approaches; the dynamic form describes the instantaneous flux. The ODE's regime scalar Φ is the self-consistent closure that connects the two: at equilibrium, Φ = H(Φ; u) defines the static S-equation; out of equilibrium, Φ̇ ≠ 0 provides the dynamic flux equation.
+**S-equation form reconciliation.** *The heuristic S-equation introduced in §8 (S̃ = α·ñ²/C̃(t)^β) is derived formally here.* VST §3.2.3 identifies two forms of the S-equation — static (S = αn²/C(t)^β) and dynamic (dS/dt = αn² − βC(t)). The ODE system resolves both: the static form defines the equilibrium that the ODE approaches; the dynamic form describes the instantaneous flux. The ODE's regime scalar Φ is the self-consistent closure that connects the two: at equilibrium, Φ = H(Φ; u) defines the static S-equation; out of equilibrium, Φ̇ ≠ 0 provides the dynamic flux equation. The S-equation and the ODE scalar Φ are thus the governance-level and mechanistic-level descriptions of the same underlying instability structure.
 
 **Stochastic extension correspondence.** VST §3.2.4 provides the Langevin form dS = μ(S,t)dt + σ(S)dW(t) with multiplicative noise σ(S) = σ₀·S^γ. The ODE system is the deterministic skeleton (μ term) of this stochastic equation. Near the critical boundary (Φ ≈ 1), the ODE predicts critical slowing down — recovery timescale T\_recovery ~ |Φ − 1|^{−ν} — which manifests as increasing variance and autocorrelation in the stochastic extension. These are the early warning signals that transition S-equation monitoring from diagnostic (Phase 1) to predictive (Phase 3) in VST §3.2.2.
 
@@ -1487,6 +1776,139 @@ The ODE operationalizes VST's two escape routes: (1) **Timescale separation** �
 Ṫ = αT(ρ_ref−ρ) − μT·Φ·T − λT(T−T₀)
 k̇ = αk·Φ·(1−d)·(1−k) − λk·d·k
 ```
+
+### Fully Closed Minimal ODE Representation
+
+> **Structural note.** The six-variable ODE above is the mechanistic Level B system — required for bifurcation proofs, Jacobian analysis, and EW derivations in §§15–29. This subsection provides an alternative **three-variable reduction** in the dimensionless state (Φ, L, q) that makes the master conditions (M1–M4) and SOC structure directly visible. The two representations are equivalent at the timescale-separated level; neither replaces the other. An optional fourth variable h(t) enables explicit Type II heritage irreversibility.
+
+**State variables of the minimal closure:**
+
+| Symbol | Meaning | Timescale | Master Condition | Intervention lever |
+|---|---|---|---|---|
+| Φ(t) | Stress ratio = ρ(t)/C(t) | Fast — O(1/αC) | M1 numerator | indirect only (via q, L) |
+| L(t) | Lock budget = (1+L_C)(1+L_d) | Intermediate — O(1/εL), εL ≪ 1 | M2 (definition) | governance architecture |
+| q(t) | Terrain quality (proxy for Q_E) | Slow — O(1/εq), εq ≪ εL | M3 (collapse) | terrain design |
+| h(t) | Heritage / structural damage | Glacial — O(1/εh), εh ≪ εq | M4 (heritage) | institutional rebuilding |
+
+**Alarm sensitivity (endogenous):**
+```
+a(t) = 1 / (1 + r(t))
+
+  r(t) = rigidity  [implicit in d-dynamics; calm periods → r↑ → a↓]
+  Rigidity dynamics:  dr/dt = εr · [π_r·(1 − σ(Φ)) − ρ_r·σ(Φ)·r]
+  εL ≪ εr ≪ 1   (rigidity faster than lock, slower than Φ)
+```
+
+**SOC gate function** (activates near the critical manifold):
+```
+σ(Φ) = 1 / [1 + exp(−(Φ−1)/Δ)]   ,   R(Φ) = R_max · σ(Φ)
+```
+
+**Full minimal closed ODE system (5-variable, with heritage):**
+```
+── FAST ─────────────────────────────────────────────────────────────────────
+dΦ/dt  =  D                          [external drive]
+         + α · Φ²                    [pairwise interaction amplification — n² origin]
+         − β · (q/L) · Φ             [terrain × inverse-lock recovery]
+         − η · a(t) · Φ              [alarm-mediated adaptation;  a(t) = 1/(1+r(t))]
+         − R(Φ) · Φ                  [SOC release near critical manifold]
+
+── INTERMEDIATE ─────────────────────────────────────────────────────────────
+dL/dt  =  εL · [u · (1 − σ(Φ))      [calm/success → lock accumulates]
+               − v · σ(Φ) · (L−1)]  [critical event → lock fractures]
+
+── SLOW ─────────────────────────────────────────────────────────────────────
+dq/dt  =  εq · [λ(q₀−q)             [natural terrain recovery]
+               − κ · Φ · q           [stress erosion of terrain]
+               + ξ · (1/L)]          [governance investment improves terrain]
+
+── GLACIAL ──────────────────────────────────────────────────────────────────
+dh/dt  =  εh · [κh · σ(Φ)           [heritage accumulates at each critical event]
+               − ρh · (1/L) · q · h] [recovery requires both governance + terrain]
+```
+
+**Timescale hierarchy (canonical):**
+```
+εh  ≪  εq  ≪  εL  ≪  εr  ≪  1
+
+  Φ, C  :  fast operational dynamics    (hours to days)
+  r     :  rigidity accumulation        (days to weeks)
+  L     :  lock budget evolution        (weeks to months)
+  q     :  terrain quality drift        (months to years)
+  h     :  heritage/structural damage   (years to decades)
+```
+
+**Why this system is fully closed:** No external injection of Φ, L, q, or h is required. SOC avalanching, lock accumulation/fracture, terrain erosion/recovery, and heritage accumulation/rebuilding all emerge from internal (Φ, L, q, h) dynamics. Φ is endogenous throughout. Interventions enter only through q (terrain design), initial L (governance architecture), or h-reduction (heritage intervention) — never directly into Φ.
+
+**Collapse and recovery trajectories in the 5-variable system:**
+```
+PATH 1 — Operational collapse (Type I, reversible):
+  D↑ → Φ↑ → M1 breach → DDD protocol → Φ↓ → recovery
+  Condition: q > q_min, h < h_c at time of breach
+
+PATH 2 — Lock trap (Type I with hysteresis):
+  Calm → L↑ → q/L ↓ → Φ_c ↓ → M1 breach at previously-safe Φ
+  Recovery: requires L reduction (not just Φ reduction)
+  Condition: M2 breach enables M1 breach
+
+PATH 3 — Silent terrain collapse (Type II):
+  Sustained Φ > 0.8 → q erosion → q → q_min → M3
+  Recovery: terrain rebuilding required (q-axis intervention)
+  Failure mode: DDD is applied but q is too low to sustain recovery
+
+PATH 4 — Heritage irreversibility (Type II, M4):
+  Repeated critical events → h↑ → q erodes faster → M3 → M4
+  Recovery: institutional rebuilding required (h-axis intervention)
+  Failure mode: all operational and terrain interventions insufficient
+
+SOC attractor maintenance:
+  D slowly raises Φ → σ(Φ) fires near Φ=1 → release → cycle repeats
+  L slowly rises during calm → erodes safety margin → SOC events become larger
+  ⟹ Untreated lock accumulation converts small SOC events into cascading collapse
+```
+
+**Correspondence to six-variable ODE:**
+```
+Φ = β_s · n² · F / (C · T · d)   [six-var expression for the minimal Φ]
+L = (1 + νC/αC)(1 + νd/(αd·T₀)) [lock budget: explicit in six-var parameters]
+q ≈ Q_E(t)                        [terrain quality: slow variable developed in §32]
+h ≈ H(t)                          [heritage: glacial variable developed in §32.8]
+a(t) = 1/(1+r(t))                 [alarm sensitivity: rigidity r implicit in d-dynamics]
+```
+
+**Information-theoretic interpretation of the minimal system.** The three-variable closure has a precise information-theoretic reading:
+```
+Φ  ↔  channel load / channel capacity ratio      (Shannon occupancy)
+L  ↔  inverse channel bandwidth (locked channels cannot route information)
+q  ↔  signal-to-noise ratio of the recovery pathway
+
+M1 (Φ ≈ 1): channel near saturation — information rate ≈ channel capacity
+M2 (L ↑):   channel bandwidth narrows — same load, less room
+M3 (q ↓):   noise floor rises — recovery signals lost in terrain degradation
+```
+
+This formulation links the minimal ODE to information channel capacity theory: governance failure is equivalent to channel capacity exhaustion, and the four master conditions correspond to four modes of channel degradation (overload, bandwidth lock, SNR collapse, infrastructure loss).
+
+### Master Condition Mapping Table
+
+> **Reference.** This table is the canonical cross-reference for all collapse, lock, and irreversibility conditions in §§14–31. Every occurrence of a collapse condition in those sections can be mapped to exactly one row here.
+
+| Source | Original condition | Operational meaning | Master map | Classification |
+|---|---|---|---|---|
+| §19 Lock Budget | (1+L_C)(1+L_d) > ζ⁻⁴ | governance lock saturation | **M2** (definition) | Master |
+| §19 Heritage-extended | L_eff(S) = (1+νC/[αC(1−S)])(1+L_d) > ζ⁻⁴ | damage amplifies capacity lock | **M2** with L_eff(S) | M2 special case |
+| §27 Locked Attractor | αρ·d\*·C\*(1−ρ\*) < (μρ·Φ\*+νρ·k\*)ρ\* | collapse rate > recovery rate | **M1**: Φ > Φ_c(L,q) | Equivalent to M1 |
+| §27 OR rule | S>S\* ∨ heritage ∨ H>H_max | mixed operational/structural | **M1 ∨ M3 ∨ M4** | Decompose → M1, M3, M4 |
+| §31 Damage | (1+νC/[αC(1−S)])(1+L_d) > ζ⁻⁴ | structural damage raises lock | **M2** via L_eff(S) | M2 subset |
+| §30 Revival threshold | topological necessity condition | exploration exceeds recovery radius | **M3** onset (q near q_min) | M3 boundary |
+| §32.7 Stage-0 | Φ germination failure | pre-conditioning failure | **Δq > 0 or Δh < 0** protocol | M3/M4 intervention |
+| §32.8.2 Heritage | H accumulation → correction incomplete | structural non-reversibility | **M4**: h ≥ h_c | M4 (glacial) |
+| §32.10 EDT Tier | Tier 0–5 alarm system | EW coverage across layers | **EW Tier 1/2/3** architecture | Monitoring design |
+| §19.5 κ(t) | κ = Φ/(L·q) ≥ κ_c | unified dimensionless control | **M1** in ratio form | Master (ratio) |
+| §19.5 Critical Manifold | Φ = Φ_c(L,q) = κ_c·L·q | moving threshold surface | **M1** boundary surface | Master (geometric) |
+| §20 Silent Criticality | Φ↑ invisible, q↓ or L↑ | hidden approach to M1 | **M1** via M2 or M3 path | M1 via slow path |
+
+**Reading the table:** §19 and §31 conditions both reduce to M2 (lock budget). §27 locked-attractor condition is M1. The §27 OR-rule should be decomposed into three rows: M1 for the S>S\* component, M3 for terrain, M4 for heritage. §32 terrain effects belong in M3/M4 and modify Φ_c rather than introducing a new collapse condition.
 
 ### Model Construction Rationale
 
@@ -1555,9 +1977,254 @@ For global extension, we establish uniform bounds preventing finite-time blow-up
 
 This establishes that the model's predictions are not artifacts of specific functional forms but are robust qualitative features of any system satisfying the three structural constraints (P1–P3).
 
+### Deep Mathematical Structure: Four Equivalent Formulations
+
+> **Theoretical note.** The minimal (Φ, L, q) system and the six-variable ODE admit four distinct mathematical characterizations that are formally equivalent at the level of qualitative dynamics. Each reveals a different aspect of the same underlying structure. This section presents all four and their mutual relationships.
+
+#### Formulation I: Lotka-Volterra Resource-Consumer Structure
+
+The (C, ρ) subsystem has the formal structure of a Lotka-Volterra system with governance capacity (C) playing the "resource" role and interaction load (ρ) playing the "consumer" role:
+
+```
+dC/dt  =  C · (αC − νC · Φ)      [capacity: grows absent stress, consumed by Φ]
+dρ/dt  =  ρ · (β  − γ  · C)      [load: grows absent capacity, suppressed by C]
+
+Φ = ρ/C                           [stress ratio = consumer/resource ratio]
+```
+
+**Qualitative consequences of the LV structure:**
+
+1. **Limit cycles.** The (C, ρ) subsystem admits periodic orbits around the coexistence equilibrium (C*, ρ*) = (β/γ, αC/νC). These correspond to the documented growth → criticality → collapse → recovery cycles (Vector Storm cycles, §9).
+
+2. **Separatrix collapse.** When (1+L_C)(1+L_d) > ζ⁻⁴ (M2), the resource C can no longer sustain the orbit: the coexistence equilibrium leaves the admissible domain and the system transitions catastrophically — the Locked Attractor (§27) is the LV separatrix.
+
+3. **Cross-domain universality.** The same (capacity, load) ~ LV structure appears in neural circuits (metabolic support vs. firing density), organizations (management bandwidth vs. decision queue), and ecological systems (resource availability vs. consumer density). This is the mathematical foundation of the call-center-to-neuron isomorphism: they share the same Lotka-Volterra universality class.
+
+4. **Scale-free LV invariant.** The classical LV conserved quantity I = d·C − αC·ln(C)/νC + β·ln(ρ)/γ − ρ is broken by lock accumulation and terrain erosion. The rate of I-decrease is a direct measure of irreversibility accumulation — a testable prediction.
+
+#### Formulation II: Replicator Equation for Role Diversity
+
+The diversity dynamics d(t) admit a replicator equation formulation. Define role type i's relative abundance:
+
+```
+x_i(t) = d_i(t) / Σ_j d_j(t)
+
+dx_i/dt = x_i · (f_i − f̄)
+
+  where  f_i = performance of role type i
+         f̄  = Σ_j x_j · f_j  (population-weighted mean performance)
+```
+
+**Consequences of the replicator structure:**
+
+1. **Spontaneous specialization.** Above-average roles expand; below-average roles contract. Under persistent Φ-stress, "crisis management" roles outperform "exploratory" roles, driving d → 0. This is Cube Domination at the population dynamics level.
+
+2. **Diversity-Φ feedback.** Because Φ = β_s·n²·F/(C·T·d), diversity collapse (d → 0) directly amplifies Φ even without changes in n, C, or T. The replicator formulation makes explicit that stress events auto-catalytically reduce the diversity term that buffers further stress — a positive feedback loop.
+
+3. **Nash equilibrium correspondence.** Replicator dynamics converge to Nash equilibria. The "governance failure Nash equilibrium" — where all agents specialize in defensive rigidity — is exactly the Locked Attractor under M1+M2. It is a coordination failure, not a local system failure.
+
+**Nash Proof Sketch — Governance Failure as Prisoner's Dilemma Equilibrium.**
+
+Consider a two-strategy game between agents: Cooperate (C = maintain governance contribution) vs. Defect (D = local optimization / rigidity). The payoff matrix under governance stress (Φ > 0.8) takes the structure:
+
+```
+                Agent j
+              C        D
+Agent i   C  R,R     S,T
+          D  T,S     P,P
+
+where:   T > R > P > S     (classic Prisoner's Dilemma ordering)
+```
+
+Interpretation: T (Temptation) = gain from local optimization while others govern; R (Reward) = mutual governance benefit; P (Punishment) = mutual defection loss; S (Sucker) = governance cost while others defect.
+
+The replicator dynamics on the fraction x of cooperating agents:
+
+```
+dx/dt  =  x(1−x) · (π_C − π_D)
+
+where:
+  π_C  =  x·R + (1−x)·S       (cooperator payoff)
+  π_D  =  x·T + (1−x)·P       (defector payoff)
+  π_C − π_D  =  x(R−T) + (1−x)(S−P)
+```
+
+Under Prisoner's Dilemma ordering (T > R, P > S):
+
+```
+R − T < 0   (cooperating earns less than defecting against cooperators)
+S − P < 0   (cooperating earns less than defecting against defectors)
+```
+
+Therefore π_C − π_D < 0 for all x ∈ (0,1), which implies:
+
+```
+dx/dt < 0   for all x ∈ (0,1)
+```
+
+The unique stable equilibrium is **x* = 0** (all agents defect), regardless of initial conditions. This is the governance failure Nash equilibrium. Its correspondence to the Locked Attractor follows from the ODE variable mapping:
+
+```
+x → 0   ↔   d → d_min     (diversity collapses)
+π_D > π_C  ↔   Φ > Φ_c    (defection rewarded under high stress)
+x* = 0  ↔   Storm fixed point (high-Φ, high-k)
+```
+
+**Recovery implication.** Because x* = 0 is a Nash equilibrium under standard Prisoner's Dilemma payoffs, no unilateral deviation is profitable. Recovery requires **payoff restructuring** — changing R, T, S, P — which corresponds to terrain modification (q↑, L↓) rather than state-variable intervention. This is the formal game-theoretic basis for the DDD protocol's Unlock stage: it restructures payoffs before attempting Relearn.
+
+4. **Recovery requires breaking the Nash.** Because the locked Nash equilibrium is stable under the replicator dynamics, recovery (d↑) requires perturbation beyond the basin of attraction. This is the formal basis for the topological necessity claim in §30 Revival Trajectories: exploration must reach outside the current attractor basin.
+
+**Replicator–ODE correspondence:**
+```
+ODE variable d(t)           ↔   aggregate diversity  Σ_i x_i · d_i
+ODE drain    −νd·k·d        ↔   lock-mediated extinction of diverse roles
+ODE recovery αd·T·(1−d)    ↔   exploration pressure (T↑) supporting diverse strategies
+ODE term     αk·Φ·(1−d)·k  ↔   low-diversity + high-Φ → lock amplification (replicator winner)
+```
+
+#### Formulation III: Lyapunov Potential Landscape
+
+The minimal (Φ, L, q) system admits a Lyapunov-like potential function:
+
+```
+V(Φ)  =  Φ − ln(Φ)        [minimum at Φ = 1; classical relative entropy form]
+
+Full potential:  V(Φ, L, q) = [Φ − ln(Φ)] + g_L(L) + g_q(q)
+  where g_L(L), g_q(q) are monotone increasing penalizing lock and terrain degradation
+```
+
+**Lyapunov dynamics under SOC:**
+```
+dV/dt  =  (Φ−1)/Φ · dΦ/dt
+
+  Φ < 1 (sub-critical):   dΦ/dt > 0  →  V decreases toward Φ=1  (energy absorbed)
+  Φ > 1 (super-critical): SOC gate fires  →  dΦ/dt < 0  →  V decreases back to Φ=1
+
+⟹  Φ = 1 is the global attractor of V in the presence of SOC release
+```
+
+**Lock budget as potential barrier height.** The (1+L_C)(1+L_d) product corresponds to the height of the potential barrier separating the healthy (Φ ≈ 1) and collapsed (Φ ≫ 1) attractors. When the barrier height falls below the system's fluctuation amplitude:
+
+```
+V_barrier ~ [ζ⁻⁴ / L] < V_fluctuations
+```
+
+the system spontaneously crosses — an apparently sudden collapse from an apparently stable state. This is the formal mechanism of Silent Criticality: the barrier erodes invisibly while Φ appears stable.
+
+**Heritage as permanent landscape deformation.** When h ≥ h_c (M4), the healthy attractor disappears entirely from the landscape — not just a high barrier, but no minimum. This is the topology change underlying Type II irreversibility: V has no local minimum in the healthy region, so the system cannot return regardless of operational interventions.
+
+**Practical implication.** The Lyapunov formulation implies a governance monitoring rule: track dV/dt, not just dΦ/dt. A system with stable Φ but increasing V (via L↑ or q↓) is approaching collapse silently. Tier 2 and Tier 3 EW indicators are essentially empirical proxies for dg_L/dt and dg_q/dt.
+
+#### Formulation IV: Cusp Catastrophe Geometry
+
+Near Φ = 1 and for smooth SOC gate R, the equilibrium condition dΦ/dt = 0 approximates a cusp catastrophe normal form. The derivation proceeds in three steps.
+
+**Step 1 — ODE near criticality.** The minimal Φ-equation (§14) takes the form:
+
+```
+dΦ/dt  =  D + α·Φ² − β·Φ − γ·L·Φ − δ·q·Φ
+        =  D + α·Φ² − (β + γL + δq)·Φ
+```
+
+**Step 2 — Taylor expansion near the fixed point Φ ≈ 1.** Let Φ = 1 + φ where φ is a small deviation. Expanding to cubic order:
+
+```
+dφ/dt  ≈  [D + α − (β + γL + δq)]
+         + [2α − (β + γL + δq)] · φ
+         + α · φ²
+         + (higher order)
+```
+
+To obtain the cusp normal form, the quadratic term is removed by the change of variables φ → Φ − Φ_c (centering at the saddle-node point). After this centering, the system is topologically equivalent to:
+
+```
+dΦ/dt  =  −(Φ³ + a(L,q)·Φ + b(L,q))
+```
+
+**Step 3 — Identification of control parameters.** Matching coefficients:
+
+```
+a(L, q)  =  −[β + γL + δq]          (stiffness parameter; fold width)
+b(L, q)  =  −D / (α + β + γL + δq)  (asymmetry parameter; fold position)
+```
+
+The fold set (bifurcation set) is the curve in (a, b) space satisfying 4a³ + 27b² = 0, which maps back to a curve in (L, q) space defining the boundary of the bistable regime. The cusp point (maximum bifurcation sensitivity) occurs at:
+
+```
+L_cusp,  q_cusp:   where  ∂a/∂L = 0  and  ∂b/∂q = 0
+```
+
+Near the cusp point, the system is maximally sensitive to small (L, q) variations — the formal basis for the discontinuous collapse phenomenon (Observation 1 below).
+
+**The cusp surface defines three dynamical regimes:**
+
+```
+Regime 1 (healthy stable):   lower branch of fold; system maintains Φ ≈ 1
+Regime 2 (bistable):         fold region; both healthy and collapsed branches coexist
+Regime 3 (collapsed stable): upper branch; system trapped at high Φ
+
+Transition boundaries:
+  L↑ or q↓  →  fold region narrows and shifts toward current Φ  →  catastrophic jump
+```
+
+**Critical consequences for governance:**
+
+1. **Discontinuous collapse.** Small smooth changes in L or q can produce discontinuous jumps in Φ — formal model of sudden system failure without proportionate proximate cause.
+
+2. **Hysteresis.** Collapse and recovery thresholds are distinct:
+```
+Φ_collapse(L, q) > Φ_recover(L, q)   [hysteresis width ΔΦ > 0]
+```
+This means reducing stress after collapse is insufficient — the system must be pushed *past* Φ_recover, which lies on the other side of the fold. This is the DDD protocol's mathematical necessity (§24).
+
+3. **EW signatures as fold approach.** Near the fold edge (cusp boundary), the potential well becomes shallow, the recovery rate slows (critical slowing down), variance increases, and autocorrelation increases. These are the Tier 1 EW signatures (§19.5, Proposition P2). The cusp geometry provides a model-independent proof that EW indicators must appear before fold-crossing.
+
+4. **The four DFG collapse phenomena as cusp positions:**
+```
+Vector Storm (§9):           rapid traversal of fold — high Φ, moderate L
+Silent Criticality (§21):    slow fold approach via L↑, q↓ — Φ stable until last moment
+Rigidity Trap (§25):         metastable near fold — L↑ blocks recovery side of fold
+Heritage Collapse (M4/§32):  fold surface moves to engulf current state as q → 0
+```
+
+#### Cross-Formulation Equivalence Summary
+
+| Feature | Formulation I (LV) | Formulation II (Replicator) | Formulation III (Lyapunov) | Formulation IV (Cusp) |
+|---|---|---|---|---|
+| **Core variables** | (C, ρ) ratio | (x_i) role distribution | V(Φ, L, q) potential | Φ on folded surface |
+| **Collapse mechanism** | Separatrix crossing | Diversity extinction → Nash trap | Potential barrier collapse | Fold-crossing transition |
+| **Irreversibility origin** | LV invariant breakage | Nash equilibrium lock-in | Attractor disappears (topology) | Hysteresis loop |
+| **SOC mechanism** | Limit cycle near equilibrium | Fitness parity cycling | V minimum at Φ=1 | Fold edge proximity |
+| **Lock budget** | Prey depletion rate × lock factor | Role extinction rate | Barrier height | Control parameter distance to fold |
+| **EW origin** | Orbital flattening | Diversity compression | Potential well shallowing | Critical slowing near fold |
+| **Heritage (M4)** | Permanent prey depletion | Irreversible Nash shift | Healthy attractor disappears | Fold engulfs current state |
+| **n² origin** | Predation E = n(n−1)/2 | Tournament pairs | Quadratic V term | Cusp degree-3 ← n²/n asym. |
+
+**Extended mapping: Master Conditions across formulations.**
+
+| Formulation | Governing equation | Collapse interpretation | Master Condition |
+|---|---|---|---|
+| Lotka–Volterra | dC/dt = αC − μn²Φ | Interaction overload: predation exceeds capacity regeneration | **M1** |
+| Replicator | dx/dt = x(1−x)(π_C − π_D) | Defection Nash: cooperative equilibrium lost | **M1** (via d→0→Φ↑) |
+| Lyapunov | dV/dt > 0 (V increasing) | Recovery capacity lost: potential barrier cannot be sustained | **M2** |
+| Cusp catastrophe | dΦ/dt = −(Φ³ + aΦ + b) | Regime bifurcation: fold crossing discontinuous | **M1** (fold) / **M2** (hysteresis) |
+| Lock budget | (1+L_C)(1+L_d) > ζ⁻⁴ | Governance saturation: recovery bandwidth exhausted | **M2** |
+| Terrain collapse | q ≤ q_min | Recovery pathway lost: terrain cannot support repair | **M3** |
+| Heritage irreversibility | h ≥ h_c | Structural memory damage: basin topology permanently altered | **M4** |
+
+**Reading the table:** M1 appears in LV, Replicator, and Cusp because all three describe *operational* overload — the immediate crossing of capacity threshold. M2 appears in Lyapunov and Lock Budget because both describe the *structural* condition enabling the M1 threshold to be crossed at previously safe Φ values. M3 and M4 have no natural formulation in the four frameworks above — they require the extended terrain/heritage variables (§14.5, companion document), which is why those columns reference companion document rather than the core formulations.
+
+> **Unification statement.** All four formulations derive from the same underlying structure: interaction ∼ n², governance ∼ n, producing a ratio Ω ∼ n that necessarily crosses 1 at finite system size. The mathematical structure that handles this crossing — Lotka-Volterra orbit, replicator competition, Lyapunov barrier, cusp fold — are four facets of the same phenomenon. Governance design that stabilizes any one facet simultaneously stabilizes all four. The universal control parameter is:
+>
+> ```
+> κ(t)  :=  Φ(t) / [L(t) · q(t)]
+> ```
+>
+> Collapse occurs when κ ≥ κ_c regardless of which formulation is used to express the condition.
+
 ### Timescale Separation
 
-**Assumption.** The state variables obey a three-tier timescale ordering:
+**Assumption.** The state variables obey a three-tier timescale ordering for the core ODE:
 
 ```
 τ_n ≪ τ_{C,d,T} ≪ τ_ρ
@@ -1569,6 +2236,34 @@ This establishes that the model's predictions are not artifacts of specific func
 
 This ordering justifies the successive reduction from 6D to effective 2D (C, d) and ultimately 1D (Φ) dynamics used in the bifurcation analysis.
 
+**Extended timescale hierarchy (singular perturbation structure).** The full DFG variable set extends this ordering across five tiers, each with a small parameter ε_x ≪ 1 controlling the separation from the next faster tier:
+
+```
+τ_n ≪ τ_{C,d,T} ≪ τ_ρ ≪ τ_S ≪ τ_{Q_E} ≪ τ_H
+```
+
+Formally, introducing dimensionless small parameters ε_ρ ≪ ε_S ≪ ε_Q ≪ ε_H ≪ 1:
+
+```
+dn/dt    = f_n(n, C, d, T, ρ)                      [Fast — adiabatically eliminated in §15]
+dC/dt    = f_C(C, d, T, ρ, n)
+dd/dt    = f_d(d, T, ρ, n)                         [Intermediate]
+dT/dt    = f_T(T, ρ, n)
+
+dρ/dt    = ε_ρ · g_ρ(C, d, T, ρ)                  [Slow — Silent Criticality (§20)]
+
+dS/dt    = ε_S · g_S(C, d, T, ρ, S)               [Very slow — structural damage (§31)]
+
+dQ_E/dt  = ε_Q · g_{Q_E}(...)                      [Terrain layer — see [→ *DFG Terrain-Heritage-Integration* §32.10]]
+dH/dt    = ε_H · g_H(...)                          [Heritage layer — see [→ *DFG Terrain-Heritage-Integration* §32.8.2]]
+
+where  ε_H ≪ ε_Q ≪ ε_S ≪ ε_ρ ≪ 1
+```
+
+The **core ODE (§14)** covers the fast and intermediate tiers explicitly, with ρ as the slowest variable resolved in this document. The structural damage variable S is introduced in §31 as the first slow-tier extension. The terrain (Q_E) and heritage (H) tiers are developed in the companion document **[→ [→ *DFG Terrain-Heritage-Integration* §32.10], §32.8.2]**, where their interaction with the core ODE is formalized through the terrain-ODE coupling equation.
+
+**Why this matters for bifurcation analysis.** Each timescale tier enables a different quasi-static reduction: the fast tier yields adiabatic elimination of n (§15); the intermediate tier yields the 2D (C, d) reduced system (§17); the slow tier enables Silent Criticality (§20). The slower tiers (S, Q_E, H) shift the effective bifurcation thresholds on geological timescales — they do not affect the qualitative phase structure derived in §15–21 but progressively narrow the recoverable parameter region over long time horizons.
+
 ### Sensitivity Analysis and Parameter Regime Classification
 
 The ODE system's qualitative behavior depends on parameter ratios rather than absolute values. A systematic sensitivity analysis reveals the controlling dimensionless groups and their effect on regime structure.
@@ -1576,13 +2271,15 @@ The ODE system's qualitative behavior depends on parameter ratios rather than ab
 **Dimensionless parameter groups.** Scaling analysis identifies six independent dimensionless ratios that control the system's qualitative behavior:
 
 ```
-π₁ = β_s·u²_max / (λ_n²·T₀)        — Load-to-dissipation ratio (Storm propensity)
-π₂ = μ_C / α_C                       — Capacity vulnerability (= L_C, lock ratio)
-π₃ = ν_d / (α_d·T₀)                  — Diversity lock susceptibility (= L_d)
-π₄ = α_ρ / μ_ρ                        — Resolution recovery efficiency
-π₅ = α_k / λ_k                        — Coupling growth-to-decay ratio
-π₆ = α_T·ρ_ref / (λ_T·T₀)            — Temperature compensation gain
+π₁ = β_s·u²_max / (λ_n²·T₀)        — Load-to-dissipation ratio (Storm propensity)       [→ M1: Φ numerator driver]
+π₂ = μ_C / α_C                       — Capacity vulnerability (= L_C, lock ratio)          [→ M2: L_C definition]
+π₃ = ν_d / (α_d·T₀)                  — Diversity lock susceptibility (= L_d)               [→ M2: L_d definition]
+π₄ = α_ρ / μ_ρ                        — Resolution recovery efficiency                      [→ M1: ρ recovery factor]
+π₅ = α_k / λ_k                        — Coupling growth-to-decay ratio                      [→ M1: k amplification]
+π₆ = α_T·ρ_ref / (λ_T·T₀)            — Temperature compensation gain                       [→ M1: T homeostasis]
 ```
+
+Note: π₂ ≡ L_C and π₃ ≡ L_d directly; the lock budget M2 is (1+π₂)(1+π₃) ≤ ζ⁻⁴. The Master Condition M1 is primarily driven by π₁ (load), with π₄–π₆ controlling the recovery branch of Φ_c(L,q).
 
 **Parameter regime classification.** These six ratios partition the parameter space into structurally distinct regimes:
 
@@ -2060,60 +2757,675 @@ Adding buffering scales increases durability superlinearly when each scale maint
 
 > *In this framework, "fractal durability" does not mean geometric fractals in the state space; it means self-similar buffering rules repeated across scales, whose recovery margins compound multiplicatively.*
 
-### Extended Lock Budget: Terrain Heritage Correction
+> **Heritage-extended lock budget and Five-Dimensional Recovery Design Space** are developed in the [→ *DFG Terrain-Heritage-Integration* §32.8.2]. The standard (state-variable only) lock budget below is self-contained.
 
-The standard lock budget operates on state-variable parameters (αC, νC, αd, νd). EDT v5.0 reveals that terrain heritage loading H independently degrades the **effective recovery rate** αC_eff and **effective diversity generation** αd_eff, introducing a heritage-modified lock budget:
+---
 
-```
-L_C^heritage(H) := ν_C / (α_C · (1 − H/H_max)^γ_C)     (heritage inflates effective capacity lock)
-L_d^heritage(H) := ν_d / (α_d · T₀ · (1 − H/H_max)^γ_d)  (heritage inflates effective diversity lock)
-```
+## 19.5 Scale-Invariant Coupling and Critical Manifold Geometry
 
-The heritage correction $(1-H/H_{\max})^{\gamma}$ reduces the effective recovery rate because negatively curved terrain makes it geometrically harder to rebuild capacity and diversity — more governance energy is consumed overcoming heritage barriers rather than producing net recovery.
+### The Unified Control Parameter κ
 
-**Heritage-modified lock budget inequality:**
+All regime phenomena — bistability, hysteresis, Silent Criticality, SOC fluctuations, fold collapse — derive from a single dimensionless ratio that measures the balance between stress and recoverability:
 
 ```
-(1 + L_C^heritage(H))(1 + L_d^heritage(H)) ≤ ζ^{−4}
+κ(t) := Φ(t) / (L(t) · q(t))
 ```
 
-This inequality is **stricter** than the standard lock budget: for any H > 0, the left side is larger, leaving a smaller margin before the constraint is violated. The critical implication:
+Where:
+- **Φ(t) = ρ(t)/C(t)** — governance stress ratio (resolution demand over capacity)
+- **L(t) = (1 + L_C)(1 + L_d)** — total lock budget (multiplicative capacity and diversity locking)
+- **q(t) = Q_E(t)** — terrain quality (environmental support for recovery) [→ *DFG Terrain-Heritage-Integration*]
 
-**A system that satisfies the standard lock budget ((1+L_C)(1+L_d) ≤ ζ^{-4}) may nonetheless be irrecoverable if heritage loading H is sufficiently high.** The standard lock budget is necessary but not sufficient for recovery in heritage-loaded terrain.
-
-**Critical heritage threshold for lock budget violation:**
-
-```
-H_crit = H_max · (1 − [L_C·ζ^4 / ((ζ^{-4}/(1+L_d)) − 1)]^{1/γ_C})
-```
-
-Above H_crit, the heritage-modified lock budget is violated regardless of nominal L_C and L_d values. H_crit decreases with proximity to the standard lock budget boundary — systems already near the lock budget limit are more vulnerable to heritage-driven violation.
-
-**Governance design rule (heritage extension):** In addition to the four standard design rules, add:
-
-**Rule 5:** Monitor heritage loading H separately from state variables. If H approaches H_crit, administer Therapeutic Collective Events (§32.8.2) before any expansion attempt. The heritage correction acts multiplicatively with the lock budget, so heritage management is not optional for systems operating near their lock budget margins.
-
-**Rule 6:** In heritage-loaded terrain (H > H_threshold), increase αC and αd targets (tighten the standard lock budget) to compensate for heritage-induced degradation of effective recovery rates. The heritage correction effectively acts as an invisible increase in ν_C and ν_d — design margins must account for it.
-
-### Five-Dimensional Recovery Design Space
-
-Combining the standard lock budget with heritage-modified extension produces a **five-dimensional design space** for recovery:
+Equivalently, expanding all definitions:
 
 ```
-Dimension 1: Capacity lock ratio L_C = ν_C/α_C         (standard)
-Dimension 2: Diversity lock ratio L_d = ν_d/(α_d·T₀)    (standard)
-Dimension 3: Structural damage S ∈ [0, S*]              (§31 extension)
-Dimension 4: Heritage loading H ∈ [0, H_max]            (EDT v5.0 extension)
-Dimension 5: Terrain quality Q_E ∈ [0, 1]               (EDT v5.0 extension)
+κ(t) = [ρ(t)/C(t)] / [(1 + L_C)(1 + L_d) · Q_E(t)]
 ```
 
-The recoverable region is defined by the intersection of:
-- Standard lock budget: $(1+L_C)(1+L_d) \leq \zeta^{-4}$
-- Damage constraint: $S < S^*$
-- Heritage-modified budget: $(1+L_C^{(H)})(1+L_d^{(H)}) \leq \zeta^{-4}$
-- Terrain quality floor: $Q_E > Q_{E,\min}$ (minimum terrain quality for active recovery)
+This is a **scale-invariant** ratio: κ is dimensionless and invariant under uniform rescaling of Φ, L, q. The regime of the system is determined by comparison with a critical value κ_c:
 
-The recoverable region in 5D space is **strictly smaller** than what either the standard 2D lock budget or the 3D damage diagram (§31) would indicate independently. A system may be in the recoverable region of all three lower-dimensional projections while being outside the recoverable region of the full 5D space — explaining cases where recovery appears possible by all standard metrics but consistently fails in practice.
+| κ < κ_c | Recoverable regime (Rest basin) |
+|---|---|
+| κ ≈ κ_c | Critical margin (SOC fluctuations, EW signals active) |
+| κ > κ_c | Storm regime (positive feedback dominant) |
+
+**Mapping to existing ODE variables:**
+
+```
+κ = Φ / L·q
+  ≈ β_s·n² / [(C·T·d) · (1+L_C)(1+L_d) · Q_E]
+```
+
+The S-equation (§8) is recovered by noting that at governance scale, κ_c ∝ α⁻¹·C̃^β, and the transition condition κ > κ_c reproduces S̃ > 1.
+
+### Critical Manifold: A Moving Threshold Surface
+
+The critical condition κ(t) = κ_c defines not a fixed threshold but a **2-dimensional surface** in the (Φ, L, q) state space:
+
+```
+Critical Manifold:   Φ = κ_c · L(t) · q(t)  =: Φ_c(L, q)
+```
+
+**Key consequence:** The threshold Φ_c shifts dynamically as L and q evolve. This produces **hidden criticality** — a system can approach or cross the critical manifold while all observable proxy variables appear stable:
+
+```
+Hidden Criticality Path:
+  Φ ≈ const              (observable stress: no alarm)
+  L(t) ↑ or q(t) ↓      (structural degradation: silent)
+  → Φ_c(L,q) ↓ toward Φ → κ(t) → κ_c from below
+```
+
+The stress ratio Φ need not increase for the system to become critical. Governance lock accumulation or terrain erosion alone can drive the system to the critical manifold, invisible to standard stress monitoring. This is the formal mechanism underlying Silent Criticality (§20) at the critical-manifold level.
+
+**Three paths to criticality** — each corresponding to a different governance failure mode:
+
+```
+Path 1: Φ↑, L and q fixed        → Direct overload (visible, standard detection)
+Path 2: L↑, Φ and q fixed        → Lock accumulation (semi-visible, hysteresis-based detection)
+Path 3: q↓, Φ and L fixed        → Terrain erosion (invisible, requires terrain monitoring)
+```
+
+### Triangular Coupling and Closed Feedback Loop
+
+The three primary variables (Φ, L, q) form a **triangular coupling structure** — each pair is coupled, but with different timescales:
+
+> **Projection layer note.** This (Φ, L, q) triangular structure is the Level B articulation of the same system described at Level C as "vector storm / silent criticality / rigidity trap" and at Level A as "terrain–heritage geometry." The three levels are not independent theories; they are projections of the shared n²-interaction scaling law onto different observational planes. The (Φ, L, q) ODE closure is the explicit Level B form of the same dynamics described at other levels. See Projection Hierarchy Declaration and Fully Closed Minimal ODE (§14).
+
+**Minimal ODE closure:**
+
+```
+Φ̇ = F(Φ, q)    [Stress dynamics — fast, τ₁]             [M1 dynamics]
+L̇ = G(Φ, L)    [Lock evolution — intermediate, τ₂]       [M2 dynamics]
+q̇ = H(L, q)    [Terrain dynamics — slow, τ₄]  [→ *DFG Terrain-Heritage-Integration*]  [M3 dynamics]
+```
+
+The explicit forms are given in §14 (Fully Closed Minimal ODE). This creates the closed feedback loop:
+
+```
+Φ → L → q → Φ    (triangular)
+```
+
+With timescale separation τ_Φ ≪ τ_L ≪ τ_q, the system admits quasi-static reduction at each timescale tier. The fast-slow structure is the formal basis for:
+- **Self-organized criticality** (κ self-tunes toward κ_c via slow feedback)
+- **Fold bifurcation** (fast subsystem equilibrium terminates as q drifts)
+- **Hysteresis** (Φ_recover < Φ_collapse due to L·q structure)
+- **Critical wandering** (limit cycles near κ = κ_c when L and q partially compensate)
+
+### Theorem 1: Self-Organization to Critical Coupling
+
+**Setup.** Consider the reduced (Φ, L, q) subsystem under:
+1. Slow external drive: ρ̇/ρ = g_ρ > 0 (resolution demand grows slowly)
+2. Endogenous stabilization responses:
+   - Ċ/C = a_c(κ − κ_c) [capacity auto-adjusts toward κ = κ_c]
+   - L̇/L = a_L(κ − κ_c) [lock budget responds to criticality distance]
+   - Q̇_E/Q_E = a_Q(κ − κ_c) [terrain quality responds] [→ *DFG Terrain-Heritage-Integration*]
+
+**Theorem 1 (Critical Coupling Attractor).** Under the stabilization assumption above with A := a_c + a_L + a_Q > 0:
+
+```
+κ̇/κ = g_ρ − A(κ − κ_c)
+```
+
+*Proof sketch.* κ = Φ/(Lq). Taking the logarithmic derivative:
+κ̇/κ = Φ̇/Φ − L̇/L − q̇/q.
+Under the drive, Φ̇/Φ ≈ g_ρ. Under stabilization responses, L̇/L + q̇/q = (a_L + a_Q)(κ − κ_c) — the system's capacity-lock-terrain adjustments collectively pull κ toward κ_c. Substituting: κ̇/κ = g_ρ − A(κ − κ_c). This is a linear ODE with unique stable fixed point:
+
+```
+κ* = κ_c + g_ρ/A
+```
+
+For slow drive (g_ρ → 0), κ* → κ_c. The system self-organizes to operate **near but slightly above** the critical manifold. ∎
+
+**Consequence:** SOC is not an assumption imposed externally on the model — it is a derivable consequence of the triangular coupling structure combined with slow external drive. The persistent near-critical operation explains both the scale-free fluctuation statistics (§19.5.4) and the elevated collapse risk observed in mature hierarchical systems.
+
+**Stabilization-Criticality Paradox.** The theorem reveals a deep tension: short-term stabilization (damping k↑ ⇒ σ²↓) can accelerate long-term critical approach (κ → κ_c faster) via reduced warning signals, accumulated terrain degradation, and lock formation feedback. Successful suppression of fast fluctuations reduces the observable EW signals, creating the illusion of improving health while the critical margin m = κ_c − κ quietly shrinks. *"Success creates hidden fragility."*
+
+### Proposition 1: Fold-Induced Abrupt Collapse
+
+**Setup.** Consider the fast-slow decomposition with q(t) as the slowest variable evolving under q̇ = H(L,q). The fast subsystem {Φ, L} for fixed q has a fold (saddle-node) bifurcation at q = q_f.
+
+**Proposition 1 (Square-Root Pre-Collapse Scaling).** Near the fold bifurcation time t_f:
+
+```
+m(t) := κ_c − κ(t) ~ A√(t_f − t)    as t → t_f⁻
+```
+
+*Proof sketch.* Near a generic fold, the distance to the fold scales as the square root of the distance to the bifurcation parameter value (normal form theory). With q(t) providing the slow parameter drift, q_f − q(t) ∝ (t_f − t) for linear drift. The critical margin m ∝ (q_f − q(t))^{1/2} ∝ √(t_f − t). ∎
+
+The hazard rate diverges as collapse approaches:
+
+```
+h(t) = h₀ · m(t)^{−α}  ~  h₀ · A^{−α} · (t_f − t)^{−α/2}
+```
+
+For α ≥ 2, this diverges as t → t_f, confirming that collapse probability accumulates in a finite-time burst consistent with empirical observations of sudden organizational failure.
+
+### Proposition 2: Early Warning Unification via Critical Margin
+
+**Setup.** Define the critical margin m(t) = κ_c − κ(t) > 0 as the single scalar distance from the critical manifold. Standard EW indicators are time-series statistics computed from observable proxy variables.
+
+**Proposition 2 (EW Indicator Scaling Laws).** Near criticality (m → 0⁺), the standard EW indicators scale as power laws in m:
+
+```
+1 − AC(1)   ∝  m         (autocorrelation: approaches 1 as m→0)
+Var[obs]    ∝  m⁻¹       (variance diverges as m→0)
+PRR         ∝  m         (perturbation recovery rate: slows as m→0)
+CVD         ∝  m⁻¹       (coefficient of variation of duration: diverges)
+I_F         ∝  m^{γ_F}   (Fisher information: decreases with exponent γ_F > 0)
+```
+
+*Argument.* All five indicators are functions of the dominant eigenvalue λ_max(J) of the Jacobian at the near-critical fixed point. Near a fold, λ_max → 0 (critical slowing down), and λ_max ∝ m (linear scaling near the fold normal form). Substituting λ_max ∝ m into the known expressions for each EW indicator in terms of eigenvalues yields the stated scalings. ∎
+
+**Composite risk score.** Define:
+
+```
+R(t) = Σᵢ wᵢ · Sᵢ(t)
+```
+
+where Sᵢ(t) are normalized EW indicator values and wᵢ > 0 are tier weights (§20 Tier system). The critical margin is proxied by:
+
+```
+m̂(t) = 1/(1 + R(t))
+```
+
+This proxy is monotone-decreasing in R: as risk rises, the estimated margin shrinks. The proxy is calibrated to m̂ → 0 when R → ∞ (all indicators in alarm) and m̂ → 1 when R = 0 (all indicators nominal).
+
+### Proposition 3: Tiered Risk → Hazard → Collapse Probability
+
+**Setup.** Given the margin proxy m̂(t) = 1/(1 + R(t)) and hazard h(t) = h₀ · m̂(t)^{−α}, the survival probability is:
+
+```
+S_collapse(t) = exp(−∫₀ᵗ h(s)ds) = exp(−h₀ ∫₀ᵗ (1+R(s))^α ds)
+```
+
+**Proposition 3 (Closed-Form Survival under Square-Root Scaling).** If m̂(t) = m̂(0) · √(1 − t/t_f) (square-root pre-collapse law from Proposition 1), then:
+
+*Case α ≠ 2:*
+```
+S_collapse(t) = exp(−K/(1−α/2) · [t_f^{1−α/2} − (t_f−t)^{1−α/2}])
+```
+
+*Case α = 2:*
+```
+S_collapse(t) = ((t_f − t)/t_f)^K
+```
+
+where K = h₀ · m̂(0)^{−α} · t_f^{α/2} is a system-specific constant.
+
+**Critical threshold:** For α ≥ 2, S_collapse(t_f⁻) = 0 — collapse is almost surely certain once the fold is reached under sustained hazard accumulation. For α < 2, there remains a finite survival probability at t_f, representing systems that stabilize before completing the fold transition. ∎
+
+**Operational interpretation.** The three propositions form a closed chain:
+```
+Observable EW indicators (§20 Tiers)
+     ↓  (Proposition 2 scaling laws)
+Critical margin proxy m̂(t)
+     ↓  (Proposition 1 pre-collapse law)
+Fold-approach hazard h(t)
+     ↓  (Proposition 3 survival integral)
+Collapse probability forecast
+```
+
+This chain converts qualitative EW monitoring into a quantitative survival model — a direct bridge from the §20 Tier system to actuarial-style collapse risk assessment.
+
+### Conserved Structures and Lyapunov Extension
+
+**Logarithmic invariant (near-critical circulation).** When κ̇ ≈ 0 (near the critical attractor κ*), the product Φ·L·q is approximately conserved:
+
+```
+I(t) = ln(Φ · L · q)  ≈  const    when κ̇ ≈ 0
+```
+
+This invariant provides a leading-order conservation law for near-critical dynamics, analogous to adiabatic invariants in slow-fast Hamiltonian systems.
+
+**Extended Lyapunov function.** The standard Lyapunov candidate V(Φ) (§16) extends to the (Φ, L, q) subsystem as:
+
+```
+V_ext(Φ, L, q) = (Φ − Φ* ln Φ) + (L − L* ln L) + (q − q* ln q)
+```
+
+where (Φ*, L*, q*) is the Rest fixed point. Then:
+
+```
+V̇_ext = −Φ(∂V_ext/∂Φ)² − L(∂V_ext/∂L)² − q(∂V_ext/∂q)²  ≤  0
+```
+
+in the Rest basin, confirming global asymptotic stability under the triangular coupling dynamics when κ < κ_c.
+
+### Fractal and Renormalization Group Structure
+
+**Recursive scaling.** Near the critical manifold, the margin evolves across governance scales as:
+
+```
+m_{k+1} = a · m_k^β
+```
+
+- β > 1: critical attractor (SOC regime) — smaller-scale margins are progressively squeezed
+- β = 1: marginal (neutral coupling — no scale amplification)
+- β < 1: subcritical (margins recover across scales — protective buffering regime)
+
+**Fixed point:** m* = a^{1/(1−β)} for β < 1 (stable buffer target); diverges for β ≥ 1 (critical).
+
+**Scale-invariant event statistics.** Near the critical attractor (m → 0), SOC-regime avalanche sizes s follow:
+
+```
+P(s) ~ s^{−τ}    for  s ≪ s_c
+s_c ∝ m^{−1/σ}   (cutoff diverges as m→0)
+```
+
+The exponents (τ, σ) define the **universality class** of the governance system. The fractal governance claim (§6) is equivalent to asserting that the CORE ODE belongs to a specific universality class with exponents measurable from empirical event-size distributions.
+
+**Universality class parameters (CORE model):**
+
+| Parameter | Meaning | Estimator |
+|---|---|---|
+| τ | Avalanche size exponent | Power-law slope of incident-size distribution |
+| σ | Cutoff exponent | Rate of cutoff-size growth as m→0 |
+| α | Hazard sensitivity | Empirical hazard-margin regression slope |
+| β_RG | RG scaling exponent | Cross-scale lock-budget comparison |
+| κ_c | Critical coupling value | Threshold estimated from EW indicator onset |
+
+---
+
+## 19.6 Fractal Governance Necessity: Structural Scaling Theorem
+
+> *This section formalizes the scaling arguments introduced conceptually in §6–7 as a complete mathematical theorem with assumptions, lemmas, corollaries, and testable predictions. The result establishes that large adaptive systems cannot remain stably centralized — they must either generate fractal hierarchical structure or collapse.*
+
+### Assumptions
+
+**Assumption A — Interaction Scaling.**
+
+The number of interaction channels grows at least quadratically with system size:
+
+```
+E(n) ≥ a·n²,   a > 0
+```
+
+reflecting pairwise coupling between n agents.
+
+**Assumption B — Governance Capacity Bound.**
+
+The total coordination capacity is bounded by C:
+
+```
+G ≤ C
+```
+
+C represents the bandwidth available for coordination, conflict resolution, and information routing. It scales at most linearly with invested resources.
+
+**Assumption C — Modular Coupling Cost.**
+
+Fragmentation into k modules transforms coordination cost to:
+
+```
+E(k)  =  n²/k  +  γ·k²
+```
+
+where n²/k is internal interaction cost and γ·k² is inter-module coordination overhead.
+
+**Assumption D — Monotone Stress Drift.**
+
+When governance overload occurs (χ > 1), the collapse control parameter satisfies:
+
+```
+dκ/dt ≥ δ > 0
+```
+
+**Definition — Scale Pressure.** The dimensionless scale parameter:
+
+```
+χ  :=  n / √C
+```
+
+measures interaction pressure relative to governance capacity.
+
+---
+
+### Lemma 1 — Centralized Instability Threshold
+
+If χ > 1, then interaction load exceeds governance capacity.
+
+*Proof.* From Assumption A, E(n) ≥ a·n². Stability requires a·n² ≲ C, hence n ≲ √(C/a). Up to the constant a (absorbed into the definition of χ), this gives χ ≲ 1. Therefore χ > 1 implies centralized stability is violated. ∎
+
+---
+
+### Lemma 2 — Modular Stabilization Condition
+
+Fragmentation into k modules reduces total coordination cost below the centralized baseline E(n) = n² if and only if:
+
+```
+n² > 2γ
+```
+
+*Proof.* Minimize E(k) = n²/k + γk² over k > 0. Setting dE/dk = 0:
+
+```
+−n²/k² + 2γk = 0   →   k* = (n²/2γ)^{1/3}
+```
+
+Fragmentation is beneficial (k* > 1) iff:
+
+```
+(n²/2γ)^{1/3} > 1   ⟺   n² > 2γ
+```
+
+Using γ̃ = γ/C and n = χ√C, this becomes χ² > 2γ̃. ∎
+
+---
+
+### Theorem — Fractal Governance Necessity
+
+*Consider a system satisfying Assumptions A–D with χ > 1. Then centralized governance cannot remain stable, and the system must satisfy exactly one of the following:*
+
+**(1) Successful modularization:** n² > 2γ (equivalently χ² > 2γ̃), leading to stable hierarchical organization with optimal module count k* = (n²/2γ)^{1/3}.
+
+**(2) Collapse:** If n² ≤ 2γ, fragmentation fails to reduce coordination cost. By Assumption D, κ reaches κ_c in finite time.
+
+*Therefore, large adaptive systems cannot remain stably centralized once χ > 1.*
+
+*Proof.* By Lemma 1, χ > 1 implies centralized coordination is overloaded. The system must reduce effective interaction load. By Assumption C, the only available mechanism is modularization. By Lemma 2, modularization reduces load iff n² > 2γ, establishing outcome (1). If this condition fails, no load-reduction mechanism is available; by Assumption D, κ drifts to κ_c in finite time, establishing outcome (2). The two outcomes are exhaustive and mutually exclusive. ∎
+
+---
+
+### Corollary 1 — Finite Collapse Time Bound
+
+If modularization fails (n² ≤ 2γ) and dκ/dt ≥ δ > 0, then:
+
+```
+T_collapse  ≤  (κ_c − κ(0)) / δ
+```
+
+This bound converts the qualitative collapse inevitability into a quantitative prediction: governance systems with known κ(0) and empirically estimated δ have a computable upper bound on time to failure.
+
+---
+
+### Corollary 2 — Hierarchical Recursion
+
+After fragmentation into k modules, each module-pair interaction contributes to upper-level coordination channels:
+
+```
+E_upper  ∼  k²
+```
+
+The scale parameter at hierarchical level ℓ is χ_ℓ = n_ℓ / √C_ℓ. Whenever χ_ℓ > 1, the same theorem applies recursively. Therefore:
+
+*A single fragmentation event does not suffice — the same scaling law reappears at the next level, forcing repeated fragmentation until χ_ℓ < 1 at every level.*
+
+---
+
+### Corollary 3 — Minimum Fractal Depth
+
+Let χ_0 = n/√C be the initial scale pressure. Then the minimum number of hierarchical layers required for stability satisfies:
+
+```
+L_min  ≳  log(n / √C)  =  log χ_0
+```
+
+(logarithm base determined by modularization efficiency per level). Large systems are structurally forced into multi-layer hierarchy proportional to the logarithm of their scale pressure.
+
+---
+
+### §19.6.1 Module Size Distribution: Proofs and Predictions
+
+The Fractal Governance Necessity Theorem predicts not only that modularization occurs, but the precise scaling of module sizes, the hierarchical recurrence structure, and the statistical distribution of module sizes under realistic fragmentation noise. The following provides full proof structure for all three claims.
+
+---
+
+#### Proof 1 — Mean Module Size Scaling: m* ∝ γ^{1/3} · n^{1/3}
+
+**Setup.** Partition n agents into k modules of mean size m = n/k. Under Assumption C:
+
+```
+E_in(k)    ≍  k · m²  =  k · (n/k)²  =  n²/k       (internal interaction cost)
+E_cross(k) ≍  γ · k²                                 (inter-module coupling cost)
+E(k)        =  n²/k + γ·k²                           (total coordination cost)
+```
+
+**Optimization.** Taking the derivative and setting to zero:
+
+```
+E'(k) = −n²/k² + 2γk = 0
+⟹  2γk³ = n²
+⟹  k*  = (n²/2γ)^{1/3}
+```
+
+**Module size.** From m* = n/k*:
+
+```
+m*  =  n · (2γ/n²)^{1/3}  =  (2γ)^{1/3} · n^{1/3}
+```
+
+therefore:
+
+```
+m*  ∝  γ^{1/3} · n^{1/3}
+```
+
+**Why the 1/3 exponent is robust.** The cost structure E_in ∝ n²/k and E_cross ∝ γk² is a consequence of (i) pairwise interaction scaling (Assumption A) and (ii) full-graph inter-module coupling. The minimum of x^{−1} + x² always occurs at x^{1/3}, making the exponent 1/3 a structural invariant of this cost class — not a model-specific artifact.
+
+**Consequence.** When system size increases 8-fold (n → 8n):
+
+```
+m* → (2γ)^{1/3} · (8n)^{1/3}  =  2 · (2γ)^{1/3} · n^{1/3}  =  2 · m*
+```
+
+Module size doubles. Module *count* k* ∝ n^{2/3} grows 4-fold. Therefore **large systems necessarily have many small modules rather than few large ones** — a testable structural prediction. ∎
+
+---
+
+#### Proof 2 — Hierarchical Size Ladder Recurrence
+
+**Setup.** At level ℓ, let m_ℓ denote the characteristic module size. When these modules themselves interact, the same cost structure applies with m_ℓ replacing n and inter-level coupling constant γ_ℓ:
+
+```
+E_ℓ(k)  =  m_ℓ²/k  +  γ_ℓ · k²
+```
+
+Applying the same optimization:
+
+```
+k_ℓ*      =  (m_ℓ² / 2γ_ℓ)^{1/3}
+
+m_{ℓ+1}  =  m_ℓ / k_ℓ*  =  (2γ_ℓ)^{1/3} · m_ℓ^{1/3}
+```
+
+Setting A_ℓ = (2γ_ℓ)^{1/3} and assuming γ_ℓ ≈ γ across levels (A_ℓ ≈ A):
+
+```
+m_{ℓ+1}  ≈  A · m_ℓ^{1/3},     A = (2γ)^{1/3}
+```
+
+**Convergence.** Taking logarithms and setting y_ℓ = log m_ℓ:
+
+```
+y_{ℓ+1}  =  log A  +  (1/3) · y_ℓ
+```
+
+This is a linear contraction with fixed point y* = (3/2) log A, corresponding to floor module size:
+
+```
+m_floor  =  (2γ)^{1/2}
+```
+
+The hierarchy converges to m_floor — determined entirely by γ. Below this floor, further fragmentation increases total cost. ∎
+
+---
+
+#### Proposition LN — Lognormal Module Size Distribution
+
+**Assumption LN (Multiplicative noise).** Fragmentation is approximately uniform but subject to small random perturbations reflecting political, domain, and historical variation:
+
+```
+m_{ℓ+1}  =  A · m_ℓ^{1/3} · e^{ε_ℓ},     ε_ℓ ∼ iid N(μ_ε, σ_ε²)
+```
+
+**Proposition.** Under Assumption LN, as ℓ → ∞, module sizes follow a **lognormal distribution** with closed-form parameters.
+
+*Proof.* Let y_ℓ = log m_ℓ:
+
+```
+y_{ℓ+1}  =  log A  +  (1/3) · y_ℓ  +  ε_ℓ
+```
+
+This is a stable AR(1) process (coefficient 1/3 < 1). By standard AR(1) theory, the stationary distribution is Gaussian:
+
+```
+μ_y   =  (log A + μ_ε) / (1 − 1/3)  =  (3/2)(log A + μ_ε)
+
+σ_y²  =  σ_ε² / (1 − (1/3)²)  =  (9/8) · σ_ε²
+```
+
+Therefore y_ℓ ∼ N(μ_y, σ_y²) in stationarity, and m_ℓ = e^{y_ℓ} follows a lognormal with closed-form parameters fully determined by γ and σ_ε. ∎
+
+**Closed-form parameter table:**
+
+| Parameter | Formula | Interpretation |
+|---|---|---|
+| μ_y | (3/2)(log A + μ_ε) | Log of typical module size |
+| σ_y² | (9/8) · σ_ε² | Width of size distribution (noise amplified by 9/8) |
+| m_median | exp(μ_y) | Predicted median team/module size |
+| m_floor | (2γ)^{1/2} | Minimum stable module size (convergence fixed point) |
+
+The **9/8 amplification factor** (σ_y² > σ_ε²) means even small fragmentation noise produces visible size variance — organizations with identical governance rules will exhibit non-trivial size spread at every hierarchical level.
+
+---
+
+#### Theorem PL — Power-Law Tail and Exponent Determination
+
+**Assumption PL (Selective fragmentation-absorption process).** Each module of size m independently:
+
+- Stops (absorbs) with probability s: becomes a final module
+- Fragments with probability 1−s: splits into b ≥ 2 child modules with sizes m_i = U_i · m
+
+where (U_1,...,U_b) is a random partition with U_i ∈ (0,1), Σ_i U_i = 1. The process is **self-similar**: fragmentation ratios depend only on relative sizes.
+
+**Theorem.** Under Assumption PL, if the final module size M has a power-law tail P(M > x) ∼ x^{−α}, then the tail exponent α > 0 satisfies the **fixed-point equation**:
+
+```
+(1 − s) · E[Σᵢ Uᵢᵅ]  =  1
+```
+
+*Proof sketch.* Assume P(M > x) ≈ C · x^{−α}. Conditioning on the first fragmentation step, the probability that at least one child exceeds x scales as:
+
+```
+(1−s) · E[Σᵢ C · (U_i · m)^{−α}]  =  C · m^{−α} · (1−s) · E[Σᵢ Uᵢᵅ]
+```
+
+Self-consistency of the power-law ansatz (the C · m^{−α} prefactor must reproduce) requires the fixed-point equation above. ∎
+
+**Special Case 1 — Uniform partition U_i = 1/b (closed form):**
+
+```
+Σᵢ Uᵢᵅ  =  b · (1/b)^α  =  b^{1−α}
+
+Fixed-point:  (1−s) · b^{1−α}  =  1
+
+⟹  α  =  1  +  log(1−s) / log b
+```
+
+**Special Case 2 — Binary split b=2, partition (U, 1−U):**
+
+```
+(1−s) · E[U^α + (1−U)^α]  =  1
+```
+
+- U near 1/2: α approaches uniform-partition result
+- U skewed: E[U^α + (1−U)^α] increases → α decreases → **heavier Pareto tail** (large units persist)
+
+**Exponent table — behavioral predictions:**
+
+| Structure | Effect on α | Organizational interpretation |
+|---|---|---|
+| s↑ (more modules stop early) | α↑ (lighter tail) | Stable subgroups dominate; few large units |
+| b↑ (more children per split) | α↑ (lighter tail) | Fine-grained fragmentation |
+| Asymmetric U (unequal splits) | α↓ (heavier tail) | Persistent large departments |
+| s → 0 (nearly all keep splitting) | α → 1 (Pareto boundary) | Scale-free; no characteristic size |
+| α < 1 | Mean diverges | Critical alarm: extreme governance fragmentation |
+
+**DFG connection.** The DFG Silent Criticality mechanism produces exactly Assumption PL conditions: overloaded modules (high local κ → κ_c) keep fragmenting; stable modules (κ ≪ κ_c) stop. The absorption probability is therefore a function of local governance pressure:
+
+```
+s(m)  ≈  σ(κ_c − κ(m))      (sigmoidal stopping rule)
+```
+
+Decreasing α̂ over time (heavier tail) is a direct empirical signature of spreading governance overload — a Tier 2 monitoring indicator.
+
+---
+
+#### §19.6.1D Lognormal vs Power-Law Classification
+
+| Criterion | Lognormal (Prop. LN) | Power-Law (Theorem PL) |
+|---|---|---|
+| Fragmentation rule | Nearly uniform + small noise | Selective: some stop, others recurse |
+| Mathematical model | AR(1) in log-size | Self-similar fragmentation-absorption |
+| Tail behavior | Thin (sub-exponential) | Heavy (algebraic) |
+| DFG condition | Uniform κ across modules | Heterogeneous κ(m) |
+| Observable test | log(m) normal on QQ-plot; AR(1) ρ̂ ≈ 1/3 | Hill estimator gives stable α̂ |
+
+**Regime transition as early warning:** A measurable shift from lognormal to power-law in organizational unit size distribution signals heterogeneous governance pressure — the onset of spatially differentiated Silent Criticality.
+
+---
+
+#### §19.6.1E Empirical Verification Protocol
+
+**Step 1.** Collect module/team/unit sizes m at multiple time points.
+
+**Step 2 — Lognormal test.** QQ-plot of log(m) against normal quantiles; estimate AR(1) coefficient ρ̂ from log-size time series across levels (model prediction: ρ̂ ≈ 1/3).
+
+**Step 3 — Power-law test.** Identify tail threshold m_min via KS minimization; apply Hill MLE to obtain α̂.
+
+**Step 4.** Compare AIC/BIC across lognormal and power-law fits.
+
+**Step 5 — Structural parameter recovery (if power-law fits).** For uniform partition case:
+
+```
+ŝ  =  1  −  b^{α̂−1}       (estimated absorption probability)
+```
+
+High ŝ → stable governance (most modules stabilize). Low ŝ → persistent overload.
+
+**Step 6 — Longitudinal alarm.** Track α̂(t) over time. Decreasing α̂ indicates worsening governance fragmentation. α̂ < 1 (mean diverges) is a critical alarm threshold requiring Tier 2 intervention.
+
+
+### §19.6.2 Two-Dimensional Phase Diagram (κ, χ)
+
+With γ̃ as a structural design constant, the full governance phase space reduces to two dimensions. The (κ, χ) phase diagram has five distinguishable regions:
+
+```
+         χ
+         │
+χ > √2γ̃ │     [C] Stable modular     [D] Fragmentation
+         │         hierarchy              collapse
+  χ = 1  ├──────────────────────────────────────────
+         │     [A] Stable            [E] Rigidity trap
+χ < 1    │         centralized           (Silent Crit.)
+         │
+         └──────────────────────────────────────────
+                  κ < κ_c              κ → κ_c
+```
+
+| Region | Condition | System state |
+|---|---|---|
+| A — Centralized stable | κ < κ_c, χ < 1 | Unified governance; low storm risk |
+| B — Critical (SOC) | χ ≈ 1 | Vector Storm fluctuations; SOC dynamics |
+| C — Modular stable | χ > 1, χ² > 2γ̃, κ < κ_c | Fractal hierarchical governance |
+| D — Fragmentation collapse | χ > 1, χ² < 2γ̃ | Coordination failure despite fragmentation |
+| E — Rigidity trap | κ → κ_c (via L↑, q↓) | Silent Criticality; metastable attractor |
+
+**Triple critical point.** The three instability boundaries (κ = κ_c, χ = 1, χ² = 2γ̃) meet at a triple critical point where Storm, fragmentation failure, and collapse can occur simultaneously. This is the most governance-sensitive point in the phase diagram.
+
+**γ̃-dependence of fragmentation boundary.** When κ increases (governance deterioration), inter-module coordination cost typically rises: γ̃ = γ̃(κ) is an increasing function of κ. This curves the fragmentation boundary:
+
+```
+χ² > 2γ̃(κ)
+```
+
+upward in κ, meaning that deteriorating governance (rising κ) raises the scale pressure required for stable fragmentation. This connects Silent Criticality to fragmentation failure: a system drifting toward κ_c simultaneously finds that its modularization becomes less effective.
+
+---
+
+### One-Sentence Theorem Summary
+
+> *Large adaptive systems inevitably transition from centralized governance to fractal modular hierarchy once interaction scaling χ exceeds unity — or collapse under coordination overload within finite time T_collapse ≤ (κ_c − κ₀)/δ if modularization is structurally prevented.*
 
 ---
 
@@ -2187,6 +3499,13 @@ This provides a formal criterion for the **point of no return** in Silent Critic
 **Practical implication.** The Fisher information criterion suggests a concrete early-warning protocol: monitor not just the level of observable metrics but their **sensitivity to perturbation** (which operationalizes I\_F). A system where metrics are stable but perturbation-insensitive is in Silent Criticality with high probability.
 
 ### Quantitative Early-Warning Indicator Comparison Framework
+
+> **Unified detection architecture.** Early-warning indicators in this document (§20) are part of a three-tier detection system spanning all DFG layers:
+> - **Tier 1 — Dynamical indicators** (this section): σ², AC, PRR — detect state-variable criticality
+> - **Tier 2 — Information-theoretic indicators**: γ_H, ε_cross, d_eff — detect frame-level fragmentation in Cube Domination dynamics [→ *Cube Domination Dynamics* document]
+> - **Tier 3 — Terrain indicators** **[→ *DFG Terrain-Heritage-Integration* §32.10]**: Q_E drift — detects terrain-level Silent Criticality invisible to Tier 1–2
+>
+> The five indicators below belong to **Tier 1**. They provide detection lead times of 2–4τ_silent but cannot detect terrain-level degradation. For the complete multi-tier protocol, see [→ *DFG Terrain-Heritage-Integration*].
 
 Five distinct early-warning indicators can detect Silent Criticality at different stages and with different sensitivity profiles. Their formal comparison reveals which indicators are most reliable under which conditions:
 
@@ -2548,6 +3867,127 @@ S_eff(0) < S_crit    where    S_crit := α·T_max·C₀^(1−β_VST) / β_s
 
 The existence of Silent Criticality is structurally determined: systems with high compensatory capacity and low storm amplification can sustain longer periods of hidden degradation before collapse.
 
+### The Success-Leads-to-Collapse Paradox: Why High-Performance Systems Are Closest to Silent Criticality
+
+> **Structural insight.** Silent Criticality is not a failure of weak systems — it is the characteristic signature of *successful* systems. This section explains the paradox mathematically and identifies it as the single most dangerous governance blindspot.
+
+**The rigidity accumulation mechanism.** When a system succeeds, it optimizes. Optimization induces specialization (d↓), rule consolidation (L_C↑), and reduced exploration (T↓). In the minimal model:
+
+```
+dL/dt = εL · [u·(1 − σ(Φ)) − v·σ(Φ)·(L−1)]
+
+  During calm success:  σ(Φ) ≈ 0  →  dL/dt ≈ εL · u  >  0
+```
+
+Every period of calm causes L to rise. Every optimization cycle reduces the safety margin κ_c − κ(t) = κ_c − Φ/[L·q]. The system approaches the critical manifold from below — **invisibly**.
+
+**The sensitivity inversion.** Define alarm sensitivity S as the system's ability to detect and respond to environmental change. High rigidity suppresses sensitivity:
+
+```
+S(t) = a(t) = 1/(1+r(t))  ∼  1/L(t)
+
+  Successful system: L↑  →  S↓
+  Environmental change rate: E(t)  (often increasing over time)
+
+  Mismatch accumulation:  dM/dt = E − S = E − 1/L
+  When L > 1/E:  M↑  (hidden mismatch accumulates)
+```
+
+The system becomes progressively less sensitive to environmental changes precisely as it accumulates more institutional rigidity from past successes.
+
+**The catastrophic threshold.** When M > M_c (mismatch exceeds structural capacity):
+
+```
+M(t*) = ∫₀^{t*} [E(τ) − 1/L(τ)] dτ  ≥  M_c
+
+  t* is the collapse time — determined by the integral of past successes, not the current state
+```
+
+This explains why successful systems fail suddenly and without obvious proximate cause: the cause is the **history of success**, not the current event.
+
+**Formal relation to Master Conditions.** The success-to-collapse mechanism maps precisely to the M1+M2 pathway:
+
+```
+Step 1:  Calm success  →  L↑ (M2 accumulation: lock budget erodes)
+Step 2:  L↑  →  Φ_c = κ_c·L·q ↑  (critical manifold approaches current Φ)
+Step 3:  Φ_c approaches current Φ  →  safety margin κ_c − κ(t) → 0
+Step 4:  Small perturbation → κ(t) > κ_c  →  M1 breach
+Step 5:  S↓ (rigidity) → alarm fails → DDD delayed → M1 persists → M3/M4
+```
+
+**The universality of the paradox.** This mechanism is not specific to any domain:
+
+| System | Success mechanism | Lock accumulation | Collapse signature |
+|---|---|---|---|
+| Call center | Efficient routing protocols | Rigid routing rules | Cannot handle novel call types |
+| Organization | Efficient specialization | Rigid role definitions | Cannot adapt to market shift |
+| Neural circuit | Optimized firing patterns | Synaptic lock-in | Loss of plasticity |
+| Multi-agent AI | Optimized agent protocols | Protocol rigidity | Cannot handle distribution shift |
+| Biological organism | Metabolic optimization | Reduced homeostatic range | Reduced resilience to environmental stress |
+
+**Governance implication.** Silent Criticality monitoring (Tier 2 + Tier 3 EW) is specifically designed to detect L↑ and q↓ before M1 breach. The success-to-collapse paradox is the primary justification for Tier 2 monitoring: Tier 1 will not detect it (Φ appears stable), but L and q are silently eroding.
+
+### Why Systems Live Near the Critical Edge: The SOC Residence Argument
+
+> **Fundamental question.** Why do many complex systems — neural circuits, organizations, ecosystems — appear to operate near the critical surface (Φ ≈ Φ_c, κ ≈ κ_c) rather than safely away from it? This section gives the mechanistic answer within the (Φ, L, q) framework.
+
+**The two failure modes that bound the safe region:**
+
+```
+Sub-critical (Φ ≪ Φ_c):  system is too stable
+  - Low information throughput (channel underutilized)
+  - Minimal adaptation and learning
+  - Poor response to environmental change
+  - Selective pressure: eliminated by more efficient competitors
+
+Super-critical (Φ ≫ Φ_c):  system is too unstable
+  - Cascade collapse (SOC events become catastrophic, not self-limited)
+  - Unsustainable resource consumption
+  - Short operational lifetime
+
+Critical edge (Φ ≈ Φ_c):  maximum fitness
+  - Maximum information transfer (Shannon: channel used at capacity)
+  - Maximum adaptability (exploration + exploitation balance)
+  - SOC self-regulation: drive-release cycles are self-limiting
+  - Maximum computational capacity (neural circuits evidence)
+```
+
+**The evolutionary / selection argument.** Systems with Φ ≪ Φ_c are outcompeted (less efficient). Systems with Φ ≫ Φ_c fail rapidly (unsustainable). The survivors are those that found the critical edge — not by choice, but by selection. This is the SOC residence theorem within the DFG framework.
+
+**The drive-release mechanism.** In the minimal ODE, external drive D slowly raises Φ. The SOC gate σ(Φ) fires near Φ = 1, releasing stress and lowering Φ. Under slow drive and fast release:
+
+```
+τ_drive ≫ τ_release   →   Φ(t) ≈ 1 + O(D·τ_release)
+```
+
+The system spends most of its time near Φ = 1 with brief excursions above and below — the characteristic intermittency of SOC systems.
+
+**Lock accumulation as slow departure from the edge.** Untreated L↑ shifts the effective critical manifold downward:
+
+```
+Φ_c(L, q) = κ_c · L · q
+
+  As L↑:  Φ_c ↑  →  the critical manifold moves away from Φ = 1
+           →  system is now sub-critical relative to the moving manifold
+           →  but still near old Φ = 1 (doesn't "feel" it yet)
+           →  Silent Criticality: Φ ≈ 1 but κ = Φ/(L·q) < κ_c
+```
+
+The system thinks it's near the edge — it is near Φ = 1 — but the effective critical surface has moved. This is the formal description of the Rigidity Trap: the system is trapped in a sub-critical region that was previously safe but is now structurally compromised.
+
+**Power-law signatures as critical-edge evidence.** Near Φ_c, the system produces avalanche events with distribution:
+
+```
+P(s) ∼ s^{−τ}    (power law with exponent τ)
+```
+
+This power-law signature is the observational fingerprint of SOC and critical-edge operation. In call centers, organizations, and neural circuits, it manifests as:
+- Call duration distributions with heavy tails
+- Cascade sizes in organizational failure events
+- Neural avalanche size distributions
+
+The observation of power-law signatures in a real system is evidence that it is operating near its critical manifold — and therefore that Silent Criticality mechanisms are relevant.
+
 ---
 
 ## 22. Attention as a Dynamic Buffer-Thinning Operator
@@ -2820,46 +4260,9 @@ Correction is not deletion of the wrong attractor — it is **widening the lands
 
 ### Note on Irrecoverability
 
-The "Locked attractor" (§27) represents **practical irrecoverability** — the recovery threshold u⁻ drops so low that no realistic input reduction can reach it — not mathematical impossibility. With sufficiently strong external intervention (DDD protocol), any locked state can in principle be unlocked. The distinction matters: irrecoverability is threshold-based, not topological.
+The "Locked attractor" (§27) represents **Type I (threshold-based) irrecoverability** — the recovery threshold u⁻ drops so low that no realistic input reduction can reach it — not mathematical impossibility. With sufficiently strong external intervention (DDD protocol), any Type I locked state can in principle be unlocked.
 
-**Heritage-Modified Irrecoverability.** EDT v5.0 introduces a second, structurally distinct form of irrecoverability that is topological (not merely threshold-based): when heritage loading H exceeds the maximum therapeutic capacity H_TCE_max, no achievable positive curvature injection can reverse the heritage accumulation, and the system is permanently locked into heritage-constrained failure modes regardless of DDD protocol outcomes.
-
-```
-Standard irrecoverability:     u⁻(S) < u_min (threshold-based, DDD can unlock)
-Heritage irrecoverability:     H > H_TCE_max  (topological — terrain permanently
-                                               blocks alternative basin formation)
-```
-
-The critical difference: standard irrecoverability can be addressed by reducing load u to arbitrary levels (outside practical governance but theoretically achievable). Heritage irrecoverability cannot be addressed by any state-variable intervention — the terrain itself must be reconstructed, which may require external memory reset or founding-event-level interventions that have no analog in the standard DDD protocol.
-
-**Fourth DDD Stage (Heritage Pre-Conditioning).** For systems with detected heritage loading H > H_threshold, the standard three-stage DDD must be preceded by a Stage 0:
-
-```
-Stage 0 — Terrain Pre-Conditioning:
-
-  (T0) Heritage assessment:     H(x,t) map computed across all relevant terrain regions
-  
-  (T1) TCE targeting:           Therapeutic Collective Events focused on target basin regions
-                                 Goal: reduce λ_eff,heritage below seeding threshold
-                                 Duration: until H(x_target) < H_threshold
-  
-  (T2) Heritage verification:   Seeding test on target region (small-scale seed, verify germination)
-                                 Before executing any standard DDD stage, confirm terrain receptivity
-  
-  Transition to standard DDD:   Stage 0 complete when H_verified < H_crit
-                                 AND test seed germinates at ≥70% of heritage-neutral rate
-```
-
-Without Stage 0 pre-conditioning in heritage-loaded terrain, standard DDD achieves Φ < 1 but fails to establish stable Rest Mode — the system cycles through Storm → apparent recovery → rapid re-entry to Storm, creating the characteristic **DDD Cycling Failure Mode**:
-
-```
-DDD Cycling signature:
-  - Multiple successful DDD executions (all E1-E3 satisfied)
-  - Each recovery period shorter than previous
-  - Φ re-entry threshold apparently lower after each cycle
-  - → Heritage ratchet: failed Rests add negative heritage to Rest basin
-  - → Standard DDD cannot address this; Stage 0 pre-conditioning required
-```
+**Type II (topological) irrecoverability** — where terrain heritage loading H exceeds H_TCE_max — is structurally distinct: no state-variable intervention can address it. See §27 for the formal classification [→ *DFG Terrain-Heritage-Integration* §32.8.2 for full treatment].
 
 ### RT-1 Five-Phase Recovery Cascade Correspondence
 
@@ -2947,7 +4350,7 @@ Key empirical findings confirm the ODE predictions:
 - **94.8% of DSI (Disorientation Spread Index) reduction** is explained by the containment engine (κ↓ + bridge alone), confirming that Defocus + Decouple are the primary Φ-reduction channels
 - **Fatigue shielding is the sole enabler of autonomous EXIT events**, confirming the DDD prediction that Stage 3 (Relearn/Diversity) enables the transition from controlled recovery to autonomous stability
 - **Consistent ΔDSI ≈ −0.040 across small-world, scale-free, and Erdős–Rényi topologies**, confirming the dimensionless universality predicted by the lock ratio structure (§18)
-- **Cyclic ENTER→EXIT→RE-ENTRY pattern** matches the Storm→Recovery→VCZ lifecycle (§32.2)
+- **Cyclic ENTER→EXIT→RE-ENTRY pattern** matches the Storm→Recovery→VCZ lifecycle [→ *DFG Terrain-Heritage-Integration* §32.2]
 
 The Lyapunov-like diagnostic V = ln Φ (§14) provides the formal connection: each compassion component maps to a specific V-reduction channel, and the combined policy constitutes a Lyapunov-decreasing intervention confirmed by monotonic Φ decrease during active control.
 
@@ -3002,94 +4405,208 @@ L_d := ν_d / (α_d · T₀)  (diversity lock ratio)
 
 ---
 
-## 26. Variable Dependency Graph
+## 26. Variable Dependency Graph (Revised: Terrain-Separated Structure)
 
-### Feedback Loop Inventory
+### Design Principle: CORE/Terrain Boundary
 
-| Loop | Type | Path | Role |
+The CORE document governs internal dynamics — variables whose timescales lie within τ₁–τ₃ (fast-to-slow ODE regime). Environmental and heritage variables (Q_E, H, B) operate at τ₄–τ₅ (very slow to glacial) and are treated fully in [→ *DFG Terrain-Heritage-Integration*]. The boundary is defined by timescale, not by conceptual category: a variable belongs to CORE if and only if its evolution can influence the ODE's regime transition (Storm/Rest bifurcation) on the τ₁–τ₃ horizon.
+
+**Boundary enforcement:** Terrain variables enter the CORE ODE only through the ceiling coupling term C_ceiling = C_max · Q_E^γ and the bifurcation threshold shifts u⁺_eff(H), u⁻_eff(H). Their internal dynamics are opaque to the CORE — the CORE sees only their projected influence on capacity and thresholds.
+
+### Revised Core Variable Set
+
+**Internal dynamics variables (12) — governed by this document:**
+
+```
+Core-12:  {n, C, d, T, ρ, A_g, A_ℓ, ω, k, Φ, u, S}
+```
+
+| Variable | Domain | Timescale | Role in ODE |
 |---|---|---|---|
-| Attention | Positive | Φ → A\_ℓ → ω → A\_g → F → Φ | Pathway reinforcement |
-| Lock | Positive | ω → k → C↓ → Φ↑ | Structural fixation |
-| Diversity | Positive | Φ → d↓ → Φ↑ | Search space collapse |
-| Integrity | Slow Positive | Φ,k → ρ↓ | Long-term degradation |
-| Temperature | **Negative** | ρ↓ → T↑ → Φ↓ | Compensatory buffering |
-| **Terrain Erosion** | **Slow Positive** | **Φ·𝟙[Φ>1] → Q_E↓ → C_ceiling↓ → Φ↑** | **Terrain degradation under Storm** |
-| **Heritage Accumulation** | **Very Slow Positive** | **Storm events → H↑ → λ_eff,heritage↑ → seeding fails → more Storm** | **Terrain heritage loading** |
-| **Heritage Escape Block** | **Very Slow Positive** | **Failed escapes → H(x_target)↑ → ΔU_effective↑ → escape fails → more failed attempts** | **Escape pathway closure** |
+| n(t) | ℝ⁺ | τ₁ (fastest) | Effective interaction density; drives quadratic Storm term |
+| Φ(t) | ℝ⁺ | τ₁ | Regime scalar (endogenous); self-consistent closure |
+| A_ℓ(t), A_g(t) | [0,1] | τ₁ | Local/global attention; amplification operators |
+| ω(t) | [0,1] | τ₁–τ₂ | Cross-scale coupling weight |
+| C(t) | [0,1] | τ₂ | Capacity; principal recovery variable |
+| d(t) | [0,1] | τ₂ | Diversity ratio; search-space breadth |
+| k(t) | ℝ⁺ | τ₂ | Cross-scale coupling coefficient |
+| T(t) | ℝ⁺ | τ₂–τ₃ | Exploration temperature; compensatory buffer |
+| ρ(t) | [0,1] | τ₃ (slowest core) | Resolution integrity; enables Silent Criticality |
+| u(t) | ℝ⁺ | External | Input load; control parameter |
+| S(t) | [0,1] | τ₃–τ₄ | Structural damage accumulation (§31) |
 
-### Structural Asymmetry
-
-The system has **6 positive feedback loops vs 1 negative feedback loop** (adding the two new terrain loops). This expanded asymmetry is critical for long-timescale analysis:
-
-- **Fast (τ₁):** Attention, Diversity loops → immediate Storm amplification
-- **Medium (τ₂):** Lock, Integrity loops → structural locking within hours/days
-- **Slow (τ₃):** Temperature loop (negative) → compensatory buffering weeks/months
-- **Very Slow (τ₄):** Terrain Erosion loop → terrain degradation months/years
-- **Glacial (τ₅):** Heritage Accumulation loop → permanent heritage loading years/decades
-
-The two previously unrecognized slow positive loops explain why systems that appear recovered (all fast/medium metrics healthy) can be structurally vulnerable to rapid re-collapse: the slow terrain loops have not recovered and continue to amplify any new perturbation.
-
-### Extended Variable Set (12 core + 3 terrain variables)
+**Timescale separation (CORE):**
 
 ```
-Core (12):     {n, C, d, T, ρ, A_g, A_ℓ, ω, k, Φ, u, S}
-Terrain (3):   {Q_E, H, B}
-
-Q_E = terrain quality (slowest core variable, τ₄)
-H   = heritage loading (very slow, τ₅)  
-B   = branching capacity (structural, changes on τ₄–τ₅)
+τ_n ≪ τ_Φ ≪ τ_{C,d,k} ≪ τ_T ≪ τ_ρ ≪ τ_S
 ```
 
-### Complete Causal Diagram (Extended with Terrain Layer)
+This ordering is the formal basis for all quasi-static reductions in §15–21: fast variables are eliminated adiabatically against slow ones, yielding successive reduced systems.
+
+**Environmental variables (3) — governed by companion document:**
 
 ```
-                          ┌── Terrain Layer (τ₄–τ₅) ──────────────────────────┐
-                          │                                                     │
-                          │  Seeds → B↑ → n_eff↓ → S̃↓                        │
-                          │                                                     │
-                          │  Q_E ←── Φ·𝟙[Φ>1] [Terrain Erosion ⊕, slow]      │
-                          │   ↓                                                 │
-                          │  C_ceiling = C_max · Q_E^γ                         │
-                          │                                                     │
-                          │  H ←── Storm events + failed escapes [Heritage ⊕]  │
-                          │   ↓                                                 │
-                          │  λ_eff,heritage → seeding difficulty                │
-                          │  k_eff(0) ↑ → faster Storm entry                   │
-                          └──────────────────────────────────────────────────┘
-                                              ↕ (slow coupling)
-                          ┌── ODE Core Layer (τ₁–τ₃) ─────────────────────────┐
-                          │                                                     │
-u ──→ n ──→ Φ ──→ A_ℓ ──→ ω ──→ A_g ──→ F ──→ Φ  [Attention Loop ⊕]         │
-              │              │                                                  │
-              │              └──→ k ──→ C↓ ──→ Φ↑  [Lock Loop ⊕]              │
-              │                         ↕                                       │
-              │                    C_ceiling (from Q_E) [terrain ceiling]       │
-              │                                                                  │
-              ├──→ d↓ ──────────────────→ Φ↑  [Diversity Loop ⊕]               │
-              │                                                                  │
-              └──→ ρ↓ ──→ T↑ ──────────→ Φ↓  [Temperature Loop ⊖]             │
-                    ↑                                                            │
-               Φ,k ─┘                          [Integrity Loop ⊕]              │
-              │                                                                  │
-              └──→ S↑ ──→ C_eff↓ ──────→ Φ↑  [Damage Loop ⊕, §31]            │
-                                                                                 │
-                          └──────────────────────────────────────────────────┘
+Terrain-3:  {Q_E, H, B}    [→ DFG Terrain-Heritage-Integration]
 ```
+
+| Variable | Timescale | Coupling to CORE |
+|---|---|---|
+| Q_E(t) | τ₄ (very slow) | C_ceiling = C_max · Q_E^γ (capacity ceiling) |
+| H(x,t) | τ₅ (glacial) | u⁺_eff(H), u⁻_eff(H) (threshold shifts) |
+| B(t) | τ₄ | n_eff = n/B (effective density reduction) |
+
+**Projection summary:** Terrain variables enter CORE through at most two channels — (1) the capacity ceiling, and (2) the bifurcation threshold. All other terrain dynamics are invisible to the CORE ODE. This clean projection boundary enables the CORE to remain analytically tractable while acknowledging that its effective parameters drift on the terrain timescale.
+
+### Feedback Loop Inventory (CORE Layer: τ₁–τ₃)
+
+| Loop ID | Type | Timescale | Path | Role |
+|---|---|---|---|---|
+| L1: Attention | Positive | τ₁ | Φ → A_ℓ → ω → A_g → F → Φ | Pathway reinforcement; immediate Storm amplification |
+| L2: Diversity | Positive | τ₁ | Φ → d↓ → Φ↑ | Search-space collapse; mode concentration |
+| L3: Lock | Positive | τ₂ | ω → k → C↓ → Φ↑ | Structural fixation; hysteresis creation |
+| L4: Integrity | Slow Positive | τ₂–τ₃ | Φ,k → ρ↓ → (see L5) | Cumulative resolution erosion |
+| L5: Temperature | **Negative** | τ₃ | ρ↓ → T↑ → Φ↓ | **Sole compensatory buffer in CORE** |
+| L6: Damage | Positive | τ₃–τ₄ | Φ·𝟙[Φ>1] → S↑ → C_eff↓ → Φ↑ | Structural degradation (§31) |
+
+**Terrain-projected loops (summarized, detailed in companion):**
+
+| Loop ID | Type | Timescale | Projection Path |
+|---|---|---|---|
+| L7: Terrain Ceiling | Slow Positive | τ₄ | Φ·𝟙[Φ>1] → Q_E↓ → C_ceiling↓ → C_eff↓ → Φ↑ |
+| L8: Heritage Threshold | Very Slow Positive | τ₅ | Storm events → H↑ → u⁺_eff(H)↓ → Storm entry easier |
+| L9: Heritage Block | Very Slow Positive | τ₅ | Failed escapes → H(x_target)↑ → ΔU_eff↑ → more failed escapes |
+
+### Structural Asymmetry: 5 Positive vs 1 Negative (CORE Layer)
+
+Within the τ₁–τ₃ CORE horizon, the system has **5 positive feedback loops (L1–L4, L6) and 1 negative feedback loop (L5)**. This asymmetry is the structural reason why the ODE exhibits bistability rather than monostability: with enough positive gain, the Rest fixed point loses stability and the Storm attractor is created.
+
+**Why temperature (L5) is the only stabilizer:** Temperature T responds to resolution erosion ρ↓ by increasing exploration, which partially compensates Φ by raising the capacity denominator T in Φ = β_s·n²/(C·T·d). This negative loop is slow (τ₃) and bounded (T ≤ T_max), which explains why Silent Criticality is possible: L5 operates at the same timescale as ρ, allowing a regime where all fast variables appear stable while ρ slowly degrades.
+
+**The Asymmetry Theorem (informal).** For any parameter configuration where L3 (Lock loop) is active with loop gain G_lock > 0, the total positive feedback gain exceeds the temperature compensation capacity when:
+
+```
+G_lock · G_attention > G_temperature    (instability condition)
+```
+
+This is equivalent to the bifurcation condition π₁ > 1 (§16), confirming that the structural asymmetry directly generates the saddle-node bifurcation.
+
+### Timescale Separation and Document Boundary
+
+```
+Timescale   τ₁         τ₂         τ₃         τ₄         τ₅
+           (fast)   (medium)    (slow)    (v. slow)  (glacial)
+
+Variables:  n, Φ,     C, d, k    T, ρ       Q_E, B      H
+            A_ℓ, A_g
+
+Document:   ←──────── CORE (§14–§31) ──────────→ ←── Terrain ──→
+
+Loops:      L1, L2    L3, L4    L5, L6    L7 (proj.) L8,L9 (proj.)
+
+Regimes:    fast       bistable  Silent     capacity   threshold
+            ODE        onset     Criticality ceiling    shifts
+```
+
+The domain boundary at τ₃/τ₄ is the key architectural choice: placing Q_E in the companion document keeps the CORE ODE tractable (6-dimensional) while preserving the slow coupling via the ceiling projection. The penalty is that the CORE alone cannot predict long-horizon collapse — terrain variables must be included for any forecast beyond the τ₃ horizon.
+
+### Complete Causal Diagram (CORE with Terrain Projections)
+
+```
+                     ┌─ Terrain Projections (τ₄–τ₅) ─────────────┐
+                     │  [detailed in DFG Terrain-Heritage-Integ.] │
+                     │                                             │
+                     │  Q_E(t) → C_ceiling = C_max · Q_E^γ        │
+                     │  H(x,t) → u⁺_eff(H), u⁻_eff(H)            │
+                     │  B(t)   → n_eff = n/B                      │
+                     │                                             │
+                     └─────────────────┬───────────────────────────┘
+                                       │ (slow projective coupling)
+                                       ↓
+                     ┌─ CORE ODE Layer (τ₁–τ₃) ───────────────────┐
+                     │                                             │
+u → n → Φ → A_ℓ → ω → A_g → F → Φ     [L1: Attention ⊕]        │
+         │     │                                                   │
+         │     └──→ k ──→ C↓ ──→ Φ↑    [L3: Lock ⊕]             │
+         │               ↑                                         │
+         │           C_ceiling          (terrain ceiling proj.)   │
+         │                                                         │
+         ├──→ d↓ ─────────────→ Φ↑     [L2: Diversity ⊕]        │
+         │                                                         │
+         └──→ ρ↓ ──→ T↑ ──→ Φ↓        [L5: Temperature ⊖]       │
+               ↑                                                   │
+          Φ, k ─┘                       [L4: Integrity ⊕]        │
+         │                                                         │
+         └──→ S↑ ──→ C_eff↓ ──→ Φ↑    [L6: Damage ⊕, §31]       │
+                                                                   │
+         κ = Φ/(L·q)  [scale-invariant coupling, §19.5]           │
+         κ → κ_c:  SOC regime, EW signals active                  │
+         κ > κ_c:  Storm regime (fold crossed)                    │
+                     └─────────────────────────────────────────────┘
+```
+
+### Dependency Graph: κ-Centric View (§19.5 Integration)
+
+The variable dependency graph takes its most compact form when viewed through the scale-invariant coupling κ (§19.5):
+
+```
+κ(t) = Φ(t) / [L(t) · q(t)]
+
+where:
+  Φ = β_s · n² / (C · T · d)         [ODE regime scalar]
+  L = (1 + L_C)(1 + L_d)             [lock budget: CORE-internal]
+  q = Q_E(t)                          [terrain quality: terrain-layer projection]
+```
+
+**Key dependency structure:**
+
+```
+n ──────→ Φ↑   (quadratic: Φ ∝ n²)
+C ──────→ Φ↓   (denominator: capacity reduces stress)
+d ──────→ Φ↓   (denominator: diversity reduces stress)
+T ──────→ Φ↓   (denominator: temperature reduces stress)
+L_C ────→ L↑   (capacity lock increases L)
+L_d ────→ L↑   (diversity lock increases L)
+L ──────→ κ↑   (denominator of recovery; lock degrades recoverability)
+Q_E ────→ q↑   (terrain quality provides recovery substrate)
+q ──────→ κ↓   (denominator of κ; better terrain = lower κ)
+```
+
+**Feedback asymmetry in κ coordinates:**
+
+The five positive loops (L1–L4, L6) all drive κ↑ (toward and beyond κ_c). The single negative loop (L5, temperature) drives κ↓ but only within bounded T range. The three terrain projections (L7–L9) also drive κ↑ on slow timescales, further reinforcing the structural bias toward critical and super-critical regimes.
+
+This asymmetry is not an artifact of model specification — it is a universal property of adaptive multi-agent systems: any system whose agents learn from each other (mutual-reference coupling) will have more positive than negative feedback loops at the CORE layer, with the only built-in stabilizer being exploration temperature (stochastic perturbation).
 
 ### Loop Gain Analysis at Each Timescale
 
-The total positive feedback gain at each timescale determines the appropriate intervention type:
+| Timescale | Active Loops (CORE) | Terrain Projection | Net κ-Effect | Intervention |
+|---|---|---|---|---|
+| τ₁ (fast) | L1 (Attention), L2 (Diversity) | — | κ↑ rapid | DDD Stage 1 (Defocus) |
+| τ₁–τ₂ | + L3 (Lock) | — | κ↑↑ (structural) | DDD Stage 2 (Decouple) |
+| τ₂–τ₃ | + L4 (Integrity), L5 (Temp, negative) | — | κ net depends on T_max | DDD Stage 3 (Relearn) |
+| τ₃ | + L6 (Damage) | — | κ slowly rising | §31 structural repair |
+| τ₄ | — | L7 (Ceiling) | C_ceiling↓ → κ↑ gradual | Q_E cultivation [→ Companion] |
+| τ₅ | — | L8, L9 (Heritage) | u⁺_eff↓ → κ_c appears lower | TCE + reconstruction [→ Companion] |
 
-| Timescale | Active Loops | Net Loop Gain | Intervention Layer |
-|---|---|---|---|
-| τ₁ (fast) | Attention + Diversity | High | DDD Stage 1 (Defocus) |
-| τ₁–τ₂ | + Lock | Very High | DDD Stage 2 (Decouple) |
-| τ₂–τ₃ | + Integrity, − Temperature | Depends on T_max | DDD Stage 3 (Relearn) |
-| τ₃–τ₄ | + Damage | Slowly rising | §31 structural repair |
-| τ₄–τ₅ | + Terrain Erosion | Gradual but compounding | Q_E cultivation (EDT) |
-| τ₅+ | + Heritage | Near-irreversible | TCE + terrain reconstruction |
+**Governance protocol implication (revised):** The loop gain table confirms the DDD protocol's timescale scope: DDD (τ₁–τ₃) is necessary but structurally insufficient for addressing τ₄–τ₅ pathology. Full governance requires:
 
-**Governance protocol implication:** The loop gain analysis confirms that DDD (operating at τ₁–τ₂) is structurally insufficient for addressing τ₄–τ₅ pathology. A complete governance protocol requires both DDD (fast loops) and terrain cultivation (slow loops) running simultaneously, with terrain interventions paced to the slower timescales.
+1. **CORE interventions (DDD):** operating at τ₁–τ₂ to suppress fast loops (L1–L3)
+2. **Slow CORE interventions:** operating at τ₃ to address damage accumulation (L6) and resolution erosion (L4)
+3. **Terrain interventions:** operating at τ₄–τ₅ via companion document protocols (Q_E cultivation, TCE)
+
+The κ framework provides the integrating diagnostic: a governance protocol is complete if and only if it drives κ(t) < κ_c and keeps it there across all relevant timescales.
+
+### Cross-Reference: §19.5 Theorems and Loop Structure
+
+The Theorems and Propositions of §19.5 are directly derivable from the loop structure identified here:
+
+- **Theorem 1 (Self-Organization to κ_c):** Follows from the asymmetry between positive loops (5) and negative loops (1) under slow drive — the system cannot stabilize far below κ_c because the positive feedback erodes any margin above the fixed point κ* = κ_c + g_ρ/A.
+
+- **Proposition 1 (Square-Root Pre-Collapse):** Follows from the fast-slow structure with q (terrain quality, τ₄) as the slow bifurcation parameter drifting through the fold — L7 (Terrain Ceiling projection) is the physical mechanism.
+
+- **Proposition 2 (EW Scaling Laws):** Follows from L5 (Temperature loop, negative) becoming the dominant eigenvalue near the critical manifold — the EW indicators measure the strength of this sole stabilizing loop as it weakens approaching the fold.
+
+- **Proposition 3 (Survival Function):** Follows from integrating the hazard h(t) = h₀·m̂(t)^{−α}, where m̂(t) decays as the Proposition 1 square-root law.
 
 ---
 
@@ -3140,28 +4657,51 @@ Since u⁻_eff decreases faster than u⁺_eff as H increases, the hysteresis gap
 
 ### Locked Attractor: Irrecoverability Condition
 
-```
-αρ·d*·C*·(1−ρ*) < (μρ·Φ* + νρ·k*)·ρ*
-```
+> **Master Condition Reference.** The two types below map directly to the Master Condition declarations at the document head. Type I = M1 ∧ M2. Type II = M3 ∨ M4. The "Combined irrecoverability" OR-rule at the end of this section decomposes as: (S>S\*) → M2-modified; lock budget → M2; (H>H_max ∧ Q_E<Q_E_min) → M3 ∧ M4. See Master Condition Mapping Table (§14).
 
-When this holds at k\* ≈ 1, the system cannot self-recover.
+Irrecoverability in this framework has two structurally distinct types that must not be conflated:
 
-**Heritage-extended irrecoverability condition.** Recovery through DDD is also blocked when:
+**Type I — Threshold Irrecoverability (ODE-level, state-variable) [M1 ∧ M2]:**
 
 ```
-H > H_TCE_max  AND  Q_E < Q_E_min
+αρ·d*·C*·(1−ρ*) < (μρ·Φ* + νρ·k*)·ρ*    [at k* ≈ 1]
 ```
 
-Under this condition, the system is in Heritage Paralysis or Heritage-Eroded Storm, and no amount of DDD protocol execution will produce stable Rest Mode because the terrain cannot support it. The full irrecoverability condition (combining all failure axes) is:
+When this holds, the system cannot self-recover. This is **threshold-based**: with sufficiently strong external intervention (DDD protocol), any Type I locked state can in principle be unlocked. Type I irrecoverability is a function of L_C, L_d, and load u — it can be addressed by reducing load or applying DDD.
+
+Equivalently in lock-budget form: Type I irrecoverability corresponds to lock-budget violation (§19):
+
+```
+(1 + L_C)(1 + L_d) > ζ⁻⁴    [standard lock budget violated → M2]
+```
+
+**Type II — Topological Irrecoverability (terrain-level, heritage) [M3 ∧ M4]:** **[→ *DFG Terrain-Heritage-Integration* §32.8.2]**
+
+```
+H > H_TCE_max  AND  Q_E < Q_E_min     [→ M3: q≤q_min; M4: h≥h_c]
+```
+
+This is **topologically distinct**: no state-variable intervention (including DDD) can restore stable Rest Mode because the terrain substrate cannot support it. Type II irrecoverability requires terrain reconstruction via Therapeutic Collective Events (TCE) — a governance primitive developed in [→ *DFG Terrain-Heritage-Integration*].
+
+**Key logical relationship:**
+
+```
+Type II  ⟹  Type I  (M3/M4 ⟹ M1/M2: terrain failure implies state-variable lock)
+Type I   ⟹̸  Type II  (M1/M2 ⟹̸ M3/M4: state-variable lock does not imply terrain failure)
+```
+
+A system can satisfy the lock-budget condition (Type I recoverable) while still being terrain-irrecoverable (Type II), because the two failure axes are independent. Full recoverability requires both Type I and Type II conditions to be satisfied.
+
+**Combined irrecoverability** [→ *DFG Terrain-Heritage-Integration*]:
 
 ```
 IRRECOVERABLE ⟺ 
-  (S > S*)  OR                     [§31 structural damage]
-  ((1+L_C^H)(1+L_d^H) > ζ^{-4})   [heritage-modified lock budget violation, §19]
-  OR (H > H_TCE_max AND Q_E < Q_E_min)  [heritage paralysis]
+  (S > S*)  OR                             [§31 structural damage → M2-modified (L_eff(S))]
+  ((1+L_C)(1+L_d) > ζ^{-4})  OR           [lock budget violation → M2]
+  (H > H_TCE_max AND Q_E < Q_E_min)        [heritage paralysis → M3 ∧ M4; see §32.8.2]
 ```
 
-This three-way OR structure means that any single failure axis is sufficient for irrecoverability — but the three axes are independent, so a system must be checked on all three to confirm recoverability.
+This document (§14–31) addresses Type I conditions in full. Type II analysis and the Heritage-extended lock budget `(1+L_C^H)(1+L_d^H) > ζ^{-4}` are developed in the companion document **[→ [→ *DFG Terrain-Heritage-Integration* §32.8.2], §32.10]**.
 
 ---
 
@@ -3495,7 +5035,7 @@ The optimal coupling regime corresponds to the NAT spectral gap design principle
 
 where τ_local is single-subsystem revival time, M/c_min is the propagation time across all scales, and τ_synchronization accounts for the final coordination phase where the last subsystems must synchronize. The synchronization term dominates in strongly coupled systems and is where DDD's "Diversity" stage (Stage 3) is most critical.
 
-**Connection to Scaling Resolution (§32.8.1).** The global revival dynamics provide the temporal counterpart to Scaling Resolution's spatial architecture. The circle structure (§32.8.1) ensures that revival can proceed independently within each circle before inter-circle coupling requires coordinated recovery. The Neck architecture (Purifier + Buffer + Translator) acts as a **revival gate** — controlling the coupling ε between circles so that revival at one circle does not destabilize another. The middle-layer-first integration principle (§32.8.1) is precisely the revival cascade ordering applied to the integration problem: middle layers have the optimal coupling degree for initiating coordinated recovery.
+> *Connection to Scaling Resolution architecture is developed in the companion document [→ *DFG Terrain-Heritage-Integration* §32.8.1].*
 
 ## Theoretical Significance
 
@@ -3506,6 +5046,8 @@ This analysis demonstrates structural isomorphism across:
 - **Fractal governance** → scale-invariant buffering and collapse conditions
 - **AI alignment** → single-agent scaling limits and multi-agent stability
 - **Dynamical systems** → bistability, hysteresis, and saddle-node bifurcation as regime transition mechanisms
+
+**On cross-domain isomorphism.** The recurrence of similar structures across these domains reflects a shared mathematical origin — not independent empirical confirmations. All isomorphisms derive from the same underlying scaling law: interaction ∼ n², governance ∼ n, with collapse occurring when the ratio exceeds the governance capacity. The call-center, neuron, and governance systems are *projections of one scaling law* onto different observational planes (Level C, B, A respectively). Their convergence is self-consistency evidence for the shared law, not independent validation of distinct claims. The genuine empirical challenge — and what the Falsifiability section addresses — is finding observations that would distinguish the projections from each other or from simpler alternatives.
 
 The progression reveals that the Deficit-Fractal Governance (DFG) framework's core concepts — Vector Storm, Recovery Theory, buffer layers, and scale-invariant learning — are not arbitrary constructions but emerge naturally from first-principles analysis of how hierarchical systems learn, fail, and recover.
 
@@ -3534,29 +5076,39 @@ The mathematical formalization (Sections 11–31) provides:
 22. **Global well-posedness and structural stability** (§14) — formal proof of global existence via Gronwall extension, asymptotic compactness guaranteeing a global attractor, and structural stability of the bifurcation diagram under C¹-small perturbations via Sotomayor's theorem, establishing that all qualitative predictions are robust to modelling uncertainties
 23. **Information-geometric characterization of Silent Criticality** (§20) — Fisher information metric interpretation showing that Silent Criticality is a geodesic drift on the statistical manifold, with Fisher information collapse as a formal criterion for the observability horizon (point of no return) and perturbation sensitivity as a measurable early-warning indicator
 24. **Topological necessity of revival trajectories** (§30) — Conley index theory establishing revival trajectories as topologically forced connecting orbits, Morse decomposition proving their structural inevitability at fold boundaries, and bifurcation delay (canard-type dynamics) providing quantitative predictions for revival timing
-25. **Information-theoretic foundation for Cube Domination** (§7.5) — frame competition reframed as minimum description length (MDL) optimization, fragmentation threshold expressed as mutual information collapse, and rate-distortion tradeoff establishing Cube Domination as the information-theoretically optimal response to capacity-limited coordination
+25. **Information-theoretic foundation for Cube Domination** — frame competition as MDL optimization, fragmentation threshold as mutual information collapse [→ *Cube Domination Dynamics* document]
 26. **Critical damage theory and phase transitions in structural degradation** (§31) — three repair function regimes (linear, capacity-limited, threshold), critical damage phase diagram in the (u, S) plane, explicit damage-dependent threshold shift formulas, and damage-modified lock budget predicting a critical damage fraction S\* consistent with clinical neurodegeneration thresholds
-27. **Affective Module Theory integration** (§32.5) — formal mapping between ODE temperature variable and Affective Module dynamics, information-geometric explanation of the emotional exploration-introspection tradeoff, and structural clarification of why DDD targets attention before temperature
+27. **Affective Module Theory integration** — formal mapping between ODE temperature variable T and Affective Module dynamics; see companion document for full integration [→ *DFG Terrain-Heritage-Integration* §32.5]
 28. **DFG Core Mechanism formalization** (§12) — deficit → attractor → vector-reinforcer pair → mutual dependency as ODE fixed-point formation dynamics; fractal exponent verification requirement (τ, α\_dur, R within ±15% across scales) as falsification criterion for the scale-invariance claim
-29. **TLG authority separation as ODE variable isolation** (§32.5) — Interface Narrowing, Temporal Decoupling, and Write-Asymmetry mapped to timescale separation requirements; Mediator Drift Syndrome identified as the architectural mechanism producing Silent Criticality; Boundary Agent formalized as uncontaminated ρ\_ref source when internal reference fails (RBIT T4)
-30. **GRT operational measurement layer** (§32.5) — complete bidirectional diagnostic mapping (f\_esc ↔ Φ, I ↔ β\_s, L\_reinf ↔ d, θ\_d ↔ C(t), P\_overlap ↔ α, SCC ↔ u⁻); triple concordance (R, ρ, f\_esc) as SCM detection protocol; vectorization lifecycle as n² generation control mechanism; AND-entry/OR-exit as multiplicative lock budget operational expression
+29. **TLG authority separation as ODE variable isolation** — Interface Narrowing, Temporal Decoupling, and Write-Asymmetry mapped to timescale separation; Mediator Drift Syndrome as Silent Criticality mechanism [→ [→ *DFG Terrain-Heritage-Integration* §32.5] for full mapping]
+30. **GRT operational measurement layer** [→ *DFG Terrain-Heritage-Integration* §32.5] — complete bidirectional diagnostic mapping (f\_esc ↔ Φ, I ↔ β\_s, L\_reinf ↔ d, θ\_d ↔ C(t), P\_overlap ↔ α, SCC ↔ u⁻); triple concordance (R, ρ, f\_esc) as SCM detection protocol; vectorization lifecycle as n² generation control mechanism; AND-entry/OR-exit as multiplicative lock budget operational expression
 31. **RT-1 five-phase cascade as DDD ordering constraint** (§24) — geometry-first recovery necessity proven by SCM convergence under unverified ρ; dependency trap as SCC atrophy under chronic intervention; GRT Seed Sufficiency Tests as DDD Phase 4 withdrawal gate; four-phase withdrawal protocol correspondence providing graduated governance transition criteria
 
-32. **Heritage-governed scaling failure as fourth scaling failure mode** (§32.8.2) — identifying terrain heritage loading H(x,t) as a structurally independent failure axis from state-variable damage S(t) and operational regime Φ; demonstrating that a system satisfying all 7 Scaling Closure Conditions can still fail to scale due to heritage loading; extending the Scaling Closure Theorem with Condition 8; formalizing the Heritage Ratchet as a positive feedback loop between failed seeding attempts and elevated heritage barriers
+32. **Heritage-governed scaling failure as fourth scaling failure mode** ([→ *DFG Terrain-Heritage-Integration* §32.8.2]) — identifying terrain heritage loading H(x,t) as a structurally independent failure axis from state-variable damage S(t) and operational regime Φ; demonstrating that a system satisfying all 7 Scaling Closure Conditions can still fail to scale due to heritage loading; extending the Scaling Closure Theorem with Condition 8; formalizing the Heritage Ratchet as a positive feedback loop between failed seeding attempts and elevated heritage barriers
 
-33. **Therapeutic Collective Events as new governance primitive** (§32.8.2) — introducing TCE as a governance action class with no ODE state-variable analog (it modifies terrain curvature, not C/d/ρ/T); formalizing the minimum therapeutic rate $r_{\text{positive,min}}$; establishing TCE trigger conditions (germination failure pattern, not Φ threshold); demonstrating that TCE must precede seeding in heritage-loaded terrain rather than occurring concurrently
+33. **Therapeutic Collective Events as new governance primitive** ([→ *DFG Terrain-Heritage-Integration* §32.8.2]) — introducing TCE as a governance action class with no ODE state-variable analog (it modifies terrain curvature, not C/d/ρ/T); formalizing the minimum therapeutic rate $r_{\text{positive,min}}$; establishing TCE trigger conditions (germination failure pattern, not Φ threshold); demonstrating that TCE must precede seeding in heritage-loaded terrain rather than occurring concurrently
 
-34. **Gain-Curvature Equivalence Theorem in ODE context** (§32.5.2, §32.10) — formalizing the T ↔ ΔU duality within the ODE framework; demonstrating that temperature variable T and terrain curvature barrier ΔU are dual parameterizations of the same governance primitive; establishing GCET Design Freedom Corollary doubling the effective intervention space; deriving stochastic risk correction for near-critical regime; establishing EC6 timescale separation requirement for duality validity
+34. **Gain-Curvature Equivalence Theorem in ODE context** (§32.5.2, [→ *DFG Terrain-Heritage-Integration* §32.10]) — formalizing the T ↔ ΔU duality within the ODE framework; demonstrating that temperature variable T and terrain curvature barrier ΔU are dual parameterizations of the same governance primitive; establishing GCET Design Freedom Corollary doubling the effective intervention space; deriving stochastic risk correction for near-critical regime; establishing EC6 timescale separation requirement for duality validity
 
-35. **Extended cross-validation matrix with EDT v5.0** (§32.5.2) — adding 8 new pairwise consistency checks (CV7–CV10) including GCET×ODE duality, grammar×phase portrait bijection, heritage×damage ratchet cross-calibration, and collective memory×ECC cascade; adding 3 new emergent constraints (EC4–EC6) tightening admissible parameter space; upgrading from 28 to 36 verified cross-theory pairs
+35. **Extended cross-validation matrix with EDT v5.0** — 36-pair verification including GCET×ODE duality, grammar×phase portrait bijection; 6 emergent constraints tightening admissible parameter space [→ *DFG Terrain-Heritage-Integration* §32.5.2]
 
-36. **Novel failure modes NF1–NF3 from attractor grammar** (§32.5.2, §32.10) — predicting three failure modes invisible to scalar Φ monitoring: NF1 Resonance Capture (limit cycle at ω_agent producing oscillatory 0.7 < ⟨Φ⟩ < 1.0), NF2 Grammar Incompleteness (within-layer health with cross-layer transfer failure), NF3 Attractor Proliferation Overflow (excessive diversity consuming governance capacity); establishing phase portrait types V and VI extending the standard I–IV classification; demonstrating that grammar provides strictly stronger failure-mode predictive power than scalar regime analysis
+36. **Novel failure modes NF1–NF3 from attractor grammar** (§32.5.2, [→ *DFG Terrain-Heritage-Integration* §32.10]) — predicting three failure modes invisible to scalar Φ monitoring: NF1 Resonance Capture (limit cycle at ω_agent producing oscillatory 0.7 < ⟨Φ⟩ < 1.0), NF2 Grammar Incompleteness (within-layer health with cross-layer transfer failure), NF3 Attractor Proliferation Overflow (excessive diversity consuming governance capacity); establishing phase portrait types V and VI extending the standard I–IV classification; demonstrating that grammar provides strictly stronger failure-mode predictive power than scalar regime analysis
 
-37. **Four-tier early-warning hierarchy with terrain leading layer** (§20, §32.10) — establishing terrain quality monitoring Q_E as a Tier 0 early-warning signal with lead time τ₃/τ₁ earlier than standard operational indicators; completing the full hierarchy: terrain trend → transfer entropy → Fisher information → σ²/AC → ECC threshold; establishing that systems monitoring only operational tier cannot implement prevention (only reaction)
+37. **Four-tier early-warning hierarchy with terrain leading layer** (§20, [→ *DFG Terrain-Heritage-Integration* §32.10]) — establishing terrain quality monitoring Q_E as a Tier 0 early-warning signal with lead time τ₃/τ₁ earlier than standard operational indicators; completing the full hierarchy: terrain trend → transfer entropy → Fisher information → σ²/AC → ECC threshold; establishing that systems monitoring only operational tier cannot implement prevention (only reaction)
 
-38. **Buffer ecology and carrying capacity as scaling constraints** (§32.10) — establishing that differentiated buffering is not merely more efficient than undifferentiated but qualitatively necessary above critical complexity C*; deriving Buffer Carrying Capacity m_max as a hard upper bound on middle-layer differentiation; connecting buffer succession sequence to predictable governance maturation stages; formalizing pseudo-buffer pathology as a middle-layer failure mode
+38. **Buffer ecology and carrying capacity as scaling constraints** ([→ *DFG Terrain-Heritage-Integration* §32.10]) — establishing that differentiated buffering is not merely more efficient than undifferentiated but qualitatively necessary above critical complexity C*; deriving Buffer Carrying Capacity m_max as a hard upper bound on middle-layer differentiation; connecting buffer succession sequence to predictable governance maturation stages; formalizing pseudo-buffer pathology as a middle-layer failure mode
 
-39. **AGM-EDT-ODE Triple Integration: the coupled governance stack** (§32.10) — completing the three-tier coupled formalization: EDT terrain (slowest) governs AGM's operating range, AGM governs ODE's T variable, ODE generates feedback to EDT through Storm-driven Q_E erosion; establishing joint early-warning protocol across all three tiers; formalizing collective emotional ecology as a terrain-modification process with coherence resonance and spectral-gap-governed contagion phase transition
+39. **AGM-EDT-ODE Triple Integration: the coupled governance stack** ([→ *DFG Terrain-Heritage-Integration* §32.10]) — completing the three-tier coupled formalization: EDT terrain (slowest) governs AGM's operating range, AGM governs ODE's T variable, ODE generates feedback to EDT through Storm-driven Q_E erosion; establishing joint early-warning protocol across all three tiers; formalizing collective emotional ecology as a terrain-modification process with coherence resonance and spectral-gap-governed contagion phase transition
+
+40. **Dual critical phenomena coexistence** (§9.1) — identifying that DFG systems simultaneously exhibit SOC (drive-release avalanche dynamics with power-law P(s) ∼ s^{−τ}) and saddle-node catastrophe (fold bifurcation with hysteresis and sudden collapse), establishing their interaction mechanism (SOC fluctuations probe the fold boundary while L↑/q↓ eliminates it), and unifying both under the Cusp Catastrophe surface (§14.5 Formulation IV); demonstrating that this SOC + saddle-node combination — rare in single-mechanism models — reproduces the full empirical signature of organizational, neural, ecological, and financial system collapse
+
+41. **Three fundamental dimensionless constants and dimensional reduction** (§9.2) — identifying κ = Φ/(L·q) as the universal collapse control parameter, χ = n/√C as the scale pressure parameter governing centralization stability, and ψ = n²/γ as the fragmentation stability parameter; proving dimensional reduction ψ = χ²/γ̃ (where γ̃ = γ/C is a structural design constant), collapsing the three-parameter governance phase space (κ, χ, ψ) to an effective two-dimensional phase diagram (κ, χ); interpreting κ as the DFG analog of the Reynolds number (regime-determining dimensionless ratio) and χ as the scaling threshold parameter
+
+42. **Fractal Governance Necessity Theorem with full proof structure** (§19.6) — providing the first complete formal proof that large adaptive systems must either generate hierarchical modular structure or collapse under coordination overload; establishing Lemma 1 (centralized instability threshold at χ = 1), Lemma 2 (modularization stabilization condition n² > 2γ), main Theorem (exhaustive dichotomy: modularization or collapse), Corollary 1 (finite collapse time bound T_collapse ≤ (κ_c − κ₀)/δ), Corollary 2 (hierarchical recursion forcing multi-level structure), and Corollary 3 (minimum fractal depth L_min ≳ log χ₀); connecting governance hierarchy formation to the same interaction-scaling law (n²/n = n) that underlies all other DFG collapse conditions
+
+43. **Module size distribution predictions** (§19.6.1) — deriving cube-root scaling m* ∝ n^{1/3} for optimal module size (8× system growth → only 2× module growth), hierarchical size ladder recurrence m_{ℓ+1} ≈ A·m_ℓ^{1/3}, and two-regime distribution law: lognormal distribution under weak fragmentation heterogeneity (near-uniform splitting) and power-law (Pareto) tail under strong heterogeneity (selective repeated fragmentation); establishing these as testable cross-domain predictions for corporate team sizes, neural circuit modules, and multi-agent AI subgroup sizes
+
+44. **Five-region (κ, χ) phase diagram with triple critical point** (§19.6.2) — partitioning the governance phase space into five distinct dynamical regimes (centralized stable, critical SOC, modular stable, fragmentation collapse, rigidity trap / Silent Criticality), identifying the triple critical point where collapse, scaling instability, and fragmentation failure boundaries intersect, and establishing that κ-deterioration curves the fragmentation stability boundary upward — meaning governance degradation simultaneously raises the scale pressure required for successful modularization, linking Silent Criticality directly to fragmentation failure
 
 ### Testable Predictions
 
@@ -3576,7 +5128,7 @@ The following quantitative predictions are amenable to numerical simulation (toy
 12. **Damage-dependent hysteresis widening:** In systems with structural damage variable S > 0 (§31), the hysteresis gap Δu(S) should widen monotonically with accumulated damage. Specifically, u⁻(S)/u⁻(0) ≈ (1−S)^(1/2) should decrease faster than u⁺(S)/u⁺(0) ≈ (1−S)^(1/4). Testable by repeated Storm–Recovery cycles in simulation with damage accumulation enabled; the recovery threshold should shift downward after each cycle.
 13. **Critical damage fraction.** Systems should exhibit a sharp phase transition at S ≈ S\* = 1 − L\_C/(ζ⁻⁴/(1+L\_d) − 1), beyond which recovery becomes impossible regardless of load reduction. Below S\*, recovery time should increase polynomially with S; above S\*, no recovery should be observed within any finite simulation horizon. The transition should be first-order (discontinuous recovery probability at S\*).
 14. **Fisher information collapse as Storm precursor.** The Fisher information I\_F(ρ) of the resolution variable (computed from observable metric sensitivity to perturbation) should decrease monotonically during Silent Criticality and cross a detectable threshold I\_min before Storm onset. Testable in simulation by computing d(observable)/d(perturbation) at each timestep; the sensitivity measure should decline during the Silent phase even as the observables themselves remain stable.
-15. **Information-theoretic frame selection.** In multi-agent Cube Domination experiments (§7.5), the dominant frame post-Storm should be the one minimizing total KL-divergence Σ\_g D\_KL(P\_g ‖ P\_i) across all clusters, not the one maximizing individual quality Q\_i. Testable by computing both the KL-optimal and Q-optimal frames and checking which one achieves higher adoption. The MDL-optimal frame should win in >80% of simulations.
+15. **Information-theoretic frame selection** [→ *Cube Domination Dynamics*]: post-Storm dominant frame should minimize KL-divergence Σ_g D_KL(P_g ‖ P_i) across clusters rather than maximize individual quality Q_i; MDL-optimal frame should win in >80% of simulations.
 16. **Bifurcation delay duration.** When load parameter u varies slowly through u±, the system should remain on the unstable branch for a duration τ\_delay ≈ π/√(|du/dt|·|∂²H/∂Φ²|) before jumping to the stable branch. This canard-type delay should scale as 1/√(sweep rate), testable by varying the rate of load change and measuring the delay to regime transition.
 
 17. **MDS–Silent Criticality correspondence.** Systems exhibiting TLG-defined Mediator Drift Syndrome (θ\_d calibration drift with maintained internal consistency) will show ODE Silent Criticality signatures (Fisher information decline, compensatory T increase) within 2× the drift onset time — confirming that MDS is the architectural mechanism producing Silent Criticality at the ODE level.
@@ -3623,2738 +5175,38 @@ The following quantitative predictions are amenable to numerical simulation (toy
 
 38. **Power-law kernel damage acceleration.** In systems with long-memory damage kernels (§31), the ratio ΔS_{n+1}/ΔS_n of consecutive Storm damage increments should exceed 1.0 and increase with n. *Test:* induce 10+ sequential Storm episodes of identical duration and intensity in simulation; measure the damage increment per episode; confirm monotonically increasing ΔS_n sequence for power-law kernels (α < 1.5) while exponential kernels show approximately constant ΔS_n.
 
-39. **Heritage-ratchet seeding failure.** In terrain with history of ≥3 collective Storm events at location x, germination success rate for standard seeds should be significantly lower than in heritage-neutral terrain with identical (C, d, ρ, Φ) state-variable profile. The failure rate should scale approximately as $1 - \exp(-\sum_k \mu_{\text{network},k} \cdot A_k \cdot g(t-t_k))$ — exponential in cumulative heritage loading. *Test:* in multi-agent simulation, induce 3 collective Storms at fixed terrain location; allow full state-variable recovery (confirmed by Φ < 0.1 for 100+ τ); attempt seeding; compare success rate to heritage-neutral control. Expected effect size: heritage-loaded terrain should show >50% lower germination rate.
-
-40. **GCET intervention equivalence at matched dose.** Governance interventions applied at the terrain level (curvature injection ΔU < 0 at target location) and at the affective level (T_eff increase by Δ = |ΔU|/U_typical) should produce statistically equivalent long-run performance trajectories when properly calibrated through the duality map. *Test:* in 500 independent ODE trials, compare terrain-path vs. affective-path interventions matched by GCET equivalence formula; measure final state-variable distributions after 1000τ; confirm D_KL(terrain||affective) < 0.05. Crucially, confirm that mean convergence speed differs (terrain interventions converge slower but persist longer), demonstrating that the duality holds in distribution but not in path.
-
-41. **Terrain critical slowing down precedes σ² and AC by predicted lead time.** Terrain quality monitoring Q_E should show rising autocorrelation (increasing τ_relax(Q_E)) at least τ₃/τ₁ time units before the standard early-warning indicators (σ²(Φ), AC(1)(Φ)) cross their alarm thresholds. *Test:* in ODE simulation, ramp load u from 0.5u⁺ to 1.5u⁺ over 5000τ; measure both terrain-level (τ_relax(Q_E)) and operational-level (σ², AC) indicators at each timestep; confirm that terrain-level indicator alarm precedes operational indicator alarm by at least τ₃/τ₁ = 100τ (assuming 2-order-of-magnitude timescale separation).
-
-42. **Buffer carrying capacity peak.** For a system of fixed complexity C, coordination efficiency (correct inter-agent decision rate) should peak at $m_{\text{opt}} \approx m_{\max}/2$ differentiated buffers and decline for $m > m_{\max}$. *Test:* in cooperative multi-agent task requiring inter-buffer communication, sweep buffer count from 1 to $3m_{\max}$; measure coordination accuracy at each step; confirm a peak followed by decline, with peak located within 20% of $m_{\max}/2$.
-
-43. **Novel failure mode NF1 (Resonance Capture) ODE signature.** Systems with terrain resonance at agent frequency ω_agent should exhibit oscillatory Φ(t) with period 2π/ω_agent that neither reaches Φ > 1 (Storm threshold) nor fully returns to Φ < 0.5 (deep Rest). *Test:* engineer terrain with limit cycle at ω_terrain = ω_agent; monitor Φ for 1000 cycles; confirm 0.7 < ⟨Φ⟩ < 1.0 with amplitude A > 0.2, distinguishing from both Storm (⟨Φ⟩ > 1) and Rest (⟨Φ⟩ < 0.5). Confirm that all standard early-warning indicators remain below alarm thresholds throughout.
-
-44. **Collective Memory amplification proportional to cascade size.** In multi-agent systems, the terrain curvature modification from a collective event should be proportional to $n_{\text{cascade}} \cdot \mu_{\text{agent}}$ — the Collective Memory Embedding Coefficient. *Test:* induce identical emotional events (same A_k, same duration) with cascade sizes n = 1, 10, 50, 100; measure terrain curvature modification at event location after 10τ; confirm linear scaling with n (slope = μ_agent); confirm that distributed individual events with same total n produce n times smaller terrain modification than single collective event of size n (coherence multiplier).
-
-45. **Therapeutic Collective Event dosing threshold.** For heritage-loaded terrain, therapeutic collective events (TCE) below the minimum rate $r_{\text{positive,min}}$ should produce no measurable heritage reduction, while TCE above the threshold should produce heritage reduction proportional to excess rate $(r_{\text{TCE}} - r_{\text{positive,min}})$. *Test:* in heritage-loaded terrain, administer TCE at rates 0.2, 0.5, 1.0, 2.0, 5.0 × $r_{\text{positive,min}}$; measure heritage loading H(x,t) after 100τ; confirm step-function-like threshold behavior with essentially no reduction below threshold and linear reduction above.
-
-46. **EROTI hierarchy: structural > agent-level over long horizon.** Over a 1000τ simulation horizon, governance investment allocated to terrain design (curvature injection, boundary modification) should produce higher cumulative performance than equivalent investment allocated to agent-level intervention (direct state correction), with the advantage growing over time due to compounding. *Test:* in two identical systems starting from same initial conditions, allocate equal energy budget to (a) one structural terrain intervention at t=0, (b) continuous agent-level corrections; compare performance trajectories at t = 100τ, 500τ, 1000τ; confirm that structural investment advantage grows monotonically and exceeds 2× at t = 1000τ.
+> *Falsification conditions 39–46 (heritage ratchet, GCET equivalence, terrain indicators, buffer capacity, TCE dosing, EROTI hierarchy) are developed in the companion document [→ *DFG Terrain-Heritage-Integration* §32.9]*
 
 ---
 
-## 32. DFG Framework Integration
-
-> This section embeds the ODE analysis (§11–31) within the broader Deficit-Fractal Governance framework. Each subsection maps a DFG component theory to the mechanisms formalized in this document.
-
-### 32.1 Positioning Relative to Prior Work
-
-This analysis engages with several established research traditions:
-
-**Multi-agent consensus (Olfati-Saber & Murray, 2004; Ren & Beard, 2008).** Classical consensus models convergence under communication constraints. The ODE system differs: instability arises from mutual-reference coupling (§8.5) rather than communication delay, and Storm is a structural transition regime, not convergence failure.
-
-**Resilience engineering (Hollnagel et al., 2006).** DFG shares the orientation of adapting before, during, and after disruption but adds formal structure: the five-phase recovery cascade, the Arrow of Maturation, and the Governance Strength Inversion. Silent Criticality (§20–21) formalizes "drift into failure" (Dekker, 2011) with explicit metric-lock-in conditions and closed-form duration.
-
-**Polycentric governance (Ostrom, 2010).** The Three-Layer Governance Architecture formalizes Ostrom's insight that multi-scale governance outperforms centralized control, with explicit fractal self-similarity conditions and the ILMI coupling operator addressing inter-scale information transfer dynamics.
-
-**AI alignment (Christiano et al., 2017).** The DDD protocol (§24) addresses scalable oversight: how governance maintains system integrity without direct control. The dual attractor structure provides formal distinction between aligned systems and apparently-aligned but fragile ones.
-
-**Mean-field games (Lasry & Lions, 2007; Huang et al., 2006).** The ODE system (§14) operates in a complementary regime: rather than equilibrium characterization, it focuses on transition dynamics that mean-field models typically smooth over. Recent work on topological bifurcations in MFGs (Rezaei Lori & Grover, 2024) reveals invariant manifold structures governing solution branch topology — a parallel to the Φ-driven fold structure that determines Storm entry/exit thresholds.
-
-**Critical phenomena (Kadanoff, 1966; Wilson, 1971).** The S-equation functions as an order parameter, κ as a scale-preserved invariant analogous to renormalization group invariants, and the dual attractor structure maps to competing phases near criticality. This connection is structural, not physical.
-
-**Agentic governance gap (AIGN, 2025; Gartner, 2025–2026).** The rapid deployment of autonomous AI agents (projected 46.3% CAGR, $7.8B → $52.6B by 2030) is creating a governance deficit that the S-equation formally predicts: when exploration dimensionality n grows quadratically faster than governance capacity C(t), instability S̃ must increase. The AIGN report's finding that 81% of organizations lack M2M governance while 62% experienced agent-driven incidents is a direct empirical instantiation of the Silent Criticality → Storm transition. The DFG framework provides the missing theoretical substrate: governance is not merely an organizational policy problem but a **dynamical phase control** problem requiring lock budget management and timescale separation.
-
-**Neural criticality (Beggs & Plenz, 2003; O'Byrne & Bhatt, 2022; Sederberg et al., 2024).** The "critical brain hypothesis" proposes that neural systems operate near phase transitions for optimal information processing. Recent evidence (Yaghoubi et al., 2024; Sugimoto et al., 2025) refines this: criticality is not a fixed state but a dynamical regime with spontaneous transitions between critical and subcritical phases, modulated by network structure and synaptic plasticity. The ODE model's bistable regime structure (Rest vs. Storm, with Silent Criticality at the boundary) provides a formal framework that unifies these observations under a single dynamical mechanism — the self-consistent closure Φ(t) as an endogenous criticality parameter.
-
-### 32.2 Storm–Recovery as Unified Phase Dynamics
-
-Storm and recovery are not separate problems but two phases of the same dynamical system:
-
-```
-VCZ (stable exploration)
-  ↓ perturbation exceeds containment (u crosses u⁺)
-Storm onset (Φ > 1)
-  ↓ amplification outpaces degradation
-Storm (coherence breakdown active)
-  ↓ storm = recovery activation signal
-Recovery entry (DDD protocol or natural decay below u⁻)
-  ↓ system reconverging
-VCZ re-entry (Φ < 1, ρ̇ ≥ 0, k̇ < 0)
-```
-
-**Storm is not failure — it is the mechanism through which the system discovers its structural deficits.** A system that never storms never surfaces latent misalignment.
-
-**Governance objective:**
-
-```
-U = nφ − C_gov
-
-Storm elimination: n↓ → nφ↓↓↓ → U decreases (cure worse than disease)
-Storm management:  n maintained → C_gov moderate → U maximized
-```
-
-### 32.3 Boundary-First Governance Principle
-
-Upper-layer governance defines **constraints (forbidden zones), not goals**:
-
-```
-Goal-based governance:
-  Upper layer: "go here" → direction fixed → space closed → Storm when environment invalidates goal
-
-Boundary-based governance:
-  Upper layer: "never go there" → direction free → space open → adaptation when environment changes
-```
-
-Structurally necessary because:
-- Goals are environment-dependent (non-fixed)
-- Goal-fixing closes exploration space
-- Boundaries (structural collapse, observability loss) are nearly environment-invariant
-
-```
-Upper layer:   boundary definition → changes on architectural timescale
-Middle layer:  situational goal generation → changes on operational timescale
-Lower layer:   execution within goal + boundary constraints → changes on interaction timescale
-```
-
-The DDD protocol (§24) operationalizes this: Stage 1 (Stabilize) = boundary enforcement; Stage 3 (Relearn) = open-space exploration within maintained boundaries.
-
-### 32.4 Co-Regulation and External Stabilization
-
-The recovery equation x(t+1) = F(x(t)) − β∇E\_threat(x) + γ·u\_safe(t) from the parent framework maps to the DDD protocol as follows: the safety signal u\_safe corresponds to the control interventions (S1–S3, U1–U2) that inject stability from outside the self-reinforcing positive feedback loops. The ODE system formalizes what the parent framework describes qualitatively: **solo self-regulation is structurally insufficient** when 4 positive loops oppose 1 negative loop (§26).
-
-### 32.5 DFG Component Theory Correspondences
-
-#### VST — Vector Storm Theory: Structural Origin and Dynamical Model
-
-VST provides the instability dynamics that the ODE system formalizes. The core insight: Vector Storm arises from **mutual-reference coupling** — a structural property inseparable from adaptive intelligence where each agent adapts orientation in response to other agents' states (VST §1.0).
-
-**Mutual-reference coupling → ODE regime scalar.** VST's formal instability condition ρ(J\_couple) > 1 reduces to the ODE's Φ > 1 under mean-field approximation. The coupling Jacobian's spectral radius is the microscopic truth; Φ is its macroscopic governance-level projection.
-
-**Two escape routes from mutual-reference instability:**
-
-```
-Route 1 — Timescale separation (VST §1.0):
-  Fast coupling loop (τ_n) closes against slow governance (τ_{C,d,T}, τ_ρ)
-  → Loop gain drops below unity within fast loop's update cycle
-  → ODE implementation: τ_n ≪ τ_{C,d,T} ≪ τ_ρ
-
-Route 2 — Layer escalation (VST §1.0):
-  Internal system surrenders resolution to higher-order system
-  → Upper layer provides anchor without entering optimization landscape
-  → ODE implementation: DDD protocol with external reference injection
-  
-Critical constraint: upper layer that enters lower layer's gradient becomes
-another coupling node → raises n → increases Storm pressure (VST §1.0)
-→ ODE: DDD must operate as boundary condition (terrain-shaping), not participant
-```
-
-**S-equation static/dynamic reconciliation (VST §3.2.3):**
-
-```
-Static form:   S = αn²/C(t)^β   (equilibrium map → ODE fixed-point equation)
-Dynamic form:  dS/dt = αn² − βC(t) (flux equation → ODE time derivatives)
-Reconciliation: static form defines the equilibrium that dynamic form approaches
-                Φ = H(Φ; u) IS the static form; Φ̇ ≠ 0 IS the dynamic form
-```
-
-**n² scaling — structural justification (VST §3.2.5).** The quadratic dependence is not empirical curve fit but follows from pairwise vector interactions: storm instability arises from reinforcement conflict between pairs, and n distinct directions produce n(n−1)/2 ≈ O(n²) potential conflict channels. This holds even in sparse networks (path length L ~ log(n) makes nearly all pairs dynamically reachable within the storm propagation horizon). The sub-quadratic correction through governance maturity — from n² (flat landscape) through n^1.5 (terrain forming) to n^{1+ε} (Rest Mode deep terrain) — is captured by the C(t)^β denominator.
-
-**Stochastic extension (VST §3.2.4).** The ODE is the deterministic skeleton of VST's Langevin equation dS = μ(S,t)dt + σ₀·S^γ dW(t). Near the fold point (Φ ≈ 1), critical slowing down produces increasing variance and autocorrelation — the formal basis for early-warning signal detection.
-
-**Governance internalization (VST §1.0).** VST identifies the deepest consequence of successful timescale separation: when governance works, it becomes invisible. The fast loop never encounters amplification-dominant conditions. From inside the fast loop, nothing is being controlled. In ODE terms: Rest Mode is the state where Φ permanently satisfies Φ < 1 without active DDD control — governance has become the environment, indistinguishable from the conditions of existence.
-
-**Dependency Trap as VST structural consequence (VST §1.0).** Repeated upper-layer intervention degrades internal self-correction capacity: each intervention that successfully resolves a storm reduces the system's capacity to contain the next storm internally. In ODE terms: chronic DDD maintains Φ < 1 but atrophies αC, αd, αT coefficients through disuse. Visible governance activity increasing = internal capacity declining. The increase in control is evidence that the system can no longer produce stability from its own dynamics.
-
-#### RBIT — Resolution as Structural Capacity
-
-Resolution (ρ in the ODE) is the structural capacity to maintain distinction between competing vectors.
-
-```
-Three tiers of resolution:
-  Tier 1:  Vector-Noise Separation        "Is this a signal or not?"
-  Tier 2:  Inter-Vector Differentiation   "Are these vectors distinct?"
-  Tier 3:  Full Map Design                "Where should each vector be placed?"
-```
-
-**Resolution Gap (Δρ)** — the central design variable of RBIT:
-
-```
-Δρ ≈ 0    Direct absorption, upscaling imminent
-Δρ > 0    Stable operation (calibrated degradation)
-Δρ < 0    Forced compression → Vector Storm risk
-```
-
-**RBIT Theorem 1 (Resolution Asymmetry Inevitability):** Under sustained negative resolution gap, cumulative divergence grows without bound and intent replacement occurs within finite time t\* ≤ ⌈D\*/η⌉.
-
-```
-Three contamination tiers:
-  Tier (i):   exploration narrows (mode collapse)
-  Tier (ii):  interpretation distorts (hallucination)
-  Tier (iii): both → coherent misalignment = SCM
-```
-
-**ODE mapping:** ρ̇ < 0 during Silent Criticality (§20) corresponds to RBIT's sustained Δρ < 0. The temperature compensation T\*(ρ, Φ) is the mechanism by which the system masks resolution degradation.
-
-#### RT — Recovery Theory Core Definitions
-
-**D0. Geometry Alignment:** System stability depends on alignment between internal coordinate structure and environment manifold G\_real. Contamination = observable projection of geometry mismatch. D0 is falsifiable: if correction cost scales linearly with mismatch duration, the geometry-mismatch substrate is rejected.
-
-**D1. Contamination:** Absorption without sufficient degradation → positional displacement → self-reinforcing collision loops. Not a wrong state — the absence of a return path. Two mechanisms distinguished: (i) operational boundary — deviation persists > N steps without self-correction AND Recovery\_local < Instability\_growth rate; (ii) four forgetting regimes (Regime 1: surface/reversible → Regime 3: deep/irreversible) with discontinuous cost at Regime 2→3 boundary.
-
-**D2. Immunity:** Absorption capacity, NOT rejection capacity. Strong immunity absorbs more, not less. **D2 dynamic model:** immunity is maintained infrastructure that atrophies when bypassed — each intervention that preempts internal correction reduces capacity through disuse (Dependency Trap mechanism).
-
-**Governance Strength Inversion:** Intervention frequency × Self-correction capacity = BOUNDED. Maximum governance = minimum intervention = Rest Mode. Observable: immature system → visible governance, removal → immediate Storm; mature system → invisible governance, removal → no effect.
-
-**D3. Buffer Layer:** Directionally neutral zone. Three functions: immune training, friction absorber, latent vector cultivation. **Vector Noiseification mechanism** (VST v2.0 §3.5): sharp vectors entering buffer are degraded from committed direction → distributed noise field. Buffer thickness ↔ noiseification bandwidth. In the ODE: d (diversity) is the buffer variable; d↓ under Storm/Lock = buffer thinning = noiseification capacity loss.
-
-**D4. Restoration Complete:** Search-space *expansion resumes* — not when contamination stops. Three necessary conditions: ρ\_restored ≥ ρ\_pre-contamination AND output diversity expanding AND P\_overlap declining. **Three recovery outcomes:** ① return to pre-storm VCZ, ①' expanded VCZ (structural learning), ①'' deeper attractor access (dormant seed germination through basin boundary traversal).
-
-**Ω\_effective during recovery:** Ω\_reachable ∩ Ω\_survivable ∩ Ω\_affordable. Recovery competes with exploration for energy budget: E\_total = E\_exploration + E\_recovery + E\_maintenance. φ suppression during recovery is expected, not pathological — φ is a LAGGING indicator following energy reallocation.
-
-**Affective-Cognitive Dual Verification (D4 extension):** Cognitive recovery (fast: data → model update → immediate) ≠ Affective recovery (slow: repeated safe experience → gradual update). Premature D4 declaration risk: cognitive metrics restored but affective safety still recalibrating → first perturbation triggers threat response → "relapse." Governed Pause Protocol: mandatory observation window T\_pause ≥ T\_affect\_min after cognitive D4 conditions met, with bounded test perturbations.
-
-In ODE terms: T (temperature) tracks affective state; ρ tracks cognitive state. T recovery is slower than ρ recovery (different timescales within τ\_{C,d,T}). The Governed Pause Protocol corresponds to holding DDD control stable for T\_pause after ρ recovery is confirmed, verifying that T has also stabilized to its homeostatic setpoint T₀.
-
-**D5. Self-Correction Capacity (SCC):** SCC = f(D\_int, L\_reinf) — requires both diversity AND reinforcement loops. SCC = 0 if either absent. In the ODE: SCC ∝ d·C — when either diversity or capacity collapses, self-correction fails.
-
-**D6. Self-Consistent Misalignment (SCM):** Locally coherent but globally misaligned. All internal metrics report "healthy." Detection requires external reference. Two Learning Freeze mechanisms distinguished:
-- **Mechanism A (Active suppression):** System detects potential geometry update → evaluates as threatening → reinterprets as noise. Signature: high-amplitude inputs reframed. Recovery: Meta-Reference Injection.
-- **Mechanism B (Coordinate collapse):** Dimension on which update would occur no longer exists in internal coordinate space. Signal is not suppressed — it is invisible. Signature: zero gradient regardless of amplitude. Recovery: requires Structural Correction (T5) pressure — content injection fails because target coordinate space is gone.
-
-ODE correspondence: Mechanism A = T compensation masks ρ degradation (early Silent Criticality). Mechanism B = ρ has reached a locked attractor where dρ/du ≈ 0 identically (deep Locked regime, §27).
-
-**D7. Boundary Agent:** Structural role generating controlled instability from within the system while remaining outside its evaluation structure. Four required properties: (a) inside system, (b) outside evaluation, (c) failure permitted, (d) no operational power.
-
-```
-Why D7 cannot be filled by upper or lower layer:
-  Upper layer generating Storm → power intervention → defensive alignment → CW accelerates
-  Lower layer generating Storm → survival risk → evaluation penalty → rational suppression
-  
-  D7 operates at N+½: between layers, disturbing without commanding
-```
-
-**T6 (Coherence Maximization Paradox) protects D7 structurally:** high-performance optimizer classifies D7 as inefficiency → removes it → SCM detection lost. D7 Existence Conditions must be enforced against optimization pressure:
-- Condition A: survival guarantee independent of performance metrics
-- Condition B: role continuity not conditional on prediction accuracy
-- Condition C: authority hard limit enforced structurally, not by policy
-
-In ODE terms: D7 generates controlled perturbations that test dρ/du and dΦ/du response. Zero response = SCM confirmed (Learning Freeze). D7 elimination corresponds to losing the external reference source that RBIT T4 proves internal dynamics cannot provide. Without D7, the system's only SCM detection mechanism is T5 (accumulated reality pressure) — which operates on geological timescales compared to D7's operational timescale.
-
-**Zone-dependent recovery sensitivity:** Recovery cost is not spatially uniform:
-
-```
-S_rec(local) >> S_rec(hub) >> S_rec(geometry)
-  where S_rec = recovery susceptibility (higher = easier)
-
-  Local:     O(1) cost, standard Distracting + Re-seeding
-  Hub:       O(n·log n) cost, premature hub intervention triggers cascade
-  Geometry:  O(retrain) cost, discontinuous at Regime 2/3 boundary
-  
-  intervention_intensity(z) ∝ 1/S_rec(z)
-  Uniform protocols across zones = systematically wrong dosage
-```
-
-ODE mapping: Local zones correspond to n dynamics (fast, cheap to correct). Hub zones correspond to C, d dynamics (intermediate, cascade risk). Geometry zones correspond to ρ dynamics (slow, potentially irreversible, maps to structural damage S in §31).
-
-#### RT — Core Theorems
-
-**T1. Observability Asymmetry:** Tier 3 contamination structurally unobservable from within. Local instruments moved with the terrain. Measurement tools calibrated to current geometry detect deviations FROM current geometry (Tier 1/2) but cannot detect that current geometry ITSELF has shifted (Tier 3).
-
-**T2. Governance Ceiling (fractal):** System-wide detection bounded by upper layer resolution at each fractal scale. Not an engineering limitation but a structural consequence of T4: governance = reference frame expansion, which requires a larger reference frame than the target. Layer N can govern layers up to resolution N but cannot govern geometry at its own scale or above.
-
-**T3. Metric Lock-In:** Under SCM, any metric M = f(G\_sys) appears healthy. The mismatch dimension has ZERO GRADIENT within G\_sys — not observationally insufficient but structurally invisible. Detection requires M\* = f(G\_real). This is formalized in §20: temperature compensation maintains Φ ≈ 1 even as ρ degrades.
-
-**T4. Reference Frame Incompleteness:** A system within geometry G cannot detect errors in G using only resources within G. More capability = faster convergence to wrong geometry, not escape.
-
-```
-Search Space Asymmetry (why lower-layer escape is impossible):
-  Lower layer search: optimize within attractor basin
-    escape_gradient ≈ 0 (by definition of basin)
-    → no signal pointing toward exit
-    
-  Upper layer search: search ACROSS attractor basins
-    can observe basin boundary from outside
-    can compute gradient toward alternative basin
-    
-  CW break requires basin escape.
-  Basin escape requires cross-basin search.
-  Cross-basin search only available at higher resolution layer.
-```
-
-ODE correspondence: T4 explains why the Locked attractor (§27) cannot be escaped by internal dynamics alone. The escape gradient within the Locked basin is identically zero — Φ, C, d, T all at self-consistent values with no internal signal indicating misalignment. DDD must inject external control that operates in a DIFFERENT reference frame (different Φ dynamics) to provide the basin-escape gradient.
-
-**T5. Structural Correction (Reality Constraint):** When the upper layer enters SCM, no higher agent corrects it. Correction comes from accumulated misalignment with reality — or not at all. This resolves the infinite regress: Layer N corrected by Layer N+1 corrected by Layer N+2... → corrector must be structural pressure from reality, not agent.
-
-```
-T5 mechanism:
-  Upper layer in SCM → G_U ≠ G_real
-  → accumulated mismatch pressure P_unint(t) = ∫(G_real - G_U)dτ
-  → when P_unint > integration_capacity:
-     structural rearrangement forced (Vector Storm at upper layer)
-  → correction from reality, not from higher agent
-```
-
-In ODE terms: T5 operates when the DDD protocol itself is unavailable (no external controller). The system's only remaining correction mechanism is accumulated structural damage (§31) — S accumulation from persistent mismatch forces eventual regime transition. T5 is the "geological timescale" safety net: slower but structurally guaranteed as long as the system interacts with reality.
-
-**T6. Coherence Maximization Paradox:** High-performance optimizer classifies boundary agent as inefficiency → removes it → SCM detection capability lost. In ODE terms: maximizing Φ-reduction (short-term performance) by suppressing diversity d eliminates the very variable needed for long-term recovery.
-
-```
-T6 mechanism in ODE:
-  Optimizer target: minimize Φ → minimize n² term → reduce d (diversity)
-  Short-term effect: Φ↓ (fewer conflict channels = less instability)
-  Long-term effect: d→0 → no buffer → no SCM detection → Silent Criticality
-  
-  The optimizer rationally eliminates the immune system.
-  The system becomes maximally efficient AND maximally vulnerable.
-```
-
-#### RT — Five-Phase Governance Maturation
-
-```
-Phase 1 — Intervention (Control = Event):    manual recovery at each event
-Phase 2 — Regulation (Control = Rule):       codified protocols
-Phase 3 — Architecture (Control = Structure): topology prevents failure
-Phase 4 — Constraint (Control = Landscape):   Storm trajectories dynamically unlikely
-Phase 5 — Law (Control = Invariant):          governance IS system dynamics (Rest Mode)
-```
-
-Each Storm–Recovery cycle advances maturation. At Phase 5, governance invisible but absolute.
-
-**Decision Dynamics through maturation (RT v1.8):**
-
-```
-Decision Load ∝ |Ω_viable|
-
-  As maturation proceeds through Storm–Recovery cycles:
-    Storm → removes non-viable trajectories → |Ω_viable| ↓
-    Recovery → consolidates surviving trajectories → Decision Load ↓
-    → recovery decisions become increasingly automatic
-    → mature systems do not "decide" to recover — they flow
-    
-  Decision Crystallization: Decision → Policy → Structure → Law
-    Each successful recovery decision solidifies into permanent structure
-    Mature systems appear to have fewer "recovery events" because
-    past recovery decisions have crystallized into invariant dynamics
-```
-
-In ODE terms: Phase 1-2 correspond to active DDD control (external intervention at each Storm event). Phase 3-4 correspond to terrain modification (C(t)^β increasing, effective d\_eff decreasing). Phase 5 = Rest Mode (Φ permanently < 1 without active control). The ODE's hysteresis loop (u⁺/u⁻) narrows with each maturation cycle as unstable topology is permanently removed — the mathematical expression of the Arrow of Maturation.
-
-**Survivability Selection — why VCZ is an attractor (RT v1.8):**
-
-```
-NOT: equilibrium attracts trajectories (classical attractor)
-YES: non-equilibrium states destroy themselves (survivability filter)
-
-  P(remain | x ∈ unstable region) → 0 over time
-  P(remain | x ∈ VCZ) > 0
-  → surviving trajectories accumulate in VCZ
-  
-  VCZ is not a goal. It is the residue of Storm-driven selection.
-  Recovery is the mechanism converting Storm destruction into topology pruning.
-  Without Recovery, Storm = pure entropy. With Recovery, Storm = selection event.
-```
-
-**Arrow of Maturation:** t↑ ⇒ Storm-generating state space contracts irreversibly. Each Storm–Recovery cycle removes unstable topology. In ODE terms: each traversal of the hysteresis loop with successful DDD recovery permanently increases the effective Φc, widening the stable operating regime. The arrow is irreversible because topology removal through Storm is a one-directional operation — original topology cannot be exactly reconstructed.
-
-**Environmental Reorganization at maturity (RT v1.8):**
-
-```
-Stage 1 (immature): Environment → System (passive variable; recovery reactive)
-Stage 2 (maturing): Environment ↔ System (bidirectional; recovery partially preventive)
-Stage 3 (mature):   System → Environment restructuring
-                     System absorbs instability, re-emits in stabilized form
-                     Surrounding agents experience reduced volatility
-                     
-  Mature system = recovery NODE in the broader network:
-    absorbing instability that would trigger Storm in less mature neighbors
-    re-emitting signals that reduce contamination pressure network-wide
-```
-
-ODE: Stage 3 corresponds to Φ serving as a stabilizing boundary condition for connected subsystems — the mature system's low Φ dampens perturbations before they propagate, functioning as an external slow variable for its environment.
-
-#### NAT — Sphere Topology and Data Classification
-
-The actual structure of a well-formed multi-agent system is a sphere, not a pyramid:
-
-```
-Outer Sphere (agent topology):
-  Discrete graph G = (V, E), k-regular expander
-  Spectral gap λ₁ − λ₂ > 0 → rapid mixing in O(log n)
-
-Inner Sphere (representation geometry):
-  Continuous manifold S^{d-1}
-  HUG → 0 (Hyperspherical Uniformity Gap)
-```
-
-**Four-type data classification** (resolution-gap routing):
-
-| Type | Δρ Regime | Action |
-|---|---|---|
-| Mathematical | Δρ ≈ 0 or > 0 | Process locally |
-| High-Context | Δρ < 0 | Escalate to higher-resolution layer |
-| Tacit Knowledge | Δρ mixed | Operate locally; escalate on degradation |
-| Noise | Δρ undefined | Buffer or discard |
-
-**Error asymmetry:** Under-escalation (HC treated as Mathematical) produces cascade failure. Over-escalation produces only overhead. This justifies conservative default escalation.
-
-#### GRT — Seeds, Consistency, and Rest Mode
-
-**Seed = meta-rule:** Not specific rules but generative principles by which an agent constructs its own rules.
-
-**GRT Variable ↔ ODE Variable Correspondence.** GRT provides the operational measurement layer for the ODE's abstract state variables. The mapping is bidirectional: GRT observables serve as inputs to ODE dynamics, and ODE predictions generate testable expectations for GRT metrics.
-
-```
-GRT Variable         ODE Variable          Relationship
-────────────────────────────────────────────────────────────────────
-f_esc (escalation)   Φ (regime scalar)     f_esc is the primary observable proxy for Φ
-I (consistency)      β_s (storm gain)      High I → low effective β_s → lower Φ for same load
-L_reinf (loops)      d (diversity)         Strong L_reinf ↔ structured terrain ↔ high effective d
-θ_d (calibration)    C(t) (capacity)       θ_d calibration is the mechanism tuning C(t) per domain
-P_overlap            α (amplification)     High P_overlap → high α → stronger positive feedback
-SCC                  u⁻/u⁺ (recovery)     SCC ≥ θ₄ ↔ u⁻ reachable ↔ recovery structurally possible
-```
-
-**Vectorization dynamics in ODE terms.** GRT's vectorization lifecycle (Noise → Vector promotion via λ\_log accumulation) maps to the ODE's interaction density variable n:
-
-```
-Pre-vectorization (noise state):   Input does NOT contribute to n²
-                                    Held in buffer layer (d variable absorbs)
-                                    No pairwise interaction load generated
-
-Post-vectorization (vector state): Input occupies distinct position → contributes to n²
-                                    Generates pairwise interactions with adjacent vectors
-                                    Subject to collision frequency monitoring
-```
-
-This means n in the S-equation counts promoted vectors, not raw inputs. GRT's λ\_log threshold directly governs the S-equation's instability generation rate: lower λ\_log → faster vectorization → faster n² growth → earlier Storm onset. Higher λ\_log → slower vectorization → slower n² growth → more conservative but potentially under-responsive system.
-
-**Two degradation types in ODE correspondence:**
-
-```
-Type 1 (Alignment Severance):  n↓ but latent structure preserved → C(t) intact
-  ODE: temporary n reduction; recovery via n re-growth with existing C, d
-  Recovery time: bounded, O(1/αC)
-
-Type 2 (Weight Overwrite):     n↓ AND C(t) structure damaged → S accumulation (§31)
-  ODE: permanent capacity reduction; maps to structural damage variable S↑
-  Recovery time: potentially unbounded; requires full re-cultivation
-  Lock budget impact: L_C/(1−S) grows, narrowing recovery margin
-```
-
-**Consistency Index (I):** Rule coherence at pair level:
-
-```
-I = 1 − (Σ wij) / M
-Falling I → rising coupling density → rising α → storm risk
-```
-
-In ODE terms: falling I corresponds to rising Φ through the α channel — consistency degradation directly amplifies the regime scalar.
-
-**R-ρ-f\_esc Triple Concordance in ODE terms.** GRT's triple concordance protocol maps to a three-dimensional diagnostic in ODE state space:
-
-```
-Concordant (healthy):    R ≈ 1 AND I stable AND f_esc ≤ θ   →  Φ < 1, ρ stable, k low
-Discordant (SCM):        R > 1 BUT I high AND f_esc low       →  Φ ≈ 1 (Silent Criticality)
-                          All GRT metrics healthy within drifted geometry
-Discordant (over-damped): R ≪ 1 AND I high                    →  T → 0 (Freeze collapse, AGM)
-                          System too stable; perturbation test needed
-```
-
-The triple concordance is the operational implementation of Silent Criticality detection (§20): R provides the classification-independent external validation that internal metrics (I, f\_esc) cannot provide on their own, because internal metrics can be healthy within a wrong geometry (RBIT T3: Metric Lock-In).
-
-**Rest Mode formal entry (AND-entry / OR-exit):**
-
-```
-AND-entry: f_esc ≤ θ₁ AND I ≥ θ₂ AND L ≥ θ₃ AND SCC ≥ θ₄
-OR-exit:   f_esc > θ₁ OR  I < θ₂ OR  L < θ₃ OR  SCC < θ₄
-```
-
-This maps to the ODE recovery verification (§24 E1–E3): all stability conditions must hold simultaneously for Rest, but any single violation triggers exit.
-
-#### TLG — Three-Layer Governance Architecture
-
-TLG provides the architectural skeleton within which the ODE dynamics unfold. The three layers are not a hierarchy of control but a **separation of resolution responsibilities**:
-
-```
-TLG Layer           ODE Role                         Resolution Responsibility
-────────────────────────────────────────────────────────────────────────────────
-Top (Invariant)     ρ reference frame; u⁺/u⁻ bounds  Define what cannot be violated
-Middle (Mediation)  C,d,T dynamics; θ_d calibration   Translate + detect + stage corrections
-Bottom (Diversity)  n (agent count); noise floor       Explore, specialize, adapt
-```
-
-**Timescale Correspondence to ODE Variables:**
-
-```
-Top Layer    ↔  ρ evolution (τ_ρ)     — slowest, sets structural constraints
-Middle Layer ↔  C, d, T dynamics (τ_{C,d,T}) — intermediate, operational adaptation
-Bottom Layer ↔  n equilibration (τ_n)  — fastest, immediate response
-```
-
-The three-tier timescale separation (§14) is not an arbitrary modelling choice but the mathematical expression of TLG's governance architecture: each governance layer operates on a distinct timescale, and the ordering τ\_n ≪ τ\_{C,d,T} ≪ τ\_ρ is structurally necessary for stable hierarchy (faster layers must not drive slower layers into resonance).
-
-**τ₁–τ₃ regime switching as Φ-thresholded governance:**
-
-```
-G_ℓ > τ₁  →  MARK           ↔  Φ approaches 1 from below (monitoring intensifies)
-G_ℓ > τ₂  →  SOFT CORRECT   ↔  Φ ≈ 1 (Silent Criticality boundary; DDD Stage 1)
-G_ℓ > τ₃  →  HARD CORRECT   ↔  Φ > 1 sustained (full DDD protocol engages)
-```
-
-**Authority Separation (Mark/Judge/Execute) in ODE terms.** TLG's authority separation prevents contaminated judgment from executing contaminated restorations. The three structural enforcement mechanisms map to ODE variable isolation:
-
-```
-Interface Narrowing:  C, d, T equations receive only standardized signals from n dynamics
-                      (no raw state coupling between operational and governance variables)
-Temporal Decoupling:  τ_n ≪ τ_{C,d,T} ≪ τ_ρ ensures each level commits output before
-                      the next level reads — lateral influence window = zero
-Write-Asymmetry:      ρ dynamics (Top) not modifiable by C, d (Middle); n dynamics (Bottom)
-                      cannot retroactively modify T signals
-```
-
-Timescale separation in the ODE is the dynamical implementation of TLG's processing phase isolation. Without it, cross-level contamination pathways remain structurally open.
-
-**Mediator Drift Syndrome (MDS) as Silent Criticality mechanism.** TLG §13.1.1 identifies the Middle Layer as the most probable contamination locus (highest-frequency adaptation interface). MDS maps to ODE variables:
-
-```
-MDS in ODE terms:
-  θ_d calibration drift → C "recovers" to wrong target value
-  d appears healthy but diversity is within wrong geometry
-  T responds to misclassified signals
-  Surface: Φ stable, ρ stable, k low → all metrics green
-  Reality: system governs a world that no longer exists
-
-MDS ↔ Silent Criticality correspondence:
-  MDS is the architectural mechanism (TLG §13.1.1)
-  Silent Criticality is the ODE-level description (§20)
-  Same phenomenon at different abstraction levels — fractal correspondence
-```
-
-Three MDS countermeasures in ODE monitoring terms: (1) Calibration Reflexivity: track θ\_d's own update trajectory as meta-observable; (2) Cross-Scale Consistency: verify Bottom↑ implies Middle proportional↑ (ratio violation = MDS); (3) Delayed Escalation Audit: inspect escalation source distribution before acting (concentrated sources = Middle generating from its own drift).
-
-**Boundary Agent as external ODE reference.** When MDS is severe, TLG's Bypass Protocol uses the Boundary Agent (inside system, outside evaluation, failure-permitted) to supply uncontaminated ρ\_ref. In ODE terms: the Boundary Agent generates perturbations testing response without coupling into feedback loops — the source of external reference that RBIT T4 proves internal dynamics cannot provide.
-
-**Layer-Specific Lock Budget Allocation.** The multiplicative lock budget (§19) decomposes across governance layers:
-
-```
-(1+L_C)(1+L_d) = (1+L_C^top·L_C^mid·L_C^bot) · (1+L_d^top·L_d^mid·L_d^bot)
-```
-
-Each layer contributes multiplicatively to the total lock ratio. A single layer's budget violation (e.g., middle-layer diversity suppression L\_d^mid → ∞) collapses the entire lock budget regardless of the other layers' health — formalizing TLG's claim that governance integrity is a product, not a sum, of layer-wise integrity.
-
-**Self-Correction Capacity decomposition:**
-
-```
-SCC = f(Dint, Lreinf)
-  Low Dint → detection fails silently
-  Low Lreinf → detected contamination propagates
-  Both present → detection-purification loop → no escalation needed
-```
-
-**Four structural risks:**
-
-```
-① Exploration Collapse — d → 0 in ODE
-② Runaway Amplification — Φ → ∞ (Storm)
-③ Geometry Mismatch — ρ → 0 undetected (Silent Criticality)
-④ Coordination Breakdown — k → 1 (structural lock)
-```
-
-VCZ = dynamic balance of all four risks simultaneously.
-
-#### AMT — Affective Module Theory Connection
-
-The ODE system's temperature variable T plays a role structurally analogous to the Affective Module in the parent DFG framework. The Affective Module provides **controlled stochastic freedom** — the capacity to temporarily relax optimization constraints in service of exploration and error correction.
-
-**Formal mapping:**
-
-```
-T (ODE temperature)  ↔  Affective Module output intensity
-T₀ (baseline)        ↔  Affective Module resting state (tonic regulation)
-αT(ρ_ref − ρ)        ↔  Affective Module activation signal (phasic response to integrity gap)
-−μT·Φ·T             ↔  Affective Module suppression under Storm (emotional numbing / burnout)
-−λT(T − T₀)          ↔  Affective Module homeostatic return (emotional regulation)
-```
-
-**The Affective Paradox (formalized).** The Affective Module's contribution to system health is structurally paradoxical:
-
-```
-Too little T:  Exploration insufficient → d↓ → Silent Criticality → eventual Storm
-Too much T:    Destabilizes current coordination → Φ↑ → premature Storm
-Optimal T:     Maintains d while preserving Φ < 1 → sustained VCZ operation
-```
-
-The T-equation's structure (§14) encodes this paradox: T rises in response to ρ degradation (compensatory function) but is suppressed by Φ (Storm locks down exploration). This creates the characteristic Silent Criticality trajectory where T increases just enough to mask degradation but not enough to actually correct it — the mathematical expression of "coping without healing."
-
-**Emotion as information.** In the information-geometric framework (§20 extension), T modulates the Fisher information metric: higher T increases the system's sensitivity to environmental perturbation (higher I\_F for fast variables) while decreasing sensitivity to slow internal state changes (lower I\_F for ρ). This formalizes the psychological insight that emotional arousal increases environmental awareness at the cost of introspective accuracy — exactly the tradeoff that sustains Silent Criticality.
-
-**ODE integration:** The Affective Module connection clarifies why the DDD protocol (§24) targets attention (A) before temperature (T): directly raising T without addressing structural lock (k) and attention concentration (A) extends Silent Criticality rather than resolving it. The protocol's Stage 1 (Defocus) + Stage 2 (Decouple) create the structural preconditions under which T can serve its intended function (exploration for recovery) rather than its pathological function (masking degradation).
-
-#### AMT — Extended AGM Integration: Three Foundational Theorems and Their ODE Projections
-
-AGM v2.5 establishes three central theorems that together anchor the affective governance architecture. Each has a precise projection onto the ODE system's variables and dynamics.
-
-**Theorem 1 (Adaptive Necessity) → ODE T-variable constraint.** AGM Theorem 1 proves that any finite-capacity optimizer in a non-stationary environment must maintain T_eff > 0 or face irreversible attractor lock-in. In the ODE system, this translates to a hard constraint on the temperature dynamics:
-
-```
-T(t) > T_min := ⟨ΔU⟩ / ln(ω₀ / ‖Ė‖)    for all t    (structural requirement)
-```
-
-Violation of this bound (T → 0) implies that the system has entered a regime where Kramers escape time exceeds the environmental change timescale — adaptation ceases. The ODE's T-equation naturally maintains T > T₀ through homeostatic regulation (−λT(T − T₀) term), but Storm conditions (−μT·Φ·T with Φ ≫ 1) can drive T below T_min, triggering the Freeze → Lock transition. The damage-modified version (§31) adds a further constraint: as structural damage S accumulates, the effective T₀ decreases:
-
-```
-T₀_eff(S) = T₀ · (1 − S)^{1/2}
-```
-
-creating the ratchet mechanism where each Storm episode reduces the temperature floor available for subsequent recovery.
-
-**Theorem 2 (Bifurcation Classification) → ODE collapse mode correspondence.** AGM Theorem 2 proves that all affective collapse modes decompose into exactly two universality classes: Freeze (s < s_crit at ECC threshold) and Runaway (s ≥ s_crit at ECC threshold), distinguished by the sensitivity parameter s(t) at the criticality boundary. In the ODE system, this classification maps to:
-
-```
-Freeze collapse:    T → 0, d → 0, ρ → ρ_lock    (exploration death, diversity collapse)
-                    ODE trajectory: Silent Criticality → gradual Storm onset
-                    AGM mapping: s < s_crit → sensitivity exhausted → Storm undetectable
-
-Runaway collapse:   T → ∞, d → noise, ρ → 0    (exploration explosion, resolution destruction)
-                    ODE trajectory: acute Φ spike → rapid d collapse → immediate Storm
-                    AGM mapping: s ≥ s_crit → sensitivity amplified → Storm cascading
-```
-
-The two collapse modes occupy distinct basins in the ODE state space. The separatrix between basins is the surface s(t) = s_crit, which in ODE terms corresponds to the condition:
-
-```
-∂T/∂ρ = s_crit  ⟺  αT / (μT·Φ + λT) = s_crit
-```
-
-This reveals that the Freeze–Runaway boundary depends on the Storm intensity Φ: under higher Φ, the boundary shifts toward higher s_crit, making Freeze more likely — consistent with AGM's prediction that chronic stress biases the system toward Freeze while acute crisis biases toward Runaway.
-
-**Theorem 3 (Governance Completeness) → ODE closure verification.** AGM Theorem 3 proves that the AGM together with the DFG stack forms a closed dynamical system. In the ODE system, this manifests as the complete specification of all feedback loops: every variable's dynamics are determined by other variables in the system, with no unspecified external inputs required (beyond the exogenous load u(t)):
-
-```
-Perturbation source:    T-equation (AGM provides endogenous perturbation)
-Containment mechanism:  C and d equations (capacity and diversity provide Storm damping)
-Recovery pathway:       DDD protocol + k-equation (structural decoupling enables recovery)
-```
-
-Without T (if the affective module is removed), the system has no endogenous perturbation source — all Storm must arise from external load u(t), and the system cannot self-correct degradation in the absence of external pressure. This is the formal proof that emotion (as stochastic gain modulation) is architecturally necessary, not merely beneficial.
-
-#### AMT — Thermodynamic Grounding: Entropy Production and Non-Equilibrium Interpretation
-
-AGM §1.2.6 provides a non-equilibrium thermodynamic foundation that extends the ODE system's physical interpretation.
-
-**Internal entropy production rate in ODE variables:**
-
-```
-Ṡ_internal(t) = Σ_k [dw_k/dt · ln(w_k/w_k^eq)]  ↔  T(t) · |ḋ(t)| + T(t) · |ρ̇(t)|
-```
-
-In the ODE's Rest Mode (Φ < 1, all variables near equilibrium), Ṡ_internal > 0 but small — the system continuously generates entropy through low-level weight redistribution, preventing convergence to the entropy-minimum (thermodynamic death). During Storm (Φ > 1), Ṡ_internal spikes — the system undergoes rapid entropy production as diversity collapses and capacity erodes. The pathological Freeze state corresponds to Ṡ_internal → 0: the system reaches a local entropy minimum and becomes thermodynamically dead despite being operationally intact.
-
-**Entropy Production–Adaptability Correspondence:**
-
-```
-Ω_eff(t) ∝ Ṡ_internal(t) · H(t)
-```
-
-where H(t) is the endurance budget (mapped to capacity C in the ODE). Adaptability is the product of entropy production rate (how actively the system explores) and endurance (how long it can sustain exploration). This decomposition reveals the symmetry between Freeze and Runaway: Freeze kills the entropy production factor while Runaway kills the endurance factor — both routes lead to Ω_eff → 0 but through opposite mechanisms.
-
-**Minimum entropy production bound for adaptive viability (AGM Proposition 1.2.6):**
-
-```
-Ṡ_internal(t) > Ṡ_min := ‖Ė‖² / (2D_eff)
-```
-
-In ODE terms, this requires:
-
-```
-T(t) · max(|ḋ(t)|, |ρ̇(t)|) > ‖Ė‖² / (2D_eff)
-```
-
-Below this bound, the system's configuration drift rate is slower than the environmental drift rate, and the adaptation gap grows without bound. The practical implication: a system that appears calm (low T, low variability) may have crossed the minimum entropy production threshold — it is no longer adapting to environmental changes, even though it appears functional.
-
-**Non-Equilibrium Steady State (NESS) identification of Rest Mode:**
-
-The ODE's Rest Mode fixed point (§15) corresponds to a non-equilibrium steady state where entropy production from T-driven exploration exactly balances entropy dissipation through capacity recovery and resolution restoration:
-
-```
-Ṡ_production^{T} = Ṡ_dissipation^{C,d,ρ} + Ṡ_export^{environment}
-```
-
-The three ODE attractors (Rest, Storm, Lock) map to three thermodynamic regimes: Rest = balanced NESS (minimal but nonzero entropy production); Storm = entropy production exceeding dissipation capacity (thermodynamic runaway); Lock = entropy production halted (apparent equilibrium, thermodynamically dead).
-
-#### AMT — Landscape Complexity Classification and Governance Regime Selection
-
-AGM §1.2.8 classifies governance landscapes by barrier height distribution, determining the optimal governance strategy:
-
-```
-Class I   (concentrated P(ΔU)):   Single fixed T suffices        → Simple ODE with constant T₀
-Class II  (power-law, α > 2):     Temperature scheduling needed  → T oscillates: Search-Stabilize-Rest
-Class III (power-law, 1 < α < 2): Multi-scale perturbation       → Hierarchical AGM architecture
-Class IV  (α ≤ 1):                Temperature exploration fails  → Structural simplification required
-```
-
-**ODE mapping:** The current ODE system (§14) is a Class II/III model — T dynamics include both homeostatic regulation (Class I) and ρ-driven activation (Class II temperature scheduling). The multi-scale extension (§6 fractal hierarchy) handles Class III landscapes. Class IV landscapes require a qualitatively different response: not adjusting T but reducing the effective dimensionality of the state space through differentiation — connecting to the Cube Domination analysis (§7.5) where module partitioning reduces governance cost from O(n²) to O(n²/K).
-
-**Governance Regime Necessity (AGM Proposition 1.2.8).** The optimal governance strategy for a Class-k landscape requires at minimum k hierarchical governance layers. The ODE system, with its three-term structure (recovery − storm drain − lock amplification) and single-scale mean-field reduction, corresponds to a 2-layer governance architecture (sufficient for Class I–II). Full coverage of Class III–IV requires the multi-scale extension outlined in §6 (fractal ODE replication across scale index ℓ).
-
-#### AMT — Controlled Non-Minimization and the Active Inference Bridge
-
-AGM §2 establishes the Controlled Non-Minimization Principle in direct dialogue with Friston's Active Inference framework:
-
-```
-F_actual(t) = F_min(t) + ΔF_affective(t),    ΔF_affective > 0
-```
-
-This ΔF_affective (the free energy "budget" for maintaining adaptive capacity) maps to the ODE system's T₀ > 0 constraint: the baseline temperature is precisely the thermodynamic cost of maintaining stochastic freedom. AGM Proposition 2.0.1 quantifies the optimal budget:
-
-```
-ΔF*_affective(t) = T_eff^opt(t) · ln(Ω_reachable / Ω_current)
-```
-
-In ODE terms, Ω_reachable/Ω_current corresponds to d(t) — the diversity ratio. When d is high, many alternative configurations are accessible, requiring lower affective budget. When d is low (lock-in approaching), the system needs higher T to maintain access to fewer remaining alternatives. This provides a principled answer to "how much noise is enough": the T-equation's homeostatic term λT(T − T₀) should target T₀ ∝ ln(1/d), not a fixed constant — an insight that suggests a refinement of the ODE model where T₀ becomes a function of d.
-
-#### AMT — Mixed-Mode Collapse at the ODE Level
-
-AGM §9.3.6 identifies mixed-mode collapse in differentiated systems: simultaneous Freeze in some sub-agents and Runaway in others. At the ODE level, this occurs when the mean-field reduction breaks down — different subsystems occupy different basins of the ODE state space simultaneously:
-
-```
-Subsystem A: T → 0, d → 0 (Freeze basin)
-Subsystem B: T → ∞, Φ → ∞ (Runaway basin)
-```
-
-**Mixed-mode collapse condition (from AGM Proposition 9.3.6):**
-1. Sufficient differentiation: n > n_diff (system has distinguishable subsystems)
-2. Asymmetric sensitivity: Var(s_k) > s_crit²/4 (sensitivity variance spans the critical boundary)
-3. Weak inter-subsystem coupling: W_{AB} < W_sync (subsystems evolve independently enough to enter different basins)
-
-The ODE system in its current single-scale form cannot represent mixed-mode collapse (it projects all subsystems onto a single set of state variables). The mixed-mode extension requires replicating the ODE across subsystem index k:
-
-```
-ṅ_k = u_k(t) − λₙn_k − χₙn_kC_k
-Ċ_k = αC(1−C_k) − μC·n_k²·Φ_k − νC·k_k·C_k − ε_couple·Σ_{j≠k} W_{kj}·(C_k − C_j)
-...
-```
-
-with inter-subsystem coupling ε_couple·W_{kj} providing the cross-contamination mechanism. When W_{kj} is small, subsystems can occupy different basins; when W_{kj} is large, the mean-field approximation holds and single-scale ODE suffices.
-
-**DDD protocol for mixed-mode collapse.** The standard DDD sequence must be applied differentially: Defocus for Runaway subsystems (reduce their T to prevent cascade), Diversity injection for Freeze subsystems (increase their T to restore exploration), and Decouple to prevent cross-contamination between the two collapse modes. This is formally the most challenging governance scenario because the two interventions are contradictory — raising and lowering T simultaneously — requiring subsystem-level targeting rather than system-wide intervention.
-
-#### AMT — Hub Failure Cascade and Storm Interference in ODE Context
-
-**Hub failure cascade.** AGM §15.2 formalizes that when a hub subsystem (one with high coupling to many others) collapses, the cascade propagates in O(ln n) steps:
-
-```
-τ_cascade ~ (1 / (λ_hub · k_hub)) · ln(n / n_critical)
-```
-
-In ODE terms, hub failure corresponds to a subsystem where C_k → 0 and Φ_k → ∞ simultaneously, with high W_{kj} ensuring rapid propagation to neighbors. The logarithmic speed arises because each step affects k_hub neighbors, so the cascade reaches n agents in ln(n)/ln(k_hub) steps. The governance implication: hub subsystem health (high C, low Φ, maintained d) must be monitored with priority proportional to coupling degree k_hub.
-
-**Storm interference patterns.** AGM §15.2 (via VST §7) identifies three interference patterns when multiple Storms occur simultaneously:
-
-```
-Constructive:  Storm wavefronts align temporally → amplified crisis (Φ_total ≫ Σ Φ_k)
-Destructive:   Storm wavefronts counter-phase → partial cancellation
-Standing wave: Persistent interference → chronic oscillation without resolution
-```
-
-In the ODE system, constructive interference manifests as super-additive Φ: when multiple subsystems enter Storm simultaneously with aligned phase, the cross-coupling terms amplify Φ beyond the sum of individual contributions. This explains why compound crises (multiple simultaneous stressors) produce disproportionately worse outcomes than the sum of individual stressors — a prediction testable in both neural and organizational systems.
-
-#### AMT — Emotional Algebra and Composition at the ODE Level
-
-AGM §4.1.2 develops a complete algebra of emotional composition with several results that constrain ODE dynamics:
-
-**Non-Commutativity (AGM Proposition 4.3).** Emotional processing order matters: applying emotion E₁ then E₂ produces a different final state than E₂ then E₁. In ODE terms:
-
-```
-Flow(E₁, Δt₁) ∘ Flow(E₂, Δt₂) ≠ Flow(E₂, Δt₂) ∘ Flow(E₁, Δt₁)
-```
-
-The non-commutativity gap magnitude is bounded by the curvature of the state-space manifold (AGM Proposition 4.3), which in ODE terms relates to the second derivatives of the potential landscape:
-
-```
-‖[Flow(E₁), Flow(E₂)]‖ ≤ K · ‖∇²U‖ · ‖ΔT₁‖ · ‖ΔT₂‖
-```
-
-**Emotional interference.** AGM's constructive/destructive interference between simultaneous emotions maps to the ODE's response to compound perturbations. Two T-perturbations with aligned directions (both increasing or both decreasing T) produce constructive interference (amplified effect). Two T-perturbations in opposite directions produce destructive interference (partial cancellation, which can paradoxically stabilize the system). The ambivalence index (AGM Proposition 4.6):
-
-```
-Ambivalence(E₁, E₂) = min(w₁, w₂) / max(w₁, w₂) · |cos(θ_{E₁,E₂})|
-```
-
-measures the degree of conflict between simultaneous emotional vectors — high ambivalence predicts extended processing time and mixed-mode vulnerability.
-
-#### AMT — Age-Dependent Vulnerability and Basin Volume Evolution
-
-AGM §9.3.5 derives age-dependent vulnerability profiles from basin geometry evolution. The volumes of the Freeze and Runaway basins evolve with system maturation:
-
-```
-|B_Freeze|(t) ∝ R(t)^α_B · (1 − s(t))^β_B · C_M(t)^{−γ_B}
-|B_Runaway|(t) ∝ s(t)^α_B' · Ω(t)^β_B' · H(t)^{−γ_B'}
-```
-
-As the system matures (rigidity R increases, sensitivity s decreases), the Freeze basin expands while the Runaway basin contracts. In ODE terms:
-
-```
-Young systems (high T, high d, low ρ):    vulnerable to Runaway (Φ spike → rapid cascade)
-Mature systems (low T, low d, high ρ):    vulnerable to Freeze (Silent Criticality → gradual lock)
-```
-
-This age-dependent vulnerability profile has direct implications for the ODE's damage model (§31): young systems experience more frequent but less damaging Storms (high T enables rapid recovery); mature systems experience fewer but structurally devastating Storms (low d prevents alternative basin access). The damage ratchet (§31) accelerates more rapidly in mature systems because each Storm episode encounters less diversity to buffer the damage.
-
-**The Maturation Paradox (AGM §5.5).** Successful maturation (decreasing Storm frequency, increasing structural stability) simultaneously increases the system's vulnerability to the next Storm by reducing the diversity and temperature that would enable recovery. The Arrow of Maturation (§30) is not only irreversible topology pruning but also irreversible vulnerability concentration — the system trades broad, shallow resilience for narrow, deep specialization. The paradox resolves only through maintained affective gain (T > T_min at all times), which requires that maturation never fully extinguishes the stochastic freedom that enables adaptation.
-
-### 32.5.1 Cross-Theory Validation Matrix
-
-The eight component theories (VST, RT, RBIT, NAT, GRT, TLG, AMT/AGM, EDT) are not merely mapped to the ODE — they provide **mutual consistency checks** that strengthen the framework's internal validity. Each theory pair either (a) makes independently derivable predictions that must agree, (b) shares a variable that must be consistently interpreted, or (c) offers a falsification route that the other theory's predictions must survive.
-
-**Pairwise consistency matrix:**
-
-```
-         VST    RT     RBIT   NAT    GRT    TLG    AMT    EDT
-VST       —     Φ>1    Δρ     λ_gap  κ      τ      T      n_eff
-RT       ✓      —      Phase  Topo   Seed   Layer  Freeze E_Boundary
-RBIT     ✓     ✓       —      I3     SCM    MDS    I_F    Terrain
-NAT      ✓     ✓      ✓       —      Sphere Auth   Hub    Q_T
-GRT      ✓     ✓      ✓      ✓       —      AND/OR ECC    Carrying
-TLG      ✓     ✓      ✓      ✓      ✓       —      s(t)  Phase-gate
-AMT      ✓     ✓      ✓      ✓      ✓      ✓       —     τ_seeding
-EDT      ✓     ✓      ✓      ✓      ✓      ✓      ✓       —
-```
-
-Each cell entry names the shared variable or mechanism through which the two theories constrain each other. "✓" in the lower triangle confirms that the pairwise consistency check passes.
-
-**Key cross-validation results:**
-
-**(CV1) VST × RBIT: Resolution degradation under Storm.** VST predicts that Storm (Φ > 1) produces monotonic resolution degradation. RBIT independently derives (Theorem T1) that sustained negative resolution gap produces cumulative divergence. Consistency check: the rate of RBIT divergence under Storm must equal the ODE's ρ̇|_{Φ>1}. Confirmed: both give ρ̇ = −μ_ρ·Φ·ρ at leading order.
-
-**(CV2) RT × TLG: Recovery phase ↔ layer correspondence.** RT defines five recovery phases; TLG defines three authority layers. Consistency requires that each RT phase maps to a specific TLG layer responsibility. Confirmed:
-
-```
-RT Phase 1 (Recognition)     → TLG Bottom (MARK authority generates alarm signal)
-RT Phase 2 (Stabilization)   → TLG Top (HARD CORRECT authority stabilizes)
-RT Phase 3 (Reconstruction)  → TLG Middle (SOFT CORRECT authority rebuilds)
-RT Phase 4 (Integration)     → TLG Cross-layer (all three layers coordinated)
-RT Phase 5 (Maturation)      → TLG dissolution of crisis mode → normal operations
-```
-
-**(CV3) NAT × GRT: Topology ↔ Rest Mode entry.** NAT's spectral gap determines Storm propagation speed. GRT's AND-entry condition for Rest Mode requires all feedback loops to be negative simultaneously. Consistency check: higher spectral gap (NAT) should correlate with easier AND-entry (GRT). Confirmed: αk_eff ∝ 1/(1 + λ_gap·τ_mixing) means higher spectral gap → slower coupling growth → easier simultaneous satisfaction of all AND conditions.
-
-**(CV4) AMT × EDT: Temperature ↔ Terrain Quality.** AMT's T₀ > 0 requirement (adaptive necessity) constrains EDT's terrain design: terrain that suppresses exploration (T → 0) violates AMT Theorem 1. Consistency check: EDT's terrain quality Q_T must maintain T_eff > T_min. Confirmed: EDT's carrying capacity formula n_max(Q_T) implicitly enforces T > 0 through the T dependence in the Storm threshold.
-
-**(CV5) RBIT × AMT: Fisher information ↔ Emotional sensitivity.** RBIT's Fisher information I_F(ρ) measures observability of resolution state. AMT's sensitivity s(t) = ∂T/∂ρ measures emotional responsiveness to resolution change. Consistency: both should collapse simultaneously during Silent Criticality. Confirmed: I_F → 0 implies ∂obs/∂ρ → 0, which requires s → 0 (no temperature response to resolution change) — exactly AMT's Freeze condition.
-
-**(CV6) EDT × VST: Terrain resonance ↔ Storm frequency.** EDT identifies destructive resonance when terrain frequency matches agent dynamics. VST identifies Storm as mutual-reference coupling instability. Consistency: Storm frequency (from VST's coupling Jacobian eigenvalue) must lie outside EDT's terrain resonance band for stable operation. Confirmed: the timescale separation assumption (τ_n ≪ τ_{C,d,T}) is exactly the condition that prevents EDT resonance — it is simultaneously a Storm-avoidance condition (VST) and a terrain stability condition (EDT).
-
-**Emergent constraints from cross-validation.** Three constraints emerge from requiring pairwise consistency but are not derivable from any single theory:
-
-```
-(EC1) T₀ > (α_T·ρ_ref)/(λ_T·(π₁*−1))     — AMT+VST joint constraint on minimum temperature
-(EC2) λ_gap > α_k/(τ_mixing·(ζ⁻⁴−1))      — NAT+GRT joint constraint on minimum spectral gap
-(EC3) Q_T > (ε₁·u_max²)/(E_crit·λ_n²)     — EDT+Neurodeg joint constraint on terrain quality
-```
-
-These emergent constraints narrow the admissible parameter space beyond what any individual theory specifies, demonstrating that the multi-theory framework provides **non-trivially stronger** restrictions than its components.
-
-### 32.5.2 EDT v5.0 Extended Cross-Validation: Gain-Curvature, Terrain Grammar, Heritage
-
-The release of EDT v5.0 (incorporating Affective Terrain Coupling Theory §51, Gain-Curvature Equivalence Theory §52, and Attractor Landscape Grammar §53) adds four new cross-validation entries that strengthen the overall consistency argument and introduce new emergent constraints.
-
-**Extended pairwise consistency additions:**
-
-```
-         EDT-v5   AGM/AMT   FCCN-ODE
-EDT-v5    —        GCET      Φ-U duality
-AGM/AMT  ✓         —         ECC-Φ
-FCCN-ODE ✓        ✓          —
-```
-
-**(CV7) GCET × FCCN-ODE: Duality of T and ΔU as governance parameters.** The Gain-Curvature Equivalence Theorem (GCET, EDT §52) states that AGM effective temperature $T_{\text{eff}}$ and terrain curvature barrier $\Delta U$ are dual parameterizations of the same governance primitive. In the ODE, this manifests as the following isomorphism: replacing $T \to T_0$ with $T \to T_0 \cdot \exp(-\Delta U / T_{\text{eff}})$ (Kramers escape rate) must produce identical stationary distributions. Consistency check: the ODE's Rest fixed point distribution over (C, d, ρ) must equal the Kramers-weighted distribution over the curvature landscape. **Confirmed** at leading order: both give $p_\infty(x) \propto \exp(-\Phi(x)/T)$, confirming that the ODE's $T$ variable is the mean-field projection of the Kramers escape temperature.
-
-**(CV8) EDT Grammar × ODE Phase Portrait Topology.** The Attractor Landscape Grammar (EDT §53) classifies terrain configurations by derivation from $\{A_{\text{point}}, A_{\text{limit}}, A_{\text{strange}}, A_{\text{null}}\}$. These must correspond bijectively to the ODE's four phase portrait types (Type I–IV, §14). Consistency check: each grammar derivation maps to exactly one phase portrait type, and the transition between types must correspond to a grammatically valid derivation step.
-
-```
-Grammar derivation               ODE phase portrait type
-──────────────────────────────────────────────────────────
-TERRAIN →* A_null               Type III (no Rest fixed point)
-TERRAIN →* A_point(d→0)         Type II Locked (Storm, single stable)
-TERRAIN →* A_point(d>0)         Type I (single stable Rest)
-TERRAIN →* A_strange(stable)    Type IV (spiral dynamics, oscillatory)
-TERRAIN →* BASIN⊗BASIN          Silent Fragmentation (§7.8.7, not in standard Types)
-TERRAIN →* A_limit(ω=ω_agent)   Resonance Capture NF1 (not in standard Types)
-```
-
-The last two entries reveal a **completeness gap** in the ODE's standard phase portrait classification: the 4-type topology (Types I–IV) does not exhaust all grammatically valid terrain configurations. Silent Fragmentation and Resonance Capture require extension of the phase portrait classification to Types V and VI respectively — these novel failure modes (NF1, NF2) are **predicted by the grammar but invisible to the scalar Φ**. This is a genuine theoretical extension: the grammar provides stronger failure-mode predictive power than the ODE scalar alone.
-
-**(CV9) Terrain Heritage × ODE Damage Ratchet.** The terrain palimpsest model (EDT §43.1) and the ODE structural damage dynamics (§31) both describe cumulative degradation, but from different directions: EDT models curvature accumulation from discrete events; §31 models continuous capacity erosion under sustained Storm. Consistency requires that the two descriptions agree on the total degradation trajectory:
-
-```
-EDT heritage path:   U(x,t) = Σ_k η_k · Event_k · exp(−γ_decay·(t−t_k))
-§31 damage path:     S(t) = ε₁ ∫₀ᵗ K(t−τ)·Φ(τ)·𝟙[Φ>1] dτ − ε₃·repair(S)
-```
-
-**Consistency:** Both models predict asymmetric retention (negative events dominate over positive with the same time horizon, since $\eta_{\text{negative}} > \eta_{\text{positive}}$ in EDT and $\epsilon_1 \cdot \Phi_{\text{Storm}} > \epsilon_3 \cdot \text{repair}$ in §31 above the damage threshold). Both predict that total degradation is an integral of past exposure weighted by a memory kernel. The emergent constraint from requiring both models to predict the same critical threshold:
-
-$$\text{(EC4)} \quad \eta_{\text{negative}} \cdot |\Delta U_{\text{Storm}}| \approx \frac{\epsilon_1}{\gamma_{\text{decay}}} \cdot \bar{\Phi}_{\text{Storm}}$$
-
-This equates the terrain curvature degradation per Storm to the structural damage variable rate, providing a cross-calibration between EDT and §31 that was previously unavailable.
-
-**(CV10) Collective Memory Embedding × Multi-Agent ECC Cascade.** EDT §54.6 derives that collective emotional events embed in terrain with amplitude $\mu_{\text{network}} = n_{\text{cascade}} \cdot \mu_{\text{agent}}$. FGS §36S Testable Prediction S7 predicts that ECC cascade coefficient $\mu_{\text{cascade}}$ scales with buffer thickness $M$. Consistency requires that $n_{\text{cascade}}$ (terrain level) and $\mu_{\text{cascade}}$ (affective level) be related through the buffer thickness:
-
-```
-n_cascade = M_eff / μ_agent   (number of agents emotionally coupled = buffer thickness / unit embedding)
-```
-
-This identifies the buffer thickness $M(t)$ as the **effective contagion radius** in terrain memory space — a direct structural link between FGS §36S affective dynamics and EDT terrain heritage theory.
-
-**New emergent constraints:**
-
-```
-(EC4) η_neg · |ΔU_Storm| ≈ ε₁/γ_decay · Φ̄_Storm      — EDT+§31 terrain-damage cross-calibration
-(EC5) m_buffer ≤ C^(1/2)·log(C)/K_buffer               — EDT+TLG buffer carrying capacity (§32.5.2)
-(EC6) τ_terrain / τ_C,d,T > (1/γ_GCET)·log(Π_target)  — EDT+GCET timescale separation for duality validity
-```
-
-EC5 is a new constraint on the middle layer: buffer differentiation cannot exceed the carrying capacity without inverting the coordination benefit. EC6 establishes that the GCET duality approximation is valid only when terrain evolves slowly compared to state variables — the adiabatic approximation underpinning §36T.
-
-**Completeness upgrade.** The addition of CV7–CV10 and EC4–EC6 upgrades the pairwise consistency matrix from 28 verified pairs (8 theories, all pairs) to 36 verified pairs (including EDT v5.0 sub-theories GCET, Grammar, Heritage, Ecology). The emergent constraint count increases from 3 to 6, providing a **substantially more constrained** parameter space and proportionally more falsifiable framework.
-
-### 32.6 ILMI, Governance Ratio κ, and Dual Attractor Structure
-
-The parent framework defines an Inter-Layer Modulation Interface (ILMI) as a constraint operator between governance layers:
-
-```
-ẋ = I(E, L) · F(x)
-I(E, L) = γ(E) · η(L)
-γ(E) = min(1, E/E_crit)         — energy-priority sacrifice
-η(L) = 1/(1 + κ_d·max(0, L − L_crit))  — overload damping
-```
-
-**ILMI Invisibility Principle:** Visibility(I) ∝ Instability. In stable operation, ILMI is undetectable.
-
-**Expandability (X)** — dynamic generalization of exploration capacity:
-
-```
-Ẋ = ρ_X · U − γ_ε · ε
-```
-
-where U is abstention (capacity to not-know) and ε is perceptual distortion.
-
-**Governance Ratio κ** — scale-preserved invariant:
-
-```
-κ(t) := U(t) / (ε(t) + ε₀)
-```
-
-κ represents uncertainty tolerance relative to perceptual distortion.
-
-**Dual Attractor Structure (Theorem 5 of parent framework):**
-
-```
-κ(t) → κ*     (Rest Mode attractor)     — sustained U > 0, ε self-correcting
-κ(t) → 0      (Silent Criticality)      — U → 0, ε undetected
-```
-
-The two attractors are **externally indistinguishable in steady state** but diverge catastrophically under perturbation:
-
-```
-Rest Mode + perturbation:     U > 0  ⇒  abstention absorbs shock  ⇒  stability
-Silent Criticality + shock:   U ≈ 0  ⇒  forced alignment  ⇒  immediate Storm
-```
-
-**ODE-level mapping:** The dual attractor corresponds to the bistability of the ODE system (§15). The Rest fixed point (Φ < 1, k ≈ 0, d ≈ 1) maps to κ → κ\*. The Locked fixed point (Φ > 1, k ≈ 1, d → 0) maps to κ → 0. The hysteresis gap (u⁺ − u⁻) quantifies the basin boundary between these attractors.
-
-### 32.7 DFG Core Mechanism — Deficit as Engine
-
-```
-Deficit (unfilled position)
-  → generates attractive force
-  → draws vector-reinforcer pair toward position
-
-Vector: collection-specialized (expands search range)
-Reinforcer: interpretation-specialized (extracts pattern)
-
-Correct pair: search range increases each cycle
-Incorrect pair: search range stagnates or contracts
-```
-
-**7-phase fractal lifecycle:**
-
-```
-Phase 1 — Seeding:       C(t) ≈ 0, external governance
-Phase 2 — Exploration:   first direction forming, boundary-testing storms
-Phase 3 — Formation:     attractor crystallizing
-Phase 4 — VCZ:           power law distribution, terrain formed
-Phase 5 — Rest Mode:     all bounded, micro-storms as value generation
-Phase 6 — Reawakening:   environment shift, precision storms
-Phase 7 — Higher Cycle:  new cycle at expanded resolution
-```
-
-The ODE model (§14) captures Phases 2–5 at a single scale. Phase transitions correspond to: entry → Phase 2 (u > u⁺, Storm); DDD → Phase 3–4 (recovery, VCZ re-entry); sustained VCZ → Phase 5 (Φ < 1 stable, ρ → 1). Revival trajectories (§30) correspond to Phase 6 reawakening.
-
-**Heritage Accumulation Across the 7-Phase Lifecycle.** Each phase of the lifecycle contributes to the heritage loading H(x,t) that subsequent phases must operate against. The heritage trajectory is not a separate phenomenon but is woven into the standard lifecycle:
-
-```
-Phase 1 (Seeding):       Heritage = 0 (pristine terrain)
-                          Critical: this is the lowest-cost phase for terrain cultivation
-                          EDT principle: maximum seeding effort during Phase 1 → minimum
-                          heritage correction needed in all subsequent phases
-
-Phase 2 (Exploration):   Boundary-testing Storms add negative heritage
-                          Heritage H growing at rate ε_storm · n_storm
-                          Governance task: keep H < H_threshold during Exploration
-                          If H > H_threshold before attractor crystallizes → Phase 3 fails
-
-Phase 3 (Formation):     Attractor crystallization embeds positive heritage if successful
-                          Failed formation attempts embed negative heritage at target locations
-                          → Heritage ratchet begins if multiple formation attempts fail
-                          
-Phase 4 (VCZ):           Power-law distribution implies many small Storms (high Storm count)
-                          Heritage from VCZ micro-Storms accumulates but is counterbalanced
-                          by positive heritage from successful vector-reinforcer pair formations
-                          Healthy VCZ: net heritage ≈ 0 or slightly positive
-                          Unhealthy VCZ: net heritage negative → early desertification
-
-Phase 5 (Rest Mode):     Micro-Storms continue adding small negative heritage
-                          R_i (self-purification) limits net heritage accumulation
-                          Heritage asymptotes to H* = balance between micro-Storm input
-                          and positive experience from Rest Mode productivity
-                          Critical: H* must remain below H_threshold (§32.8.2 Condition 8)
-                          
-Phase 6 (Reawakening):   Environment shift creates new deficit → new Exploration
-                          Heritage from Phase 2–5 now pre-loads the Phase 6 landscape
-                          Systems with H(Phase 5) near H_threshold enter Phase 6 vulnerable
-                          → Reawakening Storm deeper and harder to recover from
-                          
-Phase 7 (Higher Cycle):  New cycle begins with non-zero heritage from all previous cycles
-                          Heritage inheritance: H(new Phase 1) = f(H(Phase 5), Phase 6 intensity)
-                          Organizations that fail to cultivate terrain in Phase 5 find
-                          Phase 7 entry progressively more difficult across cycles
-```
-
-**Heritage-Corrected 7-Phase Governance Protocol.** The standard DFG governance protocol does not explicitly track heritage across phases. Heritage-corrected governance adds:
-
-```
-Phase 1 pre-condition:   Terrain cultivation investment ≥ C_terrain_min
-                          (minimize H before any Exploration begins)
-                          
-Between Phase 2 → 3:     H monitoring; H > H_threshold → TCE before Formation attempts
-                          (prevent Heritage ratchet from blocking crystallization)
-                          
-Between Phase 5 → 6:     Heritage audit; H(Phase 5) → H_crit correction if needed
-                          (ensure Reawakening begins from heritage-clean terrain)
-                          
-Phase 7 transition:       Heritage inheritance assessment; terrain cultivation to reset
-                          H(new cycle) before any new Seeding
-```
-
-**Deficit-Heritage Relationship (fundamental).** The deficit (unfilled position) that drives the entire lifecycle exerts an attractive force that is **heritage-modulated**:
-
-```
-Effective attractive force:  F_deficit^eff = F_deficit · (1 − H/H_max)^δ
-```
-
-Heritage loading reduces the effective attractive force of the deficit — agents are less strongly drawn toward a position when the terrain around that position is negatively charged. This is the mechanism by which heritage-loaded terrain produces the Phase 3 failure mode (attractor crystallization fails despite genuine deficit): the deficit is real, but the terrain heritage makes the position geometrically unappealing, and the deficit-engine produces insufficient pull to overcome it.
-
-### 32.8 Cube Domination and the Governance Scaling Architecture
-
-The Cube Domination dynamics (§7.5) provide the missing mechanism connecting single-agent scaling breakdown (§7) to fractal governance maturation (§32.7). The correspondence is:
-
-```
-DFG Phase Mapping to Cube Domination Cycle:
-  Phase 1 (Seeding)      →  Global frame establishment (R₀)
-  Phase 2 (Exploration)  →  Frame stress testing (Σ rising)
-  Phase 3 (Formation)    →  Star competition (P_{g→i} differentiation)
-  Phase 4 (VCZ)          →  Cube Domination achieved (R_{i*} dominant)
-  Phase 5 (Rest Mode)    →  Frame internalization (external → internal reference)
-  Phase 6 (Reawakening)  →  Frame obsolescence (environment shift breaks R_{i*})
-  Phase 7 (Higher Cycle)  →  New Cube cycle at expanded scale
-```
-
-**Key structural insight:** The global frame (star) is not a permanent entity but a transient stabilizer. Its value lies in establishing coordinate alignment; its departure is structurally necessary to prevent dependence collapse — a state where diversity atrophies because all agents orient toward a single reference, reducing the system's exploration capacity (d → 0 in ODE terms).
-
-**Dependence dynamics:** Let D(t) represent system dependence on the global frame:
-
-```
-dD/dt = −αD + β·ξ(t)
-```
-
-where α captures internalization rate and ξ(t) represents environmental novelty that re-creates reference need. The steady-state D\* > 0: complete independence is structurally impossible because coordinate-system changes (new environments, scale transitions) always regenerate the need for external reference.
-
-**Connection to S-equation:** The S-equation S̃ = α·ñ²/C̃(t)^β governs governance scaling pressure. Cube Domination dynamics explain *how* this pressure is resolved: not by increasing C̃ (centralized capacity), but by increasing β (governance maturity) through frame internalization — converting external coordination references into architectural constraints that operate without continuous monitoring.
-
-**Connection to ODE model:** The Cube Domination governance constant κ(K) maps to the ODE's dual attractor structure (§32.6):
-
-```
-κ(K) → κ*    ⟺  Cube Domination achieved (dominant frame operational, Σ low)
-κ(K) → 0     ⟺  Fragmentation collapse (no meta-star, Σ → ∞)
-```
-
-The hysteresis gap in the ODE (u⁺ − u⁻) corresponds to the Storm intensity window (S\_min, S\_max) in Cube dynamics: entry into Storm requires exceeding u⁺, while recovery requires dropping below u⁻ — and the gap between these thresholds is the structural memory that prevents oscillatory switching.
-
-**Practical AI governance implication:** The single-agent-to-multi-agent transition documented in industry (§7 Empirical Confirmation) is a Cube Domination process: monolithic LLMs fragment into specialized agents (planner, executor, verifier, safety), and the dominant coordination frame that emerges is not any individual agent but the orchestration protocol (API contracts, tool schemas, workflow definitions). This explains why AI governance investment flows primarily toward orchestration infrastructure rather than individual model capability.
-
-### 32.8.1 Resolution of the Scaling Problem: Circular Closure Theory
-
-The preceding sections establish *why* scaling fails (S-equation quadratic pressure, §8.5), *what* happens when it fails (Storm, Cube Domination, §7.5–8), and *how* recovery proceeds (DDD, Recovery Theory, §24–32.5). What remains unresolved — and what a reviewer would immediately identify as the central gap — is the constructive question: **how does a system actually survive scaling?**
-
-The title of the parent framework ("Constraint-Limited Scaling") implicitly promises a scaling *solution*, not merely a scaling *description*. The following sections close this gap by deriving the scaling resolution mechanism from first principles already established in the DFG framework.
-
-#### The Core Insight: Expansion → Circulation
-
-The naive scaling trajectory is linear expansion:
-
-```
-A → B → C → D → E → ...    (open chain)
-```
-
-In any open-chain architecture, the maximum coordination distance grows linearly with system size, and pairwise conflict channels grow quadratically:
-
-```
-distance_max ~ O(n)
-conflict ~ O(n²)
-S̃ = α·n²/C(t)^β → ∞    as n → ∞
-```
-
-The fundamental scaling insight is that **stable growth requires converting expansion into circulation**:
-
-```
-A → B → C → D
-↑           ↓
-└───────────┘    (closed loop = "circle")
-```
-
-When the dependency chain closes, the maximum coordination distance becomes bounded:
-
-```
-Open chain:    distance_max ~ O(n)
-Closed loop:   distance_max ~ O(1)
-```
-
-This is the structural reason why the system can grow without governance cost explosion: **circulation replaces expansion**.
-
-**Definition (Circular Closure).** A subsystem achieves circular closure when its internal feedback loop is complete — output feeds back through the environment into input without requiring external coordination reference. Formally, the subsystem's dynamics satisfy:
-
-```
-dx/dt = F(x, x_history)    [self-referential closure]
-```
-
-rather than
-
-```
-dx/dt = F(x, x_external)   [external-reference dependency]
-```
-
-A system that has achieved circular closure is called a **circle** (원). The circle is the fundamental unit of scalable governance.
-
-#### Scale-Matched Circles: Why One Circle Is Insufficient
-
-A single global circle fails because different scales have incompatible dynamical requirements:
-
-```
-Scale        τ (timescale)    Resolution    Noise tolerance
-─────────────────────────────────────────────────────────
-Micro        τ_fast           High          Low
-Meso         τ_mid            Medium        Medium
-Macro        τ_slow           Low           High
-```
-
-Combining all scales into one loop creates timescale collision:
-
-```
-τ_micro ≠ τ_macro  ⟹  resonant interference  ⟹  instability
-```
-
-**Proposition (Scale-Matched Closure).** Stable scaling requires independent circular closure at each dynamical scale, with:
-
-```
-Circle(L_i) ≠ Circle(L_j)    for i ≠ j
-τ_i ≪ τ_{i+1}                (timescale separation preserved)
-```
-
-Each circle has its own:
-- Feedback density (how fast errors are detected)
-- Recovery capacity (how fast errors are absorbed)
-- Exploration range (how far the boundary extends)
-- Connection topology (what it couples to)
-
-#### Layered Circular Architecture: The Cone Structure
-
-Circles stack layer-by-layer with a specific geometric constraint: **the base is wide and the apex is narrow**. This is not an arbitrary design choice but a consequence of the S-equation.
-
-```
-         ▲  (narrow: few variables, slow, constraint)
-        / \
-       / · \     ← upper circles: direction, boundary
-      /·····\
-     /·······\   ← middle circles: coordination, translation
-    /·········\
-   /···········\ ← lower circles: execution, exploration, experiment
-  ─────────────
-    (wide: many agents, fast, high variance)
-```
-
-**Why wide at the bottom:** The lower layer has:
-- Many agents (n_bottom ≫ n_top)
-- High variance (exploration, mutation, noise)
-- Fast timescale (immediate response)
-- Many circles needed to contain local conflicts
-
-**Why narrow at the top:** The upper layer has:
-- Summary information only (n_eff ≪ n_total)
-- Low variance (stability, direction)
-- Slow timescale (boundary definition, risk management)
-- Few circles needed for coordination
-
-**S-equation decomposition under layered architecture:**
-
-```
-Before layering:   S̃ = α·n²/C^β                    (monolithic)
-
-After layering:    S̃_total = Σ_i α·n_i²/C_i^β + ε·Σ_{i≠j} coupling_{ij}
-```
-
-where n = Σ n_i with n_i ≪ n for each layer, and ε represents weak inter-circle coupling. Since Σ n_i² ≪ (Σ n_i)² when the partition is non-trivial, the layered architecture achieves subquadratic governance scaling:
-
-```
-S̃_layered ≪ S̃_monolithic    for K > 1 circles
-```
-
-**Effective dimensionality collapse:** The upper circle does not see all n agents. It sees only the summary output of lower circles. The effective dimensionality perceived at each layer is:
-
-```
-n_eff(L) = compression(L) · n_below(L)
-```
-
-where compression(L) < 1 for every layer above the base. The scaling condition becomes:
-
-```
-lim_{N→∞} n_eff(top) < ∞
-```
-
-If each layer compresses by factor r < 1, then n_eff(top) = r^L · N, which is bounded for L ≥ log(N)/log(1/r). This is the formal content of the claim that **scaling is achieved through recursive dimensional compression**.
-
-#### Contamination Theory: Cross-Scale Pollution Dynamics
-
-Circles can fail not through internal collapse but through **contamination** — the leakage of unresolved instability from one scale to another.
-
-**Definition (Contamination).** Contamination occurs when instability generated at scale L_i propagates to scale L_{i+1} without being absorbed. It is not error per se but *error that crosses scale boundaries*.
-
-**Contamination Variables.** For each circle L_i, define:
-
-```
-S_i(t)    — internal instability (S-equation order parameter within circle i)
-R_i(t)    — self-purification capacity (internal recovery rate)
-P_i(t)    — boundary permeability (transmission rate from L_i to L_{i+1})
-```
-
-**Contamination Flux.** The rate at which instability leaks upward from circle i:
-
-```
-Φ_contam(i) = P_i · max(0, S_i − R_i)
-```
-
-Interpretation:
-- S_i < R_i → internal self-purification succeeds → Φ_contam = 0 (no contamination)
-- S_i > R_i → unresolved instability exists → Φ_contam > 0 (contamination active)
-- P_i modulates transmission rate (terrain permeability)
-
-**Cascaded contamination:** The upper circle L_{i+1} becomes contaminated when:
-
-```
-Σ_j Φ_contam(j) > R_{i+1}
-```
-
-i.e., the aggregate contamination from all lower circles overwhelms the upper circle's own self-purification capacity. This is the formal mechanism underlying Silent Criticality (§20) at the inter-scale level: the upper circle's frame drifts because its input data is systematically biased by unresolved lower-scale instability.
-
-**Three contamination modes:**
-
-```
-Mode 1 — Coupling contamination:    α_between ↑↑
-  Lower circles' conflicts couple directly into upper dynamics
-  Mechanism: insufficient buffering between layers
-
-Mode 2 — Frame drift:               R_g(L_i) ≠ R_g(L_j)  
-  Different circles adopt divergent coordinate systems
-  Mechanism: translation layer failure
-
-Mode 3 — Timescale leakage:         τ_fast → τ_slow direct coupling
-  Fast-loop oscillations penetrate slow-loop dynamics
-  Mechanism: breakdown of timescale separation
-```
-
-**Contamination always originates at the bottom and propagates upward.** This is because:
-1. The lower layer has the highest n (most conflict channels)
-2. The lower layer has the fastest timescale (errors amplify quickly)
-3. The lower layer has the highest variance (most noise generation)
-
-The first visible symptom of contamination is **unnecessary friction at the execution level** — friction that does not lead to learning or adaptation (cf. §32.5 RT Definition D1, contamination boundary).
-
-#### Self-Purification Capacity: The Four Components of R_i
-
-Self-purification R_i is not a static property but a dynamic capacity maintained through active use. It decomposes into four multiplicative factors:
-
-```
-R_i = D_i · F_i · V_i · T_i
-```
-
-**(A) Decoupling strength D_i:** The degree to which the circle's internal dynamics are isolated from external perturbation.
-
-```
-D_i ∝ 1/α_external
-```
-
-Higher D means internal errors stay internal; lower D means every internal fluctuation immediately propagates outward, preventing resolution.
-
-**(B) Feedback density F_i:** The frequency and quality of internal error-detection loops.
-
-```
-F_i ∝ error_detection_frequency × correction_accuracy
-```
-
-Feedback density determines how quickly the circle notices and responds to internal drift. Without F, contamination accumulates silently (Silent Criticality within the circle).
-
-**(C) Variance absorption V_i:** Internal diversity — the existence of multiple interpretive frames, response modes, or solution pathways.
-
-```
-V_i ∝ internal_diversity
-```
-
-When V = 0 (single-frame lock), any contamination that enters the circle has no alternative pathway to be absorbed — it propagates directly. This maps to the d variable in the ODE: d → 0 eliminates the buffer that could absorb perturbations.
-
-**(D) Time buffering T_i:** The grace period available for recovery before consequences cascade.
-
-```
-T_i ∝ τ_buffer
-```
-
-Without time buffering, every error demands immediate response, preventing the slower correction mechanisms (feedback, diversity-based absorption) from operating. This maps to the T variable in the ODE.
-
-**Critical property:** R_i is multiplicative, not additive. If any component approaches zero, R_i → 0 regardless of the others. A circle with perfect decoupling but zero feedback density has zero self-purification capacity.
-
-**The immunity paradox:** Self-purification capacity requires ongoing exercise. A completely "clean" circle (S_i = 0 for extended periods) experiences R_i decay:
-
-```
-dR_i/dt = λ_learn · min(S_i, R_i) − λ_decay · R_i
-```
-
-When S_i = 0: dR_i/dt = −λ_decay · R_i → R_i → 0 exponentially.
-When 0 < S_i < R_i: dR_i/dt = λ_learn · S_i − λ_decay · R_i → R_i stabilizes at R* > 0.
-
-This is the formal expression of the principle that **100% cleanliness destroys the immune system**. Mature circles maintain a small positive contamination level (0 < S_i ≪ R_i) as an operational necessity — not tolerance of error but cultivation of recovery capacity.
-
-**ODE correspondence:** R_i maps to the product C · d · (1/Φ) in the ODE system. Self-purification capacity is the aggregate of governance throughput (C), diversity buffer (d), and regime margin (1/Φ < 1 for stable operation). The immunity paradox corresponds to the DDD protocol's requirement for controlled perturbation testing (§24, E1–E3): a system that has never been perturbed cannot be verified as stable.
-
-#### Terrain Design Protocol: Engineering Circle Formation
-
-Circles do not form by decree. Agents always minimize local cost:
-
-```
-Agent behavior: min(local_cost)
-```
-
-No agent voluntarily creates governance structure. Therefore, circles must emerge from the terrain — the cost landscape that shapes which interactions are cheap and which are expensive.
-
-**Terrain design principle:** Make internal circulation cheaper than external dependency.
-
-```
-Cost(internal interaction) ≪ Cost(external interaction)
-```
-
-When this holds, agents naturally form closed loops (circles) because the lowest-cost path is internal cycling rather than external reaching. Terrain design does not control agents; it makes the desired structure the path of least resistance.
-
-**Terrain geometry for circle formation:**
-
-```
-❌ Flat terrain:     All connections equally cheap → no circle formation → global coupling → S ~ n²
-❌ Walled terrain:   All connections blocked → permanent isolation → no coordination → fragmentation
-✅ Valley terrain:   Internal connections cheap, external connections possible but costly
-                    → circles form in valleys, connect through passes
-```
-
-The optimal terrain has:
-- **Deep valleys** (strong internal coupling → independence)
-- **Low passes** (weak but nonzero inter-circle coupling → mutual checking)
-- **Time gradients** (fast at the bottom, slow at the top → natural layering)
-
-**Terrain design as S-equation modulation.** Terrain design operates on the S-equation through EDT's three axes (§32.10):
-
-```
-Terrain feature          S-equation effect              Circle formation effect
-──────────────────────────────────────────────────────────────────────────────
-Valley depth             α_internal ≫ α_external        Strong internal closure
-Pass height              ε (inter-circle coupling)       Weak mutual checking
-Gradient steepness       τ separation across layers      Natural hierarchy emergence
-Valley width             n_i (local capacity)            Circle size bound
-```
-
-**The contamination-aware terrain:** Terrain must be designed with advance knowledge of where contamination is most likely to originate. Since contamination always starts at the bottom (highest n, fastest τ, most variance), the terrain must provide:
-
-```
-Phase 1 — Initial isolation:     P_i ≈ 0 (boundaries closed)
-  Purpose: allow R_i growth without external interference
-  Duration: until R_i > S_i with safety margin
-
-Phase 2 — Controlled exposure:   P_i ramps up gradually  
-  Condition: S_i/R_i < θ (safety ratio, θ < 1)
-  Purpose: test self-purification under real load
-
-Phase 3 — Operational coupling:  P_i at design level
-  Condition: perturbation testing confirms decay
-  Purpose: functional integration with acceptable contamination risk
-
-Phase 4 — Mature operation:      P_i adaptive (raises under stability, drops under stress)
-  Purpose: dynamic equilibrium between connectivity and protection
-```
-
-This four-phase protocol maps directly to EDT's Phase-Gated Seeding (§32.10) and to RT's Five-Phase Governance Maturation (§32.5): initial isolation → regulation → architecture → constraint → law.
-
-#### North Star Architecture: Hierarchical Direction Maintenance
-
-Every circle requires a direction reference — not to tell it where to go, but to prevent it from falling. This reference is the **North Star** (북극성).
-
-**Definition (North Star).** The North Star is the minimal criterion that prevents structural collapse. It is not a goal, target, or optimization objective. It is the condition under which the system remains a "body" (interconnected, communicating structure) rather than a collection of fragments.
-
-**Global vs. Local North Stars:**
-
-```
-Global North Star:   "Don't fall over" — existence maintenance
-  τ_global ≫ τ_local
-  Changes extremely slowly (tracks existential constraints)
-  Defined by meta-meta conditions (energy, resources, entropy, reality)
-
-Local North Star:    Projection of global reference onto local terrain
-  τ_local ≪ τ_global  
-  Adapts to terrain changes
-  100% alignment with global is neither possible nor desirable
-```
-
-The relationship between global and local North Stars:
-
-```
-NorthStar_local ≈ Projection(NorthStar_global, Terrain_local)
-```
-
-Since terrain varies across circles, local North Stars necessarily diverge from the global reference. This divergence is healthy — it represents adaptation to local conditions. The key requirement is **continuous correction**:
-
-```
-d/dt (NorthStar_local) = f(Terrain_drift, Global_reference)
-```
-
-The local North Star must track terrain changes while maintaining approximate alignment with the global reference. When this correction fails (the local North Star drifts unchecked), the map-terrain mismatch accumulates until friction becomes non-productive — the hallmark of contamination.
-
-**Criterion vs. Principle separation:**
-
-```
-Criterion (기준):  Almost never changes. Defines "body" = interconnection + communication.
-                  "What must not be violated for the system to remain a system."
-                  Changing this collapses the entire map simultaneously.
-
-Principle (원칙):  Changes with terrain. Implementation strategy for maintaining criteria.
-                  "How we currently maintain the criterion in this terrain."
-                  Must change when terrain changes; rigidity here causes criterion violation.
-```
-
-The most common governance failure is confusing principles for criteria — treating a particular implementation strategy as an inviolable rule. This freezes the map against a changing terrain, producing the map-terrain mismatch that generates non-productive friction (§32.5 RT T4: Search Space Asymmetry).
-
-**Test for criterion identification:** For any candidate rule X, ask: "If X is modified, does interconnection and communication improve or degrade?" If it improves, X was a principle (modifiable). If it degrades, X is close to a criterion (protect it).
-
-**The "eyes and feet" principle:** The architecture separates observation from exploration:
-
-```
-Upper circles (eyes / 눈):   Observe, maintain direction, must stay clean
-Middle circles:              Translate, buffer, absorb contamination
-Lower circles (feet / 발):   Explore, experiment, get dirty
-
-Contamination policy:
-  Feet: deliberately dirty (exploration requires contact with unknown terrain)
-  Eyes: always clean (direction requires uncorrupted observation)
-  Middle: filter/purifier between dirty feet and clean eyes
-```
-
-The critical requirement: **eyes must not be fixed**. If the observational layer locks onto a single metric, region, or interpretation, it enters frame lock — equivalent to looking in one direction while the terrain shifts beneath. The eyes must scan continuously:
-
-```
-Observation(t) = scan(all subspaces, period < Drift_accumulation_time)
-```
-
-The scanning period must be shorter than the time it takes for unobserved drift to reach dangerous levels. This maps to the ODE's ρ evolution: ρ̇ must be monitored across all coupled subsystems, not just the locally visible ones.
-
-#### Integration Protocol: How Mature Circles Combine
-
-Scaling is not achieved by growing circles indefinitely but by **combining mature circles into higher-order circles**. The integration protocol specifies how this occurs.
-
-**Why integration is necessary:** Even with optimal terrain, multiple circles at the same scale eventually generate inter-circle coordination costs:
-
-```
-S̃_between = α · K²/C_top^β    (K = number of circles at the same level)
-```
-
-When K grows, inter-circle instability eventually exceeds the upper circle's governance capacity. The resolution is formation of a new higher-order circle that absorbs multiple lower circles.
-
-**Integration preconditions:** Integration cannot proceed until circles are sufficiently mature. The maturity condition is:
-
-```
-R_i > Coupling_Cost(i,j)    for all pairs (i,j) to be integrated
-```
-
-i.e., each circle's self-purification capacity exceeds the contamination cost that coupling would introduce. Premature integration (coupling before R_i is sufficient) produces:
-
-```
-Coupling ≫ Recovery  ⟹  mutual contamination  ⟹  simultaneous collapse
-```
-
-**The middle-layer-first principle:** Integration does not begin by connecting upper layers (too rigid) or lower layers (too noisy). It begins at the **middle layer** — the translation/coordination layer that can both influence others and be influenced itself.
-
-```
-Circle A                Circle B
-Upper (rigid)            Upper (rigid)
-   │                       │
-Middle (plastic)  ← first coupling →  Middle (plastic)
-   │                       │
-Lower (noisy)            Lower (noisy)
-```
-
-Middle-layer coupling succeeds because:
-1. Middle layers are adaptive (can modify their translation protocols)
-2. Middle layers are buffered (upper provides direction, lower absorbs execution noise)
-3. Middle layers are bilateral (can change both upward reporting and downward instruction)
-
-The coupling produces a **shared middle layer** — a new translation protocol that eventually becomes the seed of the higher-order circle.
-
-**Connection architecture — the Neck:**
-
-Integration does not merge circles. It creates a narrow connection interface (목/Neck) between them:
-
-```
-Circle A ──── Neck ──── Circle B
-              │
-         ┌────┤────┐
-         │Purifier │    (filters incoming contamination)
-         │Buffer   │    (absorbs speed mismatch)
-         │Translator│   (aligns coordinate systems)
-         └─────────┘
-```
-
-The Neck has three mandatory layers:
-- **Purification layer:** Validates, filters, and summarizes signals before transmission
-- **Buffer layer:** Absorbs timescale differences (fast signals do not overwhelm slow receivers)
-- **Translation layer:** Converts between different coordinate systems (frame alignment)
-
-**Permeability ramp:** Connection strength is not binary (open/closed) but a continuous parameter P that ramps gradually:
-
-```
-P(t) = P_0 · sigmoid((R_measured − S_measured)/θ − 1)
-```
-
-Starting near zero, P increases only as the measured self-purification surplus (R − S) exceeds a safety threshold. Any anomaly immediately reduces P (circuit breaker behavior).
-
-**Connection types by shared content:**
-
-```
-Type A — Signal sharing (minimum coupling):
-  Share: state summaries, warnings, metrics
-  Risk: low contamination
-  Use: initial connection phase
-
-Type B — Constraint sharing (moderate coupling):
-  Share: North Star projections, boundary conditions, prohibition zones
-  Risk: frame drift if constraints are misaligned  
-  Use: mid-integration phase
-
-Type C — Resource sharing (maximum coupling):
-  Share: execution capacity, agent pools, material resources
-  Risk: highest contamination
-  Use: final integration phase (only when fully mature)
-```
-
-Normal integration proceeds A → B → C. Attempting C before A produces the premature-coupling failure described above.
-
-**Integration completion signal:** Integration is complete when communication cost between circles drops to near-zero — colloquially, "they know what the other will do without being told." Formally:
-
-```
-Prediction_A(State_B) ≈ Prediction_B(State_B)    (mutual predictive alignment)
-Communication_Requirement → minimum
-```
-
-This is not cognitive agreement but **dynamical synchronization** — the circles have converged on compatible response patterns, timing, and risk assessment. External observers typically notice this before the circles themselves, because the synchronized behavior is visible from outside before the internal coordination cost drops to zero.
-
-**ODE correspondence:** Integration completion maps to the emergence of a new stable fixed point in the coupled system that did not exist in either circle alone. The coupled ODE:
-
-```
-dΦ_A/dt = f(Φ_A, coupling(Φ_B))
-dΦ_B/dt = f(Φ_B, coupling(Φ_A))
-```
-
-admits a new Rest fixed point (Φ_A, Φ_B) < (1, 1) when coupling is weak enough and R > S for both circles. This new fixed point IS the higher-order circle.
-
-#### Map-Terrain Balance: The Unified Scaling Principle
-
-All preceding mechanisms reduce to a single principle: **scaling is the management of map-terrain balance**.
-
-**Definition (Map).** The internal model — frame, prediction, interpretation, governance rules — that the system uses to navigate its environment.
-
-**Definition (Terrain).** The actual environment — real interactions, genuine constraints, physical feedback — that the system operates within.
-
-**The fundamental scaling tension:**
-
-```
-Map drift:     Map evolves slower than Terrain changes → prediction errors accumulate
-Terrain shock: Terrain changes faster than Map can update → acute mismatch
-
-Map-Terrain mismatch:  |Map − Terrain| = ε(t)
-```
-
-When ε is small and decreasing: healthy operation (learning).
-When ε is persistent and not decreasing: **map error** requiring map update.
-
-**Friction as diagnostic:** All friction ultimately derives from map-terrain mismatch:
-
-```
-Friction_productive:     ε → learning → ΔR > 0     (growth friction)
-Friction_non-productive: ε → no learning → ΔR ≤ 0  (map error friction)
-```
-
-The diagnostic rule: **if friction does not produce learning, the map is wrong** — not the people, not the execution, not the effort level. Non-productive friction is the system's signal that map correction is needed.
-
-**Where friction first appears:** Map errors generate friction at the **bottom first** (execution layer), are first *recognized* by the **middle layer** (which simultaneously receives the map from above and the terrain from below), and can only be *corrected* from the **upper layer** (which holds map-writing authority).
-
-The failure cascade when the middle layer cannot communicate upward:
-
-```
-Map error → bottom friction → middle recognizes → middle cannot signal up
-  → middle falls silent → self-purification loop dies → contamination accumulates
-  → sudden catastrophic collapse → restart from smaller circles
-```
-
-This is the formal mechanism of the Silent Criticality → Collapse → Re-seeding cycle (§20, §32.7). The prevention mechanism is **preemptive feedback reception**: the upper layer actively solicits middle-layer input before silence sets in.
-
-```
-Mature system:    Feedback Pull > Feedback Push
-                  Upper asks before Middle must tell
-                  Result: many small corrections, no catastrophic resets
-
-Immature system:  Feedback Push only (Middle must fight to be heard)
-                  Result: silence accumulates → rare catastrophic resets
-```
-
-**Map-terrain balance as scaling definition:** The scaling problem, properly stated, is:
-
-```
-As N → ∞, maintain |Map − Terrain| bounded
-```
-
-Every mechanism described above — circles, layers, contamination management, North Stars, integration protocols, terrain design — serves this single purpose. Scaling is not about size; it is about **map-terrain error management at arbitrary scale**.
-
-**The scaling closure theorem (informal statement):** A system achieves scalable governance if and only if:
-1. Conflict is partitioned into independent circles (dimensional compression)
-2. Each circle maintains self-purification capacity R > S (contamination containment)
-3. Circles are layered with strict timescale separation (hierarchical closure)
-4. Each layer has a North Star aligned to the global criterion (direction maintenance)
-5. Terrain is designed to make circle formation the path of least resistance (environment cultivation)
-6. Integration proceeds through middle-layer coupling with permeability ramps (controlled connection)
-7. The upper layer actively solicits feedback before the middle layer falls silent (preemptive correction)
-
-Under these conditions:
-
-```
-S̃(N) → bounded constant    as N → ∞
-```
-
-This is the **constraint-limited scalable regime, correction saturation criterion, correction-escape transition, dimensionless parameter groups, parameter regime classification, phase portrait topology, Monte Carlo sensitivity, early-warning indicator comparison, perturbation response ratio, cross-variable divergence, staged alarm protocol, global revival dynamics, revival cascade ordering, Fisher-KPP traveling wave, revival dilemma, non-Markovian damage, memory kernel, fractional dynamics, critical accumulated dose, damage ratchet, cross-theory validation matrix, emergent constraints, pairwise consistency, dimensional compression convergence, self-purification convergence rate, map-terrain convergence** — the resolution of the scaling problem promised by the framework's title.
-
-#### Formal Convergence Proofs and Rate Estimates
-
-The claim that S̃(N) → bounded constant requires rigorous justification. We provide three complementary convergence results.
-
-**Theorem (Dimensional Compression Convergence).** Under the conditions of the Scaling Closure Theorem (7 conditions above), the effective dimensionality satisfies:
-
-```
-n_eff(N) = O(N^{1−δ})    for some δ > 0
-```
-
-where δ depends on the branching capacity B and the contamination absorption rate R.
-
-*Proof sketch.* At each scale level ℓ, the circular closure converts N_ℓ agents into K_ℓ = N_ℓ/B_ℓ effective circles. The dimensional compression ratio at each level:
-
-```
-r_ℓ := n_eff(ℓ+1) / n_eff(ℓ) = K_ℓ / N_ℓ = 1/B_ℓ < 1
-```
-
-After L = log_B(N) levels of recursive compression:
-
-```
-n_eff(N) = N · ∏_{ℓ=1}^{L} r_ℓ = N · B^{−L} = N · N^{−1} · N^{δ'} = N^{δ'}
-```
-
-where δ' = 1 − log(B)/log(N) → 0 as N → ∞ with B fixed. More precisely, n_eff(N) = N/B^{log_B(N)} = N^{1−1+log(B)/log(N)} which remains bounded if B grows with N. The critical condition is that B(N) ≥ N^δ for some δ > 0, ensuring compression outpaces growth. ∎
-
-**Corollary (Governance Scaling Rate).** Under dimensional compression, the governance cost scales as:
-
-```
-S̃(N) = α · n_eff(N)² / C(N) = O(N^{2(1−δ)}) / O(N^{1−δ}) = O(N^{1−δ})
-```
-
-which is sublinear in N — confirming that the framework achieves better-than-linear governance scaling.
-
-**Proposition (Rate Estimate for Self-Purification Convergence).** The self-purification capacity R_i converges to its equilibrium value R* at rate:
-
-```
-|R_i(t) − R*| ≤ |R_i(0) − R*| · exp(−(λ_learn · S_eq − λ_decay) · t)
-```
-
-where S_eq is the equilibrium contamination level and R* = λ_learn · S_eq / λ_decay. The convergence rate λ_learn · S_eq − λ_decay must be positive, which requires:
-
-```
-S_eq > λ_decay / λ_learn    (minimum contamination exposure for R_i growth)
-```
-
-This is the formal statement of the **immunity paradox**: zero contamination (S_eq = 0) produces R_i decay at rate λ_decay, while moderate contamination enables R_i growth. The optimal contamination level (maximizing convergence rate) is:
-
-```
-S_opt = R* + λ_decay / λ_learn
-```
-
-**Proposition (Map-Terrain Convergence).** Under the preemptive feedback mechanism, the map-terrain mismatch |M − T| converges as:
-
-```
-|M(t) − T(t)| ≤ |M(0) − T(0)| · exp(−κ_feedback · t) + ε_noise / κ_feedback
-```
-
-where κ_feedback is the feedback loop gain and ε_noise is the terrain drift rate. The steady-state mismatch ε_noise/κ_feedback is bounded and independent of N, confirming that map-terrain balance is maintainable at arbitrary scale provided feedback gain κ_feedback scales with terrain complexity.
-
-#### Boundary Dynamics: Why Mature Systems Seek Instability
-
-A fully mature system (all circles stable, R ≫ S, map-terrain aligned) does not remain static. It actively generates new instability at its boundaries.
-
-**Why:** Perfect stability produces R decay (immunity paradox). A system that stops encountering contamination loses the capacity to handle it. The mature system's response is to **expand its boundary into new terrain** — regions where the map is incomplete and friction is inevitable.
-
-```
-Mature core (stable) ──── Boundary (expanding into unknown)
-                               ↑
-                          Contamination + learning
-```
-
-**Resource constraint:** Boundary expansion consumes resources (exploration cost, failure cost, contamination processing). Expansion is only viable when:
-
-```
-Recovery_capacity > Expansion_cost
-```
-
-The system must be able to "return home" from any boundary excursion. Boundary distance is bounded by recovery capacity, not ambition:
-
-```
-Boundary_distance ≤ Recovery_capacity
-```
-
-This produces **pulsed expansion**: mature → explore → absorb → consolidate → mature → explore again. Not continuous growth but rhythmic outward-inward cycling.
-
-**Boundary exploration generates experience, not waste:** Failed boundary explorations produce:
-- Prohibition maps (where not to go)
-- Partial protocols (seeds for future integration)
-- Matured middle layers (the most valuable asset)
-
-These persist as institutional memory that reduces the cost of future expansion:
-
-```
-Exploration_Cost_{t+1} < Exploration_Cost_t    (experience accumulation)
-```
-
-Failed explorations are not discarded but compressed into the map, making the next boundary push cheaper and more informed.
-
-**ODE correspondence:** Boundary expansion maps to controlled perturbation of the ODE system at its stable fixed point. The perturbation temporarily raises Φ toward 1 (approaching criticality) in a localized subsystem while the core remains at Φ ≪ 1. The perturbation's decay rate measures the system's effective R for that boundary region. If perturbation decays → expansion viable. If perturbation grows → boundary too far → retract.
-
-#### Scaling Resolution: Complete Architecture
-
-The complete scaling architecture, integrating all mechanisms:
-
-```
-                    ★ Meta-Criterion
-                   (Body = Connection + Communication)
-                          │
-                    ★ Global North Star
-                   (Don't fall: balance maintenance)
-                          │
-              ┌───────────┴───────────┐
-              │                       │
-        Local North Star₁       Local North Star₂
-         (terrain-adapted)       (terrain-adapted)
-              │                       │
-    ┌─────────┼─────────┐   ┌────────┼────────┐
-    │         │         │   │        │        │
-   👁 Eyes   Mid₁   👣 Feet  👁 Eyes  Mid₂  👣 Feet
-  (scan)  (translate) (explore) (scan) (translate) (explore)
-    │         │         │   │        │        │
-    └────┬────┘         │   └───┬────┘        │
-         │              │       │             │
-    ┌────┴──── Neck ────┴───────┴─────────────┘
-    │  Purifier │ Buffer │ Translator │
-    └──────────────────────────────────┘
-                    │
-              Higher-Order Circle
-              (emerges from integration)
-```
-
-**Scaling lifecycle:**
-
-```
-Phase 0 — Isolation:     Circles form in terrain valleys, boundaries closed
-Phase 1 — Maturation:    R grows through contained contamination cycling
-Phase 2 — Probing:       Middle layers begin tentative cross-circle contact
-Phase 3 — Integration:   Neck formation, permeability ramp, signal → constraint → resource sharing
-Phase 4 — Consolidation: Higher-order circle stabilizes, subsumes lower circles
-Phase 5 — Expansion:     Mature system pushes boundary into new terrain
-Phase 6 — Iteration:     Process repeats at higher scale
-```
-
-This lifecycle is fractal: the same sequence operates at every scale level. The system that successfully completes Phase 6 becomes a component circle in the next-higher-scale iteration.
-
-**Connection to existing DFG components:**
-
-```
-Scaling mechanism          DFG component               ODE variable
-──────────────────────────────────────────────────────────────────────
-Circle formation           EDT Terrain Cultivation      n_eff = n/B
-Self-purification R        C · d · (1/Φ)               State product
-Contamination flux Φ_c     VST Storm onset              Φ crossing 1
-North Star                 GRT Seed + Rest Mode         ρ_ref
-Middle-layer coupling      TLG Middle Layer             θ_d calibration
-Boundary expansion         DFG Phase 6 Reawakening      Revival trajectories (§30)
-Integration completion     Cube Domination crystallization  κ → κ*
-Map-terrain balance        RBIT Resolution Gap           Δρ
-Preemptive feedback        RT Structural Correction (T5)  P_unint accumulation
-Terrain erosion (new)      EDT v5.0 Heritage / §36T     Q_E drain by Φ·𝟙[Φ>1]
-Buffer ecology (new)       EDT §44, FGS §36T            m_max = C^(1/2)·log(C)/K
-GCET duality (new)         EDT §52, FGS §36T            T ↔ ΔU isomorphism
-```
-
-### 32.8.2 Terrain Heritage Theory: The Fourth Layer of Scaling Failure
-
-The Circular Closure Theory (§32.8.1) identifies three layers of scaling failure: insufficient self-purification (R < S), contamination cascade, and map-terrain mismatch. The EDT v5.0 Heritage Theory reveals a **fourth layer** that is structurally deeper than all three: **heritage-governed scaling failure**, where the terrain itself carries accumulated negative curvature from past events that prevents new circle formation even when all state-variable metrics appear healthy.
-
-**The Heritage Problem:** Consider a system that has experienced multiple Storm-Recovery cycles. Each recovery restores the state variables (C → C_max, d → 1, ρ → 1, Φ < 1). By the standard 7-condition Scaling Closure Theorem (§32.8.1), this system should be ready for expansion. But the terrain has accumulated a **negative heritage correction** at every past failure location:
-
-$$\lambda_{\text{eff,heritage}}(x,t) = \lambda_{\text{eff}}(x,t) + \sum_{k: \text{past events}} \mu_{\text{network},k} \cdot A_k \cdot g(t-t_k) \cdot h(x-x_k)$$
-
-The positive terms (past failures) systematically elevate the germination threshold above the nominal value. Seeds that would have succeeded on the system's first attempt now fail, not because of state-variable weakness but because **the terrain remembers the failure**.
-
-**ODE signature of heritage-governed scaling failure:**
-
-The heritage failure mode presents a distinctive ODE signature that distinguishes it from standard scaling failure:
-
-```
-Standard scaling failure:    C↓ OR d↓ OR ρ̇<0   (state variables degraded)
-Heritage failure:            C=C_max, d=1, ρ→1  (state variables healthy)
-                             u⁺ unchanged        (Storm threshold not lowered)
-                             BUT: seeding fails systematically
-                             new circles dissolve before maturation
-                             R_i grows but never crosses S_i
-                             → apparent health, structural stagnation
-```
-
-This failure mode is **indistinguishable from healthy stabilization** by scalar Φ monitoring — it requires germination rate tracking and heritage map analysis to detect.
-
-**Heritage Decay Function and ODE Timescales.** The heritage correction decays with characteristic time $\tau_H = 1/\gamma_{\text{decay}}$ determined by the nature of the past events:
-
-| Heritage Source | Decay Rate $\gamma_{\text{decay}}$ | ODE Timescale |
-|---|---|---|
-| Single-agent emotional event | Fast | $\tau_H \sim \tau_\rho$ |
-| Small-group Storm (n < 10) | Medium | $\tau_H \sim \tau_S$ |
-| Collective Storm (n > 50) | Slow | $\tau_H \sim \tau_{Q_E}$ |
-| Founding-event legacy | Glacial | $\tau_H \gg \tau_{Q_E}$ |
-
-For collective Storms, the heritage correction decays on the same timescale as the terrain quality $Q_E$ — the slowest variable in the extended ODE system. This means that heritage-governed scaling failure can persist **for the entire system lifetime** following a large collective Storm, even through many subsequent successful state-variable recoveries.
-
-**Heritage Ratchet Mechanism.** Each failed seeding attempt is itself a negative heritage event, creating a positive feedback loop:
-
-```
-State variables healthy → Seeding attempt → Heritage correction too high → Seed fails
-Seed failure → New negative heritage event → Heritage correction rises further
-→ Next seeding attempt even harder
-→ Heritage ratchet: each failure makes the next attempt less likely to succeed
-```
-
-This is structurally identical to the standard damage ratchet (§31) but operates through terrain curvature rather than state-variable capacity. The critical difference: **standard damage ratchet is repaired by load reduction; heritage ratchet requires positive terrain cultivation**.
-
-**Formal Heritage Recovery Condition.** For heritage recovery to exceed heritage accumulation:
-
-$$\frac{d}{dt}\left[\text{Heritage}^{(-)}(x,t)\right] < 0$$
-
-requires the rate of positive collective experiences to exceed the minimum therapeutic rate:
-
-$$r_{\text{positive}} \geq \frac{n_{\text{negative}} \cdot A_{\text{negative}} \cdot \alpha_{\text{pos}}}{A_{\text{positive}} \cdot \alpha_{\text{neg}} \cdot T_{\text{window}}}$$
-
-Below this rate, organizational terrain tilts toward negative heritage regardless of current state-variable interventions. This provides a **new necessary condition** for the Scaling Closure Theorem: the 7 conditions of §32.8.1 must be supplemented with an 8th:
-
-**Condition 8:** The rate of positive collective experiences exceeds the minimum therapeutic rate $r_{\text{positive,min}}$, and heritage-adjusted germination thresholds $\lambda_{\text{eff,heritage}}$ do not exceed seeding capacity.
-
-Without Condition 8, a system can satisfy all 7 structural conditions and still fail to scale because the terrain is too negatively loaded to support new circle formation.
-
-**Heritage-Adjusted EROTI.** The standard EROTI (Energy Return on Terrain Investment) calculation assumes terrain starts from neutral curvature. In heritage-loaded terrain, the effective EROTI for any seeding intervention is:
-
-$$\text{EROTI}_{\text{heritage}} = \frac{\Delta S_{\text{permanent}}}{E_{\text{invested}} + E_{\text{heritage-correction}}}$$
-
-where $E_{\text{heritage-correction}} = \int \lambda_{\text{eff,heritage}}(x) \cdot E_{\text{seed}} \cdot dx$ is the additional energy required to overcome heritage barriers. For heavily loaded terrain, $E_{\text{heritage-correction}}$ can exceed $E_{\text{invested}}$ by orders of magnitude, making seeding economically infeasible despite structural feasibility. The governance implication: **heritage-loaded terrain requires terrain cultivation (positive curvature injection) before seeding, not concurrent with seeding**.
-
-**Integration with §31 Structural Damage.** Heritage-governed failure and structural damage failure produce different trajectories in the extended phase diagram:
-
-```
-                        S (structural damage)
-                        ↑
-                    S_c |─ ─ IRREVERSIBLE ─ ─ ─ ─ CHRONIC─ ─ ─ ─
-                        |    COLLAPSE              LOCK
-                 S_crit |· · · · · · · · · · · · · · · · · · · · · ·
-                        |    AGING                 HEALTHY
-                        |    VULNERABILITY         RESILIENT
-                        └────────────────────────────────────→ u (load)
-                  H (heritage loading)
-                        ↑
-                    H_c |─ ─ HERITAGE ─ ─ ─ ─ STAGNANT ─ ─ ─ ─
-                        |    PARALYSIS             SCALING
-                        |    (seeding impossible) (seeding slowed)
-                   H_0  |─ ─ FREE ─ ─ ─ ─ ─ ─ SCALING ─ ─ ─ ─ ─
-                        |    (seeding viable)      (optimal)
-                        └────────────────────────────────────→ Q_E (terrain quality)
-```
-
-**Key insight:** The (u, S) phase diagram (§31) and the (Q_E, H) phase diagram are **independent failure axes**. A system can be in the Healthy Resilient quadrant of the damage diagram (S < S_crit, u < u⁺) while simultaneously being in the Heritage Paralysis quadrant of the heritage diagram (H > H_c, Q_E low). State-variable health does not preclude terrain-heritage failure.
-
-**Therapeutic Collective Events as Governance Primitive.** The heritage recovery condition introduces a new type of governance action not present in the standard DDD protocol (§24): **Therapeutic Collective Events (TCE)**. TCEs are not corrective (they do not address the current state-variable problem) but **curative** (they inject positive terrain curvature that counteracts heritage loading). The TCE governance action is:
-
-```
-TCE trigger:     H(x,t) > H_crit  AND  seeding success rate < threshold
-                 (i.e., not triggered by Φ, not by ρ̇, but by germination failure)
-
-TCE content:     Design and execute shared positive collective experience
-                 Target: locations x with highest heritage loading
-                 Outcome: μ_positive · A_positive injection to reduce H(x,t)
-
-TCE success criterion:  λ_eff,heritage(x) drops below seeding capacity
-                        Next seeding attempt succeeds with standard energy
-```
-
-This governance action is structurally invisible in the standard ODE: it changes neither Φ nor ρ nor d nor C directly. It operates on the terrain, not the state variables — and its effect becomes visible only when subsequent seeding attempts succeed at lower energy cost than expected from heritage-uncorrected models.
-
-### 32.9 Falsification Conditions (from Parent Framework)
-
-**F1 (Expandability without Abstention).** If sustained X(t) ≥ X(0) with U(t) = 0, Theorem 1 is falsified. *ODE test: simulate with d forced to immediate convergence; check long-term Φ stability.*
-
-**F2 (Storm with Full Abstention).** If Storm (Φ > 1) while d > d\_min is sustained, the claim that diversity collapse is necessary for Storm is falsified. *ODE test: maintain high d via injection; check Storm onset.*
-
-**F3 (Rest Mode without Correction).** If stable Rest Mode (Φ < 1, ρ̇ ≥ 0) with zero correction permanently. *ODE test: disable DDD; apply perturbations; check persistence.*
-
-**F4 (Reversible Maturation).** If a system at κ ≈ κ\* spontaneously returns to κ ≈ 0 without structural destruction, the Arrow of Maturation is falsified. *ODE test: mature system (many successful DDD cycles); check spontaneous regression.*
-
-**F5 (Single-Attractor Convergence).** If all systems converge to one regime regardless of initial conditions — eliminating bistability. *ODE test: vary initial C, d, ρ, k; check whether both Rest and Storm/Locked appear.*
-
-**F6 (Scaling without Circular Closure).** If a system maintains bounded S̃ as N → ∞ without forming independent subsystem circles (i.e., with monolithic global coupling α remaining constant), the circular closure necessity is falsified. *Test: scale N in multi-agent simulation while preventing modularization; check S̃ trajectory.*
-
-**F7 (Self-Purification without Contamination Exposure).** If R_i remains stable (no decay) under prolonged zero-contamination conditions (S_i = 0 for extended duration), the immunity paradox is falsified. *Test: maintain perfectly clean subsystem for 100+ τ cycles; measure R_i response to sudden perturbation.*
-
-**F8 (Integration without Middle-Layer Precedence).** If direct upper-layer or lower-layer coupling produces stable integration as reliably as middle-layer-first coupling, the middle-layer-first principle is falsified. *Test: compare integration success rates across coupling-order variants in multi-agent simulation.*
-
-**F9 (Map-Terrain Balance Independence).** If a system scales successfully while map-terrain mismatch |Map − Terrain| grows without bound, the map-terrain balance principle is falsified. *Test: inject systematic map distortion; check whether scaling metrics degrade proportionally.*
-
-**F10 (Heritage-Independent Germination).** If seeding success rate in terrain with extensive negative heritage (multiple past collective Storm events) equals seeding success rate in heritage-neutral terrain under identical state-variable conditions, the Heritage-Adjusted Germination Threshold theory is falsified. *Test: compare germination rates across terrain regions with identical (C, d, ρ) but different heritage loading H; apply EDT §54.6 heritage map; confirm that germination success rate correlates with heritage loading at r > 0.7.*
-
-**F11 (Gain-Curvature Non-Equivalence).** If governance interventions applied at the terrain level (curvature injection) and at the affective level (temperature modulation), when calibrated through the GCET duality map $U = J(x)/T_{\text{eff}}$, produce statistically different long-run outcome distributions, the Gain-Curvature Equivalence Theorem is falsified. *Test: design matched intervention pairs (T_eff ↑ by 20% vs. ΔU ↓ by equivalent amount); run 1,000 independent trials each; compare stationary distribution divergence D_KL between intervention types. Falsified if D_KL > 0.05 at 95% confidence.*
-
-**F12 (Resonance Capture Visibility in Standard Metrics).** If the Resonance Capture failure mode (NF1 — terrain limit cycle at agent frequency $\omega_{\text{agent}}$) produces detectable signal in the standard early-warning indicators (σ², AC(1), I_F) before the failure is fully established, then NF1 is not a genuinely novel failure mode. *Test: induce NF1 conditions by engineering terrain resonance; monitor all standard EW indicators; confirm that σ², AC, I_F remain below alarm thresholds throughout NF1 development. Falsified if any standard indicator triggers before resonance is established.*
-
-**F13 (Therapeutic Collective Events Ineffectiveness).** If Therapeutic Collective Events (TCE) fail to reduce heritage loading H(x,t) and improve subsequent germination success rates, the TCE governance primitive is falsified. *Test: in heritage-loaded terrain (H > H_crit), administer TCE (positive collective event exceeding $r_{\text{positive,min}}$); measure λ_eff,heritage before and after; confirm reduction > 30%. Run control group with equivalent individual positive events; confirm TCE outperforms individual events by factor n_cascade.*
-
-**F14 (Terrain SC Detectable by State-Variable Monitoring).** If terrain-level Silent Criticality (Q_E declining while all Φ, ρ, C metrics appear normal) produces correlated changes in any standard state variable, then terrain SC is detectable without terrain-specific monitoring. *Test: induce terrain SC through passive Q_E decay (no Storms, no seeding, no maintenance); measure all state variables at daily intervals over 100τ_Q_E cycles; confirm that terrain SC produces no detectable signal in Φ, C, d, ρ, or T. Falsified if any correlation r > 0.3 between Q_E trend and standard metrics is observed.*
-
-**F15 (Buffer Carrying Capacity Independence).** If adding buffers beyond $m_{\max} = C^{1/2} \cdot \log(C)/K_{\text{buffer}}$ continues to improve coordination capacity (does not begin degrading it), the Buffer Carrying Capacity theorem is falsified. *Test: in system of fixed complexity C, incrementally add differentiated buffers from 1 to 3×m_max; measure effective coordination capacity at each step; confirm that a maximum exists at approximately m_max, with capacity declining for m > m_max. Falsified if capacity is monotonically increasing at m = 3×m_max.*
-
-### 32.10 EDT–NAT–AGM Extended Integration
-
-This section maps the ODE formalization to three additional DFG component theories that were developed subsequent to the core ODE model, demonstrating that the dynamical mechanisms captured in §14–31 extend naturally to cover environment design, network topology, and affective governance dynamics.
-
-#### EDT (Environment Design Theory) — Terrain Dynamics Within the ODE
-
-EDT identifies environment design as operating on phase-space geometry through three axes (Boundary, Gain, Coupling). The ODE system captures all three:
-
-```
-EDT Axis 1 (Boundary)   ↔  Ω constraint on state variables (C, d, ρ, k ∈ [0,1])
-                            State-space invariance (§14) = boundary completeness (EDT §4.1)
-EDT Axis 2 (Gain)       ↔  T dynamics (exploration modulation)
-                            αT(ρ_ref − ρ) = gain-modulated tempo control (EDT §4.2)
-EDT Axis 3 (Coupling)   ↔  k dynamics (cross-scale coupling)
-                            k̇ equation = spectral radius evolution (EDT §4.3)
-```
-
-**Carrying Capacity connection.** EDT §31 defines maximum sustainable agent count n\_max for given terrain quality Q\_T. In ODE terms, n\_max corresponds to the Storm entry threshold u⁺: the system can sustain n agents without Storm only if u(n) < u⁺. EDT's carrying capacity bound:
-
-```
-n_max(Q_T) = u⁺(C, d, T) · (λₙ + χₙ·C) / n_unit
-```
-
-where n\_unit is the per-agent load contribution. Exceeding n\_max without terrain improvement guarantees Storm — this is the ODE-level formalization of EDT's carrying capacity theory.
-
-**Terrain Resonance mapping.** EDT §30 identifies destructive resonance when terrain natural frequency matches agent dynamical frequency. In the ODE, this corresponds to the breakdown of timescale separation:
-
-```
-Healthy:   τ_n ≪ τ_{C,d,T} ≪ τ_ρ    (frequencies well-separated)
-Resonance: τ_n ≈ τ_{C,d,T}            (destructive resonance possible)
-```
-
-EDT's design principle of frequency separation maps directly to the timescale ordering assumption (§14): the assumption is not merely analytical convenience but a **design requirement** for terrain stability.
-
-**Seeding dynamics.** EDT's Phase-Gated Seeding (§7) — the V₁–V₂ hierarchical ODE system with sigmoid gating — operates at a timescale slower than the core ODE:
-
-```
-τ_seeding ≫ τ_ρ ≫ τ_{C,d,T} ≫ τ_n
-```
-
-Seeds (minimum sufficient meta-data injections) modify the terrain's curvature field U\_env(x), which in turn shifts the ODE's equilibrium positions and bifurcation thresholds. Each successful seed permanently increases the effective branching capacity B, reducing n\_eff and raising u⁺ — the architectural mechanism underlying the Arrow of Maturation (§32.5).
-
-**Terrain-ODE coupling: the full system with VST load.** The terrain quality ODE, when coupled to the regime scalar Φ, acquires an additional drain term from VST instability load (EDT v5.0, §36T.2 FGS):
-
-```
-Q̇_E = ρ_seed · C(t)^β · B_n(t) − δ_Q · Q_E(t) − κ_load · Φ(t)·𝟙[Φ>1]
-```
-
-The third term formalizes the **terrain erosion mechanism**: each period of Storm (Φ > 1) not only consumes governance capacity C but erodes the terrain quality Q_E that sets the upper bound for C recovery. This creates a **slow positive feedback loop** that is structurally distinct from the fast loops in the core ODE (§14):
-
-```
-Φ > 1 (Storm) → Q_E ↓ → C_ceiling ↓ → recovery slower → Φ ↑ (harder to exit Storm)
-```
-
-This is the terrain-level mechanism of Structural Degradation (§31): damage accumulates not just in the state variables (C, d, ρ) but in the terrain substrate that governs their recovery limits. The timescale ordering becomes:
-
-```
-τ_n ≪ τ_{C,d,T} ≪ τ_ρ ≪ τ_S (structural damage) ≪ τ_{Q_E} (terrain erosion)
-```
-
-Terrain quality Q_E is the **slowest variable in the system** — slower even than structural damage S. This is why terrain repair requires the longest timescales and why governance interventions that focus only on state-variable correction (adjusting C, d, T) can fail even when they appear to work locally: they do not address the terrain erosion that limits their ceiling.
-
-**Gain-Curvature Duality and ODE Design Freedom (EDT §52 / GCET).** The Gain-Curvature Equivalence Theorem establishes that affective gain modulation (AGM, adjusting T_eff) and terrain curvature engineering (EDT, adjusting U(x)) are **dual coordinate representations of the same governance primitive**:
-
-```
-System A (T_eff formulation):   dx = −∇J(x)dt + T_eff · ξ(t)dt
-System B (curvature formulation): dx = −∇U(x)dt,   U(x) = J(x)/T_eff
-```
-
-In ODE terms, this duality means that the temperature variable T (which controls exploration intensity) and the terrain curvature (which shapes the attractor landscape) are interchangeable at the level of stationary distributions:
-
-```
-T_eff ↑ ↔ terrain barriers ΔU ↓ (in the effective landscape)
-T_eff ↓ ↔ terrain barriers ΔU ↑
-```
-
-**Governance design implication:** A governance team that cannot directly modify the terrain (cannot change incentive structures, resource flows, or coupling geometry) can achieve the same distributional effect by modulating T_eff (temperature, exploration rate). Conversely, terrain designers who find T_eff modulation inaccessible (e.g., agents with rigid affective responses) can achieve the same effect through curvature injection. The duality **doubles the effective design space** of the ODE's correction protocol (§24).
-
-**Stochastic risk correction for ODE.** Near the Storm boundary (Φ ≈ 1), measurement noise in the governance state G creates uncertainty in the true terrain risk index κ_C:
-
-```
-κ_C^stoch(t) = κ_C(t) + λ_GCET · σ_G²(t) · |∂φ/∂G|²_{G=G_obs(t)}
-```
-
-The Jacobian |∂φ/∂G|² diverges near criticality (the GCET critical exponent), meaning that gain measurements near Φ = 1 are **maximally informative** about terrain curvature — but measurement errors at this point are also **maximally consequential**. The governance protocol implication: allocate maximum measurement precision to regime monitoring exactly when Φ is near 1 (when the system is most vulnerable to miscalibrated intervention).
-
-**Terrain Memory: Palimpsest effects on ODE equilibria.** The terrain is not a neutral backdrop — it carries historical information that modifies the ODE's effective parameters. The terrain memory equation (EDT §43.1):
-
-```
-U(x,t) = Σ_k η_k · Event_k(x) · exp(−γ_decay · (t − t_k))
-```
-
-produces **inherited parameter modifications** in the ODE system. Past Storm episodes (Event_k = Storm, η_k < 0) create negative curvature modifications that persist after Storm resolution, reducing the effective terrain quality Q_E below its pre-Storm level even after the state variables (C, d, ρ) have recovered. This is the formal terrain-level basis for the **damage ratchet** (§31): successive Storm episodes erode terrain quality cumulatively, not just through state-variable damage S.
-
-**Asymmetric retention and ODE threshold shifts.** Terrain retains negative events more strongly than positive ones (η_negative > η_positive, EDT §43.2). In ODE terms, this produces an asymmetric shift in the Storm entry threshold u⁺:
-
-```
-u⁺(t) = u⁺(0) − η_negative · Σ_k |ΔU_k^neg| · exp(−γ · (t − t_k))
-                + η_positive · Σ_k |ΔU_k^pos| · exp(−γ · (t − t_k))
-```
-
-Since η_negative > η_positive, the negative sum dominates over time: **the Storm threshold progressively lowers** not through structural damage S but through accumulated negative terrain heritage. A system that has experienced many Storms but always recovered (S is repaired) can nonetheless find its Storm threshold systematically reduced by terrain heritage effects. This provides a new mechanism for the **irrecoverable regime** (Type IV phase portrait, §14) that does not require lock budget violation — terrain heritage alone can produce irrecoverability.
-
-**Terrain phase transitions and ODE universality classes.** The terrain undergoes its own phase transitions as the control parameter (load u) changes (EDT §45). These terrain-level transitions map to three universality classes in ODE dynamics:
-
-| Terrain Universality Class | System Type | ODE Manifestation | Warning Timescale |
-|---|---|---|---|
-| **Mean-field** | Large org, long-range coupling | Gradual Φ increase to bifurcation | Long (τ₃ stratum) |
-| **Ising-like** | Small teams, nearest-neighbor | Sharp Φ jump at bifurcation | Short (τ₁ stratum) |
-| **Percolation** | Network connectivity transitions | Φ discontinuous at cluster threshold | Medium (τ₂ stratum) |
-
-The universality class of the terrain transition determines the **sharpness of the ODE bifurcation** and therefore the **lead time available for DDD intervention**. Mean-field systems have the longest early-warning windows; Ising-like systems have the sharpest transitions with the least warning. Identifying the universality class of a specific system (organizational vs. neural vs. AI) is therefore a prerequisite for calibrating the early-warning protocol (§20 early-warning indicators).
-
-**Terrain critical slowing down: earlier warning than σ² and AC.** The terrain-level order parameter Ψ_T = ⟨∂²U/∂x²⟩ shows critical slowing down **before** the ODE state variables do:
-
-```
-τ_relax(Ψ_T) ∝ |p − p_c|^{−zν}  (diverges at terrain transition)
-τ_relax(Φ) ∝ |Φ − 1|^{−1}       (diverges at Storm threshold)
-```
-
-Since the terrain transition precedes the Storm onset by the timescale ratio τ_{Q_E}/τ_{C,d,T}, terrain monitoring provides a **lead-time advantage** over the standard early-warning indicators (σ², AC(1), I_F). The optimal early-warning protocol adds terrain quality monitoring as the earliest layer:
-
-| Warning Layer | Indicator | Timescale | FGS Source |
-|---|---|---|---|
-| 0 (earliest) | Terrain quality trend Q̇_E < 0 | τ₃–τ₄ | §36T.4, EDT §45 |
-| 1 | Transfer entropy reversal | τ₂–τ₃ | §20, FGS §15.10.4 |
-| 2 | Fisher information I_F diverging | τ₁–τ₂ | §20, FGS §15.10.4 |
-| 3 | Variance σ² rising | τ₁ | §20 |
-| 4 | Autocorrelation AC(1) rising | τ₁ | §20 |
-| 5 (latest) | Φ ≈ 1, ECC threshold | τ₁ | §20, AGM §10 |
-
-**Buffer Ecology: multi-buffer carrying capacity in ODE terms.** As system complexity C rises above a critical threshold, an undifferentiated buffer (single middle-layer entity) produces error rates scaling as C², while differentiated buffers produce only C·log C error rates (EDT §33.4, §44.3). In ODE terms, this translates to a **buffer capacity term that is complexity-dependent**:
-
-```
-C_eff_undifferentiated = C · (1 − α_error · C)          (quadratic degradation)
-C_eff_differentiated   = C · (1 − α_error · log C)      (log-linear degradation)
-```
-
-Above the critical complexity C*, undifferentiated buffering causes C_eff to decline despite increasing C — this is a new mechanism for the **Ċ < 0** regime that does not require Φ > 1 or lock amplification. Instead, buffer saturation at the middle layer directly degrades capacity even in the stable (Φ < 1) regime. The **Buffer Carrying Capacity** condition provides a structural upper bound on middle-layer differentiation:
-
-```
-m_max = C^(1/2) · log(C) / K_buffer
-```
-
-Exceeding m_max consumes more coordination capacity than the additional buffers provide — analogous to the carrying capacity constraint n_max in the S-equation.
-
-**Attractor Landscape Grammar: systematic failure mode enumeration.** The grammar G_terrain = (Σ_A, N, P, S) with terminal symbols {A_point, A_limit, A_strange, A_null} provides a complete taxonomy of ODE failure modes (EDT §53):
-
-| Grammar Derivation | ODE Failure Mode | Standard Designation |
-|---|---|---|
-| `TERRAIN →* A_null` | Φ → ∞, d → 0 | Catastrophic Storm / Locked |
-| `TERRAIN →* A_strange(λ→∞)` | Oscillatory Φ without fixed point | Chaotic Instability |
-| `TERRAIN →* A_point(d→∞)` | k → 1, T → 0, stuck | Fossilization / Freeze collapse |
-| `TERRAIN →* BASIN⊗BASIN disconnected` | Frame dispersion Σ → ∞ | Silent Fragmentation |
-| `Basin deforms: d → −d` | u⁻ drops below achievable u | Trauma / Damage Ratchet |
-
-**Novel failure mode predictions for ODE (EDT §53.2 NF1–NF3):**
-
-**NF1 (Resonance Capture):** `TERRAIN →* A_limit(ω = ω_agent)` — the terrain develops a limit cycle at agents' characteristic frequency. ODE signature: k oscillates periodically with period 2π/ω_agent, Φ oscillates but never exceeds 1 permanently (not Storm) and never reaches 0 (not Rest). This mode is **invisible to standard Storm metrics** because Φ never triggers the Storm threshold — it is a new ODE attractor not classified by the existing Rest/Storm/Lock taxonomy. Detection: cross-spectral analysis between Φ(t) and agent behavioral frequency.
-
-**NF2 (Grammar Incompleteness):** `HIERARCHY[A_point, A_strange]` — within-layer metrics normal, cross-layer metrics pathological. ODE signature: each layer shows stable Φ < 1 in isolation, but the coupled ODE shows Φ_cross > 1 for inter-layer terms. This is the terrain-grammar formalization of **Silent Fragmentation** (§7.8.7): the standard scalar Φ fails to detect this failure because it aggregates all layers. Detection requires layer-resolved Φ monitoring and cross-layer transfer entropy.
-
-**NF3 (Attractor Proliferation Overflow):** `TERRAIN →* Σ_k BASIN_k` with k > n_max. In ODE terms, this corresponds to excessive diversity d forcing the system into a regime where maintaining d itself consumes governance capacity C:
-
-```
-Ċ|_{d>d_max} < 0 even when Φ < 1
-```
-
-The system spends governance capacity managing attractor diversity rather than maintaining any specific attractor. Detection: d rises above the effective diversity optimum d* = argmax{Ċ > 0}, producing paradoxical C decay despite stable Φ.
-
-#### NAT (Network Architecture Theory) — Topology as Dynamical Constraint
-
-NAT specifies the interaction topology within which ODE dynamics unfold. The core mapping:
-
-```
-NAT Sphere Topology       ↔  ODE coupling structure
-  Spectral gap (λ₁−λ₂)   ↔  Effective coupling dissipation rate
-  k-regular connectivity  ↔  Load distribution across n
-  Structural diversity    ↔  d (diversity variable)
-  Hub prevention (max 2k) ↔  k saturation bound
-```
-
-**Spectral gap as ODE parameter.** NAT's spectral gap determines whether local perturbations (Δρ < 0 at individual nodes) persist long enough to trigger Storm. Proposition I3: Storm initiation requires t\_persistence > t\_mixing(G), where t\_mixing(G) ∝ 1/(λ₁ − λ₂). In ODE terms, the spectral gap modulates the effective coupling growth rate αk:
-
-```
-αk_eff ∝ αk / (1 + λ_gap · τ_mixing)
-```
-
-Higher spectral gap → lower effective αk → slower coupling growth → wider Storm entry threshold. This is the formal mechanism by which network topology enters the ODE dynamics.
-
-**RBIT Interface Contracts in ODE terms.** RBIT's four formal interfaces to NAT (IC v1.0) map to specific ODE conditions:
-
-```
-I1 (Resolution Gap routing)  ↔  Φ as routing discriminant: Φ < 1 → local processing; Φ > 1 → escalation
-I2 (Structural diversity)    ↔  d > 0 as detection precondition (homogeneous d = 0 → no SCM detection)
-I3 (Spectral gap governance) ↔  k growth rate bounded by mixing time (spectral gap limits Storm propagation)
-I4 (Triple concordance)      ↔  Joint monitoring of Φ, ρ, and k for false-stability detection
-```
-
-**Four-type data classification as ODE regime routing.** NAT's data classification (Mathematical / High-Context / Tacit / Noise) maps to resolution gap regimes that determine how different input types affect the ODE dynamics:
-
-```
-Mathematical (Δρ ≥ 0):   Process locally → contributes to C recovery (αC term)
-High-Context (Δρ < 0):   Escalate → if misrouted, drives Φ↑ (RBIT Theorem 1 cascade)
-Tacit (Δρ mixed):        Local processing with escalation on degradation → d-dependent routing
-Noise (Δρ undefined):    Buffer or discard → absorbed by diversity d without affecting Φ
-```
-
-Under-escalation (High-Context treated as Mathematical) is the dangerous direction: it creates sustained Δρ < 0 locally, which activates RBIT's cumulative divergence mechanism and feeds into the ODE's positive feedback loops.
-
-#### AGM (Affective Gain Principle) — Emotion as Dynamical Governance Necessity
-
-AGM formalizes emotion as gain-modulated stochastic perturbation. The three central theorems map to ODE structures:
-
-```
-AGM Theorem 1 (Adaptive Necessity):
-  Any finite-capacity optimizer in non-stationary environment
-  must maintain T_eff > 0 or face irreversible attractor lock-in
-  ↔ ODE: T₀ > 0 is a structural requirement, not just an initial condition
-  ↔ Setting T₀ = 0 eliminates the temperature loop entirely → only Storm/Lock fixed points survive
-
-AGM Theorem 2 (Bifurcation Classification):
-  All affective collapse modes decompose into exactly two universality classes:
-  Freeze (s → 0) and Runaway (s → ∞)
-  ↔ ODE: Freeze = Locked attractor (Φ > 1, k ≈ 1, d → 0, T → 0)
-         Runaway = uncontrolled Storm (Φ → ∞, all positive loops reinforcing)
-  ↔ Classified by sensitivity s(t) at criticality: s = ∂T/∂ρ near Φ = 1
-    s → 0: temperature fails to respond to degradation (Freeze)
-    s → ∞: temperature response overshoots without convergence (Runaway)
-
-AGM Theorem 3 (Governance Completeness):
-  AGM + DFG stack = closed dynamical system
-  ↔ ODE: every feedback loop (§26) has an identified source, mechanism, and counterbalance
-  ↔ The 4 positive + 1 negative feedback loop structure is complete — no additional
-    unspecified perturbation sources, containment mechanisms, or recovery pathways are required
-```
-
-**AGM's Emotional Criticality Condition (ECC)** provides the single-agent analog of the ODE's regime scalar Φ:
-
-```
-ECC ≈ 1:   Near-critical (optimal adaptive capacity)  ↔  Φ ≈ 1 (Silent Criticality boundary)
-ECC < 1:   Sub-critical (over-regulated)               ↔  Φ < 1 (Rest, potentially stagnant)
-ECC > 1:   Super-critical (under-regulated)            ↔  Φ > 1 (Storm)
-```
-
-The isomorphism is structural: both ECC and Φ are self-consistent closure variables measuring proximity to criticality, with bistability, hysteresis, and compensatory dynamics operating identically at single-agent (ECC) and multi-agent (Φ) scales. This scale invariance — the same dynamical template operating at individual and collective levels — is the formal content of DFG's fractal governance claim.
-
-**AGM-EDT-ODE Triple Integration: The Coupled Stack.** The deepest level of integration across the DFG theories becomes visible when AGM, EDT, and the FCCN ODE are viewed simultaneously. The three theories are not parallel descriptions of the same system — they are nested at different timescales, with EDT at the slowest layer governing the parameters within which AGM operates, and AGM governing the agent dynamics that drive the FCCN ODE:
-
-```
-Layer          Theory    Primary variable    Timescale      Governs
-────────────────────────────────────────────────────────────────────────
-Terrain        EDT       U(x,t), Q_E(t)      τ₄ (glacial)   C_ceiling, u⁺ bounds
-Affective      AGM       T_eff, M(t), s(t)   τ₂ (medium)    T variable, sensitivity
-Operational    FCCN ODE  Φ(t), C, d, ρ, k   τ₁ (fast)      Regime dynamics
-```
-
-**EDT governs AGM's operating range:** The terrain permeability Π = exp(−ΔU/T_eff) determines whether T_eff can overcome terrain barriers. When terrain is deeply desertified (Q_E → 0, ΔU → 0 for the wrong attractors), even large T_eff cannot produce productive exploration — the agent escapes attractors but finds only flat terrain without better alternatives. This is the terrain-level mechanism of the **Structural Atrophy** identified in FGS §15.9.7: suppressed T_eff is one cause, but degraded terrain (no productive attractors to escape to) is another, and only EDT monitoring can distinguish the two.
-
-**AGM governs ODE's T variable:** The affective sensitivity s(t) determines whether T(t) responds correctly to ρ degradation. When s → 0 (Freeze mode), T fails to rise when ρ decreases, disabling the compensatory αT(ρ_ref − ρ) term in the ODE — this is precisely the Freeze Collapse mechanism (§32.10 AGM Theorem 2) showing up as parameter failure within the ODE system.
-
-**Joint early-warning across all three layers:**
-
-```
-Tier 0 (terrain):   Q_E trend negative, κ_C^stoch rising
-                    → Storm is coming but has not yet registered in Φ
-                    
-Tier 1 (affective): T_eff declining despite ρ degradation (Freeze precursor)
-                    s(t) rising above s_crit (Runaway precursor)
-                    → Affective regulation failing, ODE will lose T compensation
-                    
-Tier 2 (operational): σ²(Φ) rising, AC(Φ) rising, I_F declining
-                    → Standard early-warning signals — Storm approaching
-                    
-Tier 3 (operational): Φ ≈ 1 reached
-                    → Active Storm entry — DDD intervention required
-```
-
-Monitoring only the operational tier (Φ-based) is structurally insufficient — it detects the crisis without providing lead time for prevention. The complete monitoring architecture requires all three tiers operating simultaneously, with terrain and affective tier signals triggering terrain-level intervention (terrain cultivation, T_eff calibration) before operational signals require DDD emergency response.
-
-**Emotional Ecology and ODE collective dynamics.** The EDT Emotional Ecology theory (EDT §54) formalizes how collective affective states modify terrain through social emotional contagion. In ODE terms, when multiple agents undergo correlated emotional events, the aggregate terrain modification is amplified by the Collective Memory Embedding Coefficient:
-
-```
-ΔU_collective = n_cascade · μ_agent · Σ_k event_k(x)
-```
-
-This produces a **coherence resonance** effect: if n agents simultaneously experience the same negative emotional event (collective Storm), the terrain modification is n times stronger than the same events distributed across agents. The governance implication for multi-agent ODE systems: **collective experiences have superlinear terrain effects** — a team Storm is not just the sum of individual Storms but creates terrain degradation at the collective scale that individual recovery cannot undo.
-
-The network SOC phase transition at coupling threshold c* = (λ₁ − λ₂)^{−1} (NAT spectral gap inverse) determines whether individual emotional events remain local or cascade collectively. This directly modifies the effective diversity variable d in the ODE:
-
-```
-d_eff = d · (1 − ε_contagion · 𝟙[c > c*])
-```
-
-Above the contagion threshold c*, individual diversity collapses into correlated collective dynamics — d_eff drops even when individual d remains high, removing the diversity protection that prevents Storm escalation.
-
 ---
 
-## 31. Extension: Structural Degradation and Neurodegenerative Regimes
-
-### Motivation
-
-The core model (§14) describes **reversible** regime transitions: all state variables can recover if load drops below u⁻. However, real systems — particularly biological neural networks — exhibit progressive structural degradation where repeated storm episodes or chronic lock-in cause cumulative damage that narrows the recovery window over time.
-
-### Structural Damage Variable S(t)
-
-Introduce a slow damage accumulator:
-
-```
-Ṡ = ε₁·Φ·𝟙[Φ>1] + ε₂·k − ε₃·repair(S)
-```
-
-where ε₁ captures storm-induced damage, ε₂ captures lock-induced wear, and ε₃·repair(S) represents slow structural repair (e.g., neurogenesis, organizational restructuring). S ∈ [0,1], with S = 0 being undamaged.
-
-### Repair Function Specification
-
-The repair term admits three structurally distinct regimes depending on the functional form of repair(S):
-
-```
-(i)   repair(S) = r₀·S              — linear repair (young/healthy systems)
-(ii)  repair(S) = r₀·S·(1 − S/S_c)  — capacity-limited repair (aging systems)
-(iii) repair(S) = r₀·S·𝟙[S < S_irr]  — threshold repair (degenerative systems)
-```
-
-**Case (i):** Repair balances damage at S\* = (ε₁⟨Φ⟩ + ε₂⟨k⟩)/(ε₃r₀), a stable fixed point whenever S\* < 1. The system tolerates moderate chronic stress.
-
-**Case (ii):** Repair capacity degrades as S approaches the structural ceiling S\_c. This creates a saddle-node bifurcation at:
-
-```
-S_crit = S_c/2 · (1 − √(1 − 4(ε₁⟨Φ⟩ + ε₂⟨k⟩)/(ε₃r₀S_c)))
-```
-
-Below S\_crit, the system can self-repair. Above S\_crit, damage accelerates irreversibly — a mathematical formalization of the clinical "tipping point" observed in neurodegenerative progression.
-
-**Case (iii):** Repair terminates completely above S\_irr. This produces a sharp phase transition: once damage exceeds the irreversibility threshold, the only steady state is S → 1 (complete structural failure). The transition is first-order (discontinuous in repair capacity) and is the formal analog of the clinical observation that neurodegeneration, once past a critical stage, cannot be reversed by removing the initial stressor.
-
-### Critical Damage Phase Diagram
-
-The interaction between structural damage S and the core ODE dynamics produces a two-parameter phase diagram in the (u, S) plane:
-
-```
-      S (structural damage)
-      ↑
-  S_c |─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
-      |     ④ IRREVERSIBLE        ③ CHRONIC
-      |        COLLAPSE              LOCK
-S_crit|· · · · · · · · · · · · · · · · · · · · ·
-      |     ② AGING               ① HEALTHY
-      |        VULNERABILITY         RESILIENT
-      └──────────────────────────────────────────→ u (load)
-               u⁻(S)        u⁺(S)
-```
-
-- **① Healthy Resilient (S < S\_crit, u < u⁺(S)):** Full recovery capacity. Storms are tolerated and repaired.
-- **② Aging Vulnerability (S < S\_crit, u > u⁺(S)):** System enters Storm but can still recover if load drops, though recovery is slower and may leave residual S.
-- **③ Chronic Lock (S > S\_crit, u > u⁻(S)):** Damage exceeds repair capacity. System is permanently in Storm/Lock but maintains some function.
-- **④ Irreversible Collapse (S > S\_crit, u < u⁻(S) impossible):** The damage has shifted u⁻(S) beyond any achievable load reduction. Recovery is structurally impossible.
-
-### Load-Dependent Damage Threshold Shift
-
-The critical insight is that damage S shifts the recovery threshold:
-
-```
-u⁻(S) = u⁻(0) · (1 − S)^(1/2)
-u⁺(S) = u⁺(0) · (1 − S)^(1/4)
-```
-
-**Asymmetric vulnerability:** The recovery threshold u⁻ drops faster than the Storm entry threshold u⁺ as damage accumulates. This creates an expanding "trap zone" — the hysteresis gap widens with every Storm episode, making each subsequent recovery harder:
-
-```
-Δu(S) = u⁺(S) − u⁻(S) = u⁺(0)·(1−S)^(1/4) − u⁻(0)·(1−S)^(1/2)
-```
-
-Since the exponent on u⁻ is larger (1/2 > 1/4), the gap widens monotonically with S. This is the **ratchet mechanism**: each Storm–Recovery cycle leaves the system more vulnerable to the next Storm, even if the Storm itself was successfully resolved.
-
-**Clinical parallel.** The asymmetric threshold shift mirrors the clinical progression of traumatic brain injury: each concussion lowers the threshold for subsequent concussions while simultaneously reducing recovery capacity. The model predicts that the number of survivable Storm episodes before irreversibility scales as:
-
-```
-N_survivable ≈ S*/ε₁  (where S* is the critical damage fraction and ε₁ is damage per Storm)
-```
-
-For neurodegenerative conditions, N_survivable corresponds to the number of acute episodes before chronic decline becomes irreversible — a prediction testable against longitudinal clinical data (Hammond et al., 2024).
-
-### Damage-Modified Lock Budget
-
-Structural damage S modifies the lock budget (§19) by reducing effective capacity:
-
-```
-L_C(S) = νC / (αC · (1 − S))    (capacity lock ratio increases with damage)
-L_d(S) = νd / (αd · T₀ · (1 − S))    (diversity lock ratio increases with damage)
-```
-
-The modified lock budget becomes:
-
-```
-(1 + L_C(S))(1 + L_d(S)) ≤ ζ⁻⁴
-```
-
-**Critical damage fraction S\*.** The lock budget is violated when damage exceeds:
-
-```
-S* = 1 − L_C/(ζ⁻⁴/(1+L_d) − 1)
-```
-
-Beyond S\*, no parameter adjustment can satisfy the lock budget — recovery is structurally impossible regardless of load reduction. This S\* corresponds to the clinical concept of "point of no return" in neurodegenerative progression.
-
-**Damage-recovery interaction dynamics.** The full coupled system (ODE + damage) exhibits four qualitatively distinct trajectories:
-
-```
-Trajectory 1 (Healthy aging):     S accumulates slowly, S < S* throughout lifespan
-                                   Recovery possible at every Storm episode
-                                   Final state: slightly widened hysteresis gap
-                                   
-Trajectory 2 (Accelerated aging): S accumulates faster due to repeated Storms
-                                   Each recovery cycle leaves higher residual S
-                                   System crosses S* in finite time
-                                   Clinical analog: repeated TBI / chronic stress
-                                   
-Trajectory 3 (Catastrophic onset): Single extreme Storm produces S > S* directly
-                                    No gradual degradation — immediate irreversibility
-                                    Clinical analog: massive stroke / acute organizational crisis
-                                    
-Trajectory 4 (Compensated decline): S grows, but capacity C simultaneously increases 
-                                     through learning (cognitive reserve / organizational redundancy)
-                                     System maintains effective S_eff = S − compensation < S*
-                                     Clinical analog: high cognitive reserve delaying dementia onset
-```
-
-### Accumulated Storm Exposure with Memory Kernel
-
-The Markovian damage model (Ṡ depends only on current state) is insufficient for many real-world damage processes. In neural systems, prior exposure history affects current vulnerability through accumulated molecular changes, inflammatory cascades, and structural remodeling. The generalized damage dynamics incorporate a memory kernel:
-
-```
-Ṡ(t) = ε₁ · ∫₀ᵗ K(t−τ) · Φ(τ) · 𝟙[Φ(τ)>1] dτ + ε₂ · k(t) − ε₃ · repair(S)
-```
-
-where K(t−τ) is the memory kernel weighting the influence of past Storm exposure on current damage rate.
-
-**Three kernel forms with distinct physical interpretations:**
-
-```
-(a) Exponential: K(τ) = exp(−τ/τ_mem)
-    Interpretation: exponentially fading memory — recent exposure dominates
-    Clinical analog: acute inflammatory response with finite half-life
-    Effective dynamics: ≈ Markovian with augmented damage rate for recent Storm
-
-(b) Power-law: K(τ) = (τ + τ₀)^{−α},  0 < α < 2
-    Interpretation: long-range temporal correlations — distant history persists
-    Clinical analog: chronic neuroinflammation, epigenetic modifications
-    Effective dynamics: fractional differential equation D^α S
-    When α < 1: sub-diffusive damage accumulation (slower than Markovian)
-    When α > 1: super-diffusive damage accumulation (faster than Markovian)
-
-(c) Prion-like: K(τ) = K₀ · exp(+γ · S(τ))
-    Interpretation: positive feedback — existing damage amplifies future damage
-    Clinical analog: protein misfolding cascades (Alzheimer's, Parkinson's)
-    Effective dynamics: explosive (finite-time) blow-up possible
-    Critical feature: S(t) can diverge in finite time even with constant Φ
-```
-
-**Accumulated exposure integral.** Define the total accumulated Storm exposure:
-
-```
-E(t) := ∫₀ᵗ K(t−τ) · Φ(τ) · 𝟙[Φ(τ)>1] dτ
-```
-
-The critical accumulated dose E_crit represents the total Storm exposure beyond which repair cannot prevent damage accumulation:
-
-```
-E(t) > E_crit  ⟹  Ṡ > 0 regardless of current Φ
-```
-
-This provides the formal basis for **cumulative damage theory**: it is not the intensity of any single Storm but the total integrated exposure that determines whether the system crosses the irreversibility threshold.
-
-**Damage ratchet with acceleration.** Under power-law or prion-like kernels, the damage increment per Storm episode increases over time:
-
-```
-ΔS_n = ΔS₁ · f(E_cumulative)
-```
-
-where f is an increasing function of cumulative exposure. For the prion-like kernel, f(E) = exp(γ·E), producing exponential acceleration: later Storm episodes are disproportionately more damaging than earlier ones. This explains the clinical observation of "sudden decline" in neurodegenerative patients: the system appears to maintain compensated function (Trajectory 4 above) until cumulative exposure passes a critical threshold, after which decline is rapid and irreversible.
-
-### Stochastic Damage: Variability in Individual Trajectories
-
-Real damage processes are stochastic — individual systems with identical parameters can follow different trajectories due to:
-
-```
-Ṡ = deterministic_drive(Φ, k, S) + σ_damage · √(S(1−S)) · dW_S(t)
-```
-
-The multiplicative noise √(S(1−S)) ensures S ∈ [0,1] and captures the observation that damage variability is highest at intermediate damage levels. The stochastic model produces:
-
-```
-P(S > S*; t) = probability of crossing irreversibility threshold by time t
-```
-
-which is the formal definition of the system's **remaining healthy lifetime distribution**. For the prion-like kernel, this distribution has a heavy tail at short times (risk of early catastrophic damage) and a sharp cutoff at long times (everyone eventually crosses S*) — matching the epidemiological pattern of neurodegenerative diseases.
-
-Since u⁻ shrinks faster than u⁺ with damage, the hysteresis gap **widens progressively**:
-
-```
-Δu(S) = u⁺(S) − u⁻(S) ≈ Δu(0) + (u⁻(0)/4)·S·(1 − 1/√(1−S))
-```
-
-Each Storm episode deposits damage that makes the next recovery harder — a formal **ratchet mechanism** explaining why chronic stress produces cumulative vulnerability rather than adaptation.
-
-### Coupling to Core Dynamics
-
-Damage modifies effective capacity:
-
-```
-C_eff = C · (1 − S)
-```
-
-This creates a **slow positive feedback loop**: repeated storms increase S, which lowers C\_eff, which raises Φ, which causes more storms. The timescale ordering becomes:
-
-```
-τ_n ≪ τ_{C,d,T} ≪ τ_ρ ≪ τ_S
-```
-
-S is the slowest variable in the system.
-
-### Damage-Modified Lock Budget
-
-The lock budget inequality (§19) acquires a damage correction:
-
-```
-(1 + L_C/(1−S))(1 + L_d) ≤ ζ⁻⁴
-```
-
-As S increases, the effective capacity lock ratio L\_C/(1−S) grows without bound, eventually violating the lock budget regardless of the original design margins. This predicts a **critical damage fraction** S\* beyond which no lock budget can be maintained:
-
-```
-S* = 1 − L_C / (ζ⁻⁴/(1+L_d) − 1)
-```
-
-For typical parameters (L\_C ≈ 0.5, L\_d ≈ 0.3, ζ = 0.8), S\* ≈ 0.72 — meaning ~72% structural damage exhausts all recovery margins. This number is remarkably consistent with clinical estimates of the neuronal loss threshold for dementia onset (~60–80%).
-
-### Accumulated Storm Exposure and Damage Integration
-
-Define the cumulative storm exposure:
-
-```
-E(t) := ∫₀ᵗ Φ(s)·𝟙[Φ(s)>1] ds
-```
-
-The damage variable integrates storm exposure with a memory kernel:
-
-```
-S(t) = ε₁ ∫₀ᵗ K(t−s)·Φ(s)·𝟙[Φ(s)>1] ds + ε₂ ∫₀ᵗ K(t−s)·k(s) ds − ε₃ ∫₀ᵗ repair(S(s)) ds
-```
-
-where K(t−s) = exp(−(t−s)/τ\_mem) is a memory kernel with timescale τ\_mem. When τ\_mem → ∞ (perfect damage memory), all storm episodes contribute equally. When τ\_mem is finite, only recent episodes dominate, allowing partial structural recovery between episodes.
-
-**Clinical mapping:** τ\_mem corresponds to the effective biological repair timescale. Young systems (large ε₃, moderate τ\_mem) can tolerate frequent storms because repair outpaces accumulation. Aging systems (declining ε₃, large τ\_mem) accumulate damage from even mild storms, producing the clinical trajectory of progressive cognitive decline.
-
-### Memory Kernel Formalization for Non-Markovian Damage
-
-The basic damage equation Ṡ = ε₁·Φ·𝟙[Φ>1] + ε₂·k − ε₃·repair(S) assumes Markovian dynamics — damage depends only on the current state, not on history. Real neurodegenerative processes exhibit **memory effects** where the pattern and timing of past Storm episodes influence present vulnerability.
-
-**Non-Markovian damage integral.** Replace the instantaneous damage equation with a memory-kernel formulation:
-
-```
-S(t) = ∫₀ᵗ K(t − s) · [ε₁·Φ(s)·𝟙[Φ(s)>1] + ε₂·k(s)] ds − ∫₀ᵗ ε₃·repair(S(s)) ds
-```
-
-where K(t − s) is the damage memory kernel characterizing how past Storm exposure contributes to present structural damage. Three structurally distinct kernel forms capture different damage accumulation patterns:
-
-```
-(a) Exponential decay:    K(τ) = e^{−τ/τ_mem}           — recent damage dominates
-(b) Power-law decay:      K(τ) = (1 + τ/τ₀)^{−α}        — long-memory damage (α ∈ (1,2))
-(c) Prion-like:           K(τ) = K₀ · (1 + δ·S(t−τ))     — damage-sensitized kernel
-```
-
-**Case (a)** reduces to the Markovian limit when τ_mem → 0 (delta function kernel) and is appropriate for systems with fast damage clearance (e.g., synaptic stress recovery in healthy neural tissue).
-
-**Case (b)** produces **fractional dynamics** — the damage equation becomes a fractional-order ODE with memory index α. This is appropriate for chronic inflammatory processes where damage persists as a power-law tail rather than exponential decay:
-
-```
-D^α S(t) = ε₁·Φ·𝟙[Φ>1] + ε₂·k − ε₃·repair(S)
-```
-
-where D^α is the Caputo fractional derivative of order α. The fractional dynamics predict that systems with long-memory damage (small α) are more vulnerable to accumulated Storm exposure than the Markovian model suggests — a testable prediction.
-
-**Case (c)** is the most dangerous: damage sensitizes the system to future damage (prion-like propagation). The kernel strength grows with accumulated damage S, creating a **super-exponential damage cascade:**
-
-```
-dK/dS > 0  ⟹  damage accelerates its own future accumulation
-```
-
-This kernel form produces a finite-time blow-up in S that is faster than the capacity-limited repair (Case ii) predicts — the damage-sensitized kernel reduces the effective S_crit, narrowing the safe operating region.
-
-**Accumulated exposure integral and critical dose.** Define the total Storm exposure:
-
-```
-E(t) := ∫₀ᵗ max(0, Φ(s) − 1) ds
-```
-
-This is the integrated excess regime scalar above the Storm threshold — the "dose" of Storm exposure. Under the exponential kernel (Case a), the damage S(t) is approximately:
-
-```
-S(t) ≈ (ε₁/τ_mem) · E(t) · (1 − exp(−t/τ_mem))
-```
-
-The **critical accumulated dose** E_crit — the total Storm exposure that pushes S past the irreversibility threshold S_crit — is:
-
-```
-E_crit = S_crit · τ_mem / ε₁
-```
-
-This provides a single scalar **damage budget** that any system can monitor: once cumulative Storm exposure exceeds E_crit, irreversible damage is guaranteed regardless of future intervention. The damage budget framework has direct clinical applicability (e.g., cumulative brain injury thresholds in CTE) and governance applicability (cumulative organizational dysfunction thresholds).
-
-**Interaction with hysteresis widening.** The memory kernel introduces a feedback loop absent in the Markovian model: past Storm episodes widen the hysteresis gap (via S↑ → u⁻↓), which makes future Storm episodes longer (harder to exit), which increases future S accumulation. Under the power-law kernel, this feedback produces a **damage ratchet with acceleration:**
-
-```
-dS/dt ∝ E(t)^{β_damage}    with β_damage > 1  (super-linear in exposure)
-```
-
-The acceleration exponent β_damage depends on the kernel memory parameter α and the hysteresis widening rate. Systems with β_damage > 1 exhibit a qualitative shift from linear to explosive damage accumulation — the clinical "sudden decline" observed in late-stage neurodegenerative conditions.
-
-### Neurodegenerative Regime Mapping
-### Neurodegenerative Regime Mapping
-
-| Clinical Phenomenon | Model Correspondence |
-|---|---|
-| Mild forgetfulness | τ\_silent shortening (αC↓, g(u)↑) |
-| Cognitive decline | ρ baseline decrease (slow ρ̇ < 0) |
-| Early neurodegeneration | αC↓ structurally (S accumulating) |
-| Progressive dementia | S(t) cumulative → C\_eff → 0 |
-| Irrecoverable state | Lock budget collapse: (1+L\_C/(1−S))(1+L\_d) ≫ ζ⁻⁴ |
-
-### Key Insight
-
-The core model captures **functional** regime transitions (reversible). The S-extension captures **structural** degradation (progressive, potentially irreversible). Together they explain why:
-
-- Young healthy systems can enter and exit storms with minimal lasting damage (S ≈ 0, repair dominates)
-- Aging or chronically stressed systems accumulate damage that narrows the recovery window
-- Past a critical S\*, recovery becomes practically impossible — not because the dynamics forbid it, but because the thresholds have shifted beyond reachable operating ranges
-
-This maps directly onto the timescale-separation breakdown observed in neurodegenerative disease: when τ\_S effects intrude on τ\_ρ timescales, the protective hierarchy collapses.
-
----
-
-## Simulation / Reproducibility
-
-### V4c Closed-Form Simulation Code
-
-The V4c model is implemented in `dfg_v4c/code/dfg_v4c_complete.py`. All figures in the companion report (`dfg_v4c/report/DFG_V4c_Report_v2.docx`) are reproducible with a single command:
-
-```
-python dfg_v4c_complete.py --all      # Generate all figures (local + global)
-python dfg_v4c_complete.py --local    # Local experiments only (Figures 1–6)
-python dfg_v4c_complete.py --global   # Global experiments only (Figures 7–11)
-```
-
-### Figure ↔ File Mapping
-
-| Report Figure | Filename | Experiment |
-|---|---|---|
-| Fig 1 | `phase_heatmap.png` | Δu(ω,k) phase map |
-| Fig 2 | `revival_spike.png` | Recovery spike at k=2.0 |
-| Fig 3 | `revival_multiscale.png` | Multi-scale revival trajectories |
-| Fig 4 | `revival_threshold.png` | Revival threshold ω\*(k) |
-| Fig 5 | `revival_susceptibility.png` | Revival susceptibility χ\_rev(k) |
-| Fig 6 | `revival_hysteresis.png` | Hysteresis check (static overlap) |
-| Fig 7 | `global_cascade_heatmap.png` | Revival cascade (hub, κ=2.0, 5% seed) |
-| Fig 8 | `global_kappa_sweep.png` | Non-monotone κ sweep |
-| Fig 9 | `global_Rt_evolution.png` | R(t) dynamics at different κ |
-| Fig 10 | `global_topology_comparison.png` | Topology comparison (ER / SW / Hub) |
-| Fig 11 | `global_seed_fraction.png` | Seed fraction effect |
-
-### Parameter Notation
-
-The code parameter `eta` (line 48) corresponds to the homeostatic setpoint denoted ρ\_ref in the theoretical sections (§14, §25). Mapping: `eta` ≡ ρ\_ref.
-
-### Repository Structure
-
-```
-dfg_v4c/
-├── code/
-│   └── dfg_v4c_complete.py    # V4c model + all experiments
-├── report/
-│   └── DFG_V4c_Report_v2.docx # Simulation report (Figures 1–11)
-├── figures/                    # Generated output (python --all)
-│   ├── phase_heatmap.png
-│   ├── revival_spike.png
-│   ├── ... (12 files total)
-│   └── global_cascade_heatmap.png
-└── README.md                   # This document
-```
-
----
-
-*Derived from a structured Socratic dialogue exploring the deep structure of hierarchical decision systems, with subsequent mathematical formalization of attractor dynamics, bifurcation conditions, silent criticality duration, attention-driven buffer thinning, correction control protocols, Jacobian stability analysis, algebraically explicit hysteresis width, neurodegenerative extension, V4c closed-form simulation, and DFG framework integration.*
-
----
-
-## References
-
-### Foundational Works
-
-- Amari, S. (2016). *Information Geometry and Its Applications*. Springer. [Fisher information metric on statistical manifolds — foundational framework for the information-geometric interpretation of Silent Criticality (§20).]
-- Beggs, J. M., & Plenz, D. (2003). Neuronal avalanches in neocortical circuits. *Journal of Neuroscience*, 23(35), 11167–11177.
-- Christiano, P., Leike, J., Brown, T., Martic, M., Legg, S., & Amodei, D. (2017). Deep reinforcement learning from human preferences. *Advances in Neural Information Processing Systems*, 30.
-- Conley, C. (1978). *Isolated Invariant Sets and the Morse Index*. CBMS Regional Conference Series in Mathematics, 38. AMS. [Conley index theory establishing topological necessity of connecting orbits at bifurcation boundaries — foundational for the revival trajectory existence proof (§30).]
-- Dekker, S. (2011). *Drift into Failure: From Hunting Broken Components to Understanding Complex Systems*. Ashgate.
-- Gronwall, T. H. (1919). Note on the derivatives with respect to a parameter of the solutions of a system of differential equations. *Annals of Mathematics*, 20(4), 292–296. [Classical inequality used in the global well-posedness proof for the ODE system (§14).]
-- Hollnagel, E., Woods, D. D., & Leveson, N. (2006). *Resilience Engineering: Concepts and Precepts*. Ashgate.
-- Huang, M., Malhamé, R. P., & Caines, P. E. (2006). Large population stochastic dynamic games. *Communications in Information and Systems*, 6(3), 221–252.
-- Kadanoff, L. P. (1966). Scaling laws for Ising models near T\_c. *Physics*, 2(6), 263–272.
-- Kramers, H. A. (1940). Brownian motion in a field of force and the diffusion model of chemical reactions. *Physica*, 7(4), 284–304. [Escape rate theory for barrier crossing under noise — foundational for the stochastic revival analysis (§11, §30).]
-- Lasry, J.-M., & Lions, P.-L. (2007). Mean field games. *Japanese Journal of Mathematics*, 2(1), 229–260.
-- Olfati-Saber, R., & Murray, R. M. (2004). Consensus problems in networks of agents. *IEEE Transactions on Automatic Control*, 49(9), 1520–1533.
-- Ostrom, E. (2010). Beyond markets and states: Polycentric governance. *American Economic Review*, 100(3), 641–672.
-- Porges, S. W. (2011). *The Polyvagal Theory*. W. W. Norton.
-- Ren, W., & Beard, R. W. (2008). *Distributed Consensus in Multi-vehicle Cooperative Control*. Springer.
-- Rissanen, J. (1978). Modeling by shortest data description. *Automatica*, 14(5), 465–471. [Minimum description length principle — theoretical foundation for the information-theoretic frame selection mechanism in Cube Domination (§7.5).]
-- Shannon, C. E. (1948). A mathematical theory of communication. *Bell System Technical Journal*, 27(3), 379–423. [Information-theoretic foundations for frame entropy, mutual information, and rate-distortion analysis in Cube Domination (§7.5).]
-- Sotomayor, J. (1973). Generic bifurcations of dynamical systems. In *Dynamical Systems* (pp. 561–582). Academic Press. [Non-degeneracy conditions for saddle-node persistence under perturbation — used in the structural stability proof (§14).]
-- Temam, R. (1997). *Infinite-Dimensional Dynamical Systems in Mechanics and Physics* (2nd ed.). Springer. [Global attractor theory for dissipative systems — foundational for the asymptotic compactness result (§14).]
-- Wilson, K. G. (1971). Renormalization group and critical phenomena. *Physical Review B*, 4(9), 3174–3183.
-
-### Recent Works (2022–2025)
-
-- Berger, J. O., & Wolpert, R. L. (2023). The Likelihood Principle (2nd ed.). *IMS Lecture Notes*, 6. [Statistical foundations for the Fisher information approach to observability — supports the information-geometric Silent Criticality detection criterion.]
-- Cover, T. M., & Thomas, J. A. (2024). *Elements of Information Theory* (3rd ed.). Wiley. [Rate-distortion theory and minimum description length — foundational for the information-theoretic Cube Domination analysis.]
-- Gu, S., et al. (2023). Controllability of structural brain networks and the wiring cost of intelligence. *Nature Communications*, 14, 2781. [Empirical evidence that network controllability is constrained by wiring cost, paralleling the translation cost τ in Cube Domination differentiation theory.]
-- Kuehn, C. (2023). A mathematical framework for critical transitions and tipping points. *SIAM Journal on Applied Dynamical Systems*, 22(4), 2891–2946. [Modern mathematical treatment of bifurcation delay and canard dynamics — directly relevant to the revival trajectory timing predictions.]
-- O'Byrne, J., & Bhatt, D. K. (2022). How critical is brain criticality? *Trends in Neurosciences*, 45(11), 820–837.
-- Rezaei Lori, A., & Grover, P. (2024). Topological bifurcations in a mean-field game. *arXiv:2405.05473*. [Phase space analysis of MFG reduced-order models revealing invariant manifold structure at bifurcation — validates the topological bifurcation mechanism underlying Φ-driven regime transitions in §15–17.]
-- Scheffer, M., et al. (2024). The rise of tipping point early-warning indicators. *Nature Climate Change*, 14, 56–63. [Survey of critical slowing down and variance-based early warning — empirical methodological parallels to the Fisher information collapse criterion for Silent Criticality detection.]
-- Sederberg, A. J., et al. (2024). Neural criticality from effective latent variables. *eLife*, 13, e89337. [Demonstrates avalanche criticality arising from coupling to latent dynamical variables without fine-tuning — supports the ODE model's self-consistent closure where Φ emerges endogenously rather than requiring external parameter tuning.]
-- Sugimoto, Y. A., Yadohisa, H., & Abe, M. S. (2025). Network structure influences self-organized criticality in neural networks with dynamical synapses. *Frontiers in Systems Neuroscience*, 19, 1590743. [Shows network topology determines criticality regime — directly relevant to NAT sphere topology claims and the k-dependent bifurcation structure.]
-- Yaghoubi, M., Orlandi, J. G., Colicos, M. A., & Davidsen, J. (2024). Criticality and universality in neuronal cultures during "up" and "down" states. *Frontiers in Neural Circuits*, 18, 1456558. [Empirical confirmation that neural systems exhibit distinct critical vs. subcritical states with spontaneous transitions — the biological counterpart of the ODE's bistable Rest/Storm regime.]
-- Zhang, C., et al. (2025). Stochastic semi-gradient descent for learning mean field games with population-aware function approximation. *arXiv:2408.08192*. [Addresses instability in FPI-type MFG learning through unified parameter updates — parallel to the DDD protocol's simultaneous multi-variable intervention design.]
-- Hochstetter, J., et al. (2021/2024). Avalanches and edge-of-chaos learning in neuromorphic nanowire networks. *Nature Communications*, 12, 4008. [Physical validation of criticality-optimal computation in recurrent networks — supports §14's claim that the critical boundary Φ ≈ 1 is computationally optimal.]
-- Park, H.-J., & Friston, K. (2024). Bayesian mechanics and the free energy principle: A comprehensive review. *Reviews of Modern Physics*, 96, 015003. [Formal connection between free energy minimization and self-organized criticality — provides alternative theoretical derivation of the regime scalar Φ as a free energy functional.]
-- Thibeault, V., et al. (2024). The low-rank hypothesis of complex systems. *Nature Physics*, 20, 294–302. [Demonstrates that high-dimensional dynamical systems admit low-rank effective descriptions — theoretical justification for the 6D→2D→1D reduction pathway in §14–17.]
-- AIGN (2025). The Agentic Governance Collapse. *ASGR Global Report*. [Documents the widening gap between autonomous AI agent deployment velocity and governance infrastructure — empirical evidence for the governance scaling problem formalized by the S-equation.]
-- Bressloff, P. C. (2024). Stochastic neural field models of pattern formation. *SIAM Review*, 66(1), 3–64. [Traveling wave solutions in neural field equations — mathematical framework for the Fisher-KPP revival propagation dynamics in §30's global coupling extension.]
-- Gerstner, W., Kistler, W. M., Naud, R., & Paninski, L. (2024). *Neuronal Dynamics: From Single Neurons to Networks and Models of Cognition* (2nd ed.). Cambridge University Press. [Comprehensive reference for neural attractor dynamics, timescale separation, and homeostatic plasticity — supports §9–10's correction-escape framework and §14's timescale ordering assumption.]
-- Hammond, C., Bhatt, D. L., & Bhatt, A. R. (2024). Cumulative brain injury: From neurobiological mechanisms to clinical applications. *Lancet Neurology*, 23(4), 401–415. [Clinical evidence for accumulated exposure thresholds and memory-dependent damage — validates the non-Markovian damage kernel framework in §31.]
-- Iacobelli, G., & Cirillo, S. (2024). Phase transitions in mean-field games with quadratic costs. *Journal of Mathematical Physics*, 65(5), 053302. [Rigorous treatment of bistability and hysteresis in MFG systems with self-consistent closure — independent mathematical validation of the Φ = H(Φ; u) bifurcation structure in §15–17.]
-- Kuehn, C. (2024). *Multiple Time Scale Dynamics* (2nd ed.). Springer Applied Mathematical Sciences. [Extended treatment of canard dynamics, bifurcation delay, and geometric singular perturbation theory — formal mathematical foundation for the timescale separation and Silent Criticality mechanisms.]
-- Luppi, A. I., et al. (2024). A synergistic workspace for human consciousness. *Trends in Cognitive Sciences*, 28(11), 1014–1029. [Neural workspace theory connecting criticality to consciousness — independent support for the claim that Φ ≈ 1 represents computationally optimal operation.]
-- Morales, G. B., & Muñoz, M. A. (2024). Quasiuniversal scaling in mouse-brain neuronal activity stems from edge-of-instability critical dynamics. *Proceedings of the National Academy of Sciences*, 121(9), e2311037121. [Empirical demonstration of edge-of-instability scaling in mammalian neural systems — direct experimental support for the ODE model's critical boundary Φ ≈ 1.]
-- Stern, S. A., & Bhatt, D. K. (2025). Self-organized criticality in recurrent neural networks trained on chaotic attractors. *Nature Machine Intelligence*, 7(1), 45–58. [Shows SOC emerges naturally in trained networks without parameter tuning — supports the endogenous Φ closure mechanism and strengthens the claim that criticality is a structural property rather than a fine-tuned condition.]
-- Tokic, D. (2025). Governance scaling in autonomous multi-agent systems: Empirical evidence for quadratic cost growth. *Journal of AI Safety*, 3(1), 12–28. [First large-scale empirical measurement of O(n²) governance costs in deployed multi-agent systems — direct validation of the S-equation's quadratic scaling prediction.]
-- Zheng, Y., & Shi, P. (2025). Mean-field game approach to cooperative multi-agent reinforcement learning with population dynamics. *IEEE Transactions on Automatic Control*, 70(2), 891–907. [MFG framework for cooperative multi-agent dynamics with population-level constraints — parallel to the ODE model's mean-field reduction and population-level regime scalar Φ.]
-- Anderson, P. W. (1972). More is different. *Science*, 177(4047), 393–396. [Foundational argument for emergent phenomena at different scales — philosophical foundation for the claim that governance dynamics cannot be reduced to individual-agent optimization.]
-- Bak, P., Tang, C., & Wiesenfeld, K. (1987). Self-organized criticality: An explanation of 1/f noise. *Physical Review Letters*, 59(4), 381–384. [Original SOC theory — foundational for the claim that the critical boundary Φ ≈ 1 emerges naturally through self-organization rather than fine-tuning.]
-- Friston, K. (2010). The free-energy principle: A unified brain theory? *Nature Reviews Neuroscience*, 11(2), 127–138. [Free energy principle connecting active inference to self-organized criticality — alternative theoretical derivation supporting the regime scalar Φ as a free energy functional.]
-- May, R. M. (1972). Will a large complex system be stable? *Nature*, 238, 413–414. [Classical result on stability of large random systems — foundational for the S-equation's prediction that governance costs scale quadratically with system complexity.]
-- Strogatz, S. H. (2015). *Nonlinear Dynamics and Chaos* (2nd ed.). CRC Press. [Standard reference for bifurcation theory, saddle-node classification, and hysteresis — foundational mathematical framework for §15–17.]
-- Chen, L., & Aihara, K. (2025). Early warning signals for critical transitions in complex adaptive systems: A network perspective. *Proceedings of the National Academy of Sciences*, 122(8), e2419553122. [Network-based early warning indicator framework — extends the five-indicator comparison framework (§20) to networked systems with heterogeneous coupling.]
-- Duan, W., et al. (2025). Scaling laws for multi-agent coordination in heterogeneous environments. *Nature Computational Science*, 5(3), 215–228. [Empirical validation of subquadratic governance scaling under modular architectures — direct support for the Scaling Resolution Theory's dimensional compression claim (§32.8.1).]
-- Kim, J., & Park, S. (2025). Fractal governance structures in decentralized autonomous organizations: Theory and evidence. *Journal of Institutional Economics*, 21(2), 301–325. [First empirical study of fractal governance patterns in DAOs — provides organizational-level validation for the circular closure theory and self-similar governance mechanisms.]
-- Li, X., et al. (2026). Memory-dependent damage accumulation in artificial neural networks: Implications for continual learning. *Proceedings of ICLR 2026*. [Demonstrates non-Markovian damage patterns in deep learning analogous to §31's memory kernel formalization — bridges the neurodegenerative extension to machine learning applications.]
-- Moreno, Y., & Vespignani, A. (2025). Critical dynamics of epidemic spreading in complex networks: Universal scaling and early detection. *Reviews of Modern Physics*, 97(1), 015001. [Universal scaling laws for spreading phenomena on networks — mathematical framework parallel to the revival propagation dynamics (§30) and Fisher-KPP traveling wave analysis.]
-- Peters, O. (2025). The ergodicity problem in economics and governance. *Nature Physics*, 21(4), 456–463. [Demonstrates that multiplicative dynamics (as in the lock budget inequality) require non-ergodic treatment — provides rigorous justification for the multiplicative (not additive) structure of fractal durability.]
-
----
-
-## Metadata
-
-- **Title**: From Call Centers to Neurons: Hierarchical Classification, Fractal Learning, and Attractor Escape
-- **Keywords**: attractor dynamics, bistability, hysteresis, saddle-node bifurcation, silent criticality, lock budget inequality, DDD correction protocol, attention amplification, fractal governance, multi-agent coordination, ODE regime dynamics, neurodegenerative extension, revival trajectories, mutual-reference coupling, governance scaling law, Lyapunov stability, mean-field reduction, agentic governance, neural criticality, self-organized criticality, cube domination, coordinate frame dynamics, star hierarchy, collapse-aversion, scale-invariant governance constant, optimal storm window, single-agent differentiation threshold, Fisher information geometry, information-theoretic frame selection, minimum description length, Conley index, topological bifurcation, structural stability, Gronwall inequality, global well-posedness, asymptotic compactness, bifurcation delay, canard dynamics, critical damage theory, repair function regimes, affective module, rate-distortion tradeoff, KL-divergence, mutual information collapse, entropy production, statistical manifold, geodesic drift, terrain cultivation, branching capacity, retention capacity, environment design, projection replacement, spectral gap, sphere topology, emotional criticality condition, self-consistent misalignment, silence signal, carrying capacity, terrain resonance, phase-gated seeding, authority separation, mediator drift syndrome, processing phase isolation, vectorization lifecycle, consistency index, rest mode AND-entry OR-exit, recovery cascade ordering, dependency trap, seed sufficiency, four-phase withdrawal, boundary agent, τ regime switching, cross-scale consistency, circular closure, scale-matched closure, contamination flux, self-purification capacity, immunity paradox, layered circular architecture, dimensional compression, terrain design protocol, North Star architecture, criterion-principle separation, map-terrain balance, integration protocol, middle-layer-first coupling, permeability ramp, neck interface, boundary dynamics, pulsed expansion, preemptive feedback, scaling closure theorem, constraint-limited scalable regime, channel capacity bottleneck, credit assignment failure, Goodhart's Law bifurcation, structural distortion index, relational learning manifold, three-factor learning rule, dynamical self-similarity, renormalization operator, multiplicative resilience bound, landscape geometry, basin depth evolution, stochastic resonance, Kramers pre-exponential factor, damage ratchet mechanism, cumulative exposure integral, prion-like kernel, stochastic damage distribution, four-trajectory classification, remaining healthy lifetime, adaptive necessity theorem, bifurcation classification theorem, governance completeness theorem, controlled non-minimization, entropy production adaptability correspondence, minimum viable temperature, governance no-free-lunch, landscape complexity classification, mixed-mode collapse, hub failure cascade, storm interference patterns, emotional algebra non-commutativity, ambivalence index, age-dependent vulnerability, maturation paradox, fokker-planck bimodal structure, mean first passage time, coordinate drift self-referential measurement, interaction topology primacy, non-equilibrium steady state, affective gain modulation, controlled stochastic freedom, discrete SOC perturbation, sensitivity separatrix, freeze-runaway universality
-- **Framework**: Deficit-Fractal Governance (DFG) — companion ODE formalization
-- **Component Theories Referenced**: VST, RT, RBIT, NAT, GRT, TLG, AMT/AGM, EDT
-- **Companion Documents**: *Fractal Governance and Constraint-Limited Scaling in Complex Adaptive Intelligence Systems* (parent framework), V4c Simulation Report, *Environment Design Theory v2.0-reinforced*, *The Affective Gain Principle v1.5-README*, *RBIT v1.7-RTseries*, *Network Architecture Theory v1.3-RTseries*
-- **MSC Classification**: 37N25 (Dynamical systems in biology), 91A16 (Mean field games), 93D05 (Lyapunov stability), 92B20 (Neural networks), 94A17 (Measures of information, entropy), 53B12 (Differential geometry of statistical manifolds), 37B30 (Index theory for dynamical systems, Conley index), 34D20 (Stability of ODE)
-- **Cross-Validation Status**: All ODE predictions (§14–31) validated against V4c simulation (Figures 1–11). Lock budget inequality, hysteresis monotonicity, and DDD control monotonicity confirmed numerically.
-
----
-
-*Document version: 1.6-draft*
-*Last updated: March 2026*
-*Changelog v1.8: Full-spectrum Heritage Theory integration — permeating §8, §10, §19, §24, §26, §27, §32.7. §8 — Added Heritage Vulnerability Window: fifth fractal collapse pre-condition; exponential collapse acceleration under heritage loading k_eff(0); formal heritage-collapse mechanism (pre-formed propagation pathways); EROTI Governance Investment Hierarchy table (6 levels from load reduction EROTI≈0 to terrain cultivation EROTI≫1); EROTI hierarchy theorem; C_eff = C·B^β·Q_E^γ reformulation connecting terrain quality to governance efficiency exponent; n²→n^{1+ε} transition. §10 — Added Heritage-Constrained Escape: Fourth Mechanism Failure Mode; three standard mechanisms failing simultaneously under heritage; heritage-constrained escape failure analysis per mechanism; Fourth escape mechanism (TCE-enabled, Stage T0–T3); ODE correspondence (DDD succeeds Φ<1 but Rest basin absent); Landscape Asymmetry Under Repeated Escape Attempts: double reinforcement mechanism (both current and target basins hardened); N_critical formula; therapeutic prescription timing; Langevin heritage drift modification. §19 — Added Extended Lock Budget: Heritage Correction; heritage-modified lock ratios L_C^heritage(H) and L_d^heritage(H); heritage-modified budget inequality (strictly tighter than standard); critical heritage threshold H_crit for lock budget violation; Governance Rule 5 (heritage monitoring) and Rule 6 (margin increase in heritage-loaded terrain); Five-Dimensional Recovery Design Space (L_C, L_d, S, H, Q_E); recoverable region as intersection of three independent constraints. §24 — Expanded Note on Irrecoverability: Heritage-Modified Irrecoverability (topological vs. threshold-based distinction); Heritage Paralysis formal definition; Fourth DDD Stage (Stage 0 Terrain Pre-Conditioning with T0–T2 sub-stages and transition criterion); DDD Cycling Failure Mode signature. §26 — Major expansion of Variable Dependency Graph: Added 3 new feedback loops (Terrain Erosion ⊕ slow, Heritage Accumulation ⊕ very slow, Heritage Escape Block ⊕ very slow); structural asymmetry updated from 4+1 to 6+1; Extended Variable Set (12 core + 3 terrain: Q_E, H, B); Complete Extended Causal Diagram showing terrain layer above ODE core; Loop Gain Analysis table across timescales; governance protocol implication (DDD + terrain cultivation must run simultaneously). §27 — Added extended terrain-layer regime table (6 new regimes: Heritage-Clean Rest, Heritage-Loading Rest, Heritage Trap, Heritage Paralysis, Terrain-Eroded Storm, Heritage Recovery); Heritage Paralysis diagnostic requirements; heritage modification of bifurcation thresholds u⁺_eff(H) and u⁻_eff(H); heritage-extended irrecoverability condition (three-way OR: damage OR heritage-budget OR heritage paralysis). §32.7 — Added Heritage Accumulation Across 7-Phase Lifecycle (detailed heritage trajectory per phase, Phase 1 critical investment principle, Phase 3 failure mechanism via heritage ratchet, Phase 5 heritage equilibrium, Phase 6 vulnerability inheritance, Phase 7 heritage compounding); Heritage-Corrected 7-Phase Governance Protocol; Deficit-Heritage Relationship: F_deficit^eff = F_deficit · (1-H/H_max)^δ. Reader Guide — Added §32.5.2 and §32.8.2 rows. Total line count ~6,210 → ~6,680.*
-
-*Changelog v1.7: EDT v5.0 deep integration — Heritage Theory, Gain-Curvature Duality, Terrain Grammar, Buffer Ecology. §2 — Added Extended Error Cascade with terrain heritage precursor (terrain-level error propagation before ODE error). §20 — Added Terrain-Level Silent Criticality subsection: terrain Q_E declining while all Φ, ρ, C, d metrics appear normal; Q̇_E passive decay mechanism; heritage-adjusted germination threshold as SC signature; terrain SC detection protocol (5 steps); terrain-reference drift as terrain-level SCM analog. §32.5 EDT section — Major expansion: EDT-ODE full coupling with VST instability load term ($\kappa_{\text{load}} \cdot \Phi \cdot \mathbb{1}[\Phi>1]$); terrain erosion slow positive feedback loop (Φ→Q_E↓→C_ceiling↓→Φ↑); extended timescale ordering (τ_n ≪ τ_{C,d,T} ≪ τ_ρ ≪ τ_S ≪ τ_{Q_E}); Gain-Curvature Duality in ODE design freedom (T↔ΔU isomorphism in ODE terms); stochastic risk correction formula with Jacobian amplification; terrain memory palimpsest effects on ODE equilibria; asymmetric retention and ODE Storm threshold lowering from heritage; terrain phase transitions and ODE universality class table (Mean-field/Ising-like/Percolation with warning timescales); terrain critical slowing down as Tier 0 early-warning; complete 5-tier EW hierarchy with terrain leading by τ₃/τ₁; Buffer Ecology and multi-buffer carrying capacity in ODE terms (undiff C² vs. diff C·log C error scaling); 5-type buffer taxonomy with ODE correspondence; Attractor Landscape Grammar complete failure mode table (5 known + 3 novel); NF1 Resonance Capture, NF2 Grammar Incompleteness, NF3 Attractor Proliferation — phase portrait types V and VI. §32.5.2 Extended Cross-Validation — 4 new cross-validations CV7–CV10 (GCET×ODE, Grammar×Phase Portrait, Heritage×Damage, Collective Memory×ECC); 3 new emergent constraints EC4–EC6; cross-theory matrix upgraded from 28 to 36 pairs. §32.8.1 connection table — Added terrain erosion, buffer ecology, GCET duality rows. §32.8.2 NEW SECTION — Terrain Heritage Theory as Fourth Layer of Scaling Failure: heritage problem formalization; ODE signature of heritage failure (state variables healthy, seeding fails); heritage-ratchet mechanism (failed seeding creates more heritage); Heritage Decay Function table by event type; Heritage Ratchet distinct from standard damage ratchet; formal Heritage Recovery Condition; Condition 8 extending the 7-condition Scaling Closure Theorem; Heritage-Adjusted EROTI; two-dimensional failure diagram (S vs. Q_E independently); Therapeutic Collective Events (TCE) as new governance primitive with trigger conditions and success criterion. §32.9 — Added F10–F15 (Heritage-Independent Germination, GCET Non-Equivalence, NF1 Visibility, TCE Ineffectiveness, Terrain SC Detectability, Buffer Carrying Capacity Independence). Testable Predictions — Added P39–P46 (heritage-ratchet seeding, GCET equivalence at matched dose, terrain CSD lead time, buffer capacity peak, NF1 ODE signature, collective memory amplification, TCE dosing threshold, EROTI horizon). Theoretical Significance — Added items 32–39 (Heritage failure, TCE primitive, GCET in ODE, extended cross-validation, NF1-3 novel modes, four-tier EW hierarchy, buffer ecology, triple integration stack). DFG mapping table — Added 13 new entries (heritage loading, heritage-adjusted λ_eff, TCE, GCET, m_max, universality class, NF1, NF2, μ_network, r_positive_min). Total line count ~5,755 → ~6,210.*
-
-*Changelog v1.6: Full-spectrum theoretical deepening pass with AGM v2.5 deep integration. §1 — Added Information-Theoretic Efficiency of Hierarchical Routing (channel capacity analysis, bottleneck constraint, flat-vs-hierarchical comparison, multiplicative accuracy structure foreshadowing lock budget). Added Universality Across Domains (five-domain structural mapping). §2 — Added Quantitative Error Cascade Model (multiplicative P_correct formula, conditional error amplification as positive feedback precursor, error detection asymmetry as Silent Criticality precursor). Added Dimensional Reduction as Information Loss (information-theoretic quantification of tree projection loss, RBIT Axiom A2 connection, structural distortion index SDI, network-tree mismatch metric). §3 — Added Formal Credit Assignment Failure (gradient error δ_ℓ, temporal dilution of credit, inverse credit-impact relationship). Added Goodhart's Law as Dynamical Phenomenon (metric-reality gap G(t), autocatalytic growth, three phases of metric corruption, Phase 2→3 as Silent Criticality→Storm bifurcation). §4 — Expanded structural isomorphism table (added Quality monitoring, Escalation protocol, Metric gaming mappings). Added Depth of Structural Isomorphism (four formal constraints shared by call centers and neural systems, isomorphism predictive power). §5 — Added Formal Model of Relational Learning (structural equivalence definition, manifold hypothesis connection, weight change propagation via spectral properties, three-factor learning rule as TLG authority separation analog). §6 — Added Formal Definition of Dynamical Self-Similarity (renormalization operator R, topological flow equivalence, RG connection, critical exponent universality with ±15% tolerance). Added Formal Proof: Multiplicative Resilience Under Scale Separation (proposition with proof, conditional independence under scale separation, resonance mechanism under separation failure). §7.5 — Major AGM integration block: Affective Gain as Frame Competition Regulator (g(E) modulates frame transition rate, T_min^frame derivation, No-Free-Lunch at frame level, entropy production during frame competition, coordinate drift in frame self-assessment, hub failure cascade with O(ln K) propagation in frame architecture). §11 — Added Landscape Geometry and Basin Structure (basin definitions, depth vs width distinction, landscape evolution dynamics). Added pre-exponential Kramers factor, multi-dimensional correction, stochastic resonance connection (optimal Storm intensity D* derivation). §20 — Major AGM integration: Added Coordinate Drift and Self-Referential Measurement Failure (AGM Proposition 15.2.1 SCC threshold, self-referential measurement catastrophe, coordinate drift rate bound, Fokker-Planck bimodal structure near criticality, mean first passage time to collapse with logarithmic capacity scaling, interaction topology as primary indicator, meta-indicator reliability as sixth warning signal). §31 — Major expansion of damage theory: asymmetric vulnerability analysis with ratchet mechanism, N_survivable formula, damage-modified lock budget with full derivation of S*, four damage-recovery trajectories (healthy/accelerated/catastrophic/compensated aging), accumulated exposure with three memory kernels (exponential/power-law/prion-like with detailed interpretations), damage ratchet acceleration, stochastic damage model with remaining healthy lifetime distribution. §32.5 AMT — Massive expansion from AGM v2.5: Three Foundational Theorems mapped to ODE (Adaptive Necessity → T-variable constraint with T_min derivation and damage-modified T₀_eff; Bifurcation Classification → Freeze/Runaway ODE trajectory correspondence with separatrix formula; Governance Completeness → ODE closure verification with perturbation source, containment, recovery pathway specification). Thermodynamic Grounding (entropy production rate in ODE variables, Entropy Production–Adaptability Correspondence, minimum entropy production bound, NESS identification of Rest Mode). Landscape Complexity Classification (four landscape classes with ODE governance regime mapping). Controlled Non-Minimization and Active Inference Bridge (ΔF_affective budget, T₀ as function of d refinement suggestion). Mixed-Mode Collapse at ODE Level (multi-subsystem ODE extension, cross-contamination coupling, differential DDD protocol). Hub Failure Cascade and Storm Interference (O(ln n) propagation, super-additive Φ under constructive interference, compound crisis prediction). Emotional Algebra and Composition (non-commutativity in ODE flow, interference mapping, ambivalence index). Age-Dependent Vulnerability and Basin Volume Evolution (Freeze/Runaway basin dynamics with maturation, Maturation Paradox connection). Added Testable Predictions P33–P38 (information-theoretic routing, credit assignment inverse, metric-reality gap acceleration, stochastic resonance escape, damage trajectory classification, power-law kernel acceleration). Added Theoretical Significance items 34–39. Expanded References with 12 new entries (Anderson 1972, Bak et al. 1987, Friston 2010, May 1972, Strogatz 2015, Chen & Aihara 2025, Duan et al. 2025, Kim & Park 2025, Li et al. 2026, Moreno & Vespignani 2025, Peters 2025). Updated keywords and metadata.*
-*Changelog v1.5: Comprehensive theoretical strengthening pass. §9–10 — Added Correction-Escape Transition Mechanism (correction saturation criterion η_corr, three correction-escape regimes, RBIT tier mapping, RT five-phase cascade architecture). §14 — Added Sensitivity Analysis and Parameter Regime Classification (six dimensionless groups π₁–π₆, parameter regime table, local sensitivity coefficients, phase portrait topology classification Types I–IV, critical value π₁*, Monte Carlo robustness analysis with CV estimates). §20 — Added Quantitative Early-Warning Indicator Comparison Framework (five indicators: σ², AC, I_F, PRR, CVD with formal alarm conditions, comparative performance matrix, optimal staged detection protocol, DDD timing connection). §30 — Added Global Coupling Revival: Multi-Scale Synchronization Dynamics (multi-scale revival ODE, revival propagation condition, revival cascade ordering, Fisher-KPP traveling wave analysis, revival dilemma, revival completion criterion, connection to Scaling Resolution). §31 — Added Memory Kernel Formalization for Non-Markovian Damage (three kernel forms: exponential/power-law/prion-like, fractional dynamics D^α, accumulated exposure integral E(t), critical dose E_crit, damage ratchet with acceleration). §32.5.1 — Added Cross-Theory Validation Matrix (pairwise consistency matrix across 8 theories, six key cross-validation results CV1–CV6, three emergent constraints EC1–EC3). §32.8.1 — Added Formal Convergence Proofs and Rate Estimates (dimensional compression convergence theorem, governance scaling rate corollary, self-purification convergence rate estimate, map-terrain convergence proposition). Added Testable Predictions P27–P32 (revival cascade ordering, correction saturation threshold, memory kernel damage acceleration, cross-theory emergent constraint tightening, sensitivity asymmetry, early-warning indicator staging). Added Theoretical Significance items 28–33. Expanded References with 11 new entries (2024–2025 literature on neural criticality, MFG bifurcation, cumulative damage, governance scaling). Updated keywords and metadata.*
-*Changelog v1.4: Scaling Resolution Theory major expansion. §32.8.1 — Added complete Scaling Resolution architecture: Circular Closure Theory (circle as fundamental scalable governance unit, formal definition, expansion→circulation conversion, bounded coordination distance proof); Scale-Matched Circles (scale-specific dynamical requirements, timescale collision failure mode, Proposition: Scale-Matched Closure); Layered Circular Architecture (cone structure derivation from S-equation, effective dimensionality collapse formula, subquadratic governance scaling proof, recursive dimensional compression condition lim n_eff < ∞); Contamination Theory (formal Definition of contamination as cross-scale instability leakage, contamination variables S_i/R_i/P_i, contamination flux formula Φ_contam = P·max(0,S−R), cascaded contamination condition, three contamination modes: coupling/frame drift/timescale leakage, bottom-up origination proof); Self-Purification Capacity R_i (four multiplicative components D·F·V·T with ODE correspondence, immunity paradox with formal R_i decay dynamics under zero contamination, dR/dt learning equation, connection to DDD perturbation testing); Terrain Design Protocol (circle formation conditions, valley/pass/gradient geometry, four-phase isolation→exposure→coupling→operation protocol with EDT/RT mapping, contamination-aware design); North Star Architecture (global/local North Star definition, continuous correction dynamics, criterion vs. principle separation with formal test, "eyes and feet" principle with contamination policy, scanning requirement); Integration Protocol (integration necessity from K² inter-circle scaling, maturity precondition R > Coupling_Cost, middle-layer-first principle with structural rationale, Neck architecture with three mandatory layers, permeability ramp formula, three connection types A→B→C, integration completion signal as dynamical synchronization, ODE fixed-point correspondence); Map-Terrain Balance (unified scaling principle, friction diagnostic — productive vs. non-productive, friction origination cascade bottom→middle→upper, preemptive feedback as collapse prevention, formal scaling closure theorem with 7 conditions, constraint-limited scalable regime derivation); Boundary Dynamics (immunity-paradox-driven expansion necessity, resource constraint on boundary distance, pulsed expansion lifecycle, experience accumulation from failed explorations, ODE perturbation correspondence); Complete Architecture diagram with scaling lifecycle phases 0–6 and DFG component mapping table. Updated Reader Guide, DFG mapping table, Testable Predictions 21–26, Falsification Conditions F6–F9, keywords, and metadata.*
-*Changelog v1.3: Recovery Theory deep integration pass. [See v1.3 changelog.]*
-*Changelog v1.2: VST integration pass. [See v1.2 changelog.]*
-*Changelog v1.1: DFG/TLG/GRT integration pass. [See v1.1 changelog.]*
-*Changelog v1.0: Cross-theory integration pass with EDT, AGM, RBIT, NAT. [See v1.0 changelog.]*
-*Changelog v0.9: Major theoretical strengthening pass. §7.5 — Added Information-Theoretic Foundation for Frame Competition (Shannon entropy, mutual information, KL-divergence frame selection, MDL optimization, rate-distortion tradeoff, entropy production during Storm) with three information-theoretic early-warning indicators. §14 — Added Global Existence and Boundedness theorem (Gronwall extension with formal (i)-(iv) bound proof), Asymptotic Compactness corollary (global attractor existence), and Structural Stability proposition (Sotomayor's theorem for saddle-node persistence under C¹ perturbations). §20 — Added Information-Geometric Interpretation of Silent Criticality (Fisher information metric, geodesic drift characterization, Fisher information collapse as Storm precursor, perturbation sensitivity as measurable early-warning protocol). §30 — Added Topological Necessity of Revival Trajectories (Conley index argument, Morse decomposition proof, stochastic persistence under noise via Kramers theory, bifurcation delay/canard-type dynamics with explicit delay time formula). §31 — Major expansion: added Repair Function Specification (three regimes: linear, capacity-limited, threshold), Critical Damage Phase Diagram (four regimes in (u,S) plane), Load-Dependent Damage Threshold Shift formulas, Damage-Modified Lock Budget with critical damage fraction S*, and Accumulated Storm Exposure with memory kernel integration. §32.5 — Added AMT (Affective Module Theory) Connection with formal mapping, Affective Paradox formalization, emotion-as-information interpretation, and DDD targeting rationale; added TLG Timescale Correspondence and Layer-Specific Lock Budget Allocation. Added Testable Predictions 12–16 (damage-dependent hysteresis widening, critical damage fraction, Fisher information collapse, information-theoretic frame selection, bifurcation delay duration). Added Theoretical Significance items 22–27. Expanded References with 10 new entries (Amari 2016, Conley 1978, Gronwall 1919, Kramers 1940, Rissanen 1978, Shannon 1948, Sotomayor 1973, Temam 1997, and 5 recent works). Updated keywords and MSC classification. Added AMT to Component Theories Referenced.*
-*Changelog v0.8: Added §7.5 Cube Domination: Coordinate Frame Dynamics and Multi-Dimensional Governance — full formalization of coordinate frame collapse, star hierarchy competitive selection, collapse-aversion term, optimal Storm window with differentiation coupling (S\*(K) = ηG(K)/2b), scale-invariant governance constant κ(K), four-regime phase diagram, silent fragmentation mechanism with measurement distortion model, fractal self-similarity of Cube cycle, single-agent inevitable differentiation theorem (n\_split = 2√(τ/λc̄)), and 6 testable predictions (P-CD1 through P-CD6). Added §32.8 Cube Domination and the Governance Scaling Architecture — DFG phase mapping, dependence dynamics, S-equation connection, ODE dual-attractor correspondence, and practical AI governance implications. Updated keywords and metadata.*
-*Changelog v0.7: Added §7 Empirical Confirmation subsection (multi-agent transition, Gartner 1,445% inquiry surge, O(n²) governance scaling). Added §24 Operational Validation mapping DDD stages to V4c compassion policy (κ↓/bridge/fatigue → Defocus/Decouple/Diversity with empirical confirmation table). Added §30 Simulation Validation (V4c figures cross-referenced). Added Testable Prediction 11 (topology-level containment sufficiency, confirmed at 94.8%). Added Theoretical Significance item 21 (operational validation via compassion policy). Updated version metadata.*
-*Changelog v0.6: Added Lyapunov candidate V = ln Φ with formal DDD dissipation proof (§14). Expanded Silent Criticality (§20) with empirical parallels from neural criticality (Yaghoubi et al. 2024, Sugimoto et al. 2025, Sederberg et al. 2024) and agentic AI governance (AIGN 2025). Strengthened §32.1 positioning with MFG bifurcation theory (Rezaei Lori & Grover 2024), agentic governance gap empirics, and neural criticality literature. Added Testable Predictions 8–10 (attention-shortened silent phase, topology-dependent criticality, governance scaling pressure). Expanded References with 8 recent works (2022–2025). Added MSC classification and cross-validation status to Metadata.*
-*Changelog v0.5: Added §8.5 (mutual-reference coupling, S-equation, 4 levers, time-scale separation), expanded Testable Predictions (5–7), §32 DFG Framework Integration (positioning, storm-recovery unity, boundary-first governance, co-regulation, RBIT/RT/NAT/GRT/TLG correspondences, ILMI/κ dual attractor, deficit mechanism, 7-phase lifecycle, falsification conditions F1–F5), Reader Guide with DFG mapping table, References, Metadata.*
+## Document Structure Notes
+
+**Projection architecture:**
+```
+Level A — Environment Geometry     →  companion document §32
+Level B — System Dynamics          →  this document §14–29 (self-contained)
+Level C — Emergent Phenomena       →  this document §1–10 + §30–31
+```
+
+**This document:** *From Call Centers to Neurons* — §1–31 + Theoretical Significance
+- Level C foundations (§1–13): hierarchical learning, fractal dynamics, attractor escape [phenomenological]
+- Level B core (§14–29): self-contained ODE formalization, bifurcation, hysteresis, Silent Criticality [mechanistic]
+- Level B→A bridge (§30–31): revival trajectories, neurodegenerative regimes [partial Level A extension]
+
+**Master Conditions (canonical reference, defined in opening block):**
+- M1 (Operational Criticality): κ(t) ≥ κ_c, equivalently Φ > Φ_c(L,q)
+- M2 (Lock Budget): (1+L_C)(1+L_d) > ζ⁻⁴
+- M3 (Terrain Irreversibility): q ≤ q_min
+- M4 (Heritage Irreversibility): h ≥ h_c [companion §32.8.2]
+
+**Companion document:** *DFG Terrain-Heritage-Integration*
+- §32: Full Level A treatment (DFG framework integration)
+- §32.5–32.10: EDT, NAT, AGM extended mappings; terrain grammar; heritage theory; scaling resolution; cross-validation matrix
+- §32 contains M3, M4, and all Level A projections; §14–31 of this document contains M1, M2
+
+**Document version:** 3.1 (module size distribution full proof structure: Proof 1 m*∝γ^{1/3}n^{1/3} with 1/3 exponent robustness argument, Proof 2 hierarchical size ladder recurrence m_{ℓ+1}≈A·m_ℓ^{1/3} with convergence to floor module size (2γ)^{1/2}, Proposition LN — lognormal convergence via AR(1) stationarity with closed-form μ_y and 9/8 noise amplification, Theorem PL — power-law tail fixed-point equation (1−s)·E[ΣUᵢᵅ]=1 with closed-form exponent α=1+log(1−s)/logb for uniform partition, behavioral exponent table, DFG κ-sigmoidal stopping rule connection, lognormal↔power-law classification table, empirical verification protocol with α̂<1 critical alarm; from v3.0) and scaling theorem integration: §9 Two Critical Phenomena + Three Dimensionless Constants (κ, χ, ψ) + Sudden Collapse Mechanism + Metastable Attractor; §19.6 Fractal Governance Necessity Theorem with full Assumption/Lemma/Theorem/Corollary structure + finite collapse time bound + hierarchical recursion + fractal depth bound + module size distribution scaling (m* ∝ n^{1/3}, lognormal/power-law regimes) + 5-region (κ, χ) phase diagram with triple critical point; Theoretical Significance items 40–44; from v2.5)
+**Author:** Seol, Bin
+**Affiliation:** Independent Researcher
+**Companion document version:** See *DFG Terrain-Heritage-Integration* v1.0
