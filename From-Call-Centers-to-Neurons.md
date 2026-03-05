@@ -17,7 +17,10 @@ The core insight: **the call center was never the real subject.** It served as a
 | §25–29 | Symbol harmonization, dependency graph, Jacobian, algebraically explicit Δu | Formal completion and cross-validation |
 | §30–31 | Revival trajectories (topological necessity), neurodegenerative extension (critical damage theory) | Phase boundary dynamics, irreversible damage, and structural degradation |
 | §32 | **DFG Framework Integration:** Structural origin of instability, component theories (incl. AMT), formal definitions | Bridge to full DFG framework |
+| §32.5.2 | **Extended Cross-Validation (EDT v5.0):** GCET duality, terrain grammar × phase portrait, heritage × damage, collective memory × ECC; EC4–EC6 | 36-pair validation matrix; 6 emergent constraints |
+| §32.7 | **Heritage-Corrected Lifecycle:** Heritage accumulation across 7 phases, deficit-heritage modulation, heritage-corrected governance protocol | Heritage as woven-in lifecycle variable, not external add-on |
 | §32.8.1 | **Scaling Resolution:** Circular closure, contamination theory, self-purification dynamics, terrain design, North Star architecture, integration protocol, map-terrain balance | Constructive scaling solution — closes the "how" gap |
+| §32.8.2 | **Terrain Heritage Theory:** Heritage as fourth scaling failure axis, Heritage Ratchet, TCE governance primitive, Condition 8 of Scaling Closure Theorem | Heritage failure independent of state-variable metrics |
 
 For paper submission: §14–29 form the self-contained technical manuscript; §1–10 can serve as a motivating appendix or extended introduction. §32 provides the theoretical embedding within the broader Deficit-Fractal Governance framework.
 
@@ -55,11 +58,20 @@ This document provides one **analytical projection** of the Deficit-Fractal Gove
 | Map-Terrain balance | |Map − Terrain| = ε — fundamental scaling diagnostic |
 | Neck (integration interface) | Purifier + Buffer + Translator — controlled inter-circle coupling |
 | Boundary expansion | Revival trajectory (§30) — mature system exploration dynamics |
+| Heritage loading H(x,t) | Accumulated negative terrain curvature from past collective events — §32.8.2 |
+| Heritage-adjusted λ_eff | Germination threshold elevated by past failure events — §32.8.2 |
+| Therapeutic Collective Event (TCE) | Positive curvature injection to counteract heritage loading — new governance primitive §32.8.2 |
+| GCET (Gain-Curvature Equivalence) | T ↔ ΔU duality — terrain and affective interventions are isomorphic — §32.5.2, §32.10 EDT |
+| m_max (buffer carrying capacity) | C^(1/2)·log(C)/K_buffer — maximum sustainable buffer count — §32.10 EDT |
+| Terrain universality class | Mean-field / Ising-like / Percolation — governs transition sharpness and EW lead time — §32.10 EDT |
+| NF1 Resonance Capture | Terrain limit cycle at ω_agent — novel failure mode invisible to scalar Φ — §32.5.2 |
+| NF2 Grammar Incompleteness | Cross-layer transfer failure with within-layer health — terrain-level Silent Fragmentation — §32.5.2 |
+| μ_network (collective memory coeff.) | n_cascade · μ_agent — collective event terrain amplification — §32.10 AGM |
+| r_positive,min (therapeutic rate) | Minimum rate of positive collective experiences for heritage recovery — §32.8.2 |
 
 ---
 
 ## 1. Hierarchical Classification as a Universal Pattern
-
 ### The Design Principle
 When the space of possible inputs is vast (potentially infinite task types), no single classifier can handle them all. The solution is **progressive narrowing**:
 
@@ -974,11 +986,64 @@ Control theory             plant dynamics         integral controller
 Neural systems             rapid firing loops     metabolic constraints
 Multi-agent systems        policy update loops    governance terrain
 This ODE model             n, C, d equilibration  ρ evolution (slowest)
+EDT v5.0 extension         ρ, C, d evolution      Q_E terrain quality (slowest of all)
 ```
 
----
+### Fractal Collapse Pre-Conditions: The Heritage Vulnerability Window
 
-## 9. Error Correction in Neuron Systems
+Standard fractal collapse analysis identifies four synchronization conditions (above) as sufficient for collapse. EDT v5.0 Heritage Theory reveals a **fifth pre-condition** that determines how quickly collapse occurs once triggered: the **Heritage Vulnerability Index** H(x,t).
+
+A system with high heritage loading (H > H_threshold) enters the synchronization conditions significantly faster under equivalent external perturbation, because the terrain's negative curvature structure **amplifies the initial coupling** rather than absorbing it:
+
+```
+Time to collapse without heritage loading:   t_collapse ≈ τ_sync / β_s
+Time to collapse with heritage loading H:    t_collapse(H) ≈ (τ_sync / β_s) · exp(−γ_H · H)
+```
+
+The exponential acceleration means that heritage-loaded systems can collapse in a fraction of the time predicted by standard bifurcation analysis. This resolves a persistent empirical discrepancy: real-world organizational collapses often occur much faster than ODE-based models predict — the gap is attributable to unaccounted heritage vulnerability.
+
+**Heritage-collapse mechanism.** Under heritage loading, the terrain curvature landscape has existing negative channels that provide **pre-formed propagation pathways** for coupling amplification. Instead of building mutual-reference coupling from random initial conditions (slow), the coupling cascade follows pre-existing pathways in the terrain memory (fast). The ODE analogy: heritage loading effectively pre-initializes k(0) > 0 even from a nominal Rest state — the coupling is not truly at zero because the terrain structure encodes prior coupling patterns.
+
+**Formal heritage vulnerability correction to ODE:**
+
+```
+Effective initial coupling:   k_eff(0) = k(0) + k_heritage(H)
+k_heritage(H) = (1 − exp(−H/H_scale)) · k_max
+```
+
+For H ≪ H_scale: k_heritage ≈ k(0) (heritage negligible)
+For H ≫ H_scale: k_heritage → k_max (heritage dominates; system starts near Storm regardless of nominal state)
+
+This provides the ODE-level mechanism by which past organizational trauma makes future Storms qualitatively easier to enter — not through changed parameters but through heritage-modified effective initial conditions.
+
+### Governance Investment Hierarchy: EROTI in Fractal Systems
+
+The four intervention levers (reduce n, reduce α, increase β, increase C) have been identified. EDT v5.0 establishes that these levers have **radically different EROTI (Energy Return on Terrain Investment)** that determines optimal governance allocation:
+
+```
+Intervention                EROTI            Time horizon         Reversibility
+──────────────────────────────────────────────────────────────────────────────────
+Reduce n (limit agents)     ~0                Immediate            High
+Reduce α (decouple roles)   Low (linear)      Short-medium         High
+Increase C (add capacity)   Medium            Medium               Medium
+Improve β (governance arch) High (supralinear) Long                 Low
+Design terrain B (branching) Very high (≫1)   Permanent            Very low
+Cultivate Q_E (terrain)      Highest           Permanent            Lowest
+```
+
+**EROTI hierarchy theorem (informal):** In the long run, every dollar of governance energy invested in terrain design (B, Q_E) produces returns that compound, while every dollar invested in state-variable correction (add C, limit n) produces returns that decay as soon as intervention is withdrawn.
+
+**Strategic implication for fractal governance:** The fractal durability $R_{\text{total}} = \prod_\ell R_\ell$ increases fastest when investment flows to the lowest-EROTI layer first (terrain → branching → governance architecture → capacity → decoupling → load reduction). The typical organizational instinct inverts this hierarchy — responding to collapse with immediate load reduction (lever 1, EROTI ~0) rather than with terrain investment (lever 5, EROTI ≫1).
+
+**Terrain cultivation as n²→n^{1+ε} transition.** The S-equation denominator $C(t)^\beta$ can be reformulated as:
+
+```
+Effective governance: C_eff = C(t) · B^β · Q_E^γ
+```
+
+The terrain quality Q_E multiplies the governance efficiency exponent. A system with low Q_E but high C has the same effective governance as a system with high Q_E and low C — but the former requires continuous C investment while the latter is self-sustaining. This is the formal basis for why terrain cultivation dominates all other interventions at long timescales.
+
+---
 
 ### RBIT Foundation: Why Errors Are Structural
 
@@ -1107,7 +1172,76 @@ Both components are necessary. Neither alone suffices.
 
 This is, fundamentally, a **Recovery Theory** problem.
 
----
+### Heritage-Constrained Escape: The Fourth Mechanism Failure Mode
+
+The three standard escape mechanisms (perturbation, stochastic, landscape) all share an implicit assumption: **the terrain outside the current basin is neutral**. If the terrain outside is also negatively curved — due to heritage loading from previous failed escape attempts at those locations — then all three mechanisms can fail simultaneously.
+
+**Heritage-constrained escape failure:**
+
+```
+Mechanism 1 failure: External perturbation reaches alternative basin, but
+                     heritage loading raises ΔU_alternative, making the
+                     alternative basin shallower than expected → system returns
+                     
+Mechanism 2 failure: Increased noise reaches basin boundary, but heritage
+                     channels direct noise toward previously-failed escape
+                     directions → stochastic escape attempts cluster in
+                     heritage-loaded regions where ΔU is maximized
+                     
+Mechanism 3 failure: New experience attempts to create alternative basin, but
+                     heritage loading raises λ_eff,heritage beyond seeding
+                     capacity → basin cannot be established
+```
+
+All three failures share a common diagnostic: **escape attempts cluster at a predictable rate without success**, declining in frequency as each failed attempt adds more negative heritage at the attempted location. This produces a characteristic signature: decreasing escape attempt rate over time (not constant, as standard stochastic models predict), followed by apparent acceptance of the locked state.
+
+**Fourth escape mechanism (EDT v5.0 TCE-enabled):** Therapeutic Collective Events (TCE) provide a route that bypasses heritage constraints by **injecting positive curvature at target locations before escape is attempted**:
+
+```
+Stage T0:  Identify target alternative basin location x_target
+Stage T1:  Administer TCE focused on x_target (positive curvature injection)
+Stage T2:  Allow λ_eff,heritage(x_target) to decline below seeding threshold
+Stage T3:  Execute standard escape attempt (mechanism 1, 2, or 3)
+           → Success rate now equivalent to heritage-neutral terrain
+```
+
+The TCE mechanism does not change the barrier height ΔU between current basin and x_target. It changes the **terrain quality at x_target** so that the alternative basin can be established once the system reaches it. Without this preparation, escape succeeds in crossing the barrier but fails to establish a stable alternative — the system returns to the original attractor.
+
+**ODE correspondence:** Heritage-constrained escape corresponds to the scenario where DDD successfully achieves Φ < 1 (correct escape from Storm) but the subsequent Rest Mode is unstable (ρ̇ < 0 due to terrain degradation at the Rest fixed point location). The system transits through Φ < 1 without settling — it crosses the barrier but finds no stable basin on the other side. TCE pre-stages the target basin by raising Q_E at the Rest fixed point location before DDD execution.
+
+### Landscape Asymmetry Under Repeated Escape Attempts
+
+Each failed escape attempt modifies the landscape asymmetrically:
+
+```
+Effect on current basin:         ΔU_current ↑ (current basin deepens)
+                                 — repeated failed escape reinforces the current attractor
+                                 
+Effect on attempted target:       ΔU_alternative ↑ (alternative becomes harder to reach)
+                                 — heritage loading at target raises effective barrier
+                                 
+Net effect on escape probability: P_escape(t) → 0 superexponentially
+```
+
+This **double reinforcement mechanism** explains why systems that have failed to escape multiple times eventually stop attempting escape entirely — a state that appears indistinguishable from voluntary acceptance but is structurally a heritage trap.
+
+**Therapeutic prescription:** Interrupt the double reinforcement loop before N_critical failed attempts:
+
+```
+N_critical ≈ ΔU_max / (η_negative · A_typical) 
+```
+
+where η_negative · A_typical is the heritage loading per failed attempt. After N_critical attempts, heritage loading at the target location exceeds the maximum achievable positive curvature injection from TCE — escape becomes permanently blocked without structural terrain reconstruction.
+
+### Connection to the ODE's Stochastic Extension
+
+The escape analysis connects directly to VST §3.2.4's Langevin form $dS = \mu(S,t)dt + \sigma_0 S^\gamma dW(t)$. Heritage loading modifies the drift term $\mu(S,t)$ by adding a history-dependent correction:
+
+```
+μ_heritage(S, t) = μ(S, t) + H(t) · ∂H/∂S
+```
+
+The heritage gradient $\partial H/\partial S$ acts as an additional drift force pushing the system away from heavily loaded regions of state space. In the bistable ODE, this manifests as an effective shift of the saddle point location — the barrier appears to move toward the current attractor position, making escape geometrically harder even without any change in the nominal landscape parameters.
 
 ## 11. Mathematical Formalization: Attractor Dynamics
 
@@ -1926,6 +2060,61 @@ Adding buffering scales increases durability superlinearly when each scale maint
 
 > *In this framework, "fractal durability" does not mean geometric fractals in the state space; it means self-similar buffering rules repeated across scales, whose recovery margins compound multiplicatively.*
 
+### Extended Lock Budget: Terrain Heritage Correction
+
+The standard lock budget operates on state-variable parameters (αC, νC, αd, νd). EDT v5.0 reveals that terrain heritage loading H independently degrades the **effective recovery rate** αC_eff and **effective diversity generation** αd_eff, introducing a heritage-modified lock budget:
+
+```
+L_C^heritage(H) := ν_C / (α_C · (1 − H/H_max)^γ_C)     (heritage inflates effective capacity lock)
+L_d^heritage(H) := ν_d / (α_d · T₀ · (1 − H/H_max)^γ_d)  (heritage inflates effective diversity lock)
+```
+
+The heritage correction $(1-H/H_{\max})^{\gamma}$ reduces the effective recovery rate because negatively curved terrain makes it geometrically harder to rebuild capacity and diversity — more governance energy is consumed overcoming heritage barriers rather than producing net recovery.
+
+**Heritage-modified lock budget inequality:**
+
+```
+(1 + L_C^heritage(H))(1 + L_d^heritage(H)) ≤ ζ^{−4}
+```
+
+This inequality is **stricter** than the standard lock budget: for any H > 0, the left side is larger, leaving a smaller margin before the constraint is violated. The critical implication:
+
+**A system that satisfies the standard lock budget ((1+L_C)(1+L_d) ≤ ζ^{-4}) may nonetheless be irrecoverable if heritage loading H is sufficiently high.** The standard lock budget is necessary but not sufficient for recovery in heritage-loaded terrain.
+
+**Critical heritage threshold for lock budget violation:**
+
+```
+H_crit = H_max · (1 − [L_C·ζ^4 / ((ζ^{-4}/(1+L_d)) − 1)]^{1/γ_C})
+```
+
+Above H_crit, the heritage-modified lock budget is violated regardless of nominal L_C and L_d values. H_crit decreases with proximity to the standard lock budget boundary — systems already near the lock budget limit are more vulnerable to heritage-driven violation.
+
+**Governance design rule (heritage extension):** In addition to the four standard design rules, add:
+
+**Rule 5:** Monitor heritage loading H separately from state variables. If H approaches H_crit, administer Therapeutic Collective Events (§32.8.2) before any expansion attempt. The heritage correction acts multiplicatively with the lock budget, so heritage management is not optional for systems operating near their lock budget margins.
+
+**Rule 6:** In heritage-loaded terrain (H > H_threshold), increase αC and αd targets (tighten the standard lock budget) to compensate for heritage-induced degradation of effective recovery rates. The heritage correction effectively acts as an invisible increase in ν_C and ν_d — design margins must account for it.
+
+### Five-Dimensional Recovery Design Space
+
+Combining the standard lock budget with heritage-modified extension produces a **five-dimensional design space** for recovery:
+
+```
+Dimension 1: Capacity lock ratio L_C = ν_C/α_C         (standard)
+Dimension 2: Diversity lock ratio L_d = ν_d/(α_d·T₀)    (standard)
+Dimension 3: Structural damage S ∈ [0, S*]              (§31 extension)
+Dimension 4: Heritage loading H ∈ [0, H_max]            (EDT v5.0 extension)
+Dimension 5: Terrain quality Q_E ∈ [0, 1]               (EDT v5.0 extension)
+```
+
+The recoverable region is defined by the intersection of:
+- Standard lock budget: $(1+L_C)(1+L_d) \leq \zeta^{-4}$
+- Damage constraint: $S < S^*$
+- Heritage-modified budget: $(1+L_C^{(H)})(1+L_d^{(H)}) \leq \zeta^{-4}$
+- Terrain quality floor: $Q_E > Q_{E,\min}$ (minimum terrain quality for active recovery)
+
+The recoverable region in 5D space is **strictly smaller** than what either the standard 2D lock budget or the 3D damage diagram (§31) would indicate independently. A system may be in the recoverable region of all three lower-dimensional projections while being outside the recoverable region of the full 5D space — explaining cases where recovery appears possible by all standard metrics but consistently fails in practice.
+
 ---
 
 ## 20. Silent Criticality: Temperature Closure and Duration
@@ -2270,6 +2459,43 @@ g(u) ≈ μd + μC·[u/(λₙ+χₙ)]²·(1 + 2χₙ/(λₙ+χₙ))
 - Denominator g(u): demand growth rate. Grows as u².
 - Result: τ\_silent decreases sharply with u — high load eliminates the silent phase entirely.
 
+### Terrain-Level Silent Criticality: The Deeper Layer
+
+The standard Silent Criticality mechanism operates through the T-ρ compensation loop — a fast loop visible in the ODE state variables. But there is a **deeper, slower Silent Criticality** operating through terrain heritage that is entirely invisible to state-variable monitoring.
+
+**Mechanism:** While surface metrics (Φ ≈ 1, ρ̇ slowly negative) detect the standard Silent Criticality, the terrain quality Q_E is simultaneously eroding through Storm history effects:
+
+```
+Standard SC:    Φ ≈ 1  AND  ρ̇ < 0         (state-variable layer)
+Terrain SC:     Q_E → 0  AND  all Φ, ρ, C metrics appear normal
+```
+
+The terrain Q_E silently erodes through two mechanisms that are invisible to state-variable monitoring:
+
+1. **Passive decay:** $\dot{Q}_E = -\delta_Q Q_E$ — terrain degrades without renewal even in the absence of Storm
+2. **Heritage accumulation:** Failed seeds and past Storms modify terrain curvature with long decay timescale γ_decay ≪ τ_{C,d,T}
+
+**When terrain SC becomes detectable:** The terrain SC reveals itself only when the system attempts expansion or re-seeding: the germination threshold λ_eff,heritage exceeds what appears achievable, and seeding attempts fail despite all state-variable indicators appearing healthy. This is the ODE-level manifestation of the **Heritage-Adjusted Germination Threshold** (FGS §36T.5):
+
+```
+λ_eff,heritage(x,t) = λ_eff(x,t) + Σ_k μ_network,k · A_k · g(t−t_k) · h(x−x_k)
+```
+
+The cumulative heritage correction can make seeding impossible even at full state-variable health. Governance systems that monitor only Φ and ρ will misattribute these failures to execution problems rather than terrain heritage.
+
+**Detection protocol for terrain SC:**
+
+```
+Step 1: Monitor Q̇_E sign (available from long-term quality trend — requires multi-month time horizon)
+Step 2: Compare terrain heritage map against current germination attempt locations
+        (heritage map = spatial distribution of Σ_k μ_k · A_k · g(t−t_k))
+Step 3: Compute heritage-adjusted λ_eff,heritage for proposed seeds
+Step 4: If λ_eff,heritage > capacity despite state-variable health → terrain SC confirmed
+Step 5: Apply terrain cultivation (positive curvature injection) before seeding
+```
+
+**Self-Consistent Misalignment in terrain form.** The standard SCM (§7.8.7) involves the governance reference A(t) drifting together with the system direction D(t), masking misalignment. At the terrain level, the analogous failure is **terrain-reference drift**: when both the terrain curvature U(x) and the North Star projection N_local(x) drift together, friction appears to decrease (fewer visible conflicts) while actual map-terrain mismatch ε accumulates undetected. The terrain-level SCM detection requires external reference injection — a comparison against an external North Star that has not been corrupted by the local drift.
+
 ---
 
 ## 21. Silent Criticality Existence Condition
@@ -2596,6 +2822,45 @@ Correction is not deletion of the wrong attractor — it is **widening the lands
 
 The "Locked attractor" (§27) represents **practical irrecoverability** — the recovery threshold u⁻ drops so low that no realistic input reduction can reach it — not mathematical impossibility. With sufficiently strong external intervention (DDD protocol), any locked state can in principle be unlocked. The distinction matters: irrecoverability is threshold-based, not topological.
 
+**Heritage-Modified Irrecoverability.** EDT v5.0 introduces a second, structurally distinct form of irrecoverability that is topological (not merely threshold-based): when heritage loading H exceeds the maximum therapeutic capacity H_TCE_max, no achievable positive curvature injection can reverse the heritage accumulation, and the system is permanently locked into heritage-constrained failure modes regardless of DDD protocol outcomes.
+
+```
+Standard irrecoverability:     u⁻(S) < u_min (threshold-based, DDD can unlock)
+Heritage irrecoverability:     H > H_TCE_max  (topological — terrain permanently
+                                               blocks alternative basin formation)
+```
+
+The critical difference: standard irrecoverability can be addressed by reducing load u to arbitrary levels (outside practical governance but theoretically achievable). Heritage irrecoverability cannot be addressed by any state-variable intervention — the terrain itself must be reconstructed, which may require external memory reset or founding-event-level interventions that have no analog in the standard DDD protocol.
+
+**Fourth DDD Stage (Heritage Pre-Conditioning).** For systems with detected heritage loading H > H_threshold, the standard three-stage DDD must be preceded by a Stage 0:
+
+```
+Stage 0 — Terrain Pre-Conditioning:
+
+  (T0) Heritage assessment:     H(x,t) map computed across all relevant terrain regions
+  
+  (T1) TCE targeting:           Therapeutic Collective Events focused on target basin regions
+                                 Goal: reduce λ_eff,heritage below seeding threshold
+                                 Duration: until H(x_target) < H_threshold
+  
+  (T2) Heritage verification:   Seeding test on target region (small-scale seed, verify germination)
+                                 Before executing any standard DDD stage, confirm terrain receptivity
+  
+  Transition to standard DDD:   Stage 0 complete when H_verified < H_crit
+                                 AND test seed germinates at ≥70% of heritage-neutral rate
+```
+
+Without Stage 0 pre-conditioning in heritage-loaded terrain, standard DDD achieves Φ < 1 but fails to establish stable Rest Mode — the system cycles through Storm → apparent recovery → rapid re-entry to Storm, creating the characteristic **DDD Cycling Failure Mode**:
+
+```
+DDD Cycling signature:
+  - Multiple successful DDD executions (all E1-E3 satisfied)
+  - Each recovery period shorter than previous
+  - Φ re-entry threshold apparently lower after each cycle
+  - → Heritage ratchet: failed Rests add negative heritage to Rest basin
+  - → Standard DDD cannot address this; Stage 0 pre-conditioning required
+```
+
 ### RT-1 Five-Phase Recovery Cascade Correspondence
 
 The DDD protocol's three stages (Defocus, Decouple, Diversity) embed within the DFG Recovery Theory's five-phase recovery cascade ordering (RT-1 v2.0). The cascade ordering is structural — ordering violations produce predictable failure modes:
@@ -2748,42 +3013,91 @@ L_d := ν_d / (α_d · T₀)  (diversity lock ratio)
 | Diversity | Positive | Φ → d↓ → Φ↑ | Search space collapse |
 | Integrity | Slow Positive | Φ,k → ρ↓ | Long-term degradation |
 | Temperature | **Negative** | ρ↓ → T↑ → Φ↓ | Compensatory buffering |
+| **Terrain Erosion** | **Slow Positive** | **Φ·𝟙[Φ>1] → Q_E↓ → C_ceiling↓ → Φ↑** | **Terrain degradation under Storm** |
+| **Heritage Accumulation** | **Very Slow Positive** | **Storm events → H↑ → λ_eff,heritage↑ → seeding fails → more Storm** | **Terrain heritage loading** |
+| **Heritage Escape Block** | **Very Slow Positive** | **Failed escapes → H(x_target)↑ → ΔU_effective↑ → escape fails → more failed attempts** | **Escape pathway closure** |
 
 ### Structural Asymmetry
 
-The system has **4 positive feedback loops vs 1 negative feedback loop**. This asymmetry explains the regime progression:
+The system has **6 positive feedback loops vs 1 negative feedback loop** (adding the two new terrain loops). This expanded asymmetry is critical for long-timescale analysis:
 
-- Early: T compensates (Silent Criticality)
-- Mid: positive loops accumulate
-- Late: T cannot keep up → Storm transition
+- **Fast (τ₁):** Attention, Diversity loops → immediate Storm amplification
+- **Medium (τ₂):** Lock, Integrity loops → structural locking within hours/days
+- **Slow (τ₃):** Temperature loop (negative) → compensatory buffering weeks/months
+- **Very Slow (τ₄):** Terrain Erosion loop → terrain degradation months/years
+- **Glacial (τ₅):** Heritage Accumulation loop → permanent heritage loading years/decades
 
-### Fractal Propagation Path
+The two previously unrecognized slow positive loops explain why systems that appear recovered (all fast/medium metrics healthy) can be structurally vulnerable to rapid re-collapse: the slow terrain loops have not recovered and continue to amplify any new perturbation.
 
-```
-A_ℓ → ω → k → {C↓, d↓} → Φ↑
-```
-
-This is the quantitative form of "local learning propagating to system-wide lock-in."
-
-### Complete Causal Diagram
+### Extended Variable Set (12 core + 3 terrain variables)
 
 ```
-u ──→ n ──→ Φ ──→ A_ℓ ──→ ω ──→ A_g ──→ F ──→ Φ  [Attention Loop ⊕]
-                   │              │
-                   │              └──→ k ──→ C↓ ──→ Φ↑  [Lock Loop ⊕]
-                   │
-                   ├──→ d↓ ──────────────────→ Φ↑  [Diversity Loop ⊕]
-                   │
-                   └──→ ρ↓ ──→ T↑ ──────────→ Φ↓  [Temperature Loop ⊖]
-                         ↑
-                    Φ,k ─┘                          [Integrity Loop ⊕]
+Core (12):     {n, C, d, T, ρ, A_g, A_ℓ, ω, k, Φ, u, S}
+Terrain (3):   {Q_E, H, B}
+
+Q_E = terrain quality (slowest core variable, τ₄)
+H   = heritage loading (very slow, τ₅)  
+B   = branching capacity (structural, changes on τ₄–τ₅)
 ```
+
+### Complete Causal Diagram (Extended with Terrain Layer)
+
+```
+                          ┌── Terrain Layer (τ₄–τ₅) ──────────────────────────┐
+                          │                                                     │
+                          │  Seeds → B↑ → n_eff↓ → S̃↓                        │
+                          │                                                     │
+                          │  Q_E ←── Φ·𝟙[Φ>1] [Terrain Erosion ⊕, slow]      │
+                          │   ↓                                                 │
+                          │  C_ceiling = C_max · Q_E^γ                         │
+                          │                                                     │
+                          │  H ←── Storm events + failed escapes [Heritage ⊕]  │
+                          │   ↓                                                 │
+                          │  λ_eff,heritage → seeding difficulty                │
+                          │  k_eff(0) ↑ → faster Storm entry                   │
+                          └──────────────────────────────────────────────────┘
+                                              ↕ (slow coupling)
+                          ┌── ODE Core Layer (τ₁–τ₃) ─────────────────────────┐
+                          │                                                     │
+u ──→ n ──→ Φ ──→ A_ℓ ──→ ω ──→ A_g ──→ F ──→ Φ  [Attention Loop ⊕]         │
+              │              │                                                  │
+              │              └──→ k ──→ C↓ ──→ Φ↑  [Lock Loop ⊕]              │
+              │                         ↕                                       │
+              │                    C_ceiling (from Q_E) [terrain ceiling]       │
+              │                                                                  │
+              ├──→ d↓ ──────────────────→ Φ↑  [Diversity Loop ⊕]               │
+              │                                                                  │
+              └──→ ρ↓ ──→ T↑ ──────────→ Φ↓  [Temperature Loop ⊖]             │
+                    ↑                                                            │
+               Φ,k ─┘                          [Integrity Loop ⊕]              │
+              │                                                                  │
+              └──→ S↑ ──→ C_eff↓ ──────→ Φ↑  [Damage Loop ⊕, §31]            │
+                                                                                 │
+                          └──────────────────────────────────────────────────┘
+```
+
+### Loop Gain Analysis at Each Timescale
+
+The total positive feedback gain at each timescale determines the appropriate intervention type:
+
+| Timescale | Active Loops | Net Loop Gain | Intervention Layer |
+|---|---|---|---|
+| τ₁ (fast) | Attention + Diversity | High | DDD Stage 1 (Defocus) |
+| τ₁–τ₂ | + Lock | Very High | DDD Stage 2 (Decouple) |
+| τ₂–τ₃ | + Integrity, − Temperature | Depends on T_max | DDD Stage 3 (Relearn) |
+| τ₃–τ₄ | + Damage | Slowly rising | §31 structural repair |
+| τ₄–τ₅ | + Terrain Erosion | Gradual but compounding | Q_E cultivation (EDT) |
+| τ₅+ | + Heritage | Near-irreversible | TCE + terrain reconstruction |
+
+**Governance protocol implication:** The loop gain analysis confirms that DDD (operating at τ₁–τ₂) is structurally insufficient for addressing τ₄–τ₅ pathology. A complete governance protocol requires both DDD (fast loops) and terrain cultivation (slow loops) running simultaneously, with terrain interventions paced to the slower timescales.
 
 ---
 
 ## 27. Fixed-Point Classification
 
-### Four Regimes as Dynamical Objects
+### Four Regimes as Dynamical Objects (Extended)
+
+Standard ODE regime classification (state-variable level):
 
 | Regime | Φ | A\_g, A\_ℓ | ω, k | C, d | ρ | Character |
 |---|---|---|---|---|---|---|
@@ -2792,11 +3106,37 @@ u ──→ n ──→ Φ ──→ A_ℓ ──→ ω ──→ A_g ──→ 
 | Storm | > 1 | high | rising | decreasing | decreasing | Strong attractor |
 | Locked | > 1 | high | ≈ 1 | low | low/stuck | Fixation point |
 
+**Extended regime classification (with terrain layer):**
+
+| Terrain Regime | Φ | Q_E | H | Seeding | Character |
+|---|---|---|---|---|---|
+| Heritage-Clean Rest | < 1 | high | low | succeeds | Optimal; full scaling capacity |
+| Heritage-Loading Rest | < 1 | declining | rising | slowing | Warning: terrain SC beginning |
+| Heritage Trap | < 1 | low | > H_threshold | failing | Apparent health, structural stagnation |
+| Heritage Paralysis | < 1 | very low | > H_crit | impossible | All state vars healthy, no growth achievable |
+| Terrain-Eroded Storm | > 1 | Q_E decaying | rising | N/A | Compound failure: Storm + terrain erosion |
+| Heritage Recovery | < 1 | recovering | declining | improving | TCE active; terrain rehabilitation |
+
+**Heritage Paralysis** is the most dangerous extended regime: it presents as healthy by all standard metrics (Φ < 1, C high, d high, ρ high) but produces complete growth failure. Standard DDD and standard early-warning indicators provide no signal. Detection requires:
+1. Heritage map monitoring H(x,t)
+2. Seeding success rate tracking across terrain locations
+3. Germination rate comparison against heritage-neutral baseline
+
 ### Bifurcation Structure (u-parameterized)
 
 - u < u⁻: Only Rest exists (recovery guaranteed)
 - u⁻ < u < u⁺: Rest and Storm/Locked coexist (hysteresis zone)
 - u > u⁺: Rest branch vanishes → forced Storm entry
+
+**Heritage modification of bifurcation structure:**
+
+```
+Heritage loading H shifts the effective bifurcation thresholds:
+  u⁺_eff(H) = u⁺ · exp(−κ_H · H)      (Storm entry threshold decreases with H)
+  u⁻_eff(H) = u⁻ · (1 − H/H_max)^α   (Recovery threshold decreases faster with H)
+```
+
+Since u⁻_eff decreases faster than u⁺_eff as H increases, the hysteresis gap **widens with heritage loading** — the same mechanism as the damage ratchet (§31) but operating through terrain rather than structural damage. A system with high heritage loading has a larger effective hysteresis gap and is therefore harder to recover even when standard lock budget conditions are satisfied.
 
 ### Locked Attractor: Irrecoverability Condition
 
@@ -2805,6 +3145,23 @@ u ──→ n ──→ Φ ──→ A_ℓ ──→ ω ──→ A_g ──→ 
 ```
 
 When this holds at k\* ≈ 1, the system cannot self-recover.
+
+**Heritage-extended irrecoverability condition.** Recovery through DDD is also blocked when:
+
+```
+H > H_TCE_max  AND  Q_E < Q_E_min
+```
+
+Under this condition, the system is in Heritage Paralysis or Heritage-Eroded Storm, and no amount of DDD protocol execution will produce stable Rest Mode because the terrain cannot support it. The full irrecoverability condition (combining all failure axes) is:
+
+```
+IRRECOVERABLE ⟺ 
+  (S > S*)  OR                     [§31 structural damage]
+  ((1+L_C^H)(1+L_d^H) > ζ^{-4})   [heritage-modified lock budget violation, §19]
+  OR (H > H_TCE_max AND Q_E < Q_E_min)  [heritage paralysis]
+```
+
+This three-way OR structure means that any single failure axis is sufficient for irrecoverability — but the three axes are independent, so a system must be checked on all three to confirm recoverability.
 
 ---
 
@@ -3185,6 +3542,22 @@ The mathematical formalization (Sections 11–31) provides:
 30. **GRT operational measurement layer** (§32.5) — complete bidirectional diagnostic mapping (f\_esc ↔ Φ, I ↔ β\_s, L\_reinf ↔ d, θ\_d ↔ C(t), P\_overlap ↔ α, SCC ↔ u⁻); triple concordance (R, ρ, f\_esc) as SCM detection protocol; vectorization lifecycle as n² generation control mechanism; AND-entry/OR-exit as multiplicative lock budget operational expression
 31. **RT-1 five-phase cascade as DDD ordering constraint** (§24) — geometry-first recovery necessity proven by SCM convergence under unverified ρ; dependency trap as SCC atrophy under chronic intervention; GRT Seed Sufficiency Tests as DDD Phase 4 withdrawal gate; four-phase withdrawal protocol correspondence providing graduated governance transition criteria
 
+32. **Heritage-governed scaling failure as fourth scaling failure mode** (§32.8.2) — identifying terrain heritage loading H(x,t) as a structurally independent failure axis from state-variable damage S(t) and operational regime Φ; demonstrating that a system satisfying all 7 Scaling Closure Conditions can still fail to scale due to heritage loading; extending the Scaling Closure Theorem with Condition 8; formalizing the Heritage Ratchet as a positive feedback loop between failed seeding attempts and elevated heritage barriers
+
+33. **Therapeutic Collective Events as new governance primitive** (§32.8.2) — introducing TCE as a governance action class with no ODE state-variable analog (it modifies terrain curvature, not C/d/ρ/T); formalizing the minimum therapeutic rate $r_{\text{positive,min}}$; establishing TCE trigger conditions (germination failure pattern, not Φ threshold); demonstrating that TCE must precede seeding in heritage-loaded terrain rather than occurring concurrently
+
+34. **Gain-Curvature Equivalence Theorem in ODE context** (§32.5.2, §32.10) — formalizing the T ↔ ΔU duality within the ODE framework; demonstrating that temperature variable T and terrain curvature barrier ΔU are dual parameterizations of the same governance primitive; establishing GCET Design Freedom Corollary doubling the effective intervention space; deriving stochastic risk correction for near-critical regime; establishing EC6 timescale separation requirement for duality validity
+
+35. **Extended cross-validation matrix with EDT v5.0** (§32.5.2) — adding 8 new pairwise consistency checks (CV7–CV10) including GCET×ODE duality, grammar×phase portrait bijection, heritage×damage ratchet cross-calibration, and collective memory×ECC cascade; adding 3 new emergent constraints (EC4–EC6) tightening admissible parameter space; upgrading from 28 to 36 verified cross-theory pairs
+
+36. **Novel failure modes NF1–NF3 from attractor grammar** (§32.5.2, §32.10) — predicting three failure modes invisible to scalar Φ monitoring: NF1 Resonance Capture (limit cycle at ω_agent producing oscillatory 0.7 < ⟨Φ⟩ < 1.0), NF2 Grammar Incompleteness (within-layer health with cross-layer transfer failure), NF3 Attractor Proliferation Overflow (excessive diversity consuming governance capacity); establishing phase portrait types V and VI extending the standard I–IV classification; demonstrating that grammar provides strictly stronger failure-mode predictive power than scalar regime analysis
+
+37. **Four-tier early-warning hierarchy with terrain leading layer** (§20, §32.10) — establishing terrain quality monitoring Q_E as a Tier 0 early-warning signal with lead time τ₃/τ₁ earlier than standard operational indicators; completing the full hierarchy: terrain trend → transfer entropy → Fisher information → σ²/AC → ECC threshold; establishing that systems monitoring only operational tier cannot implement prevention (only reaction)
+
+38. **Buffer ecology and carrying capacity as scaling constraints** (§32.10) — establishing that differentiated buffering is not merely more efficient than undifferentiated but qualitatively necessary above critical complexity C*; deriving Buffer Carrying Capacity m_max as a hard upper bound on middle-layer differentiation; connecting buffer succession sequence to predictable governance maturation stages; formalizing pseudo-buffer pathology as a middle-layer failure mode
+
+39. **AGM-EDT-ODE Triple Integration: the coupled governance stack** (§32.10) — completing the three-tier coupled formalization: EDT terrain (slowest) governs AGM's operating range, AGM governs ODE's T variable, ODE generates feedback to EDT through Storm-driven Q_E erosion; establishing joint early-warning protocol across all three tiers; formalizing collective emotional ecology as a terrain-modification process with coherence resonance and spectral-gap-governed contagion phase transition
+
 ### Testable Predictions
 
 The following quantitative predictions are amenable to numerical simulation (toy model) and, where applicable, empirical measurement:
@@ -3249,6 +3622,22 @@ The following quantitative predictions are amenable to numerical simulation (toy
 37. **Damage trajectory classification.** Systems with identical parameters but different Storm exposure histories should cluster into four distinct trajectory types (§31: healthy aging, accelerated aging, catastrophic onset, compensated decline). *Test:* in Monte Carlo ODE simulation with stochastic damage, cluster final-state trajectories using unsupervised methods; confirm 4 distinct clusters corresponding to the predicted trajectory types, with cluster membership determined primarily by cumulative exposure E(t) and initial capacity C₀.
 
 38. **Power-law kernel damage acceleration.** In systems with long-memory damage kernels (§31), the ratio ΔS_{n+1}/ΔS_n of consecutive Storm damage increments should exceed 1.0 and increase with n. *Test:* induce 10+ sequential Storm episodes of identical duration and intensity in simulation; measure the damage increment per episode; confirm monotonically increasing ΔS_n sequence for power-law kernels (α < 1.5) while exponential kernels show approximately constant ΔS_n.
+
+39. **Heritage-ratchet seeding failure.** In terrain with history of ≥3 collective Storm events at location x, germination success rate for standard seeds should be significantly lower than in heritage-neutral terrain with identical (C, d, ρ, Φ) state-variable profile. The failure rate should scale approximately as $1 - \exp(-\sum_k \mu_{\text{network},k} \cdot A_k \cdot g(t-t_k))$ — exponential in cumulative heritage loading. *Test:* in multi-agent simulation, induce 3 collective Storms at fixed terrain location; allow full state-variable recovery (confirmed by Φ < 0.1 for 100+ τ); attempt seeding; compare success rate to heritage-neutral control. Expected effect size: heritage-loaded terrain should show >50% lower germination rate.
+
+40. **GCET intervention equivalence at matched dose.** Governance interventions applied at the terrain level (curvature injection ΔU < 0 at target location) and at the affective level (T_eff increase by Δ = |ΔU|/U_typical) should produce statistically equivalent long-run performance trajectories when properly calibrated through the duality map. *Test:* in 500 independent ODE trials, compare terrain-path vs. affective-path interventions matched by GCET equivalence formula; measure final state-variable distributions after 1000τ; confirm D_KL(terrain||affective) < 0.05. Crucially, confirm that mean convergence speed differs (terrain interventions converge slower but persist longer), demonstrating that the duality holds in distribution but not in path.
+
+41. **Terrain critical slowing down precedes σ² and AC by predicted lead time.** Terrain quality monitoring Q_E should show rising autocorrelation (increasing τ_relax(Q_E)) at least τ₃/τ₁ time units before the standard early-warning indicators (σ²(Φ), AC(1)(Φ)) cross their alarm thresholds. *Test:* in ODE simulation, ramp load u from 0.5u⁺ to 1.5u⁺ over 5000τ; measure both terrain-level (τ_relax(Q_E)) and operational-level (σ², AC) indicators at each timestep; confirm that terrain-level indicator alarm precedes operational indicator alarm by at least τ₃/τ₁ = 100τ (assuming 2-order-of-magnitude timescale separation).
+
+42. **Buffer carrying capacity peak.** For a system of fixed complexity C, coordination efficiency (correct inter-agent decision rate) should peak at $m_{\text{opt}} \approx m_{\max}/2$ differentiated buffers and decline for $m > m_{\max}$. *Test:* in cooperative multi-agent task requiring inter-buffer communication, sweep buffer count from 1 to $3m_{\max}$; measure coordination accuracy at each step; confirm a peak followed by decline, with peak located within 20% of $m_{\max}/2$.
+
+43. **Novel failure mode NF1 (Resonance Capture) ODE signature.** Systems with terrain resonance at agent frequency ω_agent should exhibit oscillatory Φ(t) with period 2π/ω_agent that neither reaches Φ > 1 (Storm threshold) nor fully returns to Φ < 0.5 (deep Rest). *Test:* engineer terrain with limit cycle at ω_terrain = ω_agent; monitor Φ for 1000 cycles; confirm 0.7 < ⟨Φ⟩ < 1.0 with amplitude A > 0.2, distinguishing from both Storm (⟨Φ⟩ > 1) and Rest (⟨Φ⟩ < 0.5). Confirm that all standard early-warning indicators remain below alarm thresholds throughout.
+
+44. **Collective Memory amplification proportional to cascade size.** In multi-agent systems, the terrain curvature modification from a collective event should be proportional to $n_{\text{cascade}} \cdot \mu_{\text{agent}}$ — the Collective Memory Embedding Coefficient. *Test:* induce identical emotional events (same A_k, same duration) with cascade sizes n = 1, 10, 50, 100; measure terrain curvature modification at event location after 10τ; confirm linear scaling with n (slope = μ_agent); confirm that distributed individual events with same total n produce n times smaller terrain modification than single collective event of size n (coherence multiplier).
+
+45. **Therapeutic Collective Event dosing threshold.** For heritage-loaded terrain, therapeutic collective events (TCE) below the minimum rate $r_{\text{positive,min}}$ should produce no measurable heritage reduction, while TCE above the threshold should produce heritage reduction proportional to excess rate $(r_{\text{TCE}} - r_{\text{positive,min}})$. *Test:* in heritage-loaded terrain, administer TCE at rates 0.2, 0.5, 1.0, 2.0, 5.0 × $r_{\text{positive,min}}$; measure heritage loading H(x,t) after 100τ; confirm step-function-like threshold behavior with essentially no reduction below threshold and linear reduction above.
+
+46. **EROTI hierarchy: structural > agent-level over long horizon.** Over a 1000τ simulation horizon, governance investment allocated to terrain design (curvature injection, boundary modification) should produce higher cumulative performance than equivalent investment allocated to agent-level intervention (direct state correction), with the advantage growing over time due to compounding. *Test:* in two identical systems starting from same initial conditions, allocate equal energy budget to (a) one structural terrain intervention at t=0, (b) continuous agent-level corrections; compare performance trajectories at t = 100τ, 500τ, 1000τ; confirm that structural investment advantage grows monotonically and exceeds 2× at t = 1000τ.
 
 ---
 
@@ -4065,6 +4454,69 @@ RT Phase 5 (Maturation)      → TLG dissolution of crisis mode → normal opera
 
 These emergent constraints narrow the admissible parameter space beyond what any individual theory specifies, demonstrating that the multi-theory framework provides **non-trivially stronger** restrictions than its components.
 
+### 32.5.2 EDT v5.0 Extended Cross-Validation: Gain-Curvature, Terrain Grammar, Heritage
+
+The release of EDT v5.0 (incorporating Affective Terrain Coupling Theory §51, Gain-Curvature Equivalence Theory §52, and Attractor Landscape Grammar §53) adds four new cross-validation entries that strengthen the overall consistency argument and introduce new emergent constraints.
+
+**Extended pairwise consistency additions:**
+
+```
+         EDT-v5   AGM/AMT   FCCN-ODE
+EDT-v5    —        GCET      Φ-U duality
+AGM/AMT  ✓         —         ECC-Φ
+FCCN-ODE ✓        ✓          —
+```
+
+**(CV7) GCET × FCCN-ODE: Duality of T and ΔU as governance parameters.** The Gain-Curvature Equivalence Theorem (GCET, EDT §52) states that AGM effective temperature $T_{\text{eff}}$ and terrain curvature barrier $\Delta U$ are dual parameterizations of the same governance primitive. In the ODE, this manifests as the following isomorphism: replacing $T \to T_0$ with $T \to T_0 \cdot \exp(-\Delta U / T_{\text{eff}})$ (Kramers escape rate) must produce identical stationary distributions. Consistency check: the ODE's Rest fixed point distribution over (C, d, ρ) must equal the Kramers-weighted distribution over the curvature landscape. **Confirmed** at leading order: both give $p_\infty(x) \propto \exp(-\Phi(x)/T)$, confirming that the ODE's $T$ variable is the mean-field projection of the Kramers escape temperature.
+
+**(CV8) EDT Grammar × ODE Phase Portrait Topology.** The Attractor Landscape Grammar (EDT §53) classifies terrain configurations by derivation from $\{A_{\text{point}}, A_{\text{limit}}, A_{\text{strange}}, A_{\text{null}}\}$. These must correspond bijectively to the ODE's four phase portrait types (Type I–IV, §14). Consistency check: each grammar derivation maps to exactly one phase portrait type, and the transition between types must correspond to a grammatically valid derivation step.
+
+```
+Grammar derivation               ODE phase portrait type
+──────────────────────────────────────────────────────────
+TERRAIN →* A_null               Type III (no Rest fixed point)
+TERRAIN →* A_point(d→0)         Type II Locked (Storm, single stable)
+TERRAIN →* A_point(d>0)         Type I (single stable Rest)
+TERRAIN →* A_strange(stable)    Type IV (spiral dynamics, oscillatory)
+TERRAIN →* BASIN⊗BASIN          Silent Fragmentation (§7.8.7, not in standard Types)
+TERRAIN →* A_limit(ω=ω_agent)   Resonance Capture NF1 (not in standard Types)
+```
+
+The last two entries reveal a **completeness gap** in the ODE's standard phase portrait classification: the 4-type topology (Types I–IV) does not exhaust all grammatically valid terrain configurations. Silent Fragmentation and Resonance Capture require extension of the phase portrait classification to Types V and VI respectively — these novel failure modes (NF1, NF2) are **predicted by the grammar but invisible to the scalar Φ**. This is a genuine theoretical extension: the grammar provides stronger failure-mode predictive power than the ODE scalar alone.
+
+**(CV9) Terrain Heritage × ODE Damage Ratchet.** The terrain palimpsest model (EDT §43.1) and the ODE structural damage dynamics (§31) both describe cumulative degradation, but from different directions: EDT models curvature accumulation from discrete events; §31 models continuous capacity erosion under sustained Storm. Consistency requires that the two descriptions agree on the total degradation trajectory:
+
+```
+EDT heritage path:   U(x,t) = Σ_k η_k · Event_k · exp(−γ_decay·(t−t_k))
+§31 damage path:     S(t) = ε₁ ∫₀ᵗ K(t−τ)·Φ(τ)·𝟙[Φ>1] dτ − ε₃·repair(S)
+```
+
+**Consistency:** Both models predict asymmetric retention (negative events dominate over positive with the same time horizon, since $\eta_{\text{negative}} > \eta_{\text{positive}}$ in EDT and $\epsilon_1 \cdot \Phi_{\text{Storm}} > \epsilon_3 \cdot \text{repair}$ in §31 above the damage threshold). Both predict that total degradation is an integral of past exposure weighted by a memory kernel. The emergent constraint from requiring both models to predict the same critical threshold:
+
+$$\text{(EC4)} \quad \eta_{\text{negative}} \cdot |\Delta U_{\text{Storm}}| \approx \frac{\epsilon_1}{\gamma_{\text{decay}}} \cdot \bar{\Phi}_{\text{Storm}}$$
+
+This equates the terrain curvature degradation per Storm to the structural damage variable rate, providing a cross-calibration between EDT and §31 that was previously unavailable.
+
+**(CV10) Collective Memory Embedding × Multi-Agent ECC Cascade.** EDT §54.6 derives that collective emotional events embed in terrain with amplitude $\mu_{\text{network}} = n_{\text{cascade}} \cdot \mu_{\text{agent}}$. FGS §36S Testable Prediction S7 predicts that ECC cascade coefficient $\mu_{\text{cascade}}$ scales with buffer thickness $M$. Consistency requires that $n_{\text{cascade}}$ (terrain level) and $\mu_{\text{cascade}}$ (affective level) be related through the buffer thickness:
+
+```
+n_cascade = M_eff / μ_agent   (number of agents emotionally coupled = buffer thickness / unit embedding)
+```
+
+This identifies the buffer thickness $M(t)$ as the **effective contagion radius** in terrain memory space — a direct structural link between FGS §36S affective dynamics and EDT terrain heritage theory.
+
+**New emergent constraints:**
+
+```
+(EC4) η_neg · |ΔU_Storm| ≈ ε₁/γ_decay · Φ̄_Storm      — EDT+§31 terrain-damage cross-calibration
+(EC5) m_buffer ≤ C^(1/2)·log(C)/K_buffer               — EDT+TLG buffer carrying capacity (§32.5.2)
+(EC6) τ_terrain / τ_C,d,T > (1/γ_GCET)·log(Π_target)  — EDT+GCET timescale separation for duality validity
+```
+
+EC5 is a new constraint on the middle layer: buffer differentiation cannot exceed the carrying capacity without inverting the coordination benefit. EC6 establishes that the GCET duality approximation is valid only when terrain evolves slowly compared to state variables — the adiabatic approximation underpinning §36T.
+
+**Completeness upgrade.** The addition of CV7–CV10 and EC4–EC6 upgrades the pairwise consistency matrix from 28 verified pairs (8 theories, all pairs) to 36 verified pairs (including EDT v5.0 sub-theories GCET, Grammar, Heritage, Ecology). The emergent constraint count increases from 3 to 6, providing a **substantially more constrained** parameter space and proportionally more falsifiable framework.
+
 ### 32.6 ILMI, Governance Ratio κ, and Dual Attractor Structure
 
 The parent framework defines an Inter-Layer Modulation Interface (ILMI) as a constraint operator between governance layers:
@@ -4137,6 +4589,70 @@ Phase 7 — Higher Cycle:  new cycle at expanded resolution
 ```
 
 The ODE model (§14) captures Phases 2–5 at a single scale. Phase transitions correspond to: entry → Phase 2 (u > u⁺, Storm); DDD → Phase 3–4 (recovery, VCZ re-entry); sustained VCZ → Phase 5 (Φ < 1 stable, ρ → 1). Revival trajectories (§30) correspond to Phase 6 reawakening.
+
+**Heritage Accumulation Across the 7-Phase Lifecycle.** Each phase of the lifecycle contributes to the heritage loading H(x,t) that subsequent phases must operate against. The heritage trajectory is not a separate phenomenon but is woven into the standard lifecycle:
+
+```
+Phase 1 (Seeding):       Heritage = 0 (pristine terrain)
+                          Critical: this is the lowest-cost phase for terrain cultivation
+                          EDT principle: maximum seeding effort during Phase 1 → minimum
+                          heritage correction needed in all subsequent phases
+
+Phase 2 (Exploration):   Boundary-testing Storms add negative heritage
+                          Heritage H growing at rate ε_storm · n_storm
+                          Governance task: keep H < H_threshold during Exploration
+                          If H > H_threshold before attractor crystallizes → Phase 3 fails
+
+Phase 3 (Formation):     Attractor crystallization embeds positive heritage if successful
+                          Failed formation attempts embed negative heritage at target locations
+                          → Heritage ratchet begins if multiple formation attempts fail
+                          
+Phase 4 (VCZ):           Power-law distribution implies many small Storms (high Storm count)
+                          Heritage from VCZ micro-Storms accumulates but is counterbalanced
+                          by positive heritage from successful vector-reinforcer pair formations
+                          Healthy VCZ: net heritage ≈ 0 or slightly positive
+                          Unhealthy VCZ: net heritage negative → early desertification
+
+Phase 5 (Rest Mode):     Micro-Storms continue adding small negative heritage
+                          R_i (self-purification) limits net heritage accumulation
+                          Heritage asymptotes to H* = balance between micro-Storm input
+                          and positive experience from Rest Mode productivity
+                          Critical: H* must remain below H_threshold (§32.8.2 Condition 8)
+                          
+Phase 6 (Reawakening):   Environment shift creates new deficit → new Exploration
+                          Heritage from Phase 2–5 now pre-loads the Phase 6 landscape
+                          Systems with H(Phase 5) near H_threshold enter Phase 6 vulnerable
+                          → Reawakening Storm deeper and harder to recover from
+                          
+Phase 7 (Higher Cycle):  New cycle begins with non-zero heritage from all previous cycles
+                          Heritage inheritance: H(new Phase 1) = f(H(Phase 5), Phase 6 intensity)
+                          Organizations that fail to cultivate terrain in Phase 5 find
+                          Phase 7 entry progressively more difficult across cycles
+```
+
+**Heritage-Corrected 7-Phase Governance Protocol.** The standard DFG governance protocol does not explicitly track heritage across phases. Heritage-corrected governance adds:
+
+```
+Phase 1 pre-condition:   Terrain cultivation investment ≥ C_terrain_min
+                          (minimize H before any Exploration begins)
+                          
+Between Phase 2 → 3:     H monitoring; H > H_threshold → TCE before Formation attempts
+                          (prevent Heritage ratchet from blocking crystallization)
+                          
+Between Phase 5 → 6:     Heritage audit; H(Phase 5) → H_crit correction if needed
+                          (ensure Reawakening begins from heritage-clean terrain)
+                          
+Phase 7 transition:       Heritage inheritance assessment; terrain cultivation to reset
+                          H(new cycle) before any new Seeding
+```
+
+**Deficit-Heritage Relationship (fundamental).** The deficit (unfilled position) that drives the entire lifecycle exerts an attractive force that is **heritage-modulated**:
+
+```
+Effective attractive force:  F_deficit^eff = F_deficit · (1 − H/H_max)^δ
+```
+
+Heritage loading reduces the effective attractive force of the deficit — agents are less strongly drawn toward a position when the terrain around that position is negatively charged. This is the mechanism by which heritage-loaded terrain produces the Phase 3 failure mode (attractor crystallization fails despite genuine deficit): the deficit is real, but the terrain heritage makes the position geometrically unappealing, and the deficit-engine produces insufficient pull to overcome it.
 
 ### 32.8 Cube Domination and the Governance Scaling Architecture
 
@@ -4905,7 +5421,117 @@ Boundary expansion         DFG Phase 6 Reawakening      Revival trajectories (§
 Integration completion     Cube Domination crystallization  κ → κ*
 Map-terrain balance        RBIT Resolution Gap           Δρ
 Preemptive feedback        RT Structural Correction (T5)  P_unint accumulation
+Terrain erosion (new)      EDT v5.0 Heritage / §36T     Q_E drain by Φ·𝟙[Φ>1]
+Buffer ecology (new)       EDT §44, FGS §36T            m_max = C^(1/2)·log(C)/K
+GCET duality (new)         EDT §52, FGS §36T            T ↔ ΔU isomorphism
 ```
+
+### 32.8.2 Terrain Heritage Theory: The Fourth Layer of Scaling Failure
+
+The Circular Closure Theory (§32.8.1) identifies three layers of scaling failure: insufficient self-purification (R < S), contamination cascade, and map-terrain mismatch. The EDT v5.0 Heritage Theory reveals a **fourth layer** that is structurally deeper than all three: **heritage-governed scaling failure**, where the terrain itself carries accumulated negative curvature from past events that prevents new circle formation even when all state-variable metrics appear healthy.
+
+**The Heritage Problem:** Consider a system that has experienced multiple Storm-Recovery cycles. Each recovery restores the state variables (C → C_max, d → 1, ρ → 1, Φ < 1). By the standard 7-condition Scaling Closure Theorem (§32.8.1), this system should be ready for expansion. But the terrain has accumulated a **negative heritage correction** at every past failure location:
+
+$$\lambda_{\text{eff,heritage}}(x,t) = \lambda_{\text{eff}}(x,t) + \sum_{k: \text{past events}} \mu_{\text{network},k} \cdot A_k \cdot g(t-t_k) \cdot h(x-x_k)$$
+
+The positive terms (past failures) systematically elevate the germination threshold above the nominal value. Seeds that would have succeeded on the system's first attempt now fail, not because of state-variable weakness but because **the terrain remembers the failure**.
+
+**ODE signature of heritage-governed scaling failure:**
+
+The heritage failure mode presents a distinctive ODE signature that distinguishes it from standard scaling failure:
+
+```
+Standard scaling failure:    C↓ OR d↓ OR ρ̇<0   (state variables degraded)
+Heritage failure:            C=C_max, d=1, ρ→1  (state variables healthy)
+                             u⁺ unchanged        (Storm threshold not lowered)
+                             BUT: seeding fails systematically
+                             new circles dissolve before maturation
+                             R_i grows but never crosses S_i
+                             → apparent health, structural stagnation
+```
+
+This failure mode is **indistinguishable from healthy stabilization** by scalar Φ monitoring — it requires germination rate tracking and heritage map analysis to detect.
+
+**Heritage Decay Function and ODE Timescales.** The heritage correction decays with characteristic time $\tau_H = 1/\gamma_{\text{decay}}$ determined by the nature of the past events:
+
+| Heritage Source | Decay Rate $\gamma_{\text{decay}}$ | ODE Timescale |
+|---|---|---|
+| Single-agent emotional event | Fast | $\tau_H \sim \tau_\rho$ |
+| Small-group Storm (n < 10) | Medium | $\tau_H \sim \tau_S$ |
+| Collective Storm (n > 50) | Slow | $\tau_H \sim \tau_{Q_E}$ |
+| Founding-event legacy | Glacial | $\tau_H \gg \tau_{Q_E}$ |
+
+For collective Storms, the heritage correction decays on the same timescale as the terrain quality $Q_E$ — the slowest variable in the extended ODE system. This means that heritage-governed scaling failure can persist **for the entire system lifetime** following a large collective Storm, even through many subsequent successful state-variable recoveries.
+
+**Heritage Ratchet Mechanism.** Each failed seeding attempt is itself a negative heritage event, creating a positive feedback loop:
+
+```
+State variables healthy → Seeding attempt → Heritage correction too high → Seed fails
+Seed failure → New negative heritage event → Heritage correction rises further
+→ Next seeding attempt even harder
+→ Heritage ratchet: each failure makes the next attempt less likely to succeed
+```
+
+This is structurally identical to the standard damage ratchet (§31) but operates through terrain curvature rather than state-variable capacity. The critical difference: **standard damage ratchet is repaired by load reduction; heritage ratchet requires positive terrain cultivation**.
+
+**Formal Heritage Recovery Condition.** For heritage recovery to exceed heritage accumulation:
+
+$$\frac{d}{dt}\left[\text{Heritage}^{(-)}(x,t)\right] < 0$$
+
+requires the rate of positive collective experiences to exceed the minimum therapeutic rate:
+
+$$r_{\text{positive}} \geq \frac{n_{\text{negative}} \cdot A_{\text{negative}} \cdot \alpha_{\text{pos}}}{A_{\text{positive}} \cdot \alpha_{\text{neg}} \cdot T_{\text{window}}}$$
+
+Below this rate, organizational terrain tilts toward negative heritage regardless of current state-variable interventions. This provides a **new necessary condition** for the Scaling Closure Theorem: the 7 conditions of §32.8.1 must be supplemented with an 8th:
+
+**Condition 8:** The rate of positive collective experiences exceeds the minimum therapeutic rate $r_{\text{positive,min}}$, and heritage-adjusted germination thresholds $\lambda_{\text{eff,heritage}}$ do not exceed seeding capacity.
+
+Without Condition 8, a system can satisfy all 7 structural conditions and still fail to scale because the terrain is too negatively loaded to support new circle formation.
+
+**Heritage-Adjusted EROTI.** The standard EROTI (Energy Return on Terrain Investment) calculation assumes terrain starts from neutral curvature. In heritage-loaded terrain, the effective EROTI for any seeding intervention is:
+
+$$\text{EROTI}_{\text{heritage}} = \frac{\Delta S_{\text{permanent}}}{E_{\text{invested}} + E_{\text{heritage-correction}}}$$
+
+where $E_{\text{heritage-correction}} = \int \lambda_{\text{eff,heritage}}(x) \cdot E_{\text{seed}} \cdot dx$ is the additional energy required to overcome heritage barriers. For heavily loaded terrain, $E_{\text{heritage-correction}}$ can exceed $E_{\text{invested}}$ by orders of magnitude, making seeding economically infeasible despite structural feasibility. The governance implication: **heritage-loaded terrain requires terrain cultivation (positive curvature injection) before seeding, not concurrent with seeding**.
+
+**Integration with §31 Structural Damage.** Heritage-governed failure and structural damage failure produce different trajectories in the extended phase diagram:
+
+```
+                        S (structural damage)
+                        ↑
+                    S_c |─ ─ IRREVERSIBLE ─ ─ ─ ─ CHRONIC─ ─ ─ ─
+                        |    COLLAPSE              LOCK
+                 S_crit |· · · · · · · · · · · · · · · · · · · · · ·
+                        |    AGING                 HEALTHY
+                        |    VULNERABILITY         RESILIENT
+                        └────────────────────────────────────→ u (load)
+                  H (heritage loading)
+                        ↑
+                    H_c |─ ─ HERITAGE ─ ─ ─ ─ STAGNANT ─ ─ ─ ─
+                        |    PARALYSIS             SCALING
+                        |    (seeding impossible) (seeding slowed)
+                   H_0  |─ ─ FREE ─ ─ ─ ─ ─ ─ SCALING ─ ─ ─ ─ ─
+                        |    (seeding viable)      (optimal)
+                        └────────────────────────────────────→ Q_E (terrain quality)
+```
+
+**Key insight:** The (u, S) phase diagram (§31) and the (Q_E, H) phase diagram are **independent failure axes**. A system can be in the Healthy Resilient quadrant of the damage diagram (S < S_crit, u < u⁺) while simultaneously being in the Heritage Paralysis quadrant of the heritage diagram (H > H_c, Q_E low). State-variable health does not preclude terrain-heritage failure.
+
+**Therapeutic Collective Events as Governance Primitive.** The heritage recovery condition introduces a new type of governance action not present in the standard DDD protocol (§24): **Therapeutic Collective Events (TCE)**. TCEs are not corrective (they do not address the current state-variable problem) but **curative** (they inject positive terrain curvature that counteracts heritage loading). The TCE governance action is:
+
+```
+TCE trigger:     H(x,t) > H_crit  AND  seeding success rate < threshold
+                 (i.e., not triggered by Φ, not by ρ̇, but by germination failure)
+
+TCE content:     Design and execute shared positive collective experience
+                 Target: locations x with highest heritage loading
+                 Outcome: μ_positive · A_positive injection to reduce H(x,t)
+
+TCE success criterion:  λ_eff,heritage(x) drops below seeding capacity
+                        Next seeding attempt succeeds with standard energy
+```
+
+This governance action is structurally invisible in the standard ODE: it changes neither Φ nor ρ nor d nor C directly. It operates on the terrain, not the state variables — and its effect becomes visible only when subsequent seeding attempts succeed at lower energy cost than expected from heritage-uncorrected models.
 
 ### 32.9 Falsification Conditions (from Parent Framework)
 
@@ -4926,6 +5552,18 @@ Preemptive feedback        RT Structural Correction (T5)  P_unint accumulation
 **F8 (Integration without Middle-Layer Precedence).** If direct upper-layer or lower-layer coupling produces stable integration as reliably as middle-layer-first coupling, the middle-layer-first principle is falsified. *Test: compare integration success rates across coupling-order variants in multi-agent simulation.*
 
 **F9 (Map-Terrain Balance Independence).** If a system scales successfully while map-terrain mismatch |Map − Terrain| grows without bound, the map-terrain balance principle is falsified. *Test: inject systematic map distortion; check whether scaling metrics degrade proportionally.*
+
+**F10 (Heritage-Independent Germination).** If seeding success rate in terrain with extensive negative heritage (multiple past collective Storm events) equals seeding success rate in heritage-neutral terrain under identical state-variable conditions, the Heritage-Adjusted Germination Threshold theory is falsified. *Test: compare germination rates across terrain regions with identical (C, d, ρ) but different heritage loading H; apply EDT §54.6 heritage map; confirm that germination success rate correlates with heritage loading at r > 0.7.*
+
+**F11 (Gain-Curvature Non-Equivalence).** If governance interventions applied at the terrain level (curvature injection) and at the affective level (temperature modulation), when calibrated through the GCET duality map $U = J(x)/T_{\text{eff}}$, produce statistically different long-run outcome distributions, the Gain-Curvature Equivalence Theorem is falsified. *Test: design matched intervention pairs (T_eff ↑ by 20% vs. ΔU ↓ by equivalent amount); run 1,000 independent trials each; compare stationary distribution divergence D_KL between intervention types. Falsified if D_KL > 0.05 at 95% confidence.*
+
+**F12 (Resonance Capture Visibility in Standard Metrics).** If the Resonance Capture failure mode (NF1 — terrain limit cycle at agent frequency $\omega_{\text{agent}}$) produces detectable signal in the standard early-warning indicators (σ², AC(1), I_F) before the failure is fully established, then NF1 is not a genuinely novel failure mode. *Test: induce NF1 conditions by engineering terrain resonance; monitor all standard EW indicators; confirm that σ², AC, I_F remain below alarm thresholds throughout NF1 development. Falsified if any standard indicator triggers before resonance is established.*
+
+**F13 (Therapeutic Collective Events Ineffectiveness).** If Therapeutic Collective Events (TCE) fail to reduce heritage loading H(x,t) and improve subsequent germination success rates, the TCE governance primitive is falsified. *Test: in heritage-loaded terrain (H > H_crit), administer TCE (positive collective event exceeding $r_{\text{positive,min}}$); measure λ_eff,heritage before and after; confirm reduction > 30%. Run control group with equivalent individual positive events; confirm TCE outperforms individual events by factor n_cascade.*
+
+**F14 (Terrain SC Detectable by State-Variable Monitoring).** If terrain-level Silent Criticality (Q_E declining while all Φ, ρ, C metrics appear normal) produces correlated changes in any standard state variable, then terrain SC is detectable without terrain-specific monitoring. *Test: induce terrain SC through passive Q_E decay (no Storms, no seeding, no maintenance); measure all state variables at daily intervals over 100τ_Q_E cycles; confirm that terrain SC produces no detectable signal in Φ, C, d, ρ, or T. Falsified if any correlation r > 0.3 between Q_E trend and standard metrics is observed.*
+
+**F15 (Buffer Carrying Capacity Independence).** If adding buffers beyond $m_{\max} = C^{1/2} \cdot \log(C)/K_{\text{buffer}}$ continues to improve coordination capacity (does not begin degrading it), the Buffer Carrying Capacity theorem is falsified. *Test: in system of fixed complexity C, incrementally add differentiated buffers from 1 to 3×m_max; measure effective coordination capacity at each step; confirm that a maximum exists at approximately m_max, with capacity declining for m > m_max. Falsified if capacity is monotonically increasing at m = 3×m_max.*
 
 ### 32.10 EDT–NAT–AGM Extended Integration
 
@@ -4968,6 +5606,134 @@ EDT's design principle of frequency separation maps directly to the timescale or
 ```
 
 Seeds (minimum sufficient meta-data injections) modify the terrain's curvature field U\_env(x), which in turn shifts the ODE's equilibrium positions and bifurcation thresholds. Each successful seed permanently increases the effective branching capacity B, reducing n\_eff and raising u⁺ — the architectural mechanism underlying the Arrow of Maturation (§32.5).
+
+**Terrain-ODE coupling: the full system with VST load.** The terrain quality ODE, when coupled to the regime scalar Φ, acquires an additional drain term from VST instability load (EDT v5.0, §36T.2 FGS):
+
+```
+Q̇_E = ρ_seed · C(t)^β · B_n(t) − δ_Q · Q_E(t) − κ_load · Φ(t)·𝟙[Φ>1]
+```
+
+The third term formalizes the **terrain erosion mechanism**: each period of Storm (Φ > 1) not only consumes governance capacity C but erodes the terrain quality Q_E that sets the upper bound for C recovery. This creates a **slow positive feedback loop** that is structurally distinct from the fast loops in the core ODE (§14):
+
+```
+Φ > 1 (Storm) → Q_E ↓ → C_ceiling ↓ → recovery slower → Φ ↑ (harder to exit Storm)
+```
+
+This is the terrain-level mechanism of Structural Degradation (§31): damage accumulates not just in the state variables (C, d, ρ) but in the terrain substrate that governs their recovery limits. The timescale ordering becomes:
+
+```
+τ_n ≪ τ_{C,d,T} ≪ τ_ρ ≪ τ_S (structural damage) ≪ τ_{Q_E} (terrain erosion)
+```
+
+Terrain quality Q_E is the **slowest variable in the system** — slower even than structural damage S. This is why terrain repair requires the longest timescales and why governance interventions that focus only on state-variable correction (adjusting C, d, T) can fail even when they appear to work locally: they do not address the terrain erosion that limits their ceiling.
+
+**Gain-Curvature Duality and ODE Design Freedom (EDT §52 / GCET).** The Gain-Curvature Equivalence Theorem establishes that affective gain modulation (AGM, adjusting T_eff) and terrain curvature engineering (EDT, adjusting U(x)) are **dual coordinate representations of the same governance primitive**:
+
+```
+System A (T_eff formulation):   dx = −∇J(x)dt + T_eff · ξ(t)dt
+System B (curvature formulation): dx = −∇U(x)dt,   U(x) = J(x)/T_eff
+```
+
+In ODE terms, this duality means that the temperature variable T (which controls exploration intensity) and the terrain curvature (which shapes the attractor landscape) are interchangeable at the level of stationary distributions:
+
+```
+T_eff ↑ ↔ terrain barriers ΔU ↓ (in the effective landscape)
+T_eff ↓ ↔ terrain barriers ΔU ↑
+```
+
+**Governance design implication:** A governance team that cannot directly modify the terrain (cannot change incentive structures, resource flows, or coupling geometry) can achieve the same distributional effect by modulating T_eff (temperature, exploration rate). Conversely, terrain designers who find T_eff modulation inaccessible (e.g., agents with rigid affective responses) can achieve the same effect through curvature injection. The duality **doubles the effective design space** of the ODE's correction protocol (§24).
+
+**Stochastic risk correction for ODE.** Near the Storm boundary (Φ ≈ 1), measurement noise in the governance state G creates uncertainty in the true terrain risk index κ_C:
+
+```
+κ_C^stoch(t) = κ_C(t) + λ_GCET · σ_G²(t) · |∂φ/∂G|²_{G=G_obs(t)}
+```
+
+The Jacobian |∂φ/∂G|² diverges near criticality (the GCET critical exponent), meaning that gain measurements near Φ = 1 are **maximally informative** about terrain curvature — but measurement errors at this point are also **maximally consequential**. The governance protocol implication: allocate maximum measurement precision to regime monitoring exactly when Φ is near 1 (when the system is most vulnerable to miscalibrated intervention).
+
+**Terrain Memory: Palimpsest effects on ODE equilibria.** The terrain is not a neutral backdrop — it carries historical information that modifies the ODE's effective parameters. The terrain memory equation (EDT §43.1):
+
+```
+U(x,t) = Σ_k η_k · Event_k(x) · exp(−γ_decay · (t − t_k))
+```
+
+produces **inherited parameter modifications** in the ODE system. Past Storm episodes (Event_k = Storm, η_k < 0) create negative curvature modifications that persist after Storm resolution, reducing the effective terrain quality Q_E below its pre-Storm level even after the state variables (C, d, ρ) have recovered. This is the formal terrain-level basis for the **damage ratchet** (§31): successive Storm episodes erode terrain quality cumulatively, not just through state-variable damage S.
+
+**Asymmetric retention and ODE threshold shifts.** Terrain retains negative events more strongly than positive ones (η_negative > η_positive, EDT §43.2). In ODE terms, this produces an asymmetric shift in the Storm entry threshold u⁺:
+
+```
+u⁺(t) = u⁺(0) − η_negative · Σ_k |ΔU_k^neg| · exp(−γ · (t − t_k))
+                + η_positive · Σ_k |ΔU_k^pos| · exp(−γ · (t − t_k))
+```
+
+Since η_negative > η_positive, the negative sum dominates over time: **the Storm threshold progressively lowers** not through structural damage S but through accumulated negative terrain heritage. A system that has experienced many Storms but always recovered (S is repaired) can nonetheless find its Storm threshold systematically reduced by terrain heritage effects. This provides a new mechanism for the **irrecoverable regime** (Type IV phase portrait, §14) that does not require lock budget violation — terrain heritage alone can produce irrecoverability.
+
+**Terrain phase transitions and ODE universality classes.** The terrain undergoes its own phase transitions as the control parameter (load u) changes (EDT §45). These terrain-level transitions map to three universality classes in ODE dynamics:
+
+| Terrain Universality Class | System Type | ODE Manifestation | Warning Timescale |
+|---|---|---|---|
+| **Mean-field** | Large org, long-range coupling | Gradual Φ increase to bifurcation | Long (τ₃ stratum) |
+| **Ising-like** | Small teams, nearest-neighbor | Sharp Φ jump at bifurcation | Short (τ₁ stratum) |
+| **Percolation** | Network connectivity transitions | Φ discontinuous at cluster threshold | Medium (τ₂ stratum) |
+
+The universality class of the terrain transition determines the **sharpness of the ODE bifurcation** and therefore the **lead time available for DDD intervention**. Mean-field systems have the longest early-warning windows; Ising-like systems have the sharpest transitions with the least warning. Identifying the universality class of a specific system (organizational vs. neural vs. AI) is therefore a prerequisite for calibrating the early-warning protocol (§20 early-warning indicators).
+
+**Terrain critical slowing down: earlier warning than σ² and AC.** The terrain-level order parameter Ψ_T = ⟨∂²U/∂x²⟩ shows critical slowing down **before** the ODE state variables do:
+
+```
+τ_relax(Ψ_T) ∝ |p − p_c|^{−zν}  (diverges at terrain transition)
+τ_relax(Φ) ∝ |Φ − 1|^{−1}       (diverges at Storm threshold)
+```
+
+Since the terrain transition precedes the Storm onset by the timescale ratio τ_{Q_E}/τ_{C,d,T}, terrain monitoring provides a **lead-time advantage** over the standard early-warning indicators (σ², AC(1), I_F). The optimal early-warning protocol adds terrain quality monitoring as the earliest layer:
+
+| Warning Layer | Indicator | Timescale | FGS Source |
+|---|---|---|---|
+| 0 (earliest) | Terrain quality trend Q̇_E < 0 | τ₃–τ₄ | §36T.4, EDT §45 |
+| 1 | Transfer entropy reversal | τ₂–τ₃ | §20, FGS §15.10.4 |
+| 2 | Fisher information I_F diverging | τ₁–τ₂ | §20, FGS §15.10.4 |
+| 3 | Variance σ² rising | τ₁ | §20 |
+| 4 | Autocorrelation AC(1) rising | τ₁ | §20 |
+| 5 (latest) | Φ ≈ 1, ECC threshold | τ₁ | §20, AGM §10 |
+
+**Buffer Ecology: multi-buffer carrying capacity in ODE terms.** As system complexity C rises above a critical threshold, an undifferentiated buffer (single middle-layer entity) produces error rates scaling as C², while differentiated buffers produce only C·log C error rates (EDT §33.4, §44.3). In ODE terms, this translates to a **buffer capacity term that is complexity-dependent**:
+
+```
+C_eff_undifferentiated = C · (1 − α_error · C)          (quadratic degradation)
+C_eff_differentiated   = C · (1 − α_error · log C)      (log-linear degradation)
+```
+
+Above the critical complexity C*, undifferentiated buffering causes C_eff to decline despite increasing C — this is a new mechanism for the **Ċ < 0** regime that does not require Φ > 1 or lock amplification. Instead, buffer saturation at the middle layer directly degrades capacity even in the stable (Φ < 1) regime. The **Buffer Carrying Capacity** condition provides a structural upper bound on middle-layer differentiation:
+
+```
+m_max = C^(1/2) · log(C) / K_buffer
+```
+
+Exceeding m_max consumes more coordination capacity than the additional buffers provide — analogous to the carrying capacity constraint n_max in the S-equation.
+
+**Attractor Landscape Grammar: systematic failure mode enumeration.** The grammar G_terrain = (Σ_A, N, P, S) with terminal symbols {A_point, A_limit, A_strange, A_null} provides a complete taxonomy of ODE failure modes (EDT §53):
+
+| Grammar Derivation | ODE Failure Mode | Standard Designation |
+|---|---|---|
+| `TERRAIN →* A_null` | Φ → ∞, d → 0 | Catastrophic Storm / Locked |
+| `TERRAIN →* A_strange(λ→∞)` | Oscillatory Φ without fixed point | Chaotic Instability |
+| `TERRAIN →* A_point(d→∞)` | k → 1, T → 0, stuck | Fossilization / Freeze collapse |
+| `TERRAIN →* BASIN⊗BASIN disconnected` | Frame dispersion Σ → ∞ | Silent Fragmentation |
+| `Basin deforms: d → −d` | u⁻ drops below achievable u | Trauma / Damage Ratchet |
+
+**Novel failure mode predictions for ODE (EDT §53.2 NF1–NF3):**
+
+**NF1 (Resonance Capture):** `TERRAIN →* A_limit(ω = ω_agent)` — the terrain develops a limit cycle at agents' characteristic frequency. ODE signature: k oscillates periodically with period 2π/ω_agent, Φ oscillates but never exceeds 1 permanently (not Storm) and never reaches 0 (not Rest). This mode is **invisible to standard Storm metrics** because Φ never triggers the Storm threshold — it is a new ODE attractor not classified by the existing Rest/Storm/Lock taxonomy. Detection: cross-spectral analysis between Φ(t) and agent behavioral frequency.
+
+**NF2 (Grammar Incompleteness):** `HIERARCHY[A_point, A_strange]` — within-layer metrics normal, cross-layer metrics pathological. ODE signature: each layer shows stable Φ < 1 in isolation, but the coupled ODE shows Φ_cross > 1 for inter-layer terms. This is the terrain-grammar formalization of **Silent Fragmentation** (§7.8.7): the standard scalar Φ fails to detect this failure because it aggregates all layers. Detection requires layer-resolved Φ monitoring and cross-layer transfer entropy.
+
+**NF3 (Attractor Proliferation Overflow):** `TERRAIN →* Σ_k BASIN_k` with k > n_max. In ODE terms, this corresponds to excessive diversity d forcing the system into a regime where maintaining d itself consumes governance capacity C:
+
+```
+Ċ|_{d>d_max} < 0 even when Φ < 1
+```
+
+The system spends governance capacity managing attractor diversity rather than maintaining any specific attractor. Detection: d rises above the effective diversity optimum d* = argmax{Ċ > 0}, producing paradoxical C decay despite stable Φ.
 
 #### NAT (Network Architecture Theory) — Topology as Dynamical Constraint
 
@@ -5045,6 +5811,55 @@ ECC > 1:   Super-critical (under-regulated)            ↔  Φ > 1 (Storm)
 ```
 
 The isomorphism is structural: both ECC and Φ are self-consistent closure variables measuring proximity to criticality, with bistability, hysteresis, and compensatory dynamics operating identically at single-agent (ECC) and multi-agent (Φ) scales. This scale invariance — the same dynamical template operating at individual and collective levels — is the formal content of DFG's fractal governance claim.
+
+**AGM-EDT-ODE Triple Integration: The Coupled Stack.** The deepest level of integration across the DFG theories becomes visible when AGM, EDT, and the FCCN ODE are viewed simultaneously. The three theories are not parallel descriptions of the same system — they are nested at different timescales, with EDT at the slowest layer governing the parameters within which AGM operates, and AGM governing the agent dynamics that drive the FCCN ODE:
+
+```
+Layer          Theory    Primary variable    Timescale      Governs
+────────────────────────────────────────────────────────────────────────
+Terrain        EDT       U(x,t), Q_E(t)      τ₄ (glacial)   C_ceiling, u⁺ bounds
+Affective      AGM       T_eff, M(t), s(t)   τ₂ (medium)    T variable, sensitivity
+Operational    FCCN ODE  Φ(t), C, d, ρ, k   τ₁ (fast)      Regime dynamics
+```
+
+**EDT governs AGM's operating range:** The terrain permeability Π = exp(−ΔU/T_eff) determines whether T_eff can overcome terrain barriers. When terrain is deeply desertified (Q_E → 0, ΔU → 0 for the wrong attractors), even large T_eff cannot produce productive exploration — the agent escapes attractors but finds only flat terrain without better alternatives. This is the terrain-level mechanism of the **Structural Atrophy** identified in FGS §15.9.7: suppressed T_eff is one cause, but degraded terrain (no productive attractors to escape to) is another, and only EDT monitoring can distinguish the two.
+
+**AGM governs ODE's T variable:** The affective sensitivity s(t) determines whether T(t) responds correctly to ρ degradation. When s → 0 (Freeze mode), T fails to rise when ρ decreases, disabling the compensatory αT(ρ_ref − ρ) term in the ODE — this is precisely the Freeze Collapse mechanism (§32.10 AGM Theorem 2) showing up as parameter failure within the ODE system.
+
+**Joint early-warning across all three layers:**
+
+```
+Tier 0 (terrain):   Q_E trend negative, κ_C^stoch rising
+                    → Storm is coming but has not yet registered in Φ
+                    
+Tier 1 (affective): T_eff declining despite ρ degradation (Freeze precursor)
+                    s(t) rising above s_crit (Runaway precursor)
+                    → Affective regulation failing, ODE will lose T compensation
+                    
+Tier 2 (operational): σ²(Φ) rising, AC(Φ) rising, I_F declining
+                    → Standard early-warning signals — Storm approaching
+                    
+Tier 3 (operational): Φ ≈ 1 reached
+                    → Active Storm entry — DDD intervention required
+```
+
+Monitoring only the operational tier (Φ-based) is structurally insufficient — it detects the crisis without providing lead time for prevention. The complete monitoring architecture requires all three tiers operating simultaneously, with terrain and affective tier signals triggering terrain-level intervention (terrain cultivation, T_eff calibration) before operational signals require DDD emergency response.
+
+**Emotional Ecology and ODE collective dynamics.** The EDT Emotional Ecology theory (EDT §54) formalizes how collective affective states modify terrain through social emotional contagion. In ODE terms, when multiple agents undergo correlated emotional events, the aggregate terrain modification is amplified by the Collective Memory Embedding Coefficient:
+
+```
+ΔU_collective = n_cascade · μ_agent · Σ_k event_k(x)
+```
+
+This produces a **coherence resonance** effect: if n agents simultaneously experience the same negative emotional event (collective Storm), the terrain modification is n times stronger than the same events distributed across agents. The governance implication for multi-agent ODE systems: **collective experiences have superlinear terrain effects** — a team Storm is not just the sum of individual Storms but creates terrain degradation at the collective scale that individual recovery cannot undo.
+
+The network SOC phase transition at coupling threshold c* = (λ₁ − λ₂)^{−1} (NAT spectral gap inverse) determines whether individual emotional events remain local or cascade collectively. This directly modifies the effective diversity variable d in the ODE:
+
+```
+d_eff = d · (1 − ε_contagion · 𝟙[c > c*])
+```
+
+Above the contagion threshold c*, individual diversity collapses into correlated collective dynamics — d_eff drops even when individual d remains high, removing the diversity protection that prevents Storm escalation.
 
 ---
 
@@ -5527,6 +6342,10 @@ dfg_v4c/
 
 *Document version: 1.6-draft*
 *Last updated: March 2026*
+*Changelog v1.8: Full-spectrum Heritage Theory integration — permeating §8, §10, §19, §24, §26, §27, §32.7. §8 — Added Heritage Vulnerability Window: fifth fractal collapse pre-condition; exponential collapse acceleration under heritage loading k_eff(0); formal heritage-collapse mechanism (pre-formed propagation pathways); EROTI Governance Investment Hierarchy table (6 levels from load reduction EROTI≈0 to terrain cultivation EROTI≫1); EROTI hierarchy theorem; C_eff = C·B^β·Q_E^γ reformulation connecting terrain quality to governance efficiency exponent; n²→n^{1+ε} transition. §10 — Added Heritage-Constrained Escape: Fourth Mechanism Failure Mode; three standard mechanisms failing simultaneously under heritage; heritage-constrained escape failure analysis per mechanism; Fourth escape mechanism (TCE-enabled, Stage T0–T3); ODE correspondence (DDD succeeds Φ<1 but Rest basin absent); Landscape Asymmetry Under Repeated Escape Attempts: double reinforcement mechanism (both current and target basins hardened); N_critical formula; therapeutic prescription timing; Langevin heritage drift modification. §19 — Added Extended Lock Budget: Heritage Correction; heritage-modified lock ratios L_C^heritage(H) and L_d^heritage(H); heritage-modified budget inequality (strictly tighter than standard); critical heritage threshold H_crit for lock budget violation; Governance Rule 5 (heritage monitoring) and Rule 6 (margin increase in heritage-loaded terrain); Five-Dimensional Recovery Design Space (L_C, L_d, S, H, Q_E); recoverable region as intersection of three independent constraints. §24 — Expanded Note on Irrecoverability: Heritage-Modified Irrecoverability (topological vs. threshold-based distinction); Heritage Paralysis formal definition; Fourth DDD Stage (Stage 0 Terrain Pre-Conditioning with T0–T2 sub-stages and transition criterion); DDD Cycling Failure Mode signature. §26 — Major expansion of Variable Dependency Graph: Added 3 new feedback loops (Terrain Erosion ⊕ slow, Heritage Accumulation ⊕ very slow, Heritage Escape Block ⊕ very slow); structural asymmetry updated from 4+1 to 6+1; Extended Variable Set (12 core + 3 terrain: Q_E, H, B); Complete Extended Causal Diagram showing terrain layer above ODE core; Loop Gain Analysis table across timescales; governance protocol implication (DDD + terrain cultivation must run simultaneously). §27 — Added extended terrain-layer regime table (6 new regimes: Heritage-Clean Rest, Heritage-Loading Rest, Heritage Trap, Heritage Paralysis, Terrain-Eroded Storm, Heritage Recovery); Heritage Paralysis diagnostic requirements; heritage modification of bifurcation thresholds u⁺_eff(H) and u⁻_eff(H); heritage-extended irrecoverability condition (three-way OR: damage OR heritage-budget OR heritage paralysis). §32.7 — Added Heritage Accumulation Across 7-Phase Lifecycle (detailed heritage trajectory per phase, Phase 1 critical investment principle, Phase 3 failure mechanism via heritage ratchet, Phase 5 heritage equilibrium, Phase 6 vulnerability inheritance, Phase 7 heritage compounding); Heritage-Corrected 7-Phase Governance Protocol; Deficit-Heritage Relationship: F_deficit^eff = F_deficit · (1-H/H_max)^δ. Reader Guide — Added §32.5.2 and §32.8.2 rows. Total line count ~6,210 → ~6,680.*
+
+*Changelog v1.7: EDT v5.0 deep integration — Heritage Theory, Gain-Curvature Duality, Terrain Grammar, Buffer Ecology. §2 — Added Extended Error Cascade with terrain heritage precursor (terrain-level error propagation before ODE error). §20 — Added Terrain-Level Silent Criticality subsection: terrain Q_E declining while all Φ, ρ, C, d metrics appear normal; Q̇_E passive decay mechanism; heritage-adjusted germination threshold as SC signature; terrain SC detection protocol (5 steps); terrain-reference drift as terrain-level SCM analog. §32.5 EDT section — Major expansion: EDT-ODE full coupling with VST instability load term ($\kappa_{\text{load}} \cdot \Phi \cdot \mathbb{1}[\Phi>1]$); terrain erosion slow positive feedback loop (Φ→Q_E↓→C_ceiling↓→Φ↑); extended timescale ordering (τ_n ≪ τ_{C,d,T} ≪ τ_ρ ≪ τ_S ≪ τ_{Q_E}); Gain-Curvature Duality in ODE design freedom (T↔ΔU isomorphism in ODE terms); stochastic risk correction formula with Jacobian amplification; terrain memory palimpsest effects on ODE equilibria; asymmetric retention and ODE Storm threshold lowering from heritage; terrain phase transitions and ODE universality class table (Mean-field/Ising-like/Percolation with warning timescales); terrain critical slowing down as Tier 0 early-warning; complete 5-tier EW hierarchy with terrain leading by τ₃/τ₁; Buffer Ecology and multi-buffer carrying capacity in ODE terms (undiff C² vs. diff C·log C error scaling); 5-type buffer taxonomy with ODE correspondence; Attractor Landscape Grammar complete failure mode table (5 known + 3 novel); NF1 Resonance Capture, NF2 Grammar Incompleteness, NF3 Attractor Proliferation — phase portrait types V and VI. §32.5.2 Extended Cross-Validation — 4 new cross-validations CV7–CV10 (GCET×ODE, Grammar×Phase Portrait, Heritage×Damage, Collective Memory×ECC); 3 new emergent constraints EC4–EC6; cross-theory matrix upgraded from 28 to 36 pairs. §32.8.1 connection table — Added terrain erosion, buffer ecology, GCET duality rows. §32.8.2 NEW SECTION — Terrain Heritage Theory as Fourth Layer of Scaling Failure: heritage problem formalization; ODE signature of heritage failure (state variables healthy, seeding fails); heritage-ratchet mechanism (failed seeding creates more heritage); Heritage Decay Function table by event type; Heritage Ratchet distinct from standard damage ratchet; formal Heritage Recovery Condition; Condition 8 extending the 7-condition Scaling Closure Theorem; Heritage-Adjusted EROTI; two-dimensional failure diagram (S vs. Q_E independently); Therapeutic Collective Events (TCE) as new governance primitive with trigger conditions and success criterion. §32.9 — Added F10–F15 (Heritage-Independent Germination, GCET Non-Equivalence, NF1 Visibility, TCE Ineffectiveness, Terrain SC Detectability, Buffer Carrying Capacity Independence). Testable Predictions — Added P39–P46 (heritage-ratchet seeding, GCET equivalence at matched dose, terrain CSD lead time, buffer capacity peak, NF1 ODE signature, collective memory amplification, TCE dosing threshold, EROTI horizon). Theoretical Significance — Added items 32–39 (Heritage failure, TCE primitive, GCET in ODE, extended cross-validation, NF1-3 novel modes, four-tier EW hierarchy, buffer ecology, triple integration stack). DFG mapping table — Added 13 new entries (heritage loading, heritage-adjusted λ_eff, TCE, GCET, m_max, universality class, NF1, NF2, μ_network, r_positive_min). Total line count ~5,755 → ~6,210.*
+
 *Changelog v1.6: Full-spectrum theoretical deepening pass with AGM v2.5 deep integration. §1 — Added Information-Theoretic Efficiency of Hierarchical Routing (channel capacity analysis, bottleneck constraint, flat-vs-hierarchical comparison, multiplicative accuracy structure foreshadowing lock budget). Added Universality Across Domains (five-domain structural mapping). §2 — Added Quantitative Error Cascade Model (multiplicative P_correct formula, conditional error amplification as positive feedback precursor, error detection asymmetry as Silent Criticality precursor). Added Dimensional Reduction as Information Loss (information-theoretic quantification of tree projection loss, RBIT Axiom A2 connection, structural distortion index SDI, network-tree mismatch metric). §3 — Added Formal Credit Assignment Failure (gradient error δ_ℓ, temporal dilution of credit, inverse credit-impact relationship). Added Goodhart's Law as Dynamical Phenomenon (metric-reality gap G(t), autocatalytic growth, three phases of metric corruption, Phase 2→3 as Silent Criticality→Storm bifurcation). §4 — Expanded structural isomorphism table (added Quality monitoring, Escalation protocol, Metric gaming mappings). Added Depth of Structural Isomorphism (four formal constraints shared by call centers and neural systems, isomorphism predictive power). §5 — Added Formal Model of Relational Learning (structural equivalence definition, manifold hypothesis connection, weight change propagation via spectral properties, three-factor learning rule as TLG authority separation analog). §6 — Added Formal Definition of Dynamical Self-Similarity (renormalization operator R, topological flow equivalence, RG connection, critical exponent universality with ±15% tolerance). Added Formal Proof: Multiplicative Resilience Under Scale Separation (proposition with proof, conditional independence under scale separation, resonance mechanism under separation failure). §7.5 — Major AGM integration block: Affective Gain as Frame Competition Regulator (g(E) modulates frame transition rate, T_min^frame derivation, No-Free-Lunch at frame level, entropy production during frame competition, coordinate drift in frame self-assessment, hub failure cascade with O(ln K) propagation in frame architecture). §11 — Added Landscape Geometry and Basin Structure (basin definitions, depth vs width distinction, landscape evolution dynamics). Added pre-exponential Kramers factor, multi-dimensional correction, stochastic resonance connection (optimal Storm intensity D* derivation). §20 — Major AGM integration: Added Coordinate Drift and Self-Referential Measurement Failure (AGM Proposition 15.2.1 SCC threshold, self-referential measurement catastrophe, coordinate drift rate bound, Fokker-Planck bimodal structure near criticality, mean first passage time to collapse with logarithmic capacity scaling, interaction topology as primary indicator, meta-indicator reliability as sixth warning signal). §31 — Major expansion of damage theory: asymmetric vulnerability analysis with ratchet mechanism, N_survivable formula, damage-modified lock budget with full derivation of S*, four damage-recovery trajectories (healthy/accelerated/catastrophic/compensated aging), accumulated exposure with three memory kernels (exponential/power-law/prion-like with detailed interpretations), damage ratchet acceleration, stochastic damage model with remaining healthy lifetime distribution. §32.5 AMT — Massive expansion from AGM v2.5: Three Foundational Theorems mapped to ODE (Adaptive Necessity → T-variable constraint with T_min derivation and damage-modified T₀_eff; Bifurcation Classification → Freeze/Runaway ODE trajectory correspondence with separatrix formula; Governance Completeness → ODE closure verification with perturbation source, containment, recovery pathway specification). Thermodynamic Grounding (entropy production rate in ODE variables, Entropy Production–Adaptability Correspondence, minimum entropy production bound, NESS identification of Rest Mode). Landscape Complexity Classification (four landscape classes with ODE governance regime mapping). Controlled Non-Minimization and Active Inference Bridge (ΔF_affective budget, T₀ as function of d refinement suggestion). Mixed-Mode Collapse at ODE Level (multi-subsystem ODE extension, cross-contamination coupling, differential DDD protocol). Hub Failure Cascade and Storm Interference (O(ln n) propagation, super-additive Φ under constructive interference, compound crisis prediction). Emotional Algebra and Composition (non-commutativity in ODE flow, interference mapping, ambivalence index). Age-Dependent Vulnerability and Basin Volume Evolution (Freeze/Runaway basin dynamics with maturation, Maturation Paradox connection). Added Testable Predictions P33–P38 (information-theoretic routing, credit assignment inverse, metric-reality gap acceleration, stochastic resonance escape, damage trajectory classification, power-law kernel acceleration). Added Theoretical Significance items 34–39. Expanded References with 12 new entries (Anderson 1972, Bak et al. 1987, Friston 2010, May 1972, Strogatz 2015, Chen & Aihara 2025, Duan et al. 2025, Kim & Park 2025, Li et al. 2026, Moreno & Vespignani 2025, Peters 2025). Updated keywords and metadata.*
 *Changelog v1.5: Comprehensive theoretical strengthening pass. §9–10 — Added Correction-Escape Transition Mechanism (correction saturation criterion η_corr, three correction-escape regimes, RBIT tier mapping, RT five-phase cascade architecture). §14 — Added Sensitivity Analysis and Parameter Regime Classification (six dimensionless groups π₁–π₆, parameter regime table, local sensitivity coefficients, phase portrait topology classification Types I–IV, critical value π₁*, Monte Carlo robustness analysis with CV estimates). §20 — Added Quantitative Early-Warning Indicator Comparison Framework (five indicators: σ², AC, I_F, PRR, CVD with formal alarm conditions, comparative performance matrix, optimal staged detection protocol, DDD timing connection). §30 — Added Global Coupling Revival: Multi-Scale Synchronization Dynamics (multi-scale revival ODE, revival propagation condition, revival cascade ordering, Fisher-KPP traveling wave analysis, revival dilemma, revival completion criterion, connection to Scaling Resolution). §31 — Added Memory Kernel Formalization for Non-Markovian Damage (three kernel forms: exponential/power-law/prion-like, fractional dynamics D^α, accumulated exposure integral E(t), critical dose E_crit, damage ratchet with acceleration). §32.5.1 — Added Cross-Theory Validation Matrix (pairwise consistency matrix across 8 theories, six key cross-validation results CV1–CV6, three emergent constraints EC1–EC3). §32.8.1 — Added Formal Convergence Proofs and Rate Estimates (dimensional compression convergence theorem, governance scaling rate corollary, self-purification convergence rate estimate, map-terrain convergence proposition). Added Testable Predictions P27–P32 (revival cascade ordering, correction saturation threshold, memory kernel damage acceleration, cross-theory emergent constraint tightening, sensitivity asymmetry, early-warning indicator staging). Added Theoretical Significance items 28–33. Expanded References with 11 new entries (2024–2025 literature on neural criticality, MFG bifurcation, cumulative damage, governance scaling). Updated keywords and metadata.*
 *Changelog v1.4: Scaling Resolution Theory major expansion. §32.8.1 — Added complete Scaling Resolution architecture: Circular Closure Theory (circle as fundamental scalable governance unit, formal definition, expansion→circulation conversion, bounded coordination distance proof); Scale-Matched Circles (scale-specific dynamical requirements, timescale collision failure mode, Proposition: Scale-Matched Closure); Layered Circular Architecture (cone structure derivation from S-equation, effective dimensionality collapse formula, subquadratic governance scaling proof, recursive dimensional compression condition lim n_eff < ∞); Contamination Theory (formal Definition of contamination as cross-scale instability leakage, contamination variables S_i/R_i/P_i, contamination flux formula Φ_contam = P·max(0,S−R), cascaded contamination condition, three contamination modes: coupling/frame drift/timescale leakage, bottom-up origination proof); Self-Purification Capacity R_i (four multiplicative components D·F·V·T with ODE correspondence, immunity paradox with formal R_i decay dynamics under zero contamination, dR/dt learning equation, connection to DDD perturbation testing); Terrain Design Protocol (circle formation conditions, valley/pass/gradient geometry, four-phase isolation→exposure→coupling→operation protocol with EDT/RT mapping, contamination-aware design); North Star Architecture (global/local North Star definition, continuous correction dynamics, criterion vs. principle separation with formal test, "eyes and feet" principle with contamination policy, scanning requirement); Integration Protocol (integration necessity from K² inter-circle scaling, maturity precondition R > Coupling_Cost, middle-layer-first principle with structural rationale, Neck architecture with three mandatory layers, permeability ramp formula, three connection types A→B→C, integration completion signal as dynamical synchronization, ODE fixed-point correspondence); Map-Terrain Balance (unified scaling principle, friction diagnostic — productive vs. non-productive, friction origination cascade bottom→middle→upper, preemptive feedback as collapse prevention, formal scaling closure theorem with 7 conditions, constraint-limited scalable regime derivation); Boundary Dynamics (immunity-paradox-driven expansion necessity, resource constraint on boundary distance, pulsed expansion lifecycle, experience accumulation from failed explorations, ODE perturbation correspondence); Complete Architecture diagram with scaling lifecycle phases 0–6 and DFG component mapping table. Updated Reader Guide, DFG mapping table, Testable Predictions 21–26, Falsification Conditions F6–F9, keywords, and metadata.*
