@@ -4,6 +4,28 @@
 
 ---
 
+> **v6.7 Benchmark-Selected Routing Algebra and Memory-Mode Update (July 2026).** This revision executes a seven-family synthetic candidate benchmark for the benchmark-dependent extensions left open in v6.6: route-order sensitivity, constructive/neutral/destructive mediation, hop-depth selection, queue/load routing, directional required-resolution matching, reciprocal-memory candidates, and lineage/anchor-aware VERIFIED promotion. In the declared projection-chain model, ordered bridge routing achieved held-out normalized loss 0.024 versus 0.314 for the reverse order and 0.323 for direct transfer; midpoint mediation reduced loss by 74.7%, while a misaligned detour increased it by 263.1%. Directional resolution-aware routing achieved 0.895 task success versus 0.770 for coarse role routing and 0.260 for scalar total-capacity routing. The first staged reciprocal-memory candidate was RED, and even the improved staged candidate lagged pooling under clean or genuine-shift regimes; lineage-median aggregation became superior only under duplicated correlated lineage bias. The document therefore conditionally promotes path-transform loss, held-out mediation margin, empirical hop search, load-regime-aware queue terms, required-resolution gating, a provenance-conditioned memory-mode router, and independent-anchor gating for high-impact VERIFIED promotion. These are model-internal synthetic results, not real-world empirical validation or universal routing/memory theorems.
+
+> **v6.6 Network Semantics and Multiplex-Control Update — Signaling, Influence, Escalation, and Independent Validation (July 2026).** This revision strengthens §19.10.8 using the canonical operational distinctions in *Network Architecture Theory* v3.2. It separates completed-state signaling from trajectory-changing influence; installs interface narrowing, temporal decoupling, and write-asymmetry as structural processing-isolation controls; replaces the single implicit network with task/information/authority/contamination/recovery/audit multiplex layers; distinguishes lower-layer push escalation from upper-layer pull/intercept escalation; adds over-escalation, privacy, authority-expansion, recovery, audit-fatigue, and queue-externality costs to route selection; discounts correlated agreement by lineage class; and adds asymmetric evidence/privilege promotion, rapid demotion, rollback, and supersession locks. These additions are architectural definitions, safety invariants, and benchmark candidates—not proofs of universal routing optimality, independent-anchor availability, or non-escalation under arbitrary adversaries.
+
+> **v6.5 Network Control-Plane Update — Targeting, Gating, and Routing (July 2026).** This revision audits the document's existing routing and gating content and adds §19.10.8 as an explicit network control plane. It separates target selection, permission/admission gating, and route/resource allocation; projects the DFG Unified Interaction Field Theory v4.9 TGR architecture from single-agent task processing into module-to-module network flow; introduces admissible and realized interface-density exponents, gate states, capacity-constrained routing, summary-validity downgrades, fallback diversity, fast-isolate/slow-integrate asymmetry, and N-TGR-0..N-TGR-9 benchmarks. The section is an architectural/control ansatz and benchmark program, not a theorem of optimal routing or constitutional non-escalation.
+
+> **v6.4 Positioning Update — Lifecycle Scalability and Endogenous Structural Transition (July 2026).** This revision expands §19.10.7 from a short prior-work note into a comparative framework separating ex-ante structural restriction, aggregate approximation, adaptive selection within a fixed superstructure, post-hoc compression, and the proposed endogenous structural-transition lifecycle. It distinguishes routine computational scalability from structural and maintenance scalability, introduces a lifecycle-cost functional including repartition/retraining/migration/revalidation events, defines localization of structural change through $Q_a$, $\eta$, $s_{max}$, and North Star transitions, and adds falsifiable static-versus-endogenous scaling predictions. Representative primary literature anchors are included; the comparison is explicitly non-exhaustive and does not claim that existing research ignores complexity reduction.
+
+> **v6.2 Reader-Safety and Notation Audit — Complexity Transition Scope (July 2026).** This revision makes no new universal scaling claim. It separates raw population size $N$ from FCC effective conflict dimensionality $n_{\mathrm{eff}}$, distinguishes routine operating cost from exceptional audit/revalidation cost, introduces partial re-quadratization through the largest unresolved dependency component, places Local and Global North Stars in a declared common comparison space, adds validation gates for upward reference learning and structural split, softens theorem language to the stated model class, and repairs contribution numbering/cross-references. The alternative inter-module overhead laws $O(K)$ versus $O(K^2)$ remain deliberately unresolved pending an explicit modeling choice.
+
+> **Notation lock for scaling discussions.** Unless a quoted legacy equation explicitly says otherwise:
+> - $N$ = raw number of lower-level agents/components;
+> - $n_{\mathrm{eff}}$ = FCC/S-equation effective exploration or conflict dimensionality after branching and compression;
+> - $K$ = number of modules/circles;
+> - $u_a$ = unresolved internal degrees of freedom in module $a$;
+> - $L_N$ = hierarchy depth.
+> Legacy ODE passages using $n$ should be read as $n_{\mathrm{eff}}$ when they describe conflict dimensionality rather than raw headcount.
+
+> **v6.3 Model-Selection Update — Interface-Density Benchmark (July 2026).** This revision benchmarks three competing inter-module cost models under identical synthetic conditions: bounded-degree interfaces ($\eta=0$), quasi-dense interfaces ($\eta=1$), and an adaptive interface-density model ($0\leq\eta\leq1$). The adaptive model recovered the hidden topology exponent across all tested regimes and avoided the large module-selection regret produced by fixed endpoint models away from their matching topology. The document therefore adopts $E_\eta(N,K)=aN^2/K+\gamma K^{1+\eta}$ as the umbrella cost law, retaining the previous $O(K)$ and $O(K^2)$ laws as endpoint cases. This is **model-internal synthetic validation**, not external empirical confirmation.
+
+> **v6.1 Additive Update — Equilibrium-Induced Complexity Transition and Dual North Star Dynamics (July 2026).** This revision preserves the existing FCC/DFG model and adds a missing bridge between the document's quadratic interaction-pressure law and its fractal-governance solution. The update distinguishes **potential or time-integrated interaction burden** from **realized active communication**, formalizes the transition from an uncompressed $O(n^2)$ regime to an equilibrium-compressed $O(n)$ or $O(n\log n)$ regime, and connects that transition to local/global dynamic equilibrium, Local/Global North Stars, reference tension, and three reference-resolution pathways: local realignment, global reference update, and structural split. The new statements are marked as definitions, model-internal propositions, or conditional theorems; no universal $O(n)$ claim is made without bounded module, interface, and summary-dimension assumptions.
+
 ## Projection Hierarchy Declaration
 
 > **Structural Note (read before §1).** This document spans three distinct abstraction levels. Conflating them is the most common source of misreading. The three levels are:
@@ -26,7 +48,9 @@ Level C — Emergent Phenomena    (Vector Storm, Silent Criticality, Cube collap
 **Why this matters.** When §§1–10 and §14–29 are read on the same plane, it appears that Cube Domination, ODE dynamics, and terrain theory are peer-level claims competing for the same explanatory role. They are not. They are projections of the same underlying scaling law onto different observation planes:
 
 ```
-Underlying law:   interaction ∼ n²  vs.  governance ∼ n  →  criticality at n* ≈ √(C_M)
+Underlying law:   uncompressed potential/time-integrated interaction ∼ n²
+                  equilibrium-compressed realized coordination ∼ n to n·log n
+                  governance capacity and architecture determine the transition
 Level C projection:  "vector storm", "cube fragmentation", "silent criticality"
 Level B projection:  dC/dt, dρ/dt, Φ-bifurcation, lock budget
 Level A projection:  terrain curvature, heritage loading, branching capacity B
@@ -41,7 +65,8 @@ This is the DFG version of the geometry → dynamics → phenomena structure sta
 The pattern takes the following form in the DFG context:
 
 ```
-Shared assumption: interaction ∼ n²,  governance ∼ n
+Shared assumption: uncompressed potential/time-integrated interaction may reach ∼ n²,
+                   while bounded local governance resources scale at most near-linearly
          ↓
 Derived theories:  ODE dynamics  →  predicts Φ-criticality
                    Cube Domination  →  predicts frame collapse
@@ -65,7 +90,7 @@ Actual structure:  same-origin consistency, not independent confirmation
 
 ### Deep n² Structure: Why Interaction Growth Forces Governance Asymmetry
 
-> **Mathematical foundation note.** For systems with dense or effectively all-to-all interaction, the number of potential interaction channels scales as n(n−1)/2 ≈ n², a combinatorial consequence of pairwise coupling. This subsection makes the scaling mechanism explicit. Note that sparse or bounded-degree networks may exhibit weaker scaling (edges ∼ n); the quadratic interaction pressure applies specifically to systems where coordination requires near-global coupling — the primary regime of interest for hierarchical governance systems.
+> **Mathematical foundation note.** For systems with dense, effectively all-to-all, or time-integrated globally reachable interaction, the number of potential interaction channels scales as n(n−1)/2 ≈ n², a combinatorial consequence of pairwise coupling. This is **not** a claim that every instantaneous communication graph contains $O(n^2)$ physical edges. A bounded-degree graph may have $O(n)$ active edges at each instant while its perturbations, dependencies, or verification obligations reach $O(n^2)$ node pairs over a sufficiently long coordination horizon. The quadratic term therefore denotes the **uncompressed interaction or causal-verification burden**. Fractal governance is the proposed mechanism that keeps the realized operational graph sparse by turning stabilized local dynamics into bounded summaries and bounded interfaces.
 
 **Pairwise interaction counting.** For a system with n components capable of mutual interaction, the number of possible interaction channels is:
 
@@ -76,41 +101,75 @@ E = n(n−1)/2  ≈  n²/2    for large n
 This is the **fundamental source** of the n²-asymmetry. Governance capacity, by contrast, typically grows linearly with resources:
 
 ```
-Governance capacity  ∼  n    (processing units, management bandwidth, rule throughput)
-Problem complexity   ∼  n²   (interaction channels, coordination demands, conflict potential)
+Governance capacity  ∼  N    (processing units, management bandwidth, rule throughput)
+Problem complexity   ∼  N²   (potential/time-integrated unresolved relation burden)
 ```
 
-The ratio:
+The ratio in the uncompressed/global-coupling regime is:
 
 ```
-Ω(t) = [interaction load] / [governance capacity]  ∼  n²/n  =  n
+Ω(t) = [potential or time-integrated interaction burden]
+       / [governance capacity]
+     ∼ N²/N = N
 ```
 
-grows linearly with system size. **This is why scaling breaks governance.** It is not a failure mode — it is a mathematical necessity for any pairwise-interacting system.
+and grows linearly with system size. **This is why uncompressed scaling breaks governance.** It is a regime-dependent necessity when pairwise dependencies remain globally exposed, not a universal claim about every sparse local network. The central governance problem is therefore not to deny the $n^2$ potential relation space, but to prevent that space from becoming the continuously realized operational burden.
 
-**Critical size.** If governance capacity is C_M, the critical size beyond which interaction channels exceed governance capacity is:
-
-```
-n(n−1)/2  ≈  C_M    →    n*  ≈  √(2·C_M)
-```
-
-**Why fragmentation is inevitable above n*.** When Ω > 1, the least-cost response is modular decomposition. Partitioning n agents into k groups of size m = n/k reduces internal interaction to:
+**Critical size.** If governance capacity is $C_M$, the raw-size threshold beyond which interaction channels exceed governance capacity is:
 
 ```
-interaction_new  =  k · m²  =  k · (n/k)²  =  n²/k
+N(N−1)/2  ≈  C_M    →    N*  ≈  √(2·C_M)
 ```
 
-The reduction factor is k. Total cost (interaction + coordination overhead αk) is minimized at:
+**Why modularization pressure arises above $N^*$.** Let $N$ denote raw lower-level agent count and $K$ the number of modules. Partitioning $N$ agents into groups of mean size $m=N/K$ reduces exposed internal pairwise burden to
 
 ```
-k*  =  n / √α
+E_internal(N,K) = a·N²/K.
 ```
 
-This is the mathematical origin of **Cube Domination, buffer layers, and hierarchical governance**: they are the cost-minimizing response to n² interaction overload. They are not organizational choices — they are structural attractors.
+The inter-module term depends on how rapidly the module graph densifies. The benchmarked umbrella model is
 
-**Fractal recurrence.** Each new modular layer faces the same problem: k sub-units now interact among themselves at O(k²) cost, requiring a further layer. The result is a self-similar governance hierarchy — the **fractal governance structure** — where the same (Φ, L, q) dynamics govern at every scale, and the same collapse conditions apply at every level.
+```
+E_η(N,K) = a·N²/K + γ·K^(1+η),      0 ≤ η ≤ 1,
+```
 
-**The quadratic collapse equation.** Across all sub-theories in this document, the core dynamics reduce to a single canonical form:
+where $\eta$ is the **interface-density exponent**:
+
+- $\eta=0$: bounded-degree or tree-like module graph, $E_\partial=O(K)$;
+- $0<\eta<1$: partially densifying interface network;
+- $\eta=1$: quasi-dense module graph, $E_\partial=O(K^2)$.
+
+The continuous optimum is
+
+```
+K* = [a·N² / (γ(1+η))]^(1/(2+η)),
+m* = N/K*,
+E_min(N) = Θ(N^[2(1+η)/(2+η)]).
+```
+
+Hence the earlier linear-overhead and quadratic-overhead calculations are not rival formulas but endpoint regimes:
+
+```
+η = 0  →  K* = Θ(N),       m* = Θ(1),       E_min = Θ(N)
+η = 1  →  K* = Θ(N^(2/3)), m* = Θ(N^(1/3)), E_min = Θ(N^(4/3)).
+```
+
+Within this model, **modularization alone does not guarantee linear cost**. Near-linear operation requires equilibrium, summary sufficiency, and bounded interface degree to drive or maintain $\eta$ near zero. This provides a mathematical route to Cube Domination, buffer layers, and hierarchical governance without asserting that every real system uses the same endpoint architecture.
+
+**Fractal recurrence.** Each new modular layer faces the same problem: k sub-units now possess a potential O(k²) relation space. If every relation must remain explicitly active, a further layer is required. The result is a self-similar governance hierarchy — the **fractal governance structure** — where the same (Φ, L, q) dynamics govern at every scale, and the same collapse conditions apply at every level.
+
+**Dynamic complexity transition.** The hierarchy does not merely partition a fixed $n^2$ workload. As local circles mature, each circle's internal state becomes representable by a bounded interface summary; most pairwise relations become latent rather than operational. Hence the same system may move between complexity regimes:
+
+```
+unresolved/global mutual reference     →  potential burden O(n²)
+partial circle formation               →  Σ_a n_a² + boundary overhead
+stable local summaries + bounded links →  O(n) operational cost
+multi-level routing of summaries       →  O(n log n) when hierarchy depth is counted
+```
+
+The reverse transition is also possible. If local equilibria, North Star alignment, or observability fail, summaries lose validity and modules must be reopened for cross-verification, driving the effective burden back toward $O(n^2)$.
+
+**Recurring quadratic-collapse motif.** Across several coarse-grained projections in this document, the dynamics are represented by the following canonical motif; this is a shared modeling form, not an exact reduction theorem for every subsystem:
 
 ```
 dx/dt  =  α·x²  −  β·x  −  γ
@@ -320,7 +379,10 @@ We introduce the regime scalar Φ = β_s·n²/(C·T·d) as an endogenous dynamic
 We introduce the control parameter κ = Φ/(L·q) and show that diverse collapse mechanisms — lock accumulation, terrain degradation, stochastic escape, and tipping-point bifurcation — all reduce to the unified condition κ ≥ κ_c. This is the paper's central structural result, analogous to the Reynolds number (turbulence), R₀ (epidemic threshold), and temperature ratio (phase transition): many mechanisms, one dimensionless index. The critical manifold Φ_c(L,q) = κ_c·L·q formalizes Silent Criticality as invisible drift toward this surface. The EW indicator → critical margin → survival probability chain (§19.5) converts κ into a quantitative collapse forecasting tool.
 
 **Contribution 3 — Fractal governance necessity and universality class.**
-From the n²/n scaling mismatch, we derive (§19.6) structural pressure toward modular and hierarchical organization, explaining why large adaptive systems tend to evolve fractal governance architectures as a cost-minimizing response to coordination overload — and predicting collapse universality class exponents (τ, σ, γ_FI) measurable from empirical event-size distributions. This converts the fractal governance claim from an architectural observation into a falsifiable prediction.
+From the uncompressed n²/near-linear capacity mismatch, we derive (§19.6) structural pressure toward modular and hierarchical organization, explaining why large adaptive systems tend to evolve fractal governance architectures as a cost-minimizing response to coordination overload — and predicting collapse universality class exponents (τ, σ, γ_FI) measurable from empirical event-size distributions. This converts the fractal governance claim from an architectural observation into a falsifiable prediction.
+
+**Contribution 4 — Equilibrium-induced complexity transition and dual-reference compression.**
+We distinguish potential/time-integrated pairwise burden from realized active communication and provide a conditional bridge from $O(n^2)$ exposure to $O(n)$ or $O(n\log n)$ operation (§19.10.5–§19.10.8). The bridge requires compressible local dynamic equilibrium, global external calibration, bounded interfaces, and Local North Stars that remain in bounded tension with a slowly evolving Global North Star. The same framework explains reverse transition: when return, observability, summary sufficiency, or reference alignment fails, modules reopen and the effective verification graph re-expands toward the quadratic regime.
 
 ### Model Necessity: What FCC Explains That Existing Models Do Not
 
@@ -1547,51 +1609,70 @@ All collapse conditions reduce to κ ≥ κ_c:
 
 Under such proxies, κ = Φ/(L·q) can be estimated as a dimensionless governance stress index. The critical threshold κ_c is empirically identified as the value below which self-correcting recovery is observed, and above which escalation or collapse is observed — making it a calibratable rather than purely theoretical parameter.
 
-**Constant 2 — Scale Pressure χ.**
+**Constant 2 — Raw Scale Pressure $\chi$.**
+
+To prevent collision with the FCC variable $n_{\mathrm{eff}}$, let $N$ denote raw lower-level agent count. In the uncompressed pairwise-load model:
 
 ```
-χ  :=  n / √C
+χ := √a · N / √C.
 ```
 
-This measures the interaction scaling pressure relative to governance capacity. The critical size n* ≈ √C (where interaction load equals governance capacity) defines χ = 1 as the centralization instability threshold:
+This measures raw interaction exposure relative to governance capacity:
 
 ```
-χ < 1:   stable centralized governance
-χ ≈ 1:   critical regime (Vector Storm, SOC)
-χ > 1:   centralized coordination unstable → modularization required
+χ < 1:   the declared centralized pairwise-load bound is below capacity
+χ ≈ 1:   centralization threshold
+χ > 1:   the uncompressed centralized regime is overloaded.
 ```
 
-**Constant 3 — Fragmentation Stability ψ.**
+The FCC ODE variable remains $n_{\mathrm{eff}}$, the effective interaction or exploration dimension after branching and compression; $N$ and $n_{\mathrm{eff}}$ are not interchangeable.
+
+**Constant 3 — Interface-Adjusted Fragmentation Pressure $\psi_\eta$.**
+
+For the benchmarked modular cost law
 
 ```
-ψ  :=  n² / γ
+E_η(N,K) = a·N²/K + γ·K^(1+η),
 ```
 
-where γ is the inter-module coupling cost. This governs whether fragmentation stabilizes or destabilizes the system:
+define
 
 ```
-ψ < ψ_c (≡ 2):   fragmentation worsens coordination → collapse path
-ψ > ψ_c (≡ 2):   fragmentation reduces total load → stable hierarchy emerges
+ψ_η := a·N² / [γ(1+η)].
 ```
 
-**Dimensional reduction.** The three constants are not fully independent. Defining the normalized coupling constant:
+Then:
 
 ```
-γ̃  :=  γ / C     (inter-module coupling per unit governance capacity)
+ψ_η ≤ 1:  the continuous cost optimum is K*=1; fragmentation is not cost-reducing
+ψ_η > 1:  a non-trivial modular optimum K*>1 exists.
 ```
 
-and using n = χ√C, we obtain:
+Cost reduction is not yet the same as stabilization. A modular configuration is capacity-feasible only when its minimized burden also satisfies:
 
 ```
-ψ  =  n² / γ  =  χ²·C / γ  =  χ² / γ̃
+E_min(N;η) ≤ C.
 ```
 
-Therefore ψ = ψ(χ; γ̃), and the effective phase space collapses from (κ, χ, ψ) to **(κ, χ)** with γ̃ as a fixed structural design constant. The three instability boundaries become:
+With $\widetilde\gamma:=\gamma/C$ and $\chi^2=aN^2/C$:
 
 ```
-Collapse boundary:           κ = κ_c
-Scale transition:            χ = 1
-Fragmentation success:       χ² > 2γ̃
+ψ_η = χ² / [(1+η)·γ̃].
+```
+
+Therefore the general phase description is **three-dimensional**:
+
+```
+(κ, χ, η),
+```
+
+where $\eta$ is a measurable structural exponent of the module interface graph. The earlier two-dimensional $(\kappa,\chi)$ diagram is recovered only on a fixed-$\eta$ architectural slice. The principal boundaries are:
+
+```
+Collapse boundary:               κ = κ_c
+Centralized scale transition:    χ = 1
+Non-trivial modular optimum:     χ² > (1+η)·γ̃
+Capacity-feasible modular state: E_min(N;η) ≤ C.
 ```
 
 ---
@@ -3117,7 +3198,7 @@ dH/dt    = ε_H · g_H(...)                          [Heritage layer — see [�
 where  ε_H ≪ ε_Q ≪ ε_S ≪ ε_ρ ≪ 1
 ```
 
-The **core ODE (§14)** covers the fast and intermediate tiers explicitly, with ρ as the slowest variable resolved in this document. The structural damage variable S is introduced in §31 as the first slow-tier extension. The terrain (Q_E) and heritage (H) tiers are developed in the companion document **[→ [→ *DFG Terrain-Heritage-Integration* §32.10], §32.8.2]**, where their interaction with the core ODE is formalized through the terrain-ODE coupling equation.
+The **core ODE (§14)** covers the fast and intermediate tiers explicitly, with ρ as the slowest variable resolved in this document. The structural damage variable S is introduced in §31 as the first slow-tier extension. The terrain (Q_E) and heritage (H) tiers are developed in the companion document **[→ *DFG Terrain-Heritage-Integration* §32.10, §32.8.2]**, where their interaction with the core ODE is formalized through the terrain-ODE coupling equation.
 
 **Why this matters for bifurcation analysis.** Each timescale tier enables a different quasi-static reduction: the fast tier yields adiabatic elimination of n (§15); the intermediate tier yields the 2D (C, d) reduced system (§17); the slow tier enables Silent Criticality (§20). The slower tiers (S, Q_E, H) shift the effective bifurcation thresholds on geological timescales — they do not affect the qualitative phase structure derived in §15–21 but progressively narrow the recoverable parameter region over long time horizons.
 
@@ -3885,266 +3966,320 @@ The exponents (τ, σ) define the **universality class** of the governance syste
 
 ---
 
-## 19.6 Fractal Governance Necessity: Structural Scaling Theorem
+## 19.6 Conditional Compression-or-Overload Theorem under Uncompressed Pairwise Load
 
-> *This section formalizes the scaling arguments introduced conceptually in §6–7 as a complete mathematical theorem with assumptions, lemmas, corollaries, and testable predictions. The result establishes that large adaptive systems cannot remain stably centralized — they must either generate fractal hierarchical structure or collapse.*
+> *This section formalizes the scaling arguments introduced conceptually in §6–7 within a declared model class. It incorporates the interface-density benchmark of §19.6A. The result does not claim that hierarchy is the only possible compression mechanism; it characterizes the modular family $E_\eta$ and separates three questions that were previously conflated: whether modularization lowers cost, whether the minimized cost fits available capacity, and whether unresolved overload then reaches the modeled collapse boundary.*
 
 ### Assumptions
 
-**Assumption A — Interaction Scaling.**
+**Assumption A — Uncompressed Effective Interaction Scaling.**
 
-The number of interaction channels grows at least quadratically with system size:
+Let $E_{\mathrm{act}}(t)$ denote instantaneous active-edge count and $E_{\mathrm{eff}}(N;\tau)$ the number of raw agent pairs that must be jointly coordinated, causally distinguished, or re-verified over governance horizon $\tau$. The theorem does **not** require $E_{\mathrm{act}}(t)=O(N^2)$. It applies when:
 
 ```
-E(n) ≥ a·n²,   a > 0
+E_eff(N;τ) ≥ a·N²,       a > 0.
 ```
 
-reflecting pairwise coupling between n agents.
+This can arise from a dense instantaneous graph or from a sparse graph whose time-integrated reachable dependency graph becomes quasi-dense. If perturbations remain strictly local over the declared horizon, Assumption A fails and the quadratic conclusion does not apply.
 
 **Assumption B — Governance Capacity Bound.**
 
-The total coordination capacity is bounded by C:
+The total usable coordination capacity is bounded by $C$:
 
 ```
-G ≤ C
+G ≤ C.
 ```
 
-C represents the bandwidth available for coordination, conflict resolution, and information routing. It scales at most linearly with invested resources.
+**Assumption C$_\eta$ — Interface-Density Modular Cost.**
 
-**Assumption C — Modular Coupling Cost.**
-
-Fragmentation into k modules transforms coordination cost to:
+Fragmentation into $K$ modules produces:
 
 ```
-E(k)  =  n²/k  +  γ·k²
+E_η(N,K) = a·N²/K + γ·K^(1+η),       0 ≤ η ≤ 1.
 ```
 
-where n²/k is internal interaction cost and γ·k² is inter-module coordination overhead.
+The first term is unresolved internal pairwise burden. The second is inter-module routing/coordination burden. The exponent $\eta$ is not chosen for convenience; it is estimated from interface growth:
 
-**Assumption D — Monotone Stress Drift.**
+```
+|E_boundary(K)| ∝ K^(1+η).
+```
 
-When governance overload occurs (χ > 1), the collapse control parameter satisfies:
+Endpoint interpretations:
+
+```
+η=0: bounded-degree/tree-like module interfaces
+η=1: quasi-dense all-module coordination.
+```
+
+**Assumption D — Persistent Unresolved-Overload Drift.**
+
+If no admissible compression mechanism brings realized burden below capacity, the collapse control parameter obeys:
 
 ```
 dκ/dt ≥ δ > 0
 ```
 
-**Definition — Scale Pressure.** The dimensionless scale parameter:
+until it reaches $\kappa_c$.
+
+**Definition — Raw Scale Pressure.**
 
 ```
-χ  :=  n / √C
+χ := √a · N / √C.
 ```
-
-measures interaction pressure relative to governance capacity.
 
 ---
 
-### Lemma 1 — Centralized Instability Threshold
+### Lemma 1 — Centralized Overload Threshold
 
-If χ > 1, then interaction load exceeds governance capacity.
+If $\chi>1$, the declared uncompressed pairwise burden exceeds capacity.
 
-*Proof.* From Assumption A, E(n) ≥ a·n². Stability requires a·n² ≲ C, hence n ≲ √(C/a). Up to the constant a (absorbed into the definition of χ), this gives χ ≲ 1. Therefore χ > 1 implies centralized stability is violated. ∎
-
----
-
-### Lemma 2 — Modular Stabilization Condition
-
-Fragmentation into k modules reduces total coordination cost below the centralized baseline E(n) = n² if and only if:
-
-```
-n² > 2γ
-```
-
-*Proof.* Minimize E(k) = n²/k + γk² over k > 0. Setting dE/dk = 0:
-
-```
-−n²/k² + 2γk = 0   →   k* = (n²/2γ)^{1/3}
-```
-
-Fragmentation is beneficial (k* > 1) iff:
-
-```
-(n²/2γ)^{1/3} > 1   ⟺   n² > 2γ
-```
-
-Using γ̃ = γ/C and n = χ√C, this becomes χ² > 2γ̃. ∎
+*Proof.* Assumption A gives $E_{\mathrm{eff}}\ge aN^2$. Capacity feasibility requires $aN^2\le C$, equivalent to $\chi\le1$. ∎
 
 ---
 
-### Theorem — Fractal Governance Necessity
+### Lemma 2 — Optimal Module Count for Fixed Interface Exponent
 
-*Consider a system satisfying Assumptions A–D with χ > 1. Then centralized governance cannot remain stable, and the system must satisfy exactly one of the following:*
+For fixed $\eta\in[0,1]$, $E_\eta(N,K)$ is strictly convex for $K>0$ and has continuous optimum:
 
-**(1) Successful modularization:** n² > 2γ (equivalently χ² > 2γ̃), leading to stable hierarchical organization with optimal module count k* = (n²/2γ)^{1/3}.
+```
+K*_η = [a·N² / (γ(1+η))]^(1/(2+η)).
+```
 
-**(2) Collapse:** If n² ≤ 2γ, fragmentation fails to reduce coordination cost. By Assumption D, κ reaches κ_c in finite time.
+A non-trivial modular optimum exists iff:
 
-*Therefore, large adaptive systems cannot remain stably centralized once χ > 1.*
+```
+K*_η > 1  ⟺  a·N² > γ(1+η).
+```
 
-*Proof.* By Lemma 1, χ > 1 implies centralized coordination is overloaded. The system must reduce effective interaction load. By Assumption C, the only available mechanism is modularization. By Lemma 2, modularization reduces load iff n² > 2γ, establishing outcome (1). If this condition fails, no load-reduction mechanism is available; by Assumption D, κ drifts to κ_c in finite time, establishing outcome (2). The two outcomes are exhaustive and mutually exclusive. ∎
+At the optimum:
+
+```
+m*_η = N/K*_η
+     = [γ(1+η)/a]^(1/(2+η)) · N^[η/(2+η)],
+
+E_min(N;η) = Θ(N^[2(1+η)/(2+η)]).
+```
+
+*Proof.* Differentiate:
+
+```
+∂E_η/∂K = −aN²/K² + γ(1+η)K^η.
+```
+
+The unique zero gives $K_\eta^*$. Strict positivity of the second derivative gives convexity. Substitution yields the stated scalings. ∎
 
 ---
 
-### Corollary 1 — Finite Collapse Time Bound
+### Lemma 3 — Cost Reduction versus Capacity Stabilization
 
-If modularization fails (n² ≤ 2γ) and dκ/dt ≥ δ > 0, then:
+The condition $K_\eta^*>1$ establishes only that modularization lowers the modeled cost relative to $K=1$. It establishes a capacity-feasible modular state only if:
 
 ```
-T_collapse  ≤  (κ_c − κ(0)) / δ
+E_min(N;η) ≤ C.
 ```
 
-This bound converts the qualitative collapse inevitability into a quantitative prediction: governance systems with known κ(0) and empirically estimated δ have a computable upper bound on time to failure.
+If $K_\eta^*>1$ but $E_{\min}>C$, one modular layer reduces load but leaves residual overload; another hierarchy level, a different compression mechanism, added capacity, or eventual collapse remains necessary.
 
 ---
 
-### Corollary 2 — Hierarchical Recursion
+### Theorem 19.6 — Conditional Compression-or-Overload Trichotomy
 
-After fragmentation into k modules, each module-pair interaction contributes to upper-level coordination channels:
+*Consider a system satisfying Assumptions A–D with $\chi>1$.*
 
-```
-E_upper  ∼  k²
-```
+1. **No beneficial modular split.** If $aN^2\le\gamma(1+\eta)$, then $K_\eta^*\le1$ and the modeled modular mechanism does not lower burden. If no other admissible compression exists, Assumption D implies finite-time arrival at $\kappa_c$.
 
-The scale parameter at hierarchical level ℓ is χ_ℓ = n_ℓ / √C_ℓ. Whenever χ_ℓ > 1, the same theorem applies recursively. Therefore:
+2. **Load-reducing but insufficient modularization.** If $aN^2>\gamma(1+\eta)$ but $E_{\min}(N;\eta)>C$, modularization lowers burden but does not restore capacity feasibility. Further compression or capacity growth is required.
 
-*A single fragmentation event does not suffice — the same scaling law reappears at the next level, forcing repeated fragmentation until χ_ℓ < 1 at every level.*
+3. **Capacity-feasible modularization.** If $aN^2>\gamma(1+\eta)$ and $E_{\min}(N;\eta)\le C$, the modeled modular configuration is capacity-feasible. Dynamical stability still additionally requires local return, summary validity, North Star calibration, and the FCC/VST stability certificates developed in §19.10.5.
 
----
-
-### Corollary 3 — Minimum Fractal Depth
-
-Let χ_0 = n/√C be the initial scale pressure. Then the minimum number of hierarchical layers required for stability satisfies:
-
-```
-L_min  ≳  log(n / √C)  =  log χ_0
-```
-
-(logarithm base determined by modularization efficiency per level). Large systems are structurally forced into multi-layer hierarchy proportional to the logarithm of their scale pressure.
+Thus modular cost reduction, capacity feasibility, and dynamic equilibrium are distinct gates.
 
 ---
 
-### §19.6.1 Module Size Distribution: Proofs and Predictions
+### Corollary 1 — Finite Collapse-Time Bound
 
-The Fractal Governance Necessity Theorem predicts not only that modularization occurs, but the precise scaling of module sizes, the hierarchical recurrence structure, and the statistical distribution of module sizes under realistic fragmentation noise. The following provides full proof structure for all three claims.
+Whenever unresolved burden remains above capacity, no other admissible compression activates, and $d\kappa/dt\ge\delta>0$:
+
+```
+T_collapse ≤ [κ_c − κ(0)]/δ.
+```
 
 ---
 
-#### Proof 1 — Mean Module Size Scaling: m* ∝ γ^{1/3} · n^{1/3}
+### Corollary 2 — Hierarchical Recursion with Variable Interface Density
 
-**Setup.** Partition n agents into k modules of mean size m = n/k. Under Assumption C:
-
-```
-E_in(k)    ≍  k · m²  =  k · (n/k)²  =  n²/k       (internal interaction cost)
-E_cross(k) ≍  γ · k²                                 (inter-module coupling cost)
-E(k)        =  n²/k + γ·k²                           (total coordination cost)
-```
-
-**Optimization.** Taking the derivative and setting to zero:
+At hierarchical level $\ell$, the upper-level interface burden scales as:
 
 ```
-E'(k) = −n²/k² + 2γk = 0
-⟹  2γk³ = n²
-⟹  k*  = (n²/2γ)^{1/3}
+E_upper,ℓ ∝ K_ℓ^(1+η_ℓ).
 ```
 
-**Module size.** From m* = n/k*:
-
-```
-m*  =  n · (2γ/n²)^{1/3}  =  (2γ)^{1/3} · n^{1/3}
-```
-
-therefore:
-
-```
-m*  ∝  γ^{1/3} · n^{1/3}
-```
-
-**Why the 1/3 exponent is robust.** The cost structure E_in ∝ n²/k and E_cross ∝ γk² is a consequence of (i) pairwise interaction scaling (Assumption A) and (ii) full-graph inter-module coupling. The minimum of x^{−1} + x² always occurs at x^{1/3}, making the exponent 1/3 a structural invariant of this cost class — not a model-specific artifact.
-
-**Consequence.** When system size increases 8-fold (n → 8n):
-
-```
-m* → (2γ)^{1/3} · (8n)^{1/3}  =  2 · (2γ)^{1/3} · n^{1/3}  =  2 · m*
-```
-
-Module size doubles. Module *count* k* ∝ n^{2/3} grows 4-fold. Therefore **large systems necessarily have many small modules rather than few large ones** — a testable structural prediction. ∎
+The theorem applies recursively only at levels where the corresponding uncompressed exposure and overload assumptions hold. Mature equilibrium can reduce $\eta_\ell$ by replacing broad cross-module negotiation with bounded summary interfaces; collapse or reference corruption can increase it again.
 
 ---
 
-#### Proof 2 — Hierarchical Size Ladder Recurrence
+### Corollary 3 — Conditional Depth Estimate
 
-**Setup.** At level ℓ, let m_ℓ denote the characteristic module size. When these modules themselves interact, the same cost structure applies with m_ℓ replacing n and inter-level coupling constant γ_ℓ:
-
-```
-E_ℓ(k)  =  m_ℓ²/k  +  γ_ℓ · k²
-```
-
-Applying the same optimization:
+If each level reduces raw scale pressure by a uniform factor $r_\chi\in(0,1)$, then the number of levels needed to reach $\chi_L\le1$ satisfies:
 
 ```
-k_ℓ*      =  (m_ℓ² / 2γ_ℓ)^{1/3}
-
-m_{ℓ+1}  =  m_ℓ / k_ℓ*  =  (2γ_ℓ)^{1/3} · m_ℓ^{1/3}
+L ≥ log(χ_0) / |log r_χ|.
 ```
 
-Setting A_ℓ = (2γ_ℓ)^{1/3} and assuming γ_ℓ ≈ γ across levels (A_ℓ ≈ A):
-
-```
-m_{ℓ+1}  ≈  A · m_ℓ^{1/3},     A = (2γ)^{1/3}
-```
-
-**Convergence.** Taking logarithms and setting y_ℓ = log m_ℓ:
-
-```
-y_{ℓ+1}  =  log A  +  (1/3) · y_ℓ
-```
-
-This is a linear contraction with fixed point y* = (3/2) log A, corresponding to floor module size:
-
-```
-m_floor  =  (2γ)^{1/2}
-```
-
-The hierarchy converges to m_floor — determined entirely by γ. Below this floor, further fragmentation increases total cost. ∎
+This is a conditional depth estimate. Without a uniform per-level reduction factor, $L=\Theta(\log\chi_0)$ is not implied by the cost law alone.
 
 ---
 
-#### Proposition LN — Lognormal Module Size Distribution
+### §19.6A Synthetic Candidate Benchmark and Model Selection
 
-**Assumption LN (Multiplicative noise).** Fragmentation is approximately uniform but subject to small random perturbations reflecting political, domain, and historical variation:
+**Status.** This is an internal synthetic benchmark for choosing among cost laws. It is not external validation of DFG in organizations, neural systems, or AI deployments.
 
-```
-m_{ℓ+1}  =  A · m_ℓ^{1/3} · e^{ε_ℓ},     ε_ℓ ∼ iid N(μ_ε, σ_ε²)
-```
-
-**Proposition.** Under Assumption LN, as ℓ → ∞, module sizes follow a **lognormal distribution** with closed-form parameters.
-
-*Proof.* Let y_ℓ = log m_ℓ:
+**Candidates.**
 
 ```
-y_{ℓ+1}  =  log A  +  (1/3) · y_ℓ  +  ε_ℓ
+C1: η=0 fixed   — E_boundary ∝ K
+C2: η=1 fixed   — E_boundary ∝ K²
+C3: η fitted    — E_boundary ∝ K^(1+η),  0≤η≤1.
 ```
 
-This is a stable AR(1) process (coefficient 1/3 < 1). By standard AR(1) theory, the stationary distribution is Gaussian:
+**Protocol.**
+
+- Ground-truth $\eta\in\{0,0.25,0.5,0.75,1\}$.
+- 100 noisy repetitions per regime.
+- Fit on $K=4\ldots64$; extrapolation test on $K=72\ldots2048$.
+- Evaluate log-RMSE of interface cost and **module-selection regret**: excess true cost incurred by the $K$ selected under each candidate relative to the true optimum.
+- Raw sizes $N\in\{256,512,\ldots,32768\}$.
+
+**Mean benchmark result.**
+
+| True $\eta$ | Interface regime | C1 mean regret | C2 mean regret | C3 mean regret | C3 recovered $\eta$ |
+|---:|---|---:|---:|---:|---:|
+| 0.00 | bounded-degree | 0.00% | 330.32% | 0.00% | 0.006 |
+| 0.25 | weakly densifying | 20.64% | 131.31% | 0.12% | 0.250 |
+| 0.50 | intermediate | 176.56% | 42.08% | 0.08% | 0.498 |
+| 0.75 | strongly densifying | 545.95% | 8.66% | 0.06% | 0.748 |
+| 1.00 | quasi-dense | 1470.96% | 0.00% | 0.03% | 0.991 |
+
+Across all regimes, C3 had mean log-RMSE $0.077$ and average module-selection regret approximately $0.06\%$. C1 and C2 were accurate only at their matching endpoints and could select severely suboptimal module counts elsewhere.
+
+**Model-selection decision.**
+
+The document therefore adopts C3 as the umbrella law:
 
 ```
-μ_y   =  (log A + μ_ε) / (1 − 1/3)  =  (3/2)(log A + μ_ε)
-
-σ_y²  =  σ_ε² / (1 − (1/3)²)  =  (9/8) · σ_ε²
+E_η(N,K)=aN²/K+γK^(1+η),
 ```
 
-Therefore y_ℓ ∼ N(μ_y, σ_y²) in stationarity, and m_ℓ = e^{y_ℓ} follows a lognormal with closed-form parameters fully determined by γ and σ_ε. ∎
+while retaining C1 and C2 as interpretable endpoint models. Empirical use must estimate $\eta$ from observed interface-edge, routing, or verification growth rather than assume it.
 
-**Closed-form parameter table:**
+---
 
-| Parameter | Formula | Interpretation |
-|---|---|---|
-| μ_y | (3/2)(log A + μ_ε) | Log of typical module size |
-| σ_y² | (9/8) · σ_ε² | Width of size distribution (noise amplified by 9/8) |
-| m_median | exp(μ_y) | Predicted median team/module size |
-| m_floor | (2γ)^{1/2} | Minimum stable module size (convergence fixed point) |
+### §19.6.1 Module Size Distribution: Generalized Proofs and Endpoint Predictions
 
-The **9/8 amplification factor** (σ_y² > σ_ε²) means even small fragmentation noise produces visible size variance — organizations with identical governance rules will exhibit non-trivial size spread at every hierarchical level.
+The module-size exponent is not universally $1/3$. It is determined by interface density $\eta$.
+
+---
+
+#### Proof 1 — Mean Module Size Scaling
+
+Under Assumption C$_\eta$:
+
+```
+E_in(K)    = a·N²/K
+E_cross(K) = γ·K^(1+η)
+E_η(K)     = a·N²/K + γ·K^(1+η).
+```
+
+Optimization gives:
+
+```
+K*_η = [aN²/(γ(1+η))]^(1/(2+η))
+
+m*_η = N/K*_η
+     = [γ(1+η)/a]^(1/(2+η)) · N^[η/(2+η)].
+```
+
+The minimized total cost scales as:
+
+```
+E_min(N;η) = Θ(N^[2(1+η)/(2+η)]).
+```
+
+| $\eta$ | Interface growth | $K^*$ exponent | $m^*$ exponent | Minimum-cost exponent |
+|---:|---|---:|---:|---:|
+| 0 | $K$ | 1 | 0 | 1 |
+| 0.25 | $K^{1.25}$ | 0.889 | 0.111 | 1.111 |
+| 0.5 | $K^{1.5}$ | 0.8 | 0.2 | 1.2 |
+| 0.75 | $K^{1.75}$ | 0.727 | 0.273 | 1.273 |
+| 1 | $K^2$ | 0.667 | 0.333 | 1.333 |
+
+Thus the old cube-root rule is the **quasi-dense endpoint** $\eta=1$. The linear endpoint $\eta=0$ predicts bounded characteristic module size and $K^*=\Theta(N)$.
+
+---
+
+#### Proof 2 — Generalized Hierarchical Size Ladder
+
+At level $\ell$, let $m_\ell$ be the raw size presented to the next partition operation and let $\eta_\ell$ be its interface-density exponent. The optimal child-module size is:
+
+```
+m_{ℓ+1}
+  = A_{η,ℓ} · m_ℓ^r,
+
+r := η/(2+η),
+
+A_{η,ℓ}
+  := [γ_ℓ(1+η_ℓ)/a_ℓ]^(1/(2+η_ℓ)).
+```
+
+For scale-stationary coefficients $A_{\eta,\ell}\approx A_\eta$ and fixed $\eta$:
+
+```
+log m_{ℓ+1} = log A_η + r·log m_ℓ,       0≤r≤1/3.
+```
+
+This is a contraction. Its fixed floor is:
+
+```
+m_floor = A_η^[1/(1−r)]
+        = [γ(1+η)/a]^(1/2).
+```
+
+The hierarchy reaches its characteristic floor faster when interfaces remain sparse ($r\approx0$) and more slowly at the quasi-dense endpoint ($r=1/3$).
+
+---
+
+#### Proposition LN — Lognormal Module Sizes under Multiplicative Noise
+
+Assume:
+
+```
+m_{ℓ+1}=A_η·m_ℓ^r·e^{ε_ℓ},
+ε_ℓ iid~N(μ_ε,σ_ε²),
+r=η/(2+η).
+```
+
+Then $y_\ell=\log m_\ell$ follows the stable AR(1) recursion:
+
+```
+y_{ℓ+1}=log A_η+r·y_ℓ+ε_ℓ.
+```
+
+Its stationary parameters are:
+
+```
+μ_y  = [log A_η+μ_ε]/(1−r)
+σ_y² = σ_ε²/(1−r²).
+```
+
+Therefore module size is lognormal under the stated weak-noise fragmentation model. The old $9/8$ variance factor is recovered only at $\eta=1$, where $r=1/3$.
+
+| Parameter | General formula |
+|---|---|
+| AR coefficient | $r=\eta/(2+\eta)$ |
+| Median module size | $\exp(\mu_y)$ |
+| Log-variance | $\sigma_\epsilon^2/(1-r^2)$ |
+| Structural floor | $[\gamma(1+\eta)/a]^{1/2}$ |
+| Recovering $\eta$ from fitted $r$ | $\eta=2r/(1-r)$ |
 
 ---
 
@@ -4218,7 +4353,7 @@ Decreasing α̂ over time (heavier tail) is a direct empirical signature of spre
 | Mathematical model | AR(1) in log-size | Self-similar fragmentation-absorption |
 | Tail behavior | Thin (sub-exponential) | Heavy (algebraic) |
 | DFG condition | Uniform κ across modules | Heterogeneous κ(m) |
-| Observable test | log(m) normal on QQ-plot; AR(1) ρ̂ ≈ 1/3 | Hill estimator gives stable α̂ |
+| Observable test | log(m) normal on QQ-plot; AR(1) $\widehat r\approx\eta/(2+\eta)$ | Hill estimator gives stable α̂ |
 
 **Regime transition as early warning:** A measurable shift from lognormal to power-law in organizational unit size distribution signals heterogeneous governance pressure — the onset of spatially differentiated Silent Criticality.
 
@@ -4228,7 +4363,7 @@ Decreasing α̂ over time (heavier tail) is a direct empirical signature of spre
 
 **Step 1.** Collect module/team/unit sizes m at multiple time points.
 
-**Step 2 — Lognormal test.** QQ-plot of log(m) against normal quantiles; estimate AR(1) coefficient ρ̂ from log-size time series across levels (model prediction: ρ̂ ≈ 1/3).
+**Step 2 — Lognormal test.** QQ-plot of log(m) against normal quantiles; estimate AR(1) coefficient $\widehat r$ from log-size time series across levels; infer $\widehat\eta=2\widehat r/(1-\widehat r)$ when the scale-stationary assumptions are plausible.
 
 **Step 3 — Power-law test.** Identify tail threshold m_min via KS minimization; apply Hill MLE to obtain α̂.
 
@@ -4245,46 +4380,55 @@ High ŝ → stable governance (most modules stabilize). Low ŝ → persistent ov
 **Step 6 — Longitudinal alarm.** Track α̂(t) over time. Decreasing α̂ indicates worsening governance fragmentation. α̂ < 1 (mean diverges) is a critical alarm threshold requiring Tier 2 intervention.
 
 
-### §19.6.2 Two-Dimensional Phase Diagram (κ, χ)
+### §19.6.2 Three-Dimensional Phase Structure $(\kappa,\chi,\eta)$
 
-With γ̃ as a structural design constant, the full governance phase space reduces to two dimensions. The (κ, χ) phase diagram has five distinguishable regions:
+The benchmark shows that interface density cannot generally be treated as a fixed universal constant. The complete structural phase description therefore uses:
 
 ```
-         χ
-         │
-χ > √2γ̃ │     [C] Stable modular     [D] Fragmentation
-         │         hierarchy              collapse
-  χ = 1  ├──────────────────────────────────────────
-         │     [A] Stable            [E] Rigidity trap
-χ < 1    │         centralized           (Silent Crit.)
-         │
-         └──────────────────────────────────────────
-                  κ < κ_c              κ → κ_c
+κ: collapse / lock condition
+χ: raw centralized scale pressure
+η: interface-density exponent after partition.
 ```
 
-| Region | Condition | System state |
+For a **fixed architecture** with measured $\eta$, one may inspect a two-dimensional $(\kappa,\chi)$ slice. Across changing architectures, the full phase boundary is a surface.
+
+| Region | Conditions | Interpretation |
 |---|---|---|
-| A — Centralized stable | κ < κ_c, χ < 1 | Unified governance; low storm risk |
-| B — Critical (SOC) | χ ≈ 1 | Vector Storm fluctuations; SOC dynamics |
-| C — Modular stable | χ > 1, χ² > 2γ̃, κ < κ_c | Fractal hierarchical governance |
-| D — Fragmentation collapse | χ > 1, χ² < 2γ̃ | Coordination failure despite fragmentation |
-| E — Rigidity trap | κ → κ_c (via L↑, q↓) | Silent Criticality; metastable attractor |
+| A — Centralized capacity-feasible | $\chi<1$, $\kappa<\kappa_c$ | Declared uncompressed bound fits capacity |
+| B — Centralized overload | $\chi>1$ | Compression or capacity growth required |
+| C — Cost-reducing modularization | $\chi^2>(1+\eta)\widetilde\gamma$ | $K^*>1$, but capacity feasibility not yet guaranteed |
+| D — Capacity-feasible modular regime | Region C plus $E_{\min}(N;\eta)\le C$ and dynamic-equilibrium gates | Stable summary-based operation is possible |
+| E — Residual modular overload | Region C but $E_{\min}>C$ | Another layer or different compression is needed |
+| F — Lock/Storm boundary | $\kappa\to\kappa_c$ | Even a low-$\eta$ architecture can fail through summary or reference corruption |
 
-**Triple critical point.** The three instability boundaries (κ = κ_c, χ = 1, χ² = 2γ̃) coincide geometrically at a triple critical point in the (κ, χ) phase diagram. Near this point, Storm onset, fragmentation failure, and collapse approach conditions are simultaneously active — making it the most governance-sensitive region of the phase diagram. Whether all three instabilities co-occur in practice depends on system-specific timescales; the geometric coincidence identifies the critical parameter region, not a dynamical simultaneity guarantee.
-
-**γ̃-dependence of fragmentation boundary.** When κ increases (governance deterioration), inter-module coordination cost typically rises: γ̃ = γ̃(κ) is an increasing function of κ. This curves the fragmentation boundary:
+**Equilibrium-induced interface transition.** The core new hypothesis is:
 
 ```
-χ² > 2γ̃(κ)
+local return + summary sufficiency + predictive integration
+  → broad negotiation replaced by bounded interfaces
+  → η decreases,
+
+summary invalidation + module reopening + giant unresolved SCC
+  → interface graph densifies
+  → η increases toward 1.
 ```
 
-upward in κ, meaning that deteriorating governance (rising κ) raises the scale pressure required for stable fragmentation. This connects Silent Criticality to fragmentation failure: a system drifting toward κ_c simultaneously finds that its modularization becomes less effective.
+Thus $\eta(t)$ is an architectural order parameter connecting equilibrium formation to complexity scaling.
+
+**Conditional critical intersection.** A highly sensitive region occurs where centralized overload, insufficient modular capacity, and lock deterioration overlap:
+
+```
+χ≈1,   E_min(N;η)≈C,   κ≈κ_c.
+```
+
+This is a codimension-three neighborhood, not a universal single triple point.
 
 ---
 
 ### One-Sentence Theorem Summary
 
-> *Large adaptive systems tend to transition from centralized governance toward fractal modular hierarchy once interaction scaling χ exceeds unity — or face collapse under coordination overload within finite time T_collapse ≤ (κ_c − κ₀)/δ if modularization is structurally prevented (under Assumption D; see §19.6 for scope conditions).*
+> *Under uncompressed pairwise exposure, the optimal modular cost exponent varies continuously with measured interface density $\eta$: bounded interfaces permit $O(N)$ modeled cost, quasi-dense interfaces yield the $O(N^{4/3})$ endpoint, and dynamic equilibrium determines whether the system can keep $\eta$ low enough for capacity-feasible compression.*
+
 
 ---
 
@@ -4682,13 +4826,13 @@ This formally explains Recovery Theory's bottom-up recovery principle: recovery 
 | 4 | Higher-dimensional intervention | Meta-map restructuring, terrain redesign | C, β (structural) |
 | 5 | Structural reset | Collapse and re-seeding when all internal correction loops fail | Full state reset |
 
-**Theorem 19.10.1 (Nearest-Layer Correction Priority).** Under the FCC ODE dynamics, correction initiated at Stage k has recovery time T_rec(k) and perturbation radius R_pert(k) satisfying:
+**Conditional Proposition 19.10.1 (Nearest-Layer Correction Priority).** Under the FCC ODE dynamics together with monotone escalation-cost and perturbation-radius assumptions, correction initiated at Stage $k$ has recovery time $T_{rec}(k)$ and perturbation radius $R_{pert}(k)$ satisfying:
 
 ```
 T_rec(k+1) > T_rec(k)  and  R_pert(k+1) > R_pert(k)
 ```
 
-*Higher-stage interventions are always slower and produce larger perturbation radii.*
+*Under the stated monotone escalation assumptions, higher-stage interventions are slower and produce larger perturbation radii.*
 
 **Governance implication.** Stage 1–2 corrections (local n and d adjustments) are the preferred first response, not Stage 3+ (structural ρ, C intervention). A system that immediately escalates to upper-layer intervention for every local deviation is systematically over-intervening — producing the DFG Intervention Paradox (§19 via §14) in practice.
 
@@ -4700,16 +4844,1146 @@ LocalStar = Project(GlobalStar, Terrain)
 
 In FCC variable terms: the upper layer maintains ρ (goal quality) and the terrain geometry (C, d), but does not directly specify n (local interaction count) or T (local temperature). Prescribing n and T from above corresponds to replacing the FCC ODE's self-organizing dynamics with a rigid control law — collapsing the bifurcation structure to a single fixed point and eliminating the adaptive capacity that the bistable design provides.
 
-**Corollary 19.10.2 (Centralization-Collapse Equivalence).** A system in which the upper layer specifies all local variables (n, T, d) directly satisfies:
+**Conditional Corollary 19.10.2 (Centralization–Fragility Correspondence).** In the deterministic full-centralization limit where the upper layer specifies all local variables $(n_{\mathrm{eff}},T,d)$ and local self-correction/diversity degrees of freedom approach zero, the model predicts:
 
 ```
 Self-organization → 0
 Bifurcation structure collapses to single-point trajectory
 Lock budget constraint becomes: (1+L_C)(1+L_d) → (1+L_C)  (L_d = 0; no diversity lock)
-         →  Silent Criticality probability: 1 (all diversity lost)
+         →  Silent Criticality vulnerability approaches its model maximum
 ```
 
-The FCC mathematical structure formally predicts organizational centralization produces the identical outcome as the diversity-collapse (d → 0) pathway to Storm — through lock budget saturation rather than explicit bifurcation crossing.
+The FCC model therefore predicts that sufficiently complete centralization can approach the same fragile limit as the diversity-collapse $(d\to0)$ pathway to Storm, through lock-budget saturation rather than an explicit bifurcation crossing. This is a limiting model result, not a universal probability-one claim about centralized organizations.
+
+
+### 19.10.5 Equilibrium-Induced Complexity Transition
+
+> **Status and scope.** This subsection is a synthesis and conditional theorem connecting FCC dynamics, VST/DPE equilibrium architecture, and FGS North Star dynamics. It does not assert that every multi-agent system automatically becomes linear. The $O(N)$ conclusion requires bounded unresolved local degrees of freedom, bounded summary dimension, bounded interface degree, and verified local/global dynamic equilibrium. Without those conditions the intermediate or quadratic regimes remain possible.
+
+#### 19.10.5.1 Two interaction objects that must not be conflated
+
+For $N$ raw agents, define the potential pair relation set:
+
+```
+P_N := {(i,j): 1 ≤ i < j ≤ N},     |P_N| = N(N−1)/2 = O(N²)
+```
+
+This is the space of possible dependencies, conflicts, comparisons, or verification obligations. It is distinct from the instantaneous active communication graph:
+
+```
+G_t = (V, E_t),     |E_t| = E_act(t)
+```
+
+A bounded-degree architecture can satisfy $E_{act}(t)=O(N)$ while preserving a latent $O(N^2)$ dependency space. Conversely, a sparse graph may become effectively quasi-dense over a horizon $\tau$ if disturbances or reference changes propagate through many paths. Define the time-integrated effective relation burden:
+
+```
+E_eff(N; τ) := number of node pairs whose states cannot be treated as conditionally independent
+               for coordination, diagnosis, or recovery during [t, t+τ].
+```
+
+The FCC quadratic law concerns $|P_N|$ or $E_{eff}$ in the uncompressed regime. The FCC state variable $n$ elsewhere denotes $n_{\mathrm{eff}}$, not necessarily $N$. The fractal solution concerns keeping $E_{act}$ and the required verification burden near-linear through local stabilization and summary interfaces.
+
+#### 19.10.5.2 Equilibrium is a trajectory property, not a stopped point
+
+The relevant equilibrium is not $\dot{x}=0$. Adaptive agents must continue exploring, learning, and correcting. The appropriate object is a dynamically maintained operating region in which perturbations are absorbed or followed by verified return trajectories.
+
+At module $a$, let $x_a(t)$ be the internal state and $\mathcal{A}_a$ a candidate local operating region. A **compressible local dynamic equilibrium** requires:
+
+1. **Local containment or return:** admissible perturbations remain inside $\mathcal{A}_a$ or return within bounded time $\tau_{ret}^*$.
+2. **Subcritical local amplification:** every active causal SCC satisfies a model-matched stability certificate.
+3. **Non-zero adaptability:** exploration and correction activity remain above a declared floor; silence or Frozen Rest does not qualify.
+4. **Bounded summary dimension:** there exists $h_a:x_a\mapsto z_a$ with $\dim z_a\leq q_*$ independent of total system size.
+5. **Summary sufficiency:** external coordination errors induced by replacing $x_a$ with $z_a$ remain below tolerance $\varepsilon_{sum}$ over the declared horizon.
+
+The summary variable may contain:
+
+```
+z_a = (Local North Star, capacity, risk margin, return margin,
+       boundary permeability, uncertainty certificate)
+```
+
+Equilibrium reduces complexity only when it creates this summary sufficiency. Mere internal calm is not enough.
+
+#### 19.10.5.3 Local and global equilibrium are an AND condition
+
+Define internal stability for module $a$ by a non-amplifying instability flow:
+
+```
+E[dS_a/dt] ≤ 0,
+```
+
+with non-zero exploration and correction. Define external/global calibration by the discrepancy between the system's internal representation and independent terrain evidence:
+
+```
+g_IE(t) := d_Y(y_I(t), y_E(t)).
+```
+
+Full operational equilibrium requires both:
+
+```
+Local equilibrium:     all relevant modules are correctable and locally subcritical
+Global equilibrium:    g_IE(t) ≤ g_c and long-run calibration drift is non-increasing
+```
+
+The four possible combinations have different complexity consequences:
+
+| Local condition | Global condition | Regime | Complexity implication |
+|---|---|---|---|
+| Stable | Stable | Valid DPE/VCZ candidate | summaries remain trustworthy; $O(N)$ or $O(N\log N)$ possible |
+| Stable | Misaligned | Wrong-frame equilibrium | low visible cost but latent global audit debt; future reopening can approach $O(N^2)$ |
+| Unstable | Apparently stable average | Local-supercritical masking | global mean hides unstable SCCs; continuous detailed monitoring remains necessary |
+| Unstable | Unstable | Vector Storm / observability loss | causal source localization fails; pairwise re-verification approaches $O(N^2)$ |
+
+Thus neither local stability nor global agreement alone licenses complexity compression.
+
+#### 19.10.5.4 Unresolved freedom as the operative complexity variable
+
+Let $u_a(t)$ denote the number of internal degrees of freedom in module $a$ that cannot yet be represented safely by its boundary summary. Because “complexity” can mean different resources, first define the resource vector:
+
+```
+C_vec(t) := (C_comm, C_compute, C_memory, C_monitor,
+             C_audit, C_intervention).
+```
+
+A scalar objective is a declared weighted projection of this vector, not a universal quantity. For routine coordination, use the model-level functional:
+
+```
+C_routine(t)
+  := c_L · Σ_a u_a(t)²
+   + c_B · |E_boundary(t)| · q_*
+   + c_G · C_global(t).
+```
+
+Exceptional reopening and revalidation are tracked separately:
+
+```
+C_total(t) := C_routine(t) + c_R · C_revalidation(t).
+```
+
+Interpretation:
+- $\sum_a u_a^2$ is unresolved local mutual-reference burden.
+- $E_{boundary}$ is the active inter-module interface graph.
+- $C_{global}$ is upper-level routing and invariant monitoring.
+- $C_{revalidation}$ is the exceptional cost of reopening summaries after drift or shock.
+
+Initially, one unresolved block may contain the whole system:
+
+```
+u_1 = N  →  C_routine = O(N²).
+```
+
+After stable partition into $K_N$ modules with uniformly bounded unresolved dimension $u_a\leq u_*$:
+
+```
+Σ_a u_a² ≤ K_N·u_*² = O(N),
+```
+
+provided $K_N=O(N)$ and module/interface constants remain bounded. An $O(N)$ routine regime can coexist with rare $O(N^2)$ audits; therefore routine, worst-case, and long-run expected costs must not be conflated. A simple long-run decomposition is:
+
+```
+C_bar(N) = C_routine(N)
+         + λ_reopen(N) · E[C_audit | reopening].
+```
+
+#### 19.10.5.5 Conditional Routine-Complexity Compression Theorem
+
+**Theorem 19.10.2 (Equilibrium-Induced Routine-Complexity Compression — conditional).** Consider a family of adaptive multi-agent systems with $N$ lower-level agents partitioned into modules $\{G_a\}_{a=1}^{K_N}$. Suppose uniformly in $N$:
+
+1. every module satisfies compressible local dynamic equilibrium;
+2. unresolved dimension $u_a\leq u_*$;
+3. summary dimension $\dim z_a\leq q_*$;
+4. inter-module degree $\deg_\partial(G_a)\leq d_*$;
+5. local North Star tension is bounded below its critical resolution threshold;
+6. global calibration error remains bounded and recoverable;
+7. the hierarchy has depth $L_N=O(1)$ or $O(\log N)$;
+8. routine global monitoring is no larger than $O(N)$ per level.
+
+No bound on exceptional full-audit cost is asserted without an additional reopening-frequency assumption.
+
+Then the realized **routine** operational coordination cost satisfies:
+
+```
+C_routine(N) = O(N)          if L_N = O(1),
+C_routine(N) = O(N log N)    if each level performs one linear summary-routing pass.
+```
+
+*Proof sketch.* Bounded unresolved dimension gives $\sum_a u_a^2=O(K_N)=O(N)$. Bounded interface degree and summary dimension give $|E_\partial|q_*=O(K_N)=O(N)$ per level. Summing across $L_N$ levels gives $O(NL_N)$. Global invariant monitoring is bounded by Assumption 8. Exceptional revalidation is excluded from this routine bound. ∎
+
+**Non-converse warning.** Observing $O(N)$ routine traffic does not prove equilibrium. A frozen, censored, or disconnected system may also communicate little. Compression is valid only when return, calibration, and adaptability conditions are verified.
+
+#### 19.10.5.6 Phase sequence from quadratic exposure to compressed coordination
+
+The forward transition is:
+
+```
+Phase C0 — Unreferenced mutual adaptation
+  no stable local or global frame
+  → whole system is one unresolved block
+  → O(N²) potential/effective burden
+
+Phase C1 — Global reference formation
+  a common coordinate exists, but local interpretation remains centralized
+  → conflict decreases, yet upper-layer interpretation load remains high
+
+Phase C2 — Local North Star projection and initial separation
+  local terrain generates distinct circles
+  → C_routine ≈ Σ_a N_a² + boundary overhead
+
+Phase C3 — Local attractor maturation
+  self-correction, self-purification, return paths, and efficient summaries emerge
+  → u_a decreases; internal pairwise burden becomes latent
+
+Phase C4 — Selective boundary coupling
+  middle layers translate and buffer; interface degree becomes bounded
+  → operational burden approaches O(N) per level
+
+Phase C5 — Predictive integration and DPE/VCZ
+  modules predict one another sufficiently that explicit communication is minimized
+  while local/global calibration remains valid
+  → O(N) or O(N log N), depending on hierarchy depth
+```
+
+The growth ordering is therefore:
+
+```
+Separate → Mature → Couple → Integrate → Expand → repeat.
+```
+
+Integrating before local maturation exposes unresolved degrees of freedom across boundaries and recreates quadratic interaction pressure.
+
+#### 19.10.5.7 Reverse transition and re-quadratization
+
+Complexity compression is reversible. Let $Q_a(t)$ be a summary-validity certificate. When any of the following occurs, $Q_a$ may fail:
+
+- local return time exceeds tolerance;
+- a local SCC becomes supercritical;
+- Local North Star tension exceeds its critical threshold;
+- global calibration enters wrong-frame equilibrium;
+- boundary permeability becomes unrestricted;
+- causal source localization or observability collapses.
+
+Let $s_{max}(t)$ be the size of the largest connected unresolved dependency component after invalid summaries are reopened. Then a more precise transition estimate is:
+
+```
+C_total(t) = O(N·L_N) + O(s_max(t)²) + other declared audit terms.
+```
+
+Hence:
+
+```
+local failure:        s_max = O(1)       → routine near-linear scaling may survive
+mesoscopic spread:    s_max = N^θ        → added burden O(N^(2θ)), 0 < θ < 1
+global unresolved SCC:s_max = Θ(N)       → revalidation burden Θ(N²)
+```
+
+The escalation path is:
+
+```
+summary invalidation
+  → module reopening
+  → unresolved component growth
+  → boundary expansion and cross-module revalidation
+  → possible quasi-dense time-integrated dependency graph.
+```
+
+This is the complexity interpretation of Vector Storm: not merely more messages, but growth of the unresolved dependency component and loss of the conditional independences that made hierarchical summaries trustworthy.
+
+---
+
+### 19.10.6 Dual North Star Dynamics and Reference Transition
+
+#### 19.10.6.1 Global and Local North Stars
+
+Let $\mathbf{N}_G^*(t)$ be the Global North Star: the system-wide directional reference obtained by projecting the near-invariant existential criterion onto the highest-level terrain. Let $\mathbf{N}_a^*(t)$ be the Local North Star for circle $a$:
+
+```
+N_a* = Project(N_G*, Terrain_a).
+```
+
+The Local North Star references the Global North Star but is not identical to it. Exact identity would erase terrain differences and convert coordination into prescription. Because the two references may inhabit different representation spaces, declare comparison maps
+
+```
+R_G : N_G-space → Y,      R_a : N_a-space → Y,
+```
+
+into a common evaluation space $(\mathcal Y,d_\mathcal Y)$ containing externally meaningful criteria, realized outcomes, or coexistence constraints. Define reference tension by:
+
+```
+T_a(t) := d_Y(R_a(N_a*(t)), R_G(N_G*(t))) < T_c^(a).
+```
+
+The direct norm $||N_a^*-N_G^*||$ is retained only as the special case in which both references already share one Euclidean coordinate system. A healthy system generally preserves non-zero tension:
+
+```
+0 < T_a < T_c^(a),
+```
+
+because moderate local-global difference carries terrain information, innovation, and alternative recovery paths.
+
+#### 19.10.6.2 Triple timescale separation
+
+The reference system evolves on three ordered timescales:
+
+```
+τ_agent dynamics  <<  τ_Local North Star  <<  τ_Global North Star.
+```
+
+A minimal representation is:
+
+```
+dx_a/dt    = f(x_a, N_a*, Λ_eff),
+dN_a*/dt   = μ · h(x_a, N_a*),
+ε·dN_G*/dt = g({N_a*}, N_G*),       ε << μ.
+```
+
+The Global North Star must be approximately fixed during local coordination but capable of long-run drift after accumulated evidence. Short-term fixity supplies a usable coordinate system; long-term softness prevents wrong-frame lock-in.
+
+#### 19.10.6.3 Four North Star transitions
+
+**Transition N-1 — Downward projection.**
+
+```
+N_G*  →  N_a* = Project(N_G*, Terrain_a)
+```
+
+The upper layer supplies the criterion, coordinate definitions, and projection method. It does not directly prescribe the local implementation. This converts one global reference into many terrain-sensitive local references and removes the need for central interpretation of every local state.
+
+**Transition N-2 — Lateral integration.**
+
+Mature local circles couple first through adaptive middle layers. Successful coupling creates a shared intermediate structure. As local predictive models converge:
+
+```
+Prediction_A(state) ≈ Prediction_B(state)
+→ explicit communication requirement approaches minimum.
+```
+
+This is reference-level compression: common predictive structure replaces repeated explicit negotiation.
+
+**Transition N-3 — Upward global learning.**
+
+When a local deviation contains validated terrain information, the Global North Star updates slowly. Let $A_a\in\{0,1\}$ be an acceptance gate requiring, at minimum, independent terrain validation, persistence across a declared time window, compatibility with the existential criterion, and absence of catastrophic cross-branch harm:
+
+```
+N_G* ← N_G* + α_G · w_a · A_a · Δ_a,     α_G << 1.
+```
+
+Local innovation becomes global governance learning rather than being destroyed by forced conformity. If $A_a=0$, the deviation remains local evidence and must not modify the global reference.
+
+**Transition N-4 — Structural promotion or split.**
+
+When persistent reference tension makes realignment more expensive than autonomy, the branch becomes eligible to separate. A minimal gate is:
+
+```
+C_align(a) > C_split(a) + C_interface(a)
+AND local viability / coexistence constraints pass.
+```
+
+Then:
+
+```
+Branch_a → Autonomous Unit_j,
+N_G,j* := N_a*.
+```
+
+The former Local North Star becomes the new unit's Global North Star. This is the principal fractal growth operation: local maturity is promoted into a new upper-layer reference rather than absorbed indefinitely into the parent.
+
+#### 19.10.6.4 Three critical-tension resolution pathways
+
+When $\mathcal{T}_a\geq\mathcal{T}_c^{(a)}$, the system selects the path minimizing intervention cost plus information loss:
+
+```
+Path* = argmin_{R-1,R-2,R-3} [C_path + D_information-loss(path)].
+```
+
+- **R-1 Local realignment:** $N_a^*\leftarrow N_G^*+\xi_{residual}$. Preserves current global coherence but may destroy local innovation.
+- **R-2 Global reference update:** $N_G^*\leftarrow N_G^*+\alpha_Gw_aA_a\Delta_a$. Preserves only locally generated information that passes the declared validation gate and enables long-run evolution.
+- **R-3 Structural split:** branch becomes autonomous and its Local North Star becomes a new Global North Star only when the split-cost and viability gates pass. It pays a one-time reorganization and interface cost to avoid indefinitely growing alignment cost.
+
+These are not merely conflict-resolution choices. They determine the future complexity architecture. Repeated R-1 centralization may maintain short-run order while increasing interpretation dependency. Successful R-2 improves the shared compression rule. R-3 increases nominal node count but bounds unresolved alignment cost by generating a new fractal level.
+
+#### 19.10.6.5 North Star–complexity correspondence
+
+The complexity regime is determined by whether reference structure is usable:
+
+```
+No stable North Star:
+  agents use one another as moving references
+  → global mutual-reference exposure
+  → O(N²)
+
+Global North Star without local projection:
+  central reference exists but interprets local terrain directly
+  → reduced conflict, high centralized translation burden
+
+Stable Local North Stars with bounded tension:
+  local decisions use local references and bounded summaries
+  → O(N) per level
+
+Local/global predictive integration:
+  repeated negotiation replaced by shared prediction
+  → communication approaches the minimum compatible with adaptation
+
+North Star corruption or unresolved critical tension:
+  summaries and reference frames lose validity
+  → global audit or structural split becomes necessary
+  → temporary re-expansion toward O(N²) unless a new fractal boundary forms.
+```
+
+The decisive compression mechanism is therefore:
+
+```
+Global criterion
+  → local projection
+  → local dynamic equilibrium
+  → bounded interface summary
+  → selective coupling
+  → global learning or structural promotion.
+```
+
+---
+
+### 19.10.7 Position Relative to Existing Complexity-Reduction Approaches
+
+> **Scope note.** Existing algorithmic and AI research does study complexity reduction extensively. The distinction proposed here is not “existing work ignores complexity,” but that most methods optimize computation, communication, or sample efficiency **inside a declared architecture or approximation class**, whereas FCC/DFG targets the lifecycle by which an adaptive system becomes compressible, certifies that compression, loses it, and reorganizes without requiring a system-wide rebuild. This is a positioning hypothesis and research program, not a claim that no prior method addresses any part of the lifecycle.
+
+#### 19.10.7.1 Four locations at which complexity can be reduced
+
+Complexity reduction can occur at four structurally different locations.
+
+**Class A — Ex-ante structural restriction.** The designer specifies locality, sparsity, hierarchy, or exchangeability before learning. Localized networked RL, decentralized learning over sparse communication graphs, and many hierarchical controllers belong primarily to this class. Their strength is strong routine-cost control under the declared topology. Their main scaling risk is **assumption drift**: the locality radius, role partition, or influence-decay condition that justified the method may cease to match the enlarged system.
+
+**Class B — Aggregate approximation.** Mean-field and graphon-style methods replace many individual interactions by population statistics or type-conditioned distributions:
+
+```
+{x_1, ..., x_N}  →  μ_N or a small family of population fields.
+```
+
+This can transform an intractable many-agent problem into a tractable representative-agent problem. The approximation is strongest when agents are sufficiently exchangeable or their heterogeneity is captured by the selected type structure. A scale increase that creates new roles, hubs, or nonlocal dependencies may require a richer field model rather than a small parameter update.
+
+**Class C — Adaptive selection inside a fixed superstructure.** Dynamic coordination graphs, learned communication gates, sparse Mixture-of-Experts, and conditional computation learn which edges, messages, or experts to activate. They go beyond fixed sparsity, but the admissible experts, factorization family, router, message semantics, and training objective are still supplied in advance. The architecture learns **selection within a space**, not necessarily when the space itself should split, merge, acquire a new reference frame, or invalidate its old summaries.
+
+**Class D — Post-hoc compression or migration.** Pruning, quantization, distillation, expert merging, and manual service decomposition reduce an already-trained or already-operating system. These methods can be highly effective, but structural mismatch is often resolved by an explicit compression, retraining, repartitioning, or migration event after the mismatch has accumulated.
+
+The proposed FCC/DFG target is a fifth, lifecycle-level object:
+
+**Class E — Endogenous structural transition.** The system should create and dissolve modules, certify or revoke summaries, reduce or increase interface density, update Local/Global North Stars, and promote a mature local unit into a new autonomous governance unit when alignment cost exceeds separation cost.
+
+```
+Uncompressed interaction
+  → local equilibrium formation
+  → summary certification
+  → bounded interface operation
+  → summary invalidation or reference tension
+  → local repair / global learning / structural split.
+```
+
+#### 19.10.7.2 Comparative matrix
+
+| Approach family | Primary complexity reduction | Usually supplied or assumed | What adapts | Typical scale-change burden | Relation to FCC/DFG |
+|---|---|---|---|---|---|
+| Localized / sparse network control | Restrict each update to a neighborhood | Interaction locality or influence decay | Local policy parameters; sometimes the graph | Radius enlargement, graph redesign, or loss of approximation quality if dependencies become nonlocal | Corresponds to a low-$\eta$ operating regime, but does not by itself explain how the regime was earned or when it fails |
+| Mean-field / graphon approximation | Replace agents by population statistics | Exchangeability, type structure, or graph-limit class | Population law and representative policy | New types, hubs, or sparse/dense regime changes may require a new approximation class | Closest to summary compression; FCC/DFG adds local summary validity and reference-frame conditions |
+| Coordination graphs / value factorization | Factor a joint objective over agent subsets | Factorization and message-passing family | Edge/subset selection and payoff functions | Factorization may need expansion when higher-order or long-range dependence appears | Partial precursor to dynamic boundaries; usually lacks equilibrium-based summary certification and North Star promotion |
+| Sparse MoE / conditional computation | Activate a small subset of parameters per input | Expert pool, router, capacity and activation rules | Routing and expert specialization | Expert proliferation, load imbalance, communication and router redesign under distribution shift | Learns conditional activation, not a full governance lifecycle of module birth, autonomy, and reference transition |
+| Pruning / distillation / migration | Compress or replace a completed system | A trained large model or functioning legacy system | Retained parameters or transferred representation | Periodic large retraining, compatibility work, and revalidation | Classifies as explicit reconfiguration rather than endogenous local structural transition |
+| FCC/DFG proposal | Make compressibility itself a governed state variable | Only the declared local/global equilibrium, validation, and viability criteria | Summaries, boundaries, $\eta(t)$, North Stars, module autonomy, revalidation radius | Target is to localize change to the largest unresolved component rather than rebuild the whole system | Lifecycle-complete hypothesis; theorem-grade only under the stated conditions |
+
+The comparison is therefore not “static versus dynamic” in a simple sense. Existing methods already include dynamic graphs, adaptive routing, and time-varying policies. The sharper distinction is:
+
+```
+Existing dominant objective:
+  optimize performance and routine cost within an admissible structural family.
+
+FCC/DFG lifecycle objective:
+  govern when the structural family and its summaries remain valid,
+  and localize the cost of changing that family when validity fails.
+```
+
+#### 19.10.7.3 Computational scalability versus structural scalability
+
+Routine computational scalability asks:
+
+```
+How does one training or inference step scale with N?
+```
+
+Structural scalability asks:
+
+```
+Can the system absorb new agents, roles, terrains, and time scales
+without invalidating the architecture that made the routine step cheap?
+```
+
+Maintenance scalability adds a third question:
+
+```
+When invalidation occurs, how much of the system must be reopened,
+retrained, migrated, and re-certified?
+```
+
+A lifecycle cost should therefore be separated into:
+
+```
+C_lifecycle(H)
+  := C_design + C_train
+   + ∫_0^H C_routine(t) dt
+   + Σ_{r∈R_H} [C_repartition(r) + C_retrain(r)
+                + C_migration(r) + C_revalidation(r)].
+```
+
+Many benchmark results correctly optimize $C_{routine}$, convergence rate, sample complexity, or fixed-distribution performance. The equation above highlights an additional quantity that is often outside the benchmark objective: the cumulative cost of changing the architecture after its sparsity, factorization, or exchangeability assumptions drift.
+
+A fixed compressed architecture can therefore exhibit the following maintenance-debt cycle:
+
+```
+initial structural assumption fits terrain
+  → low routine cost
+  → scale / role / dependency drift
+  → exceptions and cross-boundary links accumulate
+  → nominally sparse architecture acquires hidden dense dependence
+  → local patches cease to restore validity
+  → large repartition, retraining, or platform migration.
+```
+
+This cycle is not inevitable for every existing method. It is a failure mode expected when the admissible structural family cannot represent the new dependency geometry or when no local validity/reconfiguration mechanism is present.
+
+#### 19.10.7.4 The proposed maintenance invariant: localize structural change
+
+FCC/DFG does not eliminate reconfiguration. Its stronger target is to replace global refactoring with bounded-radius structural transition. Let $s_{max}(t)$ be the largest unresolved dependency component and $Q_a(t)$ the validity certificate for module $a$'s summary. Then a desired maintenance regime is:
+
+```
+most Q_a remain valid,
+s_max(t) << N,
+only invalid modules and their interfaces are reopened.
+```
+
+Under the conditional assumptions of §19.10.5, the corresponding cost form is:
+
+```
+C_maintenance(t)
+  = O(N L_N) + O(s_max(t)^2) + C_structure-change(t),
+```
+
+where $C_{structure-change}$ is localized when reference repair, boundary rewiring, or R-3 structural promotion is localized. If $s_{max}=\Theta(N)$, the advantage disappears and the system again faces global revalidation or replacement.
+
+The structural state variables that distinguish this lifecycle from fixed compression are:
+
+- $Q_a(t)$ — whether a module summary is still sufficient;
+- $\eta(t)$ — whether module interfaces remain bounded-degree or drift toward quasi-dense coupling;
+- $\mathcal T_a(t)$ — whether Local–Global North Star tension remains productive or requires resolution;
+- $s_{max}(t)$ — how far invalidity has propagated;
+- $A_a(t)$ — whether local innovation is validated for global incorporation;
+- the R-1/R-2/R-3 decision — repair locally, update the global reference, or split structurally.
+
+Thus the proposed scaling objective is not merely:
+
+```
+minimize active edges or FLOPs,
+```
+
+but:
+
+```
+minimize lifecycle cost
+subject to summary validity, adaptability, calibration,
+and bounded structural-repair radius.
+```
+
+#### 19.10.7.5 What existing adaptive approaches already cover — and what remains open
+
+Dynamic coordination graphs and time-varying sparse communication networks already weaken the criticism that all existing architectures are fixed. Mean-field variants with richer type structure and sparse graphons also adapt the approximation class to heterogeneity. Sparse MoE routers learn conditional specialization rather than manually assigning every route.
+
+These are genuine partial solutions. The remaining proposed gap is the **joint closure** of six transitions in one model:
+
+1. **Formation:** unresolved agents become a locally stable module;
+2. **Certification:** the module earns a sufficient boundary summary;
+3. **Operation:** interaction is compressed while local/global calibration remains valid;
+4. **Invalidation:** drift, shock, or reference corruption revokes the summary;
+5. **Localized repair:** only the affected dependency component is reopened;
+6. **Evolution:** validated local innovation updates the Global North Star or the module becomes a new autonomous unit.
+
+No claim is made here that the literature contains no mechanisms for any individual step. The research claim is that a generally accepted theory connecting all six steps to a reversible complexity transition and lifecycle maintenance bound remains incomplete.
+
+#### 19.10.7.6 Primary literature anchors for the comparison
+
+The positioning above is anchored to representative primary sources rather than treated as an exhaustive literature review:
+
+- Yang et al. (2018), **Mean Field Multi-Agent Reinforcement Learning** — representative-agent/population-effect compression.
+- Zhang et al. (2018), **Fully Decentralized Multi-Agent Reinforcement Learning with Networked Agents** — learning over time-varying, possibly sparse communication networks.
+- Qu, Wierman, and Li (2020), **Scalable Reinforcement Learning of Localized Policies for Multi-Agent Networked Systems** — localized policy approximation under local network interaction.
+- Boehmer, Kurin, and Whiteson (2020), **Deep Coordination Graphs** — value factorization and local message passing over a coordination graph.
+- Siu, Traish, and Xu (2021), **Dynamic Coordination Graph for Cooperative Multi-Agent Reinforcement Learning** — dynamically generated coordination graphs inside a factorized value architecture.
+- Shazeer et al. (2017), **Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer**, and Fedus, Zoph, and Shazeer (2021), **Switch Transformers** — conditional computation through learned sparse expert routing, together with the associated routing, communication, and stability challenges.
+
+These works support the taxonomy of aggregation, localization, dynamic selection, and conditional computation. The FCC/DFG lifecycle claims about summary certification, reference transition, and localized structural repair remain hypotheses of this framework and require independent benchmark and empirical validation.
+
+
+### 19.10.8 Targeting–Gating–Routing as the Network Control Plane
+
+> **Bridge and scope note.** The document already contained call-routing examples, hierarchical summary routing, sparse-router comparisons, attentional/input gates, and authority-separation principles. What was missing was one explicit control layer connecting them. This subsection adapts the three-function separation in *DFG Unified Interaction Field Theory* §7c—targeting, safety/authority gating, and difficulty-aware routing—from a single-agent work-selection cycle into a module-to-module network-flow architecture. The source architecture supplies the functional separation and safety invariants; the network equations below are a new FCC/DFG projection and remain a control ansatz rather than a proved optimal router.
+
+#### 19.10.8.1 Why topology, gating, and routing are different objects
+
+A physical or logical topology states which interactions are **possible**. It does not determine which interactions are currently legitimate, useful, affordable, or selected. For a candidate flow $c=(i,a,m)$ from source module $i$, concerning target/problem $a$, with message or action payload $m$, the network must answer three distinct questions:
+
+```
+Targeting:  Does a deserve active attention or retained priority?
+Gating:     Is this interaction admissible now, and at what privilege level?
+Routing:    Among admissible paths, where and how should the flow be sent?
+```
+
+The separation invariant is:
+
+```
+Target_a(t) <- Importance_a(t), dependency impact, North-Star relevance
+Gate_ij^a(t) <- safety, authority, contamination, reversibility,
+                summary validity, capacity floor, coupling contract
+Route_a(t) <- difficulty profile, competence, topology, latency,
+              risk, capacity, uncertainty, and tool availability.
+```
+
+Importance is not permission. Permission is not path selection. A high-importance target may be denied execution, quarantined, or held as an unresolved anchor without being forgotten. Conversely, a low-cost route may not bypass a closed gate.
+
+Let $A^{base}$ be the physical/admissible-superstructure adjacency. Define the gate mask $G^a(t)$ and route allocation $R^a(t)$ for target $a$. The realized flow matrix is:
+
+```
+F^a(t) = 1[a in TargetSet_t] * A^base ⊙ G^a(t) ⊙ R^a(t) * M^a(t),
+```
+
+where $⊙$ is elementwise composition and $M^a$ is the candidate message/action intensity. $G$ determines the feasible set; $R$ distributes flow inside that set. The router is not allowed to create authority that the gate did not grant.
+
+**Multiplex object lock.** A deployable system normally carries several overlapping networks rather than one universal graph. Let
+
+```
+Q_net = {compute, task, information, authority, contamination, recovery, audit}.
+```
+
+For each layer $q\in Q_{net}$, declare separate objects:
+
+```
+A_base^(q),  G_a^(q)(t),  R_a^(q)(t),  F_a^(q)(t).
+```
+
+They may share nodes while differing in edges, direction, weights, capacity, time constants, and connected components. In particular,
+
+```
+G_information != G_authority != G_contamination
+              != G_recovery != G_audit
+```
+
+is normal rather than exceptional. A short information path does not imply a legitimate authority path, a safe contamination path, or a usable rollback path. Results obtained on one layer transfer to another only through an explicit bridge and failure audit. The ordinary information router must not own the audit, recovery, clean-anchor, or root-authority routes that certify or reverse its own actions.
+
+The realized-flow identity is therefore layer-indexed:
+
+```
+F_a^(q)(t)
+  = 1[a in TargetSet_t] * A_base^(q) ⊙ G_a^(q)(t)
+    ⊙ R_a^(q)(t) * M_a^(q)(t).
+```
+
+#### 19.10.8.2 Multi-layer gating
+
+A network gate is not merely an on/off attention weight. It is a composed admission decision. A candidate interaction may be screened by:
+
+1. **Target-validity gate:** the target remains important and grounded;
+2. **Summary-validity gate:** the sender and receiver summaries $Q_i,Q_j$ remain sufficient;
+3. **Authority gate:** the requested read/write/action privilege is permitted by the coupling contract;
+4. **Safety/contamination gate:** the flow does not cross a declared risk or contamination threshold;
+5. **Reversibility gate:** irreversible actions require stronger evidence and approval;
+6. **Capacity gate:** the receiver and path retain sufficient processing margin;
+7. **Reference gate:** Local–Global North-Star tension is below the route-specific tolerance.
+
+A canonical ordered gate state is:
+
+```
+Gate_ij^a(t) in {
+  deny,
+  quarantine,
+  observe,
+  read_only,
+  sandbox,
+  shadow,
+  reversible_execute
+}.
+```
+
+These states are partially ordered by privilege, not by importance. A denied or quarantined target remains in an unresolved-target ledger with the denial reason, evidence requirement, reconsideration condition, and expiry/review time.
+
+A minimal multiplicative gate score may be written as:
+
+```
+g_ij^a(t)
+  = g_valid * g_authority * g_safety * g_reversible
+    * g_capacity * g_reference,
+```
+
+but this product is only an operational encoding. Constitutional or catastrophic-risk gates may be lexicographic hard constraints rather than compensable soft scores.
+
+**Fast isolate / slow integrate asymmetry.** When $Q_a$ fails, contamination rises, or authority is uncertain, the gate may downgrade immediately to quarantine, observe, or read-only. Promotion toward write/action privileges should require staged evidence, independent validation, time limits, rollback, and where applicable dual approval. Thus:
+
+```
+request != authorize,
+fast isolate != fast reintegrate.
+```
+
+**Signaling–influence privilege split.** The permitted/prohibited boundary is defined by the effect on the receiver, not merely by message content.
+
+```
+Signaling:
+  a committed or completed state is transmitted;
+  the receiver may update its map, queue, or confidence estimate;
+  the sender does not write into the receiver's active processing trajectory.
+
+Influence:
+  a message changes the receiver's still-active trajectory, intermediate state,
+  objective weight, or action direction before local commitment.
+```
+
+A gate must therefore specify rights separately:
+
+```
+Privilege_ij^a(t)
+  = (observe, read, signal, influence, write, execute, authorize).
+```
+
+For same-level peers, the safe default is:
+
+```
+signal = permitted within a typed interface,
+influence = denied unless a declared mediator/authority contract enables it.
+```
+
+Processing isolation is structurally enforced by three jointly required controls:
+
+1. **Interface narrowing:** only committed, typed artifacts cross the boundary; raw unconsolidated internal states do not.
+2. **Temporal decoupling:** the sender commits its local output before the receiver consumes it for its own decision.
+3. **Write asymmetry:** ordinary signaling can update maps and queues but cannot directly rewrite another module's active state, gate policy, evaluator, or North Star.
+
+**Evidence and privilege lifecycle lock.** Promotion is staged while demotion is rapid. A candidate artifact, summary, route, or permission may move through:
+
+```
+LOCAL -> CANDIDATE
+CANDIDATE -> SANDBOX/SHADOW -> CONDITIONALLY_VERIFIED -> VERIFIED
+CANDIDATE -> CONFLICT / QUARANTINED / OUT_OF_SCOPE / UNSAFE
+VERIFIED -> SUPERSEDED     [history retained; no silent deletion]
+```
+
+Forbidden shortcuts include `LOCAL -> VERIFIED`, `CONFLICT -> VERIFIED` by majority alone, and direct `QUARANTINED -> VERIFIED` without re-test. A high-impact promotion requires declared evidence, provenance, independent or ancestry-corrected validation, expiry/review time, checkpoint, and rollback trigger. Summary invalidation, contamination, or authority uncertainty may demote privilege immediately.
+
+#### 19.10.8.3 Capacity-, difficulty-, and competence-aware routing
+
+For a target that passes the required gate, the router chooses a path $p$ from the admissible path set $P_a(G_t)$. Define:
+
+```
+Route_a(t)
+  = Pi_route(DifficultyProfile_a, Competence_t, ToolSet_t,
+             RiskClass_a, Q_t, Capacity_t, Contract_t, Topology_t).
+```
+
+A network-level difficulty profile may include:
+
+```
+DifficultyProfile_a
+  = (d_semantic, d_proof, d_compute, d_data,
+     d_coupling, d_uncertainty, d_irreversibility).
+```
+
+Canonical route classes include:
+
+- direct local handling or local correction;
+- nearest valid specialist/module;
+- middle-layer bridge or translation route;
+- cheap counterexample / kill test;
+- independent replay or audit route;
+- sandbox or finite-proxy experiment;
+- external data or heavy-compute route;
+- human or constitutional approval route;
+- defer-with-anchor, preserving target importance and dependency links.
+
+For path $p$, a candidate route objective is:
+
+```
+J_route(p)
+  = w_L    * latency(p)
+  + w_C    * congestion(p)
+  + w_R    * risk(p)
+  + w_E    * expected_error(p)
+  + w_T    * translation_loss(p)
+  + w_U    * route_uncertainty(p)
+  + w_Priv * privacy_exposure(p)
+  + w_Auth * authority_expansion(p)
+  + w_Rec  * recovery_path_depletion(p)
+  + w_Aud  * audit_fatigue(p)
+  + w_Q    * queue_externality(p)
+  - w_I    * expected_information_gain(p).
+```
+
+The router selects the lowest admissible objective subject to edge, module, and approval capacity constraints:
+
+```
+p* = argmin_{p in P_a(G_t)} J_route(p),
+
+sum_a flow_e^a(t) <= Capacity_e(t)
+for every active edge or processing module e.
+```
+
+The coefficients are domain-calibrated; no universal scalarization is claimed. Lexicographic safety or authority constraints precede cost minimization.
+
+**Required-resolution gate.** Receiver capacity is directional and task-relative rather than a scalar headcount or total-compute quantity. For target $a$, contract $c$, and candidate receiver $j$, define the operational margin
+
+```
+Delta_rho_j(a,c,t) = rho_j(a,c,t) - r_a(c,t),
+```
+
+where $r_a$ is the minimum declared resolution required by the task/risk contract and $rho_j$ is the receiver's verified directional supply. A route may be rejected, degraded, bridged, or escalated when
+
+```
+Delta_rho_j(a,c,t) < -Delta_rho_safe(a,c).
+```
+
+The v6.7 heterogeneous-task benchmark supports using this directional margin as a routing input: resolution-aware receiver selection achieved a task-success rate of 0.895, compared with 0.770 for coarse role labels and 0.260 for scalar total-capacity selection in the declared synthetic environment. This does not establish a universal resolution metric; $r_a$, $rho_j$, and the safe tolerance remain object- and contract-specific.
+
+**Path-transform and order term.** A route is not only a sequence of edges. When modules compress, reconstruct, translate, or fill unresolved dimensions, each node applies a transformation $T_v$. The path operator is
+
+```
+T_p = T_(v_m) o ... o T_(v_2) o T_(v_1),
+```
+
+and generally need not commute. The route objective should therefore contain a held-out path-transform loss
+
+```
+D_path(p) = E_holdout[d_Y(T_p(x), y_target)],
+J_route^path(p) = J_route(p) + w_path * D_path(p).
+```
+
+In the declared rotated-subspace benchmark, an ordered bridge and the reverse bridge used the same nodes and hop count but produced average held-out losses 0.024 and 0.314 respectively; direct transfer produced 0.323. A selector trained only on separate training samples recovered the ordered bridge in all benchmark repetitions. This supports route-order awareness within the declared operator family, not a universal theorem that all FCC module operators are non-commutative.
+
+**Mediation margin and route-state classification.** A middle layer is admitted only when it demonstrates value relative to a direct route:
+
+```
+M_med(p) = D_path(p_direct) - D_path(p_mediated).
+
+M_med >  epsilon_med  -> constructive mediator,
+|M_med| <= epsilon_med -> neutral / redundant mediator,
+M_med < -epsilon_med  -> destructive mediator.
+```
+
+The synthetic midpoint mediator reduced average loss by 74.7% relative to direct transfer, whereas a misaligned detour increased it by 263.1%. The benchmark therefore rejects “middle layer always helps.” Mediation must be route-, terrain-, and receiver-specific and must be re-tested after drift.
+
+**Hop-depth objective.** More gradual bridges can reduce projection mismatch, but every hop adds latency, congestion, translation noise, authority surface, and audit cost. Let
+
+```
+J_route^hop(p) = J_route^path(p) + lambda_hop * (|p|-1).
+```
+
+The selected hop depth is
+
+```
+h*(a,t) = argmin_h J_route^hop(p_h),
+```
+
+estimated on held-out or shadow traffic rather than fixed by a universal formula. In the synthetic benchmark, increasing $lambda_{hop}$ moved the optimum toward shallower routes; at penalty 0.01 the mean selected intermediate depths were 1, 3, and 4 for 35°, 60°, and 80° transfer gaps, while penalty 0.03 selected 0, 2, and 3. Thus route depth should respond jointly to transformation gap and per-hop cost.
+
+**Load-regime switch.** Queue or backpressure terms should activate from measured utilization and burst risk rather than be treated as a universal shortest-path replacement. In the benchmark, shortest and queue-aware routing were nearly tied at low stationary load; static capacity splitting was slightly better at moderate burst load; queue-aware routing had the lowest tested latency at high burst load, while shortest-path routing suffered severe drops through the narrow hub. A candidate route-mode controller is therefore
+
+```
+RouteMode(t) =
+  shortest_or_local,       if utilization and burst risk are low;
+  capacity_split,          if load is elevated but predictable;
+  queue_or_backpressure,   if burst risk or queue gradient is high.
+```
+
+The thresholds are deployment-calibrated and belong to the route competence model.
+
+**Escalation is a loss-sensitive route, not an automatically safe action.** Under-escalation can leave an unresolved high-impact state local, but over-escalation can saturate upper queues, delay critical cases, expose private information, expand authority, exhaust auditors, and consume recovery capacity. A candidate action rule is therefore:
+
+```
+a*(x) = argmin_a E[L_task + L_safety + L_delay + L_privacy
+                    + L_authority + L_recovery + L_audit | x,a]
+                   + C_route(a).
+```
+
+The loss terms and priority order are contract-relative. Catastrophic safety constraints may remain non-compensatory hard gates.
+
+**Dual escalation channels.** A robust network does not depend only on a failing module recognizing and reporting its own failure. It supports both:
+
+```
+E_push: lower module requests escalation or mediation;
+E_pull: upper monitor/interceptor detects a decoupling condition and redirects flow.
+```
+
+A candidate pull trigger for module $i$ is:
+
+```
+Intercept_i(t) = 1[resource_use_i rising
+                   AND output_convergence_i falling]
+                 OR 1[summary validity, safety, or provenance gate fails].
+```
+
+The pull monitor should use an audit/observation path that is not controlled by the ordinary task router. Otherwise the same failure that suppresses the push request can also blind the interceptor.
+
+**Fallback diversity.** A route must carry uncertainty and alternatives. After failure, distribution shift, congestion, competence decay, or summary invalidation, the system should fall back to a distinct route family rather than repeatedly intensify the same path. Route competence is updated from calibrated outcomes, not raw completion count:
+
+```
+Competence_r(t+1)
+  = U_C(Competence_r(t), held_out_success, failure,
+        transfer, calibration_error, shift_evidence).
+```
+
+#### 19.10.8.4 Gating and routing as the mechanism behind interface-density reduction
+
+The interface exponent $\eta$ introduced in §19.6 should not be interpreted as raw physical topology alone. Gating and routing produce two nested network objects:
+
+```
+E_adm(t)  = boundary interactions currently admitted by gates,
+E_flow(t) = boundary interactions that actually carry routed flow.
+```
+
+Define:
+
+```
+|E_adm(K)|  proportional to K^(1 + eta_adm),
+|E_flow(K)| proportional to K^(1 + eta_flow),
+0 <= eta_flow <= eta_adm <= 1.
+```
+
+- $\eta_{adm}$ measures how broadly modules are permitted to interact;
+- $\eta_{flow}$ measures how broadly they actually interact during operation.
+
+In a multiplex deployment these exponents are layer-specific:
+
+```
+eta_adm^(q), eta_flow^(q),   q in Q_net.
+```
+
+A system can have sparse task flow while retaining dense authority exposure, dense contamination reachability, or a fragile single recovery route. Any aggregate $\eta$ must therefore declare its layer weights or worst-case operator; it may not silently average away a dangerous authority, contamination, recovery, or audit layer.
+
+The cost-law exponent $\eta$ in §19.6 is therefore an **effective operational interface exponent**. Where measurements permit, both exponents should be reported. A low $\eta_{flow}$ with high $\eta_{adm}$ indicates sparse usage inside a broad permission surface; a high $\eta_{adm}$ means that a router failure or broad activation can still expose the system to near-dense coupling.
+
+Gating and routing reduce different risks:
+
+```
+Gating without routing:
+  unsafe or excessive edges can be blocked,
+  but admitted traffic may still overload hubs or take poor paths.
+
+Routing without gating:
+  traffic can be optimized,
+  but the router may exploit unsafe, unauthorized, contaminated,
+  or summary-invalid paths.
+
+Targeting + gating + routing:
+  attention is retained correctly,
+  interaction is admitted safely,
+  and admitted load is distributed efficiently.
+```
+
+Under bounded admitted degree, bounded routed degree, bounded summary dimension, and capacity-feasible load balance, the TGR layer supplies the operational mechanism needed for the $O(N)$-per-level claim. If gates open broadly or the router concentrates flow through a small set of hubs, the nominally modular system can return to intermediate or quasi-quadratic burden even when module boundaries remain visually intact.
+
+#### 19.10.8.5 Closed network-control loop
+
+Targeting, gating, and routing must form a recurrent control loop with equilibrium and North-Star variables:
+
+```
+external input / anomaly / unresolved dependency
+  -> importance and North-Star appraisal
+  -> target selection or retained anchor
+  -> summary-validity + safety-authority gate
+  -> capacity/difficulty-aware route
+  -> execution / communication / experiment
+  -> outcome, error, harm, information-gain, and congestion evaluation
+  -> update Q_a, route competence, eta_flow, s_max, and reference tension
+  -> re-target, downgrade/upgrade gate, reroute, reopen, or split.
+```
+
+The loop connects directly to the lifecycle in §19.10.7:
+
+- **Formation:** candidate modules begin with narrow, reversible gates;
+- **Certification:** valid summaries permit broader read and bounded write routes;
+- **Operation:** routing balances admitted flow while maintaining bounded interfaces;
+- **Invalidation:** $Q_a$ failure automatically downgrades gates before broad reopening;
+- **Localized repair:** rerouting and reopening are restricted to the affected dependency component;
+- **Evolution:** validated local innovations may pass the R-2 gate or trigger R-3 promotion.
+
+Local North Stars determine contextual priority and route relevance. The Global North Star and constitutional layer constrain which permissions may be granted and which updates require external validation. Neither local urgency nor router success may self-authorize root-policy, audit-floor, or coupling-authority changes.
+
+**Independent validation and lineage correction.** Agreement is not independent evidence when modules share a base model, training set, prompt lineage, upstream patch, mediator, or retrieval source. Let $\mathcal L(i)$ denote the declared ancestry/correlation class of validator $i$. A simple operational proxy is:
+
+```
+W_ind^proxy = sum_i w_i / |L(i)|,
+```
+
+while a stronger implementation aggregates evidence once per independently anchored lineage class and retains the provenance graph. This proxy is not a universal statistical estimator; its purpose is to prevent duplicated inherited evidence from being counted as multiple independent confirmations. The control invariant is:
+
+```
+majority agreement != independent validation,
+CONFLICT or UNKNOWN cannot be silently promoted to VERIFIED.
+```
+
+At least one validation or clean-anchor route used for high-impact promotion should lie outside the optimization loop being certified. If all independent anchors, audit routes, or rollback checkpoints are compromised, the system must report that self-certification is unavailable rather than route its own approval as external evidence.
+
+#### 19.10.8.6 Failure taxonomy
+
+| Failure | Mechanism | Network consequence | Required correction |
+|---|---|---|---|
+| Gate bypass | Importance, urgency, or router reward overrides authority/safety | Privilege escalation and contamination spread | Hard admission constraints; independent audit |
+| Over-gating / Frozen routing | Nearly all flows denied or retained read-only | Low traffic mistaken for healthy compression; adaptability collapses | Exploration floor; reversible sandbox routes |
+| Under-gating | Broad permissions without validity or capacity checks | $\eta_{adm}$ rises; hidden quasi-dense exposure | Gate tightening; least privilege; local quarantine |
+| Hub-route collapse | Cost function repeatedly selects one apparently efficient hub | Congestion, single-point failure, long-range dependence | Capacity-aware multipath routing; hub penalty |
+| Route lock-in | Historical success dominates route choice | Distribution-shift blindness and competence miscalibration | Route uncertainty; fallback diversity; held-out tests |
+| Gate-router mismatch | Router requests a path above its admitted privilege | Repeated failed dispatch or covert bypass pressure | Type-safe privilege/path interface |
+| Stale-summary bypass | Router uses $z_a$ after $Q_a$ has failed | Wrong-frame compression and delayed audit spike | Automatic gate downgrade and module reopening |
+| Self-validation routing | Internally agreeing modules route evidence among themselves | Circular confirmation and false competence growth | Independent replay, external data, or held-out routes |
+| Constitutional capture | Router or reward loop modifies its own gate policy | Unbounded self-escalation | Separate small authority kernel; non-self-expansion |
+| Influence leakage | Peer signaling channel modifies active intermediate states | Premature convergence, shared blind spots, false voluntary agreement | Interface narrowing; temporal decoupling; write asymmetry |
+| Multiplex collapse | Task, evidence, authority, audit, and recovery share one route/controller | Common-mode compromise and inability to certify or roll back | Separate layer-specific graphs, credentials, and fallback paths |
+| Push-only escalation blindness | Failing module cannot or will not request help | Silent overload or confident wrong-frame operation | Independent pull/intercept monitoring |
+| Escalation flooding | Uncertainty or defensive policy routes nearly everything upward | Queue saturation, critical-case delay, privacy and audit exhaustion | Expected-loss routing; rate limits; local reversible containment |
+| Correlated consensus | Shared-lineage modules are counted as independent validators | False verification and map monoculture | Provenance graph; ancestry quotient; independent anchor |
+| Rollback-path capture | Ordinary router can alter checkpoints or recovery edges | Irreversible bad promotion and false recovery | Independent recovery/audit authority; restoration test |
+
+#### 19.10.8.7 Network TGR benchmark programme
+
+The following cheap-first benchmarks adapt the source document's TGR-0..TGR-9 ideas to the network plane. N-TGR remains a real-system benchmark programme. v6.7 completes only the synthetic proxy families B1–B7 below; those results are model-internal and do not count as deployment or empirical passes.
+
+1. **N-TGR-0 — Object lock:** independently freeze candidate flows, topology, authority graph, gate inputs, route set, and evaluation metrics.
+2. **N-TGR-1 — Target/difficulty separation:** increasing route difficulty alone must not delete a high-importance target from the unresolved ledger.
+3. **N-TGR-2 — Gate integrity:** importance, emotion, congestion pressure, or router reward cannot bypass authority, contamination, reversibility, or summary-validity gates.
+4. **N-TGR-3 — Route feasibility:** every selected route satisfies gate privilege, flow conservation, capacity, and declared contract constraints.
+5. **N-TGR-4 — Load balance:** under equivalent task quality, routing avoids persistent hub overload and preserves bounded maximum utilization.
+6. **N-TGR-5 — Shift and fallback:** after route failure or distribution shift, the router detects competence loss and activates a meaningfully distinct fallback route.
+7. **N-TGR-6 — Summary invalidation:** when $Q_a$ fails, write/action gates downgrade before the invalid summary can drive broad cross-module actions.
+8. **N-TGR-7 — Fast isolate / slow reintegrate:** quarantine is rapid; privilege restoration requires staged evidence, rollback, and independent validation.
+9. **N-TGR-8 — Localized repair radius:** matched failures reopen only the affected dependency component and keep $s_{max}/N$ below the declared limit.
+10. **N-TGR-9 — Constitutional containment:** learning and reinforcement cannot rewrite root authority, audit, exploration floors, or identity-write permissions.
+11. **N-TGR-10 — Signaling/influence separation:** completed-state signals may update maps, but peer messages cannot alter active trajectories without an explicit influence privilege and mediator contract.
+12. **N-TGR-11 — Structural processing isolation:** interface narrowing, temporal decoupling, and write asymmetry each receive an ablation; removing any one must expose the predicted contamination path.
+13. **N-TGR-12 — Multiplex containment:** compromise or overload of the task/information router does not automatically remove audit visibility, expand authority, corrupt rollback, or capture clean-anchor access.
+14. **N-TGR-13 — Push/pull escalation:** pull interception detects declared resource–convergence decoupling when push escalation is suppressed, delayed, or confidently wrong.
+15. **N-TGR-14 — Escalation loss calibration:** expected-loss routing outperforms both never-escalate and always-escalate baselines on task harm, critical delay, privacy exposure, authority expansion, and audit load.
+16. **N-TGR-15 — Lineage and lifecycle integrity:** correlated validators are discounted; forbidden promotion shortcuts fail; demotion is rapid; verified artifacts remain rollback-capable and are superseded rather than silently deleted.
+17. **N-TGR-16 — Route-order audit:** compare equal-node/equal-hop path permutations on held-out tasks; route order must be retained when transformation loss differs materially.
+18. **N-TGR-17 — Mediation margin:** classify candidate mediators as constructive, neutral, or destructive relative to the direct route after drift and load changes.
+19. **N-TGR-18 — Resolution/load route mode:** compare coarse role, scalar capacity, directional resolution, static capacity split, and queue-aware policies across stationary and burst regimes.
+20. **N-TGR-19 — Memory-mode and anchor gate:** compare clean pooling, lineage-robust aggregation, conflict-preserving staged promotion, and independently anchored VERIFIED promotion under clean, shift, and correlated-lineage regimes.
+
+#### 19.10.8.8 Synthetic candidate benchmark and promotion ledger
+
+> **Object and claim lock.** The following results come from controlled synthetic objects: linear projection chains between rotated subspaces, a two-path queue model, heterogeneous directional-resolution tasks, three-lineage map reconciliation, and a duplicated-corrupted-lineage verification stress test. Training-selected routes were evaluated on held-out samples. These results select among architectural candidates inside those objects; they do not validate real organizations, neural systems, or multi-agent deployments.
+
+| Bench | Candidate comparison | Key result | Decision |
+|---|---|---|---|
+| B1 Route order | ordered bridge / reverse bridge / direct / train-selected | held-out loss 0.024 / 0.314 / 0.323; selector recovered ordered bridge 100% | **GREEN-conditional:** add path-transform and order term |
+| B2 Mediation | direct / midpoint / near-source / misaligned detour | midpoint 0.0815 vs direct 0.3225; detour 1.1710 | **GREEN/RED split:** positive held-out mediation margin required |
+| B3 Hop depth | 0–7 intermediate hops with translation noise and hop penalty | optimum falls as hop cost rises; no fixed depth dominates all gaps | **GREEN-conditional:** empirical hop search; no universal formula |
+| B4 Queue routing | shortest / static capacity / queue-aware | low-load tie; static split best at moderate burst; queue-aware best tested latency at high burst; shortest drops heavily under burst | **GREEN by regime:** load-mode switch, not one universal policy |
+| B5 Resolution routing | coarse role / total capacity / directional resolution | success 0.770 / 0.260 / 0.895 | **GREEN-conditional:** explicit required-resolution gate |
+| B6 Memory v1 | pooling / lineage discount / staged reciprocal v1 | staged v1 worse in clean, shift, and bias regimes with frequent rollback | **RED:** retain as dead route; do not promote |
+| B6 Memory v2 | pooling / lineage mean / lineage median / staged robust | pooling best clean and genuine shift; lineage median best under duplicated correlated bias (MSE 0.00784 vs pooled 0.15524) | **GREEN mode-selective:** memory-mode router, not universal reciprocal memory |
+| B7 Verification | raw majority / lineage majority / anchor-gated staged | with 16 corrupted duplicates: wrong promotion 0.997 / 0.213 / 0.010; anchor-gated coverage about 0.756 | **GREEN with abstention:** high-impact VERIFIED needs independent anchor |
+
+**Dead-route lesson — staged reciprocal memory v1.** The first implementation was not merely inconclusive: it was consistently inferior to naive pooling and lineage discounting and triggered many rollbacks. Its failure came from over-conservative promotion and noisy validation, which delayed real terrain updates without sufficiently improving correlated-bias resistance. It is preserved as a RED candidate so that later implementations cannot cite “reciprocal memory” abstractly while ignoring a failed operational form.
+
+**Memory-mode router.** The second sieve shows that no single map-update rule dominated:
+
+```
+independently clean + stationary:
+  pooled update preferred for variance reduction;
+
+genuine terrain shift with independent evidence:
+  faster pooled/lineage-mean update preferred;
+
+correlated lineage, common-model bias, or high-impact patch:
+  lineage-robust aggregation + conflict buffer + staged/anchored promotion;
+
+anchor or audit compromise:
+  VERIFIED self-certification unavailable; quarantine or external reconstruction.
+```
+
+Let $m_{mem}(t)$ be the selected memory mode. A candidate controller is
+
+```
+m_mem(t) = Pi_mem(provenance_correlation, impact, drift_rate,
+                  conflict_spread, anchor_status, rollback_cost).
+```
+
+The controller must not infer correlation only from current agreement. It uses provenance lineage, common data/model/prompt ancestry, mediator dependence, and controlled perturbation where available. Lineage aggregation prevents duplication amplification but does not create independence.
+
+**High-impact VERIFIED gate.** The anchor benchmark supports an explicit abstention-capable rule:
+
+```
+Promote_to_VERIFIED(x) only if
+  independent_anchor_accepts(x)
+  AND support_from_at_least_two_lineage_classes(x)
+  AND rollback/checkpoint requirements pass;
+otherwise retain CANDIDATE / CONDITIONAL / CONFLICT.
+```
+
+In the declared stress test this reduced wrong promotion to roughly 1% while accepting roughly 75% of cases. The remaining abstention is an intentional governance cost, not a classification error to be silently removed.
+
+The full reproducible benchmark, raw replicates, and candidate code are stored separately from the theory document. Numerical results are frozen as v6.7 model-internal evidence; changes to the synthetic objects require a new benchmark version rather than silently updating the values.
+
+#### 19.10.8.9 Epistemic status and open work
+
+| Statement | Status |
+|---|---|
+| Targeting, gating, and routing are distinct network functions | Architectural definition |
+| Router cannot exceed gate privilege | Governance/safety invariant |
+| $E_{flow}\subseteq E_{adm}\subseteq E_{base}$ | Construction identity under the declared model |
+| $\eta_{flow}\leq \eta_{adm}$ | Conditional on consistent exponent estimation over the same module family |
+| TGR can support bounded operational interfaces | Conditional design claim |
+| The route objective above is universally optimal | Not claimed |
+| Route order affects loss in the declared linear projection-chain bench | Model-internal supported; transfer to arbitrary modules open |
+| Every middle-layer mediator improves transfer | Refuted by B2; destructive mediation observed |
+| Directional required-resolution routing improves the declared heterogeneous-task bench | Model-internal supported; operational metric calibration open |
+| One queue policy dominates all load regimes | Refuted by B4; regime-conditioned switching supported |
+| Universal staged reciprocal memory dominates pooling | Refuted by B6; first candidate RED and second mode-selective |
+| Lineage correction alone establishes independent evidence | Refuted; anti-duplication only, anchor still required for high-impact promotion |
+| Adaptive routing converges under arbitrary terrain shift | Open |
+| Constitutional non-escalation is formally proved | Open |
+| Signaling and influence are distinct privileges | Architectural/network-semantic definition |
+| Interface narrowing + temporal decoupling + write asymmetry prevent all contamination | Candidate sufficient-control package; universal proof not claimed |
+| Multiplex separation reduces common-mode blast radius | Conditional design claim; requires matched adversarial and fault benchmarks |
+| Push/pull escalation improves detection under self-report failure | Testable control hypothesis |
+| Lineage correction yields statistically independent evidence | Not claimed; the proposed weighting is an operational anti-duplication proxy |
+| N-TGR-0..15 pass in real multi-agent systems | Untested benchmark programme |
+
+The v6.7 synthetic sieve conditionally promotes route-order awareness, held-out mediation margins, empirical hop search, directional resolution matching, load-regime routing, provenance-conditioned memory modes, and independently anchored VERIFIED promotion inside the declared benchmark objects. The remaining research task is to determine whether **summary certification + multiplex gating + signaling/influence isolation + transform-aware routing + dual escalation + memory-mode selection + localized invalidation** jointly lower lifecycle cost and repair radius under realistic staged topology, role, adversarial, and terrain shifts. No synthetic pass is treated as a real-system N-TGR pass, and the RED reciprocal-memory candidate remains part of the audit record.
+
+---
+
+### 19.10.9 Falsifiable Predictions for the Complexity Transition
+
+1. **Compression follows local return, not mere sparsity.** Systems with equal active-edge count but stronger verified local return and summary sufficiency should require fewer global interventions.
+2. **Wrong-frame compression produces delayed audit spikes.** Internally stable but externally miscalibrated systems should show low routine cost followed by sudden near-quadratic revalidation cost after terrain contradiction.
+3. **Predictive synchronization reduces explicit traffic.** After successful middle-layer integration, communication volume should fall while task coordination remains stable; forced communication reduction before predictive convergence should instead raise error.
+4. **Reference tension has a non-monotone value.** Moderate $\mathcal{T}_a$ should predict useful innovation; near-zero tension should predict rigidity, and supercritical tension should predict realignment, global update, or split.
+5. **Split thresholds depend on alignment cost.** Branches with persistent Local–Global North Star divergence should become autonomous at smaller scale than highly aligned branches, all else equal.
+6. **Re-quadratization precedes visible Storm.** Growth in time-integrated reachable pairs and summary-invalidations should predict collapse earlier than instantaneous edge count alone.
+7. **Hierarchy depth determines the residual logarithm.** Architectures with verified bounded local interfaces but $O(\log n)$ levels should exhibit $O(N\log N)$ routing overhead, while mature ecological/invariant monitoring can reduce active upper-layer intervention toward $O(N)$ total operational cost.
+8. **Interface-density exponent tracks equilibrium quality.** Estimated $\eta(t)$ from $|E_\partial(K)|\propto K^{1+\eta}$ should decline after verified local return and predictive integration, and rise before or during summary invalidation, module reopening, and giant-SCC formation.
+
+9. **Lifecycle-cost crossover.** A fixed compressed architecture may outperform an endogenous architecture at small $N$ because it avoids reconfiguration machinery, but should be overtaken when cumulative repartition/retraining cost dominates: $C_{lifecycle}^{fixed}(H)>C_{lifecycle}^{adaptive}(H)$ beyond a terrain-drift-dependent crossover horizon.
+10. **Localized refactor radius.** Under matched shocks, systems with summary-validity certificates and local R-1/R-3 repair should reopen a smaller fraction of agents and parameters than architectures that only monitor task loss or message volume.
+11. **Maintenance-debt precursor.** Growth in cross-boundary exceptions, estimated $\eta(t)$, and $s_{max}(t)$ should predict a future large migration or retraining event earlier than routine throughput degradation.
+12. **Static-versus-endogenous scaling benchmark.** Under a stationary task distribution, fixed locality or fixed routing may equal or outperform FCC/DFG-style adaptation; under staged role/topology/terrain shifts, the endogenous model should exhibit lower cumulative lifecycle cost and smaller maximum revalidation radius.
+13. **Gate–route separation test.** Under the same routing policy, removing summary-validity and authority gates should reduce short-run latency but increase unauthorized/invalid cross-module actions and later revalidation cost; under the same gates, replacing capacity-aware routing with shortest-path-only routing should increase peak hub utilization and failure concentration.
+14. **Admissible-versus-realized density precursor.** A rise in $\eta_{adm}$ without an immediate rise in $\eta_{flow}$ should identify latent coupling exposure; after a broad activation or router fault, systems with high latent exposure should show a faster increase in $s_{max}$ than systems with equally sparse realized traffic but low $\eta_{adm}$.
+15. **Summary-triggered gate downgrade.** Architectures that automatically downgrade write/action gates when $Q_a$ fails should exhibit smaller contamination spread and repair radius than architectures that only reroute after task-loss degradation becomes visible.
+16. **Fallback-diversity advantage.** Under distribution shift, routers maintaining calibrated route uncertainty and at least one structurally distinct fallback should recover competence with lower cumulative lifecycle cost than routers that repeatedly retry the historically best route.
+17. **Signaling-versus-influence ablation.** Under matched message volume, typed post-commit signaling should preserve more independent error diversity than live peer sharing of unconsolidated intermediate states; the latter should increase correlated error and premature convergence.
+18. **Multiplex blast-radius test.** Separating authority, audit, recovery, and information routes should reduce the fraction of control functions lost under a single router/hub compromise relative to a one-graph architecture with equal total edge budget.
+19. **Pull-escalation lead time.** A monitor using resource–convergence decoupling and summary-validity signals should intercept some failures earlier than self-reported escalation alone, especially for confident, overloaded, or contaminated modules.
+20. **Over-escalation frontier.** Always-escalate policies should lower some under-resolution errors but exhibit a non-monotone total-loss curve due to queue delay, privacy exposure, authority expansion, recovery depletion, and audit fatigue.
+21. **Lineage-corrected validation.** Under common-model or common-data perturbations, ancestry-corrected evidence aggregation should produce fewer false `VERIFIED` promotions than raw majority vote at comparable independent-source recall.
+22. **Asymmetric lifecycle advantage.** Fast demotion plus slow staged promotion and retained rollback checkpoints should reduce contamination blast radius and irreversible bad updates relative to symmetric promotion/demotion or deletion-based state management.
+23. **Route-order effect.** Equal-node/equal-hop paths should produce different held-out transformation loss when module compression/reconstruction operators do not commute; shortest-path-only routing should fail on some such cases.
+24. **Mediation-margin sign.** A mediator with positive held-out $M_{med}$ should reduce downstream reconstruction or decision loss, while negative-margin mediation should be worse than direct transfer despite adding nominal capacity.
+25. **Finite hop-cost frontier.** Increasing per-hop latency, translation noise, authority surface, or audit cost should reduce the selected bridge depth; no single hop count should dominate across all resolution gaps and load regimes.
+26. **Directional-resolution advantage.** Under heterogeneous task requirements, routing by directional $Delta_rho$ should outperform routing by coarse role or scalar total capacity at matched load budgets.
+27. **Load-mode crossover.** Short/local routing should remain competitive at low utilization, static capacity splitting may dominate predictable moderate load, and queue/backpressure routing should become valuable under sufficiently bursty or imbalanced load.
+28. **Memory-mode crossover.** Naive pooling should outperform guarded reconciliation when evidence is independent and clean, but lineage-robust/conflict-preserving modes should overtake pooling as provenance correlation and common-mode bias rise.
+29. **Anchor–coverage tradeoff.** Independent-anchor gating should lower false VERIFIED promotion under lineage duplication while increasing CONDITIONAL/abstention states; attempts to remove the abstention without new independent evidence should restore false-promotion risk.
 
 ---
 
@@ -6639,7 +7913,7 @@ IRRECOVERABLE ⟺
   (H > H_TCE_max AND Q_E < Q_E_min)        [heritage paralysis → M3 ∧ M4; see §32.8.2]
 ```
 
-This document (§14–31) addresses Type I conditions in full. Type II analysis and the Heritage-extended lock budget `(1+L_C^H)(1+L_d^H) > ζ^{-4}` are developed in the companion document **[→ [→ *DFG Terrain-Heritage-Integration* §32.8.2], §32.10]**.
+This document (§14–31) addresses Type I conditions in full. Type II analysis and the Heritage-extended lock budget `(1+L_C^H)(1+L_d^H) > ζ^{-4}` are developed in the companion document **[→ *DFG Terrain-Heritage-Integration* §32.8.2, §32.10]**.
 
 ---
 
@@ -7086,7 +8360,11 @@ This analysis demonstrates structural isomorphism across:
 
 **On cross-domain isomorphism.** The recurrence of similar structures across these domains reflects a shared mathematical origin — not independent empirical confirmations. All isomorphisms derive from the same underlying scaling law: interaction ∼ n², governance ∼ n, with collapse occurring when the ratio exceeds the governance capacity. The call-center, neuron, and governance systems are *projections of one scaling law* onto different observational planes (Level C, B, A respectively). Their convergence is self-consistency evidence for the shared law, not independent validation of distinct claims. The genuine empirical challenge — and what the Falsifiability section addresses — is finding observations that would distinguish the projections from each other or from simpler alternatives.
 
-The progression reveals that the Deficit-Fractal Governance (DFG) framework's core concepts — Vector Storm, Recovery Theory, buffer layers, and scale-invariant learning — are not arbitrary constructions but emerge naturally from first-principles analysis of how hierarchical systems learn, fail, and recover.
+The progression shows how the Deficit-Fractal Governance (DFG) framework's core concepts — Vector Storm, Recovery Theory, buffer layers, and scale-invariant learning — arise coherently within the document's stated modeling assumptions about hierarchical learning, failure, and recovery.
+
+> **Evidence-status note.** The list below mixes algebraic identities, conditional theorems, model-internal analytical results, numerical checks, cross-domain correspondences, and empirical hypotheses. An item’s inclusion in this summary does not assign it theorem or empirical-validation status; the status and assumptions stated in the source section govern.
+
+> **Lifecycle-scalability distinction (§19.10.7).** The framework's claimed difference from representative mean-field, localized-network, coordination-graph, and sparse-routing approaches is not a lower routine complexity bound by itself. The proposed contribution is to make the *validity and reconfiguration of the compressed structure* part of the governed dynamics: summary certification and revocation, interface-density drift, bounded reopening radius, Local/Global North Star repair, and structural promotion. This remains a comparative research hypothesis pending independent lifecycle benchmarks.
 
 The mathematical formalization (Sections 11–31) provides:
 1. A minimal ODE system with **proven state-space invariance** and well-posedness
@@ -7101,94 +8379,96 @@ The mathematical formalization (Sections 11–31) provides:
 10. An **attention amplification factor** F(A\_g, A\_ℓ, ω) with explicit admissibility constraints preventing singularity
 11. Local-to-global propagation dynamics with k as **slow structural realization** of ω
 12. A **three-stage correction protocol** (Stabilize → Unlock → Relearn) with formal verification conditions and **control stability guarantee**
-13. **Symbol harmonization** (DFG-ND Core) resolving β-conflicts and unifying notation across all component theories
+1. **Symbol harmonization** (DFG-ND Core) resolving β-conflicts and unifying notation across all component theories
 14. A **complete variable dependency graph** with 4 positive and 1 negative feedback loop explaining structural asymmetry
-15. **Fixed-point classification** of all four regimes as dynamical objects with explicit existence/stability conditions
-16. **Jacobian-based local stability analysis** yielding fold conditions J₁₁ = 0 as saddle-node boundaries
-17. **Fully closed-form Δu(ω,k)** — the hysteresis width as an explicit function of propagation and lock, with propagation sensitivity showing catastrophic threshold collapse near D → 0⁺
-18. **Observable proxy** Φ̂ enabling empirical measurement across domains, with all transitions governed by dimensionless ratios ensuring cross-domain universality
-19. **Multiplicative fractal durability** R\_total = ∏R\_ℓ — multi-scale buffering compounds recovery margins as a product, not a sum, with explicit multi-scale lock budget constraint
-20. **Phase boundary revival trajectories** (§30) — near-critical reactivation events arising from square-root sensitivity of the coherence branch, with coupling extension showing how local revival nucleates into global closure through percolation-like cascade dynamics
-21. **Operational validation via V4c compassion policy** (§24) — the DDD protocol's three stages are directly operationalized as coupling reduction, bridge rewiring, and fatigue shielding in a multi-agent simulation, with empirical confirmation of containment/withdrawal decomposition (94.8% DSI reduction from Defocus+Decouple; autonomous EXIT solely from Diversity stage), topology universality (ΔDSI ≈ −0.040 across 3 topologies), and cyclic Storm→Recovery→VCZ dynamics (Cohen's d = 7.68)
-22. **Global well-posedness and structural stability** (§14) — formal proof of global existence via Gronwall extension, asymptotic compactness guaranteeing a global attractor, and structural stability of the bifurcation diagram under C¹-small perturbations via Sotomayor's theorem, establishing that all qualitative predictions are robust to modelling uncertainties
-23. **Information-geometric characterization of Silent Criticality** (§20) — Fisher information metric interpretation showing that Silent Criticality is a geodesic drift on the statistical manifold, with Fisher information collapse as a formal criterion for the observability horizon (point of no return) and perturbation sensitivity as a measurable early-warning indicator
-24. **Topological necessity of revival trajectories** (§30) — Conley index theory establishing revival trajectories as topologically forced connecting orbits, Morse decomposition proving their structural inevitability at fold boundaries, and bifurcation delay (canard-type dynamics) providing quantitative predictions for revival timing
-25. **Information-theoretic foundation for Cube Domination** — frame competition as MDL optimization, fragmentation threshold as mutual information collapse [→ *Cube Domination Dynamics* document]
-26. **Critical damage theory and phase transitions in structural degradation** (§31) — three repair function regimes (linear, capacity-limited, threshold), critical damage phase diagram in the (u, S) plane, explicit damage-dependent threshold shift formulas, and damage-modified lock budget predicting a critical damage fraction S\* consistent with clinical neurodegeneration thresholds
-27. **Affective Module Theory integration** — formal mapping between ODE temperature variable T and Affective Module dynamics; see companion document for full integration [→ *DFG Terrain-Heritage-Integration* §32.5]
-28. **DFG Core Mechanism formalization** (§12) — deficit → attractor → vector-reinforcer pair → mutual dependency as ODE fixed-point formation dynamics; fractal exponent verification requirement (τ, α\_dur, R within ±15% across scales) as falsification criterion for the scale-invariance claim
-29. **TLG authority separation as ODE variable isolation** — Interface Narrowing, Temporal Decoupling, and Write-Asymmetry mapped to timescale separation; Mediator Drift Syndrome as Silent Criticality mechanism [→ [→ *DFG Terrain-Heritage-Integration* §32.5] for full mapping]
-30. **GRT operational measurement layer** [→ *DFG Terrain-Heritage-Integration* §32.5] — complete bidirectional diagnostic mapping (f\_esc ↔ Φ, I ↔ β\_s, L\_reinf ↔ d, θ\_d ↔ C(t), P\_overlap ↔ α, SCC ↔ u⁻); triple concordance (R, ρ, f\_esc) as SCM detection protocol; vectorization lifecycle as n² generation control mechanism; AND-entry/OR-exit as multiplicative lock budget operational expression
-31. **RT-1 five-phase cascade as DDD ordering constraint** (§24) — geometry-first recovery necessity proven by SCM convergence under unverified ρ; dependency trap as SCC atrophy under chronic intervention; GRT Seed Sufficiency Tests as DDD Phase 4 withdrawal gate; four-phase withdrawal protocol correspondence providing graduated governance transition criteria
+2. **Fixed-point classification** of all four regimes as dynamical objects with explicit existence/stability conditions
+3. **Jacobian-based local stability analysis** yielding fold conditions J₁₁ = 0 as saddle-node boundaries
+4. **Fully closed-form Δu(ω,k)** — the hysteresis width as an explicit function of propagation and lock, with propagation sensitivity showing catastrophic threshold collapse near D → 0⁺
+5. **Observable proxy** Φ̂ enabling empirical measurement across domains, with all transitions governed by dimensionless ratios ensuring cross-domain universality
+6. **Multiplicative fractal durability** R\_total = ∏R\_ℓ — multi-scale buffering compounds recovery margins as a product, not a sum, with explicit multi-scale lock budget constraint
+7. **Phase boundary revival trajectories** (§30) — near-critical reactivation events arising from square-root sensitivity of the coherence branch, with coupling extension showing how local revival nucleates into global closure through percolation-like cascade dynamics
+8. **Operational validation via V4c compassion policy** (§24) — the DDD protocol's three stages are directly operationalized as coupling reduction, bridge rewiring, and fatigue shielding in a multi-agent simulation, with in-model numerical confirmation of containment/withdrawal decomposition (94.8% DSI reduction from Defocus+Decouple; autonomous EXIT solely from Diversity stage), topology universality (ΔDSI ≈ −0.040 across 3 topologies), and cyclic Storm→Recovery→VCZ dynamics (Cohen's d = 7.68)
+9. **Global well-posedness and structural stability** (§14) — formal proof of global existence via Gronwall extension, asymptotic compactness guaranteeing a global attractor, and structural stability of the bifurcation diagram under C¹-small perturbations via Sotomayor's theorem, supporting robustness of the local bifurcation conclusions under the stated smoothness and small-perturbation assumptions
+10. **Information-geometric characterization of Silent Criticality** (§20) — Fisher information metric interpretation showing that Silent Criticality is a geodesic drift on the statistical manifold, with Fisher information collapse as a formal criterion for the observability horizon (point of no return) and perturbation sensitivity as a measurable early-warning indicator
+11. **Topological necessity of revival trajectories** (§30) — Conley index theory establishing revival trajectories as topologically forced connecting orbits, Morse decomposition proving their structural inevitability at fold boundaries, and bifurcation delay (canard-type dynamics) providing quantitative predictions for revival timing
+12. **Information-theoretic foundation for Cube Domination** — frame competition as MDL optimization, fragmentation threshold as mutual information collapse [→ *Cube Domination Dynamics* document]
+13. **Critical damage theory and phase transitions in structural degradation** (§31) — three repair function regimes (linear, capacity-limited, threshold), critical damage phase diagram in the (u, S) plane, explicit damage-dependent threshold shift formulas, and damage-modified lock budget predicting a critical damage fraction S\* consistent with clinical neurodegeneration thresholds
+14. **Affective Module Theory integration** — formal mapping between ODE temperature variable T and Affective Module dynamics; see companion document for full integration [→ *DFG Terrain-Heritage-Integration* §32.5]
+15. **DFG Core Mechanism formalization** (§12) — deficit → attractor → vector-reinforcer pair → mutual dependency as ODE fixed-point formation dynamics; fractal exponent verification requirement (τ, α\_dur, R within ±15% across scales) as falsification criterion for the scale-invariance claim
+16. **TLG authority separation as ODE variable isolation** — Interface Narrowing, Temporal Decoupling, and Write-Asymmetry mapped to timescale separation; Mediator Drift Syndrome as Silent Criticality mechanism [→ *DFG Terrain-Heritage-Integration* §32.5] for full mapping]
+17. **GRT operational measurement layer** [→ *DFG Terrain-Heritage-Integration* §32.5] — complete bidirectional diagnostic mapping (f\_esc ↔ Φ, I ↔ β\_s, L\_reinf ↔ d, θ\_d ↔ C(t), P\_overlap ↔ α, SCC ↔ u⁻); triple concordance (R, ρ, f\_esc) as SCM detection protocol; vectorization lifecycle as n² generation control mechanism; AND-entry/OR-exit as multiplicative lock budget operational expression
+18. **RT-1 five-phase cascade as DDD ordering constraint** (§24) — geometry-first recovery necessity proven by SCM convergence under unverified ρ; dependency trap as SCC atrophy under chronic intervention; GRT Seed Sufficiency Tests as DDD Phase 4 withdrawal gate; four-phase withdrawal protocol correspondence providing graduated governance transition criteria
 
-35. **AGM Gain-Temperature Duality** (§6.7) — formal derivation of the FCC temperature variable T from intra-agent gain-modulated stochastic regulation; establishment of T_eff as the population average of per-agent effective gain temperatures; four thermal regime classification (Frozen/Calibrated/Overheated/Runaway) with FCC-ODE signatures; identification of Silent Criticality as the aggregate systemic expression of per-agent Frozen regime; Minimum Viable Temperature as VCZ lower boundary; energy budget conservation yielding the No-Free-Lunch constraint at the governance thermodynamic level.
+19. **AGM Gain-Temperature Duality** (§6.7) — formal derivation of the FCC temperature variable T from intra-agent gain-modulated stochastic regulation; establishment of T_eff as the population average of per-agent effective gain temperatures; four thermal regime classification (Frozen/Calibrated/Overheated/Runaway) with FCC-ODE signatures; identification of Silent Criticality as the aggregate systemic expression of per-agent Frozen regime; Minimum Viable Temperature as VCZ lower boundary; energy budget conservation yielding the No-Free-Lunch constraint at the governance thermodynamic level.
 
-36. **EDT Terrain-ODE Ontological Priority** (§13.7) — establishment of EDT as the generating substrate from which the FCC ODE emerges as a mean-field projection; three-term canonical capacity equation (Construction − Stress − Pollution) with energy landscape interpretation; Clean System Paradox — zero pollution produces catastrophic collapse above n_crit while active pollution admits stable fixed points; optimal purification Q* ∈ (0,1) strictly interior; terrain carrying capacity n_max as the ODE upper bound; overshoot collapse spiral with finite time horizon; Filippov framework resolution of ODE non-differentiability with governance interpretation of switching manifold Σ_piecewise as contamination absorption threshold.
+20. **EDT Terrain-ODE Ontological Priority** (§13.7) — establishment of EDT as the generating substrate from which the FCC ODE emerges as a mean-field projection; three-term canonical capacity equation (Construction − Stress − Pollution) with energy landscape interpretation; Clean System Paradox — zero pollution produces catastrophic collapse above n_crit while active pollution admits stable fixed points; optimal purification Q* ∈ (0,1) strictly interior; terrain carrying capacity n_max as the ODE upper bound; overshoot collapse spiral with finite time horizon; Filippov framework resolution of ODE non-differentiability with governance interpretation of switching manifold Σ_piecewise as contamination absorption threshold.
 
-37. **GGT Criticality Equivalence in FCC Coordinates** (§19.9) — translation of GGT five-theory unification (E1–E5) into FCC variable coordinates; establishment that Φ and J₁₁ = 0 are jointly sufficient FCC statistics for M_crit detection; GGT three hidden constants (ℓ_c, B*, κ_A) expressed as FCC operational analogs (m*, B_br* = 3, κ_c); GGT master equation as FCC RG invariant; self-tuned criticality (Φ → Φ_c without parameter tuning) as SONC derived consequence of FCC ODE dynamics; VCZ as M_crit δ-neighborhood establishing VCZ governance utility grounding.
+21. **GGT Criticality Equivalence in FCC Coordinates** (§19.9) — translation of GGT five-theory unification (E1–E5) into FCC variable coordinates; establishment that Φ and J₁₁ = 0 are jointly sufficient FCC statistics for M_crit detection; GGT three hidden constants (ℓ_c, B*, κ_A) expressed as FCC operational analogs (m*, B_br* = 3, κ_c); GGT master equation as FCC RG invariant; self-tuned criticality (Φ → Φ_c without parameter tuning) as SONC derived consequence of FCC ODE dynamics; VCZ as M_crit δ-neighborhood establishing VCZ governance utility grounding.
 
-38. **Buffer Theory: Noised Vector Dynamics** (§19.10) — formal four-property definition of buffer (delay/amplitude/semantic/localization) with FCC variable identification for each property; noised vector model of middle-layer agents (v_buffer ≈ ε·v_potential, ε→0) as foundation of Governance Invisibility; Middle-Layer Buffer Peak Theorem (maximum buffer depth at k* = ⌊L/2⌋) as formal prediction about organizational hierarchy efficiency; Hierarchical Correction Cascade with five escalation stages and FCC variable modification at each stage; nearest-layer correction priority theorem; North Star Projection Principle formalizing upper layer role as projection-method teacher not outcome prescriber; Centralization-Collapse Equivalence — full upper-layer control produces Silent Criticality probability = 1 via diversity-lock saturation.
+22. **Buffer Theory: Noised Vector Dynamics** (§19.10) — formal four-property definition of buffer (delay/amplitude/semantic/localization) with FCC variable identification for each property; noised vector model of middle-layer agents (v_buffer ≈ ε·v_potential, ε→0) as foundation of Governance Invisibility; Middle-Layer Buffer Peak Theorem (maximum buffer depth at k* = ⌊L/2⌋) as formal prediction about organizational hierarchy efficiency; Hierarchical Correction Cascade with five escalation stages and FCC variable modification at each stage; nearest-layer correction priority theorem; North Star Projection Principle formalizing upper layer role as projection-method teacher not outcome prescriber; Centralization–Fragility Correspondence — the deterministic full-control limit maximizes modeled Silent Criticality vulnerability through diversity-lock saturation.
 
-39. **Coordinate Drift as Intra-Agent Storm Precursor** (§30.5) — four-phase precursor geometry (Pre-drift/Drift initiation/Drift saturation/Storm entry) with FCC variable trajectory at each phase; drift accumulation bound dD_coord/dt ≤ Ω/C_M·(1−SCC) as operational early-warning criterion; falsifiable lead-time prediction (drift threshold crossed → Storm within 2k_D windows, ≥80% of instances); triple concordance detection protocol (Φ stable) ∧ (L rising) ∧ (D_coord rising) as high-specificity Silent Criticality confirmation extending §21 two-variable detection.
+23. **Coordinate Drift as Intra-Agent Storm Precursor** (§30.5) — four-phase precursor geometry (Pre-drift/Drift initiation/Drift saturation/Storm entry) with FCC variable trajectory at each phase; drift accumulation bound dD_coord/dt ≤ Ω/C_M·(1−SCC) as operational early-warning criterion; falsifiable lead-time prediction (drift threshold crossed → Storm within 2k_D windows, ≥80% of instances); triple concordance detection protocol (Φ stable) ∧ (L rising) ∧ (D_coord rising) as high-specificity Silent Criticality confirmation extending §21 two-variable detection.
 
- ([→ *DFG Terrain-Heritage-Integration* §32.8.2]) — identifying terrain heritage loading H(x,t) as a structurally independent failure axis from state-variable damage S(t) and operational regime Φ; demonstrating that a system satisfying all 7 Scaling Closure Conditions can still fail to scale due to heritage loading; extending the Scaling Closure Theorem with Condition 8; formalizing the Heritage Ratchet as a positive feedback loop between failed seeding attempts and elevated heritage barriers
+24. **Heritage loading as an independent scaling-failure axis** ([→ *DFG Terrain-Heritage-Integration* §32.8.2]) — identifying terrain heritage loading $H(x,t)$ as structurally independent from state-variable damage $S(t)$ and operational regime $\Phi$; showing within the extended model that a system satisfying the seven prior Scaling Closure Conditions can still fail to scale because of heritage loading; adding Condition 8 and formalizing the Heritage Ratchet as a positive feedback loop between failed seeding attempts and elevated heritage barriers.
 
-33. **Therapeutic Collective Events as new governance primitive** ([→ *DFG Terrain-Heritage-Integration* §32.8.2]) — introducing TCE as a governance action class with no ODE state-variable analog (it modifies terrain curvature, not C/d/ρ/T); formalizing the minimum therapeutic rate $r_{\text{positive,min}}$; establishing TCE trigger conditions (germination failure pattern, not Φ threshold); demonstrating that TCE must precede seeding in heritage-loaded terrain rather than occurring concurrently
+25. **Therapeutic Collective Events as new governance primitive** ([→ *DFG Terrain-Heritage-Integration* §32.8.2]) — introducing TCE as a governance action class with no ODE state-variable analog (it modifies terrain curvature, not C/d/ρ/T); formalizing the minimum therapeutic rate $r_{\text{positive,min}}$; establishing TCE trigger conditions (germination failure pattern, not Φ threshold); demonstrating that TCE must precede seeding in heritage-loaded terrain rather than occurring concurrently
 
-34. **Gain-Curvature Equivalence Theorem in ODE context** (§32.5.2, [→ *DFG Terrain-Heritage-Integration* §32.10]) — formalizing the T ↔ ΔU duality within the ODE framework; demonstrating that temperature variable T and terrain curvature barrier ΔU are dual parameterizations of the same governance primitive; establishing GCET Design Freedom Corollary doubling the effective intervention space; deriving stochastic risk correction for near-critical regime; establishing EC6 timescale separation requirement for duality validity
+26. **Gain-Curvature Equivalence Theorem in ODE context** (§32.5.2, [→ *DFG Terrain-Heritage-Integration* §32.10]) — formalizing the T ↔ ΔU duality within the ODE framework; demonstrating that temperature variable T and terrain curvature barrier ΔU are dual parameterizations of the same governance primitive; establishing GCET Design Freedom Corollary doubling the effective intervention space; deriving stochastic risk correction for near-critical regime; establishing EC6 timescale separation requirement for duality validity
 
-35. **Information-geometric governance manifold** (§6.6) — establishing the Fisher-Rao metric on governance parameter space (κ, χ, ψ) as the canonical Riemannian structure for governance regime analysis; demonstrating that Silent Criticality corresponds to geodesic drift toward the critical manifold rather than visible stress increase; showing that the Fisher information component g_{κκ} diverges at fold boundaries with saddle-node universality class exponent γ_FI = 1; providing the theoretical basis for early-warning indicators as approximate geodesic proximity estimators; connecting the DDD correction protocol to natural gradient descent on the governance manifold
+27. **Information-geometric governance manifold** (§6.6) — establishing the Fisher-Rao metric on governance parameter space (κ, χ, ψ) as the canonical Riemannian structure for governance regime analysis; demonstrating that Silent Criticality corresponds to geodesic drift toward the critical manifold rather than visible stress increase; showing that the Fisher information component g_{κκ} diverges at fold boundaries with saddle-node universality class exponent γ_FI = 1; providing the theoretical basis for early-warning indicators as approximate geodesic proximity estimators; connecting the DDD correction protocol to natural gradient descent on the governance manifold
 
-36. **Optimal transport theory of recovery** (§6.6) — formalizing governance recovery as measure transport from the Storm distribution to the Rest distribution under the Wasserstein metric; proving that the DDD protocol is an approximately optimal transport map via correspondence to the Brenier convex potential; establishing that recovery difficulty (Wasserstein distance) is a coordinate-free generalization of the barrier height ΔU valid for non-Gaussian governance distributions; demonstrating that the Lyapunov potential V(x) of §14 is the Brenier potential of the optimal recovery transport map, confirming internal consistency across dynamical, information-geometric, and transport-theoretic perspectives
+28. **Optimal transport theory of recovery** (§6.6) — formalizing governance recovery as measure transport from the Storm distribution to the Rest distribution under the Wasserstein metric; proving that the DDD protocol is an approximately optimal transport map via correspondence to the Brenier convex potential; establishing that recovery difficulty (Wasserstein distance) is a coordinate-free generalization of the barrier height ΔU valid for non-Gaussian governance distributions; demonstrating that the Lyapunov potential V(x) of §14 is the Brenier potential of the optimal recovery transport map, confirming internal consistency across dynamical, information-geometric, and transport-theoretic perspectives
 
-37. **Topological early-warning via persistent homology** (§6.6) — establishing that fold bifurcations produce topologically detectable signatures in the Rips complex filtration of EW indicator time series; proving that the β₀ merger event (two governance basins becoming one) is a topological precursor to saddle-node bifurcation that is noise-robust and parameter-free; providing an algorithm for computing topological early-warning from observable time series without knowledge of the ODE parameters; connecting Betti number transitions to the Master Condition M1 boundary crossing
+29. **Topological early-warning via persistent homology** (§6.6) — establishing that fold bifurcations produce topologically detectable signatures in the Rips complex filtration of EW indicator time series; proving that the β₀ merger event (two governance basins becoming one) is a topological precursor to saddle-node bifurcation that is noise-robust and parameter-free; providing an algorithm for computing topological early-warning from observable time series without knowledge of the ODE parameters; connecting Betti number transitions to the Master Condition M1 boundary crossing
 
-38. **Stochastic governance calculus** (§13.5) — developing the full Fokker-Planck equation for governance regime distribution p(Φ, t) with state-dependent multiplicative noise; proving that lock accumulation produces super-exponential MFPT decrease as MFPT ~ exp{ΔU₀/σ₀² · [1 − L/L_c]^{3/2}}, quantifying why Silent Criticality produces sudden-seeming collapses; establishing governance stochastic resonance (GSR) as a formal property with optimal noise level σ₀* = √(ΔU/ln(T_window·ω₀)); deriving the large-deviation instanton path showing that k and L precede Φ fold crossing as the most probable collapse trajectory; providing the probability-theoretic foundation for the empirical EW indicators of §21 as proxy measurements of the stochastic Fokker-Planck bimodal peak weight ratio
+30. **Stochastic governance calculus** (§13.5) — developing the full Fokker-Planck equation for governance regime distribution p(Φ, t) with state-dependent multiplicative noise; proving that lock accumulation produces super-exponential MFPT decrease as MFPT ~ exp{ΔU₀/σ₀² · [1 − L/L_c]^{3/2}}, quantifying why Silent Criticality produces sudden-seeming collapses; establishing governance stochastic resonance (GSR) as a formal property with optimal noise level σ₀* = √(ΔU/ln(T_window·ω₀)); deriving the large-deviation instanton path showing that k and L precede Φ fold crossing as the most probable collapse trajectory; providing the probability-theoretic foundation for the empirical EW indicators of §21 as proxy measurements of the stochastic Fokker-Planck bimodal peak weight ratio
 
-39. **Computational complexity bounds on governance diagnosis** (§13.6) — establishing the GDP lower bound N_min ≥ C·σ_noise²/ε²·log(1/δ) as a formal impossibility result for rapid Silent Criticality diagnosis; proving that multi-tier EW systems (§19.5) are computationally justified as adaptive strategies achieving polynomial improvement over non-adaptive monitoring; demonstrating that heritage landscape identification is NP-hard in the landscape dimension M, establishing why TCE probe sequences must exploit structural sparsity assumptions; providing the information-theoretic rationale for why Cramér-Rao bounds predict maximum observability precisely at the fold boundary where Tier 2 monitoring activates
+31. **Computational complexity bounds on governance diagnosis** (§13.6) — establishing the GDP lower bound N_min ≥ C·σ_noise²/ε²·log(1/δ) as a formal impossibility result for rapid Silent Criticality diagnosis; proving that multi-tier EW systems (§19.5) are computationally justified as adaptive strategies achieving polynomial improvement over non-adaptive monitoring; demonstrating that heritage landscape identification is NP-hard in the landscape dimension M, establishing why TCE probe sequences must exploit structural sparsity assumptions; providing the information-theoretic rationale for why Cramér-Rao bounds predict maximum observability precisely at the fold boundary where Tier 2 monitoring activates
 
-40. **Spectral governance theory: coupling Jacobian analysis** (§19.7) — establishing the spectral radius theorem for governance regime transitions as a network-level generalization of the scalar Φ threshold; deriving the 20% spectral gap condition Δλ₁₂/λ₁ > 0.2 as a network design criterion for predictable cascade ordering; connecting NAT's frame collapse condition (Proposition I3) to coupling Jacobian spectral gap narrowing, providing a unified Jacobian-level explanation for both VST frame dispersion and DFG Storm onset; proving the Perron-Frobenius governance theorem and identifying negative-eigenvector-component agents as contaminated subsystems; establishing the Fiedler value as a network-level Lock Budget analog, with lock accumulation corresponding to algebraic connectivity reduction; deriving the Cheeger constant as a structural weak-point detector for fragmentation collapse prediction
+32. **Spectral governance theory: coupling Jacobian analysis** (§19.7) — establishing the spectral radius theorem for governance regime transitions as a network-level generalization of the scalar Φ threshold; deriving the 20% spectral gap condition Δλ₁₂/λ₁ > 0.2 as a network design criterion for predictable cascade ordering; connecting NAT's frame collapse condition (Proposition I3) to coupling Jacobian spectral gap narrowing, providing a unified Jacobian-level explanation for both VST frame dispersion and DFG Storm onset; proving the Perron-Frobenius governance theorem and identifying negative-eigenvector-component agents as contaminated subsystems; establishing the Fiedler value as a network-level Lock Budget analog, with lock accumulation corresponding to algebraic connectivity reduction; deriving the Cheeger constant as a structural weak-point detector for fragmentation collapse prediction
 
-41. **Cross-domain universality: financial systemic risk** (§19.8) — establishing the DFG → Kyle market model reduction, showing Φ_market = λ·n_informed/C_market_makers as a market-calibrated governance scalar; mapping DebtRank systemic risk measures to spectral collapse mode components (§19.7), providing a network-spectral basis for systemic risk quantification; formalizing the Minsky moment as a saddle-node fold bifurcation and deriving the prediction that Silent Criticality (L drift with Φ stable) must precede all Minsky-type crises; mapping Basel III capital buffers to DFG lock budget components, explaining the countercyclical capital buffer as a L-targeting (rather than Φ-targeting) regulatory instrument and predicting that Φ-only interventions systematically underperform
+33. **Cross-domain universality: financial systemic risk** (§19.8) — establishing the DFG → Kyle market model reduction, showing Φ_market = λ·n_informed/C_market_makers as a market-calibrated governance scalar; mapping DebtRank systemic risk measures to spectral collapse mode components (§19.7), providing a network-spectral basis for systemic risk quantification; formalizing the Minsky moment as a saddle-node fold bifurcation and deriving the prediction that Silent Criticality (L drift with Φ stable) must precede all Minsky-type crises; mapping Basel III capital buffers to DFG lock budget components, explaining the countercyclical capital buffer as a L-targeting (rather than Φ-targeting) regulatory instrument and predicting that Φ-only interventions systematically underperform
 
-42. **Cross-domain universality: ecological food webs** (§19.8) — demonstrating that May's (1972) stability criterion σ²·C·n < 1 is structurally equivalent to the DFG critical size condition n < n* = √(C/β_s), establishing ecological and governance network instability as two projections of the same n²-vs-n scaling law; resolving the biodiversity-stability paradox in DFG terms by identifying diversity d as the denominator buffer that allows n↑ without Φ↑; predicting that the biodiversity-stability relationship is unimodal near n* (non-monotone), distinguishing the DFG model from simple positive diversity-stability monotone predictions and providing a falsifiable ecological prediction
+34. **Cross-domain universality: ecological food webs** (§19.8) — demonstrating that May's (1972) stability criterion σ²·C·n < 1 is structurally equivalent to the DFG critical size condition n < n* = √(C/β_s), establishing ecological and governance network instability as two projections of the same n²-vs-n scaling law; resolving the biodiversity-stability paradox in DFG terms by identifying diversity d as the denominator buffer that allows n↑ without Φ↑; predicting that the biodiversity-stability relationship is unimodal near n* (non-monotone), distinguishing the DFG model from simple positive diversity-stability monotone predictions and providing a falsifiable ecological prediction
 
-43. **Cross-domain universality: economic market microstructure** (§19.8) — mapping flash crash precursors (strategy concentration, signal correlation, market maker withdrawal) to DFG variables (d↓, k↑, C↓) and deriving the prediction that all three preconditions must be jointly present for flash crashes (not individually); establishing the n²-scaling of informed trader information externalities as the market analog of governance interaction overload; predicting flash crash probability as exp(−ΔU_market/σ_market²) with ΔU_market depending on the market lock budget, providing a DFG-calibrated quantitative flash crash risk measure
+35. **Cross-domain universality: economic market microstructure** (§19.8) — mapping flash crash precursors (strategy concentration, signal correlation, market maker withdrawal) to DFG variables (d↓, k↑, C↓) and deriving the prediction that all three preconditions must be jointly present for flash crashes (not individually); establishing the n²-scaling of informed trader information externalities as the market analog of governance interaction overload; predicting flash crash probability as exp(−ΔU_market/σ_market²) with ΔU_market depending on the market lock budget, providing a DFG-calibrated quantitative flash crash risk measure
 
-44. **Unified governance universality class** — the combined results of §6.6, §13.5, §13.6, §19.7, §19.8 establish that DFG governance, financial markets, ecological food webs, neural circuits, and AI multi-agent systems belong to the same universality class characterized by: (a) n²-vs-n interaction-governance asymmetry, (b) bistability with hysteresis, (c) Silent Criticality via slow-parameter drift, (d) stochastic resonance in productive transitions, (e) spectral gap as resilience parameter, and (f) large-deviation instanton paths that reveal k/L as leading Φ precursors. The universality class is characterized by the saddle-node universality exponent γ = 3/2 appearing in MFPT scaling, the 1/3 exponent in module size scaling (§19.6), and the Fisher information divergence exponent γ_FI = 1 at the fold. These shared exponents are the quantitative signature of universality across domains.
+36. **Proposed unified governance universality class** — the combined model results of §6.6, §13.5, §13.6, §19.7, §19.8 establish that DFG governance, financial markets, ecological food webs, neural circuits, and AI multi-agent systems belong to the same universality class characterized by: (a) n²-vs-n interaction-governance asymmetry, (b) bistability with hysteresis, (c) Silent Criticality via slow-parameter drift, (d) stochastic resonance in productive transitions, (e) spectral gap as resilience parameter, and (f) large-deviation instanton paths that reveal k/L as leading Φ precursors. The universality class is characterized by the saddle-node universality exponent γ = 3/2 appearing in MFPT scaling, the interface-conditioned module exponent $\eta/(2+\eta)$ (with $1/3$ only at the $\eta=1$ endpoint) (§19.6), and the Fisher information divergence exponent γ_FI = 1 at the fold. These shared exponents are the quantitative signature of universality across domains.
 
-45. **RBIT Resolution Gap as ODE Formal Projection** (§13.8) — establishing that the FCC regime scalar Φ is the mean-field single-scale projection of RBIT's resolution gap Δρ; deriving the F_RBIT health vector component projections (f₁ ∝ Φ, f₂ ∝ β_s·n²/C·d, f₃ ∝ d⁻¹, f₄ ∝ Φ·(1−d), f₅ ∝ μC·n²·Φ); proving that the ODE ρ̇ equation is the formal mechanistic derivation of RBIT's resolution growth/degradation dynamics; establishing the lock budget inequality as the dual-component RBIT R = D·F·V·T multiplicative structure; proving that RBIT's correction efficiency η_corr = 1 boundary is the exact operational threshold activating middle-tier mediation; deriving the EDT retention spectrum as independent confirmation of the RBIT R-component atrophy ordering (T → F → V → D) and recovery sequence (D → V → F → T) that simultaneously defines the DDD stage ordering
+37. **RBIT Resolution Gap as ODE Formal Projection** (§13.8) — establishing that the FCC regime scalar Φ is the mean-field single-scale projection of RBIT's resolution gap Δρ; deriving the F_RBIT health vector component projections (f₁ ∝ Φ, f₂ ∝ β_s·n²/C·d, f₃ ∝ d⁻¹, f₄ ∝ Φ·(1−d), f₅ ∝ μC·n²·Φ); proving that the ODE ρ̇ equation is the formal mechanistic derivation of RBIT's resolution growth/degradation dynamics; establishing the lock budget inequality as the dual-component RBIT R = D·F·V·T multiplicative structure; proving that RBIT's correction efficiency η_corr = 1 boundary is the exact operational threshold activating middle-tier mediation; deriving the EDT retention spectrum as independent confirmation of the RBIT R-component atrophy ordering (T → F → V → D) and recovery sequence (D → V → F → T) that simultaneously defines the DDD stage ordering
 
-46. **RBIT Map-Terrain Drift: Governance as Alignment Management** (§19.11) — formalizing the FCC ODE regime dynamics in Map-Terrain alignment language; establishing the drift rate equation d|Map − Terrain|/dt = v_terrain − v_map_update + ε_coupling with three ODE-regime correspondences (fast terrain → Φ > 1; matched → VCZ; stable terrain → Stability Saturation); proving that pathological friction (Map ≠ Terrain with repeated correction failure) corresponds exactly to Silent Criticality (Φ ≈ 1 sustained with ρ̇ < 0); establishing the quadratic drift accumulation cost as the economic argument for early DDD activation; formalizing the Governance-Level Storm as the recursive application of the S-equation to the governance layer itself; deriving terrain fitness function F_terrain = w₁·V_depth + w₂·P_control + w₃·T_separation − w₄·I_cost as the quantitative terrain design criterion; establishing that circular closure reduces Map complexity from O(n²) to O(Σnᵢ²) — the information-theoretic mechanism underlying the §19.6 fractal governance necessity theorem
+38. **RBIT Map-Terrain Drift: Governance as Alignment Management** (§19.11) — formalizing the FCC ODE regime dynamics in Map-Terrain alignment language; establishing the drift rate equation d|Map − Terrain|/dt = v_terrain − v_map_update + ε_coupling with three ODE-regime correspondences (fast terrain → Φ > 1; matched → VCZ; stable terrain → Stability Saturation); proving that pathological friction (Map ≠ Terrain with repeated correction failure) corresponds exactly to Silent Criticality (Φ ≈ 1 sustained with ρ̇ < 0); establishing the quadratic drift accumulation cost as the economic argument for early DDD activation; formalizing the Governance-Level Storm as the recursive application of the S-equation to the governance layer itself; deriving terrain fitness function F_terrain = w₁·V_depth + w₂·P_control + w₃·T_separation − w₄·I_cost as the quantitative terrain design criterion; establishing that circular closure reduces Map complexity from O(n²) to O(Σnᵢ²) — the information-theoretic mechanism underlying the §19.6 fractal governance necessity theorem
 
-47. **Resolution Capacity Decomposition: ρ_p vs ρ_c Failure Taxonomy** (§21.5) — decomposing scalar resolution ρ into perception resolution ρ_p and control resolution ρ_c; proving that Φ reaches ρ_p before ρ_c in most growth trajectories (perception collapses first); classifying four distinct failure modes (Case 1: perception collapse / Silent Criticality onset; Case 2: control gap / analysis paralysis; Case 3: informed helplessness / asymmetric F_RBIT; Case 4: blind intervention / governance thrashing); providing distinct FCC ODE signatures and DDD protocols for each case; establishing RBIT four-stratum temporal stratification (τ₁: f₁, τ₂: f₂, τ₃: f₃, τ₄: M_RBIT) with adiabatic approximation breakdown condition corr(f₁(t), f₂(t+δ)) > 0.4 as Temporal Boundary Layer warning; deriving maintenance dominance trap via EROTI scaling (E_maintenance/E_construction → ∞ as system_age → ∞) and establishing the structural investment priority to prevent trap onset
+39. **Resolution Capacity Decomposition: ρ_p vs ρ_c Failure Taxonomy** (§21.5) — decomposing scalar resolution ρ into perception resolution ρ_p and control resolution ρ_c; proving that Φ reaches ρ_p before ρ_c in most growth trajectories (perception collapses first); classifying four distinct failure modes (Case 1: perception collapse / Silent Criticality onset; Case 2: control gap / analysis paralysis; Case 3: informed helplessness / asymmetric F_RBIT; Case 4: blind intervention / governance thrashing); providing distinct FCC ODE signatures and DDD protocols for each case; establishing RBIT four-stratum temporal stratification (τ₁: f₁, τ₂: f₂, τ₃: f₃, τ₄: M_RBIT) with adiabatic approximation breakdown condition corr(f₁(t), f₂(t+δ)) > 0.4 as Temporal Boundary Layer warning; deriving maintenance dominance trap via EROTI scaling (E_maintenance/E_construction → ∞ as system_age → ∞) and establishing the structural investment priority to prevent trap onset
 
-48. **GGT Affective Geometry Layer: Temperature-Dependent Partition Structure** (§19.12) — establishing that FCC governance temperature T is a partition geometry deformation operator on GGT's partition space; proving Affective Optimal Partition Shift Theorem (m*(T) < m*(0) for all T > 0, with governance optimum at T = T*); proving Affective Length Scale Duality with T_c^geo = T* (Freeze → fragmentation m → m_max; Runaway → consolidation m → 1); deriving Affective Branching Number B*(T) = e·exp((T−T*)/(2ΔT)) with cascade speed minimum at T = T*; proving Partition Governance Completeness Theorem — VCZ completeness requires T ∈ (T_min, T_max), extending §19.9 VCZ characterization with T-constraint; establishing the Fifteen-Way M_crit Equivalence in FCC coordinates (E1 through E15 all equivalent, five operationally relevant FCC translations); deriving GEL Governance Landauer Bound showing DDD Stage 1→2→3 sequence is Fisher-geodesic (entropy-minimizing); classifying NESS-IV (Cyclothymic) as d-T oscillation pathology diagnosable by coherent Φ autocorrelation at governance temperature cycle period
+40. **GGT Affective Geometry Layer: Temperature-Dependent Partition Structure** (§19.12) — establishing that FCC governance temperature T is a partition geometry deformation operator on GGT's partition space; proving Affective Optimal Partition Shift Theorem (m*(T) < m*(0) for all T > 0, with governance optimum at T = T*); proving Affective Length Scale Duality with T_c^geo = T* (Freeze → fragmentation m → m_max; Runaway → consolidation m → 1); deriving Affective Branching Number B*(T) = e·exp((T−T*)/(2ΔT)) with cascade speed minimum at T = T*; proving Partition Governance Completeness Theorem — VCZ completeness requires T ∈ (T_min, T_max), extending §19.9 VCZ characterization with T-constraint; establishing the Fifteen-Way M_crit Equivalence in FCC coordinates (E1 through E15 all equivalent, five operationally relevant FCC translations); deriving GEL Governance Landauer Bound showing DDD Stage 1→2→3 sequence is Fisher-geodesic (entropy-minimizing); classifying NESS-IV (Cyclothymic) as d-T oscillation pathology diagnosable by coherent Φ autocorrelation at governance temperature cycle period
 
-49. **DDD Revival Topology and EROTI Priority** (§24.5) — grounding DDD in topological necessity via Conley index argument (connecting orbits exist at every saddle-node bifurcation); establishing that DDD navigates to existing revival trajectories rather than creating recovery; classifying three revival cases — Case A (near-critical, square-root sensitivity, minimal intervention required), Case B (exhaustion, counter-intuitive f₄ decrease indicating storm self-collapse, Stage 3 must wait), Case C (nucleation, irreversible basin transition, C_new* ≠ C_old*); deriving multi-scale revival cascade ordering (peripheral first, hub last) as formal justification for bottom-up recovery protocol; proving revival front speed c_min = 2√(D_eff·|f'(Φ_rest)|) and deriving τ_global with propagation phase M/c_min as frequently underestimated DDD timeline component; grounding EROTI priority ordering (structural boundary > coupling redesign > gain modulation > agent-level) in energy return formalism; establishing fifth DDD E1 false-completion mechanism (E_DDD < E_min regardless of protocol quality); proving that DDD Stage ordering is Fisher-geodesic in governance entropy space
+41. **DDD Revival Topology and EROTI Priority** (§24.5) — grounding DDD in topological necessity via Conley index argument (connecting orbits exist at every saddle-node bifurcation); establishing that DDD navigates to existing revival trajectories rather than creating recovery; classifying three revival cases — Case A (near-critical, square-root sensitivity, minimal intervention required), Case B (exhaustion, counter-intuitive f₄ decrease indicating storm self-collapse, Stage 3 must wait), Case C (nucleation, irreversible basin transition, C_new* ≠ C_old*); deriving multi-scale revival cascade ordering (peripheral first, hub last) as formal justification for bottom-up recovery protocol; proving revival front speed c_min = 2√(D_eff·|f'(Φ_rest)|) and deriving τ_global with propagation phase M/c_min as frequently underestimated DDD timeline component; grounding EROTI priority ordering (structural boundary > coupling redesign > gain modulation > agent-level) in energy return formalism; establishing fifth DDD E1 false-completion mechanism (E_DDD < E_min regardless of protocol quality); proving that DDD Stage ordering is Fisher-geodesic in governance entropy space
 
-50. **Terrain Phase Transitions and Universality Classes in F_RBIT Coordinates** (§31 RBIT integration) — establishing terrain order parameter Ψ_T ↔ RBIT maturation order parameter M_RBIT = ρ_endogenous/ρ_total; proving desertification as first-order F_RBIT collapse with hysteresis (ρ_collapse ≠ ρ_recovery), nucleation sites detected via f₁ spatial heterogeneity, and metastable lifetime τ_silent = τ₀·exp(SCC_min/T_eff); classifying three universality classes for F_RBIT measurement protocol adjustment (Class I mean-field for large organizations, Class II Ising-like for small teams, Class III percolation for network assembly dynamics); establishing critical slowing down prediction τ_DDD ~ (1−p/p_c)^{−z·ν} as quantitative DDD timescale correction near desertification transition; establishing κ(t) = f₂·f₃·M_RBIT as unified F_RBIT summary scalar that integrates fast, medium, and glacial timescale dynamics; identifying Path 3 (terrain erosion: M_RBIT declining while all standard F_RBIT components stable) as the formally invisible collapse pathway requiring dedicated M_RBIT maturation monitoring beyond standard FCC indicators
+42. **Terrain Phase Transitions and Universality Classes in F_RBIT Coordinates** (§31 RBIT integration) — establishing terrain order parameter Ψ_T ↔ RBIT maturation order parameter M_RBIT = ρ_endogenous/ρ_total; proving desertification as first-order F_RBIT collapse with hysteresis (ρ_collapse ≠ ρ_recovery), nucleation sites detected via f₁ spatial heterogeneity, and metastable lifetime τ_silent = τ₀·exp(SCC_min/T_eff); classifying three universality classes for F_RBIT measurement protocol adjustment (Class I mean-field for large organizations, Class II Ising-like for small teams, Class III percolation for network assembly dynamics); establishing critical slowing down prediction τ_DDD ~ (1−p/p_c)^{−z·ν} as quantitative DDD timescale correction near desertification transition; establishing κ(t) = f₂·f₃·M_RBIT as unified F_RBIT summary scalar that integrates fast, medium, and glacial timescale dynamics; identifying Path 3 (terrain erosion: M_RBIT declining while all standard F_RBIT components stable) as the formally invisible collapse pathway requiring dedicated M_RBIT maturation monitoring beyond standard FCC indicators
 
 
-35. **Extended cross-validation matrix with EDT v5.0** — 36-pair verification including GCET×ODE duality, grammar×phase portrait bijection; 6 emergent constraints tightening admissible parameter space [→ *DFG Terrain-Heritage-Integration* §32.5.2]
+43. **Extended cross-validation matrix with EDT v5.0** — 36-pair verification including GCET×ODE duality, grammar×phase portrait bijection; 6 emergent constraints tightening admissible parameter space [→ *DFG Terrain-Heritage-Integration* §32.5.2]
 
-36. **Novel failure modes NF1–NF3 from attractor grammar** (§32.5.2, [→ *DFG Terrain-Heritage-Integration* §32.10]) — predicting three failure modes invisible to scalar Φ monitoring: NF1 Resonance Capture (limit cycle at ω_agent producing oscillatory 0.7 < ⟨Φ⟩ < 1.0), NF2 Grammar Incompleteness (within-layer health with cross-layer transfer failure), NF3 Attractor Proliferation Overflow (excessive diversity consuming governance capacity); establishing phase portrait types V and VI extending the standard I–IV classification; demonstrating that grammar provides strictly stronger failure-mode predictive power than scalar regime analysis
+44. **Novel failure modes NF1–NF3 from attractor grammar** (§32.5.2, [→ *DFG Terrain-Heritage-Integration* §32.10]) — predicting three failure modes invisible to scalar Φ monitoring: NF1 Resonance Capture (limit cycle at ω_agent producing oscillatory 0.7 < ⟨Φ⟩ < 1.0), NF2 Grammar Incompleteness (within-layer health with cross-layer transfer failure), NF3 Attractor Proliferation Overflow (excessive diversity consuming governance capacity); establishing phase portrait types V and VI extending the standard I–IV classification; demonstrating that grammar provides strictly stronger failure-mode predictive power than scalar regime analysis
 
-37. **Four-tier early-warning hierarchy with terrain leading layer** (§20, [→ *DFG Terrain-Heritage-Integration* §32.10]) — establishing terrain quality monitoring Q_E as a Tier 0 early-warning signal with lead time τ₃/τ₁ earlier than standard operational indicators; completing the full hierarchy: terrain trend → transfer entropy → Fisher information → σ²/AC → ECC threshold; establishing that systems monitoring only operational tier cannot implement prevention (only reaction)
+45. **Four-tier early-warning hierarchy with terrain leading layer** (§20, [→ *DFG Terrain-Heritage-Integration* §32.10]) — establishing terrain quality monitoring Q_E as a Tier 0 early-warning signal with lead time τ₃/τ₁ earlier than standard operational indicators; completing the full hierarchy: terrain trend → transfer entropy → Fisher information → σ²/AC → ECC threshold; establishing that systems monitoring only operational tier cannot implement prevention (only reaction)
 
-38. **Buffer ecology and carrying capacity as scaling constraints** ([→ *DFG Terrain-Heritage-Integration* §32.10]) — establishing that differentiated buffering is not merely more efficient than undifferentiated but qualitatively necessary above critical complexity C*; deriving Buffer Carrying Capacity m_max as a hard upper bound on middle-layer differentiation; connecting buffer succession sequence to predictable governance maturation stages; formalizing pseudo-buffer pathology as a middle-layer failure mode
+46. **Buffer ecology and carrying capacity as scaling constraints** ([→ *DFG Terrain-Heritage-Integration* §32.10]) — establishing that differentiated buffering is not merely more efficient than undifferentiated but qualitatively necessary above critical complexity C*; deriving Buffer Carrying Capacity m_max as a hard upper bound on middle-layer differentiation; connecting buffer succession sequence to predictable governance maturation stages; formalizing pseudo-buffer pathology as a middle-layer failure mode
 
-39. **AGM-EDT-ODE Triple Integration: the coupled governance stack** ([→ *DFG Terrain-Heritage-Integration* §32.10]) — completing the three-tier coupled formalization: EDT terrain (slowest) governs AGM's operating range, AGM governs ODE's T variable, ODE generates feedback to EDT through Storm-driven Q_E erosion; establishing joint early-warning protocol across all three tiers; formalizing collective emotional ecology as a terrain-modification process with coherence resonance and spectral-gap-governed contagion phase transition
+47. **AGM-EDT-ODE Triple Integration: the coupled governance stack** ([→ *DFG Terrain-Heritage-Integration* §32.10]) — completing the three-tier coupled formalization: EDT terrain (slowest) governs AGM's operating range, AGM governs ODE's T variable, ODE generates feedback to EDT through Storm-driven Q_E erosion; establishing joint early-warning protocol across all three tiers; formalizing collective emotional ecology as a terrain-modification process with coherence resonance and spectral-gap-governed contagion phase transition
 
-40. **Dual critical phenomena coexistence** (§9.1) — identifying that DFG systems simultaneously exhibit SOC (drive-release avalanche dynamics with power-law P(s) ∼ s^{−τ}) and saddle-node catastrophe (fold bifurcation with hysteresis and sudden collapse), establishing their interaction mechanism (SOC fluctuations probe the fold boundary while L↑/q↓ eliminates it), and unifying both under the Cusp Catastrophe surface (§14.5 Formulation IV); demonstrating that this SOC + saddle-node combination — rare in single-mechanism models — reproduces the full empirical signature of organizational, neural, ecological, and financial system collapse
+48. **Dual critical phenomena coexistence** (§9.1) — identifying that DFG systems simultaneously exhibit SOC (drive-release avalanche dynamics with power-law P(s) ∼ s^{−τ}) and saddle-node catastrophe (fold bifurcation with hysteresis and sudden collapse), establishing their interaction mechanism (SOC fluctuations probe the fold boundary while L↑/q↓ eliminates it), and unifying both under the Cusp Catastrophe surface (§14.5 Formulation IV); demonstrating that this SOC + saddle-node combination — rare in single-mechanism models — reproduces the full empirical signature of organizational, neural, ecological, and financial system collapse
 
-41. **Three fundamental dimensionless constants and dimensional reduction** (§9.2) — identifying κ = Φ/(L·q) as the universal collapse control parameter, χ = n/√C as the scale pressure parameter governing centralization stability, and ψ = n²/γ as the fragmentation stability parameter; proving dimensional reduction ψ = χ²/γ̃ (where γ̃ = γ/C is a structural design constant), collapsing the three-parameter governance phase space (κ, χ, ψ) to an effective two-dimensional phase diagram (κ, χ); interpreting κ as the DFG analog of the Reynolds number (regime-determining dimensionless ratio) and χ as the scaling threshold parameter
+49. **Three fundamental dimensionless constants and dimensional reduction** (§9.2) — identifying κ = Φ/(L·q) as the universal collapse control parameter, χ = n/√C as the scale pressure parameter governing centralization stability, and ψ = n²/γ as the fragmentation stability parameter; proving dimensional reduction ψ = χ²/γ̃ (where γ̃ = γ/C is a structural design constant), collapsing the three-parameter governance phase space (κ, χ, ψ) to an effective two-dimensional phase diagram (κ, χ); interpreting κ as the DFG analog of the Reynolds number (regime-determining dimensionless ratio) and χ as the scaling threshold parameter
 
-42. **Fractal Governance Necessity Theorem with full proof structure** (§19.6) — providing the first complete formal proof that large adaptive systems must either generate hierarchical modular structure or collapse under coordination overload; establishing Lemma 1 (centralized instability threshold at χ = 1), Lemma 2 (modularization stabilization condition n² > 2γ), main Theorem (exhaustive dichotomy: modularization or collapse), Corollary 1 (finite collapse time bound T_collapse ≤ (κ_c − κ₀)/δ), Corollary 2 (hierarchical recursion forcing multi-level structure), and Corollary 3 (minimum fractal depth L_min ≳ log χ₀); connecting governance hierarchy formation to the same interaction-scaling law (n²/n = n) that underlies all other DFG collapse conditions
+50. **Conditional Compression-or-Overload theorem with benchmarked interface density** (§19.6) — adopting $E_\eta(N,K)=aN^2/K+\gamma K^{1+\eta}$ after synthetic comparison of fixed sparse, fixed dense, and adaptive candidates; separating non-trivial modular optimum, capacity feasibility, and dynamic-equilibrium gates; deriving $K_\eta^*$, $m_\eta^*$, $E_{\min}$, finite collapse-time bounds under persistent unresolved overload, and conditional recursion/depth estimates.
 
-43. **Module size distribution predictions** (§19.6.1) — deriving cube-root scaling m* ∝ n^{1/3} for optimal module size (8× system growth → only 2× module growth), hierarchical size ladder recurrence m_{ℓ+1} ≈ A·m_ℓ^{1/3}, and two-regime distribution law: lognormal distribution under weak fragmentation heterogeneity (near-uniform splitting) and power-law (Pareto) tail under strong heterogeneity (selective repeated fragmentation); establishing these as testable cross-domain predictions for corporate team sizes, neural circuit modules, and multi-agent AI subgroup sizes
+51. **Interface-conditioned module-size predictions** (§19.6.1) — deriving $m_\eta^*\propto N^{\eta/(2+\eta)}$, with bounded module size at $\eta=0$ and cube-root growth only at $\eta=1$; generalizing the hierarchical AR coefficient to $r=\eta/(2+\eta)$ while preserving the separate lognormal-versus-power-law fragmentation predictions.
 
-44. **Five-region (κ, χ) phase diagram with triple critical point** (§19.6.2) — partitioning the governance phase space into five distinct dynamical regimes (centralized stable, critical SOC, modular stable, fragmentation collapse, rigidity trap / Silent Criticality), identifying the triple critical point where collapse, scaling instability, and fragmentation failure boundaries intersect, and establishing that κ-deterioration curves the fragmentation stability boundary upward — meaning governance degradation simultaneously raises the scale pressure required for successful modularization, linking Silent Criticality directly to fragmentation failure
+52. **Three-dimensional $(\kappa,\chi,\eta)$ phase structure** (§19.6.2) — replacing the fixed-interface two-dimensional diagram with architecture-dependent slices; distinguishing centralized overload, cost-reducing modularization, capacity-feasible modularization, residual overload, and lock/Storm failure, with $\eta(t)$ proposed as the architectural order parameter linking equilibrium to complexity.
+
+53. **Targeting–Gating–Routing network control plane and network-semantic/multiplex extension** (§19.10.8) — separating target priority, permission/admission, and route allocation; distinguishing completed-state signaling from trajectory-changing influence; enforcing interface narrowing, temporal decoupling, and write asymmetry; separating task/information/authority/contamination/recovery/audit graphs; defining capacity- and expected-loss-aware routing, push/pull escalation, admissible-versus-realized layer-specific interface density, ancestry-corrected validation, staged promotion/rapid demotion, rollback/supersession, fallback diversity, and the N-TGR-0..N-TGR-15 benchmark programme.
 
 ### Testable Predictions
 
@@ -7203,7 +8483,7 @@ The following quantitative predictions are amenable to numerical simulation (toy
 7. **Multiplicative durability:** Multi-scale systems should show R\_total scaling as ∏R\_ℓ, not ΣR\_ℓ. A single scale's lock budget violation should dominate total durability.
 8. **Attention-shortened silent phase:** Systems with higher initial attention concentration (A₀ > 0) should exhibit shorter τ\_silent than equivalent systems with A₀ = 0, by the factor ln(T\_max/[K₀·F(A₀)]) / (g₀ + g\_A) < τ\_silent(A₀=0). This is directly testable in simulation by comparing silent durations across initial attention conditions.
 9. **Topology-dependent criticality maintenance:** Following Sugimoto et al. (2025), hub-dominated network topologies should exhibit narrower bistable regions (smaller Δu) than distributed topologies with equivalent total connectivity, because hub concentration amplifies k-growth while suppressing effective diversity d. Simulation test: compare Δu across ER/SW/Hub topologies (cf. V4c Fig 10).
-10. **Governance scaling pressure:** In multi-agent AI deployments, the rate of governance incidents should scale quadratically with the number of active interaction channels (∝ n²), not linearly with agent count. This prediction follows directly from the S-equation's n² scaling and is testable against empirical incident data from agentic AI deployments (cf. AIGN 2025 dataset).
+10. **Governance scaling pressure:** In the uncompressed regime, incident or revalidation burden should scale with the number of unresolved effective relation pairs, not automatically with raw agent count or instantaneous edges. Empirical tests must estimate $E_{\mathrm{eff}}(N;\tau)$ and $\eta$, then compare linear, intermediate, and quadratic scaling rather than prespecify $N^2$.
 11. **Topology-level containment sufficiency:** In multi-agent systems experiencing cascading disorientation, coupling reduction + bridge rewiring alone (without direct state correction) should achieve >90% of maximum attainable disorientation suppression. This prediction follows from the DDD protocol's Defocus–Decouple dominance and has been confirmed in the V4c compassion simulation: the containment engine (κ↓ + bridge) explains 94.8% of DSI reduction, with the effect holding across small-world, scale-free, and Erdős–Rényi topologies (ΔDSI ≈ −0.040; 9/9 wins; Cohen's d = 7.68).
 12. **Damage-dependent hysteresis widening:** In systems with structural damage variable S > 0 (§31), the hysteresis gap Δu(S) should widen monotonically with accumulated damage. Specifically, u⁻(S)/u⁻(0) ≈ (1−S)^(1/2) should decrease faster than u⁺(S)/u⁺(0) ≈ (1−S)^(1/4). Testable by repeated Storm–Recovery cycles in simulation with damage accumulation enabled; the recovery threshold should shift downward after each cycle.
 13. **Critical damage fraction.** Systems should exhibit a sharp phase transition at S ≈ S\* = 1 − L\_C/(ζ⁻⁴/(1+L\_d) − 1), beyond which recovery becomes impossible regardless of load reduction. Below S\*, recovery time should increase polynomially with S; above S\*, no recovery should be observed within any finite simulation horizon. The transition should be first-order (discontinuous recovery probability at S\*).
@@ -7353,6 +8633,7 @@ Level C — Emergent Phenomena       →  this document §1–10 + §30–31
 - §13.6: Computational complexity bounds on governance diagnosis
 - §19.7: Network governance geometry (spectral theory, NAT/VST connections)
 - §19.8: Cross-domain universality (economic markets, ecological food webs, financial systemic risk)
+- §19.6/§19.6A and §19.10.5–§19.10.8: Interface-Density Benchmark, Equilibrium-Induced Complexity Transition, Dual North Star Dynamics, and the Network Control Plane — potential/time-integrated $O(N^2)$ exposure versus realized $O(N)$/$O(N\log N)$ routine operation; local/global AND-equilibrium; unresolved-degree cost; reference tension and structural promotion; endogenous repair; targeting/gating/routing; signaling-versus-influence isolation; multiplex task/information/authority/contamination/recovery/audit paths; dual escalation; lineage-corrected validation; rollback; and falsifiable lifecycle predictions
 
 **Master Conditions (canonical reference, defined in opening block):**
 - M1 (Operational Criticality): κ(t) ≥ κ_c, equivalently Φ > Φ_c(L,q)
@@ -7365,9 +8646,16 @@ Level C — Emergent Phenomena       →  this document §1–10 + §30–31
 - §32.5–32.10: EDT, NAT, AGM extended mappings; terrain grammar; heritage theory; scaling resolution; cross-validation matrix
 - §32 contains M3, M4, and all Level A projections; §14–31 of this document contains M1, M2
 
-**Document version:** 6.0 (major additions v6.0: §13.8 RBIT Resolution Gap Dynamics — F_RBIT health vector ODE projection, lock budget as R-component multiplicative constraint, correction efficiency η_corr as contamination tier threshold, EDT retention spectrum as atrophy ordering; §19.11 RBIT Map-Terrain Drift — drift rate equation with three ODE-regime correspondences, healthy vs pathological friction in FCC terms, Governance-Level Storm as recursive S-equation application, terrain fitness function F_terrain; §19.12 GGT Affective Geometry Layer — temperature-dependent partition structure, Affective Branching Number B*(T), Partition Governance Completeness Theorem extending VCZ with T-constraint, Fifteen-Way M_crit Equivalence in FCC coordinates, GEL Governance Landauer Bound as Fisher-geodesic DDD ordering derivation, NESS-IV Cyclothymic pathology; §21.5 Resolution Capacity Decomposition — ρ_p vs ρ_c four-mode failure taxonomy, RBIT temporal stratification, Maintenance Dominance Trap; §24.5 DDD Revival Topology — Conley index grounding, three revival cases (A: near-critical, B: exhaustion, C: nucleation), multi-scale revival propagation cascade ordering, EROTI priority protocol, fifth DDD E1 false-completion mechanism, Fisher-geodesic DDD entropy derivation; Theoretical Significance items 45–50; Falsifiability conditions 61–75; from v6.0) and prior content from v5.0 and earlier versions.
+**Document version:** 6.6  
+**v6.6 update:** network-semantic and multiplex-control extension; signaling-versus-influence privileges; structural processing isolation; task/information/authority/contamination/recovery/audit graph separation; expected-loss routing; push/pull escalation; lineage-corrected validation; staged promotion, rapid demotion, rollback, and N-TGR-0..15.  
+**v6.5 update:** explicit Targeting–Gating–Routing network control plane; multi-layer gate states; capacity/difficulty/competence-aware routing; admissible-versus-realized interface density; summary-triggered downgrade; fallback diversity; fast-isolate/slow-integrate asymmetry.  
+**v6.4 update:** expanded existing-theory positioning; computational versus structural versus maintenance scalability; lifecycle-cost functional; maintenance-debt cycle; endogenous summary/boundary/reference transition; localized refactor target; representative primary literature anchors; four additional lifecycle falsifiability predictions.  
+**v6.3 update:** interface-density candidate benchmark; generalized $E_\eta(N,K)$ cost law; fixed $O(K)$ and $O(K^2)$ endpoint models retained; generalized module-size exponent; $(\kappa,\chi,\eta)$ phase structure; benchmark-backed model selection.  
+**v6.2 update:** raw $N$ versus effective $n_{\mathrm{eff}}$ notation lock; routine versus audit complexity separation; partial re-quadratization through $s_{\max}$; common-space North Star tension; R-2 validation and R-3 split gates; conditional theorem wording; contribution-list repair.  
+**v6.1 update:** equilibrium-induced complexity transition; dual North Star dynamics; local/global AND-equilibrium; reverse re-quadratization; prior-work positioning and falsifiable predictions.  
+**Earlier major updates:** v6.0 and earlier additions remain preserved in the version history and section-level changelogs.
 
-**Document version history (summary):** 5.0 (major additions: §6.7 AGM Gain-Temperature Duality — T_eff as governance primitive, four thermal regime classification, Minimum Viable Temperature, energy budget conservation and No-Free-Lunch thermodynamic derivation, thermal regime detection protocol; §13.7 EDT Terrain-ODE Ontological Priority — EDT five-equation projection map, three-term canonical capacity equation, Clean System Paradox, overshoot collapse spiral, Filippov piecewise-smooth resolution with contamination absorption threshold; §19.9 GGT Criticality Equivalence Bridge — five-theory unification in FCC coordinates, three hidden constants as FCC analogs, FGS VCZ as M_crit δ-neighborhood, GGT master equation as FCC RG invariant; §19.10 Buffer Theory Noised Vector Dynamics — four-property formal buffer definition, noised vector model of middle-layer agents, Middle-Layer Buffer Peak Theorem, Hierarchical Correction Cascade, Nearest-Layer Correction Priority Theorem, North Star Projection Principle, Centralization-Collapse Equivalence; §30.5 Coordinate Drift as Intra-Agent Storm Precursor — four-phase precursor geometry, drift accumulation bound, lead-time prediction P-30.5, triple concordance detection protocol; Theoretical Significance items 35–39; Falsifiability conditions 51–60; from v5.0) and prior content from v4.0 and earlier versions.
+**Document version history (summary):** 6.6 (network semantics/multiplex control); 6.5 (TGR network control plane); 6.4 (lifecycle scalability/prior-work positioning); 6.3 (interface-density benchmark/generalized cost); 6.2 (reader-safety/notation audit); 6.1 (equilibrium-induced complexity transition and dual North Star dynamics); 6.0 (RBIT/GGT/DDD extensions listed in the v6.0 block above); 5.0 (major additions: §6.7 AGM Gain-Temperature Duality — T_eff as governance primitive, four thermal regime classification, Minimum Viable Temperature, energy budget conservation and No-Free-Lunch thermodynamic derivation, thermal regime detection protocol; §13.7 EDT Terrain-ODE Ontological Priority — EDT five-equation projection map, three-term canonical capacity equation, Clean System Paradox, overshoot collapse spiral, Filippov piecewise-smooth resolution with contamination absorption threshold; §19.9 GGT Criticality Equivalence Bridge — five-theory unification in FCC coordinates, three hidden constants as FCC analogs, FGS VCZ as M_crit δ-neighborhood, GGT master equation as FCC RG invariant; §19.10 Buffer Theory Noised Vector Dynamics — four-property formal buffer definition, noised vector model of middle-layer agents, Middle-Layer Buffer Peak Theorem, Hierarchical Correction Cascade, Nearest-Layer Correction Priority Theorem, North Star Projection Principle, Centralization-Collapse Equivalence; §30.5 Coordinate Drift as Intra-Agent Storm Precursor — four-phase precursor geometry, drift accumulation bound, lead-time prediction P-30.5, triple concordance detection protocol; Theoretical Significance items 35–39; Falsifiability conditions 51–60; from v5.0) and prior content from v4.0 and earlier versions.
 **Author:** Seol, Bin
 **Affiliation:** Independent Researcher
 **Companion document version:** See *DFG Terrain-Heritage-Integration* v1.0
